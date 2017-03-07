@@ -2,9 +2,9 @@
 
 a set of reusable component for UQ Library applications
 
-- GA
-- MenuDrawer
-- SASS
+- [GA](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/GA)
+- [MenuDrawer](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/MenuDrawer)
+- [SASS](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/SASS)
 
 ## Development
 

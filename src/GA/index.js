@@ -1,1 +1,1 @@
-export default from './ga';
+export {gaComponent} from './ga';
