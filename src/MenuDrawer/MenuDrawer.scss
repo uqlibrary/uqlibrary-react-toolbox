@@ -1,0 +1,28 @@
+@import '../sass/variables';
+
+.main-drawer {
+  .side-drawer {
+    .logo-wrapper {
+      height: 75px;
+      padding: 10px;
+      text-align: center;
+      background-color: $uq-primary-color;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 100%;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .main-menu {
+      padding-top: 0 !important;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
