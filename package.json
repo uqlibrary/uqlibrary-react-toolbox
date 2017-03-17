@@ -120,6 +120,7 @@
     "test:watch": "npm run test -- --watch"
   },
   "engines": {
-    "npm": ">=4"
+    "npm": ">=3",
+    "node": "^6.2.2"
   }
 }
