@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuDrawer tests renders logo in the drawer component 1`] = `
+<Drawer
+  containerClassName="main-drawer flex"
+  disableSwipeToOpen={false}
+  docked={true}
+  onRequestChange={[Function]}
+  open={null}
+  openSecondary={false}
+  swipeAreaWidth={30}
+  width={320}
+  zDepth={2}
+>
+  <div
+    className="layout-fill side-drawer"
+  >
+    <div
+      className="logo-wrapper"
+    >
+      <img
+        alt="University of Queensland logo"
+        src="https://static.uq.net.au/v1/logos/corporate/uq-logo-white.svg"
+      />
+    </div>
+    <List
+      className="main-menu"
+    >
+      <span
+        className="menu-item-container"
+      >
+        <Divider
+          inset={false}
+        />
+      </span>
+      <span
+        className="menu-item-container"
+      >
+        <Link
+          onlyActiveOnIndex={false}
+          style={Object {}}
+        >
+          <ListItem
+            autoGenerateNestedIndicator={true}
+            disableKeyboardFocus={false}
+            disabled={false}
+            initiallyOpen={false}
+            insetChildren={false}
+            leftIcon={null}
+            nestedItems={Array []}
+            nestedLevel={0}
+            onKeyboardFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onNestedListToggle={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            open={null}
+            primaryTogglesNestedList={false}
+            secondaryTextLines={1}
+          />
+        </Link>
+      </span>
+      <span
+        className="menu-item-container"
+      >
+        <Divider
+          inset={false}
+        />
+      </span>
+    </List>
+  </div>
+</Drawer>
+`;
+
+exports[`MenuDrawer tests renders menu without dividers 1`] = `
+<Drawer
+  containerClassName="main-drawer flex"
+  disableSwipeToOpen={false}
+  docked={false}
+  onRequestChange={[Function]}
+  open={false}
+  openSecondary={false}
+  swipeAreaWidth={30}
+  width={320}
+  zDepth={2}
+>
+  <div
+    className="layout-fill side-drawer"
+  >
+    <div
+      className="logo-wrapper"
+    >
+      <img
+        alt="University of Queensland logo"
+        src="https://static.uq.net.au/v1/logos/corporate/uq-logo-white.svg"
+      />
+    </div>
+    <List
+      className="main-menu"
+    >
+      <span
+        className="menu-item-container"
+      >
+        <Divider
+          inset={false}
+        />
+      </span>
+      <span
+        className="menu-item-container"
+      >
+        <Divider
+          inset={false}
+        />
+      </span>
+    </List>
+  </div>
+</Drawer>
+`;

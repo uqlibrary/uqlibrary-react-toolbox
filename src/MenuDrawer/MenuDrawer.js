@@ -30,7 +30,7 @@ const MenuDrawer = ({menuItems, toggleDrawer, drawerOpen, docked}) => {
                 <List className="main-menu">
                     {menuItems.map((menuItem, index) =>
                     <span className="menu-item-container" key={index}>
-                        {menuItem.divider ? (
+                        {!menuItem.divider ? (
                             <Divider />
                             ) : (
                             <Link to={menuItem.linkTo}>
