@@ -29,16 +29,9 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
       <span
         className="menu-item-container"
       >
-        <Divider
-          inset={false}
-        />
-      </span>
-      <span
-        className="menu-item-container"
-      >
         <Link
-          onlyActiveOnIndex={false}
-          style={Object {}}
+          replace={false}
+          to="/"
         >
           <ListItem
             autoGenerateNestedIndicator={true}
@@ -56,7 +49,9 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
             onTouchEnd={[Function]}
             onTouchStart={[Function]}
             open={null}
+            primaryText="Primary text 0"
             primaryTogglesNestedList={false}
+            secondaryText="secondary text 0"
             secondaryTextLines={1}
           />
         </Link>
@@ -67,6 +62,36 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
         <Divider
           inset={false}
         />
+      </span>
+      <span
+        className="menu-item-container"
+      >
+        <Link
+          replace={false}
+          to="/xyz"
+        >
+          <ListItem
+            autoGenerateNestedIndicator={true}
+            disableKeyboardFocus={false}
+            disabled={false}
+            initiallyOpen={false}
+            insetChildren={false}
+            leftIcon={null}
+            nestedItems={Array []}
+            nestedLevel={0}
+            onKeyboardFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onNestedListToggle={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            open={null}
+            primaryText="Primary text 1"
+            primaryTogglesNestedList={false}
+            secondaryText="secondary text 1"
+            secondaryTextLines={1}
+          />
+        </Link>
       </span>
     </List>
   </div>
@@ -102,16 +127,62 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
       <span
         className="menu-item-container"
       >
-        <Divider
-          inset={false}
-        />
+        <Link
+          replace={false}
+          to="/"
+        >
+          <ListItem
+            autoGenerateNestedIndicator={true}
+            disableKeyboardFocus={false}
+            disabled={false}
+            initiallyOpen={false}
+            insetChildren={false}
+            leftIcon={null}
+            nestedItems={Array []}
+            nestedLevel={0}
+            onKeyboardFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onNestedListToggle={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            open={null}
+            primaryText="Primary text 0"
+            primaryTogglesNestedList={false}
+            secondaryText="secondary text 0"
+            secondaryTextLines={1}
+          />
+        </Link>
       </span>
       <span
         className="menu-item-container"
       >
-        <Divider
-          inset={false}
-        />
+        <Link
+          replace={false}
+          to="/abc"
+        >
+          <ListItem
+            autoGenerateNestedIndicator={true}
+            disableKeyboardFocus={false}
+            disabled={false}
+            initiallyOpen={false}
+            insetChildren={false}
+            leftIcon={null}
+            nestedItems={Array []}
+            nestedLevel={0}
+            onKeyboardFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onNestedListToggle={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            open={null}
+            primaryText="Primary text 0"
+            primaryTogglesNestedList={false}
+            secondaryText="secondary text 0"
+            secondaryTextLines={1}
+          />
+        </Link>
       </span>
     </List>
   </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router-dom';
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Drawer from 'material-ui/Drawer';
@@ -29,7 +29,7 @@ const MenuDrawer = ({menuItems, toggleDrawer, drawerOpen, docked}) => {
                 <List className="main-menu">
                     {menuItems.map((menuItem, index) =>
                     <span className="menu-item-container" key={index}>
-                        {!menuItem.divider ? (
+                        {menuItem.divider ? (
                             <Divider />
                             ) : (
                             <Link to={menuItem.linkTo}>

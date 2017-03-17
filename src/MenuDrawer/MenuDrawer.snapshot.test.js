@@ -17,7 +17,7 @@ function setup(drawerOpen, menuItems, docked) {
             divider: true
         },
         {
-            linkTo: '/my-plans',
+            linkTo: '/xyz',
             primaryText: 'Primary text 1',
             secondaryText: 'secondary text 1'
         }
@@ -40,7 +40,6 @@ describe('MenuDrawer snapshots tests', () => {
         const tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });
-
     it('renders menu without dividers', () => {
         const menuItems = [
             {
@@ -49,7 +48,7 @@ describe('MenuDrawer snapshots tests', () => {
                 secondaryText: 'secondary text 0'
             },
             {
-                linkTo: '/',
+                linkTo: '/abc',
                 primaryText: 'Primary text 0',
                 secondaryText: 'secondary text 0'
             }
