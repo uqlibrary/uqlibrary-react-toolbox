@@ -38,9 +38,9 @@
   ],
   "author": "UQ Library",
   "bugs": {
-    "url": "https://github.com/uqlibrary/preloader-html-webpack-plugin/issues"
+    "url": "https://github.com/uqlibrary/uqlibrary-react-toolbox/issues"
   },
-  "homepage": "https://github.com/uqlibrary/preloader-html-webpack-plugin",
+  "homepage": "https://github.com/uqlibrary/uqlibrary-react-toolbox",
   "semistandard": {
     "ignore": []
   },
@@ -117,5 +117,9 @@
   "scripts": {
     "test": "jest",
     "test:watch": "npm run test -- --watch"
+  },
+  "engines": {
+    "npm": ">=4",
+    "node": "^6.2.2"
   }
 }
