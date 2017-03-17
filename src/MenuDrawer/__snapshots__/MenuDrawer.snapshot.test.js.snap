@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MenuDrawer tests renders logo in the drawer component 1`] = `
+exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
 <Drawer
   containerClassName="main-drawer flex"
   disableSwipeToOpen={false}
@@ -73,7 +73,7 @@ exports[`MenuDrawer tests renders logo in the drawer component 1`] = `
 </Drawer>
 `;
 
-exports[`MenuDrawer tests renders menu without dividers 1`] = `
+exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
 <Drawer
   containerClassName="main-drawer flex"
   disableSwipeToOpen={false}

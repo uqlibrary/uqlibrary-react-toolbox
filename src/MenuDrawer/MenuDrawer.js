@@ -15,7 +15,6 @@ const propTypes = {
 
 const uqLogo = 'https://static.uq.net.au/v1/logos/corporate/uq-logo-white.svg';
 const MenuDrawer = ({menuItems, toggleDrawer, drawerOpen, docked}) => {
-
     return (
         <Drawer
             containerClassName="main-drawer flex"

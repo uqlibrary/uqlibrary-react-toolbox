@@ -34,8 +34,8 @@ function setup(drawerOpen, menuItems, docked) {
     return shallow(<MenuDrawer {...props} />);
 }
 
-describe('MenuDrawer tests', () => {
-    it('renders logo in the drawer component', () => {
+describe('MenuDrawer snapshots tests', () => {
+    it('renders menu with dividers', () => {
         const wrapper = setup();
         const tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
