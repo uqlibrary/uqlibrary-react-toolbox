@@ -1,5 +1,9 @@
 # uqlibrary-react-toolbox
 
+[ ![Codeship Status for uqlibrary/uqlibrary-react-toolbox](https://codeship.com/projects/73393d70-ed04-0134-e2b6-0a42fa094665/status?branch=master)](https://codeship.com/projects/208476)
+[![Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox.svg)](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox)
+[![Dev Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox/dev-status.svg)](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox?type=dev)
+
 a set of reusable component for UQ Library applications
 
 - [GA](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/GA)
