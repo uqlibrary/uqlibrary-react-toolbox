@@ -115,6 +115,7 @@
     "timezones.json": "^1.1.0"
   },
   "scripts": {
+    "updateSnapshot": "jest --updateSnapshot",
     "test": "jest",
     "test:watch": "npm run test -- --watch"
   },
