@@ -5,7 +5,7 @@ import FontIcon from 'material-ui/FontIcon';
 const propTypes = {
     title: React.PropTypes.string,
     text: React.PropTypes.any.isRequired,
-    buttonLabel: React.PropTypes.any.isRequired,
+    buttonLabel: React.PropTypes.string,
     onClick: React.PropTypes.func,
     displayType: React.PropTypes.bool,
     style: React.PropTypes.object
@@ -13,7 +13,8 @@ const propTypes = {
 
 const defaultProps = {
     displayType: false,
-    style: {}
+    style: {},
+    buttonLabel: 'GOT IT!'
 };
 
 const HelpIcon = ({title, text, buttonLabel, onClick, displayType, style}) => {
