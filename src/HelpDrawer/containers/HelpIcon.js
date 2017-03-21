@@ -5,7 +5,7 @@ import {show} from '../actions';
 
 const HelpIconContainer = connect(undefined, dispatch => {
     return {
-        onClick: (title, text) => dispatch(show(title, text))
+        onClick: (title, text, buttonLabel) => dispatch(show(title, text, buttonLabel))
     };
 })(HelpIcon);
 
