@@ -13,8 +13,7 @@ const propTypes = {
 
 const defaultProps = {
     displayType: false,
-    style: {},
-    buttonLabel: 'GOT IT!'
+    style: {}
 };
 
 const HelpIcon = ({title, text, buttonLabel, onClick, displayType, style}) => {

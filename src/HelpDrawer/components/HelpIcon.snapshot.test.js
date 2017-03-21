@@ -5,12 +5,11 @@ import toJson from 'enzyme-to-json';
 import React from 'react';
 import HelpIcon from './HelpIcon';
 
-function setup(title, text, buttonLabel, onClick, displayType, style) {
+function setup(title, text, buttonLabel, displayType, style) {
     const props = {
         title: title,
         text: text,
         buttonLabel: buttonLabel,
-        onClick: onClick(title, text, buttonLabel),
         displayType: displayType,
         style: style
     };

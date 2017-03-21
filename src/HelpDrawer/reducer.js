@@ -9,7 +9,7 @@ const initialState = Immutable.fromJS({
     open: false,
     title: '',
     text: '',
-    buttonLabel: 'Ok'
+    buttonLabel: ''
 });
 
 const helpDrawer = (state = initialState, action) => {

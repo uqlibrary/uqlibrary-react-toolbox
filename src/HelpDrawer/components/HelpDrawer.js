@@ -14,7 +14,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-    buttonLabel: 'Ok'
+    buttonLabel: 'GOT IT!'
 };
 
 const HelpDrawer = ({title, text, buttonLabel, open, hide}) => {

@@ -3,13 +3,15 @@ jest.dontMock('./HelpDrawer');
 import {shallow} from 'enzyme';
 import React from 'react';
 import HelpDrawer from './HelpDrawer';
+import { hide } from '../actions';
 
 function setup(title, text, buttonLabel, open) {
     const props = {
         open: open,
         title: title,
         text: text,
-        buttonLabel: buttonLabel
+        buttonLabel: buttonLabel,
+        hide: hide
     };
 
     return shallow(<HelpDrawer {...props} />);
