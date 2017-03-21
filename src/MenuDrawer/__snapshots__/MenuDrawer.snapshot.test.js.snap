@@ -35,6 +35,7 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
         >
           <ListItem
             autoGenerateNestedIndicator={true}
+            containerElement="span"
             disableKeyboardFocus={false}
             disabled={false}
             initiallyOpen={false}
@@ -72,6 +73,7 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
         >
           <ListItem
             autoGenerateNestedIndicator={true}
+            containerElement="span"
             disableKeyboardFocus={false}
             disabled={false}
             initiallyOpen={false}
@@ -133,6 +135,7 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
         >
           <ListItem
             autoGenerateNestedIndicator={true}
+            containerElement="span"
             disableKeyboardFocus={false}
             disabled={false}
             initiallyOpen={false}
@@ -163,6 +166,7 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
         >
           <ListItem
             autoGenerateNestedIndicator={true}
+            containerElement="span"
             disableKeyboardFocus={false}
             disabled={false}
             initiallyOpen={false}
