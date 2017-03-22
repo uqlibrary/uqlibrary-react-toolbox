@@ -12,7 +12,7 @@ function setup(title, text, buttonLabel) {
         buttonLabel: buttonLabel
     };
 
-    return shallow(<HelpIcon {...props} />);
+    return shallow(<HelpIcon {...props} inline />);
 }
 
 describe('HelpIcon snapshots tests', () => {

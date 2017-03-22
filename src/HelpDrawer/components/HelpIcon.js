@@ -7,21 +7,21 @@ const propTypes = {
     text: React.PropTypes.any.isRequired,
     buttonLabel: React.PropTypes.string,
     onClick: React.PropTypes.func,
-    displayType: React.PropTypes.bool,
+    inline: React.PropTypes.bool,
     style: React.PropTypes.object
 };
 
 const defaultProps = {
-    displayType: false,
+    inline: false,
     style: {}
 };
 
-const HelpIcon = ({title, text, buttonLabel, onClick, displayType, style}) => {
+const HelpIcon = ({title, text, buttonLabel, onClick, inline, style}) => {
     const setDrawerContent = () => {
         onClick(title, text, buttonLabel);
     };
 
-    const classNames = `form-help-icon ${displayType ? 'inline' : ''}`;
+    const classNames = `form-help-icon ${inline ? 'inline' : ''}`;
 
     return (
         <div className={classNames} style={{...style}}>
