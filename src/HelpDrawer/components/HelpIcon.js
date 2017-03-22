@@ -26,7 +26,7 @@ const HelpIcon = ({title, text, buttonLabel, onClick, inline, style}) => {
     return (
         <div className={classNames} style={{...style}}>
             <IconButton tooltip="Click for more information" tooltipPosition="bottom-center" onClick={setDrawerContent}>
-                <FontIcon className="material-icons" color="rgba(0,0,0,1) !important">help_outline</FontIcon>
+                <FontIcon className="material-icons" color="#CCCCCC">help_outline</FontIcon>
             </IconButton>
         </div>
     );

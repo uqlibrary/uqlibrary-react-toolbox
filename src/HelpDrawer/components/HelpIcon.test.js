@@ -44,7 +44,7 @@ describe('HelpIcon unit tests', () => {
         // check that the fontIcon was rendered
         expect(fontIconComponent.className).toBe('material-icons');
         expect(fontIconComponent.children).toBe('help_outline');
-        expect(fontIconComponent.color).toBe('rgba(0,0,0,1) !important');
+        expect(fontIconComponent.color).toBe('#CCCCCC');
 
 
     });
