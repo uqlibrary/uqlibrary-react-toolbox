@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AutoCompleteSelectWrapper snapshots tests renders autocomplete field 1`] = `
+<div
+  className="flex column"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  >
+    <AutoCompleteSelect
+      dataSource={Array []}
+      dataSourceConfig={
+        Object {
+          "text": "text",
+          "value": "value",
+        }
+      }
+      disabled={false}
+      emptySearchText="Start typing to filter data..."
+      error={false}
+      filterItems={[Function]}
+      label="Owner"
+      labelField="name"
+      maxSearchResults={10}
+      name="owner"
+      noResultsText="No results found with those search details"
+      onBlur={null}
+      onTouchTap={null}
+      value={Object {}}
+    />
+  </div>
+</div>
+`;
