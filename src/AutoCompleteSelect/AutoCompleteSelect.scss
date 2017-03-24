@@ -1,0 +1,38 @@
+.auto-complete-select {
+  width: 100%;
+  height: 72px; // Material-UI convention
+
+  .base-input-container {
+    position: relative;
+    outline: none;
+    height: 48px;
+    cursor: pointer;
+
+    .arrow {
+      color: rgb(224, 224, 224) !important;
+    }
+
+    .value {
+      position: absolute;
+      top: 16px;
+      font-size: 16px;
+    }
+  }
+}
+
+.auto-complete-select-popover {
+  .search-input-container {
+    padding: 0 16px 10px 16px;
+
+    .loading-indicator {
+      position: absolute;
+      right: 20px;
+      top: 36px;
+    }
+  }
+
+  .message-container {
+    padding: 0 16px 10px 16px;
+    color: rgba(0, 0, 0, 0.8);
+  }
+}
