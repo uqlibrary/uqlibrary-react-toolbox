@@ -4,7 +4,7 @@ import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import React from 'react';
 import AutoCompleteSelectWrapper from './AutoCompleteSelect';
-import filterProps from './_filterProps';
+import filterProps from '../helpers/_filterProps';
 
 function setup(props) {
     const consolidatedProps = filterProps(props, AutoCompleteSelectWrapper.propTypes);

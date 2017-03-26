@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {AsyncAutoCompleteSelect} from './AutoCompleteSelect/index';
-import filterProps from './_filterProps';
+import filterProps from '../helpers/_filterProps';
 import {HelpIcon} from '../HelpDrawer';
 
 export default function UQAsyncAutoCompleteSelect(props) {
