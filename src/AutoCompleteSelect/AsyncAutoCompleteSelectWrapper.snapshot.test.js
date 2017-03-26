@@ -1,10 +1,10 @@
-jest.dontMock('./AsyncAutoCompleteSelectWrapper');
+jest.dontMock('./AsyncAutoCompleteSelect');
 
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import React from 'react';
-import AsyncAutoCompleteSelectWrapper from './AsyncAutoCompleteSelectWrapper';
-import filterProps from '../helpers/_filterProps';
+import AsyncAutoCompleteSelectWrapper from './AsyncAutoCompleteSelect';
+import filterProps from './_filterProps';
 
 function setup(props) {
     const consolidatedProps = filterProps(props, AsyncAutoCompleteSelectWrapper.propTypes);
