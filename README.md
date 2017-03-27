@@ -46,9 +46,13 @@ The components folder structure should be structured in a similar fashion to the
         - containers (if applicable)
              - Component.js
    
-The index.js file is the export definition for the component. For any component files you wish to expose outside of the toolbox, you will need to add an export entry with an alias similar to:
+The index.js file is the export definition for the component. For any component file/s you wish to expose outside of the toolbox, you will need to add an export entry with an alias similar to:
 
-    export {default as ComponentName} from './ComponentFolder/ComponentName';
+    export {default as AliasComponentName} from './ComponentFolder/ComponentName';
+
+Finally add an entry into the src/index.js file
+    
+    export {AliasComponentName} from './ComponentFolder';
 
 #### Naming conventions
 
