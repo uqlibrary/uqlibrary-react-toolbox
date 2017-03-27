@@ -1,2 +1,2 @@
-export {default as AutoCompleteSelectWrapper} from './AutoCompleteSelect';
-export {default as AsyncAutoCompleteSelectWrapper} from './AsyncAutoCompleteSelect';
+export {default as AutoCompleteSelect} from './wrappers/AutoCompleteSelect';
+export {default as AsyncAutoCompleteSelect} from './wrappers/AsyncAutoCompleteSelect';

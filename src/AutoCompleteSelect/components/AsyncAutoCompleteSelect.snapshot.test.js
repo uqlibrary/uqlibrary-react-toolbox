@@ -1,21 +1,22 @@
-jest.dontMock('./AutoCompleteSelect');
+jest.dontMock('./AsyncAutoCompleteSelect');
 
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import React from 'react';
-import AutoCompleteSelectWrapper from './AutoCompleteSelect';
-import filterProps from '../helpers/_filterProps';
+import AsyncAutoCompleteSelect from './AsyncAutoCompleteSelect';
+import filterProps from '../../helpers/_filterProps';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 function setup(props) {
-    const consolidatedProps = filterProps(props, AutoCompleteSelectWrapper.propTypes);
+    const consolidatedProps = filterProps(props, AsyncAutoCompleteSelect.propTypes);
     consolidatedProps.onTouchTap = props.input.onBlur;
     consolidatedProps.error = !!consolidatedProps.errorText;
 
-    return shallow(<AutoCompleteSelectWrapper {...props} />);
+    return shallow(<AsyncAutoCompleteSelect {...props} />, {context: { muiTheme: getMuiTheme()}});
 }
 
-describe('AutoCompleteSelectWrapper snapshots tests', () => {
-    it('renders autocomplete field', () => {
+describe('AsyncAutoCompleteSelectWrapper snapshots tests', () => {
+    it('renders asyncautocomplete field', () => {
         const props =
             {
                 name: 'owner',
