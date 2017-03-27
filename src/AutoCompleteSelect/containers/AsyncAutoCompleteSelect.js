@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AsyncAutoCompleteSelect from '../components/AutoCompleteSelect';
+import AsyncAutoCompleteSelect from '../components/AsyncAutoCompleteSelect';
 import filterProps from '../../helpers/_filterProps';
 import {HelpIcon} from '../../HelpDrawer';
 
