@@ -7,6 +7,8 @@
 a set of reusable component for UQ Library applications
 
 - [GA](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/GA)
+- [AutoCompleteSelect](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/AutoCompleteSelect)
+- [HelpDrawer](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/HelpDrawer)
 - [MenuDrawer](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/MenuDrawer)
 - [SASS](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/sass)
 
