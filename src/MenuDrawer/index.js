@@ -1,1 +1,1 @@
-export default from './MenuDrawer';
+export {default as MenuDrawer} from './components/MenuDrawer';

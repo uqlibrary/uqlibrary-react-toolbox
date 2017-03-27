@@ -31,7 +31,24 @@ a set of reusable component for UQ Library applications
 
 ### Guidelines
 
-TBA
+The components folder structure should be structured in a similar fashion to the example below (note the case)
+
+    ComponentFolder
+        - README.md
+        - actions.js (if applicable)
+        - reducer.js (if applicable)
+        - index.js
+        - components
+             - Component.js
+             - Component.scss
+             - Component.snapshot.test.js
+             - Component.test.js (if applicable for unit testing)
+        - containers (if applicable)
+             - Component.js
+   
+The index.js file is the export definition for the component. For any component files you wish to expose outside of the toolbox, you will need to add an export entry with an alias similar to:
+
+    export {default as ComponentName} from './ComponentFolder/ComponentName';
 
 #### Naming conventions
 

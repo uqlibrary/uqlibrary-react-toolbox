@@ -4,7 +4,7 @@ import AutoCompleteSelect from '../components/AsyncAutoCompleteSelect';
 import filterProps from '../../helpers/_filterProps';
 import {HelpIcon} from '../../HelpDrawer';
 
-export default function UQAutoCompleteSelect(props) {
+export default function AutoCompleteSelectWrapper(props) {
     const consolidatedProps = filterProps(props, AutoCompleteSelect.propTypes);
     consolidatedProps.onTouchTap = props.input.onBlur;
     consolidatedProps.error = !!consolidatedProps.errorText;
@@ -26,7 +26,7 @@ export default function UQAutoCompleteSelect(props) {
     );
 }
 
-UQAutoCompleteSelect.propTypes = {
+AutoCompleteSelectWrapper.propTypes = {
     ...AutoCompleteSelect.propTypes,
     helpTitle: React.PropTypes.string,
     helpText: React.PropTypes.any
