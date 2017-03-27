@@ -12,21 +12,15 @@ exports[`AutoCompleteSelectWrapper snapshots tests renders autocomplete field 1`
       }
     }
   >
-    <AutoCompleteSelect
-      dataSource={Array []}
-      dataSourceConfig={
-        Object {
-          "text": "text",
-          "value": "value",
-        }
-      }
+    <AsyncAutoCompleteSelect
+      debounceDuration={300}
       disabled={false}
       emptySearchText="Start typing to filter data..."
       error={false}
       filterItems={[Function]}
       label="Owner"
       labelField="name"
-      maxSearchResults={10}
+      minLength={3}
       name="owner"
       noResultsText="No results found with those search details"
       onBlur={null}

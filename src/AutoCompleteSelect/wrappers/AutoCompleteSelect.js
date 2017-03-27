@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {AutoCompleteSelect} from './AutoCompleteSelect/index';
-import filterProps from '../helpers/_filterProps';
-import {HelpIcon} from '../HelpDrawer';
+import AutoCompleteSelect from '../components/AsyncAutoCompleteSelect';
+import filterProps from '../../helpers/_filterProps';
+import {HelpIcon} from '../../HelpDrawer';
 
 export default function UQAutoCompleteSelect(props) {
     const consolidatedProps = filterProps(props, AutoCompleteSelect.propTypes);
