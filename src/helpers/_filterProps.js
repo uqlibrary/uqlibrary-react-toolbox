@@ -6,6 +6,6 @@ export default function filterProps(props) {
     delete validProps.helpText;
     delete validProps.helpTitle;
 
-    validProps.errorText = (props.forceError || props.meta.touched) ? props.meta.error || props.meta.warn || undefined : undefined;
+    validProps.errorText = (props.forceError || (props.meta && props.meta.touched)) ? props.meta.error || props.meta.warn || undefined : undefined;
     return validProps;
 }
