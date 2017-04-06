@@ -8,6 +8,7 @@ a set of reusable component for UQ Library applications
 
 - [GA](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/GA)
 - [AutoCompleteSelect](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/AutoCompleteSelect)
+- [Authors](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Authors)
 - [HelpDrawer](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/HelpDrawer)
 - [MenuDrawer](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/MenuDrawer)
 - [SASS](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/sass)
@@ -91,3 +92,40 @@ display: flex;
 - include validation rules - can be just imported by any app
 - include normilize.css - to level css of all browsers, remove all styles from all h1-h5
 - flexum - custom layout/basic styles library
+
+## Redux Forms Implementation Tips
+If you need to do redux forms and want to include reusable components which uses a function that requires the form name (eg getFormValues('formName')), do the following:
+
+1. Setup redux forms in your main component as per normal. 
+```
+const formName = 'someFormName';
+    :
+    :
+someForm = reduxForm({
+    form: someFormName
+})(someForm);
+```
+
+2. Pass in the form name to your shared component. Note that `form` is a reserved word in redux-forms v6+ which isn’t clearly documented from what I could see
+
+```
+<Authors form={formName} />
+```
+
+3. Using the author container as an example, do the following to connect `getFormValues` or similar functions that require a form name as an argument
+
+```
+someFormContainer = connect((state, initialProps) => {
+    return {
+        formValues: getFormValues(initialProps.form || 'aDefaultFormName')(state) || Immutable.Map({})
+    };
+});
+```
+
+4. Since it’s considered as a wizard form within the redux-forms language, you don’t need to specify the `form` prop in the reduxForm() call. ie you can do this
+
+```
+let someFormContainer = reduxForm({
+    destroyOnUnmount: false
+})(componentName);
+```
