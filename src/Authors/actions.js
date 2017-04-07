@@ -26,7 +26,6 @@ export function loadAuthors() {
 }
 
 export function removeAuthor(authorIndex) {
-    console.log('ai', authorIndex);
     return dispatch => {
         dispatch({
             type: REMOVE_AUTHOR,
