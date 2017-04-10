@@ -11,10 +11,10 @@ let AuthorsContainer = reduxForm({
 })(Authors);
 
 AuthorsContainer = connect((state, initialProps) => {
-    const listOfAuthorsState = state.get('authors');
+    const listOfAuthorsState = state.get('authors') || Immutable.Map({});
     return {
-        selectedAuthors: listOfAuthorsState.get('selectedAuthors'),
-        listOfAuthors: listOfAuthorsState.get('listOfAuthors'),
+        selectedAuthors: listOfAuthorsState.get('selectedAuthors') || Immutable.Map({}),
+        listOfAuthors: listOfAuthorsState.get('listOfAuthors') || Immutable.Map({}),
         formValues: getFormValues(initialProps.form || 'AuthorForm')(state) || Immutable.Map({})
     };
 }, dispatch => {

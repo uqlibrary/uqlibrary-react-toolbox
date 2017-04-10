@@ -9,14 +9,14 @@ import AuthorRow from './AuthorRow';
 
 import './Authors.scss';
 
-export default class Authors extends Component {
+export class Authors extends Component {
 
     static propTypes = {
         addAuthor: React.PropTypes.func,
         removeAuthor: React.PropTypes.func,
         formValues: React.PropTypes.object,
-        loadAuthors: React.PropTypes.func.isRequired,
-        listOfAuthors: React.PropTypes.object.isRequired,
+        loadAuthors: React.PropTypes.func,
+        listOfAuthors: React.PropTypes.object,
         selectedAuthors: React.PropTypes.object,
         form: React.PropTypes.string.isRequired
     };
@@ -37,22 +37,40 @@ export default class Authors extends Component {
         this.props.removeAuthor(i);
     }
 
-    render() {
-        const { listOfAuthors, formValues, selectedAuthors } = this.props;
+    createAuthorRow = (selectedAuthors) => {
+        if (typeof selectedAuthors === 'undefined') {
+            return '';
+        } else {
+            console.log('createAuthorRow start');
+            return selectedAuthors.valueSeq().map((author, i) => {
+                console.log('createAuthorRow author', author);
+                return (
+                    <AuthorRow key={i} authorID={author.get('id')} name={author.get('name')}
+                               removeAuthor={this.removeAuthor}/>
+                );
+            });
+        }
+    }
 
-        const ListOfAuthors = selectedAuthors.valueSeq().map((author, i) => {
-            return(
-                <AuthorRow key={i} authorID={author.get('id')} name={author.get('name')} removeAuthor={this.removeAuthor} />
-            );
-        });
-
+    createListofAuthors = (listOfAuthors) => {
         const authors = [];
 
-        listOfAuthors.map((author) => {
-            authors.push(
-                {'id': author.get('id'), 'name': author.get('name')}
-            );
-        });
+        if (typeof listOfAuthors !== 'undefined') {
+            listOfAuthors.map((author) => {
+                authors.push(
+                    {'id': author.get('id'), 'name': author.get('name')}
+                );
+            });
+        }
+
+        return authors;
+    }
+
+    render() {
+        const { listOfAuthors, formValues, selectedAuthors } = this.props;
+        const ListOfAuthors = this.createAuthorRow(selectedAuthors);
+
+        const authors = this.createListofAuthors(listOfAuthors);
 
         return (
             <div>
@@ -67,7 +85,7 @@ export default class Authors extends Component {
                                fullWidth />
                     </div>
                     <div className="flex" style={{flex: '0 0 80px', textAlign: 'right'}}>
-                        <RaisedButton label="Add" secondary style={{marginTop: '30px'}} onClick={this.addAuthor} disabled={formValues.size === 0} />
+                        <RaisedButton label="Add" secondary style={{marginTop: '30px'}} onClick={this.addAuthor} disabled={formValues && formValues.size === 0} />
                     </div>
                 </div>
 
