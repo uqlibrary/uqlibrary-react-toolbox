@@ -9,7 +9,7 @@ import AuthorRow from './AuthorRow';
 
 import './Authors.scss';
 
-export class Authors extends Component {
+export default class Authors extends Component {
 
     static propTypes = {
         addAuthor: React.PropTypes.func,
