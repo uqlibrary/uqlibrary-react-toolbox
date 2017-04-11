@@ -7,8 +7,8 @@
 @import 'variables';
 
 // Bulma grid includes
-@import "bulma/sass/utilities/_all";
-@import "bulma/sass/grid/columns";
+@import "../../node_modules/bulma/sass/utilities/_all";
+@import "../../node_modules/bulma/sass/grid/columns";
 
 html, body {
   padding: 0;
