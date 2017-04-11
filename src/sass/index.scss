@@ -39,6 +39,10 @@ h1.page-title {
 
 }
 
+.body-1 {
+  line-height: 18px;
+}
+
 @media (max-width: 720px) {
   h1.page-title {
     font-size: 1.5em;
@@ -67,6 +71,10 @@ a:hover {
 
   .layout-fill {
     padding: 0 5px; // make room for box shadow
+  }
+
+  .body-1 {
+    padding-top: 0px !important;
   }
 
   > *:first-child {
