@@ -12,7 +12,7 @@ const initialState = Immutable.fromJS({
     buttonLabel: 'Got It!'
 });
 
-const helpDrawer = (state = initialState, action) => {
+const helpDrawerReducer = (state = initialState, action) => {
     switch (action.type) {
         case SHOW:
             return Immutable.fromJS({...action.payload, open: true});
@@ -23,4 +23,4 @@ const helpDrawer = (state = initialState, action) => {
     }
 };
 
-export default helpDrawer;
+export default helpDrawerReducer;

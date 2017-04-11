@@ -88,6 +88,7 @@
     "redux-mock-store": "^1.2.2",
     "sass-loader": "^6.0.0",
     "sass-variable-loader": "^0.1.1",
+    "sinon": "^2.1.0",
     "style-loader": "^0.14.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.2",
