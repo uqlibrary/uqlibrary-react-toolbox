@@ -70,14 +70,17 @@ a:hover {
   padding: 100px 24px;
 
   .layout-fill {
-    padding: 0 12px; // make room for box shadow
+    padding: 0 5px; // make room for box shadow
   }
 
   .body-1 {
-    padding-top: 0px !important;
+    padding: 0px 24px !important;
+  }
+  h1.page-title {
+    padding: 24px 24px 0 24px !important;
   }
 
-  > *:first-child {
+    > *:first-child {
     margin: 0;
     width: 100%;
     max-height: 100%;
