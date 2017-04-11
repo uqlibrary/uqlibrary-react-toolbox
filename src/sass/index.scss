@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
 // Imports
-@import 'table';
-@import 'typography';
-@import 'variables';
+@import '../../node_modules/uqlibrary-react-toolbox/src/sass/table';
+@import '../../node_modules/uqlibrary-react-toolbox/src/sass/typography';
+@import '../../node_modules/uqlibrary-react-toolbox/src/sass/variables';
 
 // Bulma layout includes
 @import "../../node_modules/bulma/sass/utilities/_all";
