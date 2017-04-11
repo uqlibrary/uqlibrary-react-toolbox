@@ -1,12 +1,16 @@
 // Vendor
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
-
 // Imports
 @import 'table';
 @import 'typography';
 @import 'variables';
 
-@import 'flexum/index.scss';
+// Old flexbox
+// @import 'flexum/index.scss';
+
+// Bulma grid includes
+@import "../../node_modules/bulma/sass/utilities/all";
+@import "../../node_modules/bulma/sass/grid/columns";
 
 html, body {
   padding: 0;
@@ -14,16 +18,59 @@ html, body {
   position: relative;
   height: 100%;
   background-color: #F7F7F7;
-
   font-family: $font-family;
 }
 
+.layout-fill {
+  margin: 0;
+  max-height: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+div.layout-fill.content {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.layout-padding {
+  padding: 20px;
+}
+
+h1.page-title {
+  margin: 32px auto !important;
+  padding: 0 !important;
+  white-space: normal !important;
+  max-width: 1200px;
+  width: 100%;
+
+}
+
+@media (max-width: 720px) {
+  h1.page-title {
+    font-size: 1.5em;
+  }
+}
+
+// Link styles
+a {
+  color: $accent-color;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: $theme-color;
+  text-decoration: underline;
+}
+
+// The container which houses content
 .content-container {
-  margin: 8px auto;
   width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  padding: 100px 24px;
 
   > *:first-child {
     margin: 0;
@@ -34,14 +81,20 @@ html, body {
   }
 }
 
-.layout-card {
-  width: 1200px;
-  margin: 24px auto;
-  max-width: 95%;
-
-  > div > div {
-    padding: 0 16px !important;
+// Override the 40px padding right of the main drawer menu to allow footer to be full content width
+@media (min-width: 1600px) {
+  .content-container {
+    padding-left: 324px 0 24px 0 !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    margin-right: 0px;
   }
+}
+
+.layout-card {
+  max-width: 1200px;
+  margin: 24px auto;
+  width: 100%;
 
   &:last-child {
     margin-bottom: 100px;
@@ -49,9 +102,10 @@ html, body {
 }
 
 .layout-container {
-  width: 1200px;
+  width: calc(100% - 200px);
   margin: 24px auto;
-  max-width: 95%;
+  max-width: 1200px;
+  margin-right: 24px !important;
 
   &:last-child {
     margin-bottom: 100px;
@@ -84,4 +138,93 @@ html, body {
 .errorLabel {
   color: rgb(244, 67, 54);
   font-size: 12px;
+}
+
+// Some styling over-rides on the app bar.
+.AppBar {
+  position: fixed !important;
+  top: 0px;
+  left: 0px;
+  h1 {
+    height: 75px !important;
+    line-height: 75px !important;
+  }
+
+  .AppBarRightButton {
+    color: #FFF !important;
+    span {
+      color: #FFF !important;
+    }
+    button {
+      color: #FFF !important;
+    }
+    svg {
+      fill: #FFF !important;
+    }
+  }
+  .AppBarRightButton:hover {
+    color: $accent-color !important;
+    span {
+      color: $accent-color !important;
+    }
+    button {
+      color: $accent-color !important;
+    }
+    svg {
+      fill: $accent-color !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .AppBar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+  }
+}
+
+.form-help-icon {
+  margin-top: -20px !important;
+}
+
+//Stepper
+.Stepper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+
+  // Stepper: Targets the div wrapping just the stepper
+  > div:first-child {
+    overflow: hidden;
+  }
+
+  // Targets the step span which contains the icon and text
+  > div > div > span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+}
+
+// Responsive css to hide the text on mobile, and just leave the steps
+@media (max-width: 768px) {
+  .Stepper div span span {
+    padding: 0 4px 0 0 !important;
+    z-index: 10;
+    zoom: 1.5;
+  }
+  .Stepper div div span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: -999px;
+    padding: 0px 0px 0px 0px !important;
+  }
+}
+
+.is-centered {
+  text-align: center;
+  align-content: center;
 }
