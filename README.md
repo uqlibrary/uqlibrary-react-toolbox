@@ -13,6 +13,7 @@ a set of reusable component for UQ Library applications
 - [SASS](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/sass)
 - [Toolbox](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/TextField)
 - [StaticPage](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/StaticPage)
+- [Loaders](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Loaders)
 
 ## Setup
 
