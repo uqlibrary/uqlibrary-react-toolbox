@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 import React from 'react';
 import MenuDrawer from './MenuDrawer';
 
-function setup(logo, logoDesc, drawerOpen, menuItems, docked) {
+function setup(drawerOpen, menuItems, docked, logoImage, logoText) {
 
     const defaultMenuItems = [
         {
@@ -29,6 +29,8 @@ function setup(logo, logoDesc, drawerOpen, menuItems, docked) {
         drawerOpen: drawerOpen,
         docked: docked,
         toggleDrawer: () => { },
+        logoImage,
+        logoText
     };
 
     return shallow(<MenuDrawer {...props} />);
@@ -57,4 +59,23 @@ describe('MenuDrawer snapshots tests', () => {
         const tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });
+    it('renders menu with logo', () => {
+        const menuItems = [
+            {
+                linkTo: '/',
+                primaryText: 'Primary text 0',
+                secondaryText: 'secondary text 0'
+            },
+            {
+                linkTo: '/abc',
+                primaryText: 'Primary text 0',
+                secondaryText: 'secondary text 0'
+            }
+        ];
+        const wrapper = setup(false, menuItems, false, 'http://image/image.svg', 'desc of image');
+        const tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
 });
+
+

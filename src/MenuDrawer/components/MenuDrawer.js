@@ -18,7 +18,7 @@ export default function MenuDrawer ({menuItems, toggleDrawer, drawerOpen, docked
             docked={docked}>
             <div className="layout-fill side-drawer">
                 <div className="logo-wrapper">
-                    (logoImage && <img src={logoImage} alt={logoText} />)
+                    {logoImage && <img src={logoImage} alt={logoText} />}
                 </div>
                 <List className="main-menu">
                     {menuItems.map((menuItem, index) =>

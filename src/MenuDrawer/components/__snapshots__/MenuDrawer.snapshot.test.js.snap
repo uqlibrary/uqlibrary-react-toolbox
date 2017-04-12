@@ -17,11 +17,7 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
   >
     <div
       className="logo-wrapper"
-    >
-      (logoImage && 
-      <img />
-      )
-    </div>
+    />
     <List
       className="main-menu"
     >
@@ -99,11 +95,11 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
 </Drawer>
 `;
 
-exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
+exports[`MenuDrawer snapshots tests renders menu with logo 1`] = `
 <Drawer
   containerClassName="main-drawer flex"
   disableSwipeToOpen={false}
-  docked={true}
+  docked={false}
   onRequestChange={[Function]}
   open={false}
   openSecondary={false}
@@ -117,9 +113,10 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
     <div
       className="logo-wrapper"
     >
-      (logoImage && 
-      <img />
-      )
+      <img
+        alt="desc of image"
+        src="http://image/image.svg"
+      />
     </div>
     <List
       className="main-menu"
@@ -158,16 +155,9 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
       <span
         className="menu-item-container"
       >
-        <Divider
-          inset={false}
-        />
-      </span>
-      <span
-        className="menu-item-container"
-      >
         <Link
           replace={false}
-          to="/xyz"
+          to="/abc"
         >
           <ListItem
             autoGenerateNestedIndicator={true}
@@ -186,9 +176,97 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
             onTouchEnd={[Function]}
             onTouchStart={[Function]}
             open={null}
-            primaryText="Primary text 1"
+            primaryText="Primary text 0"
             primaryTogglesNestedList={false}
-            secondaryText="secondary text 1"
+            secondaryText="secondary text 0"
+            secondaryTextLines={1}
+          />
+        </Link>
+      </span>
+    </List>
+  </div>
+</Drawer>
+`;
+
+exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
+<Drawer
+  containerClassName="main-drawer flex"
+  disableSwipeToOpen={false}
+  docked={false}
+  onRequestChange={[Function]}
+  open={false}
+  openSecondary={false}
+  swipeAreaWidth={30}
+  width={320}
+  zDepth={2}
+>
+  <div
+    className="layout-fill side-drawer"
+  >
+    <div
+      className="logo-wrapper"
+    />
+    <List
+      className="main-menu"
+    >
+      <span
+        className="menu-item-container"
+      >
+        <Link
+          replace={false}
+          to="/"
+        >
+          <ListItem
+            autoGenerateNestedIndicator={true}
+            containerElement="span"
+            disableKeyboardFocus={false}
+            disabled={false}
+            initiallyOpen={false}
+            insetChildren={false}
+            leftIcon={null}
+            nestedItems={Array []}
+            nestedLevel={0}
+            onKeyboardFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onNestedListToggle={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            open={null}
+            primaryText="Primary text 0"
+            primaryTogglesNestedList={false}
+            secondaryText="secondary text 0"
+            secondaryTextLines={1}
+          />
+        </Link>
+      </span>
+      <span
+        className="menu-item-container"
+      >
+        <Link
+          replace={false}
+          to="/abc"
+        >
+          <ListItem
+            autoGenerateNestedIndicator={true}
+            containerElement="span"
+            disableKeyboardFocus={false}
+            disabled={false}
+            initiallyOpen={false}
+            insetChildren={false}
+            leftIcon={null}
+            nestedItems={Array []}
+            nestedLevel={0}
+            onKeyboardFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onNestedListToggle={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            open={null}
+            primaryText="Primary text 0"
+            primaryTogglesNestedList={false}
+            secondaryText="secondary text 0"
             secondaryTextLines={1}
           />
         </Link>
