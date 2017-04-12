@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 
-import { hide} from '../actions';
+import {hide} from '../actions';
 import HelpDrawer from '../components/HelpDrawer';
 
 const HelpDrawerContainer = connect(state => {
