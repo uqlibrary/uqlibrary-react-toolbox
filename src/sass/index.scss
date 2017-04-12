@@ -30,6 +30,34 @@ html, body {
   padding: 20px;
 }
 
+.layout-card {
+  max-width: 1200px;
+  margin: 24px auto;
+  width: 100%;
+  padding: 0px;
+
+  &:last-child {
+    margin-bottom: 100px;
+  }
+}
+
+.layout-container {
+  width: calc(100% - 200px);
+  margin: 24px auto;
+  max-width: 1200px;
+  margin-right: 24px !important;
+
+  &:last-child {
+    margin-bottom: 100px;
+  }
+}
+
+.layout-title {
+  width: 1200px;
+  margin: 24px auto;
+  max-width: 95%;
+}
+
 h1.page-title {
   margin: 0px auto 0 auto !important;
   padding: 0 !important;
@@ -39,8 +67,15 @@ h1.page-title {
 
 }
 
+// Main body text
 .body-1 {
   line-height: 22px;
+}
+
+// Centering helper
+.is-centered {
+  text-align: center;
+  align-content: center;
 }
 
 // Link styles
@@ -100,34 +135,6 @@ a:hover {
   }
 }
 
-.layout-card {
-  max-width: 1200px;
-  margin: 24px auto;
-  width: 100%;
-  padding: 0px;
-
-  &:last-child {
-    margin-bottom: 100px;
-  }
-}
-
-.layout-container {
-  width: calc(100% - 200px);
-  margin: 24px auto;
-  max-width: 1200px;
-  margin-right: 24px !important;
-
-  &:last-child {
-    margin-bottom: 100px;
-  }
-}
-
-.layout-title {
-  width: 1200px;
-  margin: 24px auto;
-  max-width: 95%;
-}
-
 .form-spacing {
   width: 16px;
 }
@@ -150,7 +157,7 @@ a:hover {
   font-size: 12px;
 }
 
-// Some styling over-rides on the app bar.
+// Some styling over-rides on the app bar. - remove and put in the header component when its done
 .AppBar {
   position: fixed !important;
   top: 0px;
@@ -195,7 +202,7 @@ a:hover {
 }
 
 .form-help-icon {
-  margin-top: -20px !important;
+  margin-top: -16px !important;
 }
 
 //Stepper
@@ -232,9 +239,4 @@ a:hover {
     text-indent: -999px;
     padding: 0px 0px 0px 0px !important;
   }
-}
-
-.is-centered {
-  text-align: center;
-  align-content: center;
 }
