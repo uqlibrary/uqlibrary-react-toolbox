@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { findDOMNode } from 'react-dom';
+import {findDOMNode} from 'react-dom';
 import DropDownArrow from 'material-ui/svg-icons/navigation/arrow-drop-down';
 import Popover from 'material-ui/Popover';
 import TextFieldUnderline from 'material-ui/TextField/TextFieldUnderline';

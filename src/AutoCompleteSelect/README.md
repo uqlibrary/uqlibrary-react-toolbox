@@ -3,17 +3,18 @@
 A smart select field component that lists items for UQ Library applications using ReactJs
 
 ## Props
+- `label: React.PropTypes.string.isRequired`
 - `dataSource: React.PropTypes.array`
 - `dataSourceConfig: React.PropTypes.object`
 - `disabled: React.PropTypes.bool`
 - `emptySearchText: React.PropTypes.string`
 - `error: React.PropTypes.bool`
-- `filterItems: React.PropTypes.func`
-- `label: React.PropTypes.string.isRequired`
 - `maxSearchResults: React.PropTypes.number`
 - `noResultsText: React.PropTypes.string`
-- `onChange: React.PropTypes.fun`
 - `value: React.PropTypes.any`
+- `filterItems: React.PropTypes.func`
+- `onChange: React.PropTypes.func`
+
 
 ## Context
 - `muiTheme: React.PropTypes.object.isRequired`
@@ -58,18 +59,17 @@ ReactDOM.render(
 A smart select field component that filters the select field data as you type for UQ Library applications using ReactJs
 
 ## Props
+- `label: React.PropTypes.string.isRequired`
 - `debounceDuration: React.PropTypes.number`
 - `disabled: React.PropTypes.bool`
 - `emptySearchText: React.PropTypes.string`
 - `error: React.PropTypes.bool`
-- `filterItems: React.PropTypes.func`
-- `label: React.PropTypes.string.isRequired`
 - `labelField: React.PropTypes.string`
-- `minLength: React.PropTypes.number`
 - `noResultsText: React.PropTypes.string`
-- `onChange: React.PropTypes.fun`
+- `minLength: React.PropTypes.number`
 - `value: React.PropTypes.object`
-
+- `filterItems: React.PropTypes.func`
+- `onChange: React.PropTypes.func`
 
 ## Context
 - `muiTheme: React.PropTypes.object.isRequired`
