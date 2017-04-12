@@ -18,10 +18,9 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
     <div
       className="logo-wrapper"
     >
-      <img
-        alt="University of Queensland logo"
-        src="https://static.uq.net.au/v1/logos/corporate/uq-logo-white.svg"
-      />
+      (logoImage && 
+      <img />
+      )
     </div>
     <List
       className="main-menu"
@@ -104,7 +103,7 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
 <Drawer
   containerClassName="main-drawer flex"
   disableSwipeToOpen={false}
-  docked={false}
+  docked={true}
   onRequestChange={[Function]}
   open={false}
   openSecondary={false}
@@ -118,10 +117,9 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
     <div
       className="logo-wrapper"
     >
-      <img
-        alt="University of Queensland logo"
-        src="https://static.uq.net.au/v1/logos/corporate/uq-logo-white.svg"
-      />
+      (logoImage && 
+      <img />
+      )
     </div>
     <List
       className="main-menu"
@@ -160,9 +158,16 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
       <span
         className="menu-item-container"
       >
+        <Divider
+          inset={false}
+        />
+      </span>
+      <span
+        className="menu-item-container"
+      >
         <Link
           replace={false}
-          to="/abc"
+          to="/xyz"
         >
           <ListItem
             autoGenerateNestedIndicator={true}
@@ -181,9 +186,9 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
             onTouchEnd={[Function]}
             onTouchStart={[Function]}
             open={null}
-            primaryText="Primary text 0"
+            primaryText="Primary text 1"
             primaryTogglesNestedList={false}
-            secondaryText="secondary text 0"
+            secondaryText="secondary text 1"
             secondaryTextLines={1}
           />
         </Link>

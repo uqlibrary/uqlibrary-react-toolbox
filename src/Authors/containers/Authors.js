@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import {reduxForm, getFormValues} from 'redux-form/immutable';
 import Authors from '../components/Authors';

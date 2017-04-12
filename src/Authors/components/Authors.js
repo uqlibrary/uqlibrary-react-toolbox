@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {PropTypes} from 'prop-types';
+
 import {Field} from 'redux-form/immutable';
 
 import Divider from 'material-ui/Divider';
@@ -12,13 +14,13 @@ import './Authors.scss';
 export default class Authors extends Component {
 
     static propTypes = {
-        addAuthor: React.PropTypes.func,
-        removeAuthor: React.PropTypes.func,
-        formValues: React.PropTypes.object,
-        loadAuthors: React.PropTypes.func,
-        listOfAuthors: React.PropTypes.object,
-        selectedAuthors: React.PropTypes.object,
-        form: React.PropTypes.string.isRequired
+        addAuthor: PropTypes.func,
+        removeAuthor: PropTypes.func,
+        formValues: PropTypes.object,
+        loadAuthors: PropTypes.func,
+        listOfAuthors: PropTypes.object,
+        selectedAuthors: PropTypes.object,
+        form: PropTypes.string.isRequired
     };
 
     constructor(props) {

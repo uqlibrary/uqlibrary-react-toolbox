@@ -1,16 +1,18 @@
 import React from 'react';
+import {PropTypes} from 'prop-types';
+
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 
 const propTypes = {
-    title: React.PropTypes.string,
-    text: React.PropTypes.any.isRequired,
-    buttonLabel: React.PropTypes.string,
-    tooltip: React.PropTypes.string,
-    tooltipIconColor: React.PropTypes.string,
-    onClick: React.PropTypes.func,
-    inline: React.PropTypes.bool,
-    style: React.PropTypes.object
+    title: PropTypes.string,
+    text: PropTypes.any.isRequired,
+    buttonLabel: PropTypes.string,
+    tooltip: PropTypes.string,
+    tooltipIconColor: PropTypes.string,
+    onClick: PropTypes.func,
+    inline: PropTypes.bool,
+    style: PropTypes.object
 };
 
 const defaultProps = {

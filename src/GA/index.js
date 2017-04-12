@@ -1,1 +1,0 @@
-export {gaComponent} from './ga';

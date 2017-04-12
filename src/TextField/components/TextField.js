@@ -1,5 +1,6 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
+import {PropTypes} from 'prop-types';
 
 import propFilter from '../../helpers/_filterProps';
 import {HelpIcon} from '../../HelpDrawer';
@@ -18,8 +19,8 @@ const TextFieldWrapper = props => {
 
 TextFieldWrapper.propTypes = {
     ...TextField.propTypes,
-    helpTitle: React.PropTypes.string,
-    helpText: React.PropTypes.any
+    helpTitle: PropTypes.string,
+    helpText: PropTypes.any
 };
 
 export default TextFieldWrapper;

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {PropTypes} from 'prop-types';
+
 import {findDOMNode} from 'react-dom';
 import DropDownArrow from 'material-ui/svg-icons/navigation/arrow-drop-down';
 import Popover from 'material-ui/Popover';
@@ -14,18 +16,18 @@ import './AutoCompleteSelect.scss';
 
 export default class AutoCompleteSelect extends Component {
     static propTypes = {
-        dataSource: React.PropTypes.array,
-        dataSourceConfig: React.PropTypes.object,
-        disabled: React.PropTypes.bool,
-        emptySearchText: React.PropTypes.string,
-        error: React.PropTypes.bool,
-        label: React.PropTypes.string.isRequired,
-        maxSearchResults: React.PropTypes.number,
-        noResultsText: React.PropTypes.string,
-        popoverFloatingLabelText: React.PropTypes.string,
-        value: React.PropTypes.any,
-        filterItems: React.PropTypes.func,
-        onChange: React.PropTypes.func
+        dataSource: PropTypes.array,
+        dataSourceConfig: PropTypes.object,
+        disabled: PropTypes.bool,
+        emptySearchText: PropTypes.string,
+        error: PropTypes.bool,
+        label: PropTypes.string.isRequired,
+        maxSearchResults: PropTypes.number,
+        noResultsText: PropTypes.string,
+        popoverFloatingLabelText: PropTypes.string,
+        value: PropTypes.any,
+        filterItems: PropTypes.func,
+        onChange: PropTypes.func
     };
 
     static defaultProps = {
@@ -41,7 +43,7 @@ export default class AutoCompleteSelect extends Component {
     };
 
     static contextTypes = {
-        muiTheme: React.PropTypes.object.isRequired
+        muiTheme: PropTypes.object.isRequired
     };
 
     constructor(props) {

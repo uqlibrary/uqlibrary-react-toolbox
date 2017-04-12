@@ -3,10 +3,12 @@
 simple reusable menu for UQ Library applications using ReactJs
 
 ## Props
-- `menuItems: React.PropTypes.array.isRequired` - a list of menu items, see usage
-- `drawerOpen: React.PropTypes.bool`
-- `docked: React.PropTypes.bool`
-- `toggleDrawer: React.PropTypes.func`
+- `menuItems: PropTypes.array.isRequired` - a list of menu items, see usage
+- `drawerOpen: PropTypes.bool`
+- `docked: PropTypes.bool`
+- `toggleDrawer: PropTypes.func`
+- `logoImage: PropTypes.string` - url of an image of a logo
+- `logoText: PropTypes.string` - alt text for a logo image
     
 ## Usage
 
@@ -41,6 +43,8 @@ const App = () => (
   <div>
     <MenuDrawer 
       menuItems={menuItems}
+      logoImage='http://images/image.svg'
+      logoText='logo image'
       drawerOpen={docked ? true : drawerOpen}
       docked={docked}
       toggleDrawer={this.toggleDrawer} />

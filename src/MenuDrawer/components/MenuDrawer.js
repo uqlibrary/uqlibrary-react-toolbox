@@ -1,4 +1,6 @@
 import React from 'react';
+import {PropTypes} from 'prop-types';
+
 import {Link} from 'react-router-dom';
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
@@ -6,15 +8,7 @@ import Drawer from 'material-ui/Drawer';
 
 import './MenuDrawer.scss';
 
-const propTypes = {
-    menuItems: React.PropTypes.array.isRequired,
-    drawerOpen: React.PropTypes.bool,
-    docked: React.PropTypes.bool,
-    toggleDrawer: React.PropTypes.func
-};
-
-const uqLogo = 'https://static.uq.net.au/v1/logos/corporate/uq-logo-white.svg';
-const MenuDrawer = ({menuItems, toggleDrawer, drawerOpen, docked}) => {
+export default function MenuDrawer ({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText}) {
     return (
         <Drawer
             containerClassName="main-drawer flex"
@@ -24,7 +18,7 @@ const MenuDrawer = ({menuItems, toggleDrawer, drawerOpen, docked}) => {
             docked={docked}>
             <div className="layout-fill side-drawer">
                 <div className="logo-wrapper">
-                    <img src={uqLogo} alt="University of Queensland logo"/>
+                    (logoImage && <img src={logoImage} alt={logoText} />)
                 </div>
                 <List className="main-menu">
                     {menuItems.map((menuItem, index) =>
@@ -47,6 +41,12 @@ const MenuDrawer = ({menuItems, toggleDrawer, drawerOpen, docked}) => {
     );
 };
 
-MenuDrawer.propTypes = propTypes;
+MenuDrawer.propTypes = {
+    menuItems: PropTypes.array.isRequired,
+    logoImage: PropTypes.string,
+    logoText: PropTypes.string,
+    drawerOpen: PropTypes.bool,
+    docked: PropTypes.bool,
+    toggleDrawer: PropTypes.func
+};
 
-export default MenuDrawer;

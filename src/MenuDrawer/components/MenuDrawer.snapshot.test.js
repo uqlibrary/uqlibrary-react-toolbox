@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 import React from 'react';
 import MenuDrawer from './MenuDrawer';
 
-function setup(drawerOpen, menuItems, docked) {
+function setup(logo, logoDesc, drawerOpen, menuItems, docked) {
 
     const defaultMenuItems = [
         {

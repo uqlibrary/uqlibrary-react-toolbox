@@ -1,4 +1,5 @@
 import React from 'react';
+import {PropTypes} from 'prop-types';
 import Drawer from 'material-ui/Drawer';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
@@ -6,11 +7,11 @@ import Divider from 'material-ui/Divider';
 import './HelpDrawer.scss';
 
 const propTypes = {
-    open: React.PropTypes.bool.isRequired,
-    title: React.PropTypes.string.isRequired,
-    text: React.PropTypes.any.isRequired,
-    hide: React.PropTypes.func.isRequired,
-    buttonLabel: React.PropTypes.string
+    open: PropTypes.bool.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.any.isRequired,
+    hide: PropTypes.func.isRequired,
+    buttonLabel: PropTypes.string
 };
 
 const defaultProps = {
