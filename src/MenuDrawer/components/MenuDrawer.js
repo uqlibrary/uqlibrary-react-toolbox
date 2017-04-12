@@ -10,11 +10,17 @@ const propTypes = {
     menuItems: React.PropTypes.array.isRequired,
     drawerOpen: React.PropTypes.bool,
     docked: React.PropTypes.bool,
-    toggleDrawer: React.PropTypes.func
+    toggleDrawer: React.PropTypes.func,
+    imgLogo: React.PropTypes.string,
+    imgAltText: React.PropTypes.string
 };
 
-const uqLogo = 'https://static.uq.net.au/v1/logos/corporate/uq-logo-white.svg';
-const MenuDrawer = ({menuItems, toggleDrawer, drawerOpen, docked}) => {
+const defaultProps = {
+    imgAltText: 'University of Queensland logo',
+    imgLogo: 'https://static.uq.net.au/v1/logos/corporate/uq-logo-white.svg'
+}
+
+const MenuDrawer = ({menuItems, toggleDrawer, drawerOpen, docked, imgAltText, imgLogo}) => {
     return (
         <Drawer
             containerClassName="main-drawer flex"
@@ -24,14 +30,14 @@ const MenuDrawer = ({menuItems, toggleDrawer, drawerOpen, docked}) => {
             docked={docked}>
             <div className="layout-fill side-drawer">
                 <div className="logo-wrapper">
-                    <img src={uqLogo} alt="University of Queensland logo"/>
+                    <img src={imgLogo} alt={imgAltText}/>
                 </div>
                 <List className="main-menu">
                     {menuItems.map((menuItem, index) =>
-                    <span className="menu-item-container" key={index}>
+                            <span className="menu-item-container" key={index}>
                         {menuItem.divider ? (
                             <Divider />
-                            ) : (
+                        ) : (
                             <Link to={menuItem.linkTo}>
                                 <ListItem primaryText={menuItem.primaryText}
                                           secondaryText={menuItem.secondaryText}
@@ -48,5 +54,6 @@ const MenuDrawer = ({menuItems, toggleDrawer, drawerOpen, docked}) => {
 };
 
 MenuDrawer.propTypes = propTypes;
+MenuDrawer.defaultProps = defaultProps;
 
 export default MenuDrawer;
