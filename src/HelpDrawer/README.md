@@ -15,6 +15,7 @@ simple content menu for UQ Library applications using ReactJs
 - `text: React.PropTypes.any.isRequired`
 - `title: React.PropTypes.string`
 - `buttonLabel: React.PropTypes.string`
+- `tooltip: React.PropTypes.string`
 - `onClick: React.PropTypes.func`
 - `inline: React.PropTypes.bool`
 - `style: React.PropTypes.object`
@@ -38,6 +39,7 @@ const App = () => (
         title="Contextual help drawer" 
         text={text} 
         buttonLabel="Got it!" 
+        tooltip="Click for further information"
         inline />
     <HelpDrawer />
   </div>

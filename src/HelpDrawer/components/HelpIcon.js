@@ -6,6 +6,7 @@ const propTypes = {
     title: React.PropTypes.string,
     text: React.PropTypes.any.isRequired,
     buttonLabel: React.PropTypes.string,
+    tooltip: React.PropTypes.string,
     onClick: React.PropTypes.func,
     inline: React.PropTypes.bool,
     style: React.PropTypes.object
@@ -16,7 +17,7 @@ const defaultProps = {
     style: {}
 };
 
-const HelpIcon = ({title, text, buttonLabel, onClick, inline, style}) => {
+const HelpIcon = ({title, text, buttonLabel, tooltip, onClick, inline, style}) => {
     const setDrawerContent = () => {
         onClick(title, text, buttonLabel);
     };
@@ -25,7 +26,7 @@ const HelpIcon = ({title, text, buttonLabel, onClick, inline, style}) => {
 
     return (
         <div className={classNames} style={{...style}}>
-            <IconButton tooltip="Click for more information" tooltipPosition="bottom-center" onClick={setDrawerContent}>
+            <IconButton tooltip={tooltip} tooltipPosition="bottom-center" onClick={setDrawerContent}>
                 <FontIcon className="material-icons" color="#CCCCCC">help_outline</FontIcon>
             </IconButton>
         </div>
