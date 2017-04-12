@@ -43,8 +43,8 @@ The components folder structure should be structured in a similar fashion to the
         - components
              - Component.js
              - Component.scss
-             - Component.snapshot.test.js
-             - Component.test.js (if applicable for unit testing)
+             - Component.snapshot.TextField.js
+             - Component.TextField.js (if applicable for unit testing)
         - containers (if applicable)
              - Component.js
    
