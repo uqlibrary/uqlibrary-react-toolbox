@@ -41,6 +41,7 @@ const App = () => (
         text={text} 
         buttonLabel="Got it!" 
         tooltip="Click for further information"
+        tooltipIconColor="#123211"
         inline />
     <HelpDrawer />
   </div>
