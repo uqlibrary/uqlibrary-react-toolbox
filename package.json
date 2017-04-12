@@ -129,7 +129,7 @@
     "build": "babel src -d build",
     "prepublish": "npm run build",
     "dev": "watch 'npm run build' src",
-    "release": "np"
+    "release": "np --any-branch"
   },
   "babel": {
     "presets": [
