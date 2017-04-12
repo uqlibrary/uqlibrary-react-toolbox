@@ -30,6 +30,10 @@ html, body {
   padding: 20px;
 }
 
+.input-padding {
+  width: 16px;
+}
+
 .layout-card {
   max-width: 1200px;
   margin: 24px auto;
@@ -128,7 +132,7 @@ a:hover {
 // Override the 40px padding right of the main drawer menu to allow footer to be full content width
 @media (min-width: 1600px) {
   .content-container {
-    padding-left: 324px 0 24px 0 !important;
+    padding-left: 324px !important;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
     margin-right: 0px;
