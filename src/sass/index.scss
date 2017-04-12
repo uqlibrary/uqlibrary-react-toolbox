@@ -205,7 +205,7 @@ a:hover {
   margin-top: -16px !important;
 }
 
-//Stepper
+//Stepper - remove and add to the stepper component when ready
 .Stepper {
   width: 100%;
   max-width: 1200px;
@@ -225,7 +225,7 @@ a:hover {
 
 }
 
-// Responsive css to hide the text on mobile, and just leave the steps
+// Stepper - responsive css to hide the text on mobile, and just leave the steps
 @media (max-width: 768px) {
   .Stepper div span span {
     padding: 0 4px 0 0 !important;
