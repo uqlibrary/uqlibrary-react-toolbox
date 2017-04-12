@@ -31,6 +31,7 @@ exports[`AutoCompleteSelectWrapper snapshots tests renders autocomplete field 1`
       noResultsText="No results found with those search details"
       onBlur={null}
       onTouchTap={null}
+      popoverFloatingLabelText="Start typing to filter"
       value={Object {}}
     />
   </div>

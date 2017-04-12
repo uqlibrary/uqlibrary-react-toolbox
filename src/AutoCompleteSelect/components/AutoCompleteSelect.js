@@ -22,6 +22,7 @@ export default class AutoCompleteSelect extends Component {
         label: React.PropTypes.string.isRequired,
         maxSearchResults: React.PropTypes.number,
         noResultsText: React.PropTypes.string,
+        popoverFloatingLabelText: React.PropTypes.string,
         value: React.PropTypes.any,
         filterItems: React.PropTypes.func,
         onChange: React.PropTypes.func
@@ -35,6 +36,7 @@ export default class AutoCompleteSelect extends Component {
         maxSearchResults: 10,
         emptySearchText: 'Start typing to filter data...',
         noResultsText: 'No results found with those search details',
+        popoverFloatingLabelText: 'Start typing to filter',
         value: null
     };
 
@@ -165,7 +167,7 @@ export default class AutoCompleteSelect extends Component {
                         <TextField ref={this.setSearchElement}
                                    name="auto-complete-select-filter-field"
                                    fullWidth
-                                   floatingLabelText="Start typing to filter"
+                                   floatingLabelText={this.props.popoverFloatingLabelText}
                                    value={this.state.searchText}
                                    onChange={this.updateSearch} />
                     </div>

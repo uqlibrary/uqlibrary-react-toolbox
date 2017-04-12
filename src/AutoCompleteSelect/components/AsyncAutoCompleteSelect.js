@@ -22,6 +22,7 @@ export default class AsyncAutoCompleteSelect extends Component {
         label: React.PropTypes.string.isRequired,
         labelField: React.PropTypes.string,
         noResultsText: React.PropTypes.string,
+        popoverFloatingLabelText: React.PropTypes.string,
         minLength: React.PropTypes.number,
         value: React.PropTypes.object,
         filterItems: React.PropTypes.func,
@@ -35,6 +36,7 @@ export default class AsyncAutoCompleteSelect extends Component {
         minLength: 3,
         emptySearchText: 'Start typing to filter data...',
         noResultsText: 'No results found with those search details',
+        popoverFloatingLabelText: 'Start typing to filter',
         value: null
     };
 
@@ -175,7 +177,7 @@ export default class AsyncAutoCompleteSelect extends Component {
                         <TextField ref={this.setSearchElement}
                                    name="auto-complete-select-filter-field"
                                    fullWidth
-                                   floatingLabelText="Start typing to filter"
+                                   floatingLabelText={this.props.popoverFloatingLabelText}
                                    value={this.state.searchText}
                                    onChange={this.updateSearch} />
                         {this.state.filterLoading === true && (

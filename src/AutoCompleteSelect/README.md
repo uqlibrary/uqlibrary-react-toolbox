@@ -11,6 +11,7 @@ A smart select field component that lists items for UQ Library applications usin
 - `error: React.PropTypes.bool`
 - `maxSearchResults: React.PropTypes.number`
 - `noResultsText: React.PropTypes.string`
+- `popoverFloatingLabelText: React.PropTypes.string`
 - `value: React.PropTypes.any`
 - `filterItems: React.PropTypes.func`
 - `onChange: React.PropTypes.func`
@@ -43,6 +44,7 @@ const App = () => (
        label="Label"
        dataSource={schools}
        dataSourceConfig={{text: 'name', value: 'id'}}
+       popoverFloatingLabelText="This is a sample label"
        />
   </div>
 );
@@ -66,6 +68,7 @@ A smart select field component that filters the select field data as you type fo
 - `error: React.PropTypes.bool`
 - `labelField: React.PropTypes.string`
 - `noResultsText: React.PropTypes.string`
+- `popoverFloatingLabelText: React.PropTypes.string`
 - `minLength: React.PropTypes.number`
 - `value: React.PropTypes.object`
 - `filterItems: React.PropTypes.func`
@@ -89,6 +92,11 @@ const users = [
         {"username":"test3","name":"Test User 3","mail":"test3@test.com"},
         {"username":"test4","name":"Test User 4","mail":"test4@test.com"}
     ];
+    
+    const autoCompleteOwner = {
+        name: 'A Name',
+        mail: 'Mail Text'
+    };
  
 const App = () => (
   <div>
@@ -98,6 +106,7 @@ const App = () => (
         filterItems={users}
         labelField="name"
         value={autoCompleteOwner}
+        popoverFloatingLabelText="This is a sample label"
         errorText="" />
   </div>
 );
