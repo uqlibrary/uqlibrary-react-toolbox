@@ -1,1 +1,1 @@
-export {default as TextField} from './components/Textfield';
+export {default as TextField} from '../TextField/components/Textfield';
