@@ -43,12 +43,6 @@ h1.page-title {
   line-height: 22px;
 }
 
-@media (max-width: 720px) {
-  h1.page-title {
-    font-size: 1.5em;
-  }
-}
-
 // Link styles
 a {
   color: $accent-color;
@@ -86,6 +80,13 @@ a:hover {
     max-height: 100%;
     height: 100%;
     overflow-y: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .content-container h1.page-title {
+    font-size: 1.5em;
+    padding: 0px 24px 0 0px !important;
   }
 }
 
