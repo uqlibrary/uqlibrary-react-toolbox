@@ -14,7 +14,8 @@ const propTypes = {
 
 const defaultProps = {
     inline: false,
-    style: {}
+    style: {},
+    tooltip: 'Click for more information'
 };
 
 const HelpIcon = ({title, text, buttonLabel, tooltip, onClick, inline, style}) => {
