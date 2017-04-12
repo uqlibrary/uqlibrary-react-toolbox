@@ -16,7 +16,7 @@ simple content menu for UQ Library applications using ReactJs
 - `title: React.PropTypes.string`
 - `buttonLabel: React.PropTypes.string`
 - `tooltip: React.PropTypes.string`
-- `tooltipColor: React.PropTypes.string` - a HEX colour value
+- `tooltipIconColor: React.PropTypes.string` - a HEX colour value
 - `onClick: React.PropTypes.func`
 - `inline: React.PropTypes.bool`
 - `style: React.PropTypes.object`

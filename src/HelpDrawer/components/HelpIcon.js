@@ -7,7 +7,7 @@ const propTypes = {
     text: React.PropTypes.any.isRequired,
     buttonLabel: React.PropTypes.string,
     tooltip: React.PropTypes.string,
-    tooltipColor: React.PropTypes.string,
+    tooltipIconColor: React.PropTypes.string,
     onClick: React.PropTypes.func,
     inline: React.PropTypes.bool,
     style: React.PropTypes.object
@@ -17,10 +17,10 @@ const defaultProps = {
     inline: false,
     style: {},
     tooltip: 'Click for more information',
-    tooltipColor: '#CCCCCC'
+    tooltipIconColor: '#CCCCCC'
 };
 
-const HelpIcon = ({title, text, buttonLabel, tooltip, tooltipColor, onClick, inline, style}) => {
+const HelpIcon = ({title, text, buttonLabel, tooltip, tooltipIconColor, onClick, inline, style}) => {
     const setDrawerContent = () => {
         onClick(title, text, buttonLabel);
     };
@@ -30,7 +30,7 @@ const HelpIcon = ({title, text, buttonLabel, tooltip, tooltipColor, onClick, inl
     return (
         <div className={classNames} style={{...style}}>
             <IconButton tooltip={tooltip} tooltipPosition="bottom-center" onClick={setDrawerContent}>
-                <FontIcon className="material-icons" color={tooltipColor}>help_outline</FontIcon>
+                <FontIcon className="material-icons" color={tooltipIconColor}>help_outline</FontIcon>
             </IconButton>
         </div>
     );
