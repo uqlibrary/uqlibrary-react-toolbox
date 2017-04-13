@@ -9,7 +9,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {AutoCompleteSelect} from '../../AutoCompleteSelect';
 import AuthorRow from './AuthorRow';
 
-import './Authors.scss';
+// import './Authors.scss';
 
 export default class Authors extends Component {
 

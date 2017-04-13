@@ -5,7 +5,7 @@ import Divider from 'material-ui/Divider';
 import SocialPerson from 'material-ui/svg-icons/social/person';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import './Authors.scss';
+// import './Authors.scss';
 
 class AuthorRow extends Component {
 

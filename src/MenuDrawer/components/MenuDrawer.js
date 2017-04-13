@@ -6,9 +6,7 @@ import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Drawer from 'material-ui/Drawer';
 
-import './MenuDrawer.scss';
-
-export default function MenuDrawer ({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText}) {
+export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText}) {
     return (
         <Drawer
             containerClassName="main-drawer flex"
@@ -39,7 +37,7 @@ export default function MenuDrawer ({menuItems, toggleDrawer, drawerOpen, docked
             </div>
         </Drawer>
     );
-};
+}
 
 MenuDrawer.propTypes = {
     menuItems: PropTypes.array.isRequired,

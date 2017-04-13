@@ -26,4 +26,4 @@ AppLoader.propTypes = {
 
 AppLoader.defaultProps = {
     progressColor: '#FFF'
-}
+};

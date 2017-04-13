@@ -12,7 +12,7 @@ import Divider from 'material-ui/Divider';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 
-import './AutoCompleteSelect.scss';
+// import './AutoCompleteSelect.scss';
 
 export default class AutoCompleteSelect extends Component {
     static propTypes = {

@@ -15,4 +15,4 @@ export default function ContentLoader({message}) {
 
 ContentLoader.propTypes = {
     message: PropTypes.string
-};;
+};
