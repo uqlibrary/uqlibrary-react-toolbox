@@ -12,21 +12,17 @@ import './Authors.scss';
 export default class Authors extends Component {
 
     static propTypes = {
+        dataSource: React.PropTypes.object.isRequired,
         addAuthor: React.PropTypes.func,
         removeAuthor: React.PropTypes.func,
         formValues: React.PropTypes.object,
-        loadAuthors: React.PropTypes.func,
         listOfAuthors: React.PropTypes.object,
         selectedAuthors: React.PropTypes.object,
-        form: React.PropTypes.string.isRequired
+        form: React.PropTypes.string.isRequired,
     };
 
     constructor(props) {
         super(props);
-    }
-
-    componentDidMount = () => {
-        this.props.loadAuthors();
     }
 
     addAuthor = () => {
@@ -41,9 +37,7 @@ export default class Authors extends Component {
         if (typeof selectedAuthors === 'undefined') {
             return '';
         } else {
-            console.log('createAuthorRow start');
             return selectedAuthors.valueSeq().map((author, i) => {
-                console.log('createAuthorRow author', author);
                 return (
                     <AuthorRow key={i} authorID={author.get('id')} name={author.get('name')}
                                removeAuthor={this.removeAuthor}/>
@@ -67,10 +61,10 @@ export default class Authors extends Component {
     }
 
     render() {
-        const { listOfAuthors, formValues, selectedAuthors } = this.props;
+        const { dataSource, formValues, selectedAuthors } = this.props;
         const ListOfAuthors = this.createAuthorRow(selectedAuthors);
 
-        const authors = this.createListofAuthors(listOfAuthors);
+        const authorsDataSource = this.createListofAuthors(dataSource);
 
         return (
             <div>
@@ -79,7 +73,7 @@ export default class Authors extends Component {
                         <Field component={AutoCompleteSelect} name="authorName"
                                maxSearchResults={10}
                                label="Author name (as published, in order)"
-                               dataSource={authors}
+                               dataSource={authorsDataSource}
                                dataSourceConfig={{text: 'name', value: 'id'}}
                                openOnFocus
                                fullWidth />

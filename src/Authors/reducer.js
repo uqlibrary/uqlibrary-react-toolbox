@@ -1,6 +1,6 @@
 import Immutable from 'immutable';
 
-import { AUTHORS_LOADED, ADD_AUTHOR, REMOVE_AUTHOR } from './actions';
+import { ADD_AUTHOR, REMOVE_AUTHOR } from './actions';
 
 // Immutable state
 const initialState = Immutable.fromJS({
@@ -10,8 +10,6 @@ const initialState = Immutable.fromJS({
 
 const authorsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case AUTHORS_LOADED:
-            return state.set('listOfAuthors', Immutable.fromJS(action.payload));
         case ADD_AUTHOR:
             const listOfAuthors = state.get('listOfAuthors');
             let updatedAuthorsList = Immutable.Set(state.get('selectedAuthors'));
