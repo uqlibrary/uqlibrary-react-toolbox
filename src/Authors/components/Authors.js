@@ -25,7 +25,7 @@ export default class Authors extends Component {
 
     static defaultProps = {
         authorFieldLabel: 'Author name (as published, in order)',
-        removeAuthorLabel: 'Remove?'
+        removeAuthorLabel: 'Remove'
     }
 
     constructor(props) {
