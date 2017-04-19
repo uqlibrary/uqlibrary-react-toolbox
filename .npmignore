@@ -1,7 +1,5 @@
 __mocks__
-config
-repositories
-src/
-# un-ignore sass
-!src/sass/
+src
+!src/**/*.scss
+coverage
 **/*.test.js
