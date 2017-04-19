@@ -10,9 +10,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = require('prop-types');
-
-var _immutable = require('redux-form/immutable');
+var _reduxForm = require('redux-form');
 
 var _Divider = require('material-ui/Divider');
 
@@ -36,8 +34,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import './Authors.scss';
-
 var Authors = function (_Component) {
     _inherits(Authors, _Component);
 
@@ -46,12 +42,12 @@ var Authors = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (Authors.__proto__ || Object.getPrototypeOf(Authors)).call(this, props));
 
-        _this.componentDidMount = function () {
-            _this.props.loadAuthors();
-        };
-
         _this.addAuthor = function () {
-            _this.props.addAuthor(_this.props.formValues.get('authorName'));
+            var authorId = _this.props.formValues.get('authorName');
+            var matchedAuthor = _this.props.dataSource.find(function findMatchedAuthor(obj) {
+                return obj.get('id') === authorId;
+            });
+            _this.props.addAuthor(matchedAuthor);
         };
 
         _this.removeAuthor = function (i) {
@@ -59,22 +55,24 @@ var Authors = function (_Component) {
         };
 
         _this.createAuthorRow = function (selectedAuthors) {
-            if (typeof selectedAuthors === 'undefined') {
+            if (typeof selectedAuthors === 'undefined' || selectedAuthors.size === 0) {
                 return '';
             } else {
-                console.log('createAuthorRow start');
                 return selectedAuthors.valueSeq().map(function (author, i) {
-                    console.log('createAuthorRow author', author);
-                    return _react2.default.createElement(_AuthorRow2.default, { key: i, authorID: author.get('id'), name: author.get('name'),
+                    return _react2.default.createElement(_AuthorRow2.default, {
+                        key: i,
+                        authorID: author.get('id'),
+                        name: author.get('name'),
+                        removeAuthorLabel: _this.props.removeAuthorLabel,
                         removeAuthor: _this.removeAuthor });
                 });
             }
         };
 
-        _this.createListofAuthors = function (listOfAuthors) {
+        _this.prepDataSource = function (listOfAuthors) {
             var authors = [];
 
-            if (typeof listOfAuthors !== 'undefined') {
+            if (typeof listOfAuthors !== 'undefined' && listOfAuthors.size > 0) {
                 listOfAuthors.map(function (author) {
                     authors.push({ 'id': author.get('id'), 'name': author.get('name') });
                 });
@@ -90,13 +88,13 @@ var Authors = function (_Component) {
         key: 'render',
         value: function render() {
             var _props = this.props,
-                listOfAuthors = _props.listOfAuthors,
+                dataSource = _props.dataSource,
                 formValues = _props.formValues,
                 selectedAuthors = _props.selectedAuthors;
 
-            var ListOfAuthors = this.createAuthorRow(selectedAuthors);
 
-            var authors = this.createListofAuthors(listOfAuthors);
+            var ListOfAuthors = this.createAuthorRow(selectedAuthors);
+            var authorsDataSource = this.prepDataSource(dataSource);
 
             return _react2.default.createElement(
                 'div',
@@ -107,10 +105,10 @@ var Authors = function (_Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'flex inputPadding' },
-                        _react2.default.createElement(_immutable.Field, { component: _AutoCompleteSelect.AutoCompleteSelect, name: 'authorName',
+                        _react2.default.createElement(_reduxForm.Field, { component: _AutoCompleteSelect.AutoCompleteSelect, name: 'authorName',
                             maxSearchResults: 10,
-                            label: 'Author name (as published, in order)',
-                            dataSource: authors,
+                            label: this.props.authorFieldLabel,
+                            dataSource: authorsDataSource,
                             dataSourceConfig: { text: 'name', value: 'id' },
                             openOnFocus: true,
                             fullWidth: true })
@@ -131,12 +129,18 @@ var Authors = function (_Component) {
 }(_react.Component);
 
 Authors.propTypes = {
-    addAuthor: _propTypes.PropTypes.func,
-    removeAuthor: _propTypes.PropTypes.func,
-    formValues: _propTypes.PropTypes.object,
-    loadAuthors: _propTypes.PropTypes.func,
-    listOfAuthors: _propTypes.PropTypes.object,
-    selectedAuthors: _propTypes.PropTypes.object,
-    form: _propTypes.PropTypes.string.isRequired
+    dataSource: _react2.default.PropTypes.object.isRequired,
+    form: _react2.default.PropTypes.string.isRequired,
+    addAuthor: _react2.default.PropTypes.func,
+    removeAuthor: _react2.default.PropTypes.func,
+    formValues: _react2.default.PropTypes.object,
+    listOfAuthors: _react2.default.PropTypes.object,
+    selectedAuthors: _react2.default.PropTypes.object,
+    authorFieldLabel: _react2.default.PropTypes.string,
+    removeAuthorLabel: _react2.default.PropTypes.string
+};
+Authors.defaultProps = {
+    authorFieldLabel: 'Author name (as published, in order)',
+    removeAuthorLabel: 'Remove'
 };
 exports.default = Authors;

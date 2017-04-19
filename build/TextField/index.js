@@ -4,12 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Textfield = require('./components/Textfield');
+var _TextField = require('./components/TextField');
 
 Object.defineProperty(exports, 'TextField', {
   enumerable: true,
   get: function get() {
-    return _interopRequireDefault(_Textfield).default;
+    return _interopRequireDefault(_TextField).default;
   }
 });
 

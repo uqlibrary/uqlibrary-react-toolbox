@@ -28,14 +28,10 @@ AuthorsContainer = (0, _reactRedux.connect)(function (state, initialProps) {
     var listOfAuthorsState = state.get('authors') || _immutable3.default.Map({});
     return {
         selectedAuthors: listOfAuthorsState.get('selectedAuthors') || _immutable3.default.Map({}),
-        listOfAuthors: listOfAuthorsState.get('listOfAuthors') || _immutable3.default.Map({}),
         formValues: (0, _immutable.getFormValues)(initialProps.form || 'AuthorForm')(state) || _immutable3.default.Map({})
     };
 }, function (dispatch) {
     return {
-        loadAuthors: function loadAuthors() {
-            return dispatch((0, _actions.loadAuthors)());
-        },
         removeAuthor: function removeAuthor(author) {
             return dispatch((0, _actions.removeAuthor)(author));
         },

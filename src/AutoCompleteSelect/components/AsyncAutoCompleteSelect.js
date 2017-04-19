@@ -13,8 +13,6 @@ import CircularProgress from 'material-ui/CircularProgress';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 
-// import './AutoCompleteSelect.scss';
-
 export default class AsyncAutoCompleteSelect extends Component {
     static propTypes = {
         debounceDuration: PropTypes.number,

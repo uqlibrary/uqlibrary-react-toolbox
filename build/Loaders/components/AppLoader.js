@@ -15,8 +15,6 @@ var _CircularProgress = require('material-ui/CircularProgress');
 
 var _CircularProgress2 = _interopRequireDefault(_CircularProgress);
 
-require('./AppLoader.scss');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function AppLoader(_ref) {

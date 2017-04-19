@@ -4,4 +4,4 @@ repositories
 src/
 # un-ignore sass
 !src/sass/
-
+**/*.test.js

@@ -10,8 +10,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = require('prop-types');
-
 var _Divider = require('material-ui/Divider');
 
 var _Divider2 = _interopRequireDefault(_Divider);
@@ -31,8 +29,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// import './Authors.scss';
 
 var AuthorRow = function (_Component) {
     _inherits(AuthorRow, _Component);
@@ -72,7 +68,7 @@ var AuthorRow = function (_Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'flex authorRightIcon' },
-                        _react2.default.createElement(_RaisedButton2.default, { label: 'Remove', onClick: this.remove })
+                        _react2.default.createElement(_RaisedButton2.default, { label: this.props.removeAuthorLabel, onClick: this.remove })
                     )
                 )
             );
@@ -83,8 +79,9 @@ var AuthorRow = function (_Component) {
 }(_react.Component);
 
 AuthorRow.propTypes = {
-    name: _propTypes.PropTypes.string.isRequired,
-    authorID: _propTypes.PropTypes.number.isRequired,
-    removeAuthor: _propTypes.PropTypes.func.isRequired
+    name: _react2.default.PropTypes.string.isRequired,
+    authorID: _react2.default.PropTypes.number.isRequired,
+    removeAuthorLabel: _react2.default.PropTypes.string.isRequired,
+    removeAuthor: _react2.default.PropTypes.func.isRequired
 };
 exports.default = AuthorRow;

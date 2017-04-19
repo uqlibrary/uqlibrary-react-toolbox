@@ -26,7 +26,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function AsyncAutoCompleteSelectWrapper(props) {
     var consolidatedProps = (0, _filterProps2.default)(props, _AsyncAutoCompleteSelect2.default.propTypes);
-    consolidatedProps.onTouchTap = props.input.onBlur;
+    consolidatedProps.onTouchTap = props.input ? props.input.onBlur : null;
     consolidatedProps.error = !!consolidatedProps.errorText;
 
     return _react2.default.createElement(

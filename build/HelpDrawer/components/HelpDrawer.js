@@ -24,8 +24,6 @@ var _Divider2 = _interopRequireDefault(_Divider);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import './HelpDrawer.scss';
-
 var propTypes = {
     open: _propTypes.PropTypes.bool.isRequired,
     title: _propTypes.PropTypes.string.isRequired,

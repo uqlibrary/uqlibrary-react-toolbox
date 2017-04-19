@@ -60,8 +60,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import './AutoCompleteSelect.scss';
-
 var AutoCompleteSelect = function (_Component) {
     _inherits(AutoCompleteSelect, _Component);
 
@@ -217,6 +215,11 @@ var AutoCompleteSelect = function (_Component) {
                         _Menu2.default,
                         { onChange: this.selectItem, value: this.props.value },
                         filteredItems.slice(0, this.props.maxSearchResults).map(function (item, index) {
+                            // check for a divider
+                            if (typeof item[_this2.props.dataSourceConfig.value] === 'string' && item[_this2.props.dataSourceConfig.value].toLowerCase() === 'divider') {
+                                return item.divider;
+                            }
+
                             return _react2.default.createElement(_MenuItem2.default, {
                                 key: index,
                                 tabIndex: index,

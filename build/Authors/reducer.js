@@ -14,7 +14,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // Immutable state
 var initialState = _immutable2.default.fromJS({
-    listOfAuthors: {},
     selectedAuthors: {}
 });
 
@@ -23,18 +22,13 @@ var authorsReducer = function authorsReducer() {
     var action = arguments[1];
 
     switch (action.type) {
-        case _actions.AUTHORS_LOADED:
-            return state.set('listOfAuthors', _immutable2.default.fromJS(action.payload));
         case _actions.ADD_AUTHOR:
-            var listOfAuthors = state.get('listOfAuthors');
             var updatedAuthorsList = _immutable2.default.Set(state.get('selectedAuthors'));
+            var foundAuthor = action.payload;
 
-            listOfAuthors.map(function (author) {
-                if (author.includes(action.payload) && !updatedAuthorsList.has(author.get('id'))) {
-                    var newAuthor = [_immutable2.default.Map({ 'id': author.get('id'), 'name': author.get('name') })];
-                    updatedAuthorsList = updatedAuthorsList.union(newAuthor);
-                }
-            });
+            if (!updatedAuthorsList.has(foundAuthor.get('id'))) {
+                updatedAuthorsList = updatedAuthorsList.union([_immutable2.default.Map(foundAuthor)]);
+            }
 
             return state.set('selectedAuthors', _immutable2.default.fromJS(updatedAuthorsList));
         case _actions.REMOVE_AUTHOR:
