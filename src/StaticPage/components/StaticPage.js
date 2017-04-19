@@ -17,9 +17,9 @@ export default function StaticPage({title, text, help}) {
                 )}
             </h1>
             <Card className="layout-card">
-                <CardText className="body-1">
-                    <br />
-                    {text}
+                    <CardText className="body-1">
+                        <br />
+                        {text}
                 </CardText>
             </Card>
         </div>
