@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Field} from 'redux-form';
+import PropTypes from 'prop-types';
 
 import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -12,15 +13,15 @@ import './Authors.scss';
 export default class Authors extends Component {
 
     static propTypes = {
-        dataSource: React.PropTypes.object.isRequired,
-        form: React.PropTypes.string.isRequired,
-        addAuthor: React.PropTypes.func,
-        removeAuthor: React.PropTypes.func,
-        formValues: React.PropTypes.object,
-        listOfAuthors: React.PropTypes.object,
-        selectedAuthors: React.PropTypes.object,
-        authorFieldLabel: React.PropTypes.string,
-        removeAuthorLabel: React.PropTypes.string
+        dataSource: PropTypes.object.isRequired,
+        form: PropTypes.string.isRequired,
+        addAuthor: PropTypes.func,
+        removeAuthor: PropTypes.func,
+        formValues: PropTypes.object,
+        listOfAuthors: PropTypes.object,
+        selectedAuthors: PropTypes.object,
+        authorFieldLabel: PropTypes.string,
+        removeAuthorLabel: PropTypes.string
     };
 
     static defaultProps = {

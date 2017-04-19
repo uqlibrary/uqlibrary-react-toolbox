@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import Divider from 'material-ui/Divider';
 import SocialPerson from 'material-ui/svg-icons/social/person';
@@ -10,10 +11,10 @@ import './Authors.scss';
 class AuthorRow extends Component {
 
     static propTypes = {
-        name: React.PropTypes.string.isRequired,
-        authorID: React.PropTypes.number.isRequired,
-        removeAuthorLabel: React.PropTypes.string.isRequired,
-        removeAuthor: React.PropTypes.func.isRequired
+        name: PropTypes.string.isRequired,
+        authorID: PropTypes.number.isRequired,
+        removeAuthorLabel: PropTypes.string.isRequired,
+        removeAuthor: PropTypes.func.isRequired
     };
 
     constructor(props) {
