@@ -1,10 +1,10 @@
 # uqlibrary-react-toolbox
+a set of reusable components for UQ Library applications
+
 
 [ ![Codeship Status for uqlibrary/uqlibrary-react-toolbox](https://codeship.com/projects/73393d70-ed04-0134-e2b6-0a42fa094665/status?branch=master)](https://codeship.com/projects/208476)
 [![Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox.svg)](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox)
 [![Dev Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox/dev-status.svg)](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox?type=dev)
-
-a set of reusable component for UQ Library applications
 
 - [AutoCompleteSelect](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/AutoCompleteSelect)
 - [Authors](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Authors)
@@ -27,11 +27,6 @@ a set of reusable component for UQ Library applications
 
 ## Development
 
-### Standard libraries to be used
-
-- [axios](https://github.com/mzabriskie/axios) library is used for api calls and mocking of api calls
-- more to come...
-
 ### Guidelines
 
 The components folder structure should be structured in a similar fashion to the example below (note the case)
@@ -44,11 +39,13 @@ The components folder structure should be structured in a similar fashion to the
         - components
              - Component.js
              - Component.scss
-             - Component.snapshot.TextField.js
-             - Component.TextField.js (if applicable for unit testing)
+             - Component.snapshot.test.js
+             - Component.test.js (if applicable for unit testing)
         - containers (if applicable)
              - Component.js
    
+Do not include .scss as a dependency in `src/ComponentFolder/components`. All custom styling is to be included in `src/sass/_components.scss` for processing by the end user. 
+
 The index.js file is the export definition for the component. For any component file/s you wish to expose outside of the toolbox, you will need to add an export entry with an alias similar to:
 
     export {default as AliasComponentName} from './ComponentFolder/ComponentName';
@@ -130,3 +127,10 @@ let someFormContainer = reduxForm({
     destroyOnUnmount: false
 })(componentName);
 ```
+
+## NPM release procedures
+
+To release a new version of the components on npm run:
+`npm run release`
+
+it will create a new version of the package, build all the components and update npm repo
