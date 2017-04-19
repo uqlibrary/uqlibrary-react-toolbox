@@ -13,13 +13,20 @@ export default class Authors extends Component {
 
     static propTypes = {
         dataSource: React.PropTypes.object.isRequired,
+        form: React.PropTypes.string.isRequired,
         addAuthor: React.PropTypes.func,
         removeAuthor: React.PropTypes.func,
         formValues: React.PropTypes.object,
         listOfAuthors: React.PropTypes.object,
         selectedAuthors: React.PropTypes.object,
-        form: React.PropTypes.string.isRequired,
+        authorFieldLabel: React.PropTypes.string,
+        removeAuthorLabel: React.PropTypes.string
     };
+
+    static defaultProps = {
+        authorFieldLabel: 'Author name (as published, in order)',
+        removeAuthorLabel: 'Remove?'
+    }
 
     constructor(props) {
         super(props);
@@ -41,17 +48,21 @@ export default class Authors extends Component {
         } else {
             return selectedAuthors.valueSeq().map((author, i) => {
                 return (
-                    <AuthorRow key={i} authorID={author.get('id')} name={author.get('name')}
-                               removeAuthor={this.removeAuthor}/>
+                    <AuthorRow
+                        key={i}
+                        authorID={author.get('id')}
+                        name={author.get('name')}
+                        removeAuthorLabel={this.props.removeAuthorLabel}
+                        removeAuthor={this.removeAuthor}/>
                 );
             });
         }
     };
 
-    createListofAuthors = (listOfAuthors) => {
+    prepDataSource = (listOfAuthors) => {
         const authors = [];
 
-        if (typeof listOfAuthors !== 'undefined' && listOfAuthors.length > 0) {
+        if (typeof listOfAuthors !== 'undefined' && listOfAuthors.size > 0) {
             listOfAuthors.map((author) => {
                 authors.push(
                     {'id': author.get('id'), 'name': author.get('name')}
@@ -66,7 +77,7 @@ export default class Authors extends Component {
         const { dataSource, formValues, selectedAuthors } = this.props;
 
         const ListOfAuthors = this.createAuthorRow(selectedAuthors);
-        const authorsDataSource = this.createListofAuthors(dataSource);
+        const authorsDataSource = this.prepDataSource(dataSource);
 
         return (
             <div>
@@ -74,7 +85,7 @@ export default class Authors extends Component {
                     <div className="flex inputPadding">
                         <Field component={AutoCompleteSelect} name="authorName"
                                maxSearchResults={10}
-                               label="Author name (as published, in order)"
+                               label={this.props.authorFieldLabel}
                                dataSource={authorsDataSource}
                                dataSourceConfig={{text: 'name', value: 'id'}}
                                openOnFocus

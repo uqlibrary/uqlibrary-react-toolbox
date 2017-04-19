@@ -12,6 +12,7 @@ class AuthorRow extends Component {
     static propTypes = {
         name: React.PropTypes.string.isRequired,
         authorID: React.PropTypes.number.isRequired,
+        removeAuthorLabel: React.PropTypes.string.isRequired,
         removeAuthor: React.PropTypes.func.isRequired
     };
 
@@ -30,7 +31,7 @@ class AuthorRow extends Component {
                 <div className="row">
                     <div className="flex authorLeftIcon"><SocialPerson /></div>
                     <div className="flex-100 authorName">{this.props.name}</div>
-                    <div className="flex authorRightIcon"><RaisedButton label="Remove" onClick={this.remove} /></div>
+                    <div className="flex authorRightIcon"><RaisedButton label={this.props.removeAuthorLabel} onClick={this.remove} /></div>
                 </div>
             </div>
         );
