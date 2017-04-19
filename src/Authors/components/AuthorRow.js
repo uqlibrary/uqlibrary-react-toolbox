@@ -17,6 +17,10 @@ class AuthorRow extends Component {
         removeAuthor: PropTypes.func.isRequired
     };
 
+    static defaultProps = {
+        removeAuthorLabel: 'Remove'
+    }
+
     constructor(props) {
         super(props);
     }
