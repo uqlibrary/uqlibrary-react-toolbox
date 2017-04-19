@@ -1,5 +1,8 @@
+.idea
 __mocks__
+__snapshots__
 src
-!src/**/*.scss
+!**/*.scss
+!*.scss
 coverage
 **/*.test.js
