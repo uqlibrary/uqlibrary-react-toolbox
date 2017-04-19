@@ -6,7 +6,7 @@ import {HelpIcon} from '../../HelpDrawer';
 
 export default function AutoCompleteSelectWrapper(props) {
     const consolidatedProps = filterProps(props, AutoCompleteSelect.propTypes);
-    consolidatedProps.onTouchTap = props.input.onBlur;
+    consolidatedProps.onTouchTap = props.input ? props.input.onBlur : null;
     consolidatedProps.error = !!consolidatedProps.errorText;
 
     return (

@@ -47,7 +47,10 @@ const App = () => (
       logoText='logo image'
       drawerOpen={docked ? true : drawerOpen}
       docked={docked}
-      toggleDrawer={this.toggleDrawer} />
+      toggleDrawer={this.toggleDrawer}
+      imgAltText: 'Image Alt Text',
+      imgLogo: 'https://url/to/image'
+       />
   </div>
 );
 

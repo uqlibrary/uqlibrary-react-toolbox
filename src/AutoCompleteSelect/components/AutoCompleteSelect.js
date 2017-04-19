@@ -178,6 +178,13 @@ export default class AutoCompleteSelect extends Component {
 
                     <Menu onChange={this.selectItem} value={this.props.value}>
                         {filteredItems.slice(0, this.props.maxSearchResults).map((item, index) => {
+                            // check for a divider
+                            if (typeof item[this.props.dataSourceConfig.value] === 'string' && item[this.props.dataSourceConfig.value].toLowerCase() === 'divider') {
+                                return (
+                                    item.divider
+                                );
+                            }
+
                             return (
                                 <MenuItem
                                     key={index}
