@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Divider = require('material-ui/Divider');
 
 var _Divider2 = _interopRequireDefault(_Divider);
@@ -79,9 +83,12 @@ var AuthorRow = function (_Component) {
 }(_react.Component);
 
 AuthorRow.propTypes = {
-    name: _react2.default.PropTypes.string.isRequired,
-    authorID: _react2.default.PropTypes.number.isRequired,
-    removeAuthorLabel: _react2.default.PropTypes.string.isRequired,
-    removeAuthor: _react2.default.PropTypes.func.isRequired
+    name: _propTypes2.default.string.isRequired,
+    authorID: _propTypes2.default.number.isRequired,
+    removeAuthorLabel: _propTypes2.default.string.isRequired,
+    removeAuthor: _propTypes2.default.func.isRequired
+};
+AuthorRow.defaultProps = {
+    removeAuthorLabel: 'Remove'
 };
 exports.default = AuthorRow;

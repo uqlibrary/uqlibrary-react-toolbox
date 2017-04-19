@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {PropTypes} from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {findDOMNode} from 'react-dom';
 import DropDownArrow from 'material-ui/svg-icons/navigation/arrow-drop-down';

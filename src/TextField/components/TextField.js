@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
-import {PropTypes} from 'prop-types';
+import PropTypes from 'prop-types';
+
 
 import propFilter from '../../helpers/_filterProps';
 import {HelpIcon} from '../../HelpDrawer';

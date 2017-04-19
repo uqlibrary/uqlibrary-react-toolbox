@@ -11,6 +11,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _CircularProgress = require('material-ui/CircularProgress');
 
 var _CircularProgress2 = _interopRequireDefault(_CircularProgress);
@@ -41,7 +43,7 @@ function InlineLoader(_ref) {
 }
 
 InlineLoader.propTypes = {
-    message: _propTypes.PropTypes.string
+    message: _propTypes2.default.string
 };
 
 InlineLoader.defaultProps = {

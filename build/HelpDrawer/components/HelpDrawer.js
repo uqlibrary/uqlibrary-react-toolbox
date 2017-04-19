@@ -10,6 +10,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Drawer = require('material-ui/Drawer');
 
 var _Drawer2 = _interopRequireDefault(_Drawer);
@@ -25,11 +27,11 @@ var _Divider2 = _interopRequireDefault(_Divider);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var propTypes = {
-    open: _propTypes.PropTypes.bool.isRequired,
-    title: _propTypes.PropTypes.string.isRequired,
-    text: _propTypes.PropTypes.any.isRequired,
-    hide: _propTypes.PropTypes.func.isRequired,
-    buttonLabel: _propTypes.PropTypes.string
+    open: _propTypes2.default.bool.isRequired,
+    title: _propTypes2.default.string.isRequired,
+    text: _propTypes2.default.any.isRequired,
+    hide: _propTypes2.default.func.isRequired,
+    buttonLabel: _propTypes2.default.string
 };
 
 var defaultProps = {

@@ -11,6 +11,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Card = require('material-ui/Card');
 
 var _InlineLoader = require('./InlineLoader');
@@ -34,5 +36,5 @@ function ContentLoader(_ref) {
 }
 
 ContentLoader.propTypes = {
-    message: _propTypes.PropTypes.string
+    message: _propTypes2.default.string
 };

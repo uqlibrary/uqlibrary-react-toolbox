@@ -11,6 +11,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _CircularProgress = require('material-ui/CircularProgress');
 
 var _CircularProgress2 = _interopRequireDefault(_CircularProgress);
@@ -41,10 +43,10 @@ function AppLoader(_ref) {
 }
 
 AppLoader.propTypes = {
-    title: _propTypes.PropTypes.string.isRequired,
-    logoImage: _propTypes.PropTypes.string,
-    logoText: _propTypes.PropTypes.string,
-    progressColor: _propTypes.PropTypes.string
+    title: _propTypes2.default.string.isRequired,
+    logoImage: _propTypes2.default.string,
+    logoText: _propTypes2.default.string,
+    progressColor: _propTypes2.default.string
 };
 
 AppLoader.defaultProps = {

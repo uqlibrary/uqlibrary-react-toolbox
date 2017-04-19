@@ -14,6 +14,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _arrowDropDown = require('material-ui/svg-icons/navigation/arrow-drop-down');
@@ -262,18 +264,18 @@ var AsyncAutoCompleteSelect = function (_Component) {
 }(_react.Component);
 
 AsyncAutoCompleteSelect.propTypes = {
-    debounceDuration: _propTypes.PropTypes.number,
-    disabled: _propTypes.PropTypes.bool,
-    emptySearchText: _propTypes.PropTypes.string,
-    error: _propTypes.PropTypes.bool,
-    label: _propTypes.PropTypes.string.isRequired,
-    labelField: _propTypes.PropTypes.string,
-    noResultsText: _propTypes.PropTypes.string,
-    popoverFloatingLabelText: _propTypes.PropTypes.string,
-    minLength: _propTypes.PropTypes.number,
-    value: _propTypes.PropTypes.object,
-    filterItems: _propTypes.PropTypes.func,
-    onChange: _propTypes.PropTypes.func
+    debounceDuration: _propTypes2.default.number,
+    disabled: _propTypes2.default.bool,
+    emptySearchText: _propTypes2.default.string,
+    error: _propTypes2.default.bool,
+    label: _propTypes2.default.string.isRequired,
+    labelField: _propTypes2.default.string,
+    noResultsText: _propTypes2.default.string,
+    popoverFloatingLabelText: _propTypes2.default.string,
+    minLength: _propTypes2.default.number,
+    value: _propTypes2.default.object,
+    filterItems: _propTypes2.default.func,
+    onChange: _propTypes2.default.func
 };
 AsyncAutoCompleteSelect.defaultProps = {
     debounceDuration: 300,
@@ -286,6 +288,6 @@ AsyncAutoCompleteSelect.defaultProps = {
     value: null
 };
 AsyncAutoCompleteSelect.contextTypes = {
-    muiTheme: _propTypes.PropTypes.object.isRequired
+    muiTheme: _propTypes2.default.object.isRequired
 };
 exports.default = AsyncAutoCompleteSelect;

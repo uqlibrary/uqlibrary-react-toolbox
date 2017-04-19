@@ -12,6 +12,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reduxForm = require('redux-form');
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Divider = require('material-ui/Divider');
 
 var _Divider2 = _interopRequireDefault(_Divider);
@@ -129,18 +133,17 @@ var Authors = function (_Component) {
 }(_react.Component);
 
 Authors.propTypes = {
-    dataSource: _react2.default.PropTypes.object.isRequired,
-    form: _react2.default.PropTypes.string.isRequired,
-    addAuthor: _react2.default.PropTypes.func,
-    removeAuthor: _react2.default.PropTypes.func,
-    formValues: _react2.default.PropTypes.object,
-    listOfAuthors: _react2.default.PropTypes.object,
-    selectedAuthors: _react2.default.PropTypes.object,
-    authorFieldLabel: _react2.default.PropTypes.string,
-    removeAuthorLabel: _react2.default.PropTypes.string
+    dataSource: _propTypes2.default.object.isRequired,
+    form: _propTypes2.default.string.isRequired,
+    addAuthor: _propTypes2.default.func,
+    removeAuthor: _propTypes2.default.func,
+    formValues: _propTypes2.default.object,
+    listOfAuthors: _propTypes2.default.object,
+    selectedAuthors: _propTypes2.default.object,
+    authorFieldLabel: _propTypes2.default.string,
+    removeAuthorLabel: _propTypes2.default.string
 };
 Authors.defaultProps = {
-    authorFieldLabel: 'Author name (as published, in order)',
-    removeAuthorLabel: 'Remove'
+    authorFieldLabel: 'Author name (as published, in order)'
 };
 exports.default = Authors;

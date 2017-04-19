@@ -26,6 +26,7 @@ exports[`AuthorRow snapshots test renders an Author Row 1`] = `
       <RaisedButton
         disabled={false}
         fullWidth={false}
+        label="Remove"
         labelPosition="after"
         onClick={[Function]}
         primary={false}

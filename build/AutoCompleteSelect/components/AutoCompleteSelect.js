@@ -14,6 +14,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _arrowDropDown = require('material-ui/svg-icons/navigation/arrow-drop-down');
@@ -254,18 +256,18 @@ var AutoCompleteSelect = function (_Component) {
 }(_react.Component);
 
 AutoCompleteSelect.propTypes = {
-    dataSource: _propTypes.PropTypes.array,
-    dataSourceConfig: _propTypes.PropTypes.object,
-    disabled: _propTypes.PropTypes.bool,
-    emptySearchText: _propTypes.PropTypes.string,
-    error: _propTypes.PropTypes.bool,
-    label: _propTypes.PropTypes.string.isRequired,
-    maxSearchResults: _propTypes.PropTypes.number,
-    noResultsText: _propTypes.PropTypes.string,
-    popoverFloatingLabelText: _propTypes.PropTypes.string,
-    value: _propTypes.PropTypes.any,
-    filterItems: _propTypes.PropTypes.func,
-    onChange: _propTypes.PropTypes.func
+    dataSource: _propTypes2.default.array,
+    dataSourceConfig: _propTypes2.default.object,
+    disabled: _propTypes2.default.bool,
+    emptySearchText: _propTypes2.default.string,
+    error: _propTypes2.default.bool,
+    label: _propTypes2.default.string.isRequired,
+    maxSearchResults: _propTypes2.default.number,
+    noResultsText: _propTypes2.default.string,
+    popoverFloatingLabelText: _propTypes2.default.string,
+    value: _propTypes2.default.any,
+    filterItems: _propTypes2.default.func,
+    onChange: _propTypes2.default.func
 };
 AutoCompleteSelect.defaultProps = {
     dataSource: [],
@@ -279,6 +281,6 @@ AutoCompleteSelect.defaultProps = {
     value: null
 };
 AutoCompleteSelect.contextTypes = {
-    muiTheme: _propTypes.PropTypes.object.isRequired
+    muiTheme: _propTypes2.default.object.isRequired
 };
 exports.default = AutoCompleteSelect;

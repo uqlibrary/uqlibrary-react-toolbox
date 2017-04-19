@@ -11,6 +11,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Card = require('material-ui/Card');
 
 var _index = require('../../index');
@@ -49,7 +51,7 @@ function StaticPage(_ref) {
 }
 
 StaticPage.propTypes = {
-    title: _propTypes.PropTypes.string.isRequired,
-    text: _propTypes.PropTypes.string.isRequired,
-    help: _propTypes.PropTypes.object
+    title: _propTypes2.default.string.isRequired,
+    text: _propTypes2.default.string.isRequired,
+    help: _propTypes2.default.object
 };

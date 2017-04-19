@@ -11,6 +11,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactRouterDom = require('react-router-dom');
 
 var _List = require('material-ui/List');
@@ -74,10 +76,10 @@ function MenuDrawer(_ref) {
 }
 
 MenuDrawer.propTypes = {
-    menuItems: _propTypes.PropTypes.array.isRequired,
-    logoImage: _propTypes.PropTypes.string,
-    logoText: _propTypes.PropTypes.string,
-    drawerOpen: _propTypes.PropTypes.bool,
-    docked: _propTypes.PropTypes.bool,
-    toggleDrawer: _propTypes.PropTypes.func
+    menuItems: _propTypes2.default.array.isRequired,
+    logoImage: _propTypes2.default.string,
+    logoText: _propTypes2.default.string,
+    drawerOpen: _propTypes2.default.bool,
+    docked: _propTypes2.default.bool,
+    toggleDrawer: _propTypes2.default.func
 };

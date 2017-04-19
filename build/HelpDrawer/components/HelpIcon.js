@@ -12,6 +12,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _IconButton = require('material-ui/IconButton');
 
 var _IconButton2 = _interopRequireDefault(_IconButton);
@@ -23,14 +25,14 @@ var _FontIcon2 = _interopRequireDefault(_FontIcon);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var propTypes = {
-    title: _propTypes.PropTypes.string,
-    text: _propTypes.PropTypes.any.isRequired,
-    buttonLabel: _propTypes.PropTypes.string,
-    tooltip: _propTypes.PropTypes.string,
-    tooltipIconColor: _propTypes.PropTypes.string,
-    onClick: _propTypes.PropTypes.func,
-    inline: _propTypes.PropTypes.bool,
-    style: _propTypes.PropTypes.object
+    title: _propTypes2.default.string,
+    text: _propTypes2.default.any.isRequired,
+    buttonLabel: _propTypes2.default.string,
+    tooltip: _propTypes2.default.string,
+    tooltipIconColor: _propTypes2.default.string,
+    onClick: _propTypes2.default.func,
+    inline: _propTypes2.default.bool,
+    style: _propTypes2.default.object
 };
 
 var defaultProps = {

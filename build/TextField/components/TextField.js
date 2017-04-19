@@ -16,6 +16,8 @@ var _TextField2 = _interopRequireDefault(_TextField);
 
 var _propTypes = require('prop-types');
 
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _filterProps = require('../../helpers/_filterProps');
 
 var _filterProps2 = _interopRequireDefault(_filterProps);
@@ -35,8 +37,8 @@ var TextFieldWrapper = function TextFieldWrapper(props) {
 };
 
 TextFieldWrapper.propTypes = _extends({}, _TextField2.default.propTypes, {
-    helpTitle: _propTypes.PropTypes.string,
-    helpText: _propTypes.PropTypes.any
+    helpTitle: _propTypes2.default.string,
+    helpText: _propTypes2.default.any
 });
 
 exports.default = TextFieldWrapper;
