@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppLoader snapshots tests renders loader with image 1`] = `
+<div
+  className="app-loader column layout-fill align-center justify-center"
+>
+  <h1
+    className="display-2"
+  >
+    Fez frontend
+  </h1>
+  <br />
+  <br />
+  <CircularProgress
+    color="#CCC"
+    max={100}
+    min={0}
+    mode="indeterminate"
+    size={80}
+    thickness={8}
+    value={0}
+  />
+  <br />
+  <br />
+  <img
+    alt="Fez logo"
+    src="http://image/image.svg"
+  />
+</div>
+`;
+
+exports[`AppLoader snapshots tests renders loader without image 1`] = `
+<div
+  className="app-loader column layout-fill align-center justify-center"
+>
+  <h1
+    className="display-2"
+  >
+    Fez frontend
+  </h1>
+  <br />
+  <br />
+  <CircularProgress
+    color="#FFF"
+    max={100}
+    min={0}
+    mode="indeterminate"
+    size={80}
+    thickness={8}
+    value={0}
+  />
+  <br />
+  <br />
+</div>
+`;

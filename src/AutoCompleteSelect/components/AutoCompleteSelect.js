@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import { findDOMNode } from 'react-dom';
+import PropTypes from 'prop-types';
+
+import {findDOMNode} from 'react-dom';
 import DropDownArrow from 'material-ui/svg-icons/navigation/arrow-drop-down';
 import Popover from 'material-ui/Popover';
 import TextFieldUnderline from 'material-ui/TextField/TextFieldUnderline';
@@ -10,21 +12,20 @@ import Divider from 'material-ui/Divider';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 
-import './AutoCompleteSelect.scss';
-
 export default class AutoCompleteSelect extends Component {
     static propTypes = {
-        dataSource: React.PropTypes.array,
-        dataSourceConfig: React.PropTypes.object,
-        disabled: React.PropTypes.bool,
-        emptySearchText: React.PropTypes.string,
-        error: React.PropTypes.bool,
-        label: React.PropTypes.string.isRequired,
-        maxSearchResults: React.PropTypes.number,
-        noResultsText: React.PropTypes.string,
-        value: React.PropTypes.any,
-        filterItems: React.PropTypes.func,
-        onChange: React.PropTypes.func
+        dataSource: PropTypes.array,
+        dataSourceConfig: PropTypes.object,
+        disabled: PropTypes.bool,
+        emptySearchText: PropTypes.string,
+        error: PropTypes.bool,
+        label: PropTypes.string.isRequired,
+        maxSearchResults: PropTypes.number,
+        noResultsText: PropTypes.string,
+        popoverFloatingLabelText: PropTypes.string,
+        value: PropTypes.any,
+        filterItems: PropTypes.func,
+        onChange: PropTypes.func
     };
 
     static defaultProps = {
@@ -35,11 +36,12 @@ export default class AutoCompleteSelect extends Component {
         maxSearchResults: 10,
         emptySearchText: 'Start typing to filter data...',
         noResultsText: 'No results found with those search details',
+        popoverFloatingLabelText: 'Start typing to filter',
         value: null
     };
 
     static contextTypes = {
-        muiTheme: React.PropTypes.object.isRequired
+        muiTheme: PropTypes.object.isRequired
     };
 
     constructor(props) {
@@ -165,7 +167,7 @@ export default class AutoCompleteSelect extends Component {
                         <TextField ref={this.setSearchElement}
                                    name="auto-complete-select-filter-field"
                                    fullWidth
-                                   floatingLabelText="Start typing to filter"
+                                   floatingLabelText={this.props.popoverFloatingLabelText}
                                    value={this.state.searchText}
                                    onChange={this.updateSearch} />
                     </div>
@@ -174,6 +176,13 @@ export default class AutoCompleteSelect extends Component {
 
                     <Menu onChange={this.selectItem} value={this.props.value}>
                         {filteredItems.slice(0, this.props.maxSearchResults).map((item, index) => {
+                            // check for a divider
+                            if (typeof item[this.props.dataSourceConfig.value] === 'string' && item[this.props.dataSourceConfig.value].toLowerCase() === 'divider') {
+                                return (
+                                    item.divider
+                                );
+                            }
+
                             return (
                                 <MenuItem
                                     key={index}

@@ -1,0 +1,7 @@
+__mocks__
+config
+repositories
+src/
+# un-ignore sass
+!src/sass/
+**/*.test.js
