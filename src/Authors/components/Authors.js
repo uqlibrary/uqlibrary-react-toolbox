@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Field} from 'redux-form/immutable';
+import {Field} from 'redux-form';
 
 import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -26,15 +26,17 @@ export default class Authors extends Component {
     }
 
     addAuthor = () => {
-        this.props.addAuthor(this.props.formValues.get('authorName'));
-    }
+        const authorId = this.props.formValues.get('authorName');
+        const matchedAuthor = this.props.dataSource.find(function findMatchedAuthor(obj) {return obj.get('id') === authorId;});
+        this.props.addAuthor(matchedAuthor);
+    };
 
     removeAuthor = (i) => {
         this.props.removeAuthor(i);
-    }
+    };
 
     createAuthorRow = (selectedAuthors) => {
-        if (typeof selectedAuthors === 'undefined') {
+        if (typeof selectedAuthors === 'undefined' || selectedAuthors.size === 0) {
             return '';
         } else {
             return selectedAuthors.valueSeq().map((author, i) => {
@@ -44,12 +46,12 @@ export default class Authors extends Component {
                 );
             });
         }
-    }
+    };
 
     createListofAuthors = (listOfAuthors) => {
         const authors = [];
 
-        if (typeof listOfAuthors !== 'undefined') {
+        if (typeof listOfAuthors !== 'undefined' && listOfAuthors.length > 0) {
             listOfAuthors.map((author) => {
                 authors.push(
                     {'id': author.get('id'), 'name': author.get('name')}
@@ -58,12 +60,12 @@ export default class Authors extends Component {
         }
 
         return authors;
-    }
+    };
 
     render() {
         const { dataSource, formValues, selectedAuthors } = this.props;
-        const ListOfAuthors = this.createAuthorRow(selectedAuthors);
 
+        const ListOfAuthors = this.createAuthorRow(selectedAuthors);
         const authorsDataSource = this.createListofAuthors(dataSource);
 
         return (
@@ -84,10 +86,11 @@ export default class Authors extends Component {
                 </div>
 
                 {ListOfAuthors}
-                {ListOfAuthors.length > 0 &&
+                {ListOfAuthors.length > 0 && (
                     <Divider style={{margin: '10px 0 0 0'}}/>
-                }
+                )}
             </div>
         );
     }
 }
+

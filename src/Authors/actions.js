@@ -1,7 +1,4 @@
-
 // Types
-export const AUTHORS_LOADING = 'AUTHORS_LOADING';
-export const AUTHORS_LOADED = 'AUTHORS_LOADED';
 export const REMOVE_AUTHOR = 'REMOVE_AUTHOR';
 export const ADD_AUTHOR = 'ADD_AUTHOR';
 

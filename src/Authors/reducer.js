@@ -4,22 +4,18 @@ import { ADD_AUTHOR, REMOVE_AUTHOR } from './actions';
 
 // Immutable state
 const initialState = Immutable.fromJS({
-    listOfAuthors: {},
     selectedAuthors: {}
 });
 
 const authorsReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_AUTHOR:
-            const listOfAuthors = state.get('listOfAuthors');
             let updatedAuthorsList = Immutable.Set(state.get('selectedAuthors'));
+            const foundAuthor = action.payload;
 
-            listOfAuthors.map(author => {
-                if (author.includes(action.payload) && !updatedAuthorsList.has(author.get('id'))) {
-                    const newAuthor = [Immutable.Map({'id': author.get('id'), 'name': author.get('name')})];
-                    updatedAuthorsList = updatedAuthorsList.union(newAuthor);
-                }
-            });
+            if (!updatedAuthorsList.has(foundAuthor.get('id'))) {
+                updatedAuthorsList = updatedAuthorsList.union([Immutable.Map(foundAuthor)]);
+            }
 
             return state.set('selectedAuthors', Immutable.fromJS(updatedAuthorsList));
         case REMOVE_AUTHOR:
