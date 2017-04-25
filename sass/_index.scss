@@ -2,13 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
 // Imports
-@import '../../../../node_modules/uqlibrary-react-toolbox/src/sass/table';
-@import '../../../../node_modules/uqlibrary-react-toolbox/src/sass/typography';
-@import '../../../../node_modules/uqlibrary-react-toolbox/src/sass/variables';
+@import 'table';
+@import 'typography';
+@import 'variables';
+@import 'components';
 
 // Bulma layout includes
-@import "../../../../node_modules/bulma/sass/utilities/_all";
-@import "../../../../node_modules/bulma/sass/grid/columns";
+@import "~bulma/sass/utilities/_all";
+@import "~bulma/sass/grid/columns";
 
 html, body {
   padding: 0;

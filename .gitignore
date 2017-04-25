@@ -1,8 +1,4 @@
 .idea
-.tmp
-node_modules
-dist
-npm-debug.log
-e2eTestLog
-coverage
-.nyc_output
+/node_modules/
+/npm-debug.log
+/coverage/

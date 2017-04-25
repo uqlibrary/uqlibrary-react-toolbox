@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   margin: 5px 0;
-  color: $uq-primary-color;
+  color: $theme-color;
 }
 
 h2, h3, h4, h5, h6 {
@@ -33,10 +33,6 @@ h1.page-title {
   width: 100%;
 }
 
-td {
-  font-size: 16px !important;
-}
-
 .color-primary {
-  color: $uq-primary-color;
+  color: $theme-color;
 }

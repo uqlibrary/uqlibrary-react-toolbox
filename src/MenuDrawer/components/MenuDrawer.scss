@@ -1,4 +1,4 @@
-@import '../../sass/index';
+@import '../../../sass/variables';
 
 .main-drawer {
   position: absolute;
@@ -7,7 +7,7 @@
       height: 75px;
       padding: 10px;
       text-align: center;
-      background-color: $uq-primary-color;
+      background-color: $theme-color;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;

@@ -1,8 +1,8 @@
-@import '../../sass/variables';
-@import '../../sass/typography';
+@import '../../../sass/variables';
+@import '../../../sass/typography';
 
 .app-loader {
-  background-color: $uq-primary-color;
+  background-color: $theme-color;
 
   > h1 {
     color: #FFF;
