@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import { findDOMNode } from 'react-dom';
+import PropTypes from 'prop-types';
+
+import {findDOMNode} from 'react-dom';
 import DropDownArrow from 'material-ui/svg-icons/navigation/arrow-drop-down';
 import Popover from 'material-ui/Popover';
 import TextFieldUnderline from 'material-ui/TextField/TextFieldUnderline';
@@ -11,21 +13,20 @@ import CircularProgress from 'material-ui/CircularProgress';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 
-import './AutoCompleteSelect.scss';
-
 export default class AsyncAutoCompleteSelect extends Component {
     static propTypes = {
-        debounceDuration: React.PropTypes.number,
-        disabled: React.PropTypes.bool,
-        emptySearchText: React.PropTypes.string,
-        error: React.PropTypes.bool,
-        label: React.PropTypes.string.isRequired,
-        labelField: React.PropTypes.string,
-        noResultsText: React.PropTypes.string,
-        minLength: React.PropTypes.number,
-        value: React.PropTypes.object,
-        filterItems: React.PropTypes.func,
-        onChange: React.PropTypes.func
+        debounceDuration: PropTypes.number,
+        disabled: PropTypes.bool,
+        emptySearchText: PropTypes.string,
+        error: PropTypes.bool,
+        label: PropTypes.string.isRequired,
+        labelField: PropTypes.string,
+        noResultsText: PropTypes.string,
+        popoverFloatingLabelText: PropTypes.string,
+        minLength: PropTypes.number,
+        value: PropTypes.object,
+        filterItems: PropTypes.func,
+        onChange: PropTypes.func
     };
 
     static defaultProps = {
@@ -35,11 +36,12 @@ export default class AsyncAutoCompleteSelect extends Component {
         minLength: 3,
         emptySearchText: 'Start typing to filter data...',
         noResultsText: 'No results found with those search details',
+        popoverFloatingLabelText: 'Start typing to filter',
         value: null
     };
 
     static contextTypes = {
-        muiTheme: React.PropTypes.object.isRequired
+        muiTheme: PropTypes.object.isRequired
     };
 
     constructor(props) {
@@ -175,7 +177,7 @@ export default class AsyncAutoCompleteSelect extends Component {
                         <TextField ref={this.setSearchElement}
                                    name="auto-complete-select-filter-field"
                                    fullWidth
-                                   floatingLabelText="Start typing to filter"
+                                   floatingLabelText={this.props.popoverFloatingLabelText}
                                    value={this.state.searchText}
                                    onChange={this.updateSearch} />
                         {this.state.filterLoading === true && (

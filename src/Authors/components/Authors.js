@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Field} from 'redux-form/immutable';
+import {Field} from 'redux-form';
+import PropTypes from 'prop-types';
 
 import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -7,52 +8,74 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {AutoCompleteSelect} from '../../AutoCompleteSelect';
 import AuthorRow from './AuthorRow';
 
-import './Authors.scss';
-
 export default class Authors extends Component {
 
     static propTypes = {
-        addAuthor: React.PropTypes.func,
-        removeAuthor: React.PropTypes.func,
-        formValues: React.PropTypes.object,
-        loadAuthors: React.PropTypes.func.isRequired,
-        listOfAuthors: React.PropTypes.object.isRequired,
-        selectedAuthors: React.PropTypes.object,
-        form: React.PropTypes.string.isRequired
+        dataSource: PropTypes.object.isRequired,
+        form: PropTypes.string.isRequired,
+        addAuthor: PropTypes.func,
+        removeAuthor: PropTypes.func,
+        formValues: PropTypes.object,
+        listOfAuthors: PropTypes.object,
+        selectedAuthors: PropTypes.object,
+        authorFieldLabel: PropTypes.string,
+        removeAuthorLabel: PropTypes.string
     };
+
+    static defaultProps = {
+        authorFieldLabel: 'Author name (as published, in order)'
+    }
 
     constructor(props) {
         super(props);
     }
 
-    componentDidMount = () => {
-        this.props.loadAuthors();
-    }
-
     addAuthor = () => {
-        this.props.addAuthor(this.props.formValues.get('authorName'));
-    }
+        const authorId = this.props.formValues.get('authorName');
+        const matchedAuthor = this.props.dataSource.find(function findMatchedAuthor(obj) {return obj.get('id') === authorId;});
+        this.props.addAuthor(matchedAuthor);
+    };
 
     removeAuthor = (i) => {
         this.props.removeAuthor(i);
-    }
+    };
 
-    render() {
-        const { listOfAuthors, formValues, selectedAuthors } = this.props;
+    createAuthorRow = (selectedAuthors) => {
+        if (typeof selectedAuthors === 'undefined' || selectedAuthors.size === 0) {
+            return '';
+        } else {
+            return selectedAuthors.valueSeq().map((author, i) => {
+                return (
+                    <AuthorRow
+                        key={i}
+                        authorID={author.get('id')}
+                        name={author.get('name')}
+                        removeAuthorLabel={this.props.removeAuthorLabel}
+                        removeAuthor={this.removeAuthor}/>
+                );
+            });
+        }
+    };
 
-        const ListOfAuthors = selectedAuthors.valueSeq().map((author, i) => {
-            return(
-                <AuthorRow key={i} authorID={author.get('id')} name={author.get('name')} removeAuthor={this.removeAuthor} />
-            );
-        });
-
+    prepDataSource = (listOfAuthors) => {
         const authors = [];
 
-        listOfAuthors.map((author) => {
-            authors.push(
-                {'id': author.get('id'), 'name': author.get('name')}
-            );
-        });
+        if (typeof listOfAuthors !== 'undefined' && listOfAuthors.size > 0) {
+            listOfAuthors.map((author) => {
+                authors.push(
+                    {'id': author.get('id'), 'name': author.get('name')}
+                );
+            });
+        }
+
+        return authors;
+    };
+
+    render() {
+        const { dataSource, formValues, selectedAuthors } = this.props;
+
+        const ListOfAuthors = this.createAuthorRow(selectedAuthors);
+        const authorsDataSource = this.prepDataSource(dataSource);
 
         return (
             <div>
@@ -60,22 +83,23 @@ export default class Authors extends Component {
                     <div className="flex inputPadding">
                         <Field component={AutoCompleteSelect} name="authorName"
                                maxSearchResults={10}
-                               label="Author name (as published, in order)"
-                               dataSource={authors}
+                               label={this.props.authorFieldLabel}
+                               dataSource={authorsDataSource}
                                dataSourceConfig={{text: 'name', value: 'id'}}
                                openOnFocus
                                fullWidth />
                     </div>
                     <div className="flex" style={{flex: '0 0 80px', textAlign: 'right'}}>
-                        <RaisedButton label="Add" secondary style={{marginTop: '30px'}} onClick={this.addAuthor} disabled={formValues.size === 0} />
+                        <RaisedButton label="Add" secondary style={{marginTop: '30px'}} onClick={this.addAuthor} disabled={formValues && formValues.size === 0} />
                     </div>
                 </div>
 
                 {ListOfAuthors}
-                {ListOfAuthors.length > 0 &&
+                {ListOfAuthors.length > 0 && (
                     <Divider style={{margin: '10px 0 0 0'}}/>
-                }
+                )}
             </div>
         );
     }
 }
+

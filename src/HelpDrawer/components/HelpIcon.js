@@ -1,22 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 
 const propTypes = {
-    title: React.PropTypes.string,
-    text: React.PropTypes.any.isRequired,
-    buttonLabel: React.PropTypes.string,
-    onClick: React.PropTypes.func,
-    inline: React.PropTypes.bool,
-    style: React.PropTypes.object
+    title: PropTypes.string,
+    text: PropTypes.any.isRequired,
+    buttonLabel: PropTypes.string,
+    tooltip: PropTypes.string,
+    tooltipIconColor: PropTypes.string,
+    onClick: PropTypes.func,
+    inline: PropTypes.bool,
+    style: PropTypes.object
 };
 
 const defaultProps = {
     inline: false,
-    style: {}
+    style: {},
+    tooltip: 'Click for more information',
+    tooltipIconColor: '#CCCCCC'
 };
 
-const HelpIcon = ({title, text, buttonLabel, onClick, inline, style}) => {
+const HelpIcon = ({title, text, buttonLabel, tooltip, tooltipIconColor, onClick, inline, style}) => {
     const setDrawerContent = () => {
         onClick(title, text, buttonLabel);
     };
@@ -25,8 +31,8 @@ const HelpIcon = ({title, text, buttonLabel, onClick, inline, style}) => {
 
     return (
         <div className={classNames} style={{...style}}>
-            <IconButton tooltip="Click for more information" tooltipPosition="bottom-center" onClick={setDrawerContent}>
-                <FontIcon className="material-icons" color="#CCCCCC">help_outline</FontIcon>
+            <IconButton tooltip={tooltip} tooltipPosition="bottom-center" onClick={setDrawerContent}>
+                <FontIcon className="material-icons" color={tooltipIconColor}>help_outline</FontIcon>
             </IconButton>
         </div>
     );

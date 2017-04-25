@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StaticPage snapshots tests renders StaticPage with title and text 1`] = `
+<div
+  className="layout-fill"
+>
+  <h1
+    className="page-title display-1"
+  >
+    about
+  </h1>
+  <Card
+    className="layout-card"
+    expandable={false}
+    expanded={null}
+    initiallyExpanded={false}
+  >
+    <CardText
+      className="body-1"
+    >
+      <br />
+      this is about page
+    </CardText>
+  </Card>
+</div>
+`;
+
+exports[`StaticPage snapshots tests renders StaticPage with title, text and help button 1`] = `
+<div
+  className="layout-fill"
+>
+  <h1
+    className="page-title display-1"
+  >
+    about
+    <Connect(HelpIcon)
+      inline={true}
+      text="help text"
+      title="help"
+    />
+  </h1>
+  <Card
+    className="layout-card"
+    expandable={false}
+    expanded={null}
+    initiallyExpanded={false}
+  >
+    <CardText
+      className="body-1"
+    >
+      <br />
+      this is about page
+    </CardText>
+  </Card>
+</div>
+`;

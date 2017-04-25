@@ -4,7 +4,7 @@ import {shallow} from 'enzyme';
 import React from 'react';
 import MenuDrawer from './MenuDrawer';
 
-function setup(drawerOpen, menuItems, docked) {
+function setup(logo, logoAlt, drawerOpen, menuItems, docked) {
 
     const defaultMenuItems = [
         {
@@ -24,6 +24,8 @@ function setup(drawerOpen, menuItems, docked) {
 
 
     const props = {
+        logo,
+        logoAlt,
         menuItems: menuItems ? menuItems : defaultMenuItems,
         drawerOpen: drawerOpen,
         docked: docked,

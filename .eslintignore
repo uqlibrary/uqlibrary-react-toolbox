@@ -1,0 +1,8 @@
+dist
+node_modules
+coverage
+webpack.*.js
+*server.js
+conf
+gulp_tasks
+*.test.js

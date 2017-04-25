@@ -6,16 +6,4 @@
       "stage-0",
       "react"
     ]
-  ,
-  "plugins": [
-    "react-hot-loader/babel"
-  ],
-  "env": {
-    "production": {
-    },
-    "test": {
-      "plugins": ["transform-es2015-modules-commonjs"]
-    }
-  }
-
 }
