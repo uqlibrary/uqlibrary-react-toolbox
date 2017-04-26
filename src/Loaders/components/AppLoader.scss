@@ -4,13 +4,12 @@
 .app-loader {
   background-color: $theme-color;
   text-align: center !important;
-  padding-top: calc(50% + 200px);
+  padding-top: calc(50% - 150px);
 
   .app-loader-content {
     position: absolute;
     height: 300px;
     border: 1px solid red;
-    top: calc(50% - 150px);
     margin-left: auto;
     margin-right: auto;
   }
