@@ -4,8 +4,8 @@ import CircularProgress from 'material-ui/CircularProgress';
 
 export default function AppLoader({title, logoImage, logoText, progressColor}) {
     return (
-        <div className="app-loader" >
-            <div className="app-loader-content">
+        <div className="app-loader columns is-gapless is-fullheight is-fullwidth" >
+            <div className="app-loader-content column is-centered">
                 <h1 className="display-2 color-reverse">{title}</h1>
                 <br />
                 <br />

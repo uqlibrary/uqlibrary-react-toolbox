@@ -3,15 +3,13 @@
 
 .app-loader {
   background-color: $theme-color;
+  h1 {
+    color: $text-color-reverse;
+  }
+  padding-top: calc(25% - 150px);
   text-align: center !important;
-  padding-top: calc(50% - 150px);
 
   .app-loader-content {
-    position: absolute;
     height: 300px;
-    border: 1px solid red;
-    margin-left: auto;
-    margin-right: auto;
   }
-
 }
