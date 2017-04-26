@@ -16,7 +16,7 @@ html, body {
   margin: 0;
   position: relative;
   height: 100%;
-  background-color: #F7F7F7;
+  background-color: $main-background-color;
   font-family: $font-family;
 }
 
@@ -44,6 +44,10 @@ html, body {
   &:last-child {
     margin-bottom: 100px;
   }
+}
+
+.card-header{
+  padding: 0 0 0 24px;
 }
 
 .layout-container {
@@ -101,7 +105,7 @@ a:hover {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 100px 24px;
+  padding: 16px auto !important;
 
   .layout-fill {
     padding: 0 5px; // make room for box shadow
@@ -138,10 +142,6 @@ a:hover {
     margin-bottom: 0px !important;
     margin-right: 0px;
   }
-}
-
-.form-spacing {
-  width: 16px;
 }
 
 .form-help-icon {
