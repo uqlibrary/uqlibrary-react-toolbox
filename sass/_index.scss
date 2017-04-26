@@ -87,18 +87,6 @@ h1.page-title {
   align-content: center;
 }
 
-// Link styles
-a {
-  color: $accent-color;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-a:hover {
-  color: $theme-color;
-  text-decoration: underline;
-}
-
 // The container which houses content
 .content-container {
   width: 100%;
@@ -156,6 +144,13 @@ a:hover {
     top: auto;
     vertical-align: middle;
   }
+}
+
+// Custom
+h1.page-title {
+  max-width: 1200px;
+  margin: 32px auto 16px auto;
+  width: 100%;
 }
 
 .errorLabel {

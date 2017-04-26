@@ -23,16 +23,37 @@ h1 {
 
 h2, h3, h4, h5, h6 {
   margin: 0;
-  color: #444;
+  color: $header-color;
 }
 
-// Custom
-h1.page-title {
-  max-width: 1200px;
-  margin: 32px auto 16px auto;
-  width: 100%;
+a {
+  font-family: $font-family;
+  color: $accent-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
+
 
 .color-primary {
   color: $theme-color;
 }
+
+.color-reverse {
+  color: $text-color-reverse;
+}
+
+.color-error {
+  color: $error-color;
+}
+
+.color-available {
+  color: $available-color;
+}
+
+.color-unavailable {
+  color: $unavailable-color;
+}
+

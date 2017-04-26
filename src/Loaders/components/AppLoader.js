@@ -6,7 +6,7 @@ export default function AppLoader({title, logoImage, logoText, progressColor}) {
     return (
         <div className="app-loader" >
             <div className="app-loader-content">
-                <h1 className="display-2">{title}</h1>
+                <h1 className="display-2 color-reverse">{title}</h1>
                 <br />
                 <br />
                 <CircularProgress size={80} thickness={8} color={progressColor} />
