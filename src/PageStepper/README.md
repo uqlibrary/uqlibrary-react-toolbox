@@ -15,23 +15,6 @@ import React from 'react';
 ...
 
 import {PageStepper} from 'uqlibrary-react-toolbox';
-
-
-// Menu configuration
-const menuItems = [
-            {
-                linkTo: '/',
-                primaryText: 'Home',
-                leftIcon: <ActionHome />,
-            },
-            {
-                divider: true
-            },
-            {
-                linkTo: '/Help',
-                primaryText: 'Help'
-            }
-        ];
         
 const App = () => (
     <PageStepper 

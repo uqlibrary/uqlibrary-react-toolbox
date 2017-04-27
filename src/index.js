@@ -7,3 +7,4 @@ export {StaticPage} from './StaticPage';
 export {AppLoader} from './Loaders';
 export {InlineLoader} from './Loaders';
 export {ContentLoader} from './Loaders';
+export {PageStepper} from './PageStepper';
