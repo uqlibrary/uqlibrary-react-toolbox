@@ -27,7 +27,7 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
         inset={false}
         style={
           Object {
-            "margin": "10px 0",
+            "margin": "10px 0px 20px 0px",
           }
         }
       />
