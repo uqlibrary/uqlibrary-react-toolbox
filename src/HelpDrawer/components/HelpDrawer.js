@@ -33,7 +33,7 @@ const HelpDrawer = ({title, text, buttonLabel, open, hide}) => {
             <div className="layout-fill side-drawer columns">
                 <div className="flex column content">
                     <h1 className="headline">{title}</h1>
-                    <Divider style={{padding: '10px 0'}} />
+                        <Divider style={{padding: '10px 0'}} />
                     <div className="subhead">{text}</div>
                 </div>
                 <div className="columns layout-padding is-pulled-right">

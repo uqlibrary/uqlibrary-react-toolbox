@@ -22,8 +22,6 @@ var _FontIcon = require('material-ui/FontIcon');
 
 var _FontIcon2 = _interopRequireDefault(_FontIcon);
 
-require('./HelpIcon.scss');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var propTypes = {

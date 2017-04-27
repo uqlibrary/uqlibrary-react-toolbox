@@ -24,8 +24,6 @@ var _Divider = require('material-ui/Divider');
 
 var _Divider2 = _interopRequireDefault(_Divider);
 
-require('./HelpDrawer.scss');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var propTypes = {
