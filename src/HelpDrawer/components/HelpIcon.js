@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 
-import 'HelpIcon.scss';
+import './HelpIcon.scss';
 
 const propTypes = {
     title: PropTypes.string,

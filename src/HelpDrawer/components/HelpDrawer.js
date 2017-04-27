@@ -4,6 +4,8 @@ import Drawer from 'material-ui/Drawer';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 
+import './HelpDrawer.scss';
+
 const propTypes = {
     open: PropTypes.bool.isRequired,
     title: PropTypes.string.isRequired,
@@ -23,20 +25,20 @@ const HelpDrawer = ({title, text, buttonLabel, open, hide}) => {
 
     return (
         <Drawer
-            containerClassName="help-drawer flex"
+            containerClassName="help-drawer"
             open={open}
             openSecondary
             docked={false}
             disableSwipeToOpen
             width={380}
             onRequestChange={toggleDrawer}>
-            <div className="layout-fill side-drawer column align-stretch">
+            <div className="layout-fill side-drawer columns">
                 <div className="flex column content">
                     <h1 className="headline">{title}</h1>
-                    <Divider />
+                    <Divider style={{padding: '10px 0'}} />
                     <div className="subhead">{text}</div>
                 </div>
-                <div className="row justify-end layout-padding">
+                <div className="columns layout-padding is-pulled-right">
                     <RaisedButton secondary label={buttonLabel} onTouchTap={toggleDrawer} />
                 </div>
             </div>

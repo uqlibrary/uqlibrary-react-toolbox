@@ -2,7 +2,7 @@
 
 exports[`HelpDrawer snapshots tests renders menu 1`] = `
 <Drawer
-  containerClassName="help-drawer flex"
+  containerClassName="help-drawer"
   disableSwipeToOpen={true}
   docked={false}
   onRequestChange={[Function]}
@@ -13,7 +13,7 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
   zDepth={2}
 >
   <div
-    className="layout-fill side-drawer column align-stretch"
+    className="layout-fill side-drawer columns"
   >
     <div
       className="flex column content"
@@ -25,6 +25,11 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
       </h1>
       <Divider
         inset={false}
+        style={
+          Object {
+            "padding": "10px 0",
+          }
+        }
       />
       <div
         className="subhead"
@@ -33,7 +38,7 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
       </div>
     </div>
     <div
-      className="row justify-end layout-padding"
+      className="columns layout-padding is-pulled-right"
     >
       <RaisedButton
         disabled={false}
