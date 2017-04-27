@@ -15,11 +15,34 @@ exports[`StaticPage snapshots tests renders StaticPage with title and text 1`] =
     expanded={null}
     initiallyExpanded={false}
   >
+    <CardHeader
+      avatar={null}
+      className="card-header"
+    >
+      <div
+        className="columns is-gapless"
+      >
+        <div
+          className="column"
+        >
+          <h2
+            className="headline"
+          >
+            about
+          </h2>
+        </div>
+        <div
+          className="column"
+        />
+      </div>
+    </CardHeader>
     <CardText
       className="body-1"
     >
       <br />
-      this is about page
+      <div>
+        this is about page
+      </div>
     </CardText>
   </Card>
 </div>
@@ -33,11 +56,6 @@ exports[`StaticPage snapshots tests renders StaticPage with title, text and help
     className="page-title display-1"
   >
     about
-    <Connect(HelpIcon)
-      inline={true}
-      text="help text"
-      title="help"
-    />
   </h1>
   <Card
     className="layout-card"
@@ -45,11 +63,39 @@ exports[`StaticPage snapshots tests renders StaticPage with title, text and help
     expanded={null}
     initiallyExpanded={false}
   >
+    <CardHeader
+      avatar={null}
+      className="card-header"
+    >
+      <div
+        className="columns is-gapless"
+      >
+        <div
+          className="column"
+        >
+          <h2
+            className="headline"
+          >
+            about
+          </h2>
+        </div>
+        <div
+          className="column"
+        >
+          <Connect(HelpIcon)
+            text="help text"
+            title="help"
+          />
+        </div>
+      </div>
+    </CardHeader>
     <CardText
       className="body-1"
     >
       <br />
-      this is about page
+      <div>
+        this is about page
+      </div>
     </CardText>
   </Card>
 </div>
