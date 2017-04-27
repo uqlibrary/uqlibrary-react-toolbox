@@ -27,7 +27,7 @@ function AppLoader(_ref) {
 
     return _react2.default.createElement(
         'div',
-        { className: 'app-loader columns is-gapless is-fullheight is-fullwidth' },
+        { className: 'app-loader columns is-gapless layout-fill' },
         _react2.default.createElement(
             'div',
             { className: 'app-loader-content column is-centered' },

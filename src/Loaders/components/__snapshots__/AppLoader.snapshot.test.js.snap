@@ -2,7 +2,7 @@
 
 exports[`AppLoader snapshots tests renders loader with image 1`] = `
 <div
-  className="app-loader columns is-gapless is-fullheight is-fullwidth"
+  className="app-loader columns is-gapless layout-fill"
 >
   <div
     className="app-loader-content column is-centered"
@@ -35,7 +35,7 @@ exports[`AppLoader snapshots tests renders loader with image 1`] = `
 
 exports[`AppLoader snapshots tests renders loader without image 1`] = `
 <div
-  className="app-loader columns is-gapless is-fullheight is-fullwidth"
+  className="app-loader columns is-gapless layout-fill"
 >
   <div
     className="app-loader-content column is-centered"

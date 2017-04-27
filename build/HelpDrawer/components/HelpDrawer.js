@@ -70,7 +70,7 @@ var HelpDrawer = function HelpDrawer(_ref) {
                     { className: 'headline' },
                     title
                 ),
-                _react2.default.createElement(_Divider2.default, { style: { margin: '10px 0' } }),
+                _react2.default.createElement(_Divider2.default, { style: { margin: '10px 0px 20px 0px' } }),
                 _react2.default.createElement(
                     'div',
                     { className: 'subhead' },
