@@ -13,10 +13,10 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
   zDepth={2}
 >
   <div
-    className="layout-fill side-drawer columns"
+    className="layout-fill side-drawer"
   >
     <div
-      className="flex column content"
+      className="content"
     >
       <h1
         className="headline"
@@ -27,7 +27,7 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
         inset={false}
         style={
           Object {
-            "padding": "10px 0",
+            "margin": "10px 0",
           }
         }
       />
@@ -38,7 +38,7 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
       </div>
     </div>
     <div
-      className="columns layout-padding is-pulled-right"
+      className="layout-padding"
     >
       <RaisedButton
         disabled={false}
@@ -48,6 +48,11 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
         onTouchTap={[Function]}
         primary={false}
         secondary={true}
+        style={
+          Object {
+            "float": "right",
+          }
+        }
       />
     </div>
   </div>

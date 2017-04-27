@@ -30,14 +30,14 @@ const HelpDrawer = ({title, text, buttonLabel, open, hide}) => {
             disableSwipeToOpen
             width={380}
             onRequestChange={toggleDrawer}>
-            <div className="layout-fill side-drawer columns">
-                <div className="flex column content">
+            <div className="layout-fill side-drawer">
+                <div className="content">
                     <h1 className="headline">{title}</h1>
-                        <Divider style={{padding: '10px 0'}} />
+                        <Divider style={{margin: '10px 0'}} />
                     <div className="subhead">{text}</div>
                 </div>
-                <div className="columns layout-padding is-pulled-right">
-                    <RaisedButton secondary label={buttonLabel} onTouchTap={toggleDrawer} />
+                <div className="layout-padding">
+                    <RaisedButton secondary label={buttonLabel} onTouchTap={toggleDrawer} style={{float: 'right'}} />
                 </div>
             </div>
         </Drawer>
