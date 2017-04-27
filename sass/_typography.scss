@@ -61,14 +61,14 @@ a {
 // Page titles
 h1.page-title {
   max-width: 1200px;
-  width: 100%;
-  margin: 0px auto 0 auto !important;
+  width: 90%;
+  margin: 24px auto !important;
   padding: 0 !important;
   white-space: normal !important;
 }
 @media (max-width: 720px) {
   h1.page-title {
-    font-size: 1.5em;
+    font-size: 1.75em;
     padding: 24px 24px 0 24px !important;
   }
 }
