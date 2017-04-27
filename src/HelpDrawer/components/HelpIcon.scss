@@ -1,0 +1,13 @@
+.form-help-icon {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  margin-top: -16px !important;
+
+  &.inline {
+    position: relative;
+    display: inline-block;
+    top: auto;
+    vertical-align: middle;
+  }
+}
