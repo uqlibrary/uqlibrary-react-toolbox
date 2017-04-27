@@ -1,12 +1,9 @@
 @import '../../../sass/variables';
 
 .form-help-icon {
-  text-align: right;
+  text-align: right !important;
 
   button {
-    position: absolute;
-    top: 20px;
-    right: 0;
     margin-top: -16px !important;
   }
 
@@ -16,4 +13,8 @@
     top: auto;
     vertical-align: middle;
   }
+}
+
+.helpIcon {
+
 }

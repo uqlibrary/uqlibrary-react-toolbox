@@ -33,8 +33,8 @@ const HelpIcon = ({title, text, buttonLabel, tooltip, tooltipIconColor, onClick,
 
     return (
         <div className={classNames} style={{...style}}>
-            <IconButton tooltip={tooltip} tooltipPosition="bottom-center" onClick={setDrawerContent}>
-                <FontIcon className="material-icons" color={tooltipIconColor}>help_outline</FontIcon>
+            <IconButton tooltip={tooltip} tooltipPosition="bottom-left" onClick={setDrawerContent} className="is-pulled-right">
+                <FontIcon className="material-icons helpIcon" color={tooltipIconColor}>help_outline</FontIcon>
             </IconButton>
         </div>
     );
