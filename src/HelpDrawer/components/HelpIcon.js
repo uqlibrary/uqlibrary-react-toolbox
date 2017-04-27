@@ -29,7 +29,7 @@ const HelpIcon = ({title, text, buttonLabel, tooltip, tooltipIconColor, onClick,
         onClick(title, text, buttonLabel);
     };
 
-    const classNames = `form-help-icon ${inline ? 'inline' : ''}`;
+    const classNames = `form-help-icon is-narrow is-pulled right ${inline ? 'inline' : ''}`;
 
     return (
         <div className={classNames} style={{...style}}>

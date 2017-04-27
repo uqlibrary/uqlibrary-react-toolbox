@@ -2,7 +2,7 @@
 
 exports[`HelpIcon snapshots tests renders menu 1`] = `
 <div
-  className="form-help-icon inline"
+  className="form-help-icon is-narrow is-pulled right inline"
   style={Object {}}
 >
   <IconButton
