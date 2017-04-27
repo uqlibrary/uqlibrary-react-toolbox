@@ -4,8 +4,6 @@ import Drawer from 'material-ui/Drawer';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 
-import './HelpDrawer.scss';
-
 const propTypes = {
     open: PropTypes.bool.isRequired,
     title: PropTypes.string.isRequired,

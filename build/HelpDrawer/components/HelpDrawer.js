@@ -24,6 +24,8 @@ var _Divider = require('material-ui/Divider');
 
 var _Divider2 = _interopRequireDefault(_Divider);
 
+require('./HelpDrawer.scss');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var propTypes = {
@@ -52,7 +54,7 @@ var HelpDrawer = function HelpDrawer(_ref) {
     return _react2.default.createElement(
         _Drawer2.default,
         {
-            containerClassName: 'help-drawer flex',
+            containerClassName: 'help-drawer',
             open: open,
             openSecondary: true,
             docked: false,
@@ -61,7 +63,7 @@ var HelpDrawer = function HelpDrawer(_ref) {
             onRequestChange: toggleDrawer },
         _react2.default.createElement(
             'div',
-            { className: 'layout-fill side-drawer column align-stretch' },
+            { className: 'layout-fill side-drawer columns' },
             _react2.default.createElement(
                 'div',
                 { className: 'flex column content' },
@@ -70,7 +72,7 @@ var HelpDrawer = function HelpDrawer(_ref) {
                     { className: 'headline' },
                     title
                 ),
-                _react2.default.createElement(_Divider2.default, null),
+                _react2.default.createElement(_Divider2.default, { style: { padding: '10px 0' } }),
                 _react2.default.createElement(
                     'div',
                     { className: 'subhead' },
@@ -79,7 +81,7 @@ var HelpDrawer = function HelpDrawer(_ref) {
             ),
             _react2.default.createElement(
                 'div',
-                { className: 'row justify-end layout-padding' },
+                { className: 'columns layout-padding is-pulled-right' },
                 _react2.default.createElement(_RaisedButton2.default, { secondary: true, label: buttonLabel, onTouchTap: toggleDrawer })
             )
         )
