@@ -6,16 +6,17 @@ exports[`HelpIcon snapshots tests renders menu 1`] = `
   style={Object {}}
 >
   <IconButton
+    className="is-pulled-right"
     disableTouchRipple={false}
     disabled={false}
     iconStyle={Object {}}
     onClick={[Function]}
     tooltip="Click for more information"
-    tooltipPosition="bottom-center"
+    tooltipPosition="bottom-left"
     touch={false}
   >
     <FontIcon
-      className="material-icons"
+      className="material-icons helpIcon"
       color="#CCCCCC"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
