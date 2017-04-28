@@ -90,13 +90,3 @@ html, body {
     height: 100%;
   }
 }
-
-// Override the 40px padding right of the main drawer menu to allow footer to be full content width
-@media (min-width: 1600px) {
-  .content-container {
-    padding-left: 324px !important;
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
-    margin-right: 0px;
-  }
-}
