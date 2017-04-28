@@ -1,8 +1,12 @@
 @import '../../../sass/variables';
 
+.auth-button-wrapper {
+  padding: 0px 10px 0 0 !important;
+  margin-top: -10px;
+}
 @media (min-width: 1600px) {
   .auth-button-wrapper {
-    padding: 0px 10px 0 0 !important;
+    padding: 16px 10px 0 0 !important;
     margin-top: -10px;
   }
 }
