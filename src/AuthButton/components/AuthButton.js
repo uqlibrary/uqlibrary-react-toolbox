@@ -9,7 +9,8 @@ const propTypes = {
     loginUrl: PropTypes.string.isRequired,
     logoutUrl: PropTypes.string.isRequired,
     signOutTooltipText: PropTypes.string,
-    signInTooltipText: PropTypes.string
+    signInTooltipText: PropTypes.string,
+    name: PropTypes.string
 };
 
 const defaultProps = {

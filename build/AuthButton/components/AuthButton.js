@@ -39,7 +39,8 @@ var propTypes = {
     loginUrl: _propTypes2.default.string.isRequired,
     logoutUrl: _propTypes2.default.string.isRequired,
     signOutTooltipText: _propTypes2.default.string,
-    signInTooltipText: _propTypes2.default.string
+    signInTooltipText: _propTypes2.default.string,
+    name: _propTypes2.default.string
 };
 
 var defaultProps = {
