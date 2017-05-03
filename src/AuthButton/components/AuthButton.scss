@@ -1,0 +1,31 @@
+@import '../../../sass/variables';
+
+.auth-button-wrapper {
+  padding: 0px 10px 0 0 !important;
+  margin-top: -10px;
+
+  .auth-button-text {
+    color: $text-color-reverse !important;
+    font-size: 0.9em !important;
+  }
+}
+@media (min-width: 1600px) {
+  .auth-button-wrapper {
+    padding: 16px 10px 0 0 !important;
+    margin-top: -10px;
+
+    .auth-button-text {
+      color: $text-color-reverse !important;
+      font-size: 0.75em !important;
+    }
+  }
+}
+
+.log-in-button, .log-out-button {
+  color: $text-color-reverse;
+  text-align: center;
+  svg{
+    fill: $text-color-reverse !important;
+    color: $text-color-reverse !important;
+  }
+}
