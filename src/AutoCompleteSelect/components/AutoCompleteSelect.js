@@ -23,7 +23,7 @@ export default class AutoCompleteSelect extends Component {
         maxSearchResults: PropTypes.number,
         noResultsText: PropTypes.string,
         popoverFloatingLabelText: PropTypes.string,
-        value: PropTypes.any,
+        formValue: PropTypes.any,
         filterItems: PropTypes.func,
         onChange: PropTypes.func
     };
@@ -37,7 +37,7 @@ export default class AutoCompleteSelect extends Component {
         emptySearchText: 'Start typing to filter data...',
         noResultsText: 'No results found with those search details',
         popoverFloatingLabelText: 'Start typing to filter',
-        value: null
+        formValue: null
     };
 
     static contextTypes = {
@@ -126,7 +126,7 @@ export default class AutoCompleteSelect extends Component {
             onTouchTap: this.props.disabled ? null : this.togglePopover
         };
 
-        const selectedItem = this.props.dataSource.find(item => item[this.props.dataSourceConfig.value] === this.props.value);
+        const selectedItem = this.props.dataSource.find(item => item[this.props.dataSourceConfig.value] === this.props.formValue);
         const filteredItems = this.getFilteredItems();
 
         return (
@@ -174,7 +174,7 @@ export default class AutoCompleteSelect extends Component {
 
                     <Divider />
 
-                    <Menu onChange={this.selectItem} value={this.props.value}>
+                    <Menu onChange={this.selectItem} value={this.props.formValue}>
                         {filteredItems.slice(0, this.props.maxSearchResults).map((item, index) => {
                             // check for a divider
                             if (typeof item[this.props.dataSourceConfig.value] === 'string' && item[this.props.dataSourceConfig.value].toLowerCase() === 'divider') {

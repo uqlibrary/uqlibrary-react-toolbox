@@ -86,6 +86,7 @@ export default class Authors extends Component {
                                label={this.props.authorFieldLabel}
                                dataSource={authorsDataSource}
                                dataSourceConfig={{text: 'name', value: 'id'}}
+                               formValue={formValues.get('authorName')}
                                openOnFocus
                                fullWidth />
                     </div>
