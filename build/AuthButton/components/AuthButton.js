@@ -34,39 +34,21 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var propTypes = {
-    isAuthorizedUser: _propTypes2.default.bool.isRequired,
-    loginUrl: _propTypes2.default.string.isRequired,
-    logoutUrl: _propTypes2.default.string.isRequired,
-    signOutTooltipText: _propTypes2.default.string,
-    signInTooltipText: _propTypes2.default.string,
-    name: _propTypes2.default.string
-};
-
-var defaultProps = {
-    signOutTooltipText: 'Log out',
-    signInTooltipText: 'Log in'
-};
-
 var AuthButton = function (_React$Component) {
     _inherits(AuthButton, _React$Component);
 
-    function AuthButton() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
+    function AuthButton(props) {
         _classCallCheck(this, AuthButton);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
+        var _this = _possibleConstructorReturn(this, (AuthButton.__proto__ || Object.getPrototypeOf(AuthButton)).call(this, props));
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AuthButton.__proto__ || Object.getPrototypeOf(AuthButton)).call.apply(_ref, [this].concat(args))), _this), _this.redirectUser = function () {
+        _this.redirectUser = function () {
             var redirectUrl = _this.props.isAuthorizedUser ? _this.props.logoutUrl : _this.props.loginUrl;
             var returnUrl = window.btoa(window.location.href);
             window.location.href = redirectUrl + '?return=' + returnUrl;
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+        };
+
+        return _this;
     }
 
     _createClass(AuthButton, [{
@@ -89,7 +71,15 @@ var AuthButton = function (_React$Component) {
     return AuthButton;
 }(_react2.default.Component);
 
-AuthButton.defaultProps = defaultProps;
-AuthButton.propTypes = propTypes;
-
+AuthButton.propTypes = {
+    isAuthorizedUser: _propTypes2.default.bool.isRequired,
+    loginUrl: _propTypes2.default.string.isRequired,
+    logoutUrl: _propTypes2.default.string.isRequired,
+    signOutTooltipText: _propTypes2.default.string,
+    signInTooltipText: _propTypes2.default.string
+};
+AuthButton.defaultProps = {
+    signOutTooltipText: 'Log out',
+    signInTooltipText: 'Log in'
+};
 exports.default = AuthButton;

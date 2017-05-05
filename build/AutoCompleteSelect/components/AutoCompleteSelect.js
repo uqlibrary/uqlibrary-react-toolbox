@@ -155,7 +155,7 @@ var AutoCompleteSelect = function (_Component) {
             };
 
             var selectedItem = this.props.dataSource.find(function (item) {
-                return item[_this2.props.dataSourceConfig.value] === _this2.props.value;
+                return item[_this2.props.dataSourceConfig.value] === _this2.props.formValue;
             });
             var filteredItems = this.getFilteredItems();
 
@@ -215,7 +215,7 @@ var AutoCompleteSelect = function (_Component) {
                     _react2.default.createElement(_Divider2.default, null),
                     _react2.default.createElement(
                         _Menu2.default,
-                        { onChange: this.selectItem, value: this.props.value },
+                        { onChange: this.selectItem, value: this.props.formValue },
                         filteredItems.slice(0, this.props.maxSearchResults).map(function (item, index) {
                             // check for a divider
                             if (typeof item[_this2.props.dataSourceConfig.value] === 'string' && item[_this2.props.dataSourceConfig.value].toLowerCase() === 'divider') {
@@ -265,7 +265,7 @@ AutoCompleteSelect.propTypes = {
     maxSearchResults: _propTypes2.default.number,
     noResultsText: _propTypes2.default.string,
     popoverFloatingLabelText: _propTypes2.default.string,
-    value: _propTypes2.default.any,
+    formValue: _propTypes2.default.any,
     filterItems: _propTypes2.default.func,
     onChange: _propTypes2.default.func
 };
@@ -278,7 +278,7 @@ AutoCompleteSelect.defaultProps = {
     emptySearchText: 'Start typing to filter data...',
     noResultsText: 'No results found with those search details',
     popoverFloatingLabelText: 'Start typing to filter',
-    value: null
+    formValue: null
 };
 AutoCompleteSelect.contextTypes = {
     muiTheme: _propTypes2.default.object.isRequired

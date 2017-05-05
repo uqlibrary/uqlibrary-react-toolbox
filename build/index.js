@@ -120,3 +120,12 @@ Object.defineProperty(exports, 'AuthButton', {
     return _AuthButton.AuthButton;
   }
 });
+
+var _Charts = require('./Charts');
+
+Object.defineProperty(exports, 'AuthorsPublicationsPerYearChart', {
+  enumerable: true,
+  get: function get() {
+    return _Charts.AuthorsPublicationsPerYearChart;
+  }
+});

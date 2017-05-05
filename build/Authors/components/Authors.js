@@ -89,6 +89,11 @@ var Authors = function (_Component) {
     }
 
     _createClass(Authors, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.props.clearAuthors();
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _props = this.props,
@@ -105,22 +110,23 @@ var Authors = function (_Component) {
                 null,
                 _react2.default.createElement(
                     'div',
-                    { className: 'row', style: { marginBottom: '50px' } },
+                    { className: 'columns' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'flex inputPadding' },
+                        { className: 'column is-10' },
                         _react2.default.createElement(_reduxForm.Field, { component: _AutoCompleteSelect.AutoCompleteSelect, name: 'authorName',
                             maxSearchResults: 10,
                             label: this.props.authorFieldLabel,
                             dataSource: authorsDataSource,
                             dataSourceConfig: { text: 'name', value: 'id' },
+                            formValue: formValues.get('authorName'),
                             openOnFocus: true,
                             fullWidth: true })
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'flex', style: { flex: '0 0 80px', textAlign: 'right' } },
-                        _react2.default.createElement(_RaisedButton2.default, { label: 'Add', secondary: true, style: { marginTop: '30px' }, onClick: this.addAuthor, disabled: formValues && formValues.size === 0 })
+                        { className: 'column is-2' },
+                        _react2.default.createElement(_RaisedButton2.default, { label: 'Add', secondary: true, style: { marginTop: '15px' }, onClick: this.addAuthor, disabled: formValues && formValues.size === 0 })
                     )
                 ),
                 ListOfAuthors,
@@ -137,6 +143,7 @@ Authors.propTypes = {
     form: _propTypes2.default.string.isRequired,
     addAuthor: _propTypes2.default.func,
     removeAuthor: _propTypes2.default.func,
+    clearAuthors: _propTypes2.default.func,
     formValues: _propTypes2.default.object,
     listOfAuthors: _propTypes2.default.object,
     selectedAuthors: _propTypes2.default.object,

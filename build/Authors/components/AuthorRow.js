@@ -54,24 +54,24 @@ var AuthorRow = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'Author' },
+                null,
                 _react2.default.createElement(_Divider2.default, null),
                 _react2.default.createElement(
                     'div',
-                    { className: 'row' },
+                    { className: 'columns', style: { padding: '10px' } },
                     _react2.default.createElement(
                         'div',
-                        { className: 'flex authorLeftIcon' },
+                        { className: 'column is-2' },
                         _react2.default.createElement(_person2.default, null)
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'flex-100 authorName' },
+                        { className: 'column is-8' },
                         this.props.name
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'flex authorRightIcon' },
+                        { className: 'column is-2' },
                         _react2.default.createElement(_RaisedButton2.default, { label: this.props.removeAuthorLabel, onClick: this.remove })
                     )
                 )

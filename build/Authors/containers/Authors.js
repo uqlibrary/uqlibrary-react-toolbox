@@ -37,6 +37,9 @@ AuthorsContainer = (0, _reactRedux.connect)(function (state, initialProps) {
         },
         addAuthor: function addAuthor(author) {
             return dispatch((0, _actions.addAuthor)(author));
+        },
+        clearAuthors: function clearAuthors() {
+            return dispatch((0, _actions.clearAuthors)());
         }
     };
 })(AuthorsContainer);

@@ -49,6 +49,7 @@ jest.dontMock('../components/Authors');
 
 var addAuthor = void 0;
 var removeAuthor = void 0;
+var clearAuthors = void 0;
 var selectedAuthors = void 0;
 var app = void 0;
 
@@ -57,6 +58,7 @@ describe('Authors', function () {
         var store = (0, _redux.createStore)((0, _redux.combineReducers)({ form: _reduxForm.reducer, authors: _reducer2.default }));
         addAuthor = _sinon2.default.spy();
         removeAuthor = _sinon2.default.spy();
+        clearAuthors = _sinon2.default.spy();
         var authors = _immutable2.default.fromJS([{ 'id': 202, 'name': 'Author 8' }, { 'id': 263, 'name': 'Author 9' }, { 'id': 174, 'name': 'Author 10' }, { 'id': 177, 'name': 'Author 11' }]);
 
         selectedAuthors = _immutable2.default.fromJS([{ 'id': 202, 'name': 'Author 8' }, { 'id': 263, 'name': 'Author 9' }]);
@@ -65,6 +67,7 @@ describe('Authors', function () {
             addAuthor: addAuthor,
             removeAuthor: removeAuthor,
             selectedAuthors: selectedAuthors,
+            clearAuthors: clearAuthors,
             dataSource: authors,
             form: 'atestform',
             formValues: _immutable2.default.fromJS({ authorName: 177 })
