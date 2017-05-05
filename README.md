@@ -74,11 +74,15 @@ Each component to have its own Readme.md file with sample usage and props sample
 
 ### Testing
 
-Tests are written using Jest framework. Snapshot based tests are required for any functional/presentation components. Standard unit tests are required for any container components or components with logic (see example in /src/MenuDrawer/*.tests.js)
+Tests are written using Jest framework. Snapshot based tests are required for any functional/presentation components. 
+Standard unit tests are required for any container components or components with logic (see example in /src/Charts/components/*.tests.js)
 
 ### Definition of done
 
-- unit tests
+- write unit/snapshot tests
+- test with all supported browsers (FF, Edge, Chrome, Safari, mobiles, IE11)
+- test keyboard navigation - users should be able to navigate and use the components and application without a mouse
+- accessibility testing - turn on [VoiceOver](https://help.apple.com/voiceover/info/guide/10.12/) in Safari or similar
 - updated documentation
 - any custom inline styles work in all supported browsers (eg [vendor prefixes](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) should be applied when required). Check if you should use [prefix](http://shouldiprefix.com/)
 
@@ -89,8 +93,7 @@ display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
 display: flex;  
 ```
 
-- test with all supported browsers (from IE11)
-- component should be included in style guide with demo and links to documentation/how to use
+- TBA: component should be included in style guide with demo and links to documentation/how to use
 
 
 ## Roadmap
@@ -98,7 +101,7 @@ display: flex;
 - ApplicationRoot - component wich will include imports of styles, Mui theme, etc 
 - include validation rules - can be just imported by any app
 - include normilize.css - to level css of all browsers, remove all styles from all h1-h5
-- flexum - custom layout/basic styles library
+
 
 ## Redux Forms Implementation Tips
 If you need to do redux forms and want to include reusable components which uses a function that requires the form name (eg getFormValues('formName')), do the following:
