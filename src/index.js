@@ -9,3 +9,4 @@ export {InlineLoader} from './Loaders';
 export {ContentLoader} from './Loaders';
 export {PageStepper} from './PageStepper';
 export {AuthButton} from './AuthButton';
+export {AuthorsPublicationsPerYearChart} from './Charts';

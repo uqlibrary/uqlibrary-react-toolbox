@@ -36,6 +36,8 @@ var authorsReducer = function authorsReducer() {
                 return author.get('id') !== action.payload;
             });
             return state.set('selectedAuthors', _immutable2.default.fromJS(removeFromAuthorList));
+        case _actions.CLEAR_AUTHORS:
+            return state.set('selectedAuthors', _immutable2.default.fromJS(action.payload));
         default:
             return state;
     }

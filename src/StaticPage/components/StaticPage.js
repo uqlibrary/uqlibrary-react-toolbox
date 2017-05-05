@@ -49,3 +49,5 @@ StaticPage.propTypes = {
     text: PropTypes.string.isRequired,
     help: PropTypes.object
 };
+
+StaticPage.defaultProps = {};

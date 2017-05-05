@@ -4,21 +4,24 @@ import SocialPersonOutline from 'material-ui/svg-icons/social/person-outline';
 import SocialPerson from 'material-ui/svg-icons/social/person';
 import PropTypes from 'prop-types';
 
-const propTypes = {
-    isAuthorizedUser: PropTypes.bool.isRequired,
-    loginUrl: PropTypes.string.isRequired,
-    logoutUrl: PropTypes.string.isRequired,
-    signOutTooltipText: PropTypes.string,
-    signInTooltipText: PropTypes.string,
-    name: PropTypes.string
-};
-
-const defaultProps = {
-    signOutTooltipText: 'Log out',
-    signInTooltipText: 'Log in'
-};
-
 class AuthButton extends React.Component {
+
+    static propTypes = {
+        isAuthorizedUser: PropTypes.bool.isRequired,
+        loginUrl: PropTypes.string.isRequired,
+        logoutUrl: PropTypes.string.isRequired,
+        signOutTooltipText: PropTypes.string,
+        signInTooltipText: PropTypes.string
+    }
+
+    static defaultProps = {
+        signOutTooltipText: 'Log out',
+        signInTooltipText: 'Log in'
+    }
+
+    constructor(props) {
+        super(props);
+    }
 
     redirectUser = () => {
         const redirectUrl = this.props.isAuthorizedUser ? this.props.logoutUrl : this.props.loginUrl;
@@ -38,8 +41,5 @@ class AuthButton extends React.Component {
         );
     }
 }
-
-AuthButton.defaultProps = defaultProps;
-AuthButton.propTypes = propTypes;
 
 export default AuthButton;
