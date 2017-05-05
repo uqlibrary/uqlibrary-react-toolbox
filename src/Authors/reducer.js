@@ -1,6 +1,6 @@
 import Immutable from 'immutable';
 
-import { ADD_AUTHOR, REMOVE_AUTHOR } from './actions';
+import {ADD_AUTHOR, REMOVE_AUTHOR, CLEAR_AUTHORS} from './actions';
 
 // Immutable state
 const initialState = Immutable.fromJS({
@@ -23,6 +23,8 @@ const authorsReducer = (state = initialState, action) => {
                 return author.get('id') !== action.payload;
             });
             return state.set('selectedAuthors', Immutable.fromJS(removeFromAuthorList));
+        case CLEAR_AUTHORS:
+            return state.set('selectedAuthors', Immutable.fromJS(action.payload));
         default:
             return state;
     }

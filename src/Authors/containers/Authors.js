@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {reduxForm, getFormValues} from 'redux-form/immutable';
 import Authors from '../components/Authors';
 import Immutable from 'immutable';
-import {removeAuthor, addAuthor} from '../actions';
+import {removeAuthor, addAuthor, clearAuthors} from '../actions';
 
 
 let AuthorsContainer = reduxForm({
@@ -19,7 +19,8 @@ AuthorsContainer = connect((state, initialProps) => {
 }, dispatch => {
     return {
         removeAuthor: author => dispatch(removeAuthor(author)),
-        addAuthor: author => dispatch(addAuthor(author))
+        addAuthor: author => dispatch(addAuthor(author)),
+        clearAuthors: () => dispatch(clearAuthors())
     };
 })(AuthorsContainer);
 

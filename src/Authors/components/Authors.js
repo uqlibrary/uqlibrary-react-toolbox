@@ -15,6 +15,7 @@ export default class Authors extends Component {
         form: PropTypes.string.isRequired,
         addAuthor: PropTypes.func,
         removeAuthor: PropTypes.func,
+        clearAuthors: PropTypes.func,
         formValues: PropTypes.object,
         listOfAuthors: PropTypes.object,
         selectedAuthors: PropTypes.object,
@@ -24,10 +25,14 @@ export default class Authors extends Component {
 
     static defaultProps = {
         authorFieldLabel: 'Author name (as published, in order)'
-    }
+    };
 
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        this.props.clearAuthors();
     }
 
     addAuthor = () => {
@@ -79,8 +84,8 @@ export default class Authors extends Component {
 
         return (
             <div>
-                <div className="row" style={{marginBottom: '50px'}}>
-                    <div className="flex inputPadding">
+                <div className="columns">
+                    <div className="column is-10">
                         <Field component={AutoCompleteSelect} name="authorName"
                                maxSearchResults={10}
                                label={this.props.authorFieldLabel}
@@ -90,8 +95,8 @@ export default class Authors extends Component {
                                openOnFocus
                                fullWidth />
                     </div>
-                    <div className="flex" style={{flex: '0 0 80px', textAlign: 'right'}}>
-                        <RaisedButton label="Add" secondary style={{marginTop: '30px'}} onClick={this.addAuthor} disabled={formValues && formValues.size === 0} />
+                    <div className="column is-2">
+                        <RaisedButton label="Add" secondary style={{marginTop: '15px'}} onClick={this.addAuthor} disabled={formValues && formValues.size === 0} />
                     </div>
                 </div>
 

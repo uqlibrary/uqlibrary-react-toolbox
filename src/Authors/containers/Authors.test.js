@@ -21,6 +21,7 @@ injectTapEventPlugin();
 
 let addAuthor;
 let removeAuthor;
+let clearAuthors;
 let selectedAuthors;
 let app;
 
@@ -29,6 +30,7 @@ describe('Authors', () => {
         const store = createStore(combineReducers({ form: formReducer, authors: authorsReducer}));
         addAuthor = sinon.spy();
         removeAuthor = sinon.spy();
+        clearAuthors = sinon.spy();
         const authors = Immutable.fromJS([
             {'id': 202, 'name': 'Author 8'},
             {'id': 263, 'name': 'Author 9'},
@@ -45,6 +47,7 @@ describe('Authors', () => {
             addAuthor,
             removeAuthor,
             selectedAuthors,
+            clearAuthors,
             dataSource: authors,
             form: 'atestform',
             formValues: Immutable.fromJS({authorName: 177})
