@@ -1,27 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AuthorRow snapshots test renders an Author Row 1`] = `
-<div
-  className="Author"
->
+<div>
   <Divider
     inset={false}
   />
   <div
-    className="row"
+    className="columns"
+    style={
+      Object {
+        "padding": "10px",
+      }
+    }
   >
     <div
-      className="flex authorLeftIcon"
+      className="column is-2"
     >
       <SocialPerson />
     </div>
     <div
-      className="flex-100 authorName"
+      className="column is-8"
     >
       Test Author
     </div>
     <div
-      className="flex authorRightIcon"
+      className="column is-2"
     >
       <RaisedButton
         disabled={false}

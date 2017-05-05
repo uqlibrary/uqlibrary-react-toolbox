@@ -16,7 +16,7 @@ class AuthorRow extends Component {
 
     static defaultProps = {
         removeAuthorLabel: 'Remove'
-    }
+    };
 
     constructor(props) {
         super(props);
@@ -24,16 +24,16 @@ class AuthorRow extends Component {
 
     remove = () => {
         this.props.removeAuthor(this.props.authorID);
-    }
+    };
 
     render() {
         return (
-            <div className="Author">
+            <div>
                 <Divider />
-                <div className="row">
-                    <div className="flex authorLeftIcon"><SocialPerson /></div>
-                    <div className="flex-100 authorName">{this.props.name}</div>
-                    <div className="flex authorRightIcon"><RaisedButton label={this.props.removeAuthorLabel} onClick={this.remove} /></div>
+                <div className="columns" style={{padding: '10px'}}>
+                    <div className="column is-2"><SocialPerson /></div>
+                    <div className="column is-8">{this.props.name}</div>
+                    <div className="column is-2"><RaisedButton label={this.props.removeAuthorLabel} onClick={this.remove} /></div>
                 </div>
             </div>
         );
