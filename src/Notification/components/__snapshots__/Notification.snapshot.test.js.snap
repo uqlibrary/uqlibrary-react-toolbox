@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification snapshot tests renders the notificiation component 1`] = `
+<Snackbar
+  autoHideDuration={4000}
+  className="notification"
+  message="test message"
+  open={true}
+/>
+`;
