@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import IconButton from 'material-ui/IconButton';
 import SocialPersonOutline from 'material-ui/svg-icons/social/person-outline';
 import SocialPerson from 'material-ui/svg-icons/social/person';
@@ -12,7 +12,7 @@ class AuthButton extends React.Component {
         logoutUrl: PropTypes.string.isRequired,
         signOutTooltipText: PropTypes.string,
         signInTooltipText: PropTypes.string
-    };
+    }
 
     static defaultProps = {
         signOutTooltipText: 'Log out',
