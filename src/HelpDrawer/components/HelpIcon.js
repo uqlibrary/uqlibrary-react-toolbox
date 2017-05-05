@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 
@@ -27,12 +26,12 @@ const HelpIcon = ({title, text, buttonLabel, tooltip, tooltipIconColor, onClick,
         onClick(title, text, buttonLabel);
     };
 
-    const classNames = `form-help-icon ${inline ? 'inline' : ''}`;
+    const classNames = `form-help-icon is-narrow is-pulled right ${inline ? 'inline' : ''}`;
 
     return (
         <div className={classNames} style={{...style}}>
-            <IconButton tooltip={tooltip} tooltipPosition="bottom-center" onClick={setDrawerContent}>
-                <FontIcon className="material-icons" color={tooltipIconColor}>help_outline</FontIcon>
+            <IconButton tooltip={tooltip} tooltipPosition="bottom-left" onClick={setDrawerContent} className="is-pulled-right">
+                <FontIcon className="material-icons helpIcon" color={tooltipIconColor}>help_outline</FontIcon>
             </IconButton>
         </div>
     );

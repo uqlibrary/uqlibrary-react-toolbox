@@ -52,7 +52,7 @@ var HelpDrawer = function HelpDrawer(_ref) {
     return _react2.default.createElement(
         _Drawer2.default,
         {
-            containerClassName: 'help-drawer flex',
+            containerClassName: 'help-drawer',
             open: open,
             openSecondary: true,
             docked: false,
@@ -61,16 +61,16 @@ var HelpDrawer = function HelpDrawer(_ref) {
             onRequestChange: toggleDrawer },
         _react2.default.createElement(
             'div',
-            { className: 'layout-fill side-drawer column align-stretch' },
+            { className: 'layout-fill side-drawer' },
             _react2.default.createElement(
                 'div',
-                { className: 'flex column content' },
+                { className: 'content' },
                 _react2.default.createElement(
                     'h1',
                     { className: 'headline' },
                     title
                 ),
-                _react2.default.createElement(_Divider2.default, null),
+                _react2.default.createElement(_Divider2.default, { style: { margin: '10px 0px 20px 0px' } }),
                 _react2.default.createElement(
                     'div',
                     { className: 'subhead' },
@@ -79,8 +79,8 @@ var HelpDrawer = function HelpDrawer(_ref) {
             ),
             _react2.default.createElement(
                 'div',
-                { className: 'row justify-end layout-padding' },
-                _react2.default.createElement(_RaisedButton2.default, { secondary: true, label: buttonLabel, onTouchTap: toggleDrawer })
+                { className: 'layout-padding' },
+                _react2.default.createElement(_RaisedButton2.default, { secondary: true, label: buttonLabel, onTouchTap: toggleDrawer, style: { float: 'right' } })
             )
         )
     );

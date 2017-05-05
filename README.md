@@ -14,6 +14,7 @@ a set of reusable components for UQ Library applications
 - [Toolbox](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/TextField)
 - [StaticPage](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/StaticPage)
 - [Loaders](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Loaders)
+- [PageStepper](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/PageStepper)
 
 ## Setup
 
@@ -54,10 +55,17 @@ Finally add an entry into the src/index.js file
     
     export {AliasComponentName} from './ComponentFolder';
 
+
+- Pass in all dataSources as a prop for maximum flexibility of data sources
+- Add comments to methods if the methods does more than one thing
+  
 #### Naming conventions
 
 - React components and files of components and related files (eg scss) are to be named with upper case (eg MenuDrawer.js). Do not add UQ, UQLibrary or similar prefixes to components.
 - Other files are to be named with lower case (eg index.js)
+- When naming a function in a repository, use the format load[Noun]Data e.g. loadAuthorsData. The reason the Data suffix was used is because it deals with the endpoint directly to retrieve the data.
+- When naming a function in an action, use the format (if appropriate) load[Noun]List eg loadAuthorsList. The reason the List suffix was used is because it will pass the data to the reducer.
+- Constants within actions should be in the format [Noun]_[VERB], eg PUBLICATION_TYPE_SELECTED to indicate action was performed
 
 ### Documentation
 

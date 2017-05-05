@@ -1,4 +1,4 @@
-@import "variables";
+@import '../../../sass/variables';
 
 /* Colors for data series and points. */
 //$colors: #7cb5ec #434348 #90ed7d #f7a35c #8085e9 #f15c80 #e4d354 #2b908f #f45b5b #91e8e1;
@@ -34,7 +34,7 @@ $highlight-color-10: #e6ebf5; /* Pressed button, color axis min color. */
   line-height: normal;
   z-index: 0; /* #1072 */
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+  font-family: $font-family;
   font-size: 12px;
 }
 .highcharts-root text {

@@ -23,21 +23,21 @@ const HelpDrawer = ({title, text, buttonLabel, open, hide}) => {
 
     return (
         <Drawer
-            containerClassName="help-drawer flex"
+            containerClassName="help-drawer"
             open={open}
             openSecondary
             docked={false}
             disableSwipeToOpen
             width={380}
             onRequestChange={toggleDrawer}>
-            <div className="layout-fill side-drawer column align-stretch">
-                <div className="flex column content">
+            <div className="layout-fill side-drawer">
+                <div className="content">
                     <h1 className="headline">{title}</h1>
-                    <Divider />
+                        <Divider style={{margin: '10px 0px 20px 0px'}} />
                     <div className="subhead">{text}</div>
                 </div>
-                <div className="row justify-end layout-padding">
-                    <RaisedButton secondary label={buttonLabel} onTouchTap={toggleDrawer} />
+                <div className="layout-padding">
+                    <RaisedButton secondary label={buttonLabel} onTouchTap={toggleDrawer} style={{float: 'right'}} />
                 </div>
             </div>
         </Drawer>

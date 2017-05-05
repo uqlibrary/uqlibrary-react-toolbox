@@ -947,7 +947,7 @@ exports[`AutoCompleteSelectWrapper snapshots tests renders autocomplete field 1`
       onEscKeyDown={[Function]}
       onItemTouchTap={[Function]}
       onKeyDown={[Function]}
-      value={Object {}}
+      value={null}
     />
     <div
       className="message-container"

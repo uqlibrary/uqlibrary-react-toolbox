@@ -2,10 +2,10 @@
 
 exports[`AppLoader snapshots tests renders loader with image 1`] = `
 <div
-  className="app-loader"
+  className="app-loader columns is-gapless layout-fill"
 >
   <div
-    className="app-loader-content"
+    className="app-loader-content column is-centered"
   >
     <h1
       className="display-2 color-reverse"
@@ -35,10 +35,10 @@ exports[`AppLoader snapshots tests renders loader with image 1`] = `
 
 exports[`AppLoader snapshots tests renders loader without image 1`] = `
 <div
-  className="app-loader"
+  className="app-loader columns is-gapless layout-fill"
 >
   <div
-    className="app-loader-content"
+    className="app-loader-content column is-centered"
   >
     <h1
       className="display-2 color-reverse"

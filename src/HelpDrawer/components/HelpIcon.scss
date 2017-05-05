@@ -1,0 +1,20 @@
+@import '../../../sass/variables';
+
+.form-help-icon {
+  text-align: right !important;
+
+  button {
+    margin-top: -16px !important;
+  }
+
+  &.inline {
+    position: relative;
+    display: inline-block;
+    top: auto;
+    vertical-align: middle;
+  }
+}
+
+.helpIcon {
+
+}

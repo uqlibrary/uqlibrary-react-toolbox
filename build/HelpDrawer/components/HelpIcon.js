@@ -56,17 +56,17 @@ var HelpIcon = function HelpIcon(_ref) {
         onClick(title, text, buttonLabel);
     };
 
-    var classNames = 'form-help-icon ' + (inline ? 'inline' : '');
+    var classNames = 'form-help-icon is-narrow is-pulled right ' + (inline ? 'inline' : '');
 
     return _react2.default.createElement(
         'div',
         { className: classNames, style: _extends({}, style) },
         _react2.default.createElement(
             _IconButton2.default,
-            { tooltip: tooltip, tooltipPosition: 'bottom-center', onClick: setDrawerContent },
+            { tooltip: tooltip, tooltipPosition: 'bottom-left', onClick: setDrawerContent, className: 'is-pulled-right' },
             _react2.default.createElement(
                 _FontIcon2.default,
-                { className: 'material-icons', color: tooltipIconColor },
+                { className: 'material-icons helpIcon', color: tooltipIconColor },
                 'help_outline'
             )
         )

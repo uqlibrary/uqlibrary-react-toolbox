@@ -2,7 +2,7 @@
 
 exports[`HelpDrawer snapshots tests renders menu 1`] = `
 <Drawer
-  containerClassName="help-drawer flex"
+  containerClassName="help-drawer"
   disableSwipeToOpen={true}
   docked={false}
   onRequestChange={[Function]}
@@ -13,10 +13,10 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
   zDepth={2}
 >
   <div
-    className="layout-fill side-drawer column align-stretch"
+    className="layout-fill side-drawer"
   >
     <div
-      className="flex column content"
+      className="content"
     >
       <h1
         className="headline"
@@ -25,6 +25,11 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
       </h1>
       <Divider
         inset={false}
+        style={
+          Object {
+            "margin": "10px 0px 20px 0px",
+          }
+        }
       />
       <div
         className="subhead"
@@ -33,7 +38,7 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
       </div>
     </div>
     <div
-      className="row justify-end layout-padding"
+      className="layout-padding"
     >
       <RaisedButton
         disabled={false}
@@ -43,6 +48,11 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
         onTouchTap={[Function]}
         primary={false}
         secondary={true}
+        style={
+          Object {
+            "float": "right",
+          }
+        }
       />
     </div>
   </div>

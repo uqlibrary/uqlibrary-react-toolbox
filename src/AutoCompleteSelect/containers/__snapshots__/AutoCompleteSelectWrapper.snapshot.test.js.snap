@@ -24,6 +24,7 @@ exports[`AutoCompleteSelectWrapper snapshots tests renders autocomplete field 1`
       emptySearchText="Start typing to filter data..."
       error={false}
       filterItems={[Function]}
+      formValue={null}
       label="Owner"
       labelField="name"
       maxSearchResults={10}

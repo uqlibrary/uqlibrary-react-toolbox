@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageStepper snapshots tests renders the stepper 1`] = `
+<div
+  className="layout-fill"
+>
+  <h1
+    className="page-title display-1"
+  >
+    Add a journal article
+  </h1>
+  <Stepper
+    activeStep={0}
+    connector={<pure(StepConnector) />}
+    linear={true}
+    onChange={[Function]}
+    orientation="horizontal"
+    style={
+      Object {
+        "margin": "-10px auto",
+        "padding": "0 25px",
+      }
+    }
+  >
+    <Step>
+      <StepLabel
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+          }
+        }
+      >
+        Page 1 Test
+      </StepLabel>
+    </Step>
+    <Step>
+      <StepLabel
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+          }
+        }
+      >
+        Page 2 Test
+      </StepLabel>
+    </Step>
+  </Stepper>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+        "maxWidth": "1200px",
+        "width": "100%",
+      }
+    }
+  >
+    <ExpandTransition
+      enterDelay={0}
+      loading={false}
+      open={true}
+      transitionDelay={0}
+      transitionDuration={450}
+    >
+      <div
+        data-stepperIndex="0"
+      >
+        Page 1
+      </div>
+    </ExpandTransition>
+  </div>
+</div>
+`;
+
+exports[`PageStepper snapshots tests renders the stepper 2`] = `
+<div
+  className="layout-fill"
+>
+  <h1
+    className="page-title display-1"
+  >
+    Add a journal article
+  </h1>
+  <Stepper
+    activeStep={1}
+    connector={<pure(StepConnector) />}
+    linear={true}
+    onChange={[Function]}
+    orientation="horizontal"
+    style={
+      Object {
+        "margin": "-10px auto",
+        "padding": "0 25px",
+      }
+    }
+  >
+    <Step>
+      <StepLabel
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+          }
+        }
+      >
+        Page 1 Test
+      </StepLabel>
+    </Step>
+    <Step>
+      <StepLabel
+        style={
+          Object {
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+          }
+        }
+      >
+        Page 2 Test
+      </StepLabel>
+    </Step>
+  </Stepper>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+        "maxWidth": "1200px",
+        "width": "100%",
+      }
+    }
+  >
+    <ExpandTransition
+      enterDelay={0}
+      loading={false}
+      open={true}
+      transitionDelay={0}
+      transitionDuration={450}
+    >
+      <div
+        data-stepperIndex="1"
+      >
+        Page 2
+      </div>
+    </ExpandTransition>
+  </div>
+</div>
+`;

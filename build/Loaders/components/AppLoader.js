@@ -27,18 +27,22 @@ function AppLoader(_ref) {
 
     return _react2.default.createElement(
         'div',
-        { className: 'app-loader column layout-fill align-center justify-center' },
+        { className: 'app-loader columns is-gapless layout-fill' },
         _react2.default.createElement(
-            'h1',
-            { className: 'display-2' },
-            title
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(_CircularProgress2.default, { size: 80, thickness: 8, color: progressColor }),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
-        logoImage && _react2.default.createElement('img', { src: logoImage, alt: logoText })
+            'div',
+            { className: 'app-loader-content column is-centered' },
+            _react2.default.createElement(
+                'h1',
+                { className: 'display-2 color-reverse' },
+                title
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(_CircularProgress2.default, { size: 80, thickness: 8, color: progressColor }),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            logoImage && _react2.default.createElement('img', { src: logoImage, alt: logoText })
+        )
     );
 }
 
