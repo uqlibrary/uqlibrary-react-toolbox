@@ -1,6 +1,6 @@
 # Charts
 
-various charts for UQ Library applications
+various charts for UQ Library applications, sample data is available in `/data/*`
 
 
 ## AuthorsPublicationsPerYearChart
@@ -20,8 +20,6 @@ import React from 'react';
 
 import {AuthorsPublicationsPerYearChart} from 'uqlibrary-react-toolbox';
 
-// Data configuration
-        
 const App = () => (
   <div>
     <AuthorsPublicationsPerYearChart rawData={apiData} yAxisTitle='Publications count per year' />
