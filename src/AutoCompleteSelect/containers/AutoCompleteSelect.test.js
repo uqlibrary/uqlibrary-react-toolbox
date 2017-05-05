@@ -29,7 +29,7 @@ function setup() {
         form: 'atestform',
         label: 'test',
         dataSourceConfig: dsConfig,
-        value: 177
+        formValue: 177
 
     };
 
