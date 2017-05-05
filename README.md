@@ -14,9 +14,7 @@ a set of reusable components for UQ Library applications
 - [Toolbox](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/TextField)
 - [StaticPage](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/StaticPage)
 - [Loaders](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Loaders)
-- [PageStepper](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/PageStepper)
 - [Charts](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Charts)
-- [Notification](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Notification)
 
 ## Setup
 
