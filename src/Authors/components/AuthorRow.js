@@ -31,9 +31,9 @@ class AuthorRow extends Component {
             <div>
                 <Divider />
                 <div className="columns" style={{padding: '10px'}}>
-                    <div className="column is-2"><SocialPerson /></div>
-                    <div className="column is-8">{this.props.name}</div>
-                    <div className="column is-2"><RaisedButton label={this.props.removeAuthorLabel} onClick={this.remove} /></div>
+                    <div className="column is-narrow"><SocialPerson /></div>
+                    <div className="column">{this.props.name}</div>
+                    <div className="column is-narrow"><RaisedButton label={this.props.removeAuthorLabel} onClick={this.remove} /></div>
                 </div>
             </div>
         );

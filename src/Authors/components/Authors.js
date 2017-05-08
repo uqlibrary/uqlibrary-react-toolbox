@@ -85,7 +85,7 @@ export default class Authors extends Component {
         return (
             <div>
                 <div className="columns">
-                    <div className="column is-10">
+                    <div className="column">
                         <Field component={AutoCompleteSelect} name="authorName"
                                maxSearchResults={10}
                                label={this.props.authorFieldLabel}
@@ -95,7 +95,7 @@ export default class Authors extends Component {
                                openOnFocus
                                fullWidth />
                     </div>
-                    <div className="column is-2">
+                    <div className="column is-narrow">
                         <RaisedButton label="Add" secondary style={{marginTop: '15px'}} onClick={this.addAuthor} disabled={formValues && formValues.size === 0} />
                     </div>
                 </div>
