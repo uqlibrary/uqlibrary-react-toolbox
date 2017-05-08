@@ -3,22 +3,22 @@
 A smart select field component that lists items for UQ Library applications using ReactJs
 
 ## Props
-- `label: React.PropTypes.string.isRequired`
-- `dataSource: React.PropTypes.array`
-- `dataSourceConfig: React.PropTypes.object`
-- `disabled: React.PropTypes.bool`
-- `emptySearchText: React.PropTypes.string`
-- `error: React.PropTypes.bool`
-- `maxSearchResults: React.PropTypes.number`
-- `noResultsText: React.PropTypes.string`
-- `popoverFloatingLabelText: React.PropTypes.string`
-- `value: React.PropTypes.any`
-- `filterItems: React.PropTypes.func`
-- `onChange: React.PropTypes.func`
+- `label: PropTypes.string.isRequired`
+- `dataSource: PropTypes.array`
+- `dataSourceConfig: PropTypes.object`
+- `disabled: PropTypes.bool`
+- `emptySearchText: PropTypes.string`
+- `error: PropTypes.bool`
+- `maxSearchResults: PropTypes.number`
+- `noResultsText: PropTypes.string`
+- `popoverFloatingLabelText: PropTypes.string`
+- `value: PropTypes.any`
+- `filterItems: PropTypes.func`
+- `onChange: PropTypes.func`
 
 
 ## Context
-- `muiTheme: React.PropTypes.object.isRequired`
+- `muiTheme: PropTypes.object.isRequired`
 
 ## Usage
 
@@ -61,21 +61,21 @@ ReactDOM.render(
 A smart select field component that filters the select field data as you type for UQ Library applications using ReactJs
 
 ## Props
-- `label: React.PropTypes.string.isRequired`
-- `debounceDuration: React.PropTypes.number`
-- `disabled: React.PropTypes.bool`
-- `emptySearchText: React.PropTypes.string`
-- `error: React.PropTypes.bool`
-- `labelField: React.PropTypes.string`
-- `noResultsText: React.PropTypes.string`
-- `popoverFloatingLabelText: React.PropTypes.string`
-- `minLength: React.PropTypes.number`
-- `value: React.PropTypes.object`
-- `filterItems: React.PropTypes.func`
-- `onChange: React.PropTypes.func`
+- `label: PropTypes.string.isRequired`
+- `debounceDuration: PropTypes.number`
+- `disabled: PropTypes.bool`
+- `emptySearchText: PropTypes.string`
+- `error: PropTypes.bool`
+- `labelField: PropTypes.string`
+- `noResultsText: PropTypes.string`
+- `popoverFloatingLabelText: PropTypes.string`
+- `minLength: PropTypes.number`
+- `value: PropTypes.object`
+- `filterItems: PropTypes.func`
+- `onChange: PropTypes.func`
 
 ## Context
-- `muiTheme: React.PropTypes.object.isRequired`
+- `muiTheme: PropTypes.object.isRequired`
 
 ## Usage
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import AsyncAutoCompleteSelect from '../components/AsyncAutoCompleteSelect';
 import filterProps from '../../helpers/_filterProps';
@@ -28,6 +29,6 @@ export default function AsyncAutoCompleteSelectWrapper(props) {
 
 AsyncAutoCompleteSelectWrapper.propTypes = {
     ...AsyncAutoCompleteSelect.propTypes,
-    helpTitle: React.PropTypes.string,
-    helpText: React.PropTypes.any
+    helpTitle: PropTypes.string,
+    helpText: PropTypes.any
 };

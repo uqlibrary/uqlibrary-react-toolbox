@@ -4,8 +4,8 @@ A simple TextField component that lists items for UQ Library applications using 
 
 ## Props
 - `standard props from http://www.material-ui.com/#/components/text-field`
-- `helpTitle: React.PropTypes.string`
-- `helpText: React.PropTypes.any`
+- `helpTitle: PropTypes.string`
+- `helpText: PropTypes.any`
 
 
 ## Usage

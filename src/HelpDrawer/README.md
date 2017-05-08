@@ -5,21 +5,21 @@ simple content menu for UQ Library applications using ReactJs
 
 ## HelpDrawer Props
 ###### All these props are passed in from HelpDrawer's reducer.js file 
-- `title: React.PropTypes.string.isRequired`
-- `text: React.PropTypes.any.isRequired` 
-- `open: React.PropTypes.bool.isRequired`
-- `buttonLabel: React.PropTypes.string`
+- `title: PropTypes.string.isRequired`
+- `text: PropTypes.any.isRequired` 
+- `open: PropTypes.bool.isRequired`
+- `buttonLabel: PropTypes.string`
 
 
 ## HelpIcon Props
-- `text: React.PropTypes.any.isRequired`
-- `title: React.PropTypes.string`
-- `buttonLabel: React.PropTypes.string`
-- `tooltip: React.PropTypes.string`
-- `tooltipIconColor: React.PropTypes.string` - a HEX colour value
-- `onClick: React.PropTypes.func`
-- `inline: React.PropTypes.bool`
-- `style: React.PropTypes.object`
+- `text: PropTypes.any.isRequired`
+- `title: PropTypes.string`
+- `buttonLabel: PropTypes.string`
+- `tooltip: PropTypes.string`
+- `tooltipIconColor: PropTypes.string` - a HEX colour value
+- `onClick: PropTypes.func`
+- `inline: PropTypes.bool`
+- `style: PropTypes.object`
 
     
 ## Usage

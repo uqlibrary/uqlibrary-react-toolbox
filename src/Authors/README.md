@@ -3,14 +3,14 @@
 Smart component that lists authors for UQ Library applications using ReactJs
 
 ## Props
-- `title: React.PropTypes.string`
-- `addAuthor: React.PropTypes.func`
-- `removeAuthor: React.PropTypes.func`
-- `formValues: React.PropTypes.object`
-- `loadAuthors: React.PropTypes.func.isRequired`
-- `listOfAuthors: React.PropTypes.object.isRequired`
-- `selectedAuthors: React.PropTypes.object`
-- `form: React.PropTypes.string.isRequired.isRequired`
+- `title: PropTypes.string`
+- `addAuthor: PropTypes.func`
+- `removeAuthor: PropTypes.func`
+- `formValues: PropTypes.object`
+- `loadAuthors: PropTypes.func.isRequired`
+- `listOfAuthors: PropTypes.object.isRequired`
+- `selectedAuthors: PropTypes.object`
+- `form: PropTypes.string.isRequired.isRequired`
     
 ## Usage
 

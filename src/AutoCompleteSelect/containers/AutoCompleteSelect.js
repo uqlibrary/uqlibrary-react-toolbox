@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import AutoCompleteSelect from '../components/AutoCompleteSelect';
 import filterProps from '../../helpers/_filterProps';
@@ -28,6 +29,6 @@ export default function AutoCompleteSelectWrapper(props) {
 
 AutoCompleteSelectWrapper.propTypes = {
     ...AutoCompleteSelect.propTypes,
-    helpTitle: React.PropTypes.string,
-    helpText: React.PropTypes.any
+    helpTitle: PropTypes.string,
+    helpText: PropTypes.any
 };

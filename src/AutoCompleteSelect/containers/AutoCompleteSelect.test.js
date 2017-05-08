@@ -2,13 +2,14 @@ jest.dontMock('./AutoCompleteSelect');
 
 import AutoCompleteSelect from './AutoCompleteSelect';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { mount} from 'enzyme';
+import {mount} from 'enzyme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-import { reducer as formReducer } from 'redux-form';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
+import {reducer as formReducer} from 'redux-form';
+import {createStore, combineReducers} from 'redux';
+import {Provider} from 'react-redux';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -16,7 +17,7 @@ injectTapEventPlugin();
 let subject;
 
 function setup() {
-    const store = createStore(combineReducers({ form: formReducer}));
+    const store = createStore(combineReducers({form: formReducer}));
     const authors = [
         {'id': 202, 'name': 'Author 8'},
         {'id': 263, 'name': 'Author 9'},
@@ -40,7 +41,7 @@ function setup() {
             <AutoCompleteSelect {...props} />
         </Provider>,
         { context: {muiTheme},
-            childContextTypes: {muiTheme: React.PropTypes.object}}
+            childContextTypes: {muiTheme: PropTypes.object}}
     );
 }
 describe('Autocompleteselect', () => {

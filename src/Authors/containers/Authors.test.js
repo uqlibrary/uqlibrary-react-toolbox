@@ -3,8 +3,8 @@ jest.dontMock('../components/Authors');
 import {reduxForm} from 'redux-form';
 import Authors from '../components/Authors';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-// See README for discussion of chai, enzyme, and sinon
 import {mount} from 'enzyme';
 import sinon from 'sinon';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -27,7 +27,7 @@ let app;
 
 describe('Authors', () => {
     beforeEach(() => {
-        const store = createStore(combineReducers({ form: formReducer, authors: authorsReducer}));
+        const store = createStore(combineReducers({form: formReducer, authors: authorsReducer}));
         addAuthor = sinon.spy();
         removeAuthor = sinon.spy();
         clearAuthors = sinon.spy();
@@ -61,7 +61,7 @@ describe('Authors', () => {
                 <Decorated {...props} />
             </Provider>,
             { context: {muiTheme},
-                childContextTypes: {muiTheme: React.PropTypes.object}}
+                childContextTypes: {muiTheme: PropTypes.object}}
         );
     });
 

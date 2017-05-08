@@ -3,12 +3,13 @@ jest.dontMock('./AsyncAutoCompleteSelect');
 import AsyncAutoCompleteSelect from './AsyncAutoCompleteSelect';
 import React from 'react';
 
-import { mount} from 'enzyme';
+import {mount} from 'enzyme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-import { reducer as formReducer } from 'redux-form';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
+import {reducer as formReducer} from 'redux-form';
+import {createStore, combineReducers} from 'redux';
+import {Provider} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -16,7 +17,7 @@ injectTapEventPlugin();
 let subject;
 
 function setup() {
-    const store = createStore(combineReducers({ form: formReducer}));
+    const store = createStore(combineReducers({form: formReducer}));
     const filterItems = [
         {
             username: 'uqbmarley',
@@ -56,7 +57,7 @@ function setup() {
             <AsyncAutoCompleteSelect {...props} />
         </Provider>,
         { context: {muiTheme},
-            childContextTypes: {muiTheme: React.PropTypes.object}}
+            childContextTypes: {muiTheme: PropTypes.object}}
     );
 }
 describe('AsyncAutocompleteselect', () => {
