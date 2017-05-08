@@ -14,17 +14,17 @@ exports[`AuthorRow snapshots test renders an Author Row 1`] = `
     }
   >
     <div
-      className="column is-2"
+      className="column is-narrow"
     >
       <SocialPerson />
     </div>
     <div
-      className="column is-8"
+      className="column"
     >
       Test Author
     </div>
     <div
-      className="column is-2"
+      className="column is-narrow"
     >
       <RaisedButton
         disabled={false}
