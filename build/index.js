@@ -103,15 +103,6 @@ Object.defineProperty(exports, 'ContentLoader', {
   }
 });
 
-var _PageStepper = require('./PageStepper');
-
-Object.defineProperty(exports, 'PageStepper', {
-  enumerable: true,
-  get: function get() {
-    return _PageStepper.PageStepper;
-  }
-});
-
 var _AuthButton = require('./AuthButton');
 
 Object.defineProperty(exports, 'AuthButton', {

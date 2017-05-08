@@ -61,17 +61,17 @@ var AuthorRow = function (_Component) {
                     { className: 'columns', style: { padding: '10px' } },
                     _react2.default.createElement(
                         'div',
-                        { className: 'column is-2' },
+                        { className: 'column is-narrow' },
                         _react2.default.createElement(_person2.default, null)
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'column is-8' },
+                        { className: 'column' },
                         this.props.name
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'column is-2' },
+                        { className: 'column is-narrow' },
                         _react2.default.createElement(_RaisedButton2.default, { label: this.props.removeAuthorLabel, onClick: this.remove })
                     )
                 )

@@ -113,7 +113,7 @@ var Authors = function (_Component) {
                     { className: 'columns' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'column is-10' },
+                        { className: 'column' },
                         _react2.default.createElement(_reduxForm.Field, { component: _AutoCompleteSelect.AutoCompleteSelect, name: 'authorName',
                             maxSearchResults: 10,
                             label: this.props.authorFieldLabel,
@@ -125,7 +125,7 @@ var Authors = function (_Component) {
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'column is-2' },
+                        { className: 'column is-narrow' },
                         _react2.default.createElement(_RaisedButton2.default, { label: 'Add', secondary: true, style: { marginTop: '15px' }, onClick: this.addAuthor, disabled: formValues && formValues.size === 0 })
                     )
                 ),
