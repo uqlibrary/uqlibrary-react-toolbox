@@ -29,3 +29,14 @@
     color: $text-color-reverse !important;
   }
 }
+
+.auth-button-wrapper:focus {
+  padding: 0px 10px 0 0 !important;
+  margin-top: -10px;
+  background-color: $text-color-reverse;
+
+  .auth-button-text {
+    color: $text-color !important;
+    font-size: 0.9em !important;
+  }
+}
