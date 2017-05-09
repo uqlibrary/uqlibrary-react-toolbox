@@ -140,8 +140,44 @@ let someFormContainer = reduxForm({
 ```
 
 ## NPM release procedures
+####Login
+You need to log into npm via the terminal/command prompt as the correct user in order to publish. 
+
+    1. Log in as the owner of the uq-library-toolbox with the command _npm adduser_
+    2. Verify you’re the correct owner by running the command _npm whoami_
+    3. Once verified, execute the command release command below.
 
 To release a new version of the components on npm run:
 `npm run release`
 
 it will create a new version of the package, build all the components and update npm repo
+
+####Release Gotchas
+When doing this for the first time, it was hard to figure out what was going on when you receive the error below:
+
+```
+✖ Check local working tree
+     → Unclean working tree. Commit or stash changes first.
+```
+
+This means you’ve got one of the following issues:
+
+    1. You have stashed changes that haven’t been committed yet
+    2. You have some changes to a file that hasn’t been committed
+    3. You have a hidden file that’s not showing up as a modified file.
+
+**Fixing point 1**
+
+ In your IDE, unstash your changes by going to `VCS → Git → Unstash Changes`. If you don’t need any of the stashes, hit the `Clear` button otherwise select the appropriate stashes and hit the `Apply Stash` button.
+
+**Fixing point 2**
+
+Straight forward enough. Either commit or revert your changes.
+
+**Fixing point 3**
+
+Run the command `git clean -n` and it should list some files. If it does and you’re happy to delete, run the `git clean -f`. <span style="color:red">_**This is a permanent deletion**_</span> 
+
+As a final note, use the standalone terminal or the command prompt app outside of the IDE. In one case, point 3 was the root of the issue but only showed itself when using a standalone terminal app.
+
+You’re now free to release the package.
