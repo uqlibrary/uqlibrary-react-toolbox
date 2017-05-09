@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _enzyme = require('enzyme');
 
 var _sinon = require('sinon');
@@ -39,9 +43,6 @@ var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 jest.dontMock('../components/Authors');
-
-// See README for discussion of chai, enzyme, and sinon
-
 
 // otherwise it throws an 'Unknown prop `onTouchTap` on <div> tag.' error during the test
 
@@ -81,7 +82,7 @@ describe('Authors', function () {
             { store: store },
             _react2.default.createElement(Decorated, props)
         ), { context: { muiTheme: muiTheme },
-            childContextTypes: { muiTheme: _react2.default.PropTypes.object } });
+            childContextTypes: { muiTheme: _propTypes2.default.object } });
     });
 
     it('renders nested components', function () {

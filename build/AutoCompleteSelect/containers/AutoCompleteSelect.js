@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _AutoCompleteSelect = require('../components/AutoCompleteSelect');
 
 var _AutoCompleteSelect2 = _interopRequireDefault(_AutoCompleteSelect);
@@ -47,6 +51,6 @@ function AutoCompleteSelectWrapper(props) {
 }
 
 AutoCompleteSelectWrapper.propTypes = _extends({}, _AutoCompleteSelect2.default.propTypes, {
-    helpTitle: _react2.default.PropTypes.string,
-    helpText: _react2.default.PropTypes.any
+    helpTitle: _propTypes2.default.string,
+    helpText: _propTypes2.default.any
 });

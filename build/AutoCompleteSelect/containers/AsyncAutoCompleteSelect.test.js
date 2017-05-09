@@ -20,6 +20,10 @@ var _redux = require('redux');
 
 var _reactRedux = require('react-redux');
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactTapEventPlugin = require('react-tap-event-plugin');
 
 var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
@@ -71,7 +75,7 @@ function setup() {
         { store: store },
         _react2.default.createElement(_AsyncAutoCompleteSelect2.default, props)
     ), { context: { muiTheme: muiTheme },
-        childContextTypes: { muiTheme: _react2.default.PropTypes.object } });
+        childContextTypes: { muiTheme: _propTypes2.default.object } });
 }
 describe('AsyncAutocompleteselect', function () {
     it('selects the last staff member in the list"', function () {

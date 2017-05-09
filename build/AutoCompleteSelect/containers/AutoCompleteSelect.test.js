@@ -8,6 +8,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _enzyme = require('enzyme');
 
 var _getMuiTheme = require('material-ui/styles/getMuiTheme');
@@ -52,7 +56,7 @@ function setup() {
         { store: store },
         _react2.default.createElement(_AutoCompleteSelect2.default, props)
     ), { context: { muiTheme: muiTheme },
-        childContextTypes: { muiTheme: _react2.default.PropTypes.object } });
+        childContextTypes: { muiTheme: _propTypes2.default.object } });
 }
 describe('Autocompleteselect', function () {
     it('selects the last author in the list"', function () {
