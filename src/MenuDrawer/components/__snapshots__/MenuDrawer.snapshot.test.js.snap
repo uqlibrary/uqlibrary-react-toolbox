@@ -55,13 +55,6 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
       <span
         className="menu-item-container"
       >
-        <Divider
-          inset={false}
-        />
-      </span>
-      <span
-        className="menu-item-container"
-      >
         <Link
           replace={false}
           to="/xyz"
