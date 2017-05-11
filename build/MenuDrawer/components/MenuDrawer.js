@@ -57,7 +57,7 @@ function MenuDrawer(_ref) {
                 _List.List,
                 { className: 'main-menu' },
                 menuItems.map(function (menuItem, index) {
-                    return _react2.default.createElement(
+                    return menuItem.primaryText && _react2.default.createElement(
                         'span',
                         { className: 'menu-item-container', key: index },
                         menuItem.divider ? _react2.default.createElement(_Divider2.default, null) : _react2.default.createElement(

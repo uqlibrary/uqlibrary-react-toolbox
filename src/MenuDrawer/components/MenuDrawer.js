@@ -20,18 +20,20 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
                 </div>
                 <List className="main-menu">
                     {menuItems.map((menuItem, index) =>
-                    <span className="menu-item-container" key={index}>
-                        {menuItem.divider ? (
-                            <Divider />
-                            ) : (
-                            <Link to={menuItem.linkTo}>
-                                <ListItem primaryText={menuItem.primaryText}
-                                          secondaryText={menuItem.secondaryText}
-                                          leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null}
-                                />
-                            </Link>
-                        )}
-                    </span>
+                        menuItem.primaryText && menuItem.linkTo && (
+                            <span className="menu-item-container" key={index}>
+                                {menuItem.divider ? (
+                                    <Divider />
+                                    ) : (
+                                    <Link to={menuItem.linkTo}>
+                                        <ListItem primaryText={menuItem.primaryText}
+                                                  secondaryText={menuItem.secondaryText}
+                                                  leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null}
+                                        />
+                                    </Link>
+                                )}
+                            </span>
+                        )
                     )}
                 </List>
             </div>
