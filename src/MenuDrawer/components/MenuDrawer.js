@@ -9,7 +9,7 @@ import Drawer from 'material-ui/Drawer';
 export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText}) {
     return (
         <Drawer
-            containerClassName="main-drawer flex"
+            containerClassName="main-drawer"
             open={drawerOpen}
             width={320}
             onRequestChange={() => toggleDrawer(!drawerOpen)}
