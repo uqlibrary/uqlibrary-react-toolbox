@@ -2,7 +2,7 @@
 
 exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
 <Drawer
-  containerClassName="main-drawer flex"
+  containerClassName="main-drawer"
   disableSwipeToOpen={false}
   docked={true}
   onRequestChange={[Function]}
@@ -90,7 +90,7 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
 
 exports[`MenuDrawer snapshots tests renders menu with logo 1`] = `
 <Drawer
-  containerClassName="main-drawer flex"
+  containerClassName="main-drawer"
   disableSwipeToOpen={false}
   docked={false}
   onRequestChange={[Function]}
@@ -183,7 +183,7 @@ exports[`MenuDrawer snapshots tests renders menu with logo 1`] = `
 
 exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
 <Drawer
-  containerClassName="main-drawer flex"
+  containerClassName="main-drawer"
   disableSwipeToOpen={false}
   docked={false}
   onRequestChange={[Function]}

@@ -38,7 +38,7 @@ function MenuDrawer(_ref) {
     return _react2.default.createElement(
         _Drawer2.default,
         {
-            containerClassName: 'main-drawer flex',
+            containerClassName: 'main-drawer',
             open: drawerOpen,
             width: 320,
             onRequestChange: function onRequestChange() {
