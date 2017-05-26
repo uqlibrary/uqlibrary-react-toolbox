@@ -22,12 +22,12 @@ exports[`DatePickerWrapper snapshots tests renders DatePicker component 1`] = `
     onChange={[Function]}
     style={Object {}}
     type="text"
-    value={2017-05-26T05:01:27.585Z}
+    value={2017-05-26T06:08:44.922Z}
   />
 </div>
 `;
 
-exports[`DatePickerWrapper snapshots tests renders DatePicker component 2`] = `
+exports[`DatePickerWrapper snapshots tests renders DatePicker component with the help component 1`] = `
 <div
   style={
     Object {
@@ -49,7 +49,7 @@ exports[`DatePickerWrapper snapshots tests renders DatePicker component 2`] = `
     onChange={[Function]}
     style={Object {}}
     type="text"
-    value={2017-05-26T05:01:27.594Z}
+    value={2017-05-26T06:08:44.943Z}
   />
   <div
     style={
