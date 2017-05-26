@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatePickerWrapper snapshots tests renders DatePicker component 1`] = `
+<div
+  style={
+    Object {
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <DatePicker
+    autoOk={false}
+    container="dialog"
+    disableYearSelection={false}
+    disabled={false}
+    firstDayOfWeek={1}
+    floatingLabelText="This is a test date picker component"
+    fullWidth={true}
+    hideCalendarDate={false}
+    name="test"
+    onChange={[Function]}
+    style={Object {}}
+    type="text"
+    value={2017-05-26T05:01:27.585Z}
+  />
+</div>
+`;
+
+exports[`DatePickerWrapper snapshots tests renders DatePicker component 2`] = `
+<div
+  style={
+    Object {
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <DatePicker
+    autoOk={false}
+    container="dialog"
+    disableYearSelection={false}
+    disabled={false}
+    firstDayOfWeek={1}
+    floatingLabelText="This is a test date picker component"
+    fullWidth={true}
+    hideCalendarDate={false}
+    name="test"
+    onChange={[Function]}
+    style={Object {}}
+    type="text"
+    value={2017-05-26T05:01:27.594Z}
+  />
+  <div
+    style={
+      Object {
+        "position": "absolute",
+        "right": 0,
+        "top": "20px",
+      }
+    }
+  >
+    <Connect(HelpIcon)
+      buttonLabel="Got it!"
+      text="text"
+      title="title"
+    />
+  </div>
+</div>
+`;
