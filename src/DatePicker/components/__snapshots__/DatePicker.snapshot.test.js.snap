@@ -22,7 +22,7 @@ exports[`DatePickerWrapper snapshots tests renders DatePicker component 1`] = `
     onChange={[Function]}
     style={Object {}}
     type="text"
-    value={2017-05-29T22:58:45.484Z}
+    value={2017-05-29T23:50:53.451Z}
   />
 </div>
 `;
