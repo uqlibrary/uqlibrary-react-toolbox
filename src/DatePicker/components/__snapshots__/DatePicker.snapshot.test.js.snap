@@ -22,49 +22,7 @@ exports[`DatePickerWrapper snapshots tests renders DatePicker component 1`] = `
     onChange={[Function]}
     style={Object {}}
     type="text"
-    value={2017-05-26T06:08:44.922Z}
+    value={2017-05-29T22:58:45.484Z}
   />
-</div>
-`;
-
-exports[`DatePickerWrapper snapshots tests renders DatePicker component with the help component 1`] = `
-<div
-  style={
-    Object {
-      "position": "relative",
-      "width": "100%",
-    }
-  }
->
-  <DatePicker
-    autoOk={false}
-    container="dialog"
-    disableYearSelection={false}
-    disabled={false}
-    firstDayOfWeek={1}
-    floatingLabelText="This is a test date picker component"
-    fullWidth={true}
-    hideCalendarDate={false}
-    name="test"
-    onChange={[Function]}
-    style={Object {}}
-    type="text"
-    value={2017-05-26T06:08:44.943Z}
-  />
-  <div
-    style={
-      Object {
-        "position": "absolute",
-        "right": 0,
-        "top": "20px",
-      }
-    }
-  >
-    <Connect(HelpIcon)
-      buttonLabel="Got it!"
-      text="text"
-      title="title"
-    />
-  </div>
 </div>
 `;
