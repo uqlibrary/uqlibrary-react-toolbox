@@ -19,13 +19,7 @@ describe('DatePickerWrapper snapshots tests', () => {
                 floatingLabelText: 'This is a test date picker component'
             };
 
-        let app = setup(props);
-        expect(toJson(app)).toMatchSnapshot();
-
-        // test the help icon
-        props.helpTitle = 'title';
-        props.helpText = 'text';
-        app = setup(props);
+        const app = setup(props);
         expect(toJson(app)).toMatchSnapshot();
     });
 });
