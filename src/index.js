@@ -1,4 +1,5 @@
-export {AutoCompleteSelect, AsyncAutoCompleteSelect} from './AutoCompleteSelect';
+export {AutoCompleteSelect} from './AutoCompleteSelect';
+export {AsyncAutoCompleteSelect} from './AsyncAutoCompleteSelect';
 export {Authors, authorsReducer} from './Authors';
 export {HelpIcon, HelpDrawer, helpDrawerReducer} from './HelpDrawer';
 export {MenuDrawer} from './MenuDrawer';
