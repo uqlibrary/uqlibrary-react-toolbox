@@ -6,6 +6,7 @@ a set of reusable components for UQ Library applications
 [![Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox.svg)](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox)
 [![Dev Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox/dev-status.svg)](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox?type=dev)
 
+- [AsyncAutoCompleteSelect](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/AsyncAutoCompleteSelect)
 - [AutoCompleteSelect](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/AutoCompleteSelect)
 - [Authors](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Authors)
 - [HelpDrawer](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/HelpDrawer)
