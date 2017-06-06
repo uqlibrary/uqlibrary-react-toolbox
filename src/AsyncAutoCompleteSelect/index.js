@@ -1,3 +1,2 @@
-import AsyncAutoCompleteSelect from './AsyncAutoCompleteSelect.component';
+export {default as AsyncAutoCompleteSelect} from './containers/AsyncAutoCompleteSelect';
 
-export default AsyncAutoCompleteSelect;
