@@ -12,10 +12,13 @@ Object.defineProperty(exports, 'AutoCompleteSelect', {
     return _AutoCompleteSelect.AutoCompleteSelect;
   }
 });
+
+var _AsyncAutoCompleteSelect = require('./AsyncAutoCompleteSelect');
+
 Object.defineProperty(exports, 'AsyncAutoCompleteSelect', {
   enumerable: true,
   get: function get() {
-    return _AutoCompleteSelect.AsyncAutoCompleteSelect;
+    return _AsyncAutoCompleteSelect.AsyncAutoCompleteSelect;
   }
 });
 
@@ -61,6 +64,15 @@ Object.defineProperty(exports, 'MenuDrawer', {
   enumerable: true,
   get: function get() {
     return _MenuDrawer.MenuDrawer;
+  }
+});
+
+var _DatePicker = require('./DatePicker');
+
+Object.defineProperty(exports, 'DatePicker', {
+  enumerable: true,
+  get: function get() {
+    return _DatePicker.DatePicker;
   }
 });
 

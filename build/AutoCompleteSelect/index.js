@@ -13,13 +13,4 @@ Object.defineProperty(exports, 'AutoCompleteSelect', {
   }
 });
 
-var _AsyncAutoCompleteSelect = require('./containers/AsyncAutoCompleteSelect');
-
-Object.defineProperty(exports, 'AsyncAutoCompleteSelect', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_AsyncAutoCompleteSelect).default;
-  }
-});
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
