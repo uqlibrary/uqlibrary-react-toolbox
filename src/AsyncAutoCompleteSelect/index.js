@@ -1,3 +1,1 @@
-import AsyncAutoCompleteSelect from './containers/AsyncAutoComplete';
-
-export default AsyncAutoCompleteSelect;
+export {default as AsyncAutoCompleteSelect} from './containers/AsyncAutoComplete';
