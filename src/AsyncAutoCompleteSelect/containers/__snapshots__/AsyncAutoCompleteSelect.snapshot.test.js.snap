@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Journal article form snapshot tests renders default add journal article form 1`] = `
+<div
+  style={
+    Object {
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <AsyncAutoCompleteSelect
+    alwaysRenderSuggestions={false}
+    dataSourceLabel="label"
+    disabled={false}
+    errorText=""
+    label="test"
+    minLength={2}
+    value={null}
+  />
+  <div
+    style={
+      Object {
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Connect(HelpIcon)
+      buttonLabel="Got it!"
+      text="text"
+      title="title"
+    />
+  </div>
+</div>
+`;

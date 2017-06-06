@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AsyncAutoCompleteSelect from '../components/AsyncAutoCompleteSelect.component';
 
-import filterProps from '../../helpers/_filterProps';
+import propFilter from '../../helpers/_filterProps';
 import {HelpIcon} from '../../HelpDrawer';
 
-const AutoCompleteSelectWrapper = props => {
-    const filteredProps = filterProps(props, AsyncAutoCompleteSelect.propTypes);
+const AsyncAutoCompleteSelectWrapper = props => {
+    const filteredProps = propFilter(props, AsyncAutoCompleteSelect.propTypes);
     return (
         <div style={{position: 'relative', width: '100%'}}>
             <AsyncAutoCompleteSelect {...filteredProps} />
@@ -19,10 +19,10 @@ const AutoCompleteSelectWrapper = props => {
     );
 };
 
-AutoCompleteSelectWrapper.propTypes = {
+AsyncAutoCompleteSelectWrapper.propTypes = {
     ...AsyncAutoCompleteSelect.propTypes,
     helpTitle: PropTypes.string,
     helpText: PropTypes.any
 };
 
-export default AutoCompleteSelectWrapper;
+export default AsyncAutoCompleteSelectWrapper;

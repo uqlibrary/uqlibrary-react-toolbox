@@ -29,10 +29,6 @@ const dataSource = [
         {"username":"test4","name":"Test User 4","mail":"test4@test.com"}
     ];
     
-    const autoCompleteOwner = {
-        name: 'A Name',
-        mail: 'Mail Text'
-    };
  
 const App = () => (
   <div>
@@ -40,8 +36,8 @@ const App = () => (
         label="Owner"
         dataSource
         labelField="name"
-        value={autoCompleteOwner}
         popoverFloatingLabelText="This is a sample label"
+        disabled={false}
         errorText="" />
   </div>
 );

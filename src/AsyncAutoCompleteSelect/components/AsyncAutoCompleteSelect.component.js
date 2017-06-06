@@ -10,6 +10,8 @@ import CircularProgress from 'material-ui/CircularProgress';
 
 import AsyncAutoSuggestInput from './AsyncAutoSuggestInput.component';
 
+import './AsyncAutoCompleteSelect.scss';
+
 export default class AsyncAutoCompleteSelect extends React.PureComponent {
     static propTypes = {
         dataSource: PropTypes.func,
