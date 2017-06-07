@@ -19,7 +19,7 @@ export default function StaticPage({title, text, help}) {
                             <h2 className="headline">{title ? title : 'This is the card title'}</h2>
                         </div>
 
-                        <div className="column">
+                        <div className="column is-narrow is-helpicon">
                             {help && (
                                 <HelpIcon
                                     title={help.title}
