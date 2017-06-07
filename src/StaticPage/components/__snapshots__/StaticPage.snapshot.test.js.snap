@@ -32,7 +32,7 @@ exports[`StaticPage snapshots tests renders StaticPage with title and text 1`] =
           </h2>
         </div>
         <div
-          className="column"
+          className="column is-narrow is-helpicon"
         />
       </div>
     </CardHeader>
@@ -80,7 +80,7 @@ exports[`StaticPage snapshots tests renders StaticPage with title, text and help
           </h2>
         </div>
         <div
-          className="column"
+          className="column is-narrow is-helpicon"
         >
           <Connect(HelpIcon)
             text="help text"
