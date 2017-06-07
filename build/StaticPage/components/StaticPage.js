@@ -52,7 +52,7 @@ function StaticPage(_ref) {
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'column' },
+                        { className: 'column is-narrow is-helpicon' },
                         help && _react2.default.createElement(_index.HelpIcon, {
                             title: help.title,
                             text: help.text,
