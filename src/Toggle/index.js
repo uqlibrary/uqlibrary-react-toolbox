@@ -1,1 +1,1 @@
-export {default as Toggle} from './containers/Toggle';
+export {default as Toggle} from './components/Toggle';
