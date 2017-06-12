@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Toggle snapshot tests renders default toggle component 1`] = `
+<div
+  style={
+    Object {
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <Toggle
+    defaultToggled={false}
+    disabled={false}
+    label="test"
+    labelPosition="left"
+    onChange={[Function]}
+    value={2017-06-12T04:48:03.323Z}
+  />
+  <div
+    style={
+      Object {
+        "position": "absolute",
+        "right": 0,
+        "top": "20px",
+      }
+    }
+  >
+    <Connect(HelpIcon)
+      buttonLabel="Got it!"
+      text="text"
+      title="title"
+    />
+  </div>
+</div>
+`;
