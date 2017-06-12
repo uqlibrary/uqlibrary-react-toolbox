@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Toggle = require('./containers/Toggle');
+var _Toggle = require('./components/Toggle');
 
 Object.defineProperty(exports, 'Toggle', {
   enumerable: true,

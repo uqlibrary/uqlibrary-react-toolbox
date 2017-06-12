@@ -85,6 +85,15 @@ Object.defineProperty(exports, 'TextField', {
   }
 });
 
+var _Toggle = require('./Toggle');
+
+Object.defineProperty(exports, 'Toggle', {
+  enumerable: true,
+  get: function get() {
+    return _Toggle.Toggle;
+  }
+});
+
 var _StaticPage = require('./StaticPage');
 
 Object.defineProperty(exports, 'StaticPage', {

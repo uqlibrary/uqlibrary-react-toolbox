@@ -30,16 +30,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function ToggleWrapper(props) {
     var filteredProps = (0, _filterProps2.default)(props, _Toggle2.default.propTypes);
-
-    filteredProps.name = props.input ? props.input.name : props.name;
-    filteredProps.floatingLabelText = props.floatingLabelText;
-    filteredProps.floatingLabelFixed = props.floatingLabelFixed;
-
-    filteredProps.onChange = function (e, value) {
-        return props.input.onChange(value);
-    };
-    delete filteredProps.onBlur;
-
     return _react2.default.createElement(
         'div',
         { style: { position: 'relative', width: '100%' } },
