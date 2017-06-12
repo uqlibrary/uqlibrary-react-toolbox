@@ -13,7 +13,7 @@ export default function StaticPage({title, text, help}) {
 
             <Card className="layout-card">
                 <CardHeader className="card-header">
-                    <div className="columns is-gapless">
+                    <div className="columns is-gapless is-mobile">
 
                         <div className="column">
                             <h2 className="headline">{title ? title : 'This is the card title'}</h2>
