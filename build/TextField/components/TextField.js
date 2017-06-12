@@ -32,7 +32,7 @@ var TextFieldWrapper = function TextFieldWrapper(props) {
         'div',
         { style: { position: 'relative', width: '100%' } },
         _react2.default.createElement(_TextField2.default, filteredProps),
-        props.helpText && _react2.default.createElement(_HelpDrawer.HelpIcon, { title: props.helpTitle, text: props.helpText, buttonLabel: 'Got it!' })
+        props.helpText && _react2.default.createElement(_HelpDrawer.HelpIcon, { title: props.helpTitle, text: props.helpText, buttonLabel: 'Ok' })
     );
 };
 

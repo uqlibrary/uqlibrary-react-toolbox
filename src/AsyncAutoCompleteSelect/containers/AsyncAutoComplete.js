@@ -12,7 +12,7 @@ const AsyncAutoCompleteSelectWrapper = props => {
             <AsyncAutoCompleteSelect {...filteredProps} />
             {props.helpText && (
                 <div style={{position: 'absolute', right: 0, top: 0}}>
-                    <HelpIcon title={props.helpTitle} text={props.helpText} buttonLabel="Got it!" />
+                    <HelpIcon title={props.helpTitle} text={props.helpText} buttonLabel="Ok" />
                 </div>
             )}
         </div>

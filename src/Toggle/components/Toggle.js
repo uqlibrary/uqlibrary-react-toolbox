@@ -14,7 +14,7 @@ export default function ToggleWrapper(props) {
             <Toggle {...filteredProps} />
             {props.helpText && (
                 <div style={{position: 'absolute', top: '20px', right: 0}}>
-                    <HelpIcon title={props.helpTitle} text={props.helpText} buttonLabel="Got it!" />
+                    <HelpIcon title={props.helpTitle} text={props.helpText} buttonLabel="Ok" />
                 </div>
             )}
         </div>

@@ -14,8 +14,6 @@ exports[`Add Toggle snapshot tests renders default toggle component 1`] = `
     disabled={false}
     label="test"
     labelPosition="left"
-    onChange={[Function]}
-    value={2017-06-12T04:48:03.323Z}
   />
   <div
     style={
@@ -27,7 +25,7 @@ exports[`Add Toggle snapshot tests renders default toggle component 1`] = `
     }
   >
     <Connect(HelpIcon)
-      buttonLabel="Got it!"
+      buttonLabel="Ok"
       text="text"
       title="title"
     />

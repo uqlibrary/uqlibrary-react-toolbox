@@ -12,7 +12,7 @@ const TextFieldWrapper = props => {
         <div style={{position: 'relative', width: '100%'}}>
             <TextField {...filteredProps} />
             {props.helpText && (
-                <HelpIcon title={props.helpTitle} text={props.helpText} buttonLabel="Got it!" />
+                <HelpIcon title={props.helpTitle} text={props.helpText} buttonLabel="Ok" />
             )}
         </div>
     );

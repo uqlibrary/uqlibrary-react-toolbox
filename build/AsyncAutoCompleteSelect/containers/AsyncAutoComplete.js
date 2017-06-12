@@ -35,7 +35,7 @@ var AsyncAutoCompleteSelectWrapper = function AsyncAutoCompleteSelectWrapper(pro
         props.helpText && _react2.default.createElement(
             'div',
             { style: { position: 'absolute', right: 0, top: 0 } },
-            _react2.default.createElement(_HelpDrawer.HelpIcon, { title: props.helpTitle, text: props.helpText, buttonLabel: 'Got it!' })
+            _react2.default.createElement(_HelpDrawer.HelpIcon, { title: props.helpTitle, text: props.helpText, buttonLabel: 'Ok' })
         )
     );
 };

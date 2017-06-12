@@ -47,7 +47,7 @@ function DatePickerWrapper(props) {
         props.helpText && _react2.default.createElement(
             'div',
             { style: { position: 'absolute', top: '20px', right: 0 } },
-            _react2.default.createElement(_HelpDrawer.HelpIcon, { title: props.helpTitle, text: props.helpText, buttonLabel: 'Got it!' })
+            _react2.default.createElement(_HelpDrawer.HelpIcon, { title: props.helpTitle, text: props.helpText, buttonLabel: 'Ok' })
         )
     );
 }

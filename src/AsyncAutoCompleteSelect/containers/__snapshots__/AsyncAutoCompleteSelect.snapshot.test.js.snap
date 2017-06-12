@@ -28,7 +28,7 @@ exports[`Add Journal article form snapshot tests renders default add journal art
     }
   >
     <Connect(HelpIcon)
-      buttonLabel="Got it!"
+      buttonLabel="Ok"
       text="text"
       title="title"
     />
