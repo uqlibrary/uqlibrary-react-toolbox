@@ -40,7 +40,7 @@ function StaticPage(_ref) {
                 { className: 'card-header' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'columns is-gapless' },
+                    { className: 'columns is-gapless is-mobile' },
                     _react2.default.createElement(
                         'div',
                         { className: 'column' },
