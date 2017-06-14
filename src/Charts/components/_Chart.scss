@@ -110,6 +110,7 @@ $highlight-color-10: #e6ebf5; /* Pressed button, color axis min color. */
   fill: $neutral-color-40;
   font-size: 0.7em;
   transition: fill 250ms, font-size 250ms;
+  display: none;
 }
 .highcharts-credits:hover {
   fill: black;
