@@ -30,11 +30,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function ToggleWrapper(props) {
     var filteredProps = (0, _filterProps2.default)(props, _Toggle2.default.propTypes);
+    filteredProps.onToggle = filteredProps.onChange;
+    filteredProps.toggled = !!filteredProps.value;
     delete filteredProps.errorText;
 
     return _react2.default.createElement(
         'div',
-        { style: { position: 'relative', width: '100%' } },
+        { className: 'toggle', style: { position: 'relative', width: '100%' } },
         _react2.default.createElement(_Toggle2.default, filteredProps),
         props.helpText && _react2.default.createElement(
             'div',
