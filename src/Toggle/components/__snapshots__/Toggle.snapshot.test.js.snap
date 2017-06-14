@@ -14,6 +14,7 @@ exports[`Add Toggle snapshot tests renders default toggle component 1`] = `
     disabled={false}
     label="test"
     labelPosition="left"
+    toggled={false}
   />
   <div
     style={

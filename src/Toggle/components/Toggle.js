@@ -7,6 +7,8 @@ import {HelpIcon} from '../../HelpDrawer';
 
 export default function ToggleWrapper(props) {
     const filteredProps = propFilter(props, Toggle.propTypes);
+    filteredProps.onToggle = filteredProps.onChange;
+    filteredProps.toggled = !!filteredProps.value;
     delete filteredProps.errorText;
 
     return (
