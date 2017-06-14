@@ -2,6 +2,7 @@
 
 exports[`Add Toggle snapshot tests renders default toggle component 1`] = `
 <div
+  className="toggle"
   style={
     Object {
       "position": "relative",
@@ -14,6 +15,7 @@ exports[`Add Toggle snapshot tests renders default toggle component 1`] = `
     disabled={false}
     label="test"
     labelPosition="left"
+    toggled={false}
   />
   <div
     style={
@@ -25,7 +27,7 @@ exports[`Add Toggle snapshot tests renders default toggle component 1`] = `
     }
   >
     <Connect(HelpIcon)
-      buttonLabel="Got it!"
+      buttonLabel="Ok"
       text="text"
       title="title"
     />
