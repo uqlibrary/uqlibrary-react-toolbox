@@ -12,7 +12,7 @@ export default function ToggleWrapper(props) {
     delete filteredProps.errorText;
 
     return (
-        <div style={{position: 'relative', width: '100%'}}>
+        <div className="toggle" style={{position: 'relative', width: '100%'}}>
             <Toggle {...filteredProps} />
             {props.helpText && (
                 <div style={{position: 'absolute', top: '20px', right: 0}}>

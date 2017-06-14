@@ -1,0 +1,21 @@
+@import '../../../sass/variables';
+
+/* thumb styles */
+.toggle input + div > div:last-child > div:last-child {
+    background-color: white !important;
+}
+
+/* thumb style - toggled */
+.toggle input[value="true"] + div > div:last-child > div:last-child {
+    background-color: #2377CB !important;
+}
+
+/* track styles */
+.toggle input + div > div:last-child > div:first-child {
+    background-color: #595959 !important;
+}
+
+/* track style - toggled */
+.toggle input[value="true"] + div > div:last-child > div:first-child {
+    background-color: #288BED !important;
+}
