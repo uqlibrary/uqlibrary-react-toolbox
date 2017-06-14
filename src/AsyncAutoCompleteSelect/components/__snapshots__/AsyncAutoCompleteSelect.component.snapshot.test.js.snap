@@ -870,6 +870,7 @@ exports[`Add Journal article form snapshot tests renders default add journal art
   </div>
   <Modal
     ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
     className="auto-complete-select-content"
     closeTimeoutMS={1}
     contentLabel="Modal"
