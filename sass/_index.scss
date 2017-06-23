@@ -36,11 +36,7 @@ html, body {
   max-width: 1200px;
   margin: 24px auto;
   width: 90%;
-  padding: 10px;
-
-  &:last-child {
-    //margin-bottom: 100px;
-  }
+  padding: 10px 10px 24px 10px;
 }
 
 .card-header{
