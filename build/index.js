@@ -141,3 +141,12 @@ Object.defineProperty(exports, 'AuthorsPublicationsPerYearChart', {
     return _Charts.AuthorsPublicationsPerYearChart;
   }
 });
+
+var _SelectField = require('./SelectField');
+
+Object.defineProperty(exports, 'SelectField', {
+  enumerable: true,
+  get: function get() {
+    return _SelectField.SelectField;
+  }
+});
