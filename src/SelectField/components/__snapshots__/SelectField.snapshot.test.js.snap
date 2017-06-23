@@ -9,16 +9,14 @@ exports[`TextFieldWrapper snapshots tests renders TextField component 1`] = `
     }
   }
 >
-  <TextField
+  <SelectField
+    autoWidth={false}
     disabled={false}
-    floatingLabelFixed={false}
     floatingLabelText="This is a test textfield component"
     fullWidth={true}
-    multiLine={false}
+    multiple={false}
     name="testField"
-    rows={1}
     type="text"
-    underlineShow={true}
   />
 </div>
 `;

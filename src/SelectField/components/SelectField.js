@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectField from 'material-ui/TextField';
+import SelectField from 'material-ui/SelectField';
 import PropTypes from 'prop-types';
 
 

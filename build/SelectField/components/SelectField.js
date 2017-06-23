@@ -10,9 +10,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _TextField = require('material-ui/TextField');
+var _SelectField = require('material-ui/SelectField');
 
-var _TextField2 = _interopRequireDefault(_TextField);
+var _SelectField2 = _interopRequireDefault(_SelectField);
 
 var _propTypes = require('prop-types');
 
@@ -27,16 +27,16 @@ var _HelpDrawer = require('../../HelpDrawer');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SelectFieldWrapper = function SelectFieldWrapper(props) {
-    var filteredProps = (0, _filterProps2.default)(props, _TextField2.default.propTypes);
+    var filteredProps = (0, _filterProps2.default)(props, _SelectField2.default.propTypes);
     return _react2.default.createElement(
         'div',
         { style: { position: 'relative', width: '100%' } },
-        _react2.default.createElement(_TextField2.default, filteredProps),
+        _react2.default.createElement(_SelectField2.default, filteredProps),
         props.helpText && _react2.default.createElement(_HelpDrawer.HelpIcon, { title: props.helpTitle, text: props.helpText, buttonLabel: 'Ok' })
     );
 };
 
-SelectFieldWrapper.propTypes = _extends({}, _TextField2.default.propTypes, {
+SelectFieldWrapper.propTypes = _extends({}, _SelectField2.default.propTypes, {
     helpTitle: _propTypes2.default.string,
     helpText: _propTypes2.default.any
 });
