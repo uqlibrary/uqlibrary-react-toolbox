@@ -13,6 +13,7 @@ a set of reusable components for UQ Library applications
 - [MenuDrawer](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/MenuDrawer)
 - [SASS](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/sass)
 - [SelectField](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/SelectField)
+- [TextField](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/TextField)
 - [Toggle](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Toggle)
 - [Toolbox](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/TextField)
 - [StaticPage](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/StaticPage)
