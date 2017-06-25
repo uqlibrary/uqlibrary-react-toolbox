@@ -8,6 +8,8 @@ import {HelpIcon} from '../../HelpDrawer';
 
 const SelectFieldWrapper = props => {
     const filteredProps = propFilter(props, SelectField.propTypes);
+    filteredProps.onChange = (event, index, value) => props.input.onChange(value);
+    filteredProps.onBlur = () => props.input.onBlur(props.input.value);
     return (
         <div style={{position: 'relative', width: '100%'}}>
             <SelectField {...filteredProps} />

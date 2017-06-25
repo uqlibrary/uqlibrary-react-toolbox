@@ -16,6 +16,8 @@ exports[`TextFieldWrapper snapshots tests renders TextField component 1`] = `
     fullWidth={true}
     multiple={false}
     name="testField"
+    onBlur={[Function]}
+    onChange={[Function]}
     type="text"
   />
 </div>

@@ -28,6 +28,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var SelectFieldWrapper = function SelectFieldWrapper(props) {
     var filteredProps = (0, _filterProps2.default)(props, _SelectField2.default.propTypes);
+    filteredProps.onChange = function (event, index, value) {
+        return props.input.onChange(value);
+    };
+    filteredProps.onBlur = function () {
+        return props.input.onBlur(props.input.value);
+    };
     return _react2.default.createElement(
         'div',
         { style: { position: 'relative', width: '100%' } },
