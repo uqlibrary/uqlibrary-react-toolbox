@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextFieldWrapper snapshots tests renders TextField component 1`] = `
+exports[`SelectfieldWrapper snapshots tests renders SelectField component 1`] = `
 <div
   style={
     Object {
@@ -12,10 +12,10 @@ exports[`TextFieldWrapper snapshots tests renders TextField component 1`] = `
   <SelectField
     autoWidth={false}
     disabled={false}
-    floatingLabelText="This is a test textfield component"
+    floatingLabelText="This is a test selectfield component"
     fullWidth={true}
     multiple={false}
-    name="testField"
+    name="selectfield"
     onBlur={[Function]}
     onChange={[Function]}
     type="text"

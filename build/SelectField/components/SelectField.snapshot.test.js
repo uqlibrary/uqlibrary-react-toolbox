@@ -27,13 +27,13 @@ function setup(props) {
     return (0, _enzyme.shallow)(_react2.default.createElement(_SelectField2.default, consolidatedProps));
 }
 
-describe('TextFieldWrapper snapshots tests', function () {
-    it('renders TextField component', function () {
+describe('SelectfieldWrapper snapshots tests', function () {
+    it('renders SelectField component', function () {
         var props = {
-            name: 'testField',
+            name: 'selectfield',
             type: 'text',
             fullWidth: true,
-            floatingLabelText: 'This is a test textfield component'
+            floatingLabelText: 'This is a test selectfield component'
         };
 
         var wrapper = setup(props);

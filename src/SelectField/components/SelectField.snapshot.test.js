@@ -12,14 +12,14 @@ function setup(props) {
     return shallow(<SelectField {...consolidatedProps} />);
 }
 
-describe('TextFieldWrapper snapshots tests', () => {
-    it('renders TextField component', () => {
+describe('SelectfieldWrapper snapshots tests', () => {
+    it('renders SelectField component', () => {
         const props =
             {
-                name: 'testField',
+                name: 'selectfield',
                 type: 'text',
                 fullWidth: true,
-                floatingLabelText: 'This is a test textfield component'
+                floatingLabelText: 'This is a test selectfield component'
             };
 
         const wrapper = setup(props);
