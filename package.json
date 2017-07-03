@@ -1,6 +1,6 @@
 {
   "name": "uqlibrary-react-toolbox",
-  "version": "0.0.18",
+  "version": "0.0.20",
   "main": "build/index.js",
   "license": "MIT",
   "jest": {
@@ -127,10 +127,10 @@
     "timezones.json": "^1.1.0"
   },
   "peerDependencies": {
-    "webpack": "1 || ^2 || ^2.1.0-beta || ^2.2.0-rc",
     "material-ui": ">= 0.15.0 < 1.0.0",
     "react": "^15.5.0",
-    "react-dom": "^15.5.0"
+    "react-dom": "^15.5.0",
+    "webpack": "1 || ^2 || ^2.1.0-beta || ^2.2.0-rc"
   },
   "scripts": {
     "test": "jest --updateSnapshot",
