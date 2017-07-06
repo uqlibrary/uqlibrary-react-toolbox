@@ -25,7 +25,7 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
                                 {menuItem.divider ?
                                     (<Divider />)
                                     :
-                                    (menuItem.target && menu.linkTo.indexOf('http') != -1 ?
+                                    (menuItem.target && menuItem.linkTo.indexOf('http') != -1 ?
                                         (<a href={menuItem.linkTo} target={menuItem.target}>
                                             <ListItem primaryText={menuItem.primaryText}
                                                       secondaryText={menuItem.secondaryText}
