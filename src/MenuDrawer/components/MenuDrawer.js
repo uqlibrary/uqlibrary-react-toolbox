@@ -22,16 +22,25 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
                     {menuItems.map((menuItem, index) =>
                         menuItem.primaryText && menuItem.linkTo && (
                             <span className="menu-item-container" key={index}>
-                                {menuItem.divider ? (
-                                    <Divider />
-                                    ) : (
-                                    <Link to={menuItem.linkTo}>
-                                        <ListItem primaryText={menuItem.primaryText}
-                                                  secondaryText={menuItem.secondaryText}
-                                                  leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null}
-                                        />
-                                    </Link>
-                                )}
+                                {menuItem.divider ?
+                                    (<Divider />)
+                                    :
+                                    (menuItem.target && menu.linkTo.indexOf('http') != -1 ?
+                                        (<a href={menuItem.linkTo} target={menuItem.target}>
+                                            <ListItem primaryText={menuItem.primaryText}
+                                                      secondaryText={menuItem.secondaryText}
+                                                      leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null}
+                                            />
+                                        </a>)
+                                        :
+                                        (<Link to={menuItem.linkTo}>
+                                            <ListItem primaryText={menuItem.primaryText}
+                                                      secondaryText={menuItem.secondaryText}
+                                                      leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null}
+                                            />
+                                        </Link>)
+                                    )
+                                }
                             </span>
                         )
                     )}
