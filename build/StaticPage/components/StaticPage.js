@@ -46,7 +46,7 @@ function StaticPage(_ref) {
                         { className: 'column' },
                         _react2.default.createElement(
                             'h2',
-                            { className: 'title is-3' },
+                            { className: 'title is-4' },
                             title ? title : 'This is the card title'
                         )
                     ),
