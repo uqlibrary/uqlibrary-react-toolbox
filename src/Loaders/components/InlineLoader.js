@@ -7,7 +7,7 @@ export default function InlineLoader({message}) {
         <div className="column align-center">
             <br /><br />
             <CircularProgress size={60} thickness={8} /> <br /><br />
-            <span className="headline">{message}</span> <br /><br />
+            <span className="title is-4">{message}</span> <br /><br />
         </div>
     );
 }

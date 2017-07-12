@@ -32,7 +32,7 @@ const HelpDrawer = ({title, text, buttonLabel, open, hide}) => {
             onRequestChange={toggleDrawer}>
             <div className="layout-fill side-drawer">
                 <div className="content">
-                    <h1 className="headline">{title}</h1>
+                    <h1 className="title is-4">{title}</h1>
                         <Divider style={{margin: '10px 0px 20px 0px'}} />
                     <div className="subhead">{text}</div>
                 </div>

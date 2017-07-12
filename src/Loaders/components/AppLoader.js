@@ -6,7 +6,7 @@ export default function AppLoader({title, logoImage, logoText, progressColor}) {
     return (
         <div className="app-loader columns is-gapless layout-fill" >
             <div className="app-loader-content column is-centered">
-                <h1 className="display-2 color-reverse">{title}</h1>
+                <h1 className="title is-2 color-reverse">{title}</h1>
                 <br />
                 <br />
                 <CircularProgress size={80} thickness={8} color={progressColor} />

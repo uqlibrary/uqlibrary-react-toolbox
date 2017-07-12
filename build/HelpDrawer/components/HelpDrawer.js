@@ -67,7 +67,7 @@ var HelpDrawer = function HelpDrawer(_ref) {
                 { className: 'content' },
                 _react2.default.createElement(
                     'h1',
-                    { className: 'headline' },
+                    { className: 'title is-4' },
                     title
                 ),
                 _react2.default.createElement(_Divider2.default, { style: { margin: '10px 0px 20px 0px' } }),
