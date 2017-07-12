@@ -9,16 +9,14 @@ export default function StaticPage({title, cardtitle, text, help}) {
 
         <div className="layout-fill">
 
-            <h1 className="title is-3">{title ? title : 'This is the page title'}</h1>
+            <h1 className="title is-3">{title ? title : 'This needs a page title'}</h1>
 
             <Card className="layout-card">
                 <CardHeader className="card-header">
                     <div className="columns is-gapless is-mobile">
 
                         <div className="column">
-                            {cardtitle && (
-                            <h2 className="title is-4">cardtitle</h2>
-                            )}
+                            <h2 className="title is-4">{cardtitle ? cardtitle : 'This needs a card title'}</h2>
                         </div>
 
                         <div className="column is-narrow is-helpicon">
@@ -36,7 +34,7 @@ export default function StaticPage({title, cardtitle, text, help}) {
                 <CardText className="body-1">
                     <br />
                     <div>
-                        {text ? text : 'This is the default card content'}
+                        {text ? text : 'This needs some card content'}
                     </div>
                 </CardText>
 

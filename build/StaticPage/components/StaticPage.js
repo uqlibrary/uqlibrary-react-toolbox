@@ -31,7 +31,7 @@ function StaticPage(_ref) {
         _react2.default.createElement(
             'h1',
             { className: 'title is-3' },
-            title ? title : 'This is the page title'
+            title ? title : 'This needs a page title'
         ),
         _react2.default.createElement(
             _Card.Card,
@@ -45,10 +45,10 @@ function StaticPage(_ref) {
                     _react2.default.createElement(
                         'div',
                         { className: 'column' },
-                        cardtitle && _react2.default.createElement(
+                        _react2.default.createElement(
                             'h2',
                             { className: 'title is-4' },
-                            'cardtitle'
+                            cardtitle ? cardtitle : 'This needs a card title'
                         )
                     ),
                     _react2.default.createElement(
@@ -69,7 +69,7 @@ function StaticPage(_ref) {
                 _react2.default.createElement(
                     'div',
                     null,
-                    text ? text : 'This is the default card content'
+                    text ? text : 'This needs some card content'
                 )
             )
         )
