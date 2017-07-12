@@ -190,10 +190,10 @@ module.exports = {
         "jsx-a11y/html-has-lang" : 2,
         "jsx-a11y/click-events-have-key-events" : 2,
         "jsx-a11y/no-onchange" : 2,
-        "jsx-a11y/img-has-alt": [ 2, {
+        "jsx-a11y/alt-text": [ 2, {
             "components": [ "Image" ]
         }],
-        "jsx-a11y/onclick-has-focus" : 2,
+        "jsx-a11y/interactive-supports-focus" : 2,
         "jsx-a11y/href-no-hash": [ 2, {
             "components": [ "Link" ],
             "specialLink": [ "hrefLeft", "hrefRight" ]
