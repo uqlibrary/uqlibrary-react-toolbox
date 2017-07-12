@@ -29,7 +29,7 @@ function StaticPage(_ref) {
         { className: 'layout-fill' },
         _react2.default.createElement(
             'h1',
-            { className: 'title is-2' },
+            { className: 'title is-3' },
             title ? title : 'This is the page title'
         ),
         _react2.default.createElement(

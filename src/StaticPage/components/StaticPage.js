@@ -9,7 +9,7 @@ export default function StaticPage({title, text, help}) {
 
         <div className="layout-fill">
 
-            <h1 className="title is-2">{title ? title : 'This is the page title'}</h1>
+            <h1 className="title is-3">{title ? title : 'This is the page title'}</h1>
 
             <Card className="layout-card">
                 <CardHeader className="card-header">
