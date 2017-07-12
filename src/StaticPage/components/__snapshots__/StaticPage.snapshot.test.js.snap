@@ -5,7 +5,7 @@ exports[`StaticPage snapshots tests renders StaticPage with title and text 1`] =
   className="layout-fill"
 >
   <h1
-    className="page-title display-1"
+    className="title is-3"
   >
     about
   </h1>
@@ -26,9 +26,9 @@ exports[`StaticPage snapshots tests renders StaticPage with title and text 1`] =
           className="column"
         >
           <h2
-            className="headline"
+            className="title is-4"
           >
-            about
+            This is the card title
           </h2>
         </div>
         <div
@@ -53,7 +53,7 @@ exports[`StaticPage snapshots tests renders StaticPage with title, text and help
   className="layout-fill"
 >
   <h1
-    className="page-title display-1"
+    className="title is-3"
   >
     about
   </h1>
@@ -74,9 +74,9 @@ exports[`StaticPage snapshots tests renders StaticPage with title, text and help
           className="column"
         >
           <h2
-            className="headline"
+            className="title is-4"
           >
-            about
+            This is the card title
           </h2>
         </div>
         <div

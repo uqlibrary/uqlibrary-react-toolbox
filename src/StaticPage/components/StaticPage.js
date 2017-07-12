@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {Card, CardText, CardHeader} from 'material-ui/Card';
 import {HelpIcon} from '../../index';
 
-export default function StaticPage({title, text, help}) {
+export default function StaticPage({title, cardtitle, text, help}) {
     return (
 
         <div className="layout-fill">
@@ -46,6 +46,7 @@ export default function StaticPage({title, text, help}) {
 
 StaticPage.propTypes = {
     title: PropTypes.string.isRequired,
+    cardtitle: PropTypes.string,
     text: PropTypes.string.isRequired,
     help: PropTypes.object
 };

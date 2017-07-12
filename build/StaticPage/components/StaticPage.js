@@ -21,6 +21,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function StaticPage(_ref) {
     var title = _ref.title,
+        cardtitle = _ref.cardtitle,
         text = _ref.text,
         help = _ref.help;
 
@@ -77,6 +78,7 @@ function StaticPage(_ref) {
 
 StaticPage.propTypes = {
     title: _propTypes2.default.string.isRequired,
+    cardtitle: _propTypes2.default.string,
     text: _propTypes2.default.string.isRequired,
     help: _propTypes2.default.object
 };
