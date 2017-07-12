@@ -16,7 +16,9 @@ export default function StaticPage({title, cardtitle, text, help}) {
                     <div className="columns is-gapless is-mobile">
 
                         <div className="column">
-                            <h2 className="title is-4">{cardtitle ? cardtitle : 'This is the card title'}</h2>
+                            {cardtitle && (
+                            <h2 className="title is-4">cardtitle</h2>
+                            )}
                         </div>
 
                         <div className="column is-narrow is-helpicon">

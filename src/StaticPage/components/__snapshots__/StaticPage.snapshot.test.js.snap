@@ -24,13 +24,7 @@ exports[`StaticPage snapshots tests renders StaticPage with title and text 1`] =
       >
         <div
           className="column"
-        >
-          <h2
-            className="title is-4"
-          >
-            This is the card title
-          </h2>
-        </div>
+        />
         <div
           className="column is-narrow is-helpicon"
         />
@@ -72,13 +66,7 @@ exports[`StaticPage snapshots tests renders StaticPage with title, text and help
       >
         <div
           className="column"
-        >
-          <h2
-            className="title is-4"
-          >
-            This is the card title
-          </h2>
-        </div>
+        />
         <div
           className="column is-narrow is-helpicon"
         >

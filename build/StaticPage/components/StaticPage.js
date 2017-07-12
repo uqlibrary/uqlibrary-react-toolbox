@@ -45,10 +45,10 @@ function StaticPage(_ref) {
                     _react2.default.createElement(
                         'div',
                         { className: 'column' },
-                        _react2.default.createElement(
+                        cardtitle && _react2.default.createElement(
                             'h2',
                             { className: 'title is-4' },
-                            cardtitle ? cardtitle : 'This is the card title'
+                            'cardtitle'
                         )
                     ),
                     _react2.default.createElement(
