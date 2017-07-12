@@ -47,7 +47,7 @@ function StaticPage(_ref) {
                         _react2.default.createElement(
                             'h2',
                             { className: 'title is-4' },
-                            title ? title : 'This is the card title'
+                            cardtitle ? cardtitle : 'This is the card title'
                         )
                     ),
                     _react2.default.createElement(

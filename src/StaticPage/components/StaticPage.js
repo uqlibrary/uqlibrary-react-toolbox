@@ -16,7 +16,7 @@ export default function StaticPage({title, text, help}) {
                     <div className="columns is-gapless is-mobile">
 
                         <div className="column">
-                            <h2 className="title is-4">{title ? title : 'This is the card title'}</h2>
+                            <h2 className="title is-4">{cardtitle ? cardtitle : 'This is the card title'}</h2>
                         </div>
 
                         <div className="column is-narrow is-helpicon">
