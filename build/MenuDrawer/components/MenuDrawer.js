@@ -60,7 +60,7 @@ function MenuDrawer(_ref) {
                     return menuItem.primaryText && menuItem.linkTo && _react2.default.createElement(
                         'span',
                         { className: 'menu-item-container', key: index },
-                        menuItem.divider ? _react2.default.createElement(_Divider2.default, null) : menuItem.target && menuItem.linkTo.indexOf('http') != -1 ? _react2.default.createElement(
+                        menuItem.divider ? _react2.default.createElement(_Divider2.default, null) : menuItem.target && menuItem.linkTo.indexOf('http') === -1 ? _react2.default.createElement(
                             'a',
                             { href: menuItem.linkTo, target: menuItem.target },
                             _react2.default.createElement(_List.ListItem, { primaryText: menuItem.primaryText,
