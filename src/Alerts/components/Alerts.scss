@@ -8,7 +8,7 @@
    padding: 12px;
    min-height: 40px;
 
-   &.hidden {
+   &.hidden, &.hide {
      display: none !important;
    }
 
@@ -26,7 +26,7 @@
      margin: 0px !important;
      padding: 12px !important;
      div {
-       margin: 12px 0 0 0 !important;
+       margin: 16px 0 0 0 !important;
      }
 
    }
@@ -92,14 +92,14 @@
     padding: 12px;
     min-height: 40px;
 
-    &.hidden {
+    &.hidden, &.hide {
       display: none !important;
     }
 
     .alertIcon {
       float: left;
       margin-bottom: -20px;
-      padding: 6px 12px 12px 6px !important;
+      padding: 2x 12px 12px 6px !important;
       span {
         font-size: 30px !important;
         line-height: 40px;

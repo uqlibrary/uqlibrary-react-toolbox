@@ -39,6 +39,12 @@ html, body {
   width: 90%;
   padding: 10px 10px 24px 10px;
 }
+@media (max-width: 768px){
+  .layout-card {
+    margin: -24px auto 24px auto;
+    padding: 0px 10px 24px 10px;
+  }
+}
 
 .card-header{
   padding: 0 0 0 24px !important;
