@@ -13,12 +13,12 @@ class Alerts extends React.PureComponent {
     render() {
         const {alertType, alertText, alertState} = this.props;
 
-        // Make sure the type is a valid option, or default to help
+        // TODO: Get these valid types externally - they match with material icon names
         const validAlertTypes = ['error', 'warning', 'info', 'help'];
         const validAlertType = validAlertTypes.find(alertType) || 'help';
 
         return (
-            <div className={{validAlertType} + ' ' + {alertState} + ' alertWrapper columns'}>
+            <div className={validAlertType + ' ' + alertState + ' alertWrapper columns'}>
                 <div className="column is-narrow alertIcon">
                     <FontIcon className="material-icons">{validAlertType}</FontIcon>
                 </div>
@@ -31,4 +31,3 @@ class Alerts extends React.PureComponent {
 }
 
 export default Alerts;
-
