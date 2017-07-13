@@ -41,6 +41,7 @@ var Alerts = function (_React$PureComponent) {
                 alertText = _props.alertText,
                 alertState = _props.alertState;
 
+
             return _react2.default.createElement(
                 'div',
                 { className: alertType + ' ' + alertState + ' alertWrapper columns' },
