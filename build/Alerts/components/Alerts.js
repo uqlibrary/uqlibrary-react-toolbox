@@ -44,7 +44,9 @@ var Alerts = function (_React$PureComponent) {
             // TODO: Get these valid types externally - they match with material icon names
 
             var validAlertTypes = ['error', 'warning', 'info', 'help'];
-            var validAlertType = validAlertTypes.find(alertType) || 'help';
+            var validAlertType = validAlertTypes.find(function (type) {
+                return type === alertType;
+            }) || 'help';
 
             return _react2.default.createElement(
                 'div',
