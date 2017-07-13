@@ -14,8 +14,6 @@ var _FontIcon = require('material-ui/FontIcon');
 
 var _FontIcon2 = _interopRequireDefault(_FontIcon);
 
-require('./Alerts.scss');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
