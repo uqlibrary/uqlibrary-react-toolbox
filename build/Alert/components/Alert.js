@@ -30,7 +30,7 @@ var Alert = function Alert(_ref) {
             _react2.default.createElement(
                 _FontIcon2.default,
                 { className: 'material-icons' },
-                validAlertType
+                type
             )
         ),
         title && _react2.default.createElement(
