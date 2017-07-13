@@ -44,13 +44,17 @@ var Alerts = function (_React$PureComponent) {
             // TODO: Get these valid types externally - they match with material icon names
 
             var validAlertTypes = ['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline'];
+            var validStateTypes = ['hidden', 'visible'];
             var validAlertType = validAlertTypes.find(function (type) {
                 return type === alertType;
             }) || 'help';
+            var validAlertState = validStateTypes.find(function (type) {
+                return type === alertState;
+            }) || 'visible';
 
             return _react2.default.createElement(
                 'div',
-                { className: validAlertType + ' ' + this.props.alertState + ' alertWrapper columns' },
+                { className: validAlertType + ' ' + validAlertState + ' alertWrapper columns' },
                 _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow alertIcon' },

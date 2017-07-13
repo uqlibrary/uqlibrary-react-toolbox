@@ -15,13 +15,12 @@ class Alerts extends React.PureComponent {
 
         // TODO: Get these valid types externally - they match with material icon names
         const validAlertTypes = ['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline'];
+        const validStateTypes = ['hidden', 'visible'];
         const validAlertType = validAlertTypes.find(type => type === alertType) || 'help';
-
-        const validStatusTypes = ['hidden', 'visible'];
-        const validStatusType = validStatusTypes.find(type => type === alertStatus) || 'visible';
+        const validAlertState = validStateTypes.find(type => type === alertState) || 'visible';
 
         return (
-            <div className={validAlertType + ' ' + validStatusType + ' alertWrapper columns'}>
+            <div className={validAlertType + ' ' + validAlertState + ' alertWrapper columns'}>
                 <div className="column is-narrow alertIcon">
                     <FontIcon className="material-icons">{validAlertType}</FontIcon>
                 </div>
