@@ -19,7 +19,7 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
       className="content"
     >
       <h1
-        className="headline"
+        className="title is-4"
       >
         HelpDrawer Title
       </h1>

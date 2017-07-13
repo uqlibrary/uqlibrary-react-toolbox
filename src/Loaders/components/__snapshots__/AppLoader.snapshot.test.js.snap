@@ -8,7 +8,7 @@ exports[`AppLoader snapshots tests renders loader with image 1`] = `
     className="app-loader-content column is-centered"
   >
     <h1
-      className="display-2 color-reverse"
+      className="title is-2 color-reverse"
     >
       Fez frontend
     </h1>
@@ -41,7 +41,7 @@ exports[`AppLoader snapshots tests renders loader without image 1`] = `
     className="app-loader-content column is-centered"
   >
     <h1
-      className="display-2 color-reverse"
+      className="title is-2 color-reverse"
     >
       Fez frontend
     </h1>
