@@ -31,6 +31,18 @@
 
    }
 
+   // Help
+   &.help {
+     border: 1px solid lighten($theme-color, 10%);
+     background-color: darken($theme-color, 5%);
+     .alertText {
+       color: $text-color-reverse !important;
+     }
+     .alertIcon span {
+       color: $text-color-reverse !important;
+     }
+   }
+
    // Error
     &.error {
       border: 1px solid lighten($error-color, 10%);
@@ -95,6 +107,18 @@
     }
     .alertText {
       font-weight: bold;
+    }
+
+    // Help
+    &.help {
+      border: 1px solid lighten($theme-color, 10%);
+      background-color: darken($theme-color, 5%);
+      .alertText {
+        color: $text-color-reverse !important;
+      }
+      .alertIcon span {
+        color: $text-color-reverse !important;
+      }
     }
 
     // Error

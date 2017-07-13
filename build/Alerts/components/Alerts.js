@@ -41,16 +41,21 @@ var Alerts = function (_React$PureComponent) {
                 alertText = _props.alertText,
                 alertState = _props.alertState;
 
+            // Make sure the type is a valid option, or default to help
+
+            var validAlertTypes = ['error', 'warning', 'info', 'help'];
+            var validAlertType = validAlertTypes.find(alertType) || 'help';
+
             return _react2.default.createElement(
                 'div',
-                { className: alertType + ' ' + alertState + ' alertWrapper columns' },
+                { className: { validAlertType: validAlertType } + ' ' + { alertState: alertState } + ' alertWrapper columns' },
                 _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow alertIcon' },
                     _react2.default.createElement(
                         _FontIcon2.default,
                         { className: 'material-icons' },
-                        alertType
+                        validAlertType
                     )
                 ),
                 _react2.default.createElement(
