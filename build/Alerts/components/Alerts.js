@@ -50,7 +50,7 @@ var Alerts = function (_React$PureComponent) {
 
             return _react2.default.createElement(
                 'div',
-                { className: validAlertType + ' ' + alertState + ' alertWrapper columns' },
+                { className: validAlertType + ' ' + this.props.alertState + ' alertWrapper columns' },
                 _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow alertIcon' },

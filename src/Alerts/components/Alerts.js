@@ -18,7 +18,7 @@ class Alerts extends React.PureComponent {
         const validAlertType = validAlertTypes.find(type => type === alertType) || 'help';
 
         return (
-            <div className={validAlertType + ' ' + alertState + ' alertWrapper columns'}>
+            <div className={validAlertType + ' ' + this.props.alertState + ' alertWrapper columns'}>
                 <div className="column is-narrow alertIcon">
                     <FontIcon className="material-icons">{validAlertType}</FontIcon>
                 </div>
