@@ -21,3 +21,6 @@ class Alerts extends React.Component {
         );
     }
 }
+
+export default Alerts;
+
