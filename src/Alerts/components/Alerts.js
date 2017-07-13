@@ -11,9 +11,7 @@ class Alerts extends React.PureComponent {
     };
 
     render() {
-
         const {alertType, alertText, alertState} = this.props;
-
         return (
             <div className={alertType + ' ' + alertState + ' alertWrapper columns'}>
                 <div className="column is-narrow alertIcon">
