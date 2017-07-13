@@ -14,7 +14,7 @@ class Alerts extends React.PureComponent {
         const {alertType, alertText, alertState} = this.props;
 
         // TODO: Get these valid types externally - they match with material icon names
-        const validAlertTypes = ['error', 'warning', 'info', 'help'];
+        const validAlertTypes = ['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline'];
         const validAlertType = validAlertTypes.find(type => type === alertType) || 'help';
 
         return (

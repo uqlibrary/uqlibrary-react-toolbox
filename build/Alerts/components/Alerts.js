@@ -43,7 +43,7 @@ var Alerts = function (_React$PureComponent) {
 
             // TODO: Get these valid types externally - they match with material icon names
 
-            var validAlertTypes = ['error', 'warning', 'info', 'help'];
+            var validAlertTypes = ['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline'];
             var validAlertType = validAlertTypes.find(function (type) {
                 return type === alertType;
             }) || 'help';
