@@ -23,7 +23,7 @@ var Alert = function Alert(_ref) {
 
     return _react2.default.createElement(
         'div',
-        { className: type + ' alertWrapper columns' },
+        { className: type + ' alertWrapper columns is-multiline' },
         _react2.default.createElement(
             'div',
             { className: 'column is-narrow alertIcon' },
@@ -35,7 +35,7 @@ var Alert = function Alert(_ref) {
         ),
         title && _react2.default.createElement(
             'div',
-            { className: 'column title is-4' },
+            { className: 'column alertTitle title is-4' },
             title
         ),
         _react2.default.createElement(

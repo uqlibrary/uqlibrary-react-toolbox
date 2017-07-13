@@ -24,6 +24,10 @@
      div {
        margin: 16px 0 0 0 !important;
      }
+     .alertTitle {
+       height: 50px;
+       line-height: 50px;
+     }
 
    }
 
@@ -31,7 +35,7 @@
    &.help, &.help_outline {
      border: 1px solid lighten($theme-color, 10%);
      background-color: darken($theme-color, 5%);
-     .alertText {
+     .alertText, alertTitle {
        color: $text-color-reverse !important;
      }
      .alertIcon span {
@@ -43,7 +47,7 @@
     &.error, &.error_outline {
       border: 1px solid lighten($error-color, 10%);
       background-color: darken($error-color, 5%);
-      .alertText {
+      .alertText, alertTitle {
         color: $text-color-reverse !important;
       }
       .alertIcon span {
@@ -55,7 +59,7 @@
    &.warning {
      border: 1px solid lighten($warning-color, 10%);
      background-color: darken($warning-color, 0%);
-     .alertText {
+     .alertText, alertTitle {
        color: $text-color-reverse !important;
      }
      .alertIcon span {
@@ -67,7 +71,7 @@
    &.info, &.info_outline {
      border: 1px solid lighten($info-color, 10%);
      background-color: darken($info-color, 5%);
-     .alertText {
+     .alertText, alertTitle {
        color: $text-color-reverse;
      }
      .alertIcon span {
@@ -105,7 +109,7 @@
     &.help, &.help_outline {
       border: 1px solid lighten($theme-color, 10%);
       background-color: darken($theme-color, 5%);
-      .alertText {
+      .alertText, alertTitle {
         color: $text-color-reverse !important;
       }
       .alertIcon span {
@@ -117,7 +121,7 @@
     &.error, &.error_outline {
       border: 1px solid lighten($error-color, 10%);
       background-color: darken($error-color, 5%);
-      .alertText {
+      .alertText, alertTitle {
         color: $text-color-reverse !important;
       }
       .alertIcon span {
@@ -129,7 +133,7 @@
     &.warning {
       border: 1px solid lighten($warning-color, 10%);
       background-color: darken($warning-color, 0%);
-      .alertText {
+      .alertText, alertTitle {
         color: $text-color-reverse !important;
       }
       .alertIcon span {
@@ -141,7 +145,7 @@
     &.info, &.info_outline {
       border: 1px solid lighten($info-color, 10%);
       background-color: darken($info-color, 5%);
-      .alertText {
+      .alertText, alertTitle {
         color: $text-color-reverse;
       }
       .alertIcon span {
