@@ -10,6 +10,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
 var _FontIcon = require('material-ui/FontIcon');
 
 var _FontIcon2 = _interopRequireDefault(_FontIcon);
@@ -22,8 +24,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Alerts = function (_React$Component) {
-    _inherits(Alerts, _React$Component);
+var Alerts = function (_React$PureComponent) {
+    _inherits(Alerts, _React$PureComponent);
 
     function Alerts() {
         _classCallCheck(this, Alerts);
@@ -34,9 +36,10 @@ var Alerts = function (_React$Component) {
     _createClass(Alerts, [{
         key: 'render',
         value: function render() {
-            var alertText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur commodo commodo felis, et interdum ex tincidunt at. Donec arcu diam, pulvinar eget commodo non, congue ac erat. Nunc et molestie mi, at volutpat tortor. Proin molestie, lacus eu ullamcorper vehicula, elit turpis fermentum mi, sit amet ornare felis neque id neque. Morbi non ex porttitor, facilisis orci in, venenatis diam. Integer nec hendrerit orci, sit amet porttitor nibh. Nullam eleifend ut purus et mattis. Proin pellentesque velit et ante rhoncus, at tristique ipsum iaculis. Aliquam ante ligula, lacinia id vehicula sed, tristique quis metus. Proin neque eros, varius ut justo ullamcorper, condimentum molestie odio. In feugiat sit amet magna eget malesuada.';
-            var alertState = ''; // hidden
-            var alertType = 'info'; // info || warning || error
+            var _props = this.props,
+                alertType = _props.alertType,
+                alertText = _props.alertText,
+                alertState = _props.alertState;
 
             return _react2.default.createElement(
                 'div',
@@ -64,6 +67,11 @@ var Alerts = function (_React$Component) {
     }]);
 
     return Alerts;
-}(_react2.default.Component);
+}(_react2.default.PureComponent);
 
+Alerts.propTypes = {
+    alertText: _propTypes.PropTypes.string.isRequired,
+    alertType: _propTypes.PropTypes.string.isRequired,
+    alertState: _propTypes.PropTypes.string
+};
 exports.default = Alerts;
