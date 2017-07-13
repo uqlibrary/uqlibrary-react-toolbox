@@ -1,10 +1,9 @@
-# Alerts
+# Alert
 
 Prorotype component to display alerts/warnings/errors
 
 ## Props
 - `alertText: PropTypes.string`
-- `alertState PropTypes.string - valid values ['hidden', 'hide', 'show', 'visible']`
 - `alertType PropTypes.string - valid values ['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline']`
 
 
@@ -21,7 +20,6 @@ const App = () => (
   <div>
     <Alerts 
         alertText="Some body text."
-        alertState="visible"
         alertType="error_outline"
     />
   </div>

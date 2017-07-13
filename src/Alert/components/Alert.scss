@@ -8,10 +8,6 @@
    padding: 12px;
    min-height: 40px;
 
-   &.hidden, &.hide {
-     display: none !important;
-   }
-
    .alertIcon {
      float: left;
      margin-right: -6px;
@@ -89,12 +85,8 @@
   .alertWrapper {
     border-radius: 3px;
     margin: 24px 0 !important;
-    padding: 12px;
+    padding: 0 12px 24px 12px;
     min-height: 40px;
-
-    &.hidden, &.hide {
-      display: none !important;
-    }
 
     .alertIcon {
       float: left;

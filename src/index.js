@@ -13,4 +13,4 @@ export {ContentLoader} from './Loaders';
 export {AuthButton} from './AuthButton';
 export {AuthorsPublicationsPerYearChart} from './Charts';
 export {SelectField} from './SelectField';
-export {Alerts} from './Alerts';
+export {Alert} from './Alert';

@@ -151,11 +151,11 @@ Object.defineProperty(exports, 'SelectField', {
   }
 });
 
-var _Alerts = require('./Alerts');
+var _Alert = require('./Alert');
 
-Object.defineProperty(exports, 'Alerts', {
+Object.defineProperty(exports, 'Alert', {
   enumerable: true,
   get: function get() {
-    return _Alerts.Alerts;
+    return _Alert.Alert;
   }
 });
