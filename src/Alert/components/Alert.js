@@ -9,13 +9,8 @@ const Alert = ({title, message, type}) => {
                 <div className="column is-narrow alertIcon">
                     <FontIcon className="material-icons">{type}</FontIcon>
                 </div>
-                <div className="column alertTitle">
-                    <span className="alertTitle title is-4">{title}</span>
-                </div>
-            </div>
-            <div className="columns">
                 <div className="column alertText">
-                    <div>{message}</div>
+                    <span className="alertTitle">{title} - </span>{message}
                 </div>
             </div>
         </div>

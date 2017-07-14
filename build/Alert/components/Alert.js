@@ -38,25 +38,14 @@ var Alert = function Alert(_ref) {
             ),
             _react2.default.createElement(
                 'div',
-                { className: 'column alertTitle' },
-                _react2.default.createElement(
-                    'span',
-                    { className: 'alertTitle title is-4' },
-                    title
-                )
-            )
-        ),
-        _react2.default.createElement(
-            'div',
-            { className: 'columns' },
-            _react2.default.createElement(
-                'div',
                 { className: 'column alertText' },
                 _react2.default.createElement(
-                    'div',
-                    null,
-                    message
-                )
+                    'span',
+                    { className: 'alertTitle' },
+                    title,
+                    ' - '
+                ),
+                message
             )
         )
     );
