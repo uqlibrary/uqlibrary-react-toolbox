@@ -23,28 +23,40 @@ var Alert = function Alert(_ref) {
 
     return _react2.default.createElement(
         'div',
-        { className: type + ' alertWrapper columns is-multiline' },
+        { className: type + ' alertWrapper is-multiline' },
         _react2.default.createElement(
             'div',
-            { className: 'column is-narrow alertIcon' },
+            { className: 'columns' },
             _react2.default.createElement(
-                _FontIcon2.default,
-                { className: 'material-icons' },
-                type
+                'div',
+                { className: 'column is-narrow alertIcon' },
+                _react2.default.createElement(
+                    _FontIcon2.default,
+                    { className: 'material-icons' },
+                    type
+                )
             ),
             _react2.default.createElement(
-                'span',
-                { className: 'alertTitle title is-4' },
-                title
+                'div',
+                { className: 'column alertTitle' },
+                _react2.default.createElement(
+                    'span',
+                    { className: 'alertTitle title is-4' },
+                    title
+                )
             )
         ),
         _react2.default.createElement(
             'div',
-            { className: 'column alertText' },
+            { className: 'columns' },
             _react2.default.createElement(
                 'div',
-                null,
-                message
+                { className: 'column alertText' },
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    message
+                )
             )
         )
     );
