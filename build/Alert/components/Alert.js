@@ -31,12 +31,12 @@ var Alert = function Alert(_ref) {
                 _FontIcon2.default,
                 { className: 'material-icons' },
                 type
+            ),
+            _react2.default.createElement(
+                'span',
+                { className: 'alertTitle title is-4' },
+                title
             )
-        ),
-        title && _react2.default.createElement(
-            'div',
-            { className: 'column alertTitle title is-4' },
-            title
         ),
         _react2.default.createElement(
             'div',
