@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert snapshots test renders as expected 1`] = `
+<div
+  className="error alertWrapper is-multiline"
+>
+  <div
+    className="columns"
+  >
+    <div
+      className="column is-narrow alertIcon"
+    >
+      <FontIcon
+        className="material-icons"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        error
+      </FontIcon>
+    </div>
+    <div
+      className="column alertText"
+    >
+      <span
+        className="alertTitle"
+      >
+        This is a title
+         - 
+      </span>
+      This is a message
+    </div>
+  </div>
+</div>
+`;
