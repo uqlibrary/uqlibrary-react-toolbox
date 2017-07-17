@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.ConfirmDialogBox = exports.Alert = exports.SelectField = exports.AuthorsPublicationsPerYearChart = exports.AuthButton = exports.ContentLoader = exports.InlineLoader = exports.AppLoader = exports.StaticPage = exports.TextField = exports.DatePicker = exports.MenuDrawer = exports.helpDrawerReducer = exports.HelpDrawer = exports.HelpIcon = undefined;
 
 var _HelpDrawer = require('./HelpDrawer');
 
@@ -117,3 +118,11 @@ Object.defineProperty(exports, 'Alert', {
     return _Alert.Alert;
   }
 });
+
+var _ConfirmDialogBox2 = require('./ConfirmDialogBox/ConfirmDialogBox.js');
+
+var _ConfirmDialogBox3 = _interopRequireDefault(_ConfirmDialogBox2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.ConfirmDialogBox = _ConfirmDialogBox3.default;
