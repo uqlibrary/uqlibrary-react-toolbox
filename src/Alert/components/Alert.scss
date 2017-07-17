@@ -17,6 +17,7 @@
     .alertText {
       font-weight: normal !important;
       font-size: 14px !important;
+      line-height: 18px;
       margin: 12px 12px 12px 0px !important;
       .alertTitle {
         font-weight: bold !important;
@@ -85,8 +86,8 @@
 
     .alertIcon {
       float: left;
-      margin-right: -6px;
-      height: 30px;
+      padding-bottom: 1px;
+      height: 100%;
       span {
         font-size: 30px !important;
       }
@@ -94,6 +95,7 @@
     .alertText {
       font-weight: normal !important;
       font-size: 14px !important;
+      line-height: 18px;
       margin: 12px 12px 12px 0px !important;
       padding-top: 16px !important;
       .alertTitle {
