@@ -19,20 +19,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 jest.dontMock('../components/Alert');
 
 function setup(_ref) {
-    var _ref$title = _ref.title,
-        title = _ref$title === undefined ? 'This is the title' : _ref$title,
-        _ref$message = _ref.message,
-        message = _ref$message === undefined ? 'This is the message' : _ref$message,
-        _ref$type = _ref.type,
-        type = _ref$type === undefined ? 'error' : _ref$type;
+    var title = _ref.title,
+        message = _ref.message,
+        type = _ref.type;
 
-    var props = { title: title, message: message, type: type };
+    var props = {
+        title: 'This is a title',
+        message: 'This is a message',
+        type: 'error'
+    };
     return (0, _enzyme.shallow)(_react2.default.createElement(_Alert2.default, props));
 }
 
 describe('Alert snapshots test', function () {
-    it('renders the title, message and icon as expected', function () {
-        var wrapper = setup();
+    it('renders as expected', function () {
+        var title = "This is a title";
+        var message = "This is the message";
+        var type = "error";
+
+        var wrapper = setup(title, message, type);
         expect((0, _enzymeToJson2.default)(wrapper)).toMatchSnapshot();
     });
 });

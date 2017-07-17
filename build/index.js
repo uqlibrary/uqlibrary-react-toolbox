@@ -4,39 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _AutoCompleteSelect = require('./AutoCompleteSelect');
-
-Object.defineProperty(exports, 'AutoCompleteSelect', {
-  enumerable: true,
-  get: function get() {
-    return _AutoCompleteSelect.AutoCompleteSelect;
-  }
-});
-
-var _AsyncAutoCompleteSelect = require('./AsyncAutoCompleteSelect');
-
-Object.defineProperty(exports, 'AsyncAutoCompleteSelect', {
-  enumerable: true,
-  get: function get() {
-    return _AsyncAutoCompleteSelect.AsyncAutoCompleteSelect;
-  }
-});
-
-var _Authors = require('./Authors');
-
-Object.defineProperty(exports, 'Authors', {
-  enumerable: true,
-  get: function get() {
-    return _Authors.Authors;
-  }
-});
-Object.defineProperty(exports, 'authorsReducer', {
-  enumerable: true,
-  get: function get() {
-    return _Authors.authorsReducer;
-  }
-});
-
 var _HelpDrawer = require('./HelpDrawer');
 
 Object.defineProperty(exports, 'HelpIcon', {
@@ -82,15 +49,6 @@ Object.defineProperty(exports, 'TextField', {
   enumerable: true,
   get: function get() {
     return _TextField.TextField;
-  }
-});
-
-var _Toggle = require('./Toggle');
-
-Object.defineProperty(exports, 'Toggle', {
-  enumerable: true,
-  get: function get() {
-    return _Toggle.Toggle;
   }
 });
 

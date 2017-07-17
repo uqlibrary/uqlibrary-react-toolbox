@@ -10,3 +10,4 @@ export {AuthButton} from './AuthButton';
 export {AuthorsPublicationsPerYearChart} from './Charts';
 export {SelectField} from './SelectField';
 export {Alert} from './Alert';
+export {ConfirmDialogBox} from './ConfirmDialogBox';
