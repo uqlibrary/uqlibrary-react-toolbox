@@ -45,7 +45,7 @@ var SelectFieldWrapper = function SelectFieldWrapper(props) {
 SelectFieldWrapper.propTypes = _extends({}, _SelectField2.default.propTypes, {
     help: _propTypes2.default.shape({
         title: _propTypes2.default.string,
-        text: _propTypes2.default.object,
+        text: _propTypes2.default.any,
         buttonLabel: _propTypes2.default.string
     })
 });

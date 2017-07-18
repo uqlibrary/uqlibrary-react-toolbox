@@ -7,11 +7,10 @@ import {HelpIcon} from '../../index';
 export default function StandardCard({title, help, children}) {
     return (
         <Card className="layout-card">
-            {title &&
             <CardHeader className="card-header">
                 <div className="columns is-gapless is-mobile">
                     <div className="column">
-                        <h2 className="title is-4">{title}</h2>
+                        {title && <h2 className="title is-4">{title}</h2>}
                     </div>
                     {help && help.text &&
                     <div className="column is-narrow is-helpicon">
@@ -20,14 +19,11 @@ export default function StandardCard({title, help, children}) {
                     }
                 </div>
             </CardHeader>
-            }
-
             <CardText className="body-1">
                 <div>
                     {children}
                 </div>
             </CardText>
-
         </Card>
     );
 }
@@ -37,7 +33,7 @@ StandardCard.propTypes = {
     children: PropTypes.element,
     help: PropTypes.shape({
         title: PropTypes.string,
-        text: PropTypes.object,
+        text: PropTypes.any,
         buttonLabel: PropTypes.string
     })
 };

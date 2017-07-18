@@ -44,7 +44,7 @@ var CheckboxWrapper = function CheckboxWrapper(props) {
 CheckboxWrapper.propTypes = _extends({}, _Checkbox2.default.propTypes, {
     help: _propTypes2.default.shape({
         title: _propTypes2.default.string,
-        text: _propTypes2.default.object,
+        text: _propTypes2.default.any,
         buttonLabel: _propTypes2.default.string
     })
 });

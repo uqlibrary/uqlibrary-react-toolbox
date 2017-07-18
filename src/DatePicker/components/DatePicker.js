@@ -31,7 +31,7 @@ DatePickerWrapper.propTypes = {
     ...DatePicker.propTypes,
     help: PropTypes.shape({
         title: PropTypes.string,
-        text: PropTypes.object,
+        text: PropTypes.any,
         buttonLabel: PropTypes.string
     })
 };

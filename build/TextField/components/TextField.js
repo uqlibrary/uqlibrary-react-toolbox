@@ -39,7 +39,7 @@ var TextFieldWrapper = function TextFieldWrapper(props) {
 TextFieldWrapper.propTypes = _extends({}, _TextField2.default.propTypes, {
     help: _propTypes2.default.shape({
         title: _propTypes2.default.string,
-        text: _propTypes2.default.object,
+        text: _propTypes2.default.any,
         buttonLabel: _propTypes2.default.string
     })
 });

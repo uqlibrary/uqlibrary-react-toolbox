@@ -55,7 +55,7 @@ function DatePickerWrapper(props) {
 DatePickerWrapper.propTypes = _extends({}, _DatePicker2.default.propTypes, {
     help: _propTypes2.default.shape({
         title: _propTypes2.default.string,
-        text: _propTypes2.default.object,
+        text: _propTypes2.default.any,
         buttonLabel: _propTypes2.default.string
     })
 });

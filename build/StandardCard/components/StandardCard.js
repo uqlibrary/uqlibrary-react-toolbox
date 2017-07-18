@@ -27,7 +27,7 @@ function StandardCard(_ref) {
     return _react2.default.createElement(
         _Card.Card,
         { className: 'layout-card' },
-        title && _react2.default.createElement(
+        _react2.default.createElement(
             _Card.CardHeader,
             { className: 'card-header' },
             _react2.default.createElement(
@@ -36,7 +36,7 @@ function StandardCard(_ref) {
                 _react2.default.createElement(
                     'div',
                     { className: 'column' },
-                    _react2.default.createElement(
+                    title && _react2.default.createElement(
                         'h2',
                         { className: 'title is-4' },
                         title
@@ -66,7 +66,7 @@ StandardCard.propTypes = {
     children: _propTypes2.default.element,
     help: _propTypes2.default.shape({
         title: _propTypes2.default.string,
-        text: _propTypes2.default.object,
+        text: _propTypes2.default.any,
         buttonLabel: _propTypes2.default.string
     })
 };

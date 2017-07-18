@@ -18,7 +18,7 @@ describe('Snapshot tests for StandardCard component', () => {
     });
 
     it('renders StandardCard with title and help button', () => {
-        const wrapper = setup('card title', {title: 'help', text: 'help text', buttonLabel: 'OK'});
+        const wrapper = setup('card title', {title: 'help', text: ('help text'), buttonLabel: 'OK'});
         const tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });
