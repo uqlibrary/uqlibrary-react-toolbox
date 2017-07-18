@@ -1,1 +1,1 @@
-export {default as ConfirmDialogBox} from './ConfirmDialogBox';
+export {default as ConfirmDialogBox} from './components/ConfirmDialogBox';

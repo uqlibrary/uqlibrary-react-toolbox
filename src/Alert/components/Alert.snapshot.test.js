@@ -15,7 +15,7 @@ function setup({title, message, type}) {
 }
 
 describe('Alert snapshots test', () => {
-    it('renders as expected', () => {
+    it('renders Alert of error type', () => {
         const title = "This is a title";
         const message = "This is the message";
         const type = "error";

@@ -11,4 +11,4 @@ export {ContentLoader} from './Loaders';
 export {AuthButton} from './AuthButton';
 export {AuthorsPublicationsPerYearChart} from './Charts';
 export {Alert} from './Alert';
-export ConfirmDialogBox from './ConfirmDialogBox/ConfirmDialogBox';
+export {ConfirmDialogBox} from './ConfirmDialogBox';
