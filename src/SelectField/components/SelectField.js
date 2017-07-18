@@ -13,7 +13,7 @@ const SelectFieldWrapper = props => {
     return (
         <div style={{position: 'relative', width: '100%'}}>
             <SelectField {...filteredProps} />
-            {props.help && <HelpIcon {...props.help} />}
+            {props.help && props.help.text && <HelpIcon {...props.help} />}
         </div>
     );
 };

@@ -18,9 +18,9 @@ export default function DatePickerWrapper(props) {
     return (
         <div style={{position: 'relative', width: '100%'}}>
             <DatePicker {...filteredProps} />
-            {props.helpText && (
+            {props.help && props.help.text && (
                 <div style={{position: 'absolute', top: '20px', right: 0}}>
-                    <HelpIcon title={props.helpTitle} text={props.helpText} buttonLabel="Ok" />
+                    <HelpIcon {...props.help} />
                 </div>
             )}
         </div>
@@ -29,6 +29,9 @@ export default function DatePickerWrapper(props) {
 
 DatePickerWrapper.propTypes = {
     ...DatePicker.propTypes,
-    helpTitle: PropTypes.string,
-    helpText: PropTypes.any
+    help: PropTypes.shape({
+        title: PropTypes.string,
+        text: PropTypes.string,
+        buttonLabel: PropTypes.string
+    })
 };

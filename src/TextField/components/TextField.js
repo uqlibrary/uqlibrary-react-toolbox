@@ -11,8 +11,8 @@ const TextFieldWrapper = props => {
     return (
         <div style={{position: 'relative', width: '100%'}}>
             <TextField {...filteredProps} />
-            {props.helpText && (
-                <HelpIcon title={props.helpTitle} text={props.helpText} buttonLabel="Ok" />
+            {props.help && props.help.text && (
+                <HelpIcon {...props.help} />
             )}
         </div>
     );
@@ -20,8 +20,11 @@ const TextFieldWrapper = props => {
 
 TextFieldWrapper.propTypes = {
     ...TextField.propTypes,
-    helpTitle: PropTypes.string,
-    helpText: PropTypes.any
+    help: PropTypes.shape({
+        title: PropTypes.string,
+        text: PropTypes.string,
+        buttonLabel: PropTypes.string
+    })
 };
 
 export default TextFieldWrapper;

@@ -1,0 +1,72 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = StandardCard;
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Card = require('material-ui/Card');
+
+var _index = require('../../index');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function StandardCard(_ref) {
+    var title = _ref.title,
+        help = _ref.help,
+        children = _ref.children;
+
+    return _react2.default.createElement(
+        _Card.Card,
+        { className: 'layout-card' },
+        title && _react2.default.createElement(
+            _Card.CardHeader,
+            { className: 'card-header' },
+            _react2.default.createElement(
+                'div',
+                { className: 'columns is-gapless is-mobile' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'column' },
+                    _react2.default.createElement(
+                        'h2',
+                        { className: 'title is-4' },
+                        title
+                    )
+                ),
+                help && help.text && _react2.default.createElement(
+                    'div',
+                    { className: 'column is-narrow is-helpicon' },
+                    _react2.default.createElement(_index.HelpIcon, help)
+                )
+            )
+        ),
+        _react2.default.createElement(
+            _Card.CardText,
+            { className: 'body-1' },
+            _react2.default.createElement(
+                'div',
+                null,
+                children
+            )
+        )
+    );
+}
+
+StandardCard.propTypes = {
+    title: _propTypes2.default.string.isRequired,
+    children: _propTypes2.default.element,
+    help: _propTypes2.default.shape({
+        title: _propTypes2.default.string,
+        text: _propTypes2.default.string,
+        buttonLabel: _propTypes2.default.string
+    })
+};
