@@ -29,8 +29,8 @@ export default function StandardCard({title, help, children}) {
 }
 
 StandardCard.propTypes = {
-    title: PropTypes.string.isRequired,
-    children: PropTypes.element,
+    title: PropTypes.string,
+    children: PropTypes.any,
     help: PropTypes.shape({
         title: PropTypes.string,
         text: PropTypes.any,

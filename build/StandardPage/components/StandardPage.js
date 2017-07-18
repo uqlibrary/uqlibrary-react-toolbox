@@ -33,6 +33,6 @@ function StandardPage(_ref) {
 
 StandardPage.propTypes = {
     title: _propTypes2.default.string.isRequired,
-    children: _propTypes2.default.element
+    children: _propTypes2.default.any
 
 };

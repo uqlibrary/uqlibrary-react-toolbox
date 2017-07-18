@@ -62,8 +62,8 @@ function StandardCard(_ref) {
 }
 
 StandardCard.propTypes = {
-    title: _propTypes2.default.string.isRequired,
-    children: _propTypes2.default.element,
+    title: _propTypes2.default.string,
+    children: _propTypes2.default.any,
     help: _propTypes2.default.shape({
         title: _propTypes2.default.string,
         text: _propTypes2.default.any,

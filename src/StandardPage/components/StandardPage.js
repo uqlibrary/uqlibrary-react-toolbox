@@ -12,6 +12,6 @@ export default function StandardPage({title, children}) {
 
 StandardPage.propTypes = {
     title: PropTypes.string.isRequired,
-    children: PropTypes.element
+    children: PropTypes.any
 
 };
