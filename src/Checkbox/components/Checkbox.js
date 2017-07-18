@@ -1,9 +1,9 @@
 import React from 'react';
-import Checkbox from 'material-ui/Checkbox';
 import PropTypes from 'prop-types';
 
+import Checkbox from 'material-ui/Checkbox';
 import propFilter from '../../helpers/_filterProps';
-import {HelpIcon} from 'uqlibrary-react-toolbox';
+import {HelpIcon} from '../../HelpDrawer';
 
 const CheckboxWrapper = props => {
     const filteredProps = propFilter(props, Checkbox.propTypes);
@@ -13,8 +13,8 @@ const CheckboxWrapper = props => {
     return (
         <div style={{position: 'relative', width: '100%'}} className={props.meta && props.meta.error ? 'error-checkbox' : {}}>
             <Checkbox {...filteredProps} />
-            {props.helpText && (
-                <HelpIcon title={props.helpTitle} text={props.helpText} buttonLabel="Ok" />
+            {props.help && props.help.text && (
+                <HelpIcon {...props.help} />
             )}
         </div>
     );
@@ -22,8 +22,11 @@ const CheckboxWrapper = props => {
 
 CheckboxWrapper.propTypes = {
     ...Checkbox.propTypes,
-    helpTitle: PropTypes.string,
-    helpText: PropTypes.any
+    help: PropTypes.shape({
+        title: PropTypes.string,
+        text: PropTypes.string,
+        buttonLabel: PropTypes.string
+    })
 };
 
 export default CheckboxWrapper;

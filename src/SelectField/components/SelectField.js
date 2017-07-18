@@ -13,17 +13,23 @@ const SelectFieldWrapper = props => {
     return (
         <div style={{position: 'relative', width: '100%'}}>
             <SelectField {...filteredProps} />
-            {props.helpText && (
-                <HelpIcon title={props.helpTitle} text={props.helpText} buttonLabel="Ok" />
-            )}
+            {props.help && <HelpIcon {...props.help} />}
         </div>
     );
 };
 
 SelectFieldWrapper.propTypes = {
     ...SelectField.propTypes,
-    helpTitle: PropTypes.string,
-    helpText: PropTypes.any
+    help: PropTypes.shape({
+        title: PropTypes.string,
+        text: PropTypes.string,
+        buttonLabel: PropTypes.string
+    })
+};
+
+SelectFieldWrapper.defaultProps = {
+    dropDownMenuProps: {animated: false},
+    maxHeight: 250
 };
 
 export default SelectFieldWrapper;

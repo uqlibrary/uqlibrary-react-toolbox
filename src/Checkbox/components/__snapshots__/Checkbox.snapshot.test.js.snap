@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CheckboxWrapper snapshots tests renders Checkbox component 1`] = `
+exports[`Checkbox snapshots tests renders Checkbox component 1`] = `
 <div
   className={Object {}}
   style={

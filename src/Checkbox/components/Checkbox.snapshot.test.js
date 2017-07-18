@@ -12,14 +12,11 @@ function setup(props) {
     return shallow(<Checkbox {...consolidatedProps} />);
 }
 
-describe('CheckboxWrapper snapshots tests', () => {
+describe('Checkbox snapshots tests', () => {
     it('renders Checkbox component', () => {
-        const props =
-            {
-                label: 'This is a test checkbox component'
-            };
-
-        const app = setup(props);
-        expect(toJson(app)).toMatchSnapshot();
+        const props = { label: 'This is a test checkbox component'};
+        const wrapper = setup(props);
+        const tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
     });
 });
