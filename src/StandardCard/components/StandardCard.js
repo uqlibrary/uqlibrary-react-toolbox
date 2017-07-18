@@ -37,7 +37,7 @@ StandardCard.propTypes = {
     children: PropTypes.element,
     help: PropTypes.shape({
         title: PropTypes.string,
-        text: PropTypes.string,
+        text: PropTypes.object,
         buttonLabel: PropTypes.string
     })
 };

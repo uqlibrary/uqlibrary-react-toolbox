@@ -22,7 +22,7 @@ TextFieldWrapper.propTypes = {
     ...TextField.propTypes,
     help: PropTypes.shape({
         title: PropTypes.string,
-        text: PropTypes.string,
+        text: PropTypes.object,
         buttonLabel: PropTypes.string
     })
 };
