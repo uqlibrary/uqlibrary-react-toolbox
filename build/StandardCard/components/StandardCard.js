@@ -66,7 +66,7 @@ StandardCard.propTypes = {
     children: _propTypes2.default.element,
     help: _propTypes2.default.shape({
         title: _propTypes2.default.string,
-        text: _propTypes2.default.string,
+        text: _propTypes2.default.object,
         buttonLabel: _propTypes2.default.string
     })
 };
