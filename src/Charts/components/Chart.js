@@ -34,7 +34,7 @@ class Chart extends React.Component {
 
     render() {
         return (
-            <div ref="chart" className="barChart" />
+            <div ref="chart" />
         );
     }
 }

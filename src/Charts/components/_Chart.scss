@@ -1,6 +1,5 @@
 @import '../../../sass/variables';
 
-.barChart {
   /* Colors for data series and points. */
   //$colors: #7cb5ec #434348 #90ed7d #f7a35c #8085e9 #f15c80 #e4d354 #2b908f #f45b5b #91e8e1;
   $colors: $theme-color-dark $theme-color $theme-color-lighter $theme-color-light $accent-color;
@@ -26,6 +25,7 @@
   $highlight-color-20: #ccd6eb; /* Ticks and axis line. */
   $highlight-color-10: #e6ebf5; /* Pressed button, color axis min color. */
 
+.authors-publications-per-year-chart {
   .highcharts-container {
     position: relative;
     overflow: hidden;
