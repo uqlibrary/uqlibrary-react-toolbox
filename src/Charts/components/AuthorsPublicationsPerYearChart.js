@@ -138,7 +138,9 @@ class AuthorsPublicationsPerYearChart extends React.Component {
 
     render() {
         return (
-            <Chart className="authors-publications-per-year-chart" chartOptions={this.state.options} />
+          <div className="authors-publications-per-year-chart">
+            <Chart chartOptions={this.state.options} />
+          </div>
         );
     }
 }

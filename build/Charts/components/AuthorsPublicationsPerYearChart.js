@@ -115,7 +115,11 @@ var AuthorsPublicationsPerYearChart = function (_React$Component) {
     _createClass(AuthorsPublicationsPerYearChart, [{
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(_Chart2.default, { className: 'authors-publications-per-year-chart', chartOptions: this.state.options });
+            return _react2.default.createElement(
+                'div',
+                { className: 'authors-publications-per-year-chart' },
+                _react2.default.createElement(_Chart2.default, { chartOptions: this.state.options })
+            );
         }
     }]);
 
