@@ -22,7 +22,6 @@ var Alert = function Alert(_ref) {
         type = _ref.type,
         outsidelayout = _ref.outsidelayout;
 
-
     return _react2.default.createElement(
         'div',
         null,
