@@ -23,10 +23,10 @@ var Alert = function Alert(_ref) {
 
     return _react2.default.createElement(
         'div',
-        { className: type + ' alertWrapper is-multiline' },
+        { className: type + ' alertWrapper' },
         _react2.default.createElement(
             'div',
-            { className: 'columns' },
+            { className: 'columns is-gapless is-multiline' },
             _react2.default.createElement(
                 'div',
                 { className: 'column is-narrow alertIcon' },

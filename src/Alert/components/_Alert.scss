@@ -1,6 +1,14 @@
 @import '../../../sass/variables';
 // Desktop
 @media (min-width: 768px) {
+
+  // Apply with layout-card style to wrap an alert outside inside of layout-fill
+  .forAlerts {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin: 0px auto !important;
+  }
+
   .alertWrapper {
     border-radius: 3px;
     margin: 12px auto !important;
@@ -82,6 +90,12 @@
 
 // Mobile
 @media (max-width: 768px) {
+  .forAlerts {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin: 0px auto !important;
+  }
+
   .alertWrapper {
     border-radius: 3px;
     margin: 12px 0 !important;
