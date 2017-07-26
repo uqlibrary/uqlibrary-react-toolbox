@@ -1,6 +1,6 @@
-import React from 'react'
-import { PropTypes } from 'prop-types'
-import FontIcon from 'material-ui/FontIcon'
+import React from 'react';
+import { PropTypes } from 'prop-types';
+import FontIcon from 'material-ui/FontIcon';
 
 const Alert = ({title, message, type, outsidelayout}) => {
     return (
@@ -31,14 +31,14 @@ const Alert = ({title, message, type, outsidelayout}) => {
             </div>
           )}
       </div>
-    )
-}
+    );
+};
 
 Alert.propTypes = {
     message: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline']),
     outsidelayout: PropTypes.bool
-}
+};
 
-export default Alert
+export default Alert;
