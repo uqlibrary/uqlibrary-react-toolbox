@@ -3,13 +3,15 @@
 // Desktop
 @media (min-width: 768px) {
   .alertWrapper {
+    max-width: 1200px !important;
     border-radius: 3px;
-    margin: 12px 0 !important;
+    margin: 12px auto !important;
     padding: 24px !important;
 
     .alertIcon {
       float: left;
-      margin-right: -6px;
+      margin-right: -6px !important;
+      margin-left: -6px !important;
       span {
         font-size: 40px !important;
       }
