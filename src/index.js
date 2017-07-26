@@ -12,4 +12,4 @@ export {AuthButton} from './AuthButton';
 export {AuthorsPublicationsPerYearChart} from './Charts';
 export {Alert} from './Alert';
 export {ConfirmDialogBox} from './ConfirmDialogBox';
-export {PartialDateFeild} from './PartialDate';
+export {PartialDateField} from './PartialDate';

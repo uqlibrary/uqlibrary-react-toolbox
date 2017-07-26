@@ -138,9 +138,9 @@ Object.defineProperty(exports, 'ConfirmDialogBox', {
 
 var _PartialDate = require('./PartialDate');
 
-Object.defineProperty(exports, 'PartialDateFeild', {
+Object.defineProperty(exports, 'PartialDateField', {
   enumerable: true,
   get: function get() {
-    return _PartialDate.PartialDateFeild;
+    return _PartialDate.PartialDateField;
   }
 });
