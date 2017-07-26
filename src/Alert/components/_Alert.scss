@@ -1,12 +1,11 @@
 @import '../../../sass/variables';
-
 // Desktop
 @media (min-width: 768px) {
   .alertWrapper {
-    max-width: 1200px !important;
+    max-width: 1150px !important;
     border-radius: 3px;
     margin: 12px auto !important;
-    padding: 24px !important;
+    padding: 12px 24px !important;
 
     .alertIcon {
       float: left;
@@ -83,15 +82,16 @@
   .alertWrapper {
     border-radius: 3px;
     margin: 12px 0 !important;
-    padding: 12px !important;
+    padding: 12px 24px !important;
     min-height: 40px;
 
     .alertIcon {
       float: left;
       padding-bottom: 1px;
       height: 100%;
+      margin-top: -10px;
       span {
-        font-size: 30px !important;
+        font-size: 40px !important;
       }
     }
     .alertText {
@@ -99,7 +99,7 @@
       font-size: 14px !important;
       line-height: 18px;
       margin: 12px !important;
-      padding-top: 16px !important;
+      padding-top: 14px !important;
       .alertTitle {
         font-weight: bold !important;
         font-size: 14px !important
