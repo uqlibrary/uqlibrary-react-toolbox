@@ -4,8 +4,8 @@ import FontIcon from 'material-ui/FontIcon';
 
 const Alert = ({title, message, type}) => {
     return (
-        <div className={type + ' alertWrapper is-multiline'}>
-            <div className="columns">
+        <div className={type + ' alertWrapper'}>
+            <div className="columns is-gapless is-multiline">
                 <div className="column is-narrow alertIcon">
                     <FontIcon className="material-icons">{type}</FontIcon>
                 </div>
