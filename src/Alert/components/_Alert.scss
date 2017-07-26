@@ -5,7 +5,7 @@
     max-width: 1150px !important;
     border-radius: 3px;
     margin: 12px auto !important;
-    padding: 12px 24px !important;
+    padding: 24px !important;
 
     .alertIcon {
       float: left;
@@ -78,16 +78,11 @@
 }
 
 
-
-
-
-
-
 // Mobile
 @media (max-width: 768px) {
   .alertWrapper {
     border-radius: 3px;
-    margin: 12px 5% !important;
+    margin: 12px 0 !important;
     padding: 12px 24px !important;
     min-height: 40px;
 
