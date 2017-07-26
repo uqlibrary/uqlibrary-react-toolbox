@@ -80,7 +80,7 @@ var HelpDrawer = function HelpDrawer(_ref) {
             _react2.default.createElement(
                 'div',
                 { className: 'layout-padding' },
-                _react2.default.createElement(_RaisedButton2.default, { secondary: true, label: buttonLabel, onTouchTap: toggleDrawer, style: { float: 'right' } })
+                _react2.default.createElement(_RaisedButton2.default, { secondary: true, label: buttonLabel, onTouchTap: toggleDrawer, className: 'is-pulled-right' })
             )
         )
     );

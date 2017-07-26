@@ -12,12 +12,13 @@
 
   span.title {
     margin: 0px !important;
+    color: $theme-color;
   }
   .helpDrawerDivider {
-    margin: 10px 0px 20px 0px !important;
+    margin: 18px 0px !important;
   }
   .content {
-    padding: 12px !important;
+    padding: 24px!important;
     overflow-y: auto;
   }
 }

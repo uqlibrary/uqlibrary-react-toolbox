@@ -18,11 +18,11 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
     <div
       className="content"
     >
-      <h1
-        className="title is-4"
+      <span
+        className="title is-5"
       >
         HelpDrawer Title
-      </h1>
+      </span>
       <Divider
         className="helpDrawerDivider"
         inset={false}
@@ -37,6 +37,7 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
       className="layout-padding"
     >
       <RaisedButton
+        className="is-pulled-right"
         disabled={false}
         fullWidth={false}
         label="Close"
@@ -44,11 +45,6 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
         onTouchTap={[Function]}
         primary={false}
         secondary={true}
-        style={
-          Object {
-            "float": "right",
-          }
-        }
       />
     </div>
   </div>

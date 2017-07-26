@@ -33,11 +33,11 @@ const HelpDrawer = ({title, text, buttonLabel, open, hide}) => {
             <div className="layout-fill side-drawer">
                 <div className="content">
                     <span className="title is-5">{title}</span>
-                        <Divider className="helpDrawerDivider"  />
+                        <Divider className="helpDrawerDivider" />
                     <div className="body-1">{text}</div>
                 </div>
                 <div className="layout-padding">
-                    <RaisedButton secondary label={buttonLabel} onTouchTap={toggleDrawer} style={{float: 'right'}} />
+                    <RaisedButton secondary label={buttonLabel} onTouchTap={toggleDrawer} className="is-pulled-right" />
                 </div>
             </div>
         </Drawer>
