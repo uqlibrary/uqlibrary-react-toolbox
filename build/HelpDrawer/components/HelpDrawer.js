@@ -66,14 +66,14 @@ var HelpDrawer = function HelpDrawer(_ref) {
                 'div',
                 { className: 'content' },
                 _react2.default.createElement(
-                    'h1',
-                    { className: 'title is-4' },
+                    'span',
+                    { className: 'title is-5' },
                     title
                 ),
-                _react2.default.createElement(_Divider2.default, { style: { margin: '10px 0px 20px 0px' } }),
+                _react2.default.createElement(_Divider2.default, { className: 'helpDrawerDivider' }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'subhead' },
+                    { className: 'body-1' },
                     text
                 )
             ),

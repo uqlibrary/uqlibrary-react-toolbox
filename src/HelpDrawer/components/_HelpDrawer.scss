@@ -10,8 +10,14 @@
     width: 100%;
   }
 
+  span.title {
+    margin: 0px !important;
+  }
+  .helpDrawerDivider {
+    margin: 10px 0px 20px 0px !important;
+  }
   .content {
-    padding: 30px;
+    padding: 12px !important;
     overflow-y: auto;
   }
 }
