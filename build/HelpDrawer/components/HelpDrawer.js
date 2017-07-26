@@ -70,7 +70,6 @@ var HelpDrawer = function HelpDrawer(_ref) {
                     { className: 'title is-5' },
                     title
                 ),
-                _react2.default.createElement(_Divider2.default, { className: 'helpDrawerDivider' }),
                 _react2.default.createElement(
                     'div',
                     { className: 'body-1' },

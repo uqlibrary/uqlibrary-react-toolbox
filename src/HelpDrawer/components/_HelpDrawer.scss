@@ -11,14 +11,11 @@
   }
 
   span.title {
-    margin: 0px !important;
+    margin: 0px 0px 24px 0px !important;
     color: $theme-color;
   }
-  .helpDrawerDivider {
-    margin: 18px 0px !important;
-  }
   .content {
-    padding: 24px!important;
+    padding: 24px !important;
     overflow-y: auto;
   }
 }

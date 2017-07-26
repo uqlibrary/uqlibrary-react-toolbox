@@ -33,7 +33,6 @@ const HelpDrawer = ({title, text, buttonLabel, open, hide}) => {
             <div className="layout-fill side-drawer">
                 <div className="content">
                     <span className="title is-5">{title}</span>
-                        <Divider className="helpDrawerDivider" />
                     <div className="body-1">{text}</div>
                 </div>
                 <div className="layout-padding">
