@@ -4,8 +4,8 @@
 @media (min-width: 768px) {
   .alertWrapper {
     border-radius: 3px;
-    margin: 24px 0 !important;
-    padding: 12px;
+    margin: 12px 0 !important;
+    padding: 24px !important;
 
     .alertIcon {
       float: left;
@@ -80,8 +80,8 @@
 @media (max-width: 768px) {
   .alertWrapper {
     border-radius: 3px;
-    margin: 24px 0 !important;
-    padding: 12px;
+    margin: 12px 0 !important;
+    padding: 12px !important;
     min-height: 40px;
 
     .alertIcon {
