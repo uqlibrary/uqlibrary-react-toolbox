@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Alert snapshots test renders Alert of error type 1`] = `
-<div>
+<div
+  className=""
+>
   <div
     className="error alertWrapper"
   >

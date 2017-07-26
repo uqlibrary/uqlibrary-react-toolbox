@@ -4,32 +4,17 @@ import FontIcon from 'material-ui/FontIcon';
 
 const Alert = ({title, message, type, outsidelayout}) => {
     return (
-      <div>
-          {outsidelayout ? (
-            <div className="layout-card forAlerts">
-                <div className={type + ' alertWrapper'}>
-                    <div className="columns is-gapless is-multiline">
-                        <div className="column is-narrow alertIcon">
-                            <FontIcon className="material-icons">{type}</FontIcon>
-                        </div>
-                        <div className="column alertText">
-                            <span className="alertTitle">{title} - </span>{message}
-                        </div>
-                    </div>
-                </div>
-            </div>
-          ) : (
-            <div className={type + ' alertWrapper'}>
-                <div className="columns is-gapless is-multiline">
-                    <div className="column is-narrow alertIcon">
-                        <FontIcon className="material-icons">{type}</FontIcon>
-                    </div>
-                    <div className="column alertText">
-                        <span className="alertTitle">{title} - </span>{message}
-                    </div>
-                </div>
-            </div>
-          )}
+      <div className={outsidelayout ? 'layout-card forAlerts' : ''}>
+          <div className={type + ' alertWrapper'}>
+              <div className="columns is-gapless is-multiline">
+                  <div className="column is-narrow alertIcon">
+                      <FontIcon className="material-icons">{type}</FontIcon>
+                  </div>
+                  <div className="column alertText">
+                      <span className="alertTitle">{title} - </span>{message}
+                  </div>
+              </div>
+          </div>
       </div>
     );
 };

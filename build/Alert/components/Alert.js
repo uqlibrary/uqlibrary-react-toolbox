@@ -24,39 +24,8 @@ var Alert = function Alert(_ref) {
 
     return _react2.default.createElement(
         'div',
-        null,
-        outsidelayout ? _react2.default.createElement(
-            'div',
-            { className: 'layout-card forAlerts' },
-            _react2.default.createElement(
-                'div',
-                { className: type + ' alertWrapper' },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'columns is-gapless is-multiline' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'column is-narrow alertIcon' },
-                        _react2.default.createElement(
-                            _FontIcon2.default,
-                            { className: 'material-icons' },
-                            type
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'column alertText' },
-                        _react2.default.createElement(
-                            'span',
-                            { className: 'alertTitle' },
-                            title,
-                            ' - '
-                        ),
-                        message
-                    )
-                )
-            )
-        ) : _react2.default.createElement(
+        { className: outsidelayout ? 'layout-card forAlerts' : '' },
+        _react2.default.createElement(
             'div',
             { className: type + ' alertWrapper' },
             _react2.default.createElement(
