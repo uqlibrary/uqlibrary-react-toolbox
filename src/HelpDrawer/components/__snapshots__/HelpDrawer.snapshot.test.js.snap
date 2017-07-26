@@ -23,10 +23,6 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
       >
         HelpDrawer Title
       </span>
-      <Divider
-        className="helpDrawerDivider"
-        inset={false}
-      />
       <div
         className="body-1"
       >

@@ -20,10 +20,6 @@ var _RaisedButton = require('material-ui/RaisedButton');
 
 var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
-var _Divider = require('material-ui/Divider');
-
-var _Divider2 = _interopRequireDefault(_Divider);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var propTypes = {
