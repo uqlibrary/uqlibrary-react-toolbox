@@ -80,19 +80,34 @@ var ConfirmDialogBox = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
+            var actions = [_react2.default.createElement(
+                'div',
+                { className: 'columns' },
+                _react2.default.createElement('div', { className: 'column is-hidden-mobile' }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'column is-narrow-desktop', style: { paddingRight: 0 } },
+                    _react2.default.createElement(_RaisedButton2.default, { label: this.props.locale.cancelButtonLabel,
+                        fullWidth: true,
+                        onTouchTap: this._hideConfirmation })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'column is-narrow-desktop' },
+                    _react2.default.createElement(_RaisedButton2.default, { label: this.props.locale.confirmButtonLabel,
+                        fullWidth: true,
+                        secondary: true,
+                        keyboardFocused: true,
+                        onTouchTap: this._onAction })
+                ),
+                _react2.default.createElement('div', { className: 'is-clearfix' })
+            )];
+
             return _react2.default.createElement(
                 _Dialog2.default,
                 {
                     title: this.props.locale.confirmationTitle,
-                    actions: [_react2.default.createElement(_RaisedButton2.default, {
-                        label: this.props.locale.cancelButtonLabel,
-                        onTouchTap: this._hideConfirmation
-                    }), _react2.default.createElement(_RaisedButton2.default, {
-                        label: this.props.locale.confirmButtonLabel,
-                        secondary: true,
-                        keyboardFocused: true,
-                        onTouchTap: this._onAction
-                    })],
+                    actions: actions,
                     modal: true,
                     open: this.state.isDialogOpen
                 },
