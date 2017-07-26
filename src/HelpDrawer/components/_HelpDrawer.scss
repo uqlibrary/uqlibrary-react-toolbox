@@ -11,8 +11,11 @@
   }
 
   span.title {
-    margin: 0px 0px 24px 0px !important;
+    margin: 0px !important;
     color: $theme-color;
+  }
+  .body-1 {
+    padding-top: 24px;
   }
   .content {
     padding: 24px !important;
