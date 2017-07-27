@@ -6,10 +6,14 @@ simple date-picker for UQ Library applications using ReactJs.
 ## PartialDateField Props
 - `dateFormat: PropTypes.string`
 - `allowPartial: PropTypes.bool`
+- `locale: PropTypes.object`
+- `months: PropTypes.array`
+- `onChange: PropTypes.func`
 
 ## PartialDateField defaultProps
 - `dateFormat: 'YYYY-MM-DD'`
 - `allowPartial: false`
+- `months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']`
 
 
 ## Usage
