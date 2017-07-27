@@ -50,25 +50,37 @@ class PartialDateForm extends Component {
     _validate = (state) => {
         let valid;
         const { day, month, year } = state;
-        const { locale } = this.props;
-
-        this.errors.year = isNaN(year) ? locale.validationMessage.year : '';
 
         if (this.props.allowPartial) {
             valid = !isNaN(year) && year !== null && moment(state).isValid();
-            this.errors.month = (year && month < 0) ? locale.validationMessage.month : '';
-            this.errors.day = (day && year && month > -1 && !valid) ? locale.validationMessage.day : '';
         } else {
             valid = moment(state).isValid() && !isNaN(day) && day !== null && !isNaN(year) && year !== null && month !== null;
-            this.errors.month = month < 0  ? locale.validationMessage.month : '';
-            this.errors.day = (isNaN(day) || ((month !== null || month > -1) && year && !valid))  ? locale.validationMessage.day : '';
         }
 
         return valid;
     };
 
+    _displayErrors = (state, valid) => {
+        const { day, month, year } = state;
+        const { locale } = this.props;
+
+        this.errors.year = isNaN(year) ? locale.validationMessage.year : '';
+
+        if (this.props.allowPartial) {
+            this.errors.month = (year && month < 0) ? locale.validationMessage.month : '';
+            this.errors.day = (day && year && month > -1 && !valid) ? locale.validationMessage.day : '';
+        } else {
+            this.errors.month = month < 0  ? locale.validationMessage.month : '';
+            this.errors.day = (isNaN(day) || ((month !== null || month > -1) && year && !valid))  ? locale.validationMessage.day : '';
+        }
+    };
+
     _setDate = (date) => {
-        if (this._validate(date)) {
+        const valid = this._validate(date);
+
+        this._displayErrors(date, valid);
+
+        if (valid) {
             if (this.props.allowPartial) {
                 date.month = date.month < 0 ? 0 : date.month;
             }
