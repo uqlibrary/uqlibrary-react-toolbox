@@ -6,7 +6,8 @@ Prorotype component to display alerts/warnings/errors
 - `message: PropTypes.string`
 - `title: PropTypes.string`
 - `type PropTypes.string - valid values ['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline']`
-- `outsidelayout PropTypes.bool` 
+- `outsideLayout PropTypes.bool` - prop is to render the module to fit outside of .card-layout
+
 
 ## Usage
 ```jsx
@@ -33,5 +34,4 @@ ReactDOM.render(
   document.getElementById('app')
 );
 ```
-NOTE: 'outsidelayout' prop is to render the module to fit outside of .card-layout
 

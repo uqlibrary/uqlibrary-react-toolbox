@@ -1,10 +1,9 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import FontIcon from 'material-ui/FontIcon';
-
-const Alert = ({title, message, type, outsidelayout}) => {
+const Alert = ({title, message, type, outsideLayout}) => {
     return (
-      <div className={outsidelayout ? 'layout-card forAlerts' : ''}>
+      <div className={outsideLayout ? 'layout-card forAlerts' : ''}>
           <div className={type + ' alertWrapper'}>
               <div className="columns is-gapless is-multiline">
                   <div className="column is-narrow alertIcon">
