@@ -89,9 +89,19 @@ class PartialDateForm extends Component {
         return '';
     };
 
-    _isNumber = (event) => ((event.charCode < this.props.locale.minNumberCharCode || event.charCode > this.props.locale.maxNumberCharCode) && event.preventDefault());
+    _isNumber = (event) => {
+        if (event.charCode < this.props.locale.minNumberCharCode || event.charCode > this.props.locale.maxNumberCharCode) {
+            event.preventDefault();
+        }
+    };
 
-    _onDateChanged = (key) => (event, index, value) => this.setState({ [key]: parseInt(event.target.value === undefined ? value : event.target.value, 10)});
+    _onDateChanged = (key) => {
+        return (event, index, value) => {
+            this.setState({
+                [key]: parseInt(event.target.value === undefined ? value : event.target.value, 10)
+            });
+        };
+    };
 
     render() {
         const { locale, months } = this.props;
