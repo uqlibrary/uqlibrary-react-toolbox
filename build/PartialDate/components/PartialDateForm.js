@@ -51,26 +51,41 @@ var PartialDateForm = function (_Component) {
             var day = state.day,
                 month = state.month,
                 year = state.year;
+
+
+            if (_this.props.allowPartial) {
+                valid = !isNaN(year) && year !== null && moment(state).isValid();
+            } else {
+                valid = moment(state).isValid() && !isNaN(day) && day !== null && !isNaN(year) && year !== null && month !== null;
+            }
+
+            return valid;
+        };
+
+        _this._displayErrors = function (state, valid) {
+            var day = state.day,
+                month = state.month,
+                year = state.year;
             var locale = _this.props.locale;
 
 
             _this.errors.year = isNaN(year) ? locale.validationMessage.year : '';
 
             if (_this.props.allowPartial) {
-                valid = !isNaN(year) && year !== null && moment(state).isValid();
                 _this.errors.month = year && month < 0 ? locale.validationMessage.month : '';
                 _this.errors.day = day && year && month > -1 && !valid ? locale.validationMessage.day : '';
             } else {
-                valid = moment(state).isValid() && !isNaN(day) && day !== null && !isNaN(year) && year !== null && month !== null;
                 _this.errors.month = month < 0 ? locale.validationMessage.month : '';
                 _this.errors.day = isNaN(day) || (month !== null || month > -1) && year && !valid ? locale.validationMessage.day : '';
             }
-
-            return valid;
         };
 
         _this._setDate = function (date) {
-            if (_this._validate(date)) {
+            var valid = _this._validate(date);
+
+            _this._displayErrors(date, valid);
+
+            if (valid) {
                 if (_this.props.allowPartial) {
                     date.month = date.month < 0 ? 0 : date.month;
                 }

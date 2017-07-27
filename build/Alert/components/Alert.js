@@ -20,11 +20,11 @@ var Alert = function Alert(_ref) {
     var title = _ref.title,
         message = _ref.message,
         type = _ref.type,
-        outsidelayout = _ref.outsidelayout;
+        outsideLayout = _ref.outsideLayout;
 
     return _react2.default.createElement(
         'div',
-        { className: outsidelayout ? 'layout-card forAlerts' : '' },
+        { className: outsideLayout ? 'layout-card forAlerts' : '' },
         _react2.default.createElement(
             'div',
             { className: type + ' alertWrapper' },
@@ -60,7 +60,7 @@ Alert.propTypes = {
     message: _propTypes.PropTypes.string.isRequired,
     title: _propTypes.PropTypes.string.isRequired,
     type: _propTypes.PropTypes.oneOf(['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline']),
-    outsidelayout: _propTypes.PropTypes.bool
+    outsideLayout: _propTypes.PropTypes.bool
 };
 
 exports.default = Alert;

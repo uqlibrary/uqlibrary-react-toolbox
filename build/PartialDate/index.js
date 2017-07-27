@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _PartialDateField = require('./PartialDateField');
+var _PartialDateField = require('./components/PartialDateField');
 
 Object.defineProperty(exports, 'PartialDateField', {
   enumerable: true,

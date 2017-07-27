@@ -22,7 +22,7 @@ Alert.propTypes = {
     message: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline']),
-    outsidelayout: PropTypes.bool
+    outsideLayout: PropTypes.bool
 };
 
 export default Alert;
