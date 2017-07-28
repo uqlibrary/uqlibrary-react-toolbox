@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import TextField from 'material-ui/TextField';
-import SelectField from 'material-ui/SelectField';
+import { SelectField } from '../../index';
 import MenuItem from 'material-ui/MenuItem';
 
 const moment = require('moment');

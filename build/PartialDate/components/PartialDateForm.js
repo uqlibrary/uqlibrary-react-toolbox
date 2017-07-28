@@ -18,9 +18,7 @@ var _TextField = require('material-ui/TextField');
 
 var _TextField2 = _interopRequireDefault(_TextField);
 
-var _SelectField = require('material-ui/SelectField');
-
-var _SelectField2 = _interopRequireDefault(_SelectField);
+var _index = require('../../index');
 
 var _MenuItem = require('material-ui/MenuItem');
 
@@ -95,12 +93,14 @@ var PartialDateForm = function (_Component) {
         };
 
         _this._isNumber = function (event) {
-            return (event.charCode < _this.props.locale.minNumberCharCode || event.charCode > _this.props.locale.maxNumberCharCode) && event.preventDefault();
+            if (event.charCode < _this.props.locale.minNumberCharCode || event.charCode > _this.props.locale.maxNumberCharCode) {
+                event.preventDefault();
+            }
         };
 
         _this._onDateChanged = function (key) {
             return function (event, index, value) {
-                return _this.setState(_defineProperty({}, key, parseInt(event.target.value === undefined ? value : event.target.value, 10)));
+                _this.setState(_defineProperty({}, key, parseInt(event.target.value === undefined ? value : event.target.value, 10)));
             };
         };
 
@@ -157,7 +157,7 @@ var PartialDateForm = function (_Component) {
                         'div',
                         { className: 'column' },
                         _react2.default.createElement(
-                            _SelectField2.default,
+                            _index.SelectField,
                             {
                                 name: 'month',
                                 fullWidth: true,
