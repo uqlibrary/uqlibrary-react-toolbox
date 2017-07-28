@@ -21,7 +21,5 @@ describe('PartialDateForm snapshots tests', () => {
 
         let tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
-
-        wrapper.find('year').simulate('blur');
     });
 });
