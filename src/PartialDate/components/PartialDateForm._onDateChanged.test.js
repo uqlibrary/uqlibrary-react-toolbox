@@ -21,7 +21,7 @@ describe('PartialDateForm unit tests', () => {
 
     it('should return correct formatted date 2', () => {
         const expectToBe = (value) => {
-            expect(value).toBe(['', '', '20/09/2016'].shift());
+            expect(value).toBe(['', '', '', '', '', '20/09/2016'].shift());
             return expectToBe;
         };
 
@@ -32,8 +32,11 @@ describe('PartialDateForm unit tests', () => {
         };
 
         const form = setup(props);
+        form.instance()._onDateChanged('day')({ target: { value: NaN }});
         form.instance()._onDateChanged('day')({ target: { value: '20' }});
+        form.instance()._onDateChanged('month')({ target: { value: undefined }}, 0, -1);
         form.instance()._onDateChanged('month')({ target: { value: undefined }}, 9, 8);
+        form.instance()._onDateChanged('year')({ target: { value: NaN }});
         form.instance()._onDateChanged('year')({ target: { value: '2016' }});
     });
 });
