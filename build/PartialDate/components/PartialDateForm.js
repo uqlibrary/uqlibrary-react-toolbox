@@ -18,7 +18,9 @@ var _TextField = require('material-ui/TextField');
 
 var _TextField2 = _interopRequireDefault(_TextField);
 
-var _index = require('../../index');
+var _SelectField = require('material-ui/SelectField');
+
+var _SelectField2 = _interopRequireDefault(_SelectField);
 
 var _MenuItem = require('material-ui/MenuItem');
 
@@ -157,9 +159,10 @@ var PartialDateForm = function (_Component) {
                         'div',
                         { className: 'column' },
                         _react2.default.createElement(
-                            _index.SelectField,
+                            _SelectField2.default,
                             {
                                 name: 'month',
+                                dropDownMenuProps: { animated: false },
                                 fullWidth: true,
                                 value: this.state.month,
                                 style: { marginTop: '12px' },

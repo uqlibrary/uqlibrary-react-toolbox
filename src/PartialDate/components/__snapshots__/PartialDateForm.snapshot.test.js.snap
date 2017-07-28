@@ -36,11 +36,18 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
     <div
       className="column"
     >
-      <SelectFieldWrapper
+      <SelectField
+        autoWidth={false}
+        disabled={false}
+        dropDownMenuProps={
+          Object {
+            "animated": false,
+          }
+        }
         floatingLabelFixed={true}
         floatingLabelText="Month"
         fullWidth={true}
-        maxHeight={250}
+        multiple={false}
         name="month"
         onChange={[Function]}
         style={
@@ -323,7 +330,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
           }
           value={11}
         />
-      </SelectFieldWrapper>
+      </SelectField>
     </div>
     <div
       className="form-spacer"

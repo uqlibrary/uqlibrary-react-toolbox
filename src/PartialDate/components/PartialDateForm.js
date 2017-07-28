@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import TextField from 'material-ui/TextField';
-import { SelectField } from '../../index';
+import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
 const moment = require('moment');
@@ -131,6 +131,7 @@ class PartialDateForm extends Component {
                     <div className="column">
                         <SelectField
                             name="month"
+                            dropDownMenuProps={{ animated: false }}
                             fullWidth
                             value={ this.state.month }
                             style={{ marginTop: '12px' }}
