@@ -22,4 +22,32 @@ describe('PartialDateForm snapshots tests', () => {
         let tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });
+
+    it('renders PartialDateForm component 2', () => {
+        const props = {
+            name: 'partialDate',
+            allowPartial: true,
+            className: 'requiredField',
+            onChange: () => {}
+        };
+
+        const wrapper = setup(props);
+
+        let tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
+
+    it('renders PartialDateForm component 3', () => {
+        const props = {
+            name: 'partialDate',
+            allowPartial: false,
+            className: 'requiredField',
+            onChange: () => {}
+        };
+
+        const wrapper = setup(props);
+
+        let tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
 });

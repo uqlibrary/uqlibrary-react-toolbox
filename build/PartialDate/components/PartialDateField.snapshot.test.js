@@ -37,4 +37,36 @@ describe('Redux-form Field PartialDateField snapshots tests', function () {
         var tree = (0, _enzymeToJson2.default)(wrapper);
         expect(tree).toMatchSnapshot();
     });
+
+    it('renders PartialDateField component with requiredField class on year field', function () {
+        var props = {
+            name: 'partialDate',
+            allowPartial: true,
+            className: 'requiredField',
+            input: {
+                onChange: function onChange() {}
+            }
+        };
+
+        var wrapper = setup(props);
+
+        var tree = (0, _enzymeToJson2.default)(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
+
+    it('renders PartialDateField component with requiredField class on all fields', function () {
+        var props = {
+            name: 'partialDate',
+            allowPartial: false,
+            className: 'requiredField',
+            input: {
+                onChange: function onChange() {}
+            }
+        };
+
+        var wrapper = setup(props);
+
+        var tree = (0, _enzymeToJson2.default)(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
 });

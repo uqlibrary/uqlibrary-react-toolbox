@@ -12,7 +12,8 @@ class PartialDateForm extends Component {
         onChange: PropTypes.func,
         dateFormat: PropTypes.string,
         allowPartial: PropTypes.bool,
-        months: PropTypes.array
+        months: PropTypes.array,
+        className: PropTypes.string
     };
 
     static defaultProps = {
@@ -104,7 +105,7 @@ class PartialDateForm extends Component {
     };
 
     render() {
-        const { locale, months } = this.props;
+        const { locale, months, className } = this.props;
         const renderMonths = months.map((month, index) =>
             <MenuItem key={index} value={index} primaryText={month} />
         );
@@ -118,6 +119,7 @@ class PartialDateForm extends Component {
                             type="text"
                             maxLength="2"
                             style={{ marginTop: '12px' }}
+                            className={ !this.props.allowPartial ? className : '' }
                             fullWidth
                             floatingLabelText={ locale.dayLabel }
                             floatingLabelFixed
@@ -135,6 +137,7 @@ class PartialDateForm extends Component {
                             fullWidth
                             value={ this.state.month }
                             style={{ marginTop: '12px' }}
+                            className={ !this.props.allowPartial ? className : '' }
                             floatingLabelText={ locale.monthLabel }
                             floatingLabelFixed
                             errorText={ this.errors.month }
@@ -150,6 +153,7 @@ class PartialDateForm extends Component {
                             type="text"
                             fullWidth
                             style={{ marginTop: '12px' }}
+                            className={ className }
                             maxLength="4"
                             floatingLabelText={ locale.yearLabel }
                             floatingLabelFixed

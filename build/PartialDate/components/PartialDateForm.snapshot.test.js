@@ -35,4 +35,32 @@ describe('PartialDateForm snapshots tests', function () {
         var tree = (0, _enzymeToJson2.default)(wrapper);
         expect(tree).toMatchSnapshot();
     });
+
+    it('renders PartialDateForm component 2', function () {
+        var props = {
+            name: 'partialDate',
+            allowPartial: true,
+            className: 'requiredField',
+            onChange: function onChange() {}
+        };
+
+        var wrapper = setup(props);
+
+        var tree = (0, _enzymeToJson2.default)(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
+
+    it('renders PartialDateForm component 3', function () {
+        var props = {
+            name: 'partialDate',
+            allowPartial: false,
+            className: 'requiredField',
+            onChange: function onChange() {}
+        };
+
+        var wrapper = setup(props);
+
+        var tree = (0, _enzymeToJson2.default)(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
 });

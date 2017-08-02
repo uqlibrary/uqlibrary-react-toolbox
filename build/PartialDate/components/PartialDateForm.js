@@ -125,7 +125,8 @@ var PartialDateForm = function (_Component) {
         value: function render() {
             var _props = this.props,
                 locale = _props.locale,
-                months = _props.months;
+                months = _props.months,
+                className = _props.className;
 
             var renderMonths = months.map(function (month, index) {
                 return _react2.default.createElement(_MenuItem2.default, { key: index, value: index, primaryText: month });
@@ -145,6 +146,7 @@ var PartialDateForm = function (_Component) {
                             type: 'text',
                             maxLength: '2',
                             style: { marginTop: '12px' },
+                            className: !this.props.allowPartial ? className : '',
                             fullWidth: true,
                             floatingLabelText: locale.dayLabel,
                             floatingLabelFixed: true,
@@ -166,6 +168,7 @@ var PartialDateForm = function (_Component) {
                                 fullWidth: true,
                                 value: this.state.month,
                                 style: { marginTop: '12px' },
+                                className: !this.props.allowPartial ? className : '',
                                 floatingLabelText: locale.monthLabel,
                                 floatingLabelFixed: true,
                                 errorText: this.errors.month,
@@ -183,6 +186,7 @@ var PartialDateForm = function (_Component) {
                             type: 'text',
                             fullWidth: true,
                             style: { marginTop: '12px' },
+                            className: className,
                             maxLength: '4',
                             floatingLabelText: locale.yearLabel,
                             floatingLabelFixed: true,
@@ -205,7 +209,8 @@ PartialDateForm.propTypes = {
     onChange: _propTypes2.default.func,
     dateFormat: _propTypes2.default.string,
     allowPartial: _propTypes2.default.bool,
-    months: _propTypes2.default.array
+    months: _propTypes2.default.array,
+    className: _propTypes2.default.string
 };
 PartialDateForm.defaultProps = {
     locale: {
