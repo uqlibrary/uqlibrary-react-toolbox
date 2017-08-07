@@ -82,18 +82,18 @@ var ConfirmDialogBox = function (_Component) {
         value: function render() {
             var actions = [_react2.default.createElement(
                 'div',
-                { className: 'columns' },
+                { className: 'columns dialog-actions' },
                 _react2.default.createElement('div', { className: 'column is-hidden-mobile' }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow-desktop', style: { paddingRight: 0 } },
+                    { className: 'column is-narrow' },
                     _react2.default.createElement(_RaisedButton2.default, { label: this.props.locale.cancelButtonLabel,
                         fullWidth: true,
                         onTouchTap: this._hideConfirmation })
                 ),
                 _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow-desktop' },
+                    { className: 'column is-narrow' },
                     _react2.default.createElement(_RaisedButton2.default, { label: this.props.locale.confirmButtonLabel,
                         fullWidth: true,
                         secondary: true,

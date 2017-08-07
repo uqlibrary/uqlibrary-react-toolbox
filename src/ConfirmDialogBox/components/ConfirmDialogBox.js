@@ -58,14 +58,14 @@ export default class ConfirmDialogBox extends Component {
 
     render() {
         const actions = [
-            <div className="columns">
+            <div className="columns dialog-actions">
                 <div className="column is-hidden-mobile"/>
-                <div className="column is-narrow-desktop" style={{paddingRight: 0}}>
+                <div className="column is-narrow">
                     <RaisedButton label={this.props.locale.cancelButtonLabel}
                                   fullWidth
                                   onTouchTap={this._hideConfirmation}/>
                 </div>
-                <div className="column is-narrow-desktop">
+                <div className="column is-narrow">
                     <RaisedButton label={this.props.locale.confirmButtonLabel}
                                   fullWidth
                                   secondary
