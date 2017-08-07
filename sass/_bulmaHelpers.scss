@@ -3,10 +3,15 @@
 @media all and (max-width: 768px) {
   .columns.is-gapless-mobile {
     & .column {
-      margin: 0 !important;
-      padding: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
     }
   }
+}
+
+//mui element spacer in a bulma grid
+.form-item-spacer {
+  width: 16px !important;
 }
 
 //Bulma helpers

@@ -134,66 +134,62 @@ var PartialDateForm = function (_Component) {
 
             return _react2.default.createElement(
                 'div',
-                { className: 'column' },
+                { className: 'columns is-gapless-mobile' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'columns is-gapless-mobile' },
+                    { className: 'column' },
+                    _react2.default.createElement(_TextField2.default, {
+                        name: 'day',
+                        type: 'text',
+                        maxLength: '2',
+                        style: { marginTop: '12px' },
+                        className: !this.props.allowPartial ? className : '',
+                        fullWidth: true,
+                        floatingLabelText: locale.dayLabel,
+                        floatingLabelFixed: true,
+                        errorText: this.errors.day,
+                        onKeyPress: this._isNumber,
+                        onChange: this._onDateChanged('day'),
+                        onBlur: !this.props.allowPartial ? this._onDateChanged('day') : undefined
+                    })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'column' },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'column' },
-                        _react2.default.createElement(_TextField2.default, {
-                            name: 'day',
-                            type: 'text',
-                            maxLength: '2',
+                        _SelectField2.default,
+                        {
+                            name: 'month',
+                            dropDownMenuProps: { animated: false },
+                            fullWidth: true,
+                            value: this.state.month,
                             style: { marginTop: '12px' },
                             className: !this.props.allowPartial ? className : '',
-                            fullWidth: true,
-                            floatingLabelText: locale.dayLabel,
+                            floatingLabelText: locale.monthLabel,
                             floatingLabelFixed: true,
-                            errorText: this.errors.day,
-                            onKeyPress: this._isNumber,
-                            onChange: this._onDateChanged('day'),
-                            onBlur: !this.props.allowPartial ? this._onDateChanged('day') : undefined
-                        })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'column' },
-                        _react2.default.createElement(
-                            _SelectField2.default,
-                            {
-                                name: 'month',
-                                dropDownMenuProps: { animated: false },
-                                fullWidth: true,
-                                value: this.state.month,
-                                style: { marginTop: '12px' },
-                                className: !this.props.allowPartial ? className : '',
-                                floatingLabelText: locale.monthLabel,
-                                floatingLabelFixed: true,
-                                errorText: this.errors.month,
-                                onChange: this._onDateChanged('month') },
-                            _react2.default.createElement(_MenuItem2.default, { key: -1, value: -1, primaryText: '' }),
-                            renderMonths
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'column' },
-                        _react2.default.createElement(_TextField2.default, {
-                            name: 'year',
-                            type: 'text',
-                            fullWidth: true,
-                            style: { marginTop: '12px' },
-                            className: className,
-                            maxLength: '4',
-                            floatingLabelText: locale.yearLabel,
-                            floatingLabelFixed: true,
-                            errorText: this.errors.year,
-                            onKeyPress: this._isNumber,
-                            onChange: this._onDateChanged('year'),
-                            onBlur: this._onDateChanged('year')
-                        })
+                            errorText: this.errors.month,
+                            onChange: this._onDateChanged('month') },
+                        _react2.default.createElement(_MenuItem2.default, { key: -1, value: -1, primaryText: '' }),
+                        renderMonths
                     )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'column' },
+                    _react2.default.createElement(_TextField2.default, {
+                        name: 'year',
+                        type: 'text',
+                        fullWidth: true,
+                        style: { marginTop: '12px' },
+                        className: className,
+                        maxLength: '4',
+                        floatingLabelText: locale.yearLabel,
+                        floatingLabelFixed: true,
+                        errorText: this.errors.year,
+                        onKeyPress: this._isNumber,
+                        onChange: this._onDateChanged('year'),
+                        onBlur: this._onDateChanged('year')
+                    })
                 )
             );
         }

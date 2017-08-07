@@ -111,7 +111,6 @@ class PartialDateForm extends Component {
         );
 
         return (
-            <div className="column">
                 <div className="columns is-gapless-mobile">
                     <div className="column">
                         <TextField
@@ -162,7 +161,6 @@ class PartialDateForm extends Component {
                         />
                     </div>
                 </div>
-            </div>
         );
     }
 }
