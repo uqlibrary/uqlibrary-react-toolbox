@@ -5,7 +5,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
   className="column"
 >
   <div
-    className="columns"
+    className="columns is-gapless-mobile"
   >
     <div
       className="column"
@@ -31,9 +31,6 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         underlineShow={true}
       />
     </div>
-    <div
-      className="form-spacer"
-    />
     <div
       className="column"
     >
@@ -334,9 +331,6 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         />
       </SelectField>
     </div>
-    <div
-      className="form-spacer"
-    />
     <div
       className="column"
     >
@@ -370,7 +364,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
   className="column"
 >
   <div
-    className="columns"
+    className="columns is-gapless-mobile"
   >
     <div
       className="column"
@@ -396,9 +390,6 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         underlineShow={true}
       />
     </div>
-    <div
-      className="form-spacer"
-    />
     <div
       className="column"
     >
@@ -699,9 +690,6 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         />
       </SelectField>
     </div>
-    <div
-      className="form-spacer"
-    />
     <div
       className="column"
     >
@@ -736,7 +724,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
   className="column"
 >
   <div
-    className="columns"
+    className="columns is-gapless-mobile"
   >
     <div
       className="column"
@@ -763,9 +751,6 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         underlineShow={true}
       />
     </div>
-    <div
-      className="form-spacer"
-    />
     <div
       className="column"
     >
@@ -1066,9 +1051,6 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         />
       </SelectField>
     </div>
-    <div
-      className="form-spacer"
-    />
     <div
       className="column"
     >

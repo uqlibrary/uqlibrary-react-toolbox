@@ -112,7 +112,7 @@ class PartialDateForm extends Component {
 
         return (
             <div className="column">
-                <div className="columns">
+                <div className="columns is-gapless-mobile">
                     <div className="column">
                         <TextField
                             name="day"
@@ -129,7 +129,6 @@ class PartialDateForm extends Component {
                             onBlur={ !this.props.allowPartial ? this._onDateChanged('day') : undefined }
                         />
                     </div>
-                    <div className="form-spacer"/>
                     <div className="column">
                         <SelectField
                             name="month"
@@ -146,7 +145,6 @@ class PartialDateForm extends Component {
                             { renderMonths }
                         </SelectField>
                     </div>
-                    <div className="form-spacer"/>
                     <div className="column">
                         <TextField
                             name="year"

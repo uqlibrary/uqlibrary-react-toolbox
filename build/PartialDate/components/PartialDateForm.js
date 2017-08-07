@@ -137,7 +137,7 @@ var PartialDateForm = function (_Component) {
                 { className: 'column' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'columns' },
+                    { className: 'columns is-gapless-mobile' },
                     _react2.default.createElement(
                         'div',
                         { className: 'column' },
@@ -156,7 +156,6 @@ var PartialDateForm = function (_Component) {
                             onBlur: !this.props.allowPartial ? this._onDateChanged('day') : undefined
                         })
                     ),
-                    _react2.default.createElement('div', { className: 'form-spacer' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'column' },
@@ -177,7 +176,6 @@ var PartialDateForm = function (_Component) {
                             renderMonths
                         )
                     ),
-                    _react2.default.createElement('div', { className: 'form-spacer' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'column' },

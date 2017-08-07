@@ -1,3 +1,15 @@
+// Custom helpers
+
+@media all and (max-width: 768px) {
+  .columns.is-gapless-mobile {
+    & .column {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+//Bulma helpers
 
 .is-block {
   display: block;
@@ -432,8 +444,6 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   -ms-user-select: none;
   user-select: none;
 }
-
-
 
 .column {
   display: block;

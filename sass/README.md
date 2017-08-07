@@ -285,6 +285,8 @@ If you want to remove the space between the columns, add the is-gapless modifier
 </div>
 ```
 
+_.is-gapless-mobile_ is a custom stlye class added to _bulmaHelpers to allow no padding/margins in mobile view only.
+
 __Narrow__
 
 If you want a column to only take the space it needs, use the is-narrow modifier. The other column(s) will fill up the remaining space.
