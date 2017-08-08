@@ -55,6 +55,11 @@ var AuthorsPublicationsPerYearChart = function (_React$Component) {
                 chart: {
                     type: 'column'
                 },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal'
+                    }
+                },
                 xAxis: {
                     categories: categories,
                     labels: {
@@ -74,6 +79,7 @@ var AuthorsPublicationsPerYearChart = function (_React$Component) {
                 legend: {
                     align: 'right',
                     verticalAlign: 'top',
+                    layout: 'vertical',
                     x: -30,
                     y: -10,
                     floating: true,
@@ -86,11 +92,6 @@ var AuthorsPublicationsPerYearChart = function (_React$Component) {
                     //         this.series.name + ': ' + this.y + '<br/>' +
                     //         'Total: ' + this.point.stackTotal;
                     // }
-                },
-                plotOptions: {
-                    column: {
-                        stacking: 'normal'
-                    }
                 },
                 series: series
             }

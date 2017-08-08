@@ -61,6 +61,7 @@ class AuthorsPublicationsPerYearChart extends React.Component {
                 legend: {
                     align: 'right',
                     verticalAlign: 'top',
+                    layout: 'vertical',
                     x: -30,
                     y: -10,
                     floating: true,
