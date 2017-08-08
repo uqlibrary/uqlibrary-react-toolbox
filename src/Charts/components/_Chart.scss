@@ -1,16 +1,14 @@
 @import '../../../sass/variables';
 
 $graph-font-size: 12px !important;
-$graph-background-color-blue : #1e7d94;
 
 // Bar Chart styles
 .barChart {
   background-color: $graph-background-color-blue !important;
 
   .authors-publications-per-year-chart {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
-    /* Default colors */
 
     $barchart-colors: $graph-color-3, $graph-color-1, $graph-color-2, $graph-color-4, $graph-color-5, $graph-background-color-pink;
 
