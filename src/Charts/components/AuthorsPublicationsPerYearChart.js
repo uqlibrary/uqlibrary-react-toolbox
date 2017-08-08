@@ -37,6 +37,25 @@ class AuthorsPublicationsPerYearChart extends React.Component {
                 chart: {
                     type: 'column'
                 },
+                plotOptions: {
+                    pie: {
+                        showInLegend: true,
+                        dataLabels: {
+                            connectorWidth: 2,
+                            distance: 10,
+                            overflow: 'none',
+                            className: 'pieLabels ',
+                            format: '{y}',
+                            useHTML: true,
+                            enabled: true
+                        },
+                        shadow: false,
+                        center: ['50%', '40%'],
+                        size: '80%',
+                        innerSize: '70%',
+                        borderColor: 'none',
+                    },
+                },
                 xAxis: {
                     categories: categories,
                     labels: {
