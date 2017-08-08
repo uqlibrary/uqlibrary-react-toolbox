@@ -38,23 +38,9 @@ class AuthorsPublicationsPerYearChart extends React.Component {
                     type: 'column'
                 },
                 plotOptions: {
-                    pie: {
-                        showInLegend: true,
-                        dataLabels: {
-                            connectorWidth: 2,
-                            distance: 10,
-                            overflow: 'none',
-                            className: 'pieLabels ',
-                            format: '{y}',
-                            useHTML: true,
-                            enabled: true
-                        },
-                        shadow: false,
-                        center: ['50%', '40%'],
-                        size: '80%',
-                        innerSize: '70%',
-                        borderColor: 'none',
-                    },
+                    column: {
+                        stacking: 'normal'
+                    }
                 },
                 xAxis: {
                     categories: categories,
@@ -87,11 +73,6 @@ class AuthorsPublicationsPerYearChart extends React.Component {
                     //         this.series.name + ': ' + this.y + '<br/>' +
                     //         'Total: ' + this.point.stackTotal;
                     // }
-                },
-                plotOptions: {
-                    column: {
-                        stacking: 'normal'
-                    }
                 },
                 series: series
             }
