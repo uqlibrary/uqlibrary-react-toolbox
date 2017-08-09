@@ -12,7 +12,16 @@ class AuthorsPublicationsCount extends React.Component {
     constructor(props) {
         super(props);
 
-        const series = this.rawData;
+        const series = [{
+            name: 'Document count by type',
+            data: [
+                ['Journal articles', 429],
+                ['Conference papers', 112],
+                ['Magazine articles', 106],
+                ['Books', 12],
+                ['Other', 129]
+            ]
+        }];
 
         this.state = {
             options: {
@@ -61,13 +70,13 @@ class AuthorsPublicationsCount extends React.Component {
                     },
                 },
                 series: series
-                //     [{
+                // series: [{
                 //     name: 'Document count by type',
                 //     data: [
-                //         ['Journal articles', 329],
-                //         ['Conference papers', 112],
-                //         ['Magazine articles', 106],
-                //         ['Other', 12]
+                //         ['Journal articles', 429.9],
+                //         ['Conference papers', 112.5],
+                //         ['Magazine articles', 106.4],
+                //         ['Other', 129.2]
                 //     ],
                 // }]
             }

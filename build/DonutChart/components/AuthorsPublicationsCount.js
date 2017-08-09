@@ -32,7 +32,10 @@ var AuthorsPublicationsCount = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (AuthorsPublicationsCount.__proto__ || Object.getPrototypeOf(AuthorsPublicationsCount)).call(this, props));
 
-        var series = _this.rawData;
+        var series = [{
+            name: 'Document count by type',
+            data: [['Journal articles', 429], ['Conference papers', 112], ['Magazine articles', 106], ['Books', 12], ['Other', 129]]
+        }];
 
         _this.state = {
             options: {
@@ -81,13 +84,13 @@ var AuthorsPublicationsCount = function (_React$Component) {
                     }
                 },
                 series: series
-                //     [{
+                // series: [{
                 //     name: 'Document count by type',
                 //     data: [
-                //         ['Journal articles', 329],
-                //         ['Conference papers', 112],
-                //         ['Magazine articles', 106],
-                //         ['Other', 12]
+                //         ['Journal articles', 429.9],
+                //         ['Conference papers', 112.5],
+                //         ['Magazine articles', 106.4],
+                //         ['Other', 129.2]
                 //     ],
                 // }]
             }
