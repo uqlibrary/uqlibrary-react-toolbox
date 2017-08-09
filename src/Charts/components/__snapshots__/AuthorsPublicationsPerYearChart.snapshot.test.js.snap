@@ -13,6 +13,7 @@ exports[`AuthorsPublicationsPerYearChart snapshot tests it should render chart c
         "legend": Object {
           "align": "right",
           "floating": true,
+          "layout": "vertical",
           "shadow": false,
           "verticalAlign": "top",
           "x": -30,

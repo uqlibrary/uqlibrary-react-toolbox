@@ -9,7 +9,7 @@ export {AppLoader} from './Loaders';
 export {InlineLoader} from './Loaders';
 export {ContentLoader} from './Loaders';
 export {AuthButton} from './AuthButton';
-export {AuthorsPublicationsPerYearChart} from './Charts';
+export {AuthorsPublicationsPerYearChart, AuthorsPublicationsCount} from './Charts';
 export {Alert} from './Alert';
 export {ConfirmDialogBox} from './ConfirmDialogBox';
 export {PartialDateField} from './PartialDate';
