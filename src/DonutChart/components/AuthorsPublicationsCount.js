@@ -1,10 +1,18 @@
 import React from 'react';
+import {PropTypes} from 'prop-types';
 import DonutChart from './DonutChart';
 
 class AuthorsPublicationsCount extends React.Component {
 
+    // TODO: should be immutableJs data
+    static propTypes = {
+        rawData: PropTypes.object.isRequired,
+    };
+
     constructor(props) {
         super(props);
+
+        const series = this.rawData;
 
         this.state = {
             options: {
@@ -52,16 +60,16 @@ class AuthorsPublicationsCount extends React.Component {
                         borderColor: 'none',
                     },
                 },
-                series: [{
-                    name: 'Document count by type',
-                    data: [
-                        ['Journal articles', 329],
-                        ['Conference papers', 112],
-                        ['Magazine articles', 106],
-                        ['Other', 12]
-                    ],
-                }]
-
+                series: series
+                //     [{
+                //     name: 'Document count by type',
+                //     data: [
+                //         ['Journal articles', 329],
+                //         ['Conference papers', 112],
+                //         ['Magazine articles', 106],
+                //         ['Other', 12]
+                //     ],
+                // }]
             }
         };
     }

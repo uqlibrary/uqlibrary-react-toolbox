@@ -2,7 +2,6 @@ import React from 'react';
 import {PropTypes} from 'prop-types';
 import Chart from './Chart';
 
-// TODO: chart doesn't look good on mobile view if there's a lot of years/publications - update styles for mobile view - display last 5 years on mobile view?
 // TODO: possible feature: cache processed data in browser (per user)
 
 class AuthorsPublicationsPerYearChart extends React.Component {

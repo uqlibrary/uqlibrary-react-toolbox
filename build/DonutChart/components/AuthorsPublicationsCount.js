@@ -10,6 +10,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
 var _DonutChart = require('./DonutChart');
 
 var _DonutChart2 = _interopRequireDefault(_DonutChart);
@@ -29,6 +31,8 @@ var AuthorsPublicationsCount = function (_React$Component) {
         _classCallCheck(this, AuthorsPublicationsCount);
 
         var _this = _possibleConstructorReturn(this, (AuthorsPublicationsCount.__proto__ || Object.getPrototypeOf(AuthorsPublicationsCount)).call(this, props));
+
+        var series = _this.rawData;
 
         _this.state = {
             options: {
@@ -76,15 +80,23 @@ var AuthorsPublicationsCount = function (_React$Component) {
                         borderColor: 'none'
                     }
                 },
-                series: [{
-                    name: 'Document count by type',
-                    data: [['Journal articles', 329], ['Conference papers', 112], ['Magazine articles', 106], ['Other', 12]]
-                }]
-
+                series: series
+                //     [{
+                //     name: 'Document count by type',
+                //     data: [
+                //         ['Journal articles', 329],
+                //         ['Conference papers', 112],
+                //         ['Magazine articles', 106],
+                //         ['Other', 12]
+                //     ],
+                // }]
             }
         };
         return _this;
     }
+
+    // TODO: should be immutableJs data
+
 
     _createClass(AuthorsPublicationsCount, [{
         key: 'render',
@@ -96,4 +108,7 @@ var AuthorsPublicationsCount = function (_React$Component) {
     return AuthorsPublicationsCount;
 }(_react2.default.Component);
 
+AuthorsPublicationsCount.propTypes = {
+    rawData: _propTypes.PropTypes.object.isRequired
+};
 exports.default = AuthorsPublicationsCount;
