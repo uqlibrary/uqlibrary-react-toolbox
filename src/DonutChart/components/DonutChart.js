@@ -3,8 +3,6 @@ import {PropTypes} from 'prop-types';
 import {findDOMNode} from 'react-dom';
 import Highcharts from 'highcharts';
 
-import './_DonutChart.scss';
-
 class DonutChart extends React.Component {
     static propTypes = {
         chartOptions: PropTypes.object.isRequired

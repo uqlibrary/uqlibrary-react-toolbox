@@ -15,7 +15,7 @@ class AuthorsPublicationsPerYearChart extends React.Component {
 
     static defaultProps = {
         yAxisTitle: 'Total publications'
-    }
+    };
 
     constructor(props) {
         super(props);
