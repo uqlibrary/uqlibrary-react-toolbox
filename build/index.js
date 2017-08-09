@@ -118,6 +118,15 @@ Object.defineProperty(exports, 'AuthorsPublicationsPerYearChart', {
   }
 });
 
+var _DonutChart = require('./DonutChart');
+
+Object.defineProperty(exports, 'AuthorsPublicationsCount', {
+  enumerable: true,
+  get: function get() {
+    return _DonutChart.AuthorsPublicationsCount;
+  }
+});
+
 var _Alert = require('./Alert');
 
 Object.defineProperty(exports, 'Alert', {
