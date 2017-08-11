@@ -76,7 +76,7 @@ class AuthorsPublicationTypesCountChart extends React.Component {
 
     render() {
         return (
-              <DonutChart className="authors-publications-count" chartOptions={this.state.options} />
+              <Chart className="authors-publications-count" chartOptions={this.state.options} />
         );
     }
 }
