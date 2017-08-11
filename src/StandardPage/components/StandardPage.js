@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function StandardPage({title, children}) {
+export default function StandardPage({title, className, children}) {
     return (
-        <div className="layout-fill">
+        <div className={`layout-fill ${className}`}>
             <h1 className="title is-3">{title}</h1>
             {children}
         </div>
@@ -11,7 +11,7 @@ export default function StandardPage({title, children}) {
 }
 
 StandardPage.propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    className: PropTypes.string,
     children: PropTypes.any
-
 };

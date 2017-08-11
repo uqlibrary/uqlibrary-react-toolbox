@@ -17,11 +17,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function StandardPage(_ref) {
     var title = _ref.title,
+        className = _ref.className,
         children = _ref.children;
 
     return _react2.default.createElement(
         'div',
-        { className: 'layout-fill' },
+        { className: 'layout-fill ' + className },
         _react2.default.createElement(
             'h1',
             { className: 'title is-3' },
@@ -32,7 +33,7 @@ function StandardPage(_ref) {
 }
 
 StandardPage.propTypes = {
-    title: _propTypes2.default.string.isRequired,
+    title: _propTypes2.default.string,
+    className: _propTypes2.default.string,
     children: _propTypes2.default.any
-
 };
