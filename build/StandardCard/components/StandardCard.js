@@ -22,11 +22,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function StandardCard(_ref) {
     var title = _ref.title,
         help = _ref.help,
+        className = _ref.className,
         children = _ref.children;
 
     return _react2.default.createElement(
         _Card.Card,
-        { className: 'layout-card' },
+        { className: 'layout-card ' + className },
         _react2.default.createElement(
             _Card.CardHeader,
             { className: 'card-header' },
@@ -64,6 +65,7 @@ function StandardCard(_ref) {
 StandardCard.propTypes = {
     title: _propTypes2.default.string,
     children: _propTypes2.default.any,
+    className: _propTypes2.default.string,
     help: _propTypes2.default.shape({
         title: _propTypes2.default.string,
         text: _propTypes2.default.any,

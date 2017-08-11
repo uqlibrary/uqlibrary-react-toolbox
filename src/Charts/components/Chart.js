@@ -5,7 +5,8 @@ import Highcharts from 'highcharts';
 
 class Chart extends React.Component {
     static propTypes = {
-        chartOptions: PropTypes.object.isRequired
+        chartOptions: PropTypes.object.isRequired,
+        className: PropTypes.string
     };
 
     constructor(props) {
@@ -34,7 +35,7 @@ class Chart extends React.Component {
 
     render() {
         return (
-            <div ref="chart" />
+            <div className={this.props.className} ref="chart" />
         );
     }
 }

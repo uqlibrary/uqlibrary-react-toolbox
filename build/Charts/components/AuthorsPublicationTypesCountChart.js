@@ -87,7 +87,7 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
     _createClass(AuthorsPublicationTypesCountChart, [{
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(_Chart2.default, { className: 'authors-publications-count', chartOptions: this.state.options });
+            return _react2.default.createElement(_Chart2.default, { className: this.props.className + ' authors-publication-types-count-chart', chartOptions: this.state.options });
         }
     }]);
 
@@ -95,6 +95,7 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
 }(_react2.default.Component);
 
 AuthorsPublicationTypesCountChart.propTypes = {
+    className: _propTypes.PropTypes.string,
     series: _propTypes.PropTypes.array
 };
 AuthorsPublicationTypesCountChart.defaultProps = {

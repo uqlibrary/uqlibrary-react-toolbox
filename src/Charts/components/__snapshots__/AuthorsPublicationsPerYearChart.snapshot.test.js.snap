@@ -1,52 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AuthorsPublicationsPerYearChart snapshot tests it should render chart component 1`] = `
-<div
-  className="authors-publications-per-year-chart"
->
-  <Chart
-    chartOptions={
-      Object {
-        "chart": Object {
-          "type": "column",
+<Chart
+  chartOptions={
+    Object {
+      "chart": Object {
+        "type": "column",
+      },
+      "legend": Object {
+        "align": "right",
+        "floating": true,
+        "layout": "vertical",
+        "shadow": false,
+        "verticalAlign": "top",
+        "x": -30,
+        "y": -10,
+      },
+      "plotOptions": Object {
+        "column": Object {
+          "stacking": "normal",
         },
-        "legend": Object {
-          "align": "right",
-          "floating": true,
-          "layout": "vertical",
-          "shadow": false,
-          "verticalAlign": "top",
-          "x": -30,
-          "y": -10,
+      },
+      "series": Array [],
+      "title": Object {
+        "text": null,
+      },
+      "tooltip": Object {},
+      "xAxis": Object {
+        "categories": Array [],
+        "labels": Object {
+          "rotation": -45,
+          "y": 18,
         },
-        "plotOptions": Object {
-          "column": Object {
-            "stacking": "normal",
-          },
+      },
+      "yAxis": Object {
+        "min": 0,
+        "stackLabels": Object {
+          "enabled": true,
         },
-        "series": Array [],
         "title": Object {
-          "text": null,
+          "text": "title",
         },
-        "tooltip": Object {},
-        "xAxis": Object {
-          "categories": Array [],
-          "labels": Object {
-            "rotation": -45,
-            "y": 18,
-          },
-        },
-        "yAxis": Object {
-          "min": 0,
-          "stackLabels": Object {
-            "enabled": true,
-          },
-          "title": Object {
-            "text": "title",
-          },
-        },
-      }
+      },
     }
-  />
-</div>
+  }
+  className="undefined authors-publications-per-year-chart"
+/>
 `;

@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import {Card, CardText, CardHeader} from 'material-ui/Card';
 import {HelpIcon} from '../../index';
 
-export default function StandardCard({title, help, children}) {
+export default function StandardCard({title, help, className, children}) {
     return (
-        <Card className="layout-card">
+        <Card className={`layout-card ${className}`}>
             <CardHeader className="card-header">
                 <div className="columns is-gapless is-mobile">
                     <div className="column">
@@ -31,6 +31,7 @@ export default function StandardCard({title, help, children}) {
 StandardCard.propTypes = {
     title: PropTypes.string,
     children: PropTypes.any,
+    className: PropTypes.string,
     help: PropTypes.shape({
         title: PropTypes.string,
         text: PropTypes.any,

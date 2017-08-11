@@ -4,6 +4,7 @@ import Chart from './Chart';
 
 class AuthorsPublicationTypesCountChart extends React.Component {
     static propTypes = {
+        className: PropTypes.string,
         series: PropTypes.array
     };
 
@@ -76,7 +77,7 @@ class AuthorsPublicationTypesCountChart extends React.Component {
 
     render() {
         return (
-              <Chart className="authors-publications-count" chartOptions={this.state.options} />
+              <Chart className={this.props.className + ' authors-publication-types-count-chart'} chartOptions={this.state.options} />
         );
     }
 }
