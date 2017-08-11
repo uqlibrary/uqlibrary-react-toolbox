@@ -7,9 +7,10 @@ import toJson from 'enzyme-to-json';
 import AthorsPublicationsPerYearChart from './AuthorsPublicationsPerYearChart';
 import {publicationYearsBig, publicationYearsSmall, publicationYearsTiny, publicationYearsZero} from './data/publicationYears';
 
-function setup({rawData, yAxisTitle}) {
+function setup({series, categories, yAxisTitle}) {
     const props = {
-        rawData,
+        series,
+        categories,
         yAxisTitle
     };
     return shallow(<AthorsPublicationsPerYearChart {...props} />);
@@ -18,7 +19,7 @@ function setup({rawData, yAxisTitle}) {
 
 describe('AuthorsPublicationsPerYearChart snapshot tests', () => {
     it('it should render chart component', () => {
-        const app = setup({rawData: publicationYearsBig, yAxisTitle: 'title'});
+        const app = setup({series: [], categories: [], yAxisTitle: 'title'});
         expect(toJson(app)).toMatchSnapshot();
     });
 });

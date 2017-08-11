@@ -21,11 +21,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 jest.dontMock('./AuthorsPublicationsPerYearChart');
 
 function setup(_ref) {
-    var rawData = _ref.rawData,
+    var series = _ref.series,
+        categories = _ref.categories,
         yAxisTitle = _ref.yAxisTitle;
 
     var props = {
-        rawData: rawData,
+        series: series,
+        categories: categories,
         yAxisTitle: yAxisTitle
     };
     return (0, _enzyme.shallow)(_react2.default.createElement(_AuthorsPublicationsPerYearChart2.default, props));
@@ -33,7 +35,7 @@ function setup(_ref) {
 
 describe('AuthorsPublicationsPerYearChart snapshot tests', function () {
     it('it should render chart component', function () {
-        var app = setup({ rawData: _publicationYears.publicationYearsBig, yAxisTitle: 'title' });
+        var app = setup({ series: [], categories: [], yAxisTitle: 'title' });
         expect((0, _enzymeToJson2.default)(app)).toMatchSnapshot();
     });
 });

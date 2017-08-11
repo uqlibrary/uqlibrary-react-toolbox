@@ -1,27 +1,27 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
-import DonutChart from './DonutChart';
+import Chart from './Chart';
 
-class AuthorsPublicationsCount extends React.Component {
-
-    // TODO: should be immutableJs data
+class AuthorsPublicationTypesCountChart extends React.Component {
     static propTypes = {
-        rawData: PropTypes.object.isRequired,
+        series: PropTypes.array
+    };
+
+    static defaultProps = {
+        series: [{
+            name: 'Publications count by type',
+            data: [
+                ['Journal articles', 200],
+                ['Conference papers', 150],
+                ['Book chapters', 106],
+                ['Books', 30],
+                ['Other', 5]
+            ]
+        }]
     };
 
     constructor(props) {
         super(props);
-
-        const series = [{
-            name: 'Document count by type',
-            data: [
-                ['Journal articles', 429],
-                ['Conference papers', 112],
-                ['Magazine articles', 106],
-                ['Books', 12],
-                ['Other', 129]
-            ]
-        }];
 
         this.state = {
             options: {
@@ -69,16 +69,7 @@ class AuthorsPublicationsCount extends React.Component {
                         borderColor: 'none',
                     },
                 },
-                series: series
-                // series: [{
-                //     name: 'Document count by type',
-                //     data: [
-                //         ['Journal articles', 429.9],
-                //         ['Conference papers', 112.5],
-                //         ['Magazine articles', 106.4],
-                //         ['Other', 129.2]
-                //     ],
-                // }]
+                series: this.props.series
             }
         };
     }
@@ -90,4 +81,4 @@ class AuthorsPublicationsCount extends React.Component {
     }
 }
 
-export default AuthorsPublicationsCount;
+export default AuthorsPublicationTypesCountChart;

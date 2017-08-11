@@ -117,13 +117,10 @@ Object.defineProperty(exports, 'AuthorsPublicationsPerYearChart', {
     return _Charts.AuthorsPublicationsPerYearChart;
   }
 });
-
-var _DonutChart = require('./DonutChart');
-
-Object.defineProperty(exports, 'AuthorsPublicationsCount', {
+Object.defineProperty(exports, 'AuthorsPublicationTypesCountChart', {
   enumerable: true,
   get: function get() {
-    return _DonutChart.AuthorsPublicationsCount;
+    return _Charts.AuthorsPublicationTypesCountChart;
   }
 });
 
