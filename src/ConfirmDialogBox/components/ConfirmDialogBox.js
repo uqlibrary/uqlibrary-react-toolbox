@@ -26,6 +26,7 @@ export default class ConfirmDialogBox extends Component {
     constructor(props) {
         super(props);
 
+        this._onCancelAction = this._onCancelAction.bind(this);
         this._hideConfirmation = this._hideConfirmation.bind(this);
         this._onAction = this._onAction.bind(this);
 
@@ -61,7 +62,9 @@ export default class ConfirmDialogBox extends Component {
 
     _onCancelAction() {
         this._hideConfirmation();
-        this.props.onCancelAction();
+        if (this.props.onCancelAction) {
+            this.props.onCancelAction();
+        }
     }
 
     render() {
@@ -74,7 +77,7 @@ export default class ConfirmDialogBox extends Component {
                         <RaisedButton label={this.props.locale.cancelButtonLabel}
                                       fullWidth
                                       className='ConfirmDialogBox-actions-cancel'
-                                      onTouchTap={this.props.onCancelAction ? this._onCancelAction : this._hideConfirmation}/>
+                                      onTouchTap={this._onCancelAction}/>
                     </div>
                 }
                 <div className="column is-narrow">
@@ -90,12 +93,13 @@ export default class ConfirmDialogBox extends Component {
         ];
 
         return (
-          <Dialog
-            title={this.props.locale.confirmationTitle}
-            actions={actions}
-            modal
-            open={this.state.isDialogOpen}
-          >{this.props.locale.confirmationMessage}</Dialog>
+            <Dialog
+                title={this.props.locale.confirmationTitle}
+                actions={actions}
+                modal
+                open={this.state.isDialogOpen}>
+                {this.props.locale.confirmationMessage}
+            </Dialog>
         );
     }
 }

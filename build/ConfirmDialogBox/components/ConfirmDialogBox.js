@@ -38,6 +38,7 @@ var ConfirmDialogBox = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (ConfirmDialogBox.__proto__ || Object.getPrototypeOf(ConfirmDialogBox)).call(this, props));
 
+        _this._onCancelAction = _this._onCancelAction.bind(_this);
         _this._hideConfirmation = _this._hideConfirmation.bind(_this);
         _this._onAction = _this._onAction.bind(_this);
 
@@ -81,7 +82,9 @@ var ConfirmDialogBox = function (_Component) {
         key: '_onCancelAction',
         value: function _onCancelAction() {
             this._hideConfirmation();
-            this.props.onCancelAction();
+            if (this.props.onCancelAction) {
+                this.props.onCancelAction();
+            }
         }
     }, {
         key: 'render',
@@ -96,7 +99,7 @@ var ConfirmDialogBox = function (_Component) {
                     _react2.default.createElement(_RaisedButton2.default, { label: this.props.locale.cancelButtonLabel,
                         fullWidth: true,
                         className: 'ConfirmDialogBox-actions-cancel',
-                        onTouchTap: this.props.onCancelAction ? this._onCancelAction : this._hideConfirmation })
+                        onTouchTap: this._onCancelAction })
                 ),
                 _react2.default.createElement(
                     'div',
@@ -117,8 +120,7 @@ var ConfirmDialogBox = function (_Component) {
                     title: this.props.locale.confirmationTitle,
                     actions: actions,
                     modal: true,
-                    open: this.state.isDialogOpen
-                },
+                    open: this.state.isDialogOpen },
                 this.props.locale.confirmationMessage
             );
         }
