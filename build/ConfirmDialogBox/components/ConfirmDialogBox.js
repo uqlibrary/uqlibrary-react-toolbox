@@ -78,24 +78,32 @@ var ConfirmDialogBox = function (_Component) {
             this.props.onAction();
         }
     }, {
+        key: '_onCancelAction',
+        value: function _onCancelAction() {
+            this._hideConfirmation();
+            this.props.onCancelAction();
+        }
+    }, {
         key: 'render',
         value: function render() {
             var actions = [_react2.default.createElement(
                 'div',
-                { className: 'columns dialog-actions' },
+                { className: 'columns dialog-actions ConfirmDialogBox-actions' },
                 _react2.default.createElement('div', { className: 'column is-hidden-mobile' }),
-                _react2.default.createElement(
+                !this.props.hideCancelButton && _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow' },
                     _react2.default.createElement(_RaisedButton2.default, { label: this.props.locale.cancelButtonLabel,
                         fullWidth: true,
-                        onTouchTap: this._hideConfirmation })
+                        className: 'ConfirmDialogBox-actions-cancel',
+                        onTouchTap: this.props.onCancelAction ? this._onCancelAction : this._hideConfirmation })
                 ),
                 _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow' },
                     _react2.default.createElement(_RaisedButton2.default, { label: this.props.locale.confirmButtonLabel,
                         fullWidth: true,
+                        className: 'ConfirmDialogBox-actions-confirm',
                         secondary: true,
                         keyboardFocused: true,
                         onTouchTap: this._onAction })
@@ -122,9 +130,12 @@ var ConfirmDialogBox = function (_Component) {
 ConfirmDialogBox.propTypes = {
     locale: _propTypes2.default.object,
     onAction: _propTypes2.default.func,
+    onCancelAction: _propTypes2.default.func,
+    hideCancelButton: _propTypes2.default.bool,
     onRef: _propTypes2.default.func
 };
 ConfirmDialogBox.defaultProps = {
+    hideCancelButton: false,
     locale: {
         confirmationTitle: 'Confirmation',
         confirmationMessage: 'Are you sure?',

@@ -14,13 +14,29 @@ var _FontIcon = require('material-ui/FontIcon');
 
 var _FontIcon2 = _interopRequireDefault(_FontIcon);
 
+var _FlatButton = require('material-ui/FlatButton');
+
+var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+var _IconButton = require('material-ui/IconButton');
+
+var _IconButton2 = _interopRequireDefault(_IconButton);
+
+var _close = require('material-ui/svg-icons/navigation/close');
+
+var _close2 = _interopRequireDefault(_close);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Alert = function Alert(_ref) {
     var title = _ref.title,
         message = _ref.message,
         type = _ref.type,
-        outsideLayout = _ref.outsideLayout;
+        outsideLayout = _ref.outsideLayout,
+        action = _ref.action,
+        actionButtonLabel = _ref.actionButtonLabel,
+        allowDismiss = _ref.allowDismiss,
+        dismissAction = _ref.dismissAction;
 
     return _react2.default.createElement(
         'div',
@@ -50,6 +66,22 @@ var Alert = function Alert(_ref) {
                         ' - '
                     ),
                     message
+                ),
+                action && actionButtonLabel && _react2.default.createElement(
+                    'div',
+                    { className: 'column is-narrow alertAction' },
+                    _react2.default.createElement(_FlatButton2.default, { label: actionButtonLabel,
+                        onTouchTap: action,
+                        className: 'alertAction' })
+                ),
+                allowDismiss && dismissAction && _react2.default.createElement(
+                    'div',
+                    { className: 'column is-narrow is-hidden-mobile alertDismiss' },
+                    _react2.default.createElement(
+                        _IconButton2.default,
+                        { onTouchTap: dismissAction },
+                        _react2.default.createElement(_close2.default, { className: 'alertDismiss' })
+                    )
                 )
             )
         )
@@ -60,7 +92,19 @@ Alert.propTypes = {
     message: _propTypes.PropTypes.string.isRequired,
     title: _propTypes.PropTypes.string.isRequired,
     type: _propTypes.PropTypes.oneOf(['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline']),
-    outsideLayout: _propTypes.PropTypes.bool
+    outsideLayout: _propTypes.PropTypes.bool,
+    action: _propTypes.PropTypes.func,
+    actionButtonTitle: _propTypes.PropTypes.string,
+    allowDismiss: _propTypes.PropTypes.bool,
+    dismissAction: _propTypes.PropTypes.func
+};
+
+Alert.defaultProps = {
+    message: 'Unexpected error',
+    title: 'Error',
+    type: 'error',
+    outsideLayout: false,
+    allowDismiss: false
 };
 
 exports.default = Alert;
