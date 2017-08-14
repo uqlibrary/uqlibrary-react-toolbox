@@ -8,10 +8,13 @@ export default class ConfirmDialogBox extends Component {
     static propTypes = {
         locale: PropTypes.object,
         onAction: PropTypes.func,
+        onCancelAction: PropTypes.func,
+        hideCancelButton: PropTypes.bool,
         onRef: PropTypes.func
     };
 
     static defaultProps = {
+        hideCancelButton: false,
         locale: {
             confirmationTitle: 'Confirmation',
             confirmationMessage: 'Are you sure?',
@@ -56,18 +59,28 @@ export default class ConfirmDialogBox extends Component {
         this.props.onAction();
     }
 
+    _onCancelAction() {
+        this._hideConfirmation();
+        this.props.onCancelAction();
+    }
+
     render() {
         const actions = [
-            <div className="columns dialog-actions">
+            <div className="columns dialog-actions ConfirmDialogBox-actions">
                 <div className="column is-hidden-mobile"/>
-                <div className="column is-narrow">
-                    <RaisedButton label={this.props.locale.cancelButtonLabel}
-                                  fullWidth
-                                  onTouchTap={this._hideConfirmation}/>
-                </div>
+                {
+                    !this.props.hideCancelButton &&
+                    <div className="column is-narrow">
+                        <RaisedButton label={this.props.locale.cancelButtonLabel}
+                                      fullWidth
+                                      className='ConfirmDialogBox-actions-cancel'
+                                      onTouchTap={this.props.onCancelAction ? this._onCancelAction : this._hideConfirmation}/>
+                    </div>
+                }
                 <div className="column is-narrow">
                     <RaisedButton label={this.props.locale.confirmButtonLabel}
                                   fullWidth
+                                  className='ConfirmDialogBox-actions-confirm'
                                   secondary
                                   keyboardFocused
                                   onTouchTap={this._onAction}/>
