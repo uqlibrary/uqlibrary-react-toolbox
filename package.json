@@ -133,7 +133,8 @@
     "webpack": "1 || ^2 || ^2.1.0-beta || ^2.2.0-rc || ^3"
   },
   "scripts": {
-    "test": "jest --updateSnapshot",
+    "test": "jest",
+    "test:update": "jest --updateSnapshot",
     "test:watch": "npm run test -- --watch",
     "build": "babel src -d build",
     "prepublish": "npm run build",
