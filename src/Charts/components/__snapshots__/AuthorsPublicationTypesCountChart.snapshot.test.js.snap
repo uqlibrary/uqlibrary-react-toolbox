@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthorsPublicationTypesCountChart snapshot tests it should render chart component 1`] = `
+<Chart
+  chartOptions={
+    Object {
+      "chart": Object {
+        "plotBorderWidth": 0,
+        "plotShadow": false,
+        "spacingBottom": 10,
+        "type": "pie",
+      },
+      "credits": Object {
+        "enabled": false,
+      },
+      "legend": Object {
+        "align": "center",
+        "floating": true,
+        "layout": "vertical",
+        "symbolRadius": 0,
+        "y": 0,
+      },
+      "plotOptions": Object {
+        "pie": Object {
+          "borderColor": "none",
+          "center": Array [
+            "50%",
+            "40%",
+          ],
+          "dataLabels": Object {
+            "className": "pieLabels ",
+            "connectorWidth": 2,
+            "distance": 10,
+            "enabled": true,
+            "format": "{y}",
+            "overflow": "none",
+            "useHTML": true,
+          },
+          "innerSize": "70%",
+          "shadow": false,
+          "showInLegend": true,
+          "size": "75%",
+        },
+      },
+      "series": Object {},
+      "subtitle": Object {
+        "text": "",
+      },
+      "title": Object {
+        "text": "",
+      },
+      "tooltip": Object {
+        "enabled": false,
+      },
+    }
+  }
+  className="undefined authors-publication-types-count-chart"
+/>
+`;
