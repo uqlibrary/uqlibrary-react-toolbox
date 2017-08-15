@@ -4,14 +4,14 @@
 
   // Apply with layout-card style to wrap an alert outside inside of layout-fill
   .forAlerts {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
     margin: 0 auto !important;
   }
 
   .alertWrapper {
     border-radius: 3px;
-    margin: 12px auto !important;
+    margin: 12px auto 24px auto !important;
     padding: 12px !important;
 
     .column {

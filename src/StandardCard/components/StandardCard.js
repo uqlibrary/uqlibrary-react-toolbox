@@ -6,7 +6,7 @@ import {HelpIcon} from '../../index';
 
 export default function StandardCard({title, help, className, children}) {
     return (
-        <Card className={`${className}`}>
+        <Card className={`${className} standard-card`}>
             <CardHeader className="card-header">
                 <div className="columns is-gapless is-mobile">
                     <div className="column">
