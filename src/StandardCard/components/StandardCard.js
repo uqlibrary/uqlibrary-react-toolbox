@@ -38,3 +38,7 @@ StandardCard.propTypes = {
         buttonLabel: PropTypes.string
     })
 };
+
+StandardCard.defaultProps = {
+    className: ''
+};
