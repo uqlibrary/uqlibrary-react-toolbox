@@ -38,7 +38,7 @@ function setup(props) {
     return (0, _enzyme.mount)(_react2.default.createElement(_FileUploader.FileUploader, props), {
         context: {
             muiTheme: (0, _getMuiTheme2.default)(),
-            store: (0, _redux.createStore)(_reducer2.default, _immutable2.default.Map({ fileUploadReducer: _reducer2.default }))
+            store: (0, _redux.createStore)(_reducer2.default, _immutable2.default.Map({ fileUpload: _reducer2.default }))
         },
         childContextTypes: {
             muiTheme: _propTypes2.default.object.isRequired,

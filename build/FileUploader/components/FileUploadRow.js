@@ -135,7 +135,7 @@ FileUploadRow.defaultProps = {
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
     return {
-        progress: state.get('fileUploadReducer')[ownProps.uploadedFile.name] || 0
+        progress: state.get('fileUpload')[ownProps.uploadedFile.name] || 0
     };
 };
 
