@@ -138,7 +138,7 @@
     "test": "jest",
     "test:update": "jest --updateSnapshot",
     "test:watch": "npm run test -- --watch",
-    "build": "babel src -d build",
+    "build": "babel src -d build --ignore '**/*.test.js'",
     "prepublish": "npm run build",
     "dev": "watch 'npm run build' src",
     "release": "np",
