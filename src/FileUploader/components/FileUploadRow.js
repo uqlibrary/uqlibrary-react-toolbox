@@ -78,7 +78,7 @@ class FileUploadRow extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        progress: state.get('fileUploadReducer')[ownProps.uploadedFile.name] || 0
+        progress: state.get('fileUpload')[ownProps.uploadedFile.name] || 0
     };
 };
 

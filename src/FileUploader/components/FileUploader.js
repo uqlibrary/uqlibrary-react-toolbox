@@ -120,7 +120,7 @@ export class FileUploader extends PureComponent {
 
 const mapStateToProps = (state) => {
     return {
-        overallProgress: state.get('fileUploadReducer').overall || 0
+        overallProgress: state.get('fileUpload').overall || 0
     };
 };
 
