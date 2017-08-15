@@ -70,7 +70,7 @@ exports[`Alert snapshots test renders Alert of error type should render action b
         This is a message
       </div>
       <div
-        className="column is-narrow alertAction"
+        className="column is-narrow"
       >
         <FlatButton
           className="alertAction"
@@ -126,7 +126,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
         This is a message
       </div>
       <div
-        className="column is-narrow is-hidden-mobile alertDismiss"
+        className="column is-narrow is-hidden-mobile"
       >
         <IconButton
           disableTouchRipple={false}
@@ -179,7 +179,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
         This is a message
       </div>
       <div
-        className="column is-narrow alertAction"
+        className="column is-narrow"
       >
         <FlatButton
           className="alertAction"
@@ -198,7 +198,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
         />
       </div>
       <div
-        className="column is-narrow is-hidden-mobile alertDismiss"
+        className="column is-narrow is-hidden-mobile"
       >
         <IconButton
           disableTouchRipple={false}
