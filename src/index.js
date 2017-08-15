@@ -14,3 +14,4 @@ export {AuthorsPublicationTypesCountChart} from './Charts';
 export {Alert} from './Alert';
 export {ConfirmDialogBox} from './ConfirmDialogBox';
 export {PartialDateField} from './PartialDate';
+export {FileUploadField} from './FileUploader';

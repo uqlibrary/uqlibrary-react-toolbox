@@ -130,7 +130,8 @@
     "material-ui": ">= 0.15.0 < 1.0.0",
     "react": "^15.5.0",
     "react-dom": "^15.5.0",
-    "webpack": "1 || ^2 || ^2.1.0-beta || ^2.2.0-rc || ^3"
+    "webpack": "1 || ^2 || ^2.1.0-beta || ^2.2.0-rc || ^3",
+    "react-dropzone": "^3.13.1"
   },
   "scripts": {
     "test": "jest",

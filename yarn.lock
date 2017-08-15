@@ -274,6 +274,10 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
+attr-accept@^1.0.3:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/attr-accept/-/attr-accept-1.1.0.tgz#b5cd35227f163935a8f1de10ed3eba16941f6be6"
+
 autoprefixer@^6.3.1:
   version "6.7.7"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-6.7.7.tgz#1dbd1c835658e35ce3f9984099db00585c782014"
@@ -3367,7 +3371,7 @@ he@1.1.x:
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
 highcharts@^5.0.10:
-  version v5.0.12
+  version "5.0.12"
   resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-5.0.12.tgz#f73b970fe5c7f04100220b64aa7bd7fb019d11e2"
 
 history@^4.5.1, history@^4.6.0, history@^4.6.3:
@@ -6242,6 +6246,13 @@ react-dom@^15.6.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.10"
+
+react-dropzone@^3.13.1:
+  version "3.13.4"
+  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-3.13.4.tgz#84da26815c40339691c49b4544c2ef7a16912ccc"
+  dependencies:
+    attr-accept "^1.0.3"
+    prop-types "^15.5.7"
 
 react-event-listener@^0.4.5:
   version "0.4.5"

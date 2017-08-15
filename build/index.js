@@ -150,3 +150,12 @@ Object.defineProperty(exports, 'PartialDateField', {
     return _PartialDate.PartialDateField;
   }
 });
+
+var _FileUploader = require('./FileUploader');
+
+Object.defineProperty(exports, 'FileUploadField', {
+  enumerable: true,
+  get: function get() {
+    return _FileUploader.FileUploadField;
+  }
+});
