@@ -34,11 +34,13 @@ const handlers = {
     }
 };
 
-export default function fileUploadReducer(state = { overall: 0 }, action) {
+const fileUploadReducer = (state = { overall: 0 }, action) => {
     const handler = handlers[action.type.substring(0, action.type.indexOf('@') + 1)];
 
     if (!handler) {
         return state;
     }
     return handler(state, action);
-}
+};
+
+export default fileUploadReducer;
