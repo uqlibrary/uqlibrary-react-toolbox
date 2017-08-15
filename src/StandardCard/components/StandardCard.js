@@ -38,7 +38,3 @@ StandardCard.propTypes = {
         buttonLabel: PropTypes.string
     })
 };
-
-StandardCard.defaultProps = {
-    className: 'layout-card'
-};

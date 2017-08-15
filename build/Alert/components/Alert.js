@@ -69,14 +69,14 @@ var Alert = function Alert(_ref) {
                 ),
                 action && actionButtonLabel && _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow alertAction' },
+                    { className: 'column is-narrow' },
                     _react2.default.createElement(_FlatButton2.default, { label: actionButtonLabel,
                         onTouchTap: action,
                         className: 'alertAction' })
                 ),
                 allowDismiss && dismissAction && _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow is-hidden-mobile alertDismiss' },
+                    { className: 'column is-narrow is-hidden-mobile' },
                     _react2.default.createElement(
                         _IconButton2.default,
                         { onTouchTap: dismissAction },

@@ -18,7 +18,7 @@ const Alert = ({title, message, type, outsideLayout, action, actionButtonLabel, 
                   </div>
                   {
                       action && actionButtonLabel &&
-                      <div className="column is-narrow alertAction">
+                      <div className="column is-narrow">
                           <FlatButton label={actionButtonLabel}
                                       onTouchTap={action}
                                       className="alertAction"/>
@@ -26,7 +26,7 @@ const Alert = ({title, message, type, outsideLayout, action, actionButtonLabel, 
                   }
                   {
                       allowDismiss && dismissAction &&
-                      <div className="column is-narrow is-hidden-mobile alertDismiss">
+                      <div className="column is-narrow is-hidden-mobile">
                           <IconButton onTouchTap={dismissAction}>
                               <NavigationClose className="alertDismiss"/>
                           </IconButton>
