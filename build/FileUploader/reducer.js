@@ -37,13 +37,17 @@ var handlers = (_handlers = {}, _defineProperty(_handlers, _actions.FILE_UPLOAD_
     return _extends({}, uploadProgress, (_extends3 = {}, _defineProperty(_extends3, '' + file, 'failed'), _defineProperty(_extends3, 'overall', Object.values(uploadProgress).reduce(function (sum, current) {
         return sum + current;
     }, 0) / Object.values(uploadProgress).length), _extends3));
+}), _defineProperty(_handlers, _actions.FILE_UPLOAD_CLEARED, function () {
+    return {
+        overall: 0
+    };
 }), _handlers);
 
 var fileUploadReducer = function fileUploadReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { overall: 0 };
     var action = arguments[1];
 
-    var handler = handlers[action.type.substring(0, action.type.indexOf('@') + 1)];
+    var handler = action.type === _actions.FILE_UPLOAD_CLEARED ? handlers[action.type] : handlers[action.type.substring(0, action.type.indexOf('@') + 1)];
 
     if (!handler) {
         return state;

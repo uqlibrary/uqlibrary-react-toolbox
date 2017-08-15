@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var FILE_UPLOAD_PROGRESS = exports.FILE_UPLOAD_PROGRESS = 'FILE_UPLOAD_PROGRESS';
 var FILE_UPLOADED_FAILED = exports.FILE_UPLOADED_FAILED = 'FILE_UPLOADED_FAILED';
+var FILE_UPLOAD_CLEARED = exports.FILE_UPLOAD_CLEARED = 'FILE_UPLOAD_CLEARED';
 
 /**
  * Notify progress for individual file
@@ -29,5 +30,16 @@ var notifyProgress = exports.notifyProgress = function notifyProgress(name, prog
 var notifyUploadFailed = exports.notifyUploadFailed = function notifyUploadFailed(name) {
     return {
         type: FILE_UPLOADED_FAILED + '@' + name
+    };
+};
+
+/**
+ * Clear file upload state
+ *
+ * @returns {{type: string}}
+ */
+var clearFileUpload = exports.clearFileUpload = function clearFileUpload() {
+    return {
+        type: FILE_UPLOAD_CLEARED
     };
 };
