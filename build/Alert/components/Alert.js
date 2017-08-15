@@ -94,7 +94,7 @@ Alert.propTypes = {
     type: _propTypes.PropTypes.oneOf(['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline']),
     outsideLayout: _propTypes.PropTypes.bool,
     action: _propTypes.PropTypes.func,
-    actionButtonTitle: _propTypes.PropTypes.string,
+    actionButtonLabel: _propTypes.PropTypes.string,
     allowDismiss: _propTypes.PropTypes.bool,
     dismissAction: _propTypes.PropTypes.func
 };

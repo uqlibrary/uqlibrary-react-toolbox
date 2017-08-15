@@ -159,3 +159,9 @@ Object.defineProperty(exports, 'FileUploadField', {
     return _FileUploader.FileUploadField;
   }
 });
+Object.defineProperty(exports, 'fileUploadReducer', {
+  enumerable: true,
+  get: function get() {
+    return _FileUploader.fileUploadReducer;
+  }
+});

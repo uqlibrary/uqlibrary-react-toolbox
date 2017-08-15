@@ -97,7 +97,8 @@ var AuthorsPublicationsPerYearChart = function (_React$Component) {
 AuthorsPublicationsPerYearChart.propTypes = {
     yAxisTitle: _propTypes.PropTypes.string,
     series: _propTypes.PropTypes.array,
-    categories: _propTypes.PropTypes.array
+    categories: _propTypes.PropTypes.array,
+    className: _propTypes.PropTypes.string
 };
 AuthorsPublicationsPerYearChart.defaultProps = {
     yAxisTitle: 'Total publications',
