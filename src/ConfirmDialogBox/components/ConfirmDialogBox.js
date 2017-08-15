@@ -76,14 +76,14 @@ export default class ConfirmDialogBox extends Component {
                     <div className="column is-narrow">
                         <RaisedButton label={this.props.locale.cancelButtonLabel}
                                       fullWidth
-                                      className='ConfirmDialogBox-actions-cancel'
+                                      className="ConfirmDialogBox-actions-cancel"
                                       onTouchTap={this._onCancelAction}/>
                     </div>
                 }
                 <div className="column is-narrow">
                     <RaisedButton label={this.props.locale.confirmButtonLabel}
                                   fullWidth
-                                  className='ConfirmDialogBox-actions-confirm'
+                                  className="ConfirmDialogBox-actions-confirm"
                                   secondary
                                   keyboardFocused
                                   onTouchTap={this._onAction}/>

@@ -7,7 +7,8 @@ class AuthorsPublicationsPerYearChart extends React.Component {
     static propTypes = {
         yAxisTitle: PropTypes.string,
         series: PropTypes.array,
-        categories: PropTypes.array
+        categories: PropTypes.array,
+        className: PropTypes.string
     };
 
     static defaultProps = {
