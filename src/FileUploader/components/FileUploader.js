@@ -6,7 +6,7 @@ import LinearProgress from 'material-ui/LinearProgress';
 import FileUploadDropzone from './FileUploadDropzone';
 import FileUploadRowHeader from './FileUploadRowHeader';
 import FileUploadRow from './FileUploadRow';
-import './FileUpload.scss';
+// import './FileUpload.scss';
 
 export class FileUploader extends PureComponent {
 

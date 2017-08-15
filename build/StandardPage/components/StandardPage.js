@@ -28,7 +28,11 @@ function StandardPage(_ref) {
             { className: 'title is-3' },
             title
         ),
-        children
+        _react2.default.createElement(
+            'div',
+            { className: 'layout-card' },
+            children
+        )
     );
 }
 

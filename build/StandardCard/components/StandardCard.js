@@ -27,7 +27,7 @@ function StandardCard(_ref) {
 
     return _react2.default.createElement(
         _Card.Card,
-        { className: 'layout-card ' + className },
+        { className: '' + className },
         _react2.default.createElement(
             _Card.CardHeader,
             { className: 'card-header' },

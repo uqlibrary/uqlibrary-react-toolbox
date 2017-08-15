@@ -5,7 +5,9 @@ export default function StandardPage({title, className, children}) {
     return (
         <div className={`layout-fill ${className}`}>
             <h1 className="title is-3">{title}</h1>
-            {children}
+            <div className="layout-card">
+                {children}
+            </div>
         </div>
     );
 }

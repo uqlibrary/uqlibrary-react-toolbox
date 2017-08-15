@@ -52,6 +52,11 @@ html, body {
   white-space: normal !important;
 }
 
+// Cards should always fill their available space.
+.card-full-height {
+  height: 100% !important;
+}
+
 .layout-container {
   width: calc(100% - 200px);
   margin: 24px auto;

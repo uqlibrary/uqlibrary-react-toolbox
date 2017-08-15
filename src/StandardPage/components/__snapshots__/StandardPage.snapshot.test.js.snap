@@ -9,5 +9,8 @@ exports[`Snapshot tests for StandardPage component renders StandardPage with tit
   >
     standard page title
   </h1>
+  <div
+    className="layout-card"
+  />
 </div>
 `;
