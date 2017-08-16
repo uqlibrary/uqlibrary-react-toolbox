@@ -34,7 +34,7 @@ export default class FileUploadRowHeader extends Component {
     };
 
     render() {
-        const { filenameColumn, deleteAllFiles, deleteAllFilesConfirmation } = this.props.locale;
+        const { filenameColumn, fileAccessColumn, embargoDateColumn, deleteAllFiles, deleteAllFilesConfirmation } = this.props.locale;
 
         return (
             <div className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header">
@@ -43,6 +43,12 @@ export default class FileUploadRowHeader extends Component {
                                   locale={ deleteAllFilesConfirmation } />
                 <div className="column filename datalist-title" style={{ textIndent: '12px' }}>
                     { filenameColumn }
+                </div>
+                <div className="column file-access datalist-title">
+                    { fileAccessColumn }
+                </div>
+                <div className="column embargo-date datalist-title">
+                    { embargoDateColumn }
                 </div>
                 <div className="column is-narrow buttons datalist-buttons">
                     <IconButton tooltip={ deleteAllFiles } onTouchTap={ this._showConfirmation }>

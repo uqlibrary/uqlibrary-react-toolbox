@@ -54,6 +54,8 @@ var FileUploadRowHeader = function (_Component) {
 
             var _props$locale = this.props.locale,
                 filenameColumn = _props$locale.filenameColumn,
+                fileAccessColumn = _props$locale.fileAccessColumn,
+                embargoDateColumn = _props$locale.embargoDateColumn,
                 deleteAllFiles = _props$locale.deleteAllFiles,
                 deleteAllFilesConfirmation = _props$locale.deleteAllFilesConfirmation;
 
@@ -70,6 +72,16 @@ var FileUploadRowHeader = function (_Component) {
                     'div',
                     { className: 'column filename datalist-title', style: { textIndent: '12px' } },
                     filenameColumn
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'column file-access datalist-title' },
+                    fileAccessColumn
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'column embargo-date datalist-title' },
+                    embargoDateColumn
                 ),
                 _react2.default.createElement(
                     'div',

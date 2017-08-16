@@ -661,6 +661,16 @@ exports[`FileUploader renders row for uploaded files 2`] = `
           Filename
         </div>
         <div
+          className="column file-access datalist-title"
+        >
+          Access conditions
+        </div>
+        <div
+          className="column embargo-date datalist-title"
+        >
+          Embargo release date
+        </div>
+        <div
           className="column is-narrow buttons datalist-buttons"
         >
           <IconButton
@@ -1749,6 +1759,16 @@ exports[`FileUploader renders row for uploaded files 3`] = `
           }
         >
           Filename
+        </div>
+        <div
+          className="column file-access datalist-title"
+        >
+          Access conditions
+        </div>
+        <div
+          className="column embargo-date datalist-title"
+        >
+          Embargo release date
         </div>
         <div
           className="column is-narrow buttons datalist-buttons"

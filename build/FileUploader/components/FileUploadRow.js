@@ -97,7 +97,7 @@ var FileUploadRow = function (_Component) {
                 ),
                 this.props.progress > 0 && _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow uploadedFileProgress datalist-buttons' },
+                    { className: 'upload-progress-wrapper' },
                     _react2.default.createElement(_CircularProgress2.default, {
                         className: 'upload-progress',
                         mode: 'determinate',
@@ -105,6 +105,11 @@ var FileUploadRow = function (_Component) {
                         size: 20,
                         thickness: 4
                     })
+                ),
+                this.props.progress === 100 && _react2.default.createElement(
+                    _FontIcon2.default,
+                    { className: 'material-icons green-tick' },
+                    'done'
                 )
             );
         }

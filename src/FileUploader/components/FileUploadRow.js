@@ -53,23 +53,27 @@ class FileUploadRow extends Component {
                 </div>
                 {
                     this.props.progress === 0 &&
-                    <div className="column is-narrow uploadedFileDelete datalist-buttons">
-                        <IconButton tooltip={ this.props.locale.deleteHint } onTouchTap={ this._showConfirmation }>
-                            <FontIcon className="material-icons deleteIcon">delete</FontIcon>
-                        </IconButton>
-                    </div>
+                        <div className="column is-narrow uploadedFileDelete datalist-buttons">
+                            <IconButton tooltip={ this.props.locale.deleteHint } onTouchTap={ this._showConfirmation }>
+                                <FontIcon className="material-icons deleteIcon">delete</FontIcon>
+                            </IconButton>
+                        </div>
                 }
                 {
                     this.props.progress > 0 &&
-                    <div className="column is-narrow uploadedFileProgress datalist-buttons">
-                        <CircularProgress
-                            className="upload-progress"
-                            mode="determinate"
-                            value={ this.props.progress }
-                            size={ 20 }
-                            thickness={ 4 }
-                        />
-                    </div>
+                        <div className="upload-progress-wrapper">
+                            <CircularProgress
+                                className="upload-progress"
+                                mode="determinate"
+                                value={ this.props.progress }
+                                size={ 20 }
+                                thickness={ 4 }
+                            />
+                        </div>
+                }
+                {
+                    this.props.progress === 100 &&
+                        <FontIcon className="material-icons green-tick">done</FontIcon>
                 }
             </div>
         );
