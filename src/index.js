@@ -15,3 +15,4 @@ export {Alert} from './Alert';
 export {ConfirmDialogBox} from './ConfirmDialogBox';
 export {PartialDateField} from './PartialDate';
 export {FileUploadField, fileUploadReducer} from './FileUploader';
+export * as fileUploadActions from './FileUploader';

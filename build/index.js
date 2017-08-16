@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.fileUploadActions = exports.fileUploadReducer = exports.FileUploadField = exports.PartialDateField = exports.ConfirmDialogBox = exports.Alert = exports.AuthorsPublicationTypesCountChart = exports.AuthorsPublicationsPerYearChart = exports.AuthButton = exports.ContentLoader = exports.InlineLoader = exports.AppLoader = exports.StandardPage = exports.StandardCard = exports.SelectField = exports.TextField = exports.DatePicker = exports.MenuDrawer = exports.helpDrawerReducer = exports.HelpDrawer = exports.HelpIcon = undefined;
 
 var _HelpDrawer = require('./HelpDrawer');
 
@@ -165,3 +166,9 @@ Object.defineProperty(exports, 'fileUploadReducer', {
     return _FileUploader.fileUploadReducer;
   }
 });
+
+var _fileUploadActions = _interopRequireWildcard(_FileUploader);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+exports.fileUploadActions = _fileUploadActions;
