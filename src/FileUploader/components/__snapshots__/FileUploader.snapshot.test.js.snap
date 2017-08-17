@@ -2930,7 +2930,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
           Filename
         </div>
         <div
-          className="column file-access datalist-title"
+          className="column file-access datalist-title requiredField"
         >
           Access conditions
         </div>
@@ -6797,7 +6797,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
           Filename
         </div>
         <div
-          className="column file-access datalist-title"
+          className="column file-access datalist-title requiredField"
         >
           Access conditions
         </div>
@@ -10666,7 +10666,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
           Filename
         </div>
         <div
-          className="column file-access datalist-title"
+          className="column file-access datalist-title requiredField"
         >
           Access conditions
         </div>
@@ -14536,7 +14536,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
           Filename
         </div>
         <div
-          className="column file-access datalist-title"
+          className="column file-access datalist-title requiredField"
         >
           Access conditions
         </div>
