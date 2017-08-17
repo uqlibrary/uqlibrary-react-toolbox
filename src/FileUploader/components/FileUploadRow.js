@@ -47,10 +47,10 @@ class FileUploadRow extends Component {
         if (this.props.onDelete) this.props.onDelete(this.props.uploadedFile, this.props.index);
     };
 
-    _updateFileMetadata = (update, index) => {
+    _updateFileMetadata = (update) => {
         this.setState({ [update.key]: update.value });
         this.props.uploadedFile[update.key] = update.value;
-        if (this.props.onAttributeChanged) this.props.onAttributeChanged(this.props.uploadedFile, index);
+        if (this.props.onAttributeChanged) this.props.onAttributeChanged(this.props.uploadedFile, this.props.index);
     };
 
     _isOpenAccess = (accessConditionId) => {
@@ -72,7 +72,7 @@ class FileUploadRow extends Component {
                 {
                     this.props.requireFileAccess &&
                     <div className="column datalist-text file-access">
-                        <FileUploadAccessSelector index={ this.props.index } onAccessChanged={ this._updateFileMetadata } />
+                        <FileUploadAccessSelector onAccessChanged={ this._updateFileMetadata }/>
                     </div>
                 }
                 {

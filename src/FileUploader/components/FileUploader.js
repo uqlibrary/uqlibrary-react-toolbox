@@ -98,7 +98,7 @@ export class FileUploader extends PureComponent {
 
         const uploadedFilesRow = this.state.uploadedFiles.map((file, index) => {
             return (<FileUploadRow
-                key={ index }
+                key={ file.name }
                 index={ index }
                 uploadedFile={ file }
                 onDelete={ this.deleteFile }

@@ -55,7 +55,7 @@ var FileUploadAccessSelector = function (_Component) {
     _createClass(FileUploadAccessSelector, [{
         key: 'componentWillUpdate',
         value: function componentWillUpdate(nextProps, nextState) {
-            if (this.state.value !== nextState.value) this.props.onAccessChanged({ key: [nextProps.locale.fileMetaKey], value: nextState.value }, nextProps.index);
+            if (this.state.value !== nextState.value) this.props.onAccessChanged({ key: [nextProps.locale.fileMetaKey], value: nextState.value });
         }
     }, {
         key: 'render',
@@ -65,25 +65,22 @@ var FileUploadAccessSelector = function (_Component) {
                 fieldName = _props$locale.fieldName,
                 accessIds = _props$locale.accessIds;
 
-            var accessFieldName = fieldName + '@' + this.props.index;
 
-            var accessOptions = accessIds.map(function (access) {
-                return _react2.default.createElement(_MenuItem2.default, { value: access.id, primaryText: access.value });
+            var accessOptions = accessIds.map(function (access, index) {
+                return _react2.default.createElement(_MenuItem2.default, { value: access.id, primaryText: access.value, key: index });
             });
 
             return _react2.default.createElement(
                 _SelectField2.default,
                 {
-                    id: accessFieldName,
-                    name: accessFieldName,
-                    key: accessFieldName,
+                    name: fieldName,
                     autoWidth: true,
                     className: 'selectField',
                     hintText: initialValue,
                     maxHeight: 250,
                     onChange: this._onChange,
                     value: this.state.value },
-                _react2.default.createElement(_MenuItem2.default, { value: null, primaryText: initialValue }),
+                _react2.default.createElement(_MenuItem2.default, { value: null, primaryText: initialValue, key: -1 }),
                 accessOptions
             );
         }
@@ -93,7 +90,6 @@ var FileUploadAccessSelector = function (_Component) {
 }(_react.Component);
 
 FileUploadAccessSelector.propTypes = {
-    index: _propTypes2.default.number.isRequired,
     onAccessChanged: _propTypes2.default.func,
     locale: _propTypes2.default.object
 };

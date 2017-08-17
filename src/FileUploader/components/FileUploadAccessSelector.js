@@ -8,7 +8,6 @@ export const CLOSED_ACCESS_ID = 8;
 
 export default class FileUploadAccessSelector extends Component {
     static propTypes = {
-        index: PropTypes.number.isRequired,
         onAccessChanged: PropTypes.func,
         locale: PropTypes.object
     };
@@ -39,7 +38,7 @@ export default class FileUploadAccessSelector extends Component {
     }
 
     componentWillUpdate(nextProps, nextState) {
-        if (this.state.value !== nextState.value) this.props.onAccessChanged({ key: [nextProps.locale.fileMetaKey], value: nextState.value }, nextProps.index);
+        if (this.state.value !== nextState.value) this.props.onAccessChanged({ key: [nextProps.locale.fileMetaKey], value: nextState.value });
     }
 
     _onChange = (event, index, value) => {
@@ -48,22 +47,19 @@ export default class FileUploadAccessSelector extends Component {
 
     render() {
         const {initialValue, fieldName, accessIds} = this.props.locale;
-        const accessFieldName = `${fieldName}@${this.props.index}`;
 
-        const accessOptions = accessIds.map((access) => (<MenuItem value={ access.id } primaryText={ access.value } />));
+        const accessOptions = accessIds.map((access, index) => (<MenuItem value={ access.id } primaryText={ access.value } key={ index } />));
 
         return (
             <SelectField
-                id={ accessFieldName }
-                name={ accessFieldName }
-                key={ accessFieldName }
+                name={ fieldName }
                 autoWidth
                 className="selectField"
                 hintText={ initialValue }
                 maxHeight={ 250 }
                 onChange={ this._onChange }
                 value={ this.state.value }>
-                <MenuItem value={ null } primaryText={ initialValue } />
+                <MenuItem value={ null } primaryText={ initialValue } key={ -1 } />
                 { accessOptions }
             </SelectField>
         );

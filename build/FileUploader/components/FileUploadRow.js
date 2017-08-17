@@ -60,10 +60,10 @@ var FileUploadRow = function (_Component) {
             if (_this.props.onDelete) _this.props.onDelete(_this.props.uploadedFile, _this.props.index);
         };
 
-        _this._updateFileMetadata = function (update, index) {
+        _this._updateFileMetadata = function (update) {
             _this.setState(_defineProperty({}, update.key, update.value));
             _this.props.uploadedFile[update.key] = update.value;
-            if (_this.props.onAttributeChanged) _this.props.onAttributeChanged(_this.props.uploadedFile, index);
+            if (_this.props.onAttributeChanged) _this.props.onAttributeChanged(_this.props.uploadedFile, _this.props.index);
         };
 
         _this._isOpenAccess = function (accessConditionId) {
@@ -106,7 +106,7 @@ var FileUploadRow = function (_Component) {
                 this.props.requireFileAccess && _react2.default.createElement(
                     'div',
                     { className: 'column datalist-text file-access' },
-                    _react2.default.createElement(_FileUploadAccessSelector2.default, { index: this.props.index, onAccessChanged: this._updateFileMetadata })
+                    _react2.default.createElement(_FileUploadAccessSelector2.default, { onAccessChanged: this._updateFileMetadata })
                 ),
                 this.props.requireFileAccess && !this._isOpenAccess(access_condition_id) && _react2.default.createElement(
                     'div',

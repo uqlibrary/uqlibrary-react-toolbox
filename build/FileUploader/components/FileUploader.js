@@ -119,7 +119,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
             var uploadedFilesRow = this.state.uploadedFiles.map(function (file, index) {
                 return _react2.default.createElement(_FileUploadRow2.default, {
-                    key: index,
+                    key: file.name,
                     index: index,
                     uploadedFile: file,
                     onDelete: _this2.deleteFile,
