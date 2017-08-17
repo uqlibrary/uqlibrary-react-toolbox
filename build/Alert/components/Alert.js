@@ -46,7 +46,7 @@ var Alert = function Alert(_ref) {
             { className: type + ' alertWrapper' },
             _react2.default.createElement(
                 'div',
-                { className: 'columns is-gapless is-multiline' },
+                { className: 'columns is-gapless is-multiline is-mobile' },
                 _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow alertIcon' },
@@ -69,7 +69,7 @@ var Alert = function Alert(_ref) {
                 ),
                 action && actionButtonLabel && _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow' },
+                    { className: 'column is-narrow is-12-mobile' },
                     _react2.default.createElement(_FlatButton2.default, { label: actionButtonLabel,
                         onTouchTap: action,
                         className: 'alertAction' })

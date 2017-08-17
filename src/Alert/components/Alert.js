@@ -9,7 +9,7 @@ const Alert = ({title, message, type, outsideLayout, action, actionButtonLabel, 
     return (
       <div className={outsideLayout ? 'layout-card forAlerts' : ''}>
           <div className={type + ' alertWrapper'}>
-              <div className="columns is-gapless is-multiline">
+              <div className="columns is-gapless is-multiline is-mobile">
                   <div className="column is-narrow alertIcon">
                       <FontIcon className="material-icons">{type}</FontIcon>
                   </div>
@@ -18,7 +18,7 @@ const Alert = ({title, message, type, outsideLayout, action, actionButtonLabel, 
                   </div>
                   {
                       action && actionButtonLabel &&
-                      <div className="column is-narrow">
+                      <div className="column is-narrow is-12-mobile">
                           <FlatButton label={actionButtonLabel}
                                       onTouchTap={action}
                                       className="alertAction"/>
