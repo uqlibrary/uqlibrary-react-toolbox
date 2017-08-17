@@ -66,7 +66,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
         _this.replaceFile = function (file, index) {
             _this.setState({
-                uploadedFiles: [].concat(_toConsumableArray(_this.state.uploadedFiles.slice(0, index)), [file], _toConsumableArray(_this.state.uploadedFiles(index + 1))),
+                uploadedFiles: [].concat(_toConsumableArray(_this.state.uploadedFiles.slice(0, index)), [file], _toConsumableArray(_this.state.uploadedFiles.slice(index + 1))),
                 clearErrors: true
             });
         };
@@ -112,7 +112,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 maxFileSize = _props$defaultConfig.maxFileSize,
                 fileSizeUnit = _props$defaultConfig.fileSizeUnit,
                 fileUploadLimit = _props$defaultConfig.fileUploadLimit;
-            var requireFileAccess = this.props.requireFileAccess.requireFileAccess;
+            var requireFileAccess = this.props.requireFileAccess;
 
 
             var instructionsDisplay = instructions.replace('[fileUploadLimit]', fileUploadLimit).replace('[maxFileSize]', '' + maxFileSize).replace('[fileSizeUnit]', sizeUnitText[fileSizeUnit] || 'B');

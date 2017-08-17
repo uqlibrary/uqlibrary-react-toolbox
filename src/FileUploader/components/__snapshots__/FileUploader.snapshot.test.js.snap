@@ -578,6 +578,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
         }
       }
       onDeleteAll={[Function]}
+      requireFileAccess={false}
     >
       <div
         className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header"
@@ -855,6 +856,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
       index={0}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
+      requireFileAccess={false}
       uploadedFile={
         Object {
           "name": "a.txt",
@@ -879,6 +881,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
         onAttributeChanged={[Function]}
         onDelete={[Function]}
         progress={0}
+        requireFileAccess={false}
         uploadedFile={
           Object {
             "name": "a.txt",
@@ -1162,6 +1165,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
       index={1}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
+      requireFileAccess={false}
       uploadedFile={
         Object {
           "name": "b.txt",
@@ -1186,6 +1190,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
         onAttributeChanged={[Function]}
         onDelete={[Function]}
         progress={0}
+        requireFileAccess={false}
         uploadedFile={
           Object {
             "name": "b.txt",
@@ -1673,6 +1678,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
         }
       }
       onDeleteAll={[Function]}
+      requireFileAccess={false}
     >
       <div
         className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header"
@@ -1950,6 +1956,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
       index={0}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
+      requireFileAccess={false}
       uploadedFile={
         Object {
           "name": "b.txt",
@@ -1974,6 +1981,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
         onAttributeChanged={[Function]}
         onDelete={[Function]}
         progress={0}
+        requireFileAccess={false}
         uploadedFile={
           Object {
             "name": "b.txt",

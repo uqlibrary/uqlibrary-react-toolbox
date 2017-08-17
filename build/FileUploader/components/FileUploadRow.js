@@ -61,13 +61,13 @@ var FileUploadRow = function (_Component) {
         };
 
         _this._updateFileMetadata = function (update, index) {
-            _this.setState(_defineProperty({}, update.fileMetaKey, update.value));
-            _this.props.uploadedFile[update.fileMetaKey] = update.value;
+            _this.setState(_defineProperty({}, update.key, update.value));
+            _this.props.uploadedFile[update.key] = update.value;
             if (_this.props.onAttributeChanged) _this.props.onAttributeChanged(_this.props.uploadedFile, index);
         };
 
-        _this._isOpenAccess = function () {
-            return _this.state.access_condition_id === _FileUploadAccessSelector.OPEN_ACCESS_ID;
+        _this._isOpenAccess = function (accessConditionId) {
+            return accessConditionId === _FileUploadAccessSelector.OPEN_ACCESS_ID;
         };
 
         _this.state = {
@@ -83,6 +83,7 @@ var FileUploadRow = function (_Component) {
             var _this2 = this;
 
             var deleteRecordConfirmation = this.props.locale.deleteRecordConfirmation;
+            var access_condition_id = this.state.access_condition_id;
 
             return _react2.default.createElement(
                 'div',
@@ -107,7 +108,7 @@ var FileUploadRow = function (_Component) {
                     { className: 'column datalist-text file-access' },
                     _react2.default.createElement(_FileUploadAccessSelector2.default, { index: this.props.index, onAccessChanged: this._updateFileMetadata })
                 ),
-                this.props.requireFileAccess && !this._isOpenAccess && _react2.default.createElement(
+                this.props.requireFileAccess && !this._isOpenAccess(access_condition_id) && _react2.default.createElement(
                     'div',
                     { className: 'column datalist-text embargo-date' },
                     _react2.default.createElement(
@@ -116,7 +117,7 @@ var FileUploadRow = function (_Component) {
                         'No Date'
                     )
                 ),
-                this.props.requireFileAccess && this._isOpenAccess && _react2.default.createElement(
+                this.props.requireFileAccess && this._isOpenAccess(access_condition_id) && _react2.default.createElement(
                     'div',
                     { className: 'column datalist-text embargo-date' },
                     _react2.default.createElement(
