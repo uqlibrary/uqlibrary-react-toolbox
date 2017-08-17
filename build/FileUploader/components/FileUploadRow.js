@@ -139,7 +139,7 @@ var FileUploadRow = function (_Component) {
                         )
                     )
                 ),
-                this.props.progress > 0 && _react2.default.createElement(
+                this.props.progress > 0 && this.props.progress !== 100 && _react2.default.createElement(
                     'div',
                     { className: 'upload-progress-wrapper' },
                     _react2.default.createElement(_CircularProgress2.default, {

@@ -98,7 +98,7 @@ class FileUploadRow extends Component {
                         </div>
                 }
                 {
-                    this.props.progress > 0 &&
+                    this.props.progress > 0 && this.props.progress !== 100 &&
                         <div className="upload-progress-wrapper">
                             <CircularProgress
                                 className="upload-progress"
