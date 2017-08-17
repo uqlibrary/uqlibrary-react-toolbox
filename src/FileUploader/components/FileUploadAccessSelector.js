@@ -39,7 +39,7 @@ export default class FileUploadAccessSelector extends Component {
     }
 
     componentWillUpdate(nextProps, nextState) {
-        this.props.onAccessChanged({ [nextProps.fileMetaKey]: nextState.value }, nextProps.index);
+        if (this.state.value !== nextState.value) this.props.onAccessChanged({ key: [nextProps.locale.fileMetaKey], value: nextState.value }, nextProps.index);
     }
 
     _onChange = (event, index, value) => {

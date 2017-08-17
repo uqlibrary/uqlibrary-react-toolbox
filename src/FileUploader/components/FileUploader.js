@@ -66,7 +66,7 @@ export class FileUploader extends PureComponent {
             uploadedFiles: [
                 ...this.state.uploadedFiles.slice(0, index),
                 file,
-                ...this.state.uploadedFiles(index + 1)
+                ...this.state.uploadedFiles.slice(index + 1)
             ],
             clearErrors: true
         });
@@ -89,7 +89,7 @@ export class FileUploader extends PureComponent {
     render() {
         const { instructions, sizeUnitText } = this.props.locale;
         const { maxFileSize, fileSizeUnit, fileUploadLimit } = this.props.defaultConfig;
-        const { requireFileAccess } = this.props.requireFileAccess;
+        const { requireFileAccess } = this.props;
 
         const instructionsDisplay = instructions
             .replace('[fileUploadLimit]', fileUploadLimit)

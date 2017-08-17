@@ -48,17 +48,18 @@ class FileUploadRow extends Component {
     };
 
     _updateFileMetadata = (update, index) => {
-        this.setState({ [update.fileMetaKey]: update.value});
-        this.props.uploadedFile[update.fileMetaKey] = update.value;
+        this.setState({ [update.key]: update.value });
+        this.props.uploadedFile[update.key] = update.value;
         if (this.props.onAttributeChanged) this.props.onAttributeChanged(this.props.uploadedFile, index);
     };
 
-    _isOpenAccess = () => {
-        return this.state.access_condition_id === OPEN_ACCESS_ID;
+    _isOpenAccess = (accessConditionId) => {
+        return accessConditionId === OPEN_ACCESS_ID;
     };
 
     render() {
         const { deleteRecordConfirmation } = this.props.locale;
+        const { access_condition_id } = this.state;
         return (
             <div className="columns is-gapless is-mobile uploadedFileRow datalist datalist-row">
                 <ConfirmDialogBox
@@ -75,13 +76,13 @@ class FileUploadRow extends Component {
                     </div>
                 }
                 {
-                    this.props.requireFileAccess && !this._isOpenAccess &&
+                    this.props.requireFileAccess && !this._isOpenAccess(access_condition_id) &&
                     <div className="column datalist-text embargo-date">
                         <span>No Date</span>
                     </div>
                 }
                 {
-                    this.props.requireFileAccess && this._isOpenAccess &&
+                    this.props.requireFileAccess && this._isOpenAccess(access_condition_id) &&
                     <div className="column datalist-text embargo-date">
                         <span>Embargo Date</span>
                     </div>
