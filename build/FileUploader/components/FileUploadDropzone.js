@@ -22,7 +22,7 @@ var _reactDropzone = require('react-dropzone');
 
 var _reactDropzone2 = _interopRequireDefault(_reactDropzone);
 
-var _uqlibraryReactToolbox = require('uqlibrary-react-toolbox');
+var _ = require('../..');
 
 var _FileUploadDropzoneStaticContent = require('./FileUploadDropzoneStaticContent');
 
@@ -312,7 +312,7 @@ var FileUploadDropzone = function (_PureComponent) {
                         )
                     )
                 ),
-                this.state.errorMessage.length > 0 && _react2.default.createElement(_uqlibraryReactToolbox.Alert, { title: 'Upload errors', message: this.state.errorMessage, type: 'error' })
+                this.state.errorMessage.length > 0 && _react2.default.createElement(_.Alert, { title: 'Upload errors', message: this.state.errorMessage, type: 'error' })
             );
         }
     }]);

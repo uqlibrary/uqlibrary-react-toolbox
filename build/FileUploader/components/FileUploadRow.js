@@ -28,9 +28,15 @@ var _CircularProgress = require('material-ui/CircularProgress');
 
 var _CircularProgress2 = _interopRequireDefault(_CircularProgress);
 
-var _uqlibraryReactToolbox = require('uqlibrary-react-toolbox');
+var _ = require('../..');
+
+var _FileUploadAccessSelector = require('./FileUploadAccessSelector');
+
+var _FileUploadAccessSelector2 = _interopRequireDefault(_FileUploadAccessSelector);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -54,6 +60,20 @@ var FileUploadRow = function (_Component) {
             if (_this.props.onDelete) _this.props.onDelete(_this.props.uploadedFile, _this.props.index);
         };
 
+        _this._updateFileMetadata = function (update, index) {
+            _this.setState(_defineProperty({}, update.fileMetaKey, update.value));
+            _this.props.uploadedFile[update.fileMetaKey] = update.value;
+            if (_this.props.onAttributeChanged) _this.props.onAttributeChanged(_this.props.uploadedFile, index);
+        };
+
+        _this._isOpenAccess = function () {
+            return _this.state.access_condition_id === _FileUploadAccessSelector.OPEN_ACCESS_ID;
+        };
+
+        _this.state = {
+            access_condition_id: null,
+            date: null
+        };
         return _this;
     }
 
@@ -67,7 +87,7 @@ var FileUploadRow = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'columns is-gapless is-mobile uploadedFileRow datalist datalist-row' },
-                _react2.default.createElement(_uqlibraryReactToolbox.ConfirmDialogBox, {
+                _react2.default.createElement(_.ConfirmDialogBox, {
                     onRef: function onRef(ref) {
                         return _this2.confirmationBox = ref;
                     },
@@ -80,6 +100,29 @@ var FileUploadRow = function (_Component) {
                         'span',
                         { className: 'filename-label' },
                         this.props.uploadedFile.name
+                    )
+                ),
+                this.props.requireFileAccess && _react2.default.createElement(
+                    'div',
+                    { className: 'column datalist-text file-access' },
+                    _react2.default.createElement(_FileUploadAccessSelector2.default, { index: this.props.index, onAccessChanged: this._updateFileMetadata })
+                ),
+                this.props.requireFileAccess && !this._isOpenAccess && _react2.default.createElement(
+                    'div',
+                    { className: 'column datalist-text embargo-date' },
+                    _react2.default.createElement(
+                        'span',
+                        null,
+                        'No Date'
+                    )
+                ),
+                this.props.requireFileAccess && this._isOpenAccess && _react2.default.createElement(
+                    'div',
+                    { className: 'column datalist-text embargo-date' },
+                    _react2.default.createElement(
+                        'span',
+                        null,
+                        'Embargo Date'
                     )
                 ),
                 this.props.progress === 0 && _react2.default.createElement(
@@ -121,9 +164,11 @@ var FileUploadRow = function (_Component) {
 FileUploadRow.propTypes = {
     index: _propTypes2.default.number.isRequired,
     uploadedFile: _propTypes2.default.object.isRequired,
-    onDelete: _propTypes2.default.func,
+    onDelete: _propTypes2.default.func.isRequired,
+    onAttributeChanged: _propTypes2.default.func.isRequired,
     locale: _propTypes2.default.object,
-    progress: _propTypes2.default.number
+    progress: _propTypes2.default.number,
+    requireFileAccess: _propTypes2.default.bool.isRequired
 };
 FileUploadRow.defaultProps = {
     locale: {

@@ -47,8 +47,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import './FileUpload.scss';
-
 var FileUploader = exports.FileUploader = function (_PureComponent) {
     _inherits(FileUploader, _PureComponent);
 
@@ -62,6 +60,13 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 uploadedFiles: _this.state.uploadedFiles.filter(function (_, i) {
                     return i !== index;
                 }),
+                clearErrors: true
+            });
+        };
+
+        _this.replaceFile = function (file, index) {
+            _this.setState({
+                uploadedFiles: [].concat(_toConsumableArray(_this.state.uploadedFiles.slice(0, index)), [file], _toConsumableArray(_this.state.uploadedFiles(index + 1))),
                 clearErrors: true
             });
         };
@@ -107,12 +112,19 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 maxFileSize = _props$defaultConfig.maxFileSize,
                 fileSizeUnit = _props$defaultConfig.fileSizeUnit,
                 fileUploadLimit = _props$defaultConfig.fileUploadLimit;
+            var requireFileAccess = this.props.requireFileAccess.requireFileAccess;
 
 
             var instructionsDisplay = instructions.replace('[fileUploadLimit]', fileUploadLimit).replace('[maxFileSize]', '' + maxFileSize).replace('[fileSizeUnit]', sizeUnitText[fileSizeUnit] || 'B');
 
             var uploadedFilesRow = this.state.uploadedFiles.map(function (file, index) {
-                return _react2.default.createElement(_FileUploadRow2.default, { key: index, index: index, uploadedFile: file, onDelete: _this2.deleteFile });
+                return _react2.default.createElement(_FileUploadRow2.default, {
+                    key: index,
+                    index: index,
+                    uploadedFile: file,
+                    onDelete: _this2.deleteFile,
+                    onAttributeChanged: _this2.replaceFile,
+                    requireFileAccess: requireFileAccess });
             });
 
             return _react2.default.createElement(
@@ -129,7 +141,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     onDropped: this.setUploadedFiles,
                     uploadedFiles: this.state.uploadedFiles,
                     clearErrors: this.state.clearErrors }),
-                this.state.uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, { onDeleteAll: this.deleteAllFiles }),
+                this.state.uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, { onDeleteAll: this.deleteAllFiles, requireFileAccess: requireFileAccess }),
                 uploadedFilesRow,
                 this.props.overallProgress > 0 && _react2.default.createElement(_LinearProgress2.default, {
                     className: 'upload-overall',
@@ -147,7 +159,8 @@ FileUploader.propTypes = {
     onChange: _propTypes2.default.func,
     locale: _propTypes2.default.object,
     defaultConfig: _propTypes2.default.object,
-    overallProgress: _propTypes2.default.number
+    overallProgress: _propTypes2.default.number,
+    requireFileAccess: _propTypes2.default.bool
 };
 FileUploader.defaultProps = {
     overallProgress: 0,
@@ -160,7 +173,8 @@ FileUploader.defaultProps = {
         fileUploadLimit: 10,
         maxFileSize: 5,
         fileSizeUnit: 'G'
-    }
+    },
+    requireFileAccess: false
 };
 
 

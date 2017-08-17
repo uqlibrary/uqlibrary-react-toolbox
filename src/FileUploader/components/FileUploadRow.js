@@ -4,16 +4,19 @@ import PropTypes from 'prop-types';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 import CircularProgress from 'material-ui/CircularProgress';
-import {ConfirmDialogBox} from 'uqlibrary-react-toolbox';
+import {ConfirmDialogBox} from '../..';
+import FileUploadAccessSelector from './FileUploadAccessSelector';
+import {OPEN_ACCESS_ID} from './FileUploadAccessSelector';
 
 class FileUploadRow extends Component {
-
     static propTypes = {
         index: PropTypes.number.isRequired,
         uploadedFile: PropTypes.object.isRequired,
-        onDelete: PropTypes.func,
+        onDelete: PropTypes.func.isRequired,
+        onAttributeChanged: PropTypes.func.isRequired,
         locale: PropTypes.object,
-        progress: PropTypes.number
+        progress: PropTypes.number,
+        requireFileAccess: PropTypes.bool.isRequired
     };
 
     static defaultProps = {
@@ -30,6 +33,10 @@ class FileUploadRow extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            access_condition_id: null,
+            date: null
+        };
     }
 
     _showConfirmation = () => {
@@ -38,6 +45,16 @@ class FileUploadRow extends Component {
 
     _deleteFile = () => {
         if (this.props.onDelete) this.props.onDelete(this.props.uploadedFile, this.props.index);
+    };
+
+    _updateFileMetadata = (update, index) => {
+        this.setState({ [update.fileMetaKey]: update.value});
+        this.props.uploadedFile[update.fileMetaKey] = update.value;
+        if (this.props.onAttributeChanged) this.props.onAttributeChanged(this.props.uploadedFile, index);
+    };
+
+    _isOpenAccess = () => {
+        return this.state.access_condition_id === OPEN_ACCESS_ID;
     };
 
     render() {
@@ -51,6 +68,24 @@ class FileUploadRow extends Component {
                 <div className="column datalist-text filename">
                     <span className="filename-label">{ this.props.uploadedFile.name }</span>
                 </div>
+                {
+                    this.props.requireFileAccess &&
+                    <div className="column datalist-text file-access">
+                        <FileUploadAccessSelector index={ this.props.index } onAccessChanged={ this._updateFileMetadata } />
+                    </div>
+                }
+                {
+                    this.props.requireFileAccess && !this._isOpenAccess &&
+                    <div className="column datalist-text embargo-date">
+                        <span>No Date</span>
+                    </div>
+                }
+                {
+                    this.props.requireFileAccess && this._isOpenAccess &&
+                    <div className="column datalist-text embargo-date">
+                        <span>Embargo Date</span>
+                    </div>
+                }
                 {
                     this.props.progress === 0 &&
                         <div className="column is-narrow uploadedFileDelete datalist-buttons">

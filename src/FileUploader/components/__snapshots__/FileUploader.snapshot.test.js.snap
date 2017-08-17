@@ -27,6 +27,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
     }
   }
   overallProgress={0}
+  requireFileAccess={false}
 >
   <div>
     <h4
@@ -211,6 +212,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
     }
   }
   overallProgress={0}
+  requireFileAccess={false}
 >
   <div>
     <h4
@@ -395,6 +397,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
     }
   }
   overallProgress={0}
+  requireFileAccess={false}
 >
   <div>
     <h4
@@ -661,16 +664,6 @@ exports[`FileUploader renders row for uploaded files 2`] = `
           Filename
         </div>
         <div
-          className="column file-access datalist-title"
-        >
-          Access conditions
-        </div>
-        <div
-          className="column embargo-date datalist-title"
-        >
-          Embargo release date
-        </div>
-        <div
           className="column is-narrow buttons datalist-buttons"
         >
           <IconButton
@@ -860,6 +853,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
     </FileUploadRowHeader>
     <Connect(FileUploadRow)
       index={0}
+      onAttributeChanged={[Function]}
       onDelete={[Function]}
       uploadedFile={
         Object {
@@ -882,6 +876,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
             },
           }
         }
+        onAttributeChanged={[Function]}
         onDelete={[Function]}
         progress={0}
         uploadedFile={
@@ -1165,6 +1160,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
     </Connect(FileUploadRow)>
     <Connect(FileUploadRow)
       index={1}
+      onAttributeChanged={[Function]}
       onDelete={[Function]}
       uploadedFile={
         Object {
@@ -1187,6 +1183,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
             },
           }
         }
+        onAttributeChanged={[Function]}
         onDelete={[Function]}
         progress={0}
         uploadedFile={
@@ -1499,6 +1496,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
     }
   }
   overallProgress={0}
+  requireFileAccess={false}
 >
   <div>
     <h4
@@ -1761,16 +1759,6 @@ exports[`FileUploader renders row for uploaded files 3`] = `
           Filename
         </div>
         <div
-          className="column file-access datalist-title"
-        >
-          Access conditions
-        </div>
-        <div
-          className="column embargo-date datalist-title"
-        >
-          Embargo release date
-        </div>
-        <div
           className="column is-narrow buttons datalist-buttons"
         >
           <IconButton
@@ -1960,6 +1948,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
     </FileUploadRowHeader>
     <Connect(FileUploadRow)
       index={0}
+      onAttributeChanged={[Function]}
       onDelete={[Function]}
       uploadedFile={
         Object {
@@ -1982,6 +1971,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
             },
           }
         }
+        onAttributeChanged={[Function]}
         onDelete={[Function]}
         progress={0}
         uploadedFile={
@@ -2294,6 +2284,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
     }
   }
   overallProgress={0}
+  requireFileAccess={false}
 >
   <div>
     <h4

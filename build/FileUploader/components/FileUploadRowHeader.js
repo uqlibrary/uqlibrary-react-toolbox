@@ -22,7 +22,7 @@ var _IconButton = require('material-ui/IconButton');
 
 var _IconButton2 = _interopRequireDefault(_IconButton);
 
-var _uqlibraryReactToolbox = require('uqlibrary-react-toolbox');
+var _ = require('../..');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -63,7 +63,7 @@ var FileUploadRowHeader = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'columns is-gapless is-mobile uploadedFileHeader datalist datalist-header' },
-                _react2.default.createElement(_uqlibraryReactToolbox.ConfirmDialogBox, { onRef: function onRef(ref) {
+                _react2.default.createElement(_.ConfirmDialogBox, { onRef: function onRef(ref) {
                         return _this2.confirmationBox = ref;
                     },
                     onAction: this.props.onDeleteAll,
@@ -73,12 +73,12 @@ var FileUploadRowHeader = function (_Component) {
                     { className: 'column filename datalist-title', style: { textIndent: '12px' } },
                     filenameColumn
                 ),
-                _react2.default.createElement(
+                this.props.requireFileAccess && _react2.default.createElement(
                     'div',
                     { className: 'column file-access datalist-title' },
                     fileAccessColumn
                 ),
-                _react2.default.createElement(
+                this.props.requireFileAccess && _react2.default.createElement(
                     'div',
                     { className: 'column embargo-date datalist-title' },
                     embargoDateColumn
@@ -105,7 +105,8 @@ var FileUploadRowHeader = function (_Component) {
 
 FileUploadRowHeader.propTypes = {
     onDeleteAll: _propTypes2.default.func.isRequired,
-    locale: _propTypes2.default.object
+    locale: _propTypes2.default.object,
+    requireFileAccess: _propTypes2.default.bool
 };
 FileUploadRowHeader.defaultProps = {
     locale: {

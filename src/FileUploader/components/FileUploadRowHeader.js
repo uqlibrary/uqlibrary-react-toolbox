@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
-import { ConfirmDialogBox } from 'uqlibrary-react-toolbox';
+import {ConfirmDialogBox} from '../..';
 
 export default class FileUploadRowHeader extends Component {
     static propTypes = {
         onDeleteAll: PropTypes.func.isRequired,
-        locale: PropTypes.object
+        locale: PropTypes.object,
+        requireFileAccess: PropTypes.bool
     };
 
     static defaultProps = {
@@ -44,12 +45,18 @@ export default class FileUploadRowHeader extends Component {
                 <div className="column filename datalist-title" style={{ textIndent: '12px' }}>
                     { filenameColumn }
                 </div>
-                <div className="column file-access datalist-title">
-                    { fileAccessColumn }
-                </div>
-                <div className="column embargo-date datalist-title">
-                    { embargoDateColumn }
-                </div>
+                {
+                    this.props.requireFileAccess &&
+                    <div className="column file-access datalist-title">
+                        { fileAccessColumn }
+                    </div>
+                }
+                {
+                    this.props.requireFileAccess &&
+                    <div className="column embargo-date datalist-title">
+                        { embargoDateColumn }
+                    </div>
+                }
                 <div className="column is-narrow buttons datalist-buttons">
                     <IconButton tooltip={ deleteAllFiles } onTouchTap={ this._showConfirmation }>
                         <FontIcon className="material-icons">delete_forever</FontIcon>

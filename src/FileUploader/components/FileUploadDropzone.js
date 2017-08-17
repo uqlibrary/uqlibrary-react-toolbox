@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
-import { Alert } from 'uqlibrary-react-toolbox';
+import { Alert } from '../..';
 import FileUploadDropzoneStaticContent from './FileUploadDropzoneStaticContent';
 
 class FileUploadDropzone extends PureComponent {
