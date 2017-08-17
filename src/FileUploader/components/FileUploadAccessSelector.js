@@ -37,12 +37,9 @@ export default class FileUploadAccessSelector extends Component {
         };
     }
 
-    componentWillUpdate(nextProps, nextState) {
-        if (this.state.value !== nextState.value) this.props.onAccessChanged({ key: [nextProps.locale.fileMetaKey], value: nextState.value });
-    }
-
     _onChange = (event, index, value) => {
-        this.setState({value: value});
+        this.setState({ value: value });
+        this.props.onAccessChanged({ key: [this.props.locale.fileMetaKey], value: value });
     };
 
     render() {

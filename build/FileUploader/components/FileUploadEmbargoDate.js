@@ -34,7 +34,13 @@ var FileUploadEmbargoDate = function (_Component) {
     function FileUploadEmbargoDate(props) {
         _classCallCheck(this, FileUploadEmbargoDate);
 
-        return _possibleConstructorReturn(this, (FileUploadEmbargoDate.__proto__ || Object.getPrototypeOf(FileUploadEmbargoDate)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (FileUploadEmbargoDate.__proto__ || Object.getPrototypeOf(FileUploadEmbargoDate)).call(this, props));
+
+        _this._onChange = function (event, value) {
+            _this.props.onDateChanged({ key: [_this.props.locale.fileMetaKey], value: moment(value).format('DD/MM/YYYY') });
+        };
+
+        return _this;
     }
 
     _createClass(FileUploadEmbargoDate, [{
@@ -44,7 +50,6 @@ var FileUploadEmbargoDate = function (_Component) {
                 dateFormat = _props$locale.dateFormat,
                 currentDateString = _props$locale.currentDateString,
                 fieldName = _props$locale.fieldName;
-            var index = this.props.index;
 
             return _react2.default.createElement(_DatePicker2.default, {
                 className: 'datepicker',
@@ -52,7 +57,8 @@ var FileUploadEmbargoDate = function (_Component) {
                 firstDayOfWeek: 0,
                 hintText: currentDateString,
                 locale: 'en-AU',
-                name: fieldName + '@' + index,
+                name: fieldName,
+                onChange: this._onChange,
                 menuItemStyle: { width: '90px' }
             });
         }
@@ -62,13 +68,13 @@ var FileUploadEmbargoDate = function (_Component) {
 }(_react.Component);
 
 FileUploadEmbargoDate.propTypes = {
-    index: _propTypes2.default.number.isRequired,
     locale: _propTypes2.default.object,
-    progress: _propTypes2.default.number
+    onDateChanged: _propTypes2.default.func
 };
 FileUploadEmbargoDate.defaultProps = {
     locale: {
-        dateFormat: 'DD/MM/YYYY',
+        fileMetaKey: 'date',
+        dateFormat: global.Intl.DateTimeFormat,
         currentDateString: moment().format('DD/MM/YYYY'),
         fieldName: 'accessDate'
     }

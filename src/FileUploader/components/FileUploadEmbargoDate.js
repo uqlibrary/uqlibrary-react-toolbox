@@ -6,14 +6,14 @@ const moment = require('moment');
 
 export default class FileUploadEmbargoDate extends Component {
     static propTypes = {
-        index: PropTypes.number.isRequired,
         locale: PropTypes.object,
-        progress: PropTypes.number
+        onDateChanged: PropTypes.func
     };
 
     static defaultProps = {
         locale: {
-            dateFormat: 'DD/MM/YYYY',
+            fileMetaKey: 'date',
+            dateFormat: global.Intl.DateTimeFormat,
             currentDateString: moment().format('DD/MM/YYYY'),
             fieldName: 'accessDate'
         }
@@ -23,9 +23,12 @@ export default class FileUploadEmbargoDate extends Component {
         super(props);
     }
 
+    _onChange = (event, value) => {
+        this.props.onDateChanged({ key: [this.props.locale.fileMetaKey], value: moment(value).format('DD/MM/YYYY') });
+    };
+
     render() {
         const {dateFormat, currentDateString, fieldName} = this.props.locale;
-        const {index} = this.props;
         return (
             <DatePicker
                 className="datepicker"
@@ -33,7 +36,8 @@ export default class FileUploadEmbargoDate extends Component {
                 firstDayOfWeek={0}
                 hintText={currentDateString}
                 locale="en-AU"
-                name={ `${fieldName}@${index}` }
+                name={ fieldName }
+                onChange={ this._onChange }
                 menuItemStyle={{width: '90px'}}
             />
         );

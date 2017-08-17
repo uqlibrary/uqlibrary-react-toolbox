@@ -44,6 +44,7 @@ var FileUploadAccessSelector = function (_Component) {
 
         _this._onChange = function (event, index, value) {
             _this.setState({ value: value });
+            _this.props.onAccessChanged({ key: [_this.props.locale.fileMetaKey], value: value });
         };
 
         _this.state = {
@@ -53,11 +54,6 @@ var FileUploadAccessSelector = function (_Component) {
     }
 
     _createClass(FileUploadAccessSelector, [{
-        key: 'componentWillUpdate',
-        value: function componentWillUpdate(nextProps, nextState) {
-            if (this.state.value !== nextState.value) this.props.onAccessChanged({ key: [nextProps.locale.fileMetaKey], value: nextState.value });
-        }
-    }, {
         key: 'render',
         value: function render() {
             var _props$locale = this.props.locale,

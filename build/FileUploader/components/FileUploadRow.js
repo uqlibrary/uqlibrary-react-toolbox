@@ -34,6 +34,10 @@ var _FileUploadAccessSelector = require('./FileUploadAccessSelector');
 
 var _FileUploadAccessSelector2 = _interopRequireDefault(_FileUploadAccessSelector);
 
+var _FileUploadEmbargoDate = require('./FileUploadEmbargoDate');
+
+var _FileUploadEmbargoDate2 = _interopRequireDefault(_FileUploadEmbargoDate);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -120,11 +124,7 @@ var FileUploadRow = function (_Component) {
                 this.props.requireFileAccess && this._isOpenAccess(access_condition_id) && _react2.default.createElement(
                     'div',
                     { className: 'column datalist-text embargo-date' },
-                    _react2.default.createElement(
-                        'span',
-                        null,
-                        'Embargo Date'
-                    )
+                    _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata })
                 ),
                 this.props.progress === 0 && _react2.default.createElement(
                     'div',

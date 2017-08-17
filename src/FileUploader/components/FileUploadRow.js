@@ -6,6 +6,8 @@ import IconButton from 'material-ui/IconButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import {ConfirmDialogBox} from '../..';
 import FileUploadAccessSelector from './FileUploadAccessSelector';
+import FileUploadEmbargoDate from './FileUploadEmbargoDate';
+
 import {OPEN_ACCESS_ID} from './FileUploadAccessSelector';
 
 class FileUploadRow extends Component {
@@ -84,7 +86,7 @@ class FileUploadRow extends Component {
                 {
                     this.props.requireFileAccess && this._isOpenAccess(access_condition_id) &&
                     <div className="column datalist-text embargo-date">
-                        <span>Embargo Date</span>
+                        <FileUploadEmbargoDate onDateChanged={ this._updateFileMetadata }/>
                     </div>
                 }
                 {
