@@ -69,6 +69,7 @@ var FileUploadAccessSelector = function (_Component) {
             return _react2.default.createElement(
                 _SelectField2.default,
                 {
+                    id: fieldName,
                     name: fieldName,
                     autoWidth: true,
                     className: 'selectField',

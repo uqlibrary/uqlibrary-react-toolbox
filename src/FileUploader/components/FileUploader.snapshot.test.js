@@ -63,4 +63,40 @@ describe('FileUploader', () => {
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });
+
+    it('renders row for uploaded files', () => {
+        const wrapper = setup({ requireFileAccess: true });
+
+        let tree = toJson(wrapper);
+
+        expect(tree).toMatchSnapshot();
+
+        const files = [
+            {
+                name: 'a.txt',
+                size: 100
+            },
+            {
+                name: 'b.txt',
+                size: 100
+            }
+        ];
+
+        wrapper.instance().setUploadedFiles(files);
+        tree = toJson(wrapper);
+
+        expect(tree).toMatchSnapshot();
+
+        wrapper.instance().replaceFile({ name: 'a.txt', size: 100, access_condition_id: 8 }, 0);
+        tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
+
+        wrapper.instance().replaceFile({ name: 'a.txt', size: 100, access_condition_id: 9 }, 0);
+        tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
+
+        wrapper.instance().replaceFile({ name: 'a.txt', size: 100, access_condition_id: 9, date: '10/10/2017' }, 0);
+        tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
 });

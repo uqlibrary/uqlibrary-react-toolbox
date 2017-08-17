@@ -49,6 +49,7 @@ export default class FileUploadAccessSelector extends Component {
 
         return (
             <SelectField
+                id={ fieldName }
                 name={ fieldName }
                 autoWidth
                 className="selectField"
