@@ -38,7 +38,6 @@ export default class FileUploadEmbargoDate extends Component {
                 locale="en-AU"
                 name={ fieldName }
                 onChange={ this._onChange }
-                menuItemStyle={{width: '90px'}}
             />
         );
     }

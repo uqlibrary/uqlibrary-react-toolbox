@@ -75,7 +75,7 @@ var FileUploadRowHeader = function (_Component) {
                 ),
                 this.props.requireFileAccess && _react2.default.createElement(
                     'div',
-                    { className: 'column file-access datalist-title' },
+                    { className: 'column file-access datalist-title requiredField' },
                     fileAccessColumn
                 ),
                 this.props.requireFileAccess && _react2.default.createElement(

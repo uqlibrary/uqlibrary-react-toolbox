@@ -47,7 +47,7 @@ export default class FileUploadRowHeader extends Component {
                 </div>
                 {
                     this.props.requireFileAccess &&
-                    <div className="column file-access datalist-title">
+                    <div className="column file-access datalist-title requiredField">
                         { fileAccessColumn }
                     </div>
                 }

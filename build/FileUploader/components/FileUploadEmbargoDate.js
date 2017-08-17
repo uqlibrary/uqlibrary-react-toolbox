@@ -58,8 +58,7 @@ var FileUploadEmbargoDate = function (_Component) {
                 hintText: currentDateString,
                 locale: 'en-AU',
                 name: fieldName,
-                onChange: this._onChange,
-                menuItemStyle: { width: '90px' }
+                onChange: this._onChange
             });
         }
     }]);

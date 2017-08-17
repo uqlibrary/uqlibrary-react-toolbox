@@ -77,7 +77,7 @@ var FileUploadAccessSelector = function (_Component) {
                     maxHeight: 250,
                     onChange: this._onChange,
                     value: this.state.value },
-                _react2.default.createElement(_MenuItem2.default, { value: null, primaryText: initialValue, key: -1 }),
+                _react2.default.createElement(_MenuItem2.default, { value: null, primaryText: initialValue, key: -1, disabled: true }),
                 accessOptions
             );
         }

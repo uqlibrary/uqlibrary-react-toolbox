@@ -57,7 +57,7 @@ export default class FileUploadAccessSelector extends Component {
                 maxHeight={ 250 }
                 onChange={ this._onChange }
                 value={ this.state.value }>
-                <MenuItem value={ null } primaryText={ initialValue } key={ -1 } />
+                <MenuItem value={ null } primaryText={ initialValue } key={ -1 } disabled/>
                 { accessOptions }
             </SelectField>
         );
