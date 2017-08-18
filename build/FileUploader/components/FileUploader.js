@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.FileUploader = exports.sizeBase = exports.sizeUnitText = exports.sizeExponent = undefined;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _sizeExponent, _sizeUnitText;
@@ -14,8 +12,6 @@ var _sizeExponent, _sizeUnitText;
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
-
-var _redux = require('redux');
 
 var _reactRedux = require('react-redux');
 
@@ -109,12 +105,17 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
     _createClass(FileUploader, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            this.props.actions.clearFileUpload();
+            this.props.clearFileUpload();
         }
     }, {
         key: 'componentWillUpdate',
         value: function componentWillUpdate(nextProps, nextState) {
             if (this.props.onChange) this.props.onChange(nextState.uploadedFiles);
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            this.props.clearFileUpload();
         }
     }, {
         key: 'render',
@@ -176,7 +177,7 @@ FileUploader.propTypes = {
     defaultConfig: _propTypes2.default.object,
     overallProgress: _propTypes2.default.number,
     requireFileAccess: _propTypes2.default.bool,
-    actions: _propTypes2.default.func
+    clearFileUpload: _propTypes2.default.func
 };
 FileUploader.defaultProps = {
     overallProgress: 0,
@@ -200,7 +201,9 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     return {
-        actions: _extends({}, (0, _redux.bindActionCreators)(_actions.clearFileUpload, dispatch))
+        clearFileUpload: function clearFileUpload() {
+            return dispatch((0, _actions.clearFileUpload)());
+        }
     };
 };
 

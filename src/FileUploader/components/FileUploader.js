@@ -1,5 +1,4 @@
 import React, {PureComponent} from 'react';
-import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import { clearFileUpload } from '../actions';
@@ -33,7 +32,7 @@ export class FileUploader extends PureComponent {
         defaultConfig: PropTypes.object,
         overallProgress: PropTypes.number,
         requireFileAccess: PropTypes.bool,
-        actions: PropTypes.func
+        clearFileUpload: PropTypes.func
     };
 
     static defaultProps = {
@@ -58,11 +57,15 @@ export class FileUploader extends PureComponent {
     }
 
     componentDidMount() {
-        this.props.actions.clearFileUpload();
+        this.props.clearFileUpload();
     }
 
     componentWillUpdate(nextProps, nextState) {
         if (this.props.onChange)  this.props.onChange(nextState.uploadedFiles);
+    }
+
+    componentWillUnmount() {
+        this.props.clearFileUpload();
     }
 
     deleteFile = (file, index) => {
@@ -156,7 +159,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        actions: { ...bindActionCreators(clearFileUpload, dispatch) }
+        clearFileUpload: () => (dispatch(clearFileUpload()))
     };
 };
 

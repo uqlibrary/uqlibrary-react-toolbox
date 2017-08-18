@@ -13,9 +13,7 @@ import PropTypes from 'prop-types';
 function setup(props) {
     let defaultProps = {
         ...props,
-        actions: {
-            clearFileUpload: jest.fn()
-        }
+        clearFileUpload: jest.fn()
     };
 
     return mount(<FileUploader {...defaultProps} />, {

@@ -2,11 +2,7 @@
 
 exports[`FileUploader renders correctly without any setup 1`] = `
 <FileUploader
-  actions={
-    Object {
-      "clearFileUpload": [Function],
-    }
-  }
+  clearFileUpload={[Function]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -180,11 +176,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
 
 exports[`FileUploader renders row for uploaded files 1`] = `
 <FileUploader
-  actions={
-    Object {
-      "clearFileUpload": [Function],
-    }
-  }
+  clearFileUpload={[Function]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -358,11 +350,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
 
 exports[`FileUploader renders row for uploaded files 2`] = `
 <FileUploader
-  actions={
-    Object {
-      "clearFileUpload": [Function],
-    }
-  }
+  clearFileUpload={[Function]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -1469,11 +1457,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
 
 exports[`FileUploader renders row for uploaded files 3`] = `
 <FileUploader
-  actions={
-    Object {
-      "clearFileUpload": [Function],
-    }
-  }
+  clearFileUpload={[Function]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -2260,11 +2244,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
 
 exports[`FileUploader renders row for uploaded files 4`] = `
 <FileUploader
-  actions={
-    Object {
-      "clearFileUpload": [Function],
-    }
-  }
+  clearFileUpload={[Function]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -2438,11 +2418,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
 
 exports[`FileUploader renders row for uploaded files 5`] = `
 <FileUploader
-  actions={
-    Object {
-      "clearFileUpload": [Function],
-    }
-  }
+  clearFileUpload={[Function]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -2616,11 +2592,7 @@ exports[`FileUploader renders row for uploaded files 5`] = `
 
 exports[`FileUploader renders row for uploaded files 6`] = `
 <FileUploader
-  actions={
-    Object {
-      "clearFileUpload": [Function],
-    }
-  }
+  clearFileUpload={[Function]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -6493,11 +6465,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
 
 exports[`FileUploader renders row for uploaded files 7`] = `
 <FileUploader
-  actions={
-    Object {
-      "clearFileUpload": [Function],
-    }
-  }
+  clearFileUpload={[Function]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -10373,11 +10341,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
 
 exports[`FileUploader renders row for uploaded files 8`] = `
 <FileUploader
-  actions={
-    Object {
-      "clearFileUpload": [Function],
-    }
-  }
+  clearFileUpload={[Function]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -14253,11 +14217,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
 
 exports[`FileUploader renders row for uploaded files 9`] = `
 <FileUploader
-  actions={
-    Object {
-      "clearFileUpload": [Function],
-    }
-  }
+  clearFileUpload={[Function]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
