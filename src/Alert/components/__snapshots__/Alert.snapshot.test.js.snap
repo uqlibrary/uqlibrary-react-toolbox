@@ -2,7 +2,7 @@
 
 exports[`Alert snapshots test renders Alert of error type 1`] = `
 <div
-  className=""
+  className="forAlerts"
 >
   <div
     className="error alertWrapper"
@@ -39,7 +39,7 @@ exports[`Alert snapshots test renders Alert of error type 1`] = `
 
 exports[`Alert snapshots test renders Alert of error type should render action button 1`] = `
 <div
-  className=""
+  className="forAlerts"
 >
   <div
     className="error alertWrapper"
@@ -95,7 +95,7 @@ exports[`Alert snapshots test renders Alert of error type should render action b
 
 exports[`Alert snapshots test renders Alert of error type should render dismiss icon button 1`] = `
 <div
-  className=""
+  className="forAlerts"
 >
   <div
     className="error alertWrapper"
@@ -148,7 +148,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
 
 exports[`Alert snapshots test renders Alert of error type should render dismiss icon button and action button 1`] = `
 <div
-  className=""
+  className="forAlerts"
 >
   <div
     className="error alertWrapper"
@@ -212,43 +212,6 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
             className="alertDismiss"
           />
         </IconButton>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Alert snapshots test renders Alert of error type should render outside layout 1`] = `
-<div
-  className="layout-card forAlerts"
->
-  <div
-    className="error alertWrapper"
-  >
-    <div
-      className="columns is-gapless is-multiline is-mobile"
-    >
-      <div
-        className="column is-narrow alertIcon"
-      >
-        <FontIcon
-          className="material-icons"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          error
-        </FontIcon>
-      </div>
-      <div
-        className="column alertText"
-      >
-        <span
-          className="alertTitle"
-        >
-          This is a title
-           - 
-        </span>
-        This is a message
       </div>
     </div>
   </div>

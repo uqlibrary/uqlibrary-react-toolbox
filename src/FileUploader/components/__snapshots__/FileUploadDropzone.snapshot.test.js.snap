@@ -451,7 +451,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
       type="error"
     >
       <div
-        className=""
+        className="forAlerts"
       >
         <div
           className="error alertWrapper"
@@ -659,7 +659,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
       type="error"
     >
       <div
-        className=""
+        className="forAlerts"
       >
         <div
           className="error alertWrapper"

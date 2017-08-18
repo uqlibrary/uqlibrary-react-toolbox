@@ -30,11 +30,6 @@ describe('Alert snapshots test', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 
-    it('renders Alert of error type should render outside layout', () => {
-        const wrapper = setup({outsideLayout: true});
-        expect(toJson(wrapper)).toMatchSnapshot();
-    });
-
     it('renders Alert of error type should render action button', () => {
         const wrapper = setup({action: jest.fn(), actionButtonLabel: 'Do something'});
         expect(toJson(wrapper)).toMatchSnapshot();

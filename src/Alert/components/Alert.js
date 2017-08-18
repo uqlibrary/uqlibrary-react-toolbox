@@ -5,9 +5,9 @@ import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
-const Alert = ({title, message, type, outsideLayout, action, actionButtonLabel, allowDismiss, dismissAction}) => {
+const Alert = ({title, message, type, action, actionButtonLabel, allowDismiss, dismissAction}) => {
     return (
-      <div className={outsideLayout ? 'layout-card forAlerts' : ''}>
+      <div className="forAlerts">
           <div className={type + ' alertWrapper'}>
               <div className="columns is-gapless is-multiline is-mobile">
                   <div className="column is-narrow alertIcon">

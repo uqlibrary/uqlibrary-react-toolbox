@@ -32,7 +32,6 @@ var Alert = function Alert(_ref) {
     var title = _ref.title,
         message = _ref.message,
         type = _ref.type,
-        outsideLayout = _ref.outsideLayout,
         action = _ref.action,
         actionButtonLabel = _ref.actionButtonLabel,
         allowDismiss = _ref.allowDismiss,
@@ -40,7 +39,7 @@ var Alert = function Alert(_ref) {
 
     return _react2.default.createElement(
         'div',
-        { className: outsideLayout ? 'layout-card forAlerts' : '' },
+        { className: 'forAlerts' },
         _react2.default.createElement(
             'div',
             { className: type + ' alertWrapper' },
