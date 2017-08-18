@@ -2,6 +2,11 @@
 
 exports[`FileUploader renders correctly without any setup 1`] = `
 <FileUploader
+  actions={
+    Object {
+      "clearFileUpload": [Function],
+    }
+  }
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -12,18 +17,6 @@ exports[`FileUploader renders correctly without any setup 1`] = `
   locale={
     Object {
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
-      "sizeExponent": Object {
-        "B": 0,
-        "G": 3,
-        "K": 1,
-        "M": 2,
-      },
-      "sizeUnitText": Object {
-        "B": "B",
-        "G": "GB",
-        "K": "KB",
-        "M": "MB",
-      },
     }
   }
   overallProgress={0}
@@ -187,6 +180,11 @@ exports[`FileUploader renders correctly without any setup 1`] = `
 
 exports[`FileUploader renders row for uploaded files 1`] = `
 <FileUploader
+  actions={
+    Object {
+      "clearFileUpload": [Function],
+    }
+  }
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -197,18 +195,6 @@ exports[`FileUploader renders row for uploaded files 1`] = `
   locale={
     Object {
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
-      "sizeExponent": Object {
-        "B": 0,
-        "G": 3,
-        "K": 1,
-        "M": 2,
-      },
-      "sizeUnitText": Object {
-        "B": "B",
-        "G": "GB",
-        "K": "KB",
-        "M": "MB",
-      },
     }
   }
   overallProgress={0}
@@ -372,6 +358,11 @@ exports[`FileUploader renders row for uploaded files 1`] = `
 
 exports[`FileUploader renders row for uploaded files 2`] = `
 <FileUploader
+  actions={
+    Object {
+      "clearFileUpload": [Function],
+    }
+  }
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -382,18 +373,6 @@ exports[`FileUploader renders row for uploaded files 2`] = `
   locale={
     Object {
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
-      "sizeExponent": Object {
-        "B": 0,
-        "G": 3,
-        "K": 1,
-        "M": 2,
-      },
-      "sizeUnitText": Object {
-        "B": "B",
-        "G": "GB",
-        "K": "KB",
-        "M": "MB",
-      },
     }
   }
   overallProgress={0}
@@ -853,6 +832,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
       </div>
     </FileUploadRowHeader>
     <Connect(FileUploadRow)
+      fileSizeUnit="G"
       index={0}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
@@ -866,6 +846,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
     >
       <FileUploadRow
         dispatch={[Function]}
+        fileSizeUnit="G"
         index={0}
         locale={
           Object {
@@ -970,6 +951,11 @@ exports[`FileUploader renders row for uploaded files 2`] = `
               className="filename-label"
             >
               a.txt
+            </span>
+            <span
+              className="filesize-label"
+            >
+              0GB
             </span>
           </div>
           <div
@@ -1162,6 +1148,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
       </FileUploadRow>
     </Connect(FileUploadRow)>
     <Connect(FileUploadRow)
+      fileSizeUnit="G"
       index={1}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
@@ -1175,6 +1162,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
     >
       <FileUploadRow
         dispatch={[Function]}
+        fileSizeUnit="G"
         index={1}
         locale={
           Object {
@@ -1279,6 +1267,11 @@ exports[`FileUploader renders row for uploaded files 2`] = `
               className="filename-label"
             >
               b.txt
+            </span>
+            <span
+              className="filesize-label"
+            >
+              0GB
             </span>
           </div>
           <div
@@ -1476,6 +1469,11 @@ exports[`FileUploader renders row for uploaded files 2`] = `
 
 exports[`FileUploader renders row for uploaded files 3`] = `
 <FileUploader
+  actions={
+    Object {
+      "clearFileUpload": [Function],
+    }
+  }
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -1486,18 +1484,6 @@ exports[`FileUploader renders row for uploaded files 3`] = `
   locale={
     Object {
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
-      "sizeExponent": Object {
-        "B": 0,
-        "G": 3,
-        "K": 1,
-        "M": 2,
-      },
-      "sizeUnitText": Object {
-        "B": "B",
-        "G": "GB",
-        "K": "KB",
-        "M": "MB",
-      },
     }
   }
   overallProgress={0}
@@ -1953,6 +1939,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
       </div>
     </FileUploadRowHeader>
     <Connect(FileUploadRow)
+      fileSizeUnit="G"
       index={0}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
@@ -1966,6 +1953,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
     >
       <FileUploadRow
         dispatch={[Function]}
+        fileSizeUnit="G"
         index={0}
         locale={
           Object {
@@ -2070,6 +2058,11 @@ exports[`FileUploader renders row for uploaded files 3`] = `
               className="filename-label"
             >
               b.txt
+            </span>
+            <span
+              className="filesize-label"
+            >
+              0GB
             </span>
           </div>
           <div
@@ -2267,6 +2260,11 @@ exports[`FileUploader renders row for uploaded files 3`] = `
 
 exports[`FileUploader renders row for uploaded files 4`] = `
 <FileUploader
+  actions={
+    Object {
+      "clearFileUpload": [Function],
+    }
+  }
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -2277,18 +2275,6 @@ exports[`FileUploader renders row for uploaded files 4`] = `
   locale={
     Object {
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
-      "sizeExponent": Object {
-        "B": 0,
-        "G": 3,
-        "K": 1,
-        "M": 2,
-      },
-      "sizeUnitText": Object {
-        "B": "B",
-        "G": "GB",
-        "K": "KB",
-        "M": "MB",
-      },
     }
   }
   overallProgress={0}
@@ -2452,6 +2438,11 @@ exports[`FileUploader renders row for uploaded files 4`] = `
 
 exports[`FileUploader renders row for uploaded files 5`] = `
 <FileUploader
+  actions={
+    Object {
+      "clearFileUpload": [Function],
+    }
+  }
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -2462,18 +2453,6 @@ exports[`FileUploader renders row for uploaded files 5`] = `
   locale={
     Object {
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
-      "sizeExponent": Object {
-        "B": 0,
-        "G": 3,
-        "K": 1,
-        "M": 2,
-      },
-      "sizeUnitText": Object {
-        "B": "B",
-        "G": "GB",
-        "K": "KB",
-        "M": "MB",
-      },
     }
   }
   overallProgress={0}
@@ -2637,6 +2616,11 @@ exports[`FileUploader renders row for uploaded files 5`] = `
 
 exports[`FileUploader renders row for uploaded files 6`] = `
 <FileUploader
+  actions={
+    Object {
+      "clearFileUpload": [Function],
+    }
+  }
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -2647,18 +2631,6 @@ exports[`FileUploader renders row for uploaded files 6`] = `
   locale={
     Object {
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
-      "sizeExponent": Object {
-        "B": 0,
-        "G": 3,
-        "K": 1,
-        "M": 2,
-      },
-      "sizeUnitText": Object {
-        "B": "B",
-        "G": "GB",
-        "K": "KB",
-        "M": "MB",
-      },
     }
   }
   overallProgress={0}
@@ -3128,6 +3100,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
       </div>
     </FileUploadRowHeader>
     <Connect(FileUploadRow)
+      fileSizeUnit="G"
       index={0}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
@@ -3141,6 +3114,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
     >
       <FileUploadRow
         dispatch={[Function]}
+        fileSizeUnit="G"
         index={0}
         locale={
           Object {
@@ -3246,25 +3220,32 @@ exports[`FileUploader renders row for uploaded files 6`] = `
             >
               a.txt
             </span>
+            <span
+              className="filesize-label"
+            >
+              0GB
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
           >
             <FileUploadAccessSelector
-              locale={
+              defaultConfig={
                 Object {
                   "accessIds": Array [
-                    Object {
-                      "id": 8,
-                      "value": "Closed Access",
-                    },
-                    Object {
-                      "id": 9,
-                      "value": "Open Access",
-                    },
+                    8,
+                    9,
                   ],
                   "fieldName": "accessDate",
                   "fileMetaKey": "access_condition_id",
+                }
+              }
+              locale={
+                Object {
+                  "accessSelectOptionsText": Object {
+                    "8": "Closed Access",
+                    "9": "Open Access",
+                  },
                   "initialValue": "Select access conditions",
                 }
               }
@@ -4813,6 +4794,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
       </FileUploadRow>
     </Connect(FileUploadRow)>
     <Connect(FileUploadRow)
+      fileSizeUnit="G"
       index={1}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
@@ -4826,6 +4808,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
     >
       <FileUploadRow
         dispatch={[Function]}
+        fileSizeUnit="G"
         index={1}
         locale={
           Object {
@@ -4931,25 +4914,32 @@ exports[`FileUploader renders row for uploaded files 6`] = `
             >
               b.txt
             </span>
+            <span
+              className="filesize-label"
+            >
+              0GB
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
           >
             <FileUploadAccessSelector
-              locale={
+              defaultConfig={
                 Object {
                   "accessIds": Array [
-                    Object {
-                      "id": 8,
-                      "value": "Closed Access",
-                    },
-                    Object {
-                      "id": 9,
-                      "value": "Open Access",
-                    },
+                    8,
+                    9,
                   ],
                   "fieldName": "accessDate",
                   "fileMetaKey": "access_condition_id",
+                }
+              }
+              locale={
+                Object {
+                  "accessSelectOptionsText": Object {
+                    "8": "Closed Access",
+                    "9": "Open Access",
+                  },
                   "initialValue": "Select access conditions",
                 }
               }
@@ -6503,6 +6493,11 @@ exports[`FileUploader renders row for uploaded files 6`] = `
 
 exports[`FileUploader renders row for uploaded files 7`] = `
 <FileUploader
+  actions={
+    Object {
+      "clearFileUpload": [Function],
+    }
+  }
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -6513,18 +6508,6 @@ exports[`FileUploader renders row for uploaded files 7`] = `
   locale={
     Object {
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
-      "sizeExponent": Object {
-        "B": 0,
-        "G": 3,
-        "K": 1,
-        "M": 2,
-      },
-      "sizeUnitText": Object {
-        "B": "B",
-        "G": "GB",
-        "K": "KB",
-        "M": "MB",
-      },
     }
   }
   overallProgress={0}
@@ -6995,6 +6978,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
       </div>
     </FileUploadRowHeader>
     <Connect(FileUploadRow)
+      fileSizeUnit="G"
       index={0}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
@@ -7009,6 +6993,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
     >
       <FileUploadRow
         dispatch={[Function]}
+        fileSizeUnit="G"
         index={0}
         locale={
           Object {
@@ -7115,25 +7100,32 @@ exports[`FileUploader renders row for uploaded files 7`] = `
             >
               a.txt
             </span>
+            <span
+              className="filesize-label"
+            >
+              0GB
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
           >
             <FileUploadAccessSelector
-              locale={
+              defaultConfig={
                 Object {
                   "accessIds": Array [
-                    Object {
-                      "id": 8,
-                      "value": "Closed Access",
-                    },
-                    Object {
-                      "id": 9,
-                      "value": "Open Access",
-                    },
+                    8,
+                    9,
                   ],
                   "fieldName": "accessDate",
                   "fileMetaKey": "access_condition_id",
+                }
+              }
+              locale={
+                Object {
+                  "accessSelectOptionsText": Object {
+                    "8": "Closed Access",
+                    "9": "Open Access",
+                  },
                   "initialValue": "Select access conditions",
                 }
               }
@@ -8682,6 +8674,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
       </FileUploadRow>
     </Connect(FileUploadRow)>
     <Connect(FileUploadRow)
+      fileSizeUnit="G"
       index={1}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
@@ -8695,6 +8688,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
     >
       <FileUploadRow
         dispatch={[Function]}
+        fileSizeUnit="G"
         index={1}
         locale={
           Object {
@@ -8800,25 +8794,32 @@ exports[`FileUploader renders row for uploaded files 7`] = `
             >
               b.txt
             </span>
+            <span
+              className="filesize-label"
+            >
+              0GB
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
           >
             <FileUploadAccessSelector
-              locale={
+              defaultConfig={
                 Object {
                   "accessIds": Array [
-                    Object {
-                      "id": 8,
-                      "value": "Closed Access",
-                    },
-                    Object {
-                      "id": 9,
-                      "value": "Open Access",
-                    },
+                    8,
+                    9,
                   ],
                   "fieldName": "accessDate",
                   "fileMetaKey": "access_condition_id",
+                }
+              }
+              locale={
+                Object {
+                  "accessSelectOptionsText": Object {
+                    "8": "Closed Access",
+                    "9": "Open Access",
+                  },
                   "initialValue": "Select access conditions",
                 }
               }
@@ -10372,6 +10373,11 @@ exports[`FileUploader renders row for uploaded files 7`] = `
 
 exports[`FileUploader renders row for uploaded files 8`] = `
 <FileUploader
+  actions={
+    Object {
+      "clearFileUpload": [Function],
+    }
+  }
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -10382,18 +10388,6 @@ exports[`FileUploader renders row for uploaded files 8`] = `
   locale={
     Object {
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
-      "sizeExponent": Object {
-        "B": 0,
-        "G": 3,
-        "K": 1,
-        "M": 2,
-      },
-      "sizeUnitText": Object {
-        "B": "B",
-        "G": "GB",
-        "K": "KB",
-        "M": "MB",
-      },
     }
   }
   overallProgress={0}
@@ -10864,6 +10858,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
       </div>
     </FileUploadRowHeader>
     <Connect(FileUploadRow)
+      fileSizeUnit="G"
       index={0}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
@@ -10878,6 +10873,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
     >
       <FileUploadRow
         dispatch={[Function]}
+        fileSizeUnit="G"
         index={0}
         locale={
           Object {
@@ -10984,25 +10980,32 @@ exports[`FileUploader renders row for uploaded files 8`] = `
             >
               a.txt
             </span>
+            <span
+              className="filesize-label"
+            >
+              0GB
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
           >
             <FileUploadAccessSelector
-              locale={
+              defaultConfig={
                 Object {
                   "accessIds": Array [
-                    Object {
-                      "id": 8,
-                      "value": "Closed Access",
-                    },
-                    Object {
-                      "id": 9,
-                      "value": "Open Access",
-                    },
+                    8,
+                    9,
                   ],
                   "fieldName": "accessDate",
                   "fileMetaKey": "access_condition_id",
+                }
+              }
+              locale={
+                Object {
+                  "accessSelectOptionsText": Object {
+                    "8": "Closed Access",
+                    "9": "Open Access",
+                  },
                   "initialValue": "Select access conditions",
                 }
               }
@@ -12551,6 +12554,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
       </FileUploadRow>
     </Connect(FileUploadRow)>
     <Connect(FileUploadRow)
+      fileSizeUnit="G"
       index={1}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
@@ -12564,6 +12568,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
     >
       <FileUploadRow
         dispatch={[Function]}
+        fileSizeUnit="G"
         index={1}
         locale={
           Object {
@@ -12669,25 +12674,32 @@ exports[`FileUploader renders row for uploaded files 8`] = `
             >
               b.txt
             </span>
+            <span
+              className="filesize-label"
+            >
+              0GB
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
           >
             <FileUploadAccessSelector
-              locale={
+              defaultConfig={
                 Object {
                   "accessIds": Array [
-                    Object {
-                      "id": 8,
-                      "value": "Closed Access",
-                    },
-                    Object {
-                      "id": 9,
-                      "value": "Open Access",
-                    },
+                    8,
+                    9,
                   ],
                   "fieldName": "accessDate",
                   "fileMetaKey": "access_condition_id",
+                }
+              }
+              locale={
+                Object {
+                  "accessSelectOptionsText": Object {
+                    "8": "Closed Access",
+                    "9": "Open Access",
+                  },
                   "initialValue": "Select access conditions",
                 }
               }
@@ -14241,6 +14253,11 @@ exports[`FileUploader renders row for uploaded files 8`] = `
 
 exports[`FileUploader renders row for uploaded files 9`] = `
 <FileUploader
+  actions={
+    Object {
+      "clearFileUpload": [Function],
+    }
+  }
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -14251,18 +14268,6 @@ exports[`FileUploader renders row for uploaded files 9`] = `
   locale={
     Object {
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
-      "sizeExponent": Object {
-        "B": 0,
-        "G": 3,
-        "K": 1,
-        "M": 2,
-      },
-      "sizeUnitText": Object {
-        "B": "B",
-        "G": "GB",
-        "K": "KB",
-        "M": "MB",
-      },
     }
   }
   overallProgress={0}
@@ -14734,6 +14739,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
       </div>
     </FileUploadRowHeader>
     <Connect(FileUploadRow)
+      fileSizeUnit="G"
       index={0}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
@@ -14749,6 +14755,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
     >
       <FileUploadRow
         dispatch={[Function]}
+        fileSizeUnit="G"
         index={0}
         locale={
           Object {
@@ -14856,25 +14863,32 @@ exports[`FileUploader renders row for uploaded files 9`] = `
             >
               a.txt
             </span>
+            <span
+              className="filesize-label"
+            >
+              0GB
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
           >
             <FileUploadAccessSelector
-              locale={
+              defaultConfig={
                 Object {
                   "accessIds": Array [
-                    Object {
-                      "id": 8,
-                      "value": "Closed Access",
-                    },
-                    Object {
-                      "id": 9,
-                      "value": "Open Access",
-                    },
+                    8,
+                    9,
                   ],
                   "fieldName": "accessDate",
                   "fileMetaKey": "access_condition_id",
+                }
+              }
+              locale={
+                Object {
+                  "accessSelectOptionsText": Object {
+                    "8": "Closed Access",
+                    "9": "Open Access",
+                  },
                   "initialValue": "Select access conditions",
                 }
               }
@@ -16423,6 +16437,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
       </FileUploadRow>
     </Connect(FileUploadRow)>
     <Connect(FileUploadRow)
+      fileSizeUnit="G"
       index={1}
       onAttributeChanged={[Function]}
       onDelete={[Function]}
@@ -16436,6 +16451,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
     >
       <FileUploadRow
         dispatch={[Function]}
+        fileSizeUnit="G"
         index={1}
         locale={
           Object {
@@ -16541,25 +16557,32 @@ exports[`FileUploader renders row for uploaded files 9`] = `
             >
               b.txt
             </span>
+            <span
+              className="filesize-label"
+            >
+              0GB
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
           >
             <FileUploadAccessSelector
-              locale={
+              defaultConfig={
                 Object {
                   "accessIds": Array [
-                    Object {
-                      "id": 8,
-                      "value": "Closed Access",
-                    },
-                    Object {
-                      "id": 9,
-                      "value": "Open Access",
-                    },
+                    8,
+                    9,
                   ],
                   "fieldName": "accessDate",
                   "fileMetaKey": "access_condition_id",
+                }
+              }
+              locale={
+                Object {
+                  "accessSelectOptionsText": Object {
+                    "8": "Closed Access",
+                    "9": "Open Access",
+                  },
                   "initialValue": "Select access conditions",
                 }
               }

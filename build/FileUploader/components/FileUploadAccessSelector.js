@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.CLOSED_ACCESS_ID = exports.OPEN_ACCESS_ID = undefined;
 
+var _accessSelectOptionsT;
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -25,6 +27,8 @@ var _SelectField2 = _interopRequireDefault(_SelectField);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -44,7 +48,7 @@ var FileUploadAccessSelector = function (_Component) {
 
         _this._onChange = function (event, index, value) {
             _this.setState({ value: value });
-            _this.props.onAccessChanged({ key: [_this.props.locale.fileMetaKey], value: value });
+            _this.props.onAccessChanged({ key: [_this.props.defaultConfig.fileMetaKey], value: value });
         };
 
         _this.state = {
@@ -58,12 +62,14 @@ var FileUploadAccessSelector = function (_Component) {
         value: function render() {
             var _props$locale = this.props.locale,
                 initialValue = _props$locale.initialValue,
-                fieldName = _props$locale.fieldName,
-                accessIds = _props$locale.accessIds;
+                accessSelectOptionsText = _props$locale.accessSelectOptionsText;
+            var _props$defaultConfig = this.props.defaultConfig,
+                fieldName = _props$defaultConfig.fieldName,
+                accessIds = _props$defaultConfig.accessIds;
 
 
             var accessOptions = accessIds.map(function (access, index) {
-                return _react2.default.createElement(_MenuItem2.default, { value: access.id, primaryText: access.value, key: index });
+                return _react2.default.createElement(_MenuItem2.default, { value: access, primaryText: accessSelectOptionsText[access], key: index });
             });
 
             return _react2.default.createElement(
@@ -88,20 +94,18 @@ var FileUploadAccessSelector = function (_Component) {
 
 FileUploadAccessSelector.propTypes = {
     onAccessChanged: _propTypes2.default.func,
-    locale: _propTypes2.default.object
+    locale: _propTypes2.default.object,
+    defaultConfig: _propTypes2.default.object
 };
 FileUploadAccessSelector.defaultProps = {
     locale: {
-        fileMetaKey: 'access_condition_id',
         initialValue: 'Select access conditions',
+        accessSelectOptionsText: (_accessSelectOptionsT = {}, _defineProperty(_accessSelectOptionsT, OPEN_ACCESS_ID, 'Open Access'), _defineProperty(_accessSelectOptionsT, CLOSED_ACCESS_ID, 'Closed Access'), _accessSelectOptionsT)
+    },
+    defaultConfig: {
+        fileMetaKey: 'access_condition_id',
         fieldName: 'accessDate',
-        accessIds: [{
-            id: CLOSED_ACCESS_ID,
-            value: 'Closed Access'
-        }, {
-            id: OPEN_ACCESS_ID,
-            value: 'Open Access'
-        }]
+        accessIds: [CLOSED_ACCESS_ID, OPEN_ACCESS_ID]
     }
 };
 exports.default = FileUploadAccessSelector;

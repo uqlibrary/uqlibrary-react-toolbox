@@ -9,23 +9,24 @@ export const CLOSED_ACCESS_ID = 8;
 export default class FileUploadAccessSelector extends Component {
     static propTypes = {
         onAccessChanged: PropTypes.func,
-        locale: PropTypes.object
+        locale: PropTypes.object,
+        defaultConfig: PropTypes.object
     };
 
     static defaultProps = {
         locale: {
-            fileMetaKey: 'access_condition_id',
             initialValue: 'Select access conditions',
+            accessSelectOptionsText: {
+                [OPEN_ACCESS_ID]: 'Open Access',
+                [CLOSED_ACCESS_ID]: 'Closed Access'
+            }
+        },
+        defaultConfig: {
+            fileMetaKey: 'access_condition_id',
             fieldName: 'accessDate',
             accessIds: [
-                {
-                    id: CLOSED_ACCESS_ID,
-                    value: 'Closed Access'
-                },
-                {
-                    id: OPEN_ACCESS_ID,
-                    value: 'Open Access'
-                }
+                CLOSED_ACCESS_ID,
+                OPEN_ACCESS_ID
             ]
         }
     };
@@ -39,13 +40,14 @@ export default class FileUploadAccessSelector extends Component {
 
     _onChange = (event, index, value) => {
         this.setState({ value: value });
-        this.props.onAccessChanged({ key: [this.props.locale.fileMetaKey], value: value });
+        this.props.onAccessChanged({ key: [this.props.defaultConfig.fileMetaKey], value: value });
     };
 
     render() {
-        const {initialValue, fieldName, accessIds} = this.props.locale;
+        const {initialValue, accessSelectOptionsText} = this.props.locale;
+        const {fieldName, accessIds} = this.props.defaultConfig;
 
-        const accessOptions = accessIds.map((access, index) => (<MenuItem value={ access.id } primaryText={ access.value } key={ index } />));
+        const accessOptions = accessIds.map((access, index) => (<MenuItem value={ access } primaryText={ accessSelectOptionsText[access] } key={ index } />));
 
         return (
             <SelectField

@@ -37,7 +37,7 @@ var FileUploadEmbargoDate = function (_Component) {
         var _this = _possibleConstructorReturn(this, (FileUploadEmbargoDate.__proto__ || Object.getPrototypeOf(FileUploadEmbargoDate)).call(this, props));
 
         _this._onChange = function (event, value) {
-            _this.props.onDateChanged({ key: [_this.props.locale.fileMetaKey], value: moment(value).format('DD/MM/YYYY') });
+            _this.props.onDateChanged({ key: [_this.props.defaultConfig.fileMetaKey], value: moment(value).format('DD/MM/YYYY') });
         };
 
         return _this;
@@ -46,17 +46,18 @@ var FileUploadEmbargoDate = function (_Component) {
     _createClass(FileUploadEmbargoDate, [{
         key: 'render',
         value: function render() {
-            var _props$locale = this.props.locale,
-                dateFormat = _props$locale.dateFormat,
-                currentDateString = _props$locale.currentDateString,
-                fieldName = _props$locale.fieldName;
+            var datePickerLocale = this.props.locale.datePickerLocale;
+            var _props$defaultConfig = this.props.defaultConfig,
+                dateFormat = _props$defaultConfig.dateFormat,
+                currentDateString = _props$defaultConfig.currentDateString,
+                fieldName = _props$defaultConfig.fieldName;
 
             return _react2.default.createElement(_DatePicker2.default, {
                 className: 'datepicker',
                 DateTimeFormat: dateFormat,
                 firstDayOfWeek: 0,
                 hintText: currentDateString,
-                locale: 'en-AU',
+                locale: datePickerLocale,
                 name: fieldName,
                 onChange: this._onChange
             });
@@ -68,10 +69,14 @@ var FileUploadEmbargoDate = function (_Component) {
 
 FileUploadEmbargoDate.propTypes = {
     locale: _propTypes2.default.object,
+    defaultConfig: _propTypes2.default.object,
     onDateChanged: _propTypes2.default.func
 };
 FileUploadEmbargoDate.defaultProps = {
     locale: {
+        datePickerLocale: 'en-AU'
+    },
+    defaultConfig: {
         fileMetaKey: 'date',
         dateFormat: global.Intl.DateTimeFormat,
         currentDateString: moment().format('DD/MM/YYYY'),

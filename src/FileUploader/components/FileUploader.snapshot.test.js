@@ -11,7 +11,14 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import PropTypes from 'prop-types';
 
 function setup(props) {
-    return mount(<FileUploader {...props} />, {
+    let defaultProps = {
+        ...props,
+        actions: {
+            clearFileUpload: jest.fn()
+        }
+    };
+
+    return mount(<FileUploader {...defaultProps} />, {
         context: {
             muiTheme: getMuiTheme(),
             store: createStore(fileUploadReducer, Immutable.Map({fileUpload: fileUploadReducer}))

@@ -1,11 +1,29 @@
 import React, {PureComponent} from 'react';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import { clearFileUpload } from '../actions';
 
 import LinearProgress from 'material-ui/LinearProgress';
 import FileUploadDropzone from './FileUploadDropzone';
 import FileUploadRowHeader from './FileUploadRowHeader';
 import FileUploadRow from './FileUploadRow';
+
+export const sizeExponent = {
+    ['B']: 0,
+    ['K']: 1,
+    ['M']: 2,
+    ['G']: 3
+};
+
+export const sizeUnitText = {
+    ['B']: 'B',
+    ['K']: 'KB',
+    ['M']: 'MB',
+    ['G']: 'GB'
+};
+
+export const sizeBase = 1000;
 
 export class FileUploader extends PureComponent {
 
@@ -14,25 +32,14 @@ export class FileUploader extends PureComponent {
         locale: PropTypes.object,
         defaultConfig: PropTypes.object,
         overallProgress: PropTypes.number,
-        requireFileAccess: PropTypes.bool
+        requireFileAccess: PropTypes.bool,
+        actions: PropTypes.func
     };
 
     static defaultProps = {
         overallProgress: 0,
         locale: {
             instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
-            sizeExponent: {
-                ['B']: 0,
-                ['K']: 1,
-                ['M']: 2,
-                ['G']: 3
-            },
-            sizeUnitText: {
-                ['B']: 'B',
-                ['K']: 'KB',
-                ['M']: 'MB',
-                ['G']: 'GB'
-            }
         },
         defaultConfig: {
             fileUploadLimit: 10,
@@ -48,6 +55,10 @@ export class FileUploader extends PureComponent {
             uploadedFiles: [],
             clearErrors: false
         };
+    }
+
+    componentDidMount() {
+        this.props.actions.clearFileUpload();
     }
 
     componentWillUpdate(nextProps, nextState) {
@@ -81,13 +92,12 @@ export class FileUploader extends PureComponent {
     };
 
     _calculateMaxFileSize = () => {
-        const { sizeExponent } = this.props.locale;
         const { maxFileSize, fileSizeUnit } = this.props.defaultConfig;
-        return maxFileSize * Math.pow(1000, sizeExponent[fileSizeUnit] || 0);
+        return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
     };
 
     render() {
-        const { instructions, sizeUnitText } = this.props.locale;
+        const { instructions } = this.props.locale;
         const { maxFileSize, fileSizeUnit, fileUploadLimit } = this.props.defaultConfig;
         const { requireFileAccess } = this.props;
 
@@ -101,6 +111,7 @@ export class FileUploader extends PureComponent {
                 key={ file.name }
                 index={ index }
                 uploadedFile={ file }
+                fileSizeUnit={ fileSizeUnit }
                 onDelete={ this.deleteFile }
                 onAttributeChanged={ this.replaceFile }
                 requireFileAccess={ requireFileAccess } />);
@@ -143,4 +154,10 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(FileUploader);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions: { ...bindActionCreators(clearFileUpload, dispatch) }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FileUploader);

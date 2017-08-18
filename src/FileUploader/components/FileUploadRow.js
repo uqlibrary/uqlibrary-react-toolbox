@@ -9,6 +9,7 @@ import FileUploadAccessSelector from './FileUploadAccessSelector';
 import FileUploadEmbargoDate from './FileUploadEmbargoDate';
 
 import {OPEN_ACCESS_ID} from './FileUploadAccessSelector';
+import { sizeUnitText, sizeBase } from './FileUploader';
 
 class FileUploadRow extends Component {
     static propTypes = {
@@ -18,7 +19,8 @@ class FileUploadRow extends Component {
         onAttributeChanged: PropTypes.func.isRequired,
         locale: PropTypes.object,
         progress: PropTypes.number,
-        requireFileAccess: PropTypes.bool.isRequired
+        requireFileAccess: PropTypes.bool.isRequired,
+        fileSizeUnit: PropTypes.string
     };
 
     static defaultProps = {
@@ -59,6 +61,11 @@ class FileUploadRow extends Component {
         return accessConditionId === OPEN_ACCESS_ID;
     };
 
+    _calculateFilesizeToDisplay = (size) => {
+        const fileSize = Math.round(size / (sizeBase * Math.log10(size)));
+        return `${fileSize}${sizeUnitText[this.props.fileSizeUnit]}`;
+    };
+
     render() {
         const { deleteRecordConfirmation } = this.props.locale;
         const { access_condition_id } = this.state;
@@ -69,7 +76,7 @@ class FileUploadRow extends Component {
                     onAction={ this._deleteFile }
                     locale={ deleteRecordConfirmation } />
                 <div className="column datalist-text filename">
-                    <span className="filename-label">{ this.props.uploadedFile.name }</span>
+                    <span className="filename-label">{ this.props.uploadedFile.name }</span><span className="filesize-label">{ this._calculateFilesizeToDisplay(this.props.uploadedFile.size ) }</span>
                 </div>
                 {
                     this.props.requireFileAccess &&

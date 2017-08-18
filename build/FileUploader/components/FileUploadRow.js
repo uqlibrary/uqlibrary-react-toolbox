@@ -38,6 +38,8 @@ var _FileUploadEmbargoDate = require('./FileUploadEmbargoDate');
 
 var _FileUploadEmbargoDate2 = _interopRequireDefault(_FileUploadEmbargoDate);
 
+var _FileUploader = require('./FileUploader');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -74,6 +76,11 @@ var FileUploadRow = function (_Component) {
             return accessConditionId === _FileUploadAccessSelector.OPEN_ACCESS_ID;
         };
 
+        _this._calculateFilesizeToDisplay = function (size) {
+            var fileSize = Math.round(size / (_FileUploader.sizeBase * Math.log10(size)));
+            return '' + fileSize + _FileUploader.sizeUnitText[_this.props.fileSizeUnit];
+        };
+
         _this.state = {
             access_condition_id: null,
             date: null
@@ -105,6 +112,11 @@ var FileUploadRow = function (_Component) {
                         'span',
                         { className: 'filename-label' },
                         this.props.uploadedFile.name
+                    ),
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'filesize-label' },
+                        this._calculateFilesizeToDisplay(this.props.uploadedFile.size)
                     )
                 ),
                 this.props.requireFileAccess && _react2.default.createElement(
@@ -169,7 +181,8 @@ FileUploadRow.propTypes = {
     onAttributeChanged: _propTypes2.default.func.isRequired,
     locale: _propTypes2.default.object,
     progress: _propTypes2.default.number,
-    requireFileAccess: _propTypes2.default.bool.isRequired
+    requireFileAccess: _propTypes2.default.bool.isRequired,
+    fileSizeUnit: _propTypes2.default.string
 };
 FileUploadRow.defaultProps = {
     locale: {
