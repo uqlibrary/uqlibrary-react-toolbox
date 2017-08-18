@@ -56,10 +56,6 @@ export class FileUploader extends PureComponent {
         };
     }
 
-    componentDidMount() {
-        this.props.clearFileUpload();
-    }
-
     componentWillUpdate(nextProps, nextState) {
         if (this.props.onChange)  this.props.onChange(nextState.uploadedFiles);
     }

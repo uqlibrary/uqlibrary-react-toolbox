@@ -103,11 +103,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
     }
 
     _createClass(FileUploader, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this.props.clearFileUpload();
-        }
-    }, {
         key: 'componentWillUpdate',
         value: function componentWillUpdate(nextProps, nextState) {
             if (this.props.onChange) this.props.onChange(nextState.uploadedFiles);
