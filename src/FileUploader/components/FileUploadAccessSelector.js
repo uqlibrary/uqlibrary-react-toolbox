@@ -41,7 +41,7 @@ export default class FileUploadAccessSelector extends Component {
 
     _onChange = (event, index, value) => {
         this.setState({ value: value });
-        this.props.onAccessChanged({ key: [this.props.defaultConfig.fileMetaKey], value: value });
+        this.props.onAccessChanged({ key: this.props.defaultConfig.fileMetaKey, value: value });
     };
 
     render() {

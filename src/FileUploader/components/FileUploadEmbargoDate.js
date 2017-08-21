@@ -34,7 +34,7 @@ export default class FileUploadEmbargoDate extends Component {
     _onChange = (event, value) => {
         const date = moment(value).format('DD/MM/YYYY');
         this.setState({ value: date });
-        this.props.onDateChanged({ key: [this.props.defaultConfig.fileMetaKey], value: date });
+        this.props.onDateChanged({ key: this.props.defaultConfig.fileMetaKey, value: date });
     };
 
     render() {

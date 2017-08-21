@@ -48,7 +48,7 @@ var FileUploadAccessSelector = function (_Component) {
 
         _this._onChange = function (event, index, value) {
             _this.setState({ value: value });
-            _this.props.onAccessChanged({ key: [_this.props.defaultConfig.fileMetaKey], value: value });
+            _this.props.onAccessChanged({ key: _this.props.defaultConfig.fileMetaKey, value: value });
         };
 
         _this.state = {
