@@ -52,6 +52,10 @@ class FileUploadRow extends Component {
     };
 
     _updateFileMetadata = (update) => {
+        if (update.key === 'access_condition_id' && !this._isOpenAccess(update.value) && this.props.uploadedFile.hasOwnProperty('date')) {
+            delete this.props.uploadedFile.date;
+        }
+
         this.setState({ [update.key]: update.value });
         this.props.uploadedFile[update.key] = update.value;
         if (this.props.onAttributeChanged) this.props.onAttributeChanged(this.props.uploadedFile, this.props.index);
@@ -63,7 +67,7 @@ class FileUploadRow extends Component {
 
     _calculateFilesizeToDisplay = (size) => {
         const exponent = Math.floor(Math.log(size) / Math.log(sizeBase));
-        return `${(size / Math.pow(sizeBase, exponent)).toFixed(1)}${Object.values(sizeUnitText)[exponent]}`;
+        return `${(size / Math.pow(sizeBase, exponent)).toFixed(1)}${Object.keys(sizeUnitText).map(key => (sizeUnitText[key]))[exponent]}`;
     };
 
     render() {

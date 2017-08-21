@@ -69,7 +69,7 @@ describe('FileUploader', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    it('renders row for uploaded files', () => {
+    it('renders row for uploaded files with access required', () => {
         const wrapper = setup({ requireFileAccess: true });
 
         let tree = toJson(wrapper);

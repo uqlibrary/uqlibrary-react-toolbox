@@ -67,6 +67,10 @@ var FileUploadRow = function (_Component) {
         };
 
         _this._updateFileMetadata = function (update) {
+            if (update.key === 'access_condition_id' && !_this._isOpenAccess(update.value) && _this.props.uploadedFile.hasOwnProperty('date')) {
+                delete _this.props.uploadedFile.date;
+            }
+
             _this.setState(_defineProperty({}, update.key, update.value));
             _this.props.uploadedFile[update.key] = update.value;
             if (_this.props.onAttributeChanged) _this.props.onAttributeChanged(_this.props.uploadedFile, _this.props.index);
@@ -77,8 +81,10 @@ var FileUploadRow = function (_Component) {
         };
 
         _this._calculateFilesizeToDisplay = function (size) {
-            var fileSize = Math.round(size / (_FileUploader.sizeBase * Math.log10(size)));
-            return '' + fileSize + _FileUploader.sizeUnitText[_this.props.fileSizeUnit];
+            var exponent = Math.floor(Math.log(size) / Math.log(_FileUploader.sizeBase));
+            return '' + (size / Math.pow(_FileUploader.sizeBase, exponent)).toFixed(1) + Object.keys(_FileUploader.sizeUnitText).map(function (key) {
+                return _FileUploader.sizeUnitText[key];
+            })[exponent];
         };
 
         _this.state = {
@@ -114,7 +120,7 @@ var FileUploadRow = function (_Component) {
                         this.props.uploadedFile.name
                     ),
                     _react2.default.createElement(
-                        'span',
+                        'small',
                         { className: 'filesize-label' },
                         this._calculateFilesizeToDisplay(this.props.uploadedFile.size)
                     )

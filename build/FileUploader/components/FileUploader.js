@@ -25,6 +25,10 @@ var _LinearProgress = require('material-ui/LinearProgress');
 
 var _LinearProgress2 = _interopRequireDefault(_LinearProgress);
 
+var _Checkbox = require('material-ui/Checkbox');
+
+var _Checkbox2 = _interopRequireDefault(_Checkbox);
+
 var _FileUploadDropzone = require('./FileUploadDropzone');
 
 var _FileUploadDropzone2 = _interopRequireDefault(_FileUploadDropzone);
@@ -36,6 +40,8 @@ var _FileUploadRowHeader2 = _interopRequireDefault(_FileUploadRowHeader);
 var _FileUploadRow = require('./FileUploadRow');
 
 var _FileUploadRow2 = _interopRequireDefault(_FileUploadRow);
+
+var _FileUploadAccessSelector = require('./FileUploadAccessSelector');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -87,6 +93,10 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)), clearErrors: false });
         };
 
+        _this.acceptTermsAndConditions = function (event, value) {
+            _this.setState({ termsAndConditions: value });
+        };
+
         _this._calculateMaxFileSize = function () {
             var _this$props$defaultCo = _this.props.defaultConfig,
                 maxFileSize = _this$props$defaultCo.maxFileSize,
@@ -95,9 +105,49 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
         };
 
+        _this._isOpenAccess = function (file) {
+            return _this._hasAccess(file) && file.access_condition_id === _FileUploadAccessSelector.OPEN_ACCESS_ID;
+        };
+
+        _this._isAnyOpenAccess = function (files) {
+            return files.filter(function (file) {
+                return _this._isOpenAccess(file);
+            }).length > 0;
+        };
+
+        _this._hasAccess = function (file) {
+            return file.hasOwnProperty('access_condition_id');
+        };
+
+        _this._hasEmbargoDate = function (file) {
+            return file.hasOwnProperty('date') && (file.date !== null || file.date !== undefined);
+        };
+
+        _this._isFileUploadValid = function (_ref) {
+            var uploadedFiles = _ref.uploadedFiles,
+                termsAndConditions = _ref.termsAndConditions;
+
+            var isValid = true;
+
+            if (_this.props.requireFileAccess) {
+                if (uploadedFiles.filter(function (file) {
+                    return !_this._hasAccess(file);
+                }).length > 0) isValid = false;
+
+                if (uploadedFiles.filter(function (file) {
+                    return _this._isOpenAccess(file);
+                }).filter(function (file) {
+                    return !(_this._hasEmbargoDate(file) && termsAndConditions);
+                }).length > 0) isValid = false;
+            }
+
+            return isValid;
+        };
+
         _this.state = {
             uploadedFiles: [],
-            clearErrors: false
+            clearErrors: false,
+            termsAndConditions: false
         };
         return _this;
     }
@@ -105,7 +155,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
     _createClass(FileUploader, [{
         key: 'componentWillUpdate',
         value: function componentWillUpdate(nextProps, nextState) {
-            if (this.props.onChange) this.props.onChange(nextState.uploadedFiles);
+            if (this.props.onChange) this.props.onChange({ queue: nextState.uploadedFiles, isValid: this._isFileUploadValid(nextState) });
         }
     }, {
         key: 'componentWillUnmount',
@@ -117,12 +167,20 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         value: function render() {
             var _this2 = this;
 
-            var instructions = this.props.locale.instructions;
+            var _props$locale = this.props.locale,
+                instructions = _props$locale.instructions,
+                accessTermsAndConditions = _props$locale.accessTermsAndConditions;
             var _props$defaultConfig = this.props.defaultConfig,
                 maxFileSize = _props$defaultConfig.maxFileSize,
                 fileSizeUnit = _props$defaultConfig.fileSizeUnit,
                 fileUploadLimit = _props$defaultConfig.fileUploadLimit;
-            var requireFileAccess = this.props.requireFileAccess;
+            var _props = this.props,
+                requireFileAccess = _props.requireFileAccess,
+                overallProgress = _props.overallProgress;
+            var _state = this.state,
+                uploadedFiles = _state.uploadedFiles,
+                clearErrors = _state.clearErrors,
+                termsAndConditions = _state.termsAndConditions;
 
 
             var instructionsDisplay = instructions.replace('[fileUploadLimit]', fileUploadLimit).replace('[maxFileSize]', '' + maxFileSize).replace('[fileSizeUnit]', sizeUnitText[fileSizeUnit] || 'B');
@@ -150,14 +208,15 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     maxSize: this._calculateMaxFileSize(),
                     maxFiles: fileUploadLimit,
                     onDropped: this.setUploadedFiles,
-                    uploadedFiles: this.state.uploadedFiles,
-                    clearErrors: this.state.clearErrors }),
-                this.state.uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, { onDeleteAll: this.deleteAllFiles, requireFileAccess: requireFileAccess }),
+                    uploadedFiles: uploadedFiles,
+                    clearErrors: clearErrors }),
+                uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, { onDeleteAll: this.deleteAllFiles, requireFileAccess: requireFileAccess }),
                 uploadedFilesRow,
-                this.props.overallProgress > 0 && _react2.default.createElement(_LinearProgress2.default, {
+                requireFileAccess && this._isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this.acceptTermsAndConditions, checked: termsAndConditions }),
+                overallProgress > 0 && _react2.default.createElement(_LinearProgress2.default, {
                     className: 'upload-overall',
                     mode: 'determinate',
-                    value: this.props.overallProgress
+                    value: overallProgress
                 })
             );
         }
@@ -177,7 +236,8 @@ FileUploader.propTypes = {
 FileUploader.defaultProps = {
     overallProgress: 0,
     locale: {
-        instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)'
+        instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
+        accessTermsAndConditions: 'I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.'
     },
     defaultConfig: {
         fileUploadLimit: 10,

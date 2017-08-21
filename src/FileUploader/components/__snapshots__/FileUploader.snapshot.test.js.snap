@@ -12,6 +12,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
   }
   locale={
     Object {
+      "accessTermsAndConditions": "I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.",
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
     }
   }
@@ -186,6 +187,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
   }
   locale={
     Object {
+      "accessTermsAndConditions": "I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.",
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
     }
   }
@@ -360,6 +362,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
   }
   locale={
     Object {
+      "accessTermsAndConditions": "I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.",
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
     }
   }
@@ -940,11 +943,11 @@ exports[`FileUploader renders row for uploaded files 2`] = `
             >
               a.txt
             </span>
-            <span
+            <small
               className="filesize-label"
             >
-              0GB
-            </span>
+              100.0B
+            </small>
           </div>
           <div
             className="column is-narrow uploadedFileDelete datalist-buttons"
@@ -1256,11 +1259,11 @@ exports[`FileUploader renders row for uploaded files 2`] = `
             >
               b.txt
             </span>
-            <span
+            <small
               className="filesize-label"
             >
-              0GB
-            </span>
+              100.0B
+            </small>
           </div>
           <div
             className="column is-narrow uploadedFileDelete datalist-buttons"
@@ -1467,6 +1470,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
   }
   locale={
     Object {
+      "accessTermsAndConditions": "I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.",
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
     }
   }
@@ -2043,11 +2047,11 @@ exports[`FileUploader renders row for uploaded files 3`] = `
             >
               b.txt
             </span>
-            <span
+            <small
               className="filesize-label"
             >
-              0GB
-            </span>
+              100.0B
+            </small>
           </div>
           <div
             className="column is-narrow uploadedFileDelete datalist-buttons"
@@ -2254,6 +2258,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
   }
   locale={
     Object {
+      "accessTermsAndConditions": "I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.",
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
     }
   }
@@ -2416,7 +2421,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files 5`] = `
+exports[`FileUploader renders row for uploaded files with access required 1`] = `
 <FileUploader
   clearFileUpload={[Function]}
   defaultConfig={
@@ -2428,6 +2433,7 @@ exports[`FileUploader renders row for uploaded files 5`] = `
   }
   locale={
     Object {
+      "accessTermsAndConditions": "I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.",
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
     }
   }
@@ -2590,7 +2596,7 @@ exports[`FileUploader renders row for uploaded files 5`] = `
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files 6`] = `
+exports[`FileUploader renders row for uploaded files with access required 2`] = `
 <FileUploader
   clearFileUpload={[Function]}
   defaultConfig={
@@ -2602,6 +2608,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
   }
   locale={
     Object {
+      "accessTermsAndConditions": "I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.",
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
     }
   }
@@ -3192,11 +3199,11 @@ exports[`FileUploader renders row for uploaded files 6`] = `
             >
               a.txt
             </span>
-            <span
+            <small
               className="filesize-label"
             >
-              0GB
-            </span>
+              100.0B
+            </small>
           </div>
           <div
             className="column datalist-text file-access"
@@ -3218,6 +3225,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                     "8": "Closed Access",
                     "9": "Open Access",
                   },
+                  "errorMessage": "This field is required",
                   "initialValue": "Select access conditions",
                 }
               }
@@ -3227,6 +3235,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                 autoWidth={true}
                 className="selectField"
                 disabled={false}
+                errorText="This field is required"
                 fullWidth={false}
                 hintText="Select access conditions"
                 id="accessDate"
@@ -3239,6 +3248,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                 <TextField
                   className="selectField"
                   disabled={false}
+                  errorText="This field is required"
                   floatingLabelFixed={false}
                   fullWidth={false}
                   hintText="Select access conditions"
@@ -3862,9 +3872,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                                     "whiteSpace": "nowrap",
                                   }
                                 }
-                              >
-                                Select access conditions
-                              </div>
+                              />
                               <IconButton
                                 disableTouchRipple={false}
                                 disabled={false}
@@ -4098,7 +4106,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                     <TextFieldUnderline
                       disabled={false}
                       disabledStyle={Object {}}
-                      error={false}
+                      error={true}
                       errorStyle={Object {}}
                       focus={false}
                       focusStyle={Object {}}
@@ -4547,7 +4555,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                             Object {
                               "borderBottomStyle": "solid",
                               "borderBottomWidth": 2,
-                              "borderColor": "#00bcd4",
+                              "borderColor": "#f44336",
                               "borderLeft": "none",
                               "borderRight": "none",
                               "borderTop": "none",
@@ -4556,7 +4564,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                               "margin": 0,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "transform": "scaleX(0)",
+                              "transform": "scaleX(1)",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": "100%",
                             }
@@ -4564,6 +4572,21 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                         />
                       </div>
                     </TextFieldUnderline>
+                    <div
+                      style={
+                        Object {
+                          "bottom": 2,
+                          "color": "#f44336",
+                          "fontSize": 12,
+                          "lineHeight": "12px",
+                          "muiPrepared": true,
+                          "position": "relative",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        }
+                      }
+                    >
+                      This field is required
+                    </div>
                   </div>
                 </TextField>
               </SelectField>
@@ -4886,11 +4909,11 @@ exports[`FileUploader renders row for uploaded files 6`] = `
             >
               b.txt
             </span>
-            <span
+            <small
               className="filesize-label"
             >
-              0GB
-            </span>
+              100.0B
+            </small>
           </div>
           <div
             className="column datalist-text file-access"
@@ -4912,6 +4935,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                     "8": "Closed Access",
                     "9": "Open Access",
                   },
+                  "errorMessage": "This field is required",
                   "initialValue": "Select access conditions",
                 }
               }
@@ -4921,6 +4945,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                 autoWidth={true}
                 className="selectField"
                 disabled={false}
+                errorText="This field is required"
                 fullWidth={false}
                 hintText="Select access conditions"
                 id="accessDate"
@@ -4933,6 +4958,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                 <TextField
                   className="selectField"
                   disabled={false}
+                  errorText="This field is required"
                   floatingLabelFixed={false}
                   fullWidth={false}
                   hintText="Select access conditions"
@@ -5556,9 +5582,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                                     "whiteSpace": "nowrap",
                                   }
                                 }
-                              >
-                                Select access conditions
-                              </div>
+                              />
                               <IconButton
                                 disableTouchRipple={false}
                                 disabled={false}
@@ -5792,7 +5816,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                     <TextFieldUnderline
                       disabled={false}
                       disabledStyle={Object {}}
-                      error={false}
+                      error={true}
                       errorStyle={Object {}}
                       focus={false}
                       focusStyle={Object {}}
@@ -6241,7 +6265,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                             Object {
                               "borderBottomStyle": "solid",
                               "borderBottomWidth": 2,
-                              "borderColor": "#00bcd4",
+                              "borderColor": "#f44336",
                               "borderLeft": "none",
                               "borderRight": "none",
                               "borderTop": "none",
@@ -6250,7 +6274,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                               "margin": 0,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "transform": "scaleX(0)",
+                              "transform": "scaleX(1)",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": "100%",
                             }
@@ -6258,6 +6282,21 @@ exports[`FileUploader renders row for uploaded files 6`] = `
                         />
                       </div>
                     </TextFieldUnderline>
+                    <div
+                      style={
+                        Object {
+                          "bottom": 2,
+                          "color": "#f44336",
+                          "fontSize": 12,
+                          "lineHeight": "12px",
+                          "muiPrepared": true,
+                          "position": "relative",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        }
+                      }
+                    >
+                      This field is required
+                    </div>
                   </div>
                 </TextField>
               </SelectField>
@@ -6463,7 +6502,7 @@ exports[`FileUploader renders row for uploaded files 6`] = `
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files 7`] = `
+exports[`FileUploader renders row for uploaded files with access required 3`] = `
 <FileUploader
   clearFileUpload={[Function]}
   defaultConfig={
@@ -6475,6 +6514,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
   }
   locale={
     Object {
+      "accessTermsAndConditions": "I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.",
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
     }
   }
@@ -7068,11 +7108,11 @@ exports[`FileUploader renders row for uploaded files 7`] = `
             >
               a.txt
             </span>
-            <span
+            <small
               className="filesize-label"
             >
-              0GB
-            </span>
+              100.0B
+            </small>
           </div>
           <div
             className="column datalist-text file-access"
@@ -7094,6 +7134,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                     "8": "Closed Access",
                     "9": "Open Access",
                   },
+                  "errorMessage": "This field is required",
                   "initialValue": "Select access conditions",
                 }
               }
@@ -7103,6 +7144,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                 autoWidth={true}
                 className="selectField"
                 disabled={false}
+                errorText="This field is required"
                 fullWidth={false}
                 hintText="Select access conditions"
                 id="accessDate"
@@ -7115,6 +7157,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                 <TextField
                   className="selectField"
                   disabled={false}
+                  errorText="This field is required"
                   floatingLabelFixed={false}
                   fullWidth={false}
                   hintText="Select access conditions"
@@ -7738,9 +7781,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                                     "whiteSpace": "nowrap",
                                   }
                                 }
-                              >
-                                Select access conditions
-                              </div>
+                              />
                               <IconButton
                                 disableTouchRipple={false}
                                 disabled={false}
@@ -7974,7 +8015,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                     <TextFieldUnderline
                       disabled={false}
                       disabledStyle={Object {}}
-                      error={false}
+                      error={true}
                       errorStyle={Object {}}
                       focus={false}
                       focusStyle={Object {}}
@@ -8423,7 +8464,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                             Object {
                               "borderBottomStyle": "solid",
                               "borderBottomWidth": 2,
-                              "borderColor": "#00bcd4",
+                              "borderColor": "#f44336",
                               "borderLeft": "none",
                               "borderRight": "none",
                               "borderTop": "none",
@@ -8432,7 +8473,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                               "margin": 0,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "transform": "scaleX(0)",
+                              "transform": "scaleX(1)",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": "100%",
                             }
@@ -8440,6 +8481,21 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                         />
                       </div>
                     </TextFieldUnderline>
+                    <div
+                      style={
+                        Object {
+                          "bottom": 2,
+                          "color": "#f44336",
+                          "fontSize": 12,
+                          "lineHeight": "12px",
+                          "muiPrepared": true,
+                          "position": "relative",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        }
+                      }
+                    >
+                      This field is required
+                    </div>
                   </div>
                 </TextField>
               </SelectField>
@@ -8762,11 +8818,11 @@ exports[`FileUploader renders row for uploaded files 7`] = `
             >
               b.txt
             </span>
-            <span
+            <small
               className="filesize-label"
             >
-              0GB
-            </span>
+              100.0B
+            </small>
           </div>
           <div
             className="column datalist-text file-access"
@@ -8788,6 +8844,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                     "8": "Closed Access",
                     "9": "Open Access",
                   },
+                  "errorMessage": "This field is required",
                   "initialValue": "Select access conditions",
                 }
               }
@@ -8797,6 +8854,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                 autoWidth={true}
                 className="selectField"
                 disabled={false}
+                errorText="This field is required"
                 fullWidth={false}
                 hintText="Select access conditions"
                 id="accessDate"
@@ -8809,6 +8867,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                 <TextField
                   className="selectField"
                   disabled={false}
+                  errorText="This field is required"
                   floatingLabelFixed={false}
                   fullWidth={false}
                   hintText="Select access conditions"
@@ -9432,9 +9491,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                                     "whiteSpace": "nowrap",
                                   }
                                 }
-                              >
-                                Select access conditions
-                              </div>
+                              />
                               <IconButton
                                 disableTouchRipple={false}
                                 disabled={false}
@@ -9668,7 +9725,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                     <TextFieldUnderline
                       disabled={false}
                       disabledStyle={Object {}}
-                      error={false}
+                      error={true}
                       errorStyle={Object {}}
                       focus={false}
                       focusStyle={Object {}}
@@ -10117,7 +10174,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                             Object {
                               "borderBottomStyle": "solid",
                               "borderBottomWidth": 2,
-                              "borderColor": "#00bcd4",
+                              "borderColor": "#f44336",
                               "borderLeft": "none",
                               "borderRight": "none",
                               "borderTop": "none",
@@ -10126,7 +10183,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                               "margin": 0,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "transform": "scaleX(0)",
+                              "transform": "scaleX(1)",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": "100%",
                             }
@@ -10134,6 +10191,21 @@ exports[`FileUploader renders row for uploaded files 7`] = `
                         />
                       </div>
                     </TextFieldUnderline>
+                    <div
+                      style={
+                        Object {
+                          "bottom": 2,
+                          "color": "#f44336",
+                          "fontSize": 12,
+                          "lineHeight": "12px",
+                          "muiPrepared": true,
+                          "position": "relative",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        }
+                      }
+                    >
+                      This field is required
+                    </div>
                   </div>
                 </TextField>
               </SelectField>
@@ -10339,7 +10411,7 @@ exports[`FileUploader renders row for uploaded files 7`] = `
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files 8`] = `
+exports[`FileUploader renders row for uploaded files with access required 4`] = `
 <FileUploader
   clearFileUpload={[Function]}
   defaultConfig={
@@ -10351,6 +10423,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
   }
   locale={
     Object {
+      "accessTermsAndConditions": "I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.",
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
     }
   }
@@ -10944,11 +11017,11 @@ exports[`FileUploader renders row for uploaded files 8`] = `
             >
               a.txt
             </span>
-            <span
+            <small
               className="filesize-label"
             >
-              0GB
-            </span>
+              100.0B
+            </small>
           </div>
           <div
             className="column datalist-text file-access"
@@ -10970,6 +11043,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                     "8": "Closed Access",
                     "9": "Open Access",
                   },
+                  "errorMessage": "This field is required",
                   "initialValue": "Select access conditions",
                 }
               }
@@ -10979,6 +11053,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                 autoWidth={true}
                 className="selectField"
                 disabled={false}
+                errorText="This field is required"
                 fullWidth={false}
                 hintText="Select access conditions"
                 id="accessDate"
@@ -10991,6 +11066,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                 <TextField
                   className="selectField"
                   disabled={false}
+                  errorText="This field is required"
                   floatingLabelFixed={false}
                   fullWidth={false}
                   hintText="Select access conditions"
@@ -11614,9 +11690,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                                     "whiteSpace": "nowrap",
                                   }
                                 }
-                              >
-                                Select access conditions
-                              </div>
+                              />
                               <IconButton
                                 disableTouchRipple={false}
                                 disabled={false}
@@ -11850,7 +11924,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                     <TextFieldUnderline
                       disabled={false}
                       disabledStyle={Object {}}
-                      error={false}
+                      error={true}
                       errorStyle={Object {}}
                       focus={false}
                       focusStyle={Object {}}
@@ -12299,7 +12373,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                             Object {
                               "borderBottomStyle": "solid",
                               "borderBottomWidth": 2,
-                              "borderColor": "#00bcd4",
+                              "borderColor": "#f44336",
                               "borderLeft": "none",
                               "borderRight": "none",
                               "borderTop": "none",
@@ -12308,7 +12382,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                               "margin": 0,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "transform": "scaleX(0)",
+                              "transform": "scaleX(1)",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": "100%",
                             }
@@ -12316,6 +12390,21 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                         />
                       </div>
                     </TextFieldUnderline>
+                    <div
+                      style={
+                        Object {
+                          "bottom": 2,
+                          "color": "#f44336",
+                          "fontSize": 12,
+                          "lineHeight": "12px",
+                          "muiPrepared": true,
+                          "position": "relative",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        }
+                      }
+                    >
+                      This field is required
+                    </div>
                   </div>
                 </TextField>
               </SelectField>
@@ -12638,11 +12727,11 @@ exports[`FileUploader renders row for uploaded files 8`] = `
             >
               b.txt
             </span>
-            <span
+            <small
               className="filesize-label"
             >
-              0GB
-            </span>
+              100.0B
+            </small>
           </div>
           <div
             className="column datalist-text file-access"
@@ -12664,6 +12753,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                     "8": "Closed Access",
                     "9": "Open Access",
                   },
+                  "errorMessage": "This field is required",
                   "initialValue": "Select access conditions",
                 }
               }
@@ -12673,6 +12763,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                 autoWidth={true}
                 className="selectField"
                 disabled={false}
+                errorText="This field is required"
                 fullWidth={false}
                 hintText="Select access conditions"
                 id="accessDate"
@@ -12685,6 +12776,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                 <TextField
                   className="selectField"
                   disabled={false}
+                  errorText="This field is required"
                   floatingLabelFixed={false}
                   fullWidth={false}
                   hintText="Select access conditions"
@@ -13308,9 +13400,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                                     "whiteSpace": "nowrap",
                                   }
                                 }
-                              >
-                                Select access conditions
-                              </div>
+                              />
                               <IconButton
                                 disableTouchRipple={false}
                                 disabled={false}
@@ -13544,7 +13634,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                     <TextFieldUnderline
                       disabled={false}
                       disabledStyle={Object {}}
-                      error={false}
+                      error={true}
                       errorStyle={Object {}}
                       focus={false}
                       focusStyle={Object {}}
@@ -13993,7 +14083,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                             Object {
                               "borderBottomStyle": "solid",
                               "borderBottomWidth": 2,
-                              "borderColor": "#00bcd4",
+                              "borderColor": "#f44336",
                               "borderLeft": "none",
                               "borderRight": "none",
                               "borderTop": "none",
@@ -14002,7 +14092,7 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                               "margin": 0,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "transform": "scaleX(0)",
+                              "transform": "scaleX(1)",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": "100%",
                             }
@@ -14010,6 +14100,21 @@ exports[`FileUploader renders row for uploaded files 8`] = `
                         />
                       </div>
                     </TextFieldUnderline>
+                    <div
+                      style={
+                        Object {
+                          "bottom": 2,
+                          "color": "#f44336",
+                          "fontSize": 12,
+                          "lineHeight": "12px",
+                          "muiPrepared": true,
+                          "position": "relative",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        }
+                      }
+                    >
+                      This field is required
+                    </div>
                   </div>
                 </TextField>
               </SelectField>
@@ -14211,11 +14316,1174 @@ exports[`FileUploader renders row for uploaded files 8`] = `
         </div>
       </FileUploadRow>
     </Connect(FileUploadRow)>
+    <Checkbox
+      checked={false}
+      disabled={false}
+      label="I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date."
+      labelPosition="right"
+      onCheck={[Function]}
+    >
+      <EnhancedSwitch
+        checked={false}
+        disabled={false}
+        iconStyle={
+          Object {
+            "height": 24,
+            "width": 24,
+          }
+        }
+        inputType="checkbox"
+        label="I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date."
+        labelPosition="right"
+        labelStyle={
+          Object {
+            "color": "rgba(0, 0, 0, 0.87)",
+          }
+        }
+        onParentShouldUpdate={[Function]}
+        onSwitch={[Function]}
+        rippleColor="rgba(0, 0, 0, 0.87)"
+        switchElement={
+          <div>
+            <ToggleCheckBoxOutlineBlank
+              style={
+                Object {
+                  "fill": "rgba(0, 0, 0, 0.87)",
+                  "opacity": 1,
+                  "position": "absolute",
+                  "transition": "opacity 1000ms cubic-bezier(0.23, 1, 0.32, 1) 200ms",
+                }
+              }
+            />
+            <ToggleCheckBox
+              style={
+                Object {
+                  "fill": "#00bcd4",
+                  "opacity": 0,
+                  "position": "absolute",
+                  "transform": "scale(0)",
+                  "transition": "opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, transform 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms",
+                  "transitionOrigin": "50% 50%",
+                }
+              }
+            />
+          </div>
+        }
+        switched={false}
+      >
+        <div
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "table",
+              "height": "auto",
+              "muiPrepared": true,
+              "overflow": "visible",
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+        >
+          <EventListener
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            target="window"
+          />
+          <input
+            checked={false}
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "cursor": "inherit",
+                "height": "100%",
+                "left": 0,
+                "margin": 0,
+                "muiPrepared": true,
+                "opacity": 0,
+                "padding": 0,
+                "pointerEvents": "all",
+                "position": "absolute",
+                "width": "100%",
+                "zIndex": 2,
+              }
+            }
+            type="checkbox"
+          />
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "display": "block",
+                  "flexShrink": 0,
+                  "float": "left",
+                  "height": 24,
+                  "marginLeft": 0,
+                  "marginRight": 16,
+                  "muiPrepared": true,
+                  "position": "relative",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "width": 24,
+                }
+              }
+            >
+              <div>
+                <ToggleCheckBoxOutlineBlank
+                  style={
+                    Object {
+                      "fill": "rgba(0, 0, 0, 0.87)",
+                      "opacity": 1,
+                      "position": "absolute",
+                      "transition": "opacity 1000ms cubic-bezier(0.23, 1, 0.32, 1) 200ms",
+                    }
+                  }
+                >
+                  <SvgIcon
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "fill": "rgba(0, 0, 0, 0.87)",
+                        "opacity": 1,
+                        "position": "absolute",
+                        "transition": "opacity 1000ms cubic-bezier(0.23, 1, 0.32, 1) 200ms",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "inline-block",
+                          "fill": "rgba(0, 0, 0, 0.87)",
+                          "height": 24,
+                          "muiPrepared": true,
+                          "opacity": 1,
+                          "position": "absolute",
+                          "transition": "opacity 1000ms cubic-bezier(0.23, 1, 0.32, 1) 200ms",
+                          "userSelect": "none",
+                          "width": 24,
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </SvgIcon>
+                </ToggleCheckBoxOutlineBlank>
+                <ToggleCheckBox
+                  style={
+                    Object {
+                      "fill": "#00bcd4",
+                      "opacity": 0,
+                      "position": "absolute",
+                      "transform": "scale(0)",
+                      "transition": "opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, transform 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms",
+                      "transitionOrigin": "50% 50%",
+                    }
+                  }
+                >
+                  <SvgIcon
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "fill": "#00bcd4",
+                        "opacity": 0,
+                        "position": "absolute",
+                        "transform": "scale(0)",
+                        "transition": "opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, transform 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms",
+                        "transitionOrigin": "50% 50%",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "inline-block",
+                          "fill": "#00bcd4",
+                          "height": 24,
+                          "muiPrepared": true,
+                          "opacity": 0,
+                          "position": "absolute",
+                          "transform": "scale(0)",
+                          "transition": "opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, transform 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms",
+                          "transitionOrigin": "50% 50%",
+                          "userSelect": "none",
+                          "width": 24,
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                      />
+                    </svg>
+                  </SvgIcon>
+                </ToggleCheckBox>
+              </div>
+              <TouchRipple
+                abortOnScroll={true}
+                centerRipple={true}
+                color="rgba(0, 0, 0, 0.87)"
+                muiTheme={
+                  Object {
+                    "appBar": Object {
+                      "color": "#00bcd4",
+                      "height": 64,
+                      "padding": 24,
+                      "textColor": "#ffffff",
+                      "titleFontWeight": 400,
+                    },
+                    "avatar": Object {
+                      "backgroundColor": "rgb(188, 188, 188)",
+                      "color": "#ffffff",
+                    },
+                    "badge": Object {
+                      "color": "#ffffff",
+                      "fontWeight": 500,
+                      "primaryColor": "#00bcd4",
+                      "primaryTextColor": "#ffffff",
+                      "secondaryColor": "#ff4081",
+                      "secondaryTextColor": "#ffffff",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "baseTheme": Object {
+                      "fontFamily": "Roboto, sans-serif",
+                      "palette": Object {
+                        "accent1Color": "#ff4081",
+                        "accent2Color": "#f5f5f5",
+                        "accent3Color": "#9e9e9e",
+                        "alternateTextColor": "#ffffff",
+                        "borderColor": "#e0e0e0",
+                        "canvasColor": "#ffffff",
+                        "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                        "disabledColor": "rgba(0, 0, 0, 0.3)",
+                        "pickerHeaderColor": "#00bcd4",
+                        "primary1Color": "#00bcd4",
+                        "primary2Color": "#0097a7",
+                        "primary3Color": "#bdbdbd",
+                        "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                        "shadowColor": "rgba(0, 0, 0, 1)",
+                        "textColor": "rgba(0, 0, 0, 0.87)",
+                      },
+                      "spacing": Object {
+                        "desktopDrawerMenuItemHeight": 48,
+                        "desktopDropDownMenuFontSize": 15,
+                        "desktopDropDownMenuItemHeight": 32,
+                        "desktopGutter": 24,
+                        "desktopGutterLess": 16,
+                        "desktopGutterMini": 8,
+                        "desktopGutterMore": 32,
+                        "desktopKeylineIncrement": 64,
+                        "desktopSubheaderHeight": 48,
+                        "desktopToolbarHeight": 56,
+                        "iconSize": 24,
+                      },
+                    },
+                    "borderRadius": 2,
+                    "bottomNavigation": Object {
+                      "backgroundColor": "#ffffff",
+                      "height": 56,
+                      "selectedColor": "#00bcd4",
+                      "selectedFontSize": 14,
+                      "unselectedColor": "rgba(0, 0, 0, 0.54)",
+                      "unselectedFontSize": 12,
+                    },
+                    "button": Object {
+                      "height": 36,
+                      "iconButtonSize": 48,
+                      "minWidth": 88,
+                    },
+                    "card": Object {
+                      "fontWeight": 500,
+                      "subtitleColor": "rgba(0, 0, 0, 0.54)",
+                      "titleColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "cardMedia": Object {
+                      "color": "rgba(255, 255, 255, 0.87)",
+                      "overlayContentBackground": "rgba(0, 0, 0, 0.54)",
+                      "subtitleColor": "rgba(255, 255, 255, 0.54)",
+                      "titleColor": "rgba(255, 255, 255, 0.87)",
+                    },
+                    "cardText": Object {
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "checkbox": Object {
+                      "boxColor": "rgba(0, 0, 0, 0.87)",
+                      "checkedColor": "#00bcd4",
+                      "disabledColor": "rgba(0, 0, 0, 0.3)",
+                      "labelColor": "rgba(0, 0, 0, 0.87)",
+                      "labelDisabledColor": "rgba(0, 0, 0, 0.3)",
+                      "requiredColor": "#00bcd4",
+                    },
+                    "chip": Object {
+                      "backgroundColor": "rgb(224, 224, 224)",
+                      "deleteIconColor": "rgba(0, 0, 0, 0.26)",
+                      "fontSize": 14,
+                      "fontWeight": 400,
+                      "shadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+                          0 1px 4px rgba(0, 0, 0, 0.12)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "datePicker": Object {
+                      "calendarTextColor": "rgba(0, 0, 0, 0.87)",
+                      "calendarYearBackgroundColor": "#ffffff",
+                      "color": "#00bcd4",
+                      "headerColor": "#00bcd4",
+                      "selectColor": "#0097a7",
+                      "selectTextColor": "#ffffff",
+                      "textColor": "#ffffff",
+                    },
+                    "dialog": Object {
+                      "bodyColor": "rgba(0, 0, 0, 0.6)",
+                      "bodyFontSize": 16,
+                      "titleFontSize": 22,
+                    },
+                    "drawer": Object {
+                      "color": "#ffffff",
+                      "width": 256,
+                    },
+                    "dropDownMenu": Object {
+                      "accentColor": "#e0e0e0",
+                    },
+                    "enhancedButton": Object {
+                      "tapHighlightColor": "rgba(0, 0, 0, 0)",
+                    },
+                    "flatButton": Object {
+                      "buttonFilterColor": "#999999",
+                      "color": "rgba(0, 0, 0, 0)",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "primaryTextColor": "#00bcd4",
+                      "secondaryTextColor": "#ff4081",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "floatingActionButton": Object {
+                      "buttonSize": 56,
+                      "color": "#00bcd4",
+                      "disabledColor": "rgb(224, 224, 224)",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "iconColor": "#ffffff",
+                      "miniSize": 40,
+                      "secondaryColor": "#ff4081",
+                      "secondaryIconColor": "#ffffff",
+                    },
+                    "fontFamily": "Roboto, sans-serif",
+                    "gridTile": Object {
+                      "textColor": "#ffffff",
+                    },
+                    "icon": Object {
+                      "backgroundColor": "#00bcd4",
+                      "color": "#ffffff",
+                    },
+                    "inkBar": Object {
+                      "backgroundColor": "#ff4081",
+                    },
+                    "isRtl": false,
+                    "listItem": Object {
+                      "leftIconColor": "#757575",
+                      "nestedLevelDepth": 18,
+                      "rightIconColor": "#757575",
+                      "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                    },
+                    "menu": Object {
+                      "backgroundColor": "#ffffff",
+                      "containerBackgroundColor": "#ffffff",
+                    },
+                    "menuItem": Object {
+                      "dataHeight": 32,
+                      "height": 48,
+                      "hoverColor": "rgba(0, 0, 0, 0.1)",
+                      "padding": 24,
+                      "rightIconDesktopFill": "#757575",
+                      "selectedTextColor": "#ff4081",
+                    },
+                    "menuSubheader": Object {
+                      "borderColor": "#e0e0e0",
+                      "padding": 24,
+                      "textColor": "#00bcd4",
+                    },
+                    "overlay": Object {
+                      "backgroundColor": "rgba(0, 0, 0, 0.54)",
+                    },
+                    "palette": Object {
+                      "accent1Color": "#ff4081",
+                      "accent2Color": "#f5f5f5",
+                      "accent3Color": "#9e9e9e",
+                      "alternateTextColor": "#ffffff",
+                      "borderColor": "#e0e0e0",
+                      "canvasColor": "#ffffff",
+                      "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                      "disabledColor": "rgba(0, 0, 0, 0.3)",
+                      "pickerHeaderColor": "#00bcd4",
+                      "primary1Color": "#00bcd4",
+                      "primary2Color": "#0097a7",
+                      "primary3Color": "#bdbdbd",
+                      "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                      "shadowColor": "rgba(0, 0, 0, 1)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "paper": Object {
+                      "backgroundColor": "#ffffff",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "zDepthShadows": Array [
+                        "0 1px 6px rgba(0, 0, 0, 0.12),
+                           0 1px 4px rgba(0, 0, 0, 0.12)",
+                        "0 3px 10px rgba(0, 0, 0, 0.16),
+                           0 3px 10px rgba(0, 0, 0, 0.23)",
+                        "0 10px 30px rgba(0, 0, 0, 0.19),
+                           0 6px 10px rgba(0, 0, 0, 0.23)",
+                        "0 14px 45px rgba(0, 0, 0, 0.25),
+                           0 10px 18px rgba(0, 0, 0, 0.22)",
+                        "0 19px 60px rgba(0, 0, 0, 0.3),
+                           0 15px 20px rgba(0, 0, 0, 0.22)",
+                      ],
+                    },
+                    "prepareStyles": [Function],
+                    "radioButton": Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "rgba(0, 0, 0, 0.87)",
+                      "checkedColor": "#00bcd4",
+                      "disabledColor": "rgba(0, 0, 0, 0.3)",
+                      "labelColor": "rgba(0, 0, 0, 0.87)",
+                      "labelDisabledColor": "rgba(0, 0, 0, 0.3)",
+                      "requiredColor": "#00bcd4",
+                      "size": 24,
+                    },
+                    "raisedButton": Object {
+                      "color": "#ffffff",
+                      "disabledColor": "rgb(229, 229, 229)",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "primaryColor": "#00bcd4",
+                      "primaryTextColor": "#ffffff",
+                      "secondaryColor": "#ff4081",
+                      "secondaryTextColor": "#ffffff",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "rawTheme": Object {
+                      "fontFamily": "Roboto, sans-serif",
+                      "palette": Object {
+                        "accent1Color": "#ff4081",
+                        "accent2Color": "#f5f5f5",
+                        "accent3Color": "#9e9e9e",
+                        "alternateTextColor": "#ffffff",
+                        "borderColor": "#e0e0e0",
+                        "canvasColor": "#ffffff",
+                        "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                        "disabledColor": "rgba(0, 0, 0, 0.3)",
+                        "pickerHeaderColor": "#00bcd4",
+                        "primary1Color": "#00bcd4",
+                        "primary2Color": "#0097a7",
+                        "primary3Color": "#bdbdbd",
+                        "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                        "shadowColor": "rgba(0, 0, 0, 1)",
+                        "textColor": "rgba(0, 0, 0, 0.87)",
+                      },
+                      "spacing": Object {
+                        "desktopDrawerMenuItemHeight": 48,
+                        "desktopDropDownMenuFontSize": 15,
+                        "desktopDropDownMenuItemHeight": 32,
+                        "desktopGutter": 24,
+                        "desktopGutterLess": 16,
+                        "desktopGutterMini": 8,
+                        "desktopGutterMore": 32,
+                        "desktopKeylineIncrement": 64,
+                        "desktopSubheaderHeight": 48,
+                        "desktopToolbarHeight": 56,
+                        "iconSize": 24,
+                      },
+                    },
+                    "refreshIndicator": Object {
+                      "loadingStrokeColor": "#00bcd4",
+                      "strokeColor": "#e0e0e0",
+                    },
+                    "ripple": Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "slider": Object {
+                      "handleColorZero": "#bdbdbd",
+                      "handleFillColor": "#ffffff",
+                      "handleSize": 12,
+                      "handleSizeActive": 18,
+                      "handleSizeDisabled": 8,
+                      "rippleColor": "#00bcd4",
+                      "selectionColor": "#00bcd4",
+                      "trackColor": "#bdbdbd",
+                      "trackColorSelected": "#9e9e9e",
+                      "trackSize": 2,
+                    },
+                    "snackbar": Object {
+                      "actionColor": "#ff4081",
+                      "backgroundColor": "rgba(0, 0, 0, 0.87)",
+                      "textColor": "#ffffff",
+                    },
+                    "spacing": Object {
+                      "desktopDrawerMenuItemHeight": 48,
+                      "desktopDropDownMenuFontSize": 15,
+                      "desktopDropDownMenuItemHeight": 32,
+                      "desktopGutter": 24,
+                      "desktopGutterLess": 16,
+                      "desktopGutterMini": 8,
+                      "desktopGutterMore": 32,
+                      "desktopKeylineIncrement": 64,
+                      "desktopSubheaderHeight": 48,
+                      "desktopToolbarHeight": 56,
+                      "iconSize": 24,
+                    },
+                    "stepper": Object {
+                      "backgroundColor": "transparent",
+                      "connectorLineColor": "#bdbdbd",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.26)",
+                      "hoverBackgroundColor": "rgba(0, 0, 0, 0.06)",
+                      "hoveredIconColor": "#616161",
+                      "iconColor": "#00bcd4",
+                      "inactiveIconColor": "#9e9e9e",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "subheader": Object {
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "fontWeight": 500,
+                    },
+                    "svgIcon": Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "table": Object {
+                      "backgroundColor": "#ffffff",
+                    },
+                    "tableFooter": Object {
+                      "borderColor": "#e0e0e0",
+                      "textColor": "#9e9e9e",
+                    },
+                    "tableHeader": Object {
+                      "borderColor": "#e0e0e0",
+                    },
+                    "tableHeaderColumn": Object {
+                      "height": 56,
+                      "spacing": 24,
+                      "textColor": "#9e9e9e",
+                    },
+                    "tableRow": Object {
+                      "borderColor": "#e0e0e0",
+                      "height": 48,
+                      "hoverColor": "#f5f5f5",
+                      "selectedColor": "#e0e0e0",
+                      "stripeColor": "rgba(127, 221, 233, 0.4)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "tableRowColumn": Object {
+                      "height": 48,
+                      "spacing": 24,
+                    },
+                    "tabs": Object {
+                      "backgroundColor": "#00bcd4",
+                      "selectedTextColor": "#ffffff",
+                      "textColor": "rgba(255, 255, 255, 0.7)",
+                    },
+                    "textField": Object {
+                      "backgroundColor": "transparent",
+                      "borderColor": "#e0e0e0",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "errorColor": "#f44336",
+                      "floatingLabelColor": "rgba(0, 0, 0, 0.3)",
+                      "focusColor": "#00bcd4",
+                      "hintColor": "rgba(0, 0, 0, 0.3)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "timePicker": Object {
+                      "accentColor": "#00bcd4",
+                      "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                      "clockColor": "rgba(0, 0, 0, 0.87)",
+                      "color": "#ffffff",
+                      "headerColor": "#00bcd4",
+                      "selectColor": "#0097a7",
+                      "selectTextColor": "#ffffff",
+                      "textColor": "#ffffff",
+                    },
+                    "toggle": Object {
+                      "labelColor": "rgba(0, 0, 0, 0.87)",
+                      "labelDisabledColor": "rgba(0, 0, 0, 0.3)",
+                      "thumbDisabledColor": "#e0e0e0",
+                      "thumbOffColor": "#f5f5f5",
+                      "thumbOnColor": "#00bcd4",
+                      "thumbRequiredColor": "#00bcd4",
+                      "trackDisabledColor": "#bdbdbd",
+                      "trackOffColor": "#bdbdbd",
+                      "trackOnColor": "rgba(0, 188, 212, 0.5)",
+                      "trackRequiredColor": "rgba(0, 188, 212, 0.5)",
+                    },
+                    "toolbar": Object {
+                      "backgroundColor": "rgb(232, 232, 232)",
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "height": 56,
+                      "hoverColor": "rgba(0, 0, 0, 0.87)",
+                      "iconColor": "rgba(0, 0, 0, 0.4)",
+                      "menuHoverColor": "rgba(0, 0, 0, 0.1)",
+                      "separatorColor": "rgba(0, 0, 0, 0.175)",
+                      "titleFontSize": 20,
+                    },
+                    "tooltip": Object {
+                      "color": "#ffffff",
+                      "rippleBackgroundColor": "#616161",
+                    },
+                    "zIndex": Object {
+                      "appBar": 1100,
+                      "dialog": 1500,
+                      "dialogOverlay": 1400,
+                      "drawer": 1300,
+                      "drawerOverlay": 1200,
+                      "layer": 2000,
+                      "menu": 1000,
+                      "popover": 2100,
+                      "snackbar": 2900,
+                      "tooltip": 3000,
+                    },
+                  }
+                }
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "height": "200%",
+                    "left": -12,
+                    "top": -12,
+                    "width": "200%",
+                  }
+                }
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                />
+              </TouchRipple>
+              <FocusRipple
+                color="rgba(0, 0, 0, 0.87)"
+                innerStyle={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "height": "200%",
+                    "left": -12,
+                    "top": -12,
+                    "width": "200%",
+                  }
+                }
+                muiTheme={
+                  Object {
+                    "appBar": Object {
+                      "color": "#00bcd4",
+                      "height": 64,
+                      "padding": 24,
+                      "textColor": "#ffffff",
+                      "titleFontWeight": 400,
+                    },
+                    "avatar": Object {
+                      "backgroundColor": "rgb(188, 188, 188)",
+                      "color": "#ffffff",
+                    },
+                    "badge": Object {
+                      "color": "#ffffff",
+                      "fontWeight": 500,
+                      "primaryColor": "#00bcd4",
+                      "primaryTextColor": "#ffffff",
+                      "secondaryColor": "#ff4081",
+                      "secondaryTextColor": "#ffffff",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "baseTheme": Object {
+                      "fontFamily": "Roboto, sans-serif",
+                      "palette": Object {
+                        "accent1Color": "#ff4081",
+                        "accent2Color": "#f5f5f5",
+                        "accent3Color": "#9e9e9e",
+                        "alternateTextColor": "#ffffff",
+                        "borderColor": "#e0e0e0",
+                        "canvasColor": "#ffffff",
+                        "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                        "disabledColor": "rgba(0, 0, 0, 0.3)",
+                        "pickerHeaderColor": "#00bcd4",
+                        "primary1Color": "#00bcd4",
+                        "primary2Color": "#0097a7",
+                        "primary3Color": "#bdbdbd",
+                        "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                        "shadowColor": "rgba(0, 0, 0, 1)",
+                        "textColor": "rgba(0, 0, 0, 0.87)",
+                      },
+                      "spacing": Object {
+                        "desktopDrawerMenuItemHeight": 48,
+                        "desktopDropDownMenuFontSize": 15,
+                        "desktopDropDownMenuItemHeight": 32,
+                        "desktopGutter": 24,
+                        "desktopGutterLess": 16,
+                        "desktopGutterMini": 8,
+                        "desktopGutterMore": 32,
+                        "desktopKeylineIncrement": 64,
+                        "desktopSubheaderHeight": 48,
+                        "desktopToolbarHeight": 56,
+                        "iconSize": 24,
+                      },
+                    },
+                    "borderRadius": 2,
+                    "bottomNavigation": Object {
+                      "backgroundColor": "#ffffff",
+                      "height": 56,
+                      "selectedColor": "#00bcd4",
+                      "selectedFontSize": 14,
+                      "unselectedColor": "rgba(0, 0, 0, 0.54)",
+                      "unselectedFontSize": 12,
+                    },
+                    "button": Object {
+                      "height": 36,
+                      "iconButtonSize": 48,
+                      "minWidth": 88,
+                    },
+                    "card": Object {
+                      "fontWeight": 500,
+                      "subtitleColor": "rgba(0, 0, 0, 0.54)",
+                      "titleColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "cardMedia": Object {
+                      "color": "rgba(255, 255, 255, 0.87)",
+                      "overlayContentBackground": "rgba(0, 0, 0, 0.54)",
+                      "subtitleColor": "rgba(255, 255, 255, 0.54)",
+                      "titleColor": "rgba(255, 255, 255, 0.87)",
+                    },
+                    "cardText": Object {
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "checkbox": Object {
+                      "boxColor": "rgba(0, 0, 0, 0.87)",
+                      "checkedColor": "#00bcd4",
+                      "disabledColor": "rgba(0, 0, 0, 0.3)",
+                      "labelColor": "rgba(0, 0, 0, 0.87)",
+                      "labelDisabledColor": "rgba(0, 0, 0, 0.3)",
+                      "requiredColor": "#00bcd4",
+                    },
+                    "chip": Object {
+                      "backgroundColor": "rgb(224, 224, 224)",
+                      "deleteIconColor": "rgba(0, 0, 0, 0.26)",
+                      "fontSize": 14,
+                      "fontWeight": 400,
+                      "shadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+                          0 1px 4px rgba(0, 0, 0, 0.12)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "datePicker": Object {
+                      "calendarTextColor": "rgba(0, 0, 0, 0.87)",
+                      "calendarYearBackgroundColor": "#ffffff",
+                      "color": "#00bcd4",
+                      "headerColor": "#00bcd4",
+                      "selectColor": "#0097a7",
+                      "selectTextColor": "#ffffff",
+                      "textColor": "#ffffff",
+                    },
+                    "dialog": Object {
+                      "bodyColor": "rgba(0, 0, 0, 0.6)",
+                      "bodyFontSize": 16,
+                      "titleFontSize": 22,
+                    },
+                    "drawer": Object {
+                      "color": "#ffffff",
+                      "width": 256,
+                    },
+                    "dropDownMenu": Object {
+                      "accentColor": "#e0e0e0",
+                    },
+                    "enhancedButton": Object {
+                      "tapHighlightColor": "rgba(0, 0, 0, 0)",
+                    },
+                    "flatButton": Object {
+                      "buttonFilterColor": "#999999",
+                      "color": "rgba(0, 0, 0, 0)",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "primaryTextColor": "#00bcd4",
+                      "secondaryTextColor": "#ff4081",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "floatingActionButton": Object {
+                      "buttonSize": 56,
+                      "color": "#00bcd4",
+                      "disabledColor": "rgb(224, 224, 224)",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "iconColor": "#ffffff",
+                      "miniSize": 40,
+                      "secondaryColor": "#ff4081",
+                      "secondaryIconColor": "#ffffff",
+                    },
+                    "fontFamily": "Roboto, sans-serif",
+                    "gridTile": Object {
+                      "textColor": "#ffffff",
+                    },
+                    "icon": Object {
+                      "backgroundColor": "#00bcd4",
+                      "color": "#ffffff",
+                    },
+                    "inkBar": Object {
+                      "backgroundColor": "#ff4081",
+                    },
+                    "isRtl": false,
+                    "listItem": Object {
+                      "leftIconColor": "#757575",
+                      "nestedLevelDepth": 18,
+                      "rightIconColor": "#757575",
+                      "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                    },
+                    "menu": Object {
+                      "backgroundColor": "#ffffff",
+                      "containerBackgroundColor": "#ffffff",
+                    },
+                    "menuItem": Object {
+                      "dataHeight": 32,
+                      "height": 48,
+                      "hoverColor": "rgba(0, 0, 0, 0.1)",
+                      "padding": 24,
+                      "rightIconDesktopFill": "#757575",
+                      "selectedTextColor": "#ff4081",
+                    },
+                    "menuSubheader": Object {
+                      "borderColor": "#e0e0e0",
+                      "padding": 24,
+                      "textColor": "#00bcd4",
+                    },
+                    "overlay": Object {
+                      "backgroundColor": "rgba(0, 0, 0, 0.54)",
+                    },
+                    "palette": Object {
+                      "accent1Color": "#ff4081",
+                      "accent2Color": "#f5f5f5",
+                      "accent3Color": "#9e9e9e",
+                      "alternateTextColor": "#ffffff",
+                      "borderColor": "#e0e0e0",
+                      "canvasColor": "#ffffff",
+                      "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                      "disabledColor": "rgba(0, 0, 0, 0.3)",
+                      "pickerHeaderColor": "#00bcd4",
+                      "primary1Color": "#00bcd4",
+                      "primary2Color": "#0097a7",
+                      "primary3Color": "#bdbdbd",
+                      "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                      "shadowColor": "rgba(0, 0, 0, 1)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "paper": Object {
+                      "backgroundColor": "#ffffff",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "zDepthShadows": Array [
+                        "0 1px 6px rgba(0, 0, 0, 0.12),
+                           0 1px 4px rgba(0, 0, 0, 0.12)",
+                        "0 3px 10px rgba(0, 0, 0, 0.16),
+                           0 3px 10px rgba(0, 0, 0, 0.23)",
+                        "0 10px 30px rgba(0, 0, 0, 0.19),
+                           0 6px 10px rgba(0, 0, 0, 0.23)",
+                        "0 14px 45px rgba(0, 0, 0, 0.25),
+                           0 10px 18px rgba(0, 0, 0, 0.22)",
+                        "0 19px 60px rgba(0, 0, 0, 0.3),
+                           0 15px 20px rgba(0, 0, 0, 0.22)",
+                      ],
+                    },
+                    "prepareStyles": [Function],
+                    "radioButton": Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "rgba(0, 0, 0, 0.87)",
+                      "checkedColor": "#00bcd4",
+                      "disabledColor": "rgba(0, 0, 0, 0.3)",
+                      "labelColor": "rgba(0, 0, 0, 0.87)",
+                      "labelDisabledColor": "rgba(0, 0, 0, 0.3)",
+                      "requiredColor": "#00bcd4",
+                      "size": 24,
+                    },
+                    "raisedButton": Object {
+                      "color": "#ffffff",
+                      "disabledColor": "rgb(229, 229, 229)",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "primaryColor": "#00bcd4",
+                      "primaryTextColor": "#ffffff",
+                      "secondaryColor": "#ff4081",
+                      "secondaryTextColor": "#ffffff",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "rawTheme": Object {
+                      "fontFamily": "Roboto, sans-serif",
+                      "palette": Object {
+                        "accent1Color": "#ff4081",
+                        "accent2Color": "#f5f5f5",
+                        "accent3Color": "#9e9e9e",
+                        "alternateTextColor": "#ffffff",
+                        "borderColor": "#e0e0e0",
+                        "canvasColor": "#ffffff",
+                        "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                        "disabledColor": "rgba(0, 0, 0, 0.3)",
+                        "pickerHeaderColor": "#00bcd4",
+                        "primary1Color": "#00bcd4",
+                        "primary2Color": "#0097a7",
+                        "primary3Color": "#bdbdbd",
+                        "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                        "shadowColor": "rgba(0, 0, 0, 1)",
+                        "textColor": "rgba(0, 0, 0, 0.87)",
+                      },
+                      "spacing": Object {
+                        "desktopDrawerMenuItemHeight": 48,
+                        "desktopDropDownMenuFontSize": 15,
+                        "desktopDropDownMenuItemHeight": 32,
+                        "desktopGutter": 24,
+                        "desktopGutterLess": 16,
+                        "desktopGutterMini": 8,
+                        "desktopGutterMore": 32,
+                        "desktopKeylineIncrement": 64,
+                        "desktopSubheaderHeight": 48,
+                        "desktopToolbarHeight": 56,
+                        "iconSize": 24,
+                      },
+                    },
+                    "refreshIndicator": Object {
+                      "loadingStrokeColor": "#00bcd4",
+                      "strokeColor": "#e0e0e0",
+                    },
+                    "ripple": Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "slider": Object {
+                      "handleColorZero": "#bdbdbd",
+                      "handleFillColor": "#ffffff",
+                      "handleSize": 12,
+                      "handleSizeActive": 18,
+                      "handleSizeDisabled": 8,
+                      "rippleColor": "#00bcd4",
+                      "selectionColor": "#00bcd4",
+                      "trackColor": "#bdbdbd",
+                      "trackColorSelected": "#9e9e9e",
+                      "trackSize": 2,
+                    },
+                    "snackbar": Object {
+                      "actionColor": "#ff4081",
+                      "backgroundColor": "rgba(0, 0, 0, 0.87)",
+                      "textColor": "#ffffff",
+                    },
+                    "spacing": Object {
+                      "desktopDrawerMenuItemHeight": 48,
+                      "desktopDropDownMenuFontSize": 15,
+                      "desktopDropDownMenuItemHeight": 32,
+                      "desktopGutter": 24,
+                      "desktopGutterLess": 16,
+                      "desktopGutterMini": 8,
+                      "desktopGutterMore": 32,
+                      "desktopKeylineIncrement": 64,
+                      "desktopSubheaderHeight": 48,
+                      "desktopToolbarHeight": 56,
+                      "iconSize": 24,
+                    },
+                    "stepper": Object {
+                      "backgroundColor": "transparent",
+                      "connectorLineColor": "#bdbdbd",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.26)",
+                      "hoverBackgroundColor": "rgba(0, 0, 0, 0.06)",
+                      "hoveredIconColor": "#616161",
+                      "iconColor": "#00bcd4",
+                      "inactiveIconColor": "#9e9e9e",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "subheader": Object {
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "fontWeight": 500,
+                    },
+                    "svgIcon": Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "table": Object {
+                      "backgroundColor": "#ffffff",
+                    },
+                    "tableFooter": Object {
+                      "borderColor": "#e0e0e0",
+                      "textColor": "#9e9e9e",
+                    },
+                    "tableHeader": Object {
+                      "borderColor": "#e0e0e0",
+                    },
+                    "tableHeaderColumn": Object {
+                      "height": 56,
+                      "spacing": 24,
+                      "textColor": "#9e9e9e",
+                    },
+                    "tableRow": Object {
+                      "borderColor": "#e0e0e0",
+                      "height": 48,
+                      "hoverColor": "#f5f5f5",
+                      "selectedColor": "#e0e0e0",
+                      "stripeColor": "rgba(127, 221, 233, 0.4)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "tableRowColumn": Object {
+                      "height": 48,
+                      "spacing": 24,
+                    },
+                    "tabs": Object {
+                      "backgroundColor": "#00bcd4",
+                      "selectedTextColor": "#ffffff",
+                      "textColor": "rgba(255, 255, 255, 0.7)",
+                    },
+                    "textField": Object {
+                      "backgroundColor": "transparent",
+                      "borderColor": "#e0e0e0",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "errorColor": "#f44336",
+                      "floatingLabelColor": "rgba(0, 0, 0, 0.3)",
+                      "focusColor": "#00bcd4",
+                      "hintColor": "rgba(0, 0, 0, 0.3)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "timePicker": Object {
+                      "accentColor": "#00bcd4",
+                      "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                      "clockColor": "rgba(0, 0, 0, 0.87)",
+                      "color": "#ffffff",
+                      "headerColor": "#00bcd4",
+                      "selectColor": "#0097a7",
+                      "selectTextColor": "#ffffff",
+                      "textColor": "#ffffff",
+                    },
+                    "toggle": Object {
+                      "labelColor": "rgba(0, 0, 0, 0.87)",
+                      "labelDisabledColor": "rgba(0, 0, 0, 0.3)",
+                      "thumbDisabledColor": "#e0e0e0",
+                      "thumbOffColor": "#f5f5f5",
+                      "thumbOnColor": "#00bcd4",
+                      "thumbRequiredColor": "#00bcd4",
+                      "trackDisabledColor": "#bdbdbd",
+                      "trackOffColor": "#bdbdbd",
+                      "trackOnColor": "rgba(0, 188, 212, 0.5)",
+                      "trackRequiredColor": "rgba(0, 188, 212, 0.5)",
+                    },
+                    "toolbar": Object {
+                      "backgroundColor": "rgb(232, 232, 232)",
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "height": 56,
+                      "hoverColor": "rgba(0, 0, 0, 0.87)",
+                      "iconColor": "rgba(0, 0, 0, 0.4)",
+                      "menuHoverColor": "rgba(0, 0, 0, 0.1)",
+                      "separatorColor": "rgba(0, 0, 0, 0.175)",
+                      "titleFontSize": 20,
+                    },
+                    "tooltip": Object {
+                      "color": "#ffffff",
+                      "rippleBackgroundColor": "#616161",
+                    },
+                    "zIndex": Object {
+                      "appBar": 1100,
+                      "dialog": 1500,
+                      "dialogOverlay": 1400,
+                      "drawer": 1300,
+                      "drawerOverlay": 1200,
+                      "layer": 2000,
+                      "menu": 1000,
+                      "popover": 2100,
+                      "snackbar": 2900,
+                      "tooltip": 3000,
+                    },
+                  }
+                }
+                show={false}
+              >
+                <ScaleIn
+                  enterDelay={0}
+                  maxScale={0.85}
+                  style={
+                    Object {
+                      "height": "100%",
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <TransitionGroup
+                    childFactory={[Function]}
+                    component="div"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "left": 0,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "height": "100%",
+                          "left": 0,
+                          "muiPrepared": true,
+                          "position": "absolute",
+                          "top": 0,
+                          "width": "100%",
+                        }
+                      }
+                    />
+                  </TransitionGroup>
+                </ScaleIn>
+              </FocusRipple>
+            </div>
+            <label
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "display": "block",
+                  "float": "left",
+                  "fontFamily": "Roboto, sans-serif",
+                  "lineHeight": "24px",
+                  "muiPrepared": true,
+                  "position": "relative",
+                  "width": "calc(100% - 60px)",
+                }
+              }
+            >
+              I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.
+            </label>
+          </div>
+        </div>
+      </EnhancedSwitch>
+    </Checkbox>
   </div>
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files 9`] = `
+exports[`FileUploader renders row for uploaded files with access required 5`] = `
 <FileUploader
   clearFileUpload={[Function]}
   defaultConfig={
@@ -14227,6 +15495,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
   }
   locale={
     Object {
+      "accessTermsAndConditions": "I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.",
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
     }
   }
@@ -14823,11 +16092,11 @@ exports[`FileUploader renders row for uploaded files 9`] = `
             >
               a.txt
             </span>
-            <span
+            <small
               className="filesize-label"
             >
-              0GB
-            </span>
+              100.0B
+            </small>
           </div>
           <div
             className="column datalist-text file-access"
@@ -14849,6 +16118,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                     "8": "Closed Access",
                     "9": "Open Access",
                   },
+                  "errorMessage": "This field is required",
                   "initialValue": "Select access conditions",
                 }
               }
@@ -14858,6 +16128,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                 autoWidth={true}
                 className="selectField"
                 disabled={false}
+                errorText="This field is required"
                 fullWidth={false}
                 hintText="Select access conditions"
                 id="accessDate"
@@ -14870,6 +16141,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                 <TextField
                   className="selectField"
                   disabled={false}
+                  errorText="This field is required"
                   floatingLabelFixed={false}
                   fullWidth={false}
                   hintText="Select access conditions"
@@ -15493,9 +16765,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                                     "whiteSpace": "nowrap",
                                   }
                                 }
-                              >
-                                Select access conditions
-                              </div>
+                              />
                               <IconButton
                                 disableTouchRipple={false}
                                 disabled={false}
@@ -15729,7 +16999,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                     <TextFieldUnderline
                       disabled={false}
                       disabledStyle={Object {}}
-                      error={false}
+                      error={true}
                       errorStyle={Object {}}
                       focus={false}
                       focusStyle={Object {}}
@@ -16178,7 +17448,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                             Object {
                               "borderBottomStyle": "solid",
                               "borderBottomWidth": 2,
-                              "borderColor": "#00bcd4",
+                              "borderColor": "#f44336",
                               "borderLeft": "none",
                               "borderRight": "none",
                               "borderTop": "none",
@@ -16187,7 +17457,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                               "margin": 0,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "transform": "scaleX(0)",
+                              "transform": "scaleX(1)",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": "100%",
                             }
@@ -16195,6 +17465,21 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                         />
                       </div>
                     </TextFieldUnderline>
+                    <div
+                      style={
+                        Object {
+                          "bottom": 2,
+                          "color": "#f44336",
+                          "fontSize": 12,
+                          "lineHeight": "12px",
+                          "muiPrepared": true,
+                          "position": "relative",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        }
+                      }
+                    >
+                      This field is required
+                    </div>
                   </div>
                 </TextField>
               </SelectField>
@@ -16517,11 +17802,11 @@ exports[`FileUploader renders row for uploaded files 9`] = `
             >
               b.txt
             </span>
-            <span
+            <small
               className="filesize-label"
             >
-              0GB
-            </span>
+              100.0B
+            </small>
           </div>
           <div
             className="column datalist-text file-access"
@@ -16543,6 +17828,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                     "8": "Closed Access",
                     "9": "Open Access",
                   },
+                  "errorMessage": "This field is required",
                   "initialValue": "Select access conditions",
                 }
               }
@@ -16552,6 +17838,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                 autoWidth={true}
                 className="selectField"
                 disabled={false}
+                errorText="This field is required"
                 fullWidth={false}
                 hintText="Select access conditions"
                 id="accessDate"
@@ -16564,6 +17851,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                 <TextField
                   className="selectField"
                   disabled={false}
+                  errorText="This field is required"
                   floatingLabelFixed={false}
                   fullWidth={false}
                   hintText="Select access conditions"
@@ -17187,9 +18475,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                                     "whiteSpace": "nowrap",
                                   }
                                 }
-                              >
-                                Select access conditions
-                              </div>
+                              />
                               <IconButton
                                 disableTouchRipple={false}
                                 disabled={false}
@@ -17423,7 +18709,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                     <TextFieldUnderline
                       disabled={false}
                       disabledStyle={Object {}}
-                      error={false}
+                      error={true}
                       errorStyle={Object {}}
                       focus={false}
                       focusStyle={Object {}}
@@ -17872,7 +19158,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                             Object {
                               "borderBottomStyle": "solid",
                               "borderBottomWidth": 2,
-                              "borderColor": "#00bcd4",
+                              "borderColor": "#f44336",
                               "borderLeft": "none",
                               "borderRight": "none",
                               "borderTop": "none",
@@ -17881,7 +19167,7 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                               "margin": 0,
                               "muiPrepared": true,
                               "position": "absolute",
-                              "transform": "scaleX(0)",
+                              "transform": "scaleX(1)",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": "100%",
                             }
@@ -17889,6 +19175,21 @@ exports[`FileUploader renders row for uploaded files 9`] = `
                         />
                       </div>
                     </TextFieldUnderline>
+                    <div
+                      style={
+                        Object {
+                          "bottom": 2,
+                          "color": "#f44336",
+                          "fontSize": 12,
+                          "lineHeight": "12px",
+                          "muiPrepared": true,
+                          "position": "relative",
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        }
+                      }
+                    >
+                      This field is required
+                    </div>
                   </div>
                 </TextField>
               </SelectField>
@@ -18090,6 +19391,1169 @@ exports[`FileUploader renders row for uploaded files 9`] = `
         </div>
       </FileUploadRow>
     </Connect(FileUploadRow)>
+    <Checkbox
+      checked={false}
+      disabled={false}
+      label="I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date."
+      labelPosition="right"
+      onCheck={[Function]}
+    >
+      <EnhancedSwitch
+        checked={false}
+        disabled={false}
+        iconStyle={
+          Object {
+            "height": 24,
+            "width": 24,
+          }
+        }
+        inputType="checkbox"
+        label="I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date."
+        labelPosition="right"
+        labelStyle={
+          Object {
+            "color": "rgba(0, 0, 0, 0.87)",
+          }
+        }
+        onParentShouldUpdate={[Function]}
+        onSwitch={[Function]}
+        rippleColor="rgba(0, 0, 0, 0.87)"
+        switchElement={
+          <div>
+            <ToggleCheckBoxOutlineBlank
+              style={
+                Object {
+                  "fill": "rgba(0, 0, 0, 0.87)",
+                  "opacity": 1,
+                  "position": "absolute",
+                  "transition": "opacity 1000ms cubic-bezier(0.23, 1, 0.32, 1) 200ms",
+                }
+              }
+            />
+            <ToggleCheckBox
+              style={
+                Object {
+                  "fill": "#00bcd4",
+                  "opacity": 0,
+                  "position": "absolute",
+                  "transform": "scale(0)",
+                  "transition": "opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, transform 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms",
+                  "transitionOrigin": "50% 50%",
+                }
+              }
+            />
+          </div>
+        }
+        switched={false}
+      >
+        <div
+          style={
+            Object {
+              "cursor": "pointer",
+              "display": "table",
+              "height": "auto",
+              "muiPrepared": true,
+              "overflow": "visible",
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+        >
+          <EventListener
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            target="window"
+          />
+          <input
+            checked={false}
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "cursor": "inherit",
+                "height": "100%",
+                "left": 0,
+                "margin": 0,
+                "muiPrepared": true,
+                "opacity": 0,
+                "padding": 0,
+                "pointerEvents": "all",
+                "position": "absolute",
+                "width": "100%",
+                "zIndex": 2,
+              }
+            }
+            type="checkbox"
+          />
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "display": "block",
+                  "flexShrink": 0,
+                  "float": "left",
+                  "height": 24,
+                  "marginLeft": 0,
+                  "marginRight": 16,
+                  "muiPrepared": true,
+                  "position": "relative",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "width": 24,
+                }
+              }
+            >
+              <div>
+                <ToggleCheckBoxOutlineBlank
+                  style={
+                    Object {
+                      "fill": "rgba(0, 0, 0, 0.87)",
+                      "opacity": 1,
+                      "position": "absolute",
+                      "transition": "opacity 1000ms cubic-bezier(0.23, 1, 0.32, 1) 200ms",
+                    }
+                  }
+                >
+                  <SvgIcon
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "fill": "rgba(0, 0, 0, 0.87)",
+                        "opacity": 1,
+                        "position": "absolute",
+                        "transition": "opacity 1000ms cubic-bezier(0.23, 1, 0.32, 1) 200ms",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "inline-block",
+                          "fill": "rgba(0, 0, 0, 0.87)",
+                          "height": 24,
+                          "muiPrepared": true,
+                          "opacity": 1,
+                          "position": "absolute",
+                          "transition": "opacity 1000ms cubic-bezier(0.23, 1, 0.32, 1) 200ms",
+                          "userSelect": "none",
+                          "width": 24,
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                      />
+                    </svg>
+                  </SvgIcon>
+                </ToggleCheckBoxOutlineBlank>
+                <ToggleCheckBox
+                  style={
+                    Object {
+                      "fill": "#00bcd4",
+                      "opacity": 0,
+                      "position": "absolute",
+                      "transform": "scale(0)",
+                      "transition": "opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, transform 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms",
+                      "transitionOrigin": "50% 50%",
+                    }
+                  }
+                >
+                  <SvgIcon
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "fill": "#00bcd4",
+                        "opacity": 0,
+                        "position": "absolute",
+                        "transform": "scale(0)",
+                        "transition": "opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, transform 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms",
+                        "transitionOrigin": "50% 50%",
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                  >
+                    <svg
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "display": "inline-block",
+                          "fill": "#00bcd4",
+                          "height": 24,
+                          "muiPrepared": true,
+                          "opacity": 0,
+                          "position": "absolute",
+                          "transform": "scale(0)",
+                          "transition": "opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, transform 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms",
+                          "transitionOrigin": "50% 50%",
+                          "userSelect": "none",
+                          "width": 24,
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                      />
+                    </svg>
+                  </SvgIcon>
+                </ToggleCheckBox>
+              </div>
+              <TouchRipple
+                abortOnScroll={true}
+                centerRipple={true}
+                color="rgba(0, 0, 0, 0.87)"
+                muiTheme={
+                  Object {
+                    "appBar": Object {
+                      "color": "#00bcd4",
+                      "height": 64,
+                      "padding": 24,
+                      "textColor": "#ffffff",
+                      "titleFontWeight": 400,
+                    },
+                    "avatar": Object {
+                      "backgroundColor": "rgb(188, 188, 188)",
+                      "color": "#ffffff",
+                    },
+                    "badge": Object {
+                      "color": "#ffffff",
+                      "fontWeight": 500,
+                      "primaryColor": "#00bcd4",
+                      "primaryTextColor": "#ffffff",
+                      "secondaryColor": "#ff4081",
+                      "secondaryTextColor": "#ffffff",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "baseTheme": Object {
+                      "fontFamily": "Roboto, sans-serif",
+                      "palette": Object {
+                        "accent1Color": "#ff4081",
+                        "accent2Color": "#f5f5f5",
+                        "accent3Color": "#9e9e9e",
+                        "alternateTextColor": "#ffffff",
+                        "borderColor": "#e0e0e0",
+                        "canvasColor": "#ffffff",
+                        "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                        "disabledColor": "rgba(0, 0, 0, 0.3)",
+                        "pickerHeaderColor": "#00bcd4",
+                        "primary1Color": "#00bcd4",
+                        "primary2Color": "#0097a7",
+                        "primary3Color": "#bdbdbd",
+                        "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                        "shadowColor": "rgba(0, 0, 0, 1)",
+                        "textColor": "rgba(0, 0, 0, 0.87)",
+                      },
+                      "spacing": Object {
+                        "desktopDrawerMenuItemHeight": 48,
+                        "desktopDropDownMenuFontSize": 15,
+                        "desktopDropDownMenuItemHeight": 32,
+                        "desktopGutter": 24,
+                        "desktopGutterLess": 16,
+                        "desktopGutterMini": 8,
+                        "desktopGutterMore": 32,
+                        "desktopKeylineIncrement": 64,
+                        "desktopSubheaderHeight": 48,
+                        "desktopToolbarHeight": 56,
+                        "iconSize": 24,
+                      },
+                    },
+                    "borderRadius": 2,
+                    "bottomNavigation": Object {
+                      "backgroundColor": "#ffffff",
+                      "height": 56,
+                      "selectedColor": "#00bcd4",
+                      "selectedFontSize": 14,
+                      "unselectedColor": "rgba(0, 0, 0, 0.54)",
+                      "unselectedFontSize": 12,
+                    },
+                    "button": Object {
+                      "height": 36,
+                      "iconButtonSize": 48,
+                      "minWidth": 88,
+                    },
+                    "card": Object {
+                      "fontWeight": 500,
+                      "subtitleColor": "rgba(0, 0, 0, 0.54)",
+                      "titleColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "cardMedia": Object {
+                      "color": "rgba(255, 255, 255, 0.87)",
+                      "overlayContentBackground": "rgba(0, 0, 0, 0.54)",
+                      "subtitleColor": "rgba(255, 255, 255, 0.54)",
+                      "titleColor": "rgba(255, 255, 255, 0.87)",
+                    },
+                    "cardText": Object {
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "checkbox": Object {
+                      "boxColor": "rgba(0, 0, 0, 0.87)",
+                      "checkedColor": "#00bcd4",
+                      "disabledColor": "rgba(0, 0, 0, 0.3)",
+                      "labelColor": "rgba(0, 0, 0, 0.87)",
+                      "labelDisabledColor": "rgba(0, 0, 0, 0.3)",
+                      "requiredColor": "#00bcd4",
+                    },
+                    "chip": Object {
+                      "backgroundColor": "rgb(224, 224, 224)",
+                      "deleteIconColor": "rgba(0, 0, 0, 0.26)",
+                      "fontSize": 14,
+                      "fontWeight": 400,
+                      "shadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+                          0 1px 4px rgba(0, 0, 0, 0.12)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "datePicker": Object {
+                      "calendarTextColor": "rgba(0, 0, 0, 0.87)",
+                      "calendarYearBackgroundColor": "#ffffff",
+                      "color": "#00bcd4",
+                      "headerColor": "#00bcd4",
+                      "selectColor": "#0097a7",
+                      "selectTextColor": "#ffffff",
+                      "textColor": "#ffffff",
+                    },
+                    "dialog": Object {
+                      "bodyColor": "rgba(0, 0, 0, 0.6)",
+                      "bodyFontSize": 16,
+                      "titleFontSize": 22,
+                    },
+                    "drawer": Object {
+                      "color": "#ffffff",
+                      "width": 256,
+                    },
+                    "dropDownMenu": Object {
+                      "accentColor": "#e0e0e0",
+                    },
+                    "enhancedButton": Object {
+                      "tapHighlightColor": "rgba(0, 0, 0, 0)",
+                    },
+                    "flatButton": Object {
+                      "buttonFilterColor": "#999999",
+                      "color": "rgba(0, 0, 0, 0)",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "primaryTextColor": "#00bcd4",
+                      "secondaryTextColor": "#ff4081",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "floatingActionButton": Object {
+                      "buttonSize": 56,
+                      "color": "#00bcd4",
+                      "disabledColor": "rgb(224, 224, 224)",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "iconColor": "#ffffff",
+                      "miniSize": 40,
+                      "secondaryColor": "#ff4081",
+                      "secondaryIconColor": "#ffffff",
+                    },
+                    "fontFamily": "Roboto, sans-serif",
+                    "gridTile": Object {
+                      "textColor": "#ffffff",
+                    },
+                    "icon": Object {
+                      "backgroundColor": "#00bcd4",
+                      "color": "#ffffff",
+                    },
+                    "inkBar": Object {
+                      "backgroundColor": "#ff4081",
+                    },
+                    "isRtl": false,
+                    "listItem": Object {
+                      "leftIconColor": "#757575",
+                      "nestedLevelDepth": 18,
+                      "rightIconColor": "#757575",
+                      "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                    },
+                    "menu": Object {
+                      "backgroundColor": "#ffffff",
+                      "containerBackgroundColor": "#ffffff",
+                    },
+                    "menuItem": Object {
+                      "dataHeight": 32,
+                      "height": 48,
+                      "hoverColor": "rgba(0, 0, 0, 0.1)",
+                      "padding": 24,
+                      "rightIconDesktopFill": "#757575",
+                      "selectedTextColor": "#ff4081",
+                    },
+                    "menuSubheader": Object {
+                      "borderColor": "#e0e0e0",
+                      "padding": 24,
+                      "textColor": "#00bcd4",
+                    },
+                    "overlay": Object {
+                      "backgroundColor": "rgba(0, 0, 0, 0.54)",
+                    },
+                    "palette": Object {
+                      "accent1Color": "#ff4081",
+                      "accent2Color": "#f5f5f5",
+                      "accent3Color": "#9e9e9e",
+                      "alternateTextColor": "#ffffff",
+                      "borderColor": "#e0e0e0",
+                      "canvasColor": "#ffffff",
+                      "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                      "disabledColor": "rgba(0, 0, 0, 0.3)",
+                      "pickerHeaderColor": "#00bcd4",
+                      "primary1Color": "#00bcd4",
+                      "primary2Color": "#0097a7",
+                      "primary3Color": "#bdbdbd",
+                      "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                      "shadowColor": "rgba(0, 0, 0, 1)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "paper": Object {
+                      "backgroundColor": "#ffffff",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "zDepthShadows": Array [
+                        "0 1px 6px rgba(0, 0, 0, 0.12),
+                           0 1px 4px rgba(0, 0, 0, 0.12)",
+                        "0 3px 10px rgba(0, 0, 0, 0.16),
+                           0 3px 10px rgba(0, 0, 0, 0.23)",
+                        "0 10px 30px rgba(0, 0, 0, 0.19),
+                           0 6px 10px rgba(0, 0, 0, 0.23)",
+                        "0 14px 45px rgba(0, 0, 0, 0.25),
+                           0 10px 18px rgba(0, 0, 0, 0.22)",
+                        "0 19px 60px rgba(0, 0, 0, 0.3),
+                           0 15px 20px rgba(0, 0, 0, 0.22)",
+                      ],
+                    },
+                    "prepareStyles": [Function],
+                    "radioButton": Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "rgba(0, 0, 0, 0.87)",
+                      "checkedColor": "#00bcd4",
+                      "disabledColor": "rgba(0, 0, 0, 0.3)",
+                      "labelColor": "rgba(0, 0, 0, 0.87)",
+                      "labelDisabledColor": "rgba(0, 0, 0, 0.3)",
+                      "requiredColor": "#00bcd4",
+                      "size": 24,
+                    },
+                    "raisedButton": Object {
+                      "color": "#ffffff",
+                      "disabledColor": "rgb(229, 229, 229)",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "primaryColor": "#00bcd4",
+                      "primaryTextColor": "#ffffff",
+                      "secondaryColor": "#ff4081",
+                      "secondaryTextColor": "#ffffff",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "rawTheme": Object {
+                      "fontFamily": "Roboto, sans-serif",
+                      "palette": Object {
+                        "accent1Color": "#ff4081",
+                        "accent2Color": "#f5f5f5",
+                        "accent3Color": "#9e9e9e",
+                        "alternateTextColor": "#ffffff",
+                        "borderColor": "#e0e0e0",
+                        "canvasColor": "#ffffff",
+                        "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                        "disabledColor": "rgba(0, 0, 0, 0.3)",
+                        "pickerHeaderColor": "#00bcd4",
+                        "primary1Color": "#00bcd4",
+                        "primary2Color": "#0097a7",
+                        "primary3Color": "#bdbdbd",
+                        "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                        "shadowColor": "rgba(0, 0, 0, 1)",
+                        "textColor": "rgba(0, 0, 0, 0.87)",
+                      },
+                      "spacing": Object {
+                        "desktopDrawerMenuItemHeight": 48,
+                        "desktopDropDownMenuFontSize": 15,
+                        "desktopDropDownMenuItemHeight": 32,
+                        "desktopGutter": 24,
+                        "desktopGutterLess": 16,
+                        "desktopGutterMini": 8,
+                        "desktopGutterMore": 32,
+                        "desktopKeylineIncrement": 64,
+                        "desktopSubheaderHeight": 48,
+                        "desktopToolbarHeight": 56,
+                        "iconSize": 24,
+                      },
+                    },
+                    "refreshIndicator": Object {
+                      "loadingStrokeColor": "#00bcd4",
+                      "strokeColor": "#e0e0e0",
+                    },
+                    "ripple": Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "slider": Object {
+                      "handleColorZero": "#bdbdbd",
+                      "handleFillColor": "#ffffff",
+                      "handleSize": 12,
+                      "handleSizeActive": 18,
+                      "handleSizeDisabled": 8,
+                      "rippleColor": "#00bcd4",
+                      "selectionColor": "#00bcd4",
+                      "trackColor": "#bdbdbd",
+                      "trackColorSelected": "#9e9e9e",
+                      "trackSize": 2,
+                    },
+                    "snackbar": Object {
+                      "actionColor": "#ff4081",
+                      "backgroundColor": "rgba(0, 0, 0, 0.87)",
+                      "textColor": "#ffffff",
+                    },
+                    "spacing": Object {
+                      "desktopDrawerMenuItemHeight": 48,
+                      "desktopDropDownMenuFontSize": 15,
+                      "desktopDropDownMenuItemHeight": 32,
+                      "desktopGutter": 24,
+                      "desktopGutterLess": 16,
+                      "desktopGutterMini": 8,
+                      "desktopGutterMore": 32,
+                      "desktopKeylineIncrement": 64,
+                      "desktopSubheaderHeight": 48,
+                      "desktopToolbarHeight": 56,
+                      "iconSize": 24,
+                    },
+                    "stepper": Object {
+                      "backgroundColor": "transparent",
+                      "connectorLineColor": "#bdbdbd",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.26)",
+                      "hoverBackgroundColor": "rgba(0, 0, 0, 0.06)",
+                      "hoveredIconColor": "#616161",
+                      "iconColor": "#00bcd4",
+                      "inactiveIconColor": "#9e9e9e",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "subheader": Object {
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "fontWeight": 500,
+                    },
+                    "svgIcon": Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "table": Object {
+                      "backgroundColor": "#ffffff",
+                    },
+                    "tableFooter": Object {
+                      "borderColor": "#e0e0e0",
+                      "textColor": "#9e9e9e",
+                    },
+                    "tableHeader": Object {
+                      "borderColor": "#e0e0e0",
+                    },
+                    "tableHeaderColumn": Object {
+                      "height": 56,
+                      "spacing": 24,
+                      "textColor": "#9e9e9e",
+                    },
+                    "tableRow": Object {
+                      "borderColor": "#e0e0e0",
+                      "height": 48,
+                      "hoverColor": "#f5f5f5",
+                      "selectedColor": "#e0e0e0",
+                      "stripeColor": "rgba(127, 221, 233, 0.4)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "tableRowColumn": Object {
+                      "height": 48,
+                      "spacing": 24,
+                    },
+                    "tabs": Object {
+                      "backgroundColor": "#00bcd4",
+                      "selectedTextColor": "#ffffff",
+                      "textColor": "rgba(255, 255, 255, 0.7)",
+                    },
+                    "textField": Object {
+                      "backgroundColor": "transparent",
+                      "borderColor": "#e0e0e0",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "errorColor": "#f44336",
+                      "floatingLabelColor": "rgba(0, 0, 0, 0.3)",
+                      "focusColor": "#00bcd4",
+                      "hintColor": "rgba(0, 0, 0, 0.3)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "timePicker": Object {
+                      "accentColor": "#00bcd4",
+                      "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                      "clockColor": "rgba(0, 0, 0, 0.87)",
+                      "color": "#ffffff",
+                      "headerColor": "#00bcd4",
+                      "selectColor": "#0097a7",
+                      "selectTextColor": "#ffffff",
+                      "textColor": "#ffffff",
+                    },
+                    "toggle": Object {
+                      "labelColor": "rgba(0, 0, 0, 0.87)",
+                      "labelDisabledColor": "rgba(0, 0, 0, 0.3)",
+                      "thumbDisabledColor": "#e0e0e0",
+                      "thumbOffColor": "#f5f5f5",
+                      "thumbOnColor": "#00bcd4",
+                      "thumbRequiredColor": "#00bcd4",
+                      "trackDisabledColor": "#bdbdbd",
+                      "trackOffColor": "#bdbdbd",
+                      "trackOnColor": "rgba(0, 188, 212, 0.5)",
+                      "trackRequiredColor": "rgba(0, 188, 212, 0.5)",
+                    },
+                    "toolbar": Object {
+                      "backgroundColor": "rgb(232, 232, 232)",
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "height": 56,
+                      "hoverColor": "rgba(0, 0, 0, 0.87)",
+                      "iconColor": "rgba(0, 0, 0, 0.4)",
+                      "menuHoverColor": "rgba(0, 0, 0, 0.1)",
+                      "separatorColor": "rgba(0, 0, 0, 0.175)",
+                      "titleFontSize": 20,
+                    },
+                    "tooltip": Object {
+                      "color": "#ffffff",
+                      "rippleBackgroundColor": "#616161",
+                    },
+                    "zIndex": Object {
+                      "appBar": 1100,
+                      "dialog": 1500,
+                      "dialogOverlay": 1400,
+                      "drawer": 1300,
+                      "drawerOverlay": 1200,
+                      "layer": 2000,
+                      "menu": 1000,
+                      "popover": 2100,
+                      "snackbar": 2900,
+                      "tooltip": 3000,
+                    },
+                  }
+                }
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "height": "200%",
+                    "left": -12,
+                    "top": -12,
+                    "width": "200%",
+                  }
+                }
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                />
+              </TouchRipple>
+              <FocusRipple
+                color="rgba(0, 0, 0, 0.87)"
+                innerStyle={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "height": "200%",
+                    "left": -12,
+                    "top": -12,
+                    "width": "200%",
+                  }
+                }
+                muiTheme={
+                  Object {
+                    "appBar": Object {
+                      "color": "#00bcd4",
+                      "height": 64,
+                      "padding": 24,
+                      "textColor": "#ffffff",
+                      "titleFontWeight": 400,
+                    },
+                    "avatar": Object {
+                      "backgroundColor": "rgb(188, 188, 188)",
+                      "color": "#ffffff",
+                    },
+                    "badge": Object {
+                      "color": "#ffffff",
+                      "fontWeight": 500,
+                      "primaryColor": "#00bcd4",
+                      "primaryTextColor": "#ffffff",
+                      "secondaryColor": "#ff4081",
+                      "secondaryTextColor": "#ffffff",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "baseTheme": Object {
+                      "fontFamily": "Roboto, sans-serif",
+                      "palette": Object {
+                        "accent1Color": "#ff4081",
+                        "accent2Color": "#f5f5f5",
+                        "accent3Color": "#9e9e9e",
+                        "alternateTextColor": "#ffffff",
+                        "borderColor": "#e0e0e0",
+                        "canvasColor": "#ffffff",
+                        "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                        "disabledColor": "rgba(0, 0, 0, 0.3)",
+                        "pickerHeaderColor": "#00bcd4",
+                        "primary1Color": "#00bcd4",
+                        "primary2Color": "#0097a7",
+                        "primary3Color": "#bdbdbd",
+                        "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                        "shadowColor": "rgba(0, 0, 0, 1)",
+                        "textColor": "rgba(0, 0, 0, 0.87)",
+                      },
+                      "spacing": Object {
+                        "desktopDrawerMenuItemHeight": 48,
+                        "desktopDropDownMenuFontSize": 15,
+                        "desktopDropDownMenuItemHeight": 32,
+                        "desktopGutter": 24,
+                        "desktopGutterLess": 16,
+                        "desktopGutterMini": 8,
+                        "desktopGutterMore": 32,
+                        "desktopKeylineIncrement": 64,
+                        "desktopSubheaderHeight": 48,
+                        "desktopToolbarHeight": 56,
+                        "iconSize": 24,
+                      },
+                    },
+                    "borderRadius": 2,
+                    "bottomNavigation": Object {
+                      "backgroundColor": "#ffffff",
+                      "height": 56,
+                      "selectedColor": "#00bcd4",
+                      "selectedFontSize": 14,
+                      "unselectedColor": "rgba(0, 0, 0, 0.54)",
+                      "unselectedFontSize": 12,
+                    },
+                    "button": Object {
+                      "height": 36,
+                      "iconButtonSize": 48,
+                      "minWidth": 88,
+                    },
+                    "card": Object {
+                      "fontWeight": 500,
+                      "subtitleColor": "rgba(0, 0, 0, 0.54)",
+                      "titleColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "cardMedia": Object {
+                      "color": "rgba(255, 255, 255, 0.87)",
+                      "overlayContentBackground": "rgba(0, 0, 0, 0.54)",
+                      "subtitleColor": "rgba(255, 255, 255, 0.54)",
+                      "titleColor": "rgba(255, 255, 255, 0.87)",
+                    },
+                    "cardText": Object {
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "checkbox": Object {
+                      "boxColor": "rgba(0, 0, 0, 0.87)",
+                      "checkedColor": "#00bcd4",
+                      "disabledColor": "rgba(0, 0, 0, 0.3)",
+                      "labelColor": "rgba(0, 0, 0, 0.87)",
+                      "labelDisabledColor": "rgba(0, 0, 0, 0.3)",
+                      "requiredColor": "#00bcd4",
+                    },
+                    "chip": Object {
+                      "backgroundColor": "rgb(224, 224, 224)",
+                      "deleteIconColor": "rgba(0, 0, 0, 0.26)",
+                      "fontSize": 14,
+                      "fontWeight": 400,
+                      "shadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+                          0 1px 4px rgba(0, 0, 0, 0.12)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "datePicker": Object {
+                      "calendarTextColor": "rgba(0, 0, 0, 0.87)",
+                      "calendarYearBackgroundColor": "#ffffff",
+                      "color": "#00bcd4",
+                      "headerColor": "#00bcd4",
+                      "selectColor": "#0097a7",
+                      "selectTextColor": "#ffffff",
+                      "textColor": "#ffffff",
+                    },
+                    "dialog": Object {
+                      "bodyColor": "rgba(0, 0, 0, 0.6)",
+                      "bodyFontSize": 16,
+                      "titleFontSize": 22,
+                    },
+                    "drawer": Object {
+                      "color": "#ffffff",
+                      "width": 256,
+                    },
+                    "dropDownMenu": Object {
+                      "accentColor": "#e0e0e0",
+                    },
+                    "enhancedButton": Object {
+                      "tapHighlightColor": "rgba(0, 0, 0, 0)",
+                    },
+                    "flatButton": Object {
+                      "buttonFilterColor": "#999999",
+                      "color": "rgba(0, 0, 0, 0)",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "primaryTextColor": "#00bcd4",
+                      "secondaryTextColor": "#ff4081",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "floatingActionButton": Object {
+                      "buttonSize": 56,
+                      "color": "#00bcd4",
+                      "disabledColor": "rgb(224, 224, 224)",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "iconColor": "#ffffff",
+                      "miniSize": 40,
+                      "secondaryColor": "#ff4081",
+                      "secondaryIconColor": "#ffffff",
+                    },
+                    "fontFamily": "Roboto, sans-serif",
+                    "gridTile": Object {
+                      "textColor": "#ffffff",
+                    },
+                    "icon": Object {
+                      "backgroundColor": "#00bcd4",
+                      "color": "#ffffff",
+                    },
+                    "inkBar": Object {
+                      "backgroundColor": "#ff4081",
+                    },
+                    "isRtl": false,
+                    "listItem": Object {
+                      "leftIconColor": "#757575",
+                      "nestedLevelDepth": 18,
+                      "rightIconColor": "#757575",
+                      "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                    },
+                    "menu": Object {
+                      "backgroundColor": "#ffffff",
+                      "containerBackgroundColor": "#ffffff",
+                    },
+                    "menuItem": Object {
+                      "dataHeight": 32,
+                      "height": 48,
+                      "hoverColor": "rgba(0, 0, 0, 0.1)",
+                      "padding": 24,
+                      "rightIconDesktopFill": "#757575",
+                      "selectedTextColor": "#ff4081",
+                    },
+                    "menuSubheader": Object {
+                      "borderColor": "#e0e0e0",
+                      "padding": 24,
+                      "textColor": "#00bcd4",
+                    },
+                    "overlay": Object {
+                      "backgroundColor": "rgba(0, 0, 0, 0.54)",
+                    },
+                    "palette": Object {
+                      "accent1Color": "#ff4081",
+                      "accent2Color": "#f5f5f5",
+                      "accent3Color": "#9e9e9e",
+                      "alternateTextColor": "#ffffff",
+                      "borderColor": "#e0e0e0",
+                      "canvasColor": "#ffffff",
+                      "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                      "disabledColor": "rgba(0, 0, 0, 0.3)",
+                      "pickerHeaderColor": "#00bcd4",
+                      "primary1Color": "#00bcd4",
+                      "primary2Color": "#0097a7",
+                      "primary3Color": "#bdbdbd",
+                      "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                      "shadowColor": "rgba(0, 0, 0, 1)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "paper": Object {
+                      "backgroundColor": "#ffffff",
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "zDepthShadows": Array [
+                        "0 1px 6px rgba(0, 0, 0, 0.12),
+                           0 1px 4px rgba(0, 0, 0, 0.12)",
+                        "0 3px 10px rgba(0, 0, 0, 0.16),
+                           0 3px 10px rgba(0, 0, 0, 0.23)",
+                        "0 10px 30px rgba(0, 0, 0, 0.19),
+                           0 6px 10px rgba(0, 0, 0, 0.23)",
+                        "0 14px 45px rgba(0, 0, 0, 0.25),
+                           0 10px 18px rgba(0, 0, 0, 0.22)",
+                        "0 19px 60px rgba(0, 0, 0, 0.3),
+                           0 15px 20px rgba(0, 0, 0, 0.22)",
+                      ],
+                    },
+                    "prepareStyles": [Function],
+                    "radioButton": Object {
+                      "backgroundColor": "#ffffff",
+                      "borderColor": "rgba(0, 0, 0, 0.87)",
+                      "checkedColor": "#00bcd4",
+                      "disabledColor": "rgba(0, 0, 0, 0.3)",
+                      "labelColor": "rgba(0, 0, 0, 0.87)",
+                      "labelDisabledColor": "rgba(0, 0, 0, 0.3)",
+                      "requiredColor": "#00bcd4",
+                      "size": 24,
+                    },
+                    "raisedButton": Object {
+                      "color": "#ffffff",
+                      "disabledColor": "rgb(229, 229, 229)",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "primaryColor": "#00bcd4",
+                      "primaryTextColor": "#ffffff",
+                      "secondaryColor": "#ff4081",
+                      "secondaryTextColor": "#ffffff",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "rawTheme": Object {
+                      "fontFamily": "Roboto, sans-serif",
+                      "palette": Object {
+                        "accent1Color": "#ff4081",
+                        "accent2Color": "#f5f5f5",
+                        "accent3Color": "#9e9e9e",
+                        "alternateTextColor": "#ffffff",
+                        "borderColor": "#e0e0e0",
+                        "canvasColor": "#ffffff",
+                        "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                        "disabledColor": "rgba(0, 0, 0, 0.3)",
+                        "pickerHeaderColor": "#00bcd4",
+                        "primary1Color": "#00bcd4",
+                        "primary2Color": "#0097a7",
+                        "primary3Color": "#bdbdbd",
+                        "secondaryTextColor": "rgba(0, 0, 0, 0.54)",
+                        "shadowColor": "rgba(0, 0, 0, 1)",
+                        "textColor": "rgba(0, 0, 0, 0.87)",
+                      },
+                      "spacing": Object {
+                        "desktopDrawerMenuItemHeight": 48,
+                        "desktopDropDownMenuFontSize": 15,
+                        "desktopDropDownMenuItemHeight": 32,
+                        "desktopGutter": 24,
+                        "desktopGutterLess": 16,
+                        "desktopGutterMini": 8,
+                        "desktopGutterMore": 32,
+                        "desktopKeylineIncrement": 64,
+                        "desktopSubheaderHeight": 48,
+                        "desktopToolbarHeight": 56,
+                        "iconSize": 24,
+                      },
+                    },
+                    "refreshIndicator": Object {
+                      "loadingStrokeColor": "#00bcd4",
+                      "strokeColor": "#e0e0e0",
+                    },
+                    "ripple": Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "slider": Object {
+                      "handleColorZero": "#bdbdbd",
+                      "handleFillColor": "#ffffff",
+                      "handleSize": 12,
+                      "handleSizeActive": 18,
+                      "handleSizeDisabled": 8,
+                      "rippleColor": "#00bcd4",
+                      "selectionColor": "#00bcd4",
+                      "trackColor": "#bdbdbd",
+                      "trackColorSelected": "#9e9e9e",
+                      "trackSize": 2,
+                    },
+                    "snackbar": Object {
+                      "actionColor": "#ff4081",
+                      "backgroundColor": "rgba(0, 0, 0, 0.87)",
+                      "textColor": "#ffffff",
+                    },
+                    "spacing": Object {
+                      "desktopDrawerMenuItemHeight": 48,
+                      "desktopDropDownMenuFontSize": 15,
+                      "desktopDropDownMenuItemHeight": 32,
+                      "desktopGutter": 24,
+                      "desktopGutterLess": 16,
+                      "desktopGutterMini": 8,
+                      "desktopGutterMore": 32,
+                      "desktopKeylineIncrement": 64,
+                      "desktopSubheaderHeight": 48,
+                      "desktopToolbarHeight": 56,
+                      "iconSize": 24,
+                    },
+                    "stepper": Object {
+                      "backgroundColor": "transparent",
+                      "connectorLineColor": "#bdbdbd",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.26)",
+                      "hoverBackgroundColor": "rgba(0, 0, 0, 0.06)",
+                      "hoveredIconColor": "#616161",
+                      "iconColor": "#00bcd4",
+                      "inactiveIconColor": "#9e9e9e",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "subheader": Object {
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "fontWeight": 500,
+                    },
+                    "svgIcon": Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "table": Object {
+                      "backgroundColor": "#ffffff",
+                    },
+                    "tableFooter": Object {
+                      "borderColor": "#e0e0e0",
+                      "textColor": "#9e9e9e",
+                    },
+                    "tableHeader": Object {
+                      "borderColor": "#e0e0e0",
+                    },
+                    "tableHeaderColumn": Object {
+                      "height": 56,
+                      "spacing": 24,
+                      "textColor": "#9e9e9e",
+                    },
+                    "tableRow": Object {
+                      "borderColor": "#e0e0e0",
+                      "height": 48,
+                      "hoverColor": "#f5f5f5",
+                      "selectedColor": "#e0e0e0",
+                      "stripeColor": "rgba(127, 221, 233, 0.4)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "tableRowColumn": Object {
+                      "height": 48,
+                      "spacing": 24,
+                    },
+                    "tabs": Object {
+                      "backgroundColor": "#00bcd4",
+                      "selectedTextColor": "#ffffff",
+                      "textColor": "rgba(255, 255, 255, 0.7)",
+                    },
+                    "textField": Object {
+                      "backgroundColor": "transparent",
+                      "borderColor": "#e0e0e0",
+                      "disabledTextColor": "rgba(0, 0, 0, 0.3)",
+                      "errorColor": "#f44336",
+                      "floatingLabelColor": "rgba(0, 0, 0, 0.3)",
+                      "focusColor": "#00bcd4",
+                      "hintColor": "rgba(0, 0, 0, 0.3)",
+                      "textColor": "rgba(0, 0, 0, 0.87)",
+                    },
+                    "timePicker": Object {
+                      "accentColor": "#00bcd4",
+                      "clockCircleColor": "rgba(0, 0, 0, 0.07)",
+                      "clockColor": "rgba(0, 0, 0, 0.87)",
+                      "color": "#ffffff",
+                      "headerColor": "#00bcd4",
+                      "selectColor": "#0097a7",
+                      "selectTextColor": "#ffffff",
+                      "textColor": "#ffffff",
+                    },
+                    "toggle": Object {
+                      "labelColor": "rgba(0, 0, 0, 0.87)",
+                      "labelDisabledColor": "rgba(0, 0, 0, 0.3)",
+                      "thumbDisabledColor": "#e0e0e0",
+                      "thumbOffColor": "#f5f5f5",
+                      "thumbOnColor": "#00bcd4",
+                      "thumbRequiredColor": "#00bcd4",
+                      "trackDisabledColor": "#bdbdbd",
+                      "trackOffColor": "#bdbdbd",
+                      "trackOnColor": "rgba(0, 188, 212, 0.5)",
+                      "trackRequiredColor": "rgba(0, 188, 212, 0.5)",
+                    },
+                    "toolbar": Object {
+                      "backgroundColor": "rgb(232, 232, 232)",
+                      "color": "rgba(0, 0, 0, 0.54)",
+                      "height": 56,
+                      "hoverColor": "rgba(0, 0, 0, 0.87)",
+                      "iconColor": "rgba(0, 0, 0, 0.4)",
+                      "menuHoverColor": "rgba(0, 0, 0, 0.1)",
+                      "separatorColor": "rgba(0, 0, 0, 0.175)",
+                      "titleFontSize": 20,
+                    },
+                    "tooltip": Object {
+                      "color": "#ffffff",
+                      "rippleBackgroundColor": "#616161",
+                    },
+                    "zIndex": Object {
+                      "appBar": 1100,
+                      "dialog": 1500,
+                      "dialogOverlay": 1400,
+                      "drawer": 1300,
+                      "drawerOverlay": 1200,
+                      "layer": 2000,
+                      "menu": 1000,
+                      "popover": 2100,
+                      "snackbar": 2900,
+                      "tooltip": 3000,
+                    },
+                  }
+                }
+                show={false}
+              >
+                <ScaleIn
+                  enterDelay={0}
+                  maxScale={0.85}
+                  style={
+                    Object {
+                      "height": "100%",
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <TransitionGroup
+                    childFactory={[Function]}
+                    component="div"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "left": 0,
+                        "muiPrepared": true,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "height": "100%",
+                          "left": 0,
+                          "muiPrepared": true,
+                          "position": "absolute",
+                          "top": 0,
+                          "width": "100%",
+                        }
+                      }
+                    />
+                  </TransitionGroup>
+                </ScaleIn>
+              </FocusRipple>
+            </div>
+            <label
+              style={
+                Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "display": "block",
+                  "float": "left",
+                  "fontFamily": "Roboto, sans-serif",
+                  "lineHeight": "24px",
+                  "muiPrepared": true,
+                  "position": "relative",
+                  "width": "calc(100% - 60px)",
+                }
+              }
+            >
+              I understand that the files indicated above will be submitted as open access and will be made publically available immediately, or where indicated as closed access, will be made available on the indicated embargo date.
+            </label>
+          </div>
+        </div>
+      </EnhancedSwitch>
+    </Checkbox>
   </div>
 </FileUploader>
 `;

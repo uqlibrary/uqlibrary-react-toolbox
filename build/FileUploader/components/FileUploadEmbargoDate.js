@@ -37,16 +37,23 @@ var FileUploadEmbargoDate = function (_Component) {
         var _this = _possibleConstructorReturn(this, (FileUploadEmbargoDate.__proto__ || Object.getPrototypeOf(FileUploadEmbargoDate)).call(this, props));
 
         _this._onChange = function (event, value) {
-            _this.props.onDateChanged({ key: [_this.props.defaultConfig.fileMetaKey], value: moment(value).format('DD/MM/YYYY') });
+            var date = moment(value).format('DD/MM/YYYY');
+            _this.setState({ value: date });
+            _this.props.onDateChanged({ key: [_this.props.defaultConfig.fileMetaKey], value: date });
         };
 
+        _this.state = {
+            value: null
+        };
         return _this;
     }
 
     _createClass(FileUploadEmbargoDate, [{
         key: 'render',
         value: function render() {
-            var datePickerLocale = this.props.locale.datePickerLocale;
+            var _props$locale = this.props.locale,
+                datePickerLocale = _props$locale.datePickerLocale,
+                errorMessage = _props$locale.errorMessage;
             var _props$defaultConfig = this.props.defaultConfig,
                 dateFormat = _props$defaultConfig.dateFormat,
                 currentDateString = _props$defaultConfig.currentDateString,
@@ -58,6 +65,7 @@ var FileUploadEmbargoDate = function (_Component) {
                 firstDayOfWeek: 0,
                 hintText: currentDateString,
                 locale: datePickerLocale,
+                errorText: this.state.value === null ? errorMessage : '',
                 name: fieldName,
                 onChange: this._onChange
             });
@@ -74,7 +82,8 @@ FileUploadEmbargoDate.propTypes = {
 };
 FileUploadEmbargoDate.defaultProps = {
     locale: {
-        datePickerLocale: 'en-AU'
+        datePickerLocale: 'en-AU',
+        errorMessage: 'This field is required'
     },
     defaultConfig: {
         fileMetaKey: 'date',

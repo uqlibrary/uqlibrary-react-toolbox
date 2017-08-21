@@ -62,7 +62,8 @@ var FileUploadAccessSelector = function (_Component) {
         value: function render() {
             var _props$locale = this.props.locale,
                 initialValue = _props$locale.initialValue,
-                accessSelectOptionsText = _props$locale.accessSelectOptionsText;
+                accessSelectOptionsText = _props$locale.accessSelectOptionsText,
+                errorMessage = _props$locale.errorMessage;
             var _props$defaultConfig = this.props.defaultConfig,
                 fieldName = _props$defaultConfig.fieldName,
                 accessIds = _props$defaultConfig.accessIds;
@@ -82,8 +83,9 @@ var FileUploadAccessSelector = function (_Component) {
                     hintText: initialValue,
                     maxHeight: 250,
                     onChange: this._onChange,
+                    errorText: this.state.value === null ? errorMessage : '',
                     value: this.state.value },
-                _react2.default.createElement(_MenuItem2.default, { value: null, primaryText: initialValue, key: -1, disabled: true }),
+                _react2.default.createElement(_MenuItem2.default, { value: -1, primaryText: initialValue, key: -1, disabled: true }),
                 accessOptions
             );
         }
@@ -100,7 +102,8 @@ FileUploadAccessSelector.propTypes = {
 FileUploadAccessSelector.defaultProps = {
     locale: {
         initialValue: 'Select access conditions',
-        accessSelectOptionsText: (_accessSelectOptionsT = {}, _defineProperty(_accessSelectOptionsT, OPEN_ACCESS_ID, 'Open Access'), _defineProperty(_accessSelectOptionsT, CLOSED_ACCESS_ID, 'Closed Access'), _accessSelectOptionsT)
+        accessSelectOptionsText: (_accessSelectOptionsT = {}, _defineProperty(_accessSelectOptionsT, OPEN_ACCESS_ID, 'Open Access'), _defineProperty(_accessSelectOptionsT, CLOSED_ACCESS_ID, 'Closed Access'), _accessSelectOptionsT),
+        errorMessage: 'This field is required'
     },
     defaultConfig: {
         fileMetaKey: 'access_condition_id',
