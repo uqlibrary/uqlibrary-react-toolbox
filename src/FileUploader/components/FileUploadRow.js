@@ -62,8 +62,8 @@ class FileUploadRow extends Component {
     };
 
     _calculateFilesizeToDisplay = (size) => {
-        const fileSize = Math.round(size / (sizeBase * Math.log10(size)));
-        return `${fileSize}${sizeUnitText[this.props.fileSizeUnit]}`;
+        const exponent = Math.floor(Math.log(size) / Math.log(sizeBase));
+        return `${(size / Math.pow(sizeBase, exponent)).toFixed(1)}${Object.values(sizeUnitText)[exponent]}`;
     };
 
     render() {
@@ -76,7 +76,7 @@ class FileUploadRow extends Component {
                     onAction={ this._deleteFile }
                     locale={ deleteRecordConfirmation } />
                 <div className="column datalist-text filename">
-                    <span className="filename-label">{ this.props.uploadedFile.name }</span><span className="filesize-label">{ this._calculateFilesizeToDisplay(this.props.uploadedFile.size ) }</span>
+                    <span className="filename-label">{ this.props.uploadedFile.name }</span><small className="filesize-label">{ this._calculateFilesizeToDisplay(this.props.uploadedFile.size ) }</small>
                 </div>
                 {
                     this.props.requireFileAccess &&

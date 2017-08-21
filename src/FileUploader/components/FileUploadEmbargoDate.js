@@ -13,7 +13,8 @@ export default class FileUploadEmbargoDate extends Component {
 
     static defaultProps = {
         locale: {
-            datePickerLocale: 'en-AU'
+            datePickerLocale: 'en-AU',
+            errorMessage: 'This field is required'
         },
         defaultConfig: {
             fileMetaKey: 'date',
@@ -25,14 +26,19 @@ export default class FileUploadEmbargoDate extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            value: null
+        };
     }
 
     _onChange = (event, value) => {
-        this.props.onDateChanged({ key: [this.props.defaultConfig.fileMetaKey], value: moment(value).format('DD/MM/YYYY') });
+        const date = moment(value).format('DD/MM/YYYY');
+        this.setState({ value: date });
+        this.props.onDateChanged({ key: [this.props.defaultConfig.fileMetaKey], value: date });
     };
 
     render() {
-        const {datePickerLocale} = this.props.locale;
+        const {datePickerLocale, errorMessage } = this.props.locale;
         const {dateFormat, currentDateString, fieldName} = this.props.defaultConfig;
         return (
             <DatePicker
@@ -41,8 +47,9 @@ export default class FileUploadEmbargoDate extends Component {
                 firstDayOfWeek={0}
                 hintText={currentDateString}
                 locale={datePickerLocale}
-                name={ fieldName }
-                onChange={ this._onChange }
+                errorText={this.state.value === null ? errorMessage : ''}
+                name={fieldName}
+                onChange={this._onChange}
             />
         );
     }

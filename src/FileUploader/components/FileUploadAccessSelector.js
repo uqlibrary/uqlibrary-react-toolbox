@@ -19,7 +19,8 @@ export default class FileUploadAccessSelector extends Component {
             accessSelectOptionsText: {
                 [OPEN_ACCESS_ID]: 'Open Access',
                 [CLOSED_ACCESS_ID]: 'Closed Access'
-            }
+            },
+            errorMessage: 'This field is required'
         },
         defaultConfig: {
             fileMetaKey: 'access_condition_id',
@@ -44,7 +45,7 @@ export default class FileUploadAccessSelector extends Component {
     };
 
     render() {
-        const {initialValue, accessSelectOptionsText} = this.props.locale;
+        const {initialValue, accessSelectOptionsText, errorMessage} = this.props.locale;
         const {fieldName, accessIds} = this.props.defaultConfig;
 
         const accessOptions = accessIds.map((access, index) => (<MenuItem value={ access } primaryText={ accessSelectOptionsText[access] } key={ index } />));
@@ -58,8 +59,9 @@ export default class FileUploadAccessSelector extends Component {
                 hintText={ initialValue }
                 maxHeight={ 250 }
                 onChange={ this._onChange }
+                errorText={ this.state.value === null ? errorMessage : '' }
                 value={ this.state.value }>
-                <MenuItem value={ null } primaryText={ initialValue } key={ -1 } disabled/>
+                <MenuItem value={ -1 } primaryText={ initialValue }  key={ -1 } disabled />
                 { accessOptions }
             </SelectField>
         );
