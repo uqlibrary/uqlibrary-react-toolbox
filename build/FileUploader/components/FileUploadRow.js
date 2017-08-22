@@ -116,12 +116,12 @@ var FileUploadRow = function (_Component) {
                     { className: 'column datalist-text filename' },
                     _react2.default.createElement(
                         'span',
-                        { className: 'filename-label' },
+                        { className: 'filenameLabel' },
                         this.props.uploadedFile.name
                     ),
                     _react2.default.createElement(
-                        'small',
-                        { className: 'filesize-label' },
+                        'span',
+                        { className: 'filesizeLabel datalist-text-subtitle' },
                         this._calculateFilesizeToDisplay(this.props.uploadedFile.size)
                     )
                 ),

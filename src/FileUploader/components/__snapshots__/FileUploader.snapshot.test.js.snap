@@ -939,15 +939,15 @@ exports[`FileUploader renders row for uploaded files 2`] = `
             className="column datalist-text filename"
           >
             <span
-              className="filename-label"
+              className="filenameLabel"
             >
               a.txt
             </span>
-            <small
-              className="filesize-label"
+            <span
+              className="filesizeLabel datalist-text-subtitle"
             >
               100.0B
-            </small>
+            </span>
           </div>
           <div
             className="column is-narrow uploadedFileDelete datalist-buttons"
@@ -1255,15 +1255,15 @@ exports[`FileUploader renders row for uploaded files 2`] = `
             className="column datalist-text filename"
           >
             <span
-              className="filename-label"
+              className="filenameLabel"
             >
               b.txt
             </span>
-            <small
-              className="filesize-label"
+            <span
+              className="filesizeLabel datalist-text-subtitle"
             >
               100.0B
-            </small>
+            </span>
           </div>
           <div
             className="column is-narrow uploadedFileDelete datalist-buttons"
@@ -2043,15 +2043,15 @@ exports[`FileUploader renders row for uploaded files 3`] = `
             className="column datalist-text filename"
           >
             <span
-              className="filename-label"
+              className="filenameLabel"
             >
               b.txt
             </span>
-            <small
-              className="filesize-label"
+            <span
+              className="filesizeLabel datalist-text-subtitle"
             >
               100.0B
-            </small>
+            </span>
           </div>
           <div
             className="column is-narrow uploadedFileDelete datalist-buttons"
@@ -3195,15 +3195,15 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
             className="column datalist-text filename"
           >
             <span
-              className="filename-label"
+              className="filenameLabel"
             >
               a.txt
             </span>
-            <small
-              className="filesize-label"
+            <span
+              className="filesizeLabel datalist-text-subtitle"
             >
               100.0B
-            </small>
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
@@ -4905,15 +4905,15 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
             className="column datalist-text filename"
           >
             <span
-              className="filename-label"
+              className="filenameLabel"
             >
               b.txt
             </span>
-            <small
-              className="filesize-label"
+            <span
+              className="filesizeLabel datalist-text-subtitle"
             >
               100.0B
-            </small>
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
@@ -7104,15 +7104,15 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
             className="column datalist-text filename"
           >
             <span
-              className="filename-label"
+              className="filenameLabel"
             >
               a.txt
             </span>
-            <small
-              className="filesize-label"
+            <span
+              className="filesizeLabel datalist-text-subtitle"
             >
               100.0B
-            </small>
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
@@ -8814,15 +8814,15 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
             className="column datalist-text filename"
           >
             <span
-              className="filename-label"
+              className="filenameLabel"
             >
               b.txt
             </span>
-            <small
-              className="filesize-label"
+            <span
+              className="filesizeLabel datalist-text-subtitle"
             >
               100.0B
-            </small>
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
@@ -11013,15 +11013,15 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
             className="column datalist-text filename"
           >
             <span
-              className="filename-label"
+              className="filenameLabel"
             >
               a.txt
             </span>
-            <small
-              className="filesize-label"
+            <span
+              className="filesizeLabel datalist-text-subtitle"
             >
               100.0B
-            </small>
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
@@ -12723,15 +12723,15 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
             className="column datalist-text filename"
           >
             <span
-              className="filename-label"
+              className="filenameLabel"
             >
               b.txt
             </span>
-            <small
-              className="filesize-label"
+            <span
+              className="filesizeLabel datalist-text-subtitle"
             >
               100.0B
-            </small>
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
@@ -16088,15 +16088,15 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
             className="column datalist-text filename"
           >
             <span
-              className="filename-label"
+              className="filenameLabel"
             >
               a.txt
             </span>
-            <small
-              className="filesize-label"
+            <span
+              className="filesizeLabel datalist-text-subtitle"
             >
               100.0B
-            </small>
+            </span>
           </div>
           <div
             className="column datalist-text file-access"
@@ -17798,15 +17798,15 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
             className="column datalist-text filename"
           >
             <span
-              className="filename-label"
+              className="filenameLabel"
             >
               b.txt
             </span>
-            <small
-              className="filesize-label"
+            <span
+              className="filesizeLabel datalist-text-subtitle"
             >
               100.0B
-            </small>
+            </span>
           </div>
           <div
             className="column datalist-text file-access"

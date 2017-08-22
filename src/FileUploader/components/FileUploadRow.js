@@ -80,7 +80,8 @@ class FileUploadRow extends Component {
                     onAction={ this._deleteFile }
                     locale={ deleteRecordConfirmation } />
                 <div className="column datalist-text filename">
-                    <span className="filename-label">{ this.props.uploadedFile.name }</span><small className="filesize-label">{ this._calculateFilesizeToDisplay(this.props.uploadedFile.size ) }</small>
+                    <span className="filenameLabel">{ this.props.uploadedFile.name }</span>
+                    <span className="filesizeLabel datalist-text-subtitle">{this._calculateFilesizeToDisplay(this.props.uploadedFile.size )}</span>
                 </div>
                 {
                     this.props.requireFileAccess &&
