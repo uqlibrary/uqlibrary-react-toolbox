@@ -212,7 +212,11 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     clearErrors: clearErrors }),
                 uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, { onDeleteAll: this.deleteAllFiles, requireFileAccess: requireFileAccess }),
                 uploadedFilesRow,
-                requireFileAccess && this._isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this.acceptTermsAndConditions, checked: termsAndConditions }),
+                requireFileAccess && this._isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(
+                    'div',
+                    { style: { position: 'relative', width: '100%' }, className: !termsAndConditions ? 'error-checkbox' : {} },
+                    _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this.acceptTermsAndConditions, checked: termsAndConditions })
+                ),
                 overallProgress > 0 && _react2.default.createElement(_LinearProgress2.default, {
                     className: 'upload-overall',
                     mode: 'determinate',

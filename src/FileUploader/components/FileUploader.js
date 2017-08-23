@@ -176,7 +176,9 @@ export class FileUploader extends PureComponent {
 
                 {
                     requireFileAccess && this._isAnyOpenAccess(uploadedFiles) &&
-                        <Checkbox label={ accessTermsAndConditions } onCheck={ this.acceptTermsAndConditions } checked={ termsAndConditions } />
+                        <div style={{position: 'relative', width: '100%'}} className={!termsAndConditions ? 'error-checkbox' : {}}>
+                            <Checkbox label={ accessTermsAndConditions } onCheck={ this.acceptTermsAndConditions } checked={ termsAndConditions } />
+                        </div>
                 }
 
                 {
