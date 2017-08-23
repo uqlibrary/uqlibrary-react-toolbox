@@ -300,7 +300,7 @@ var FileUploadDropzone = function (_PureComponent) {
                 null,
                 _react2.default.createElement(
                     'div',
-                    { className: 'columns', style: { marginTop: '12px' } },
+                    { className: 'columns' },
                     _react2.default.createElement(
                         'div',
                         { className: 'column', tabIndex: '0', onKeyPress: this.onKeyPress },

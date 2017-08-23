@@ -231,7 +231,7 @@ class FileUploadDropzone extends PureComponent {
 
         return (
             <div>
-                <div className="columns" style={{ marginTop: '12px' }}>
+                <div className="columns">
                     <div className="column"  tabIndex="0" onKeyPress={ this.onKeyPress }>
                         <Dropzone
                             ref={ (node) => { this.dropzoneRef = node; }}
