@@ -35,6 +35,7 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
         _this.state = {
             options: {
                 chart: {
+                    height: 300,
                     plotShadow: false,
                     plotBorderWidth: 0,
                     spacingBottom: 10,
@@ -48,7 +49,7 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
                     symbolRadius: 0,
                     floating: true,
                     layout: 'vertical',
-                    y: 0
+                    y: -100
                 },
                 tooltip: {
                     enabled: false
@@ -63,18 +64,18 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
                     pie: {
                         showInLegend: true,
                         dataLabels: {
-                            connectorWidth: 2,
-                            distance: 10,
-                            overflow: 'none',
+                            connectorWidth: 0,
+                            distance: -25,
+                            // overflow: 'none',
                             className: 'pieLabels ',
                             format: '{y}',
                             useHTML: true,
                             enabled: true
                         },
                         shadow: false,
-                        center: ['50%', '40%'],
-                        size: '75%',
-                        innerSize: '70%',
+                        center: ['50%', '50%'],
+                        size: '100%',
+                        innerSize: '60%',
                         borderColor: 'none'
                     }
                 },
