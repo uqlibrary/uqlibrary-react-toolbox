@@ -203,6 +203,10 @@ var FileUploadDropzone = function (_PureComponent) {
             _this._processErrors(_this.errors);
         };
 
+        _this.onKeyPress = function () {
+            _this.dropzoneRef.open();
+        };
+
         _this.state = {
             errorMessage: []
         };
@@ -287,6 +291,10 @@ var FileUploadDropzone = function (_PureComponent) {
         value: function render() {
             var _this2 = this;
 
+            var errorTitle = this.props.locale.errorTitle;
+            var errorMessage = this.state.errorMessage;
+
+
             return _react2.default.createElement(
                 'div',
                 null,
@@ -295,9 +303,7 @@ var FileUploadDropzone = function (_PureComponent) {
                     { className: 'columns', style: { marginTop: '12px' } },
                     _react2.default.createElement(
                         'div',
-                        { className: 'column', tabIndex: '0', onKeyPress: function onKeyPress() {
-                                return _this2.dropzoneRef.open();
-                            } },
+                        { className: 'column', tabIndex: '0', onKeyPress: this.onKeyPress },
                         _react2.default.createElement(
                             _reactDropzone2.default,
                             {
@@ -312,7 +318,7 @@ var FileUploadDropzone = function (_PureComponent) {
                         )
                     )
                 ),
-                this.state.errorMessage.length > 0 && _react2.default.createElement(_.Alert, { title: 'Upload errors', message: this.state.errorMessage, type: 'error' })
+                errorMessage.length > 0 && _react2.default.createElement(_.Alert, { title: errorTitle, message: errorMessage, type: 'error' })
             );
         }
     }]);
@@ -333,7 +339,8 @@ FileUploadDropzone.defaultProps = {
         validation: {
             single: (_single = {}, _defineProperty(_single, 'folder', 'Invalid file ([filename])'), _defineProperty(_single, 'fileName', 'Invalid file name ([filename])'), _defineProperty(_single, 'fileNameLength', 'Filename ([filename]) is too long'), _defineProperty(_single, 'maxFileSize', 'File ([filename]) is too big'), _defineProperty(_single, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'), _single),
             multiple: (_multiple = {}, _defineProperty(_multiple, 'folder', 'Invalid files ([filenames])'), _defineProperty(_multiple, 'fileName', '[numberOfFiles] files ([filenames]) have an invalid file name'), _defineProperty(_multiple, 'fileNameLength', '[numberOfFiles] filenames ([filenames]) are too long'), _defineProperty(_multiple, 'maxFileSize', '[numberOfFiles] files ([filenames]) are too big'), _defineProperty(_multiple, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'), _multiple)
-        }
+        },
+        errorTitle: 'Upload Errors'
     }
 };
 exports.default = FileUploadDropzone;

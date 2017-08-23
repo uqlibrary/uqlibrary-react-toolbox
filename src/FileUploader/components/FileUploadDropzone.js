@@ -31,7 +31,8 @@ class FileUploadDropzone extends PureComponent {
                     ['maxFileSize']: '[numberOfFiles] files ([filenames]) are too big',
                     ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'
                 }
-            }
+            },
+            errorTitle: 'Upload Errors'
         }
     };
 
@@ -220,11 +221,18 @@ class FileUploadDropzone extends PureComponent {
         this._processErrors(this.errors);
     };
 
+    onKeyPress = () => {
+        this.dropzoneRef.open();
+    };
+
     render() {
+        const { errorTitle } = this.props.locale;
+        const { errorMessage } = this.state;
+
         return (
             <div>
                 <div className="columns" style={{ marginTop: '12px' }}>
-                    <div className="column"  tabIndex="0" onKeyPress={ () => this.dropzoneRef.open() }>
+                    <div className="column"  tabIndex="0" onKeyPress={ this.onKeyPress }>
                         <Dropzone
                             ref={ (node) => { this.dropzoneRef = node; }}
                             maxSize={ this.props.maxSize }
@@ -236,8 +244,8 @@ class FileUploadDropzone extends PureComponent {
                     </div>
                 </div>
                 {
-                    this.state.errorMessage.length > 0 && (
-                        <Alert title="Upload errors" message={ this.state.errorMessage } type="error" />
+                    errorMessage.length > 0 && (
+                        <Alert title={ errorTitle } message={ errorMessage } type="error" />
                     )
                 }
             </div>

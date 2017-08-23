@@ -5,6 +5,7 @@ exports[`FileUploadDropzone renders correctly without any setup 1`] = `
   clearErrors={false}
   locale={
     Object {
+      "errorTitle": "Upload Errors",
       "validation": Object {
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -154,6 +155,7 @@ exports[`FileUploadDropzone renders row for uploaded files 1`] = `
   clearErrors={false}
   locale={
     Object {
+      "errorTitle": "Upload Errors",
       "validation": Object {
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -303,6 +305,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
   clearErrors={false}
   locale={
     Object {
+      "errorTitle": "Upload Errors",
       "validation": Object {
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -447,7 +450,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
       allowDismiss={false}
       message="File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; Invalid file name (a.text.txt)"
       outsideLayout={false}
-      title="Upload errors"
+      title="Upload Errors"
       type="error"
     >
       <div
@@ -493,7 +496,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
               <span
                 className="alertTitle"
               >
-                Upload errors
+                Upload Errors
                  - 
               </span>
               File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; Invalid file name (a.text.txt)
@@ -511,6 +514,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
   clearErrors={false}
   locale={
     Object {
+      "errorTitle": "Upload Errors",
       "validation": Object {
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -655,7 +659,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
       allowDismiss={false}
       message="Only 3 files are allowed to be uploaded. File (d.txt) ignored"
       outsideLayout={false}
-      title="Upload errors"
+      title="Upload Errors"
       type="error"
     >
       <div
@@ -701,7 +705,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
               <span
                 className="alertTitle"
               >
-                Upload errors
+                Upload Errors
                  - 
               </span>
               Only 3 files are allowed to be uploaded. File (d.txt) ignored

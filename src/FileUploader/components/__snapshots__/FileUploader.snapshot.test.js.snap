@@ -29,6 +29,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
       clearErrors={false}
       locale={
         Object {
+          "errorTitle": "Upload Errors",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -204,6 +205,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
       clearErrors={false}
       locale={
         Object {
+          "errorTitle": "Upload Errors",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -379,6 +381,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
       clearErrors={false}
       locale={
         Object {
+          "errorTitle": "Upload Errors",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -1487,6 +1490,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
       clearErrors={true}
       locale={
         Object {
+          "errorTitle": "Upload Errors",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -2275,6 +2279,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
       clearErrors={true}
       locale={
         Object {
+          "errorTitle": "Upload Errors",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -2450,6 +2455,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
       clearErrors={false}
       locale={
         Object {
+          "errorTitle": "Upload Errors",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -2625,6 +2631,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
       clearErrors={false}
       locale={
         Object {
+          "errorTitle": "Upload Errors",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -6531,6 +6538,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
       clearErrors={true}
       locale={
         Object {
+          "errorTitle": "Upload Errors",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -10440,6 +10448,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
       clearErrors={true}
       locale={
         Object {
+          "errorTitle": "Upload Errors",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -15522,6 +15531,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
       clearErrors={true}
       locale={
         Object {
+          "errorTitle": "Upload Errors",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
