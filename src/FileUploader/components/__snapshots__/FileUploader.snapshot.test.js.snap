@@ -840,6 +840,9 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                 "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
                 "confirmationTitle": "Delete file",
               },
+              "embargoDateColumn": "Embargo Date",
+              "fileAccessColumn": "File Access",
+              "filenameColumn": "File name",
             }
           }
           onAttributeChanged={[Function]}
@@ -1185,6 +1188,9 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                 "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
                 "confirmationTitle": "Delete file",
               },
+              "embargoDateColumn": "Embargo Date",
+              "fileAccessColumn": "File Access",
+              "filenameColumn": "File name",
             }
           }
           onAttributeChanged={[Function]}
@@ -1997,6 +2003,9 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                 "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
                 "confirmationTitle": "Delete file",
               },
+              "embargoDateColumn": "Embargo Date",
+              "fileAccessColumn": "File Access",
+              "filenameColumn": "File name",
             }
           }
           onAttributeChanged={[Function]}
@@ -3171,6 +3180,9 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                 "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
                 "confirmationTitle": "Delete file",
               },
+              "embargoDateColumn": "Embargo Date",
+              "fileAccessColumn": "File Access",
+              "filenameColumn": "File name",
             }
           }
           onAttributeChanged={[Function]}
@@ -4969,6 +4981,9 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                 "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
                 "confirmationTitle": "Delete file",
               },
+              "embargoDateColumn": "Embargo Date",
+              "fileAccessColumn": "File Access",
+              "filenameColumn": "File name",
             }
           }
           onAttributeChanged={[Function]}
@@ -7250,6 +7265,9 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                 "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
                 "confirmationTitle": "Delete file",
               },
+              "embargoDateColumn": "Embargo Date",
+              "fileAccessColumn": "File Access",
+              "filenameColumn": "File name",
             }
           }
           onAttributeChanged={[Function]}
@@ -9049,6 +9067,9 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                 "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
                 "confirmationTitle": "Delete file",
               },
+              "embargoDateColumn": "Embargo Date",
+              "fileAccessColumn": "File Access",
+              "filenameColumn": "File name",
             }
           }
           onAttributeChanged={[Function]}
@@ -11330,6 +11351,9 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                 "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
                 "confirmationTitle": "Delete file",
               },
+              "embargoDateColumn": "Embargo Date",
+              "fileAccessColumn": "File Access",
+              "filenameColumn": "File name",
             }
           }
           onAttributeChanged={[Function]}
@@ -13129,6 +13153,9 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                 "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
                 "confirmationTitle": "Delete file",
               },
+              "embargoDateColumn": "Embargo Date",
+              "fileAccessColumn": "File Access",
+              "filenameColumn": "File name",
             }
           }
           onAttributeChanged={[Function]}
@@ -16585,6 +16612,9 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                 "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
                 "confirmationTitle": "Delete file",
               },
+              "embargoDateColumn": "Embargo Date",
+              "fileAccessColumn": "File Access",
+              "filenameColumn": "File name",
             }
           }
           onAttributeChanged={[Function]}
@@ -18385,6 +18415,9 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                 "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
                 "confirmationTitle": "Delete file",
               },
+              "embargoDateColumn": "Embargo Date",
+              "fileAccessColumn": "File Access",
+              "filenameColumn": "File name",
             }
           }
           onAttributeChanged={[Function]}

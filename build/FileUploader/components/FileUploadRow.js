@@ -99,7 +99,11 @@ var FileUploadRow = function (_Component) {
         value: function render() {
             var _this2 = this;
 
-            var deleteRecordConfirmation = this.props.locale.deleteRecordConfirmation;
+            var _props$locale = this.props.locale,
+                deleteRecordConfirmation = _props$locale.deleteRecordConfirmation,
+                filenameColumn = _props$locale.filenameColumn,
+                fileAccessColumn = _props$locale.fileAccessColumn,
+                embargoDateColumn = _props$locale.embargoDateColumn;
             var access_condition_id = this.state.access_condition_id;
 
             return _react2.default.createElement(
@@ -132,7 +136,7 @@ var FileUploadRow = function (_Component) {
                     _react2.default.createElement(
                         'span',
                         { className: 'is-mobile label' },
-                        'File name'
+                        filenameColumn
                     )
                 ),
                 this.props.requireFileAccess && _react2.default.createElement(
@@ -147,7 +151,7 @@ var FileUploadRow = function (_Component) {
                     _react2.default.createElement(
                         'span',
                         { className: 'is-mobile label' },
-                        'File Access'
+                        fileAccessColumn
                     )
                 ),
                 this.props.requireFileAccess && !this._isOpenAccess(access_condition_id) && _react2.default.createElement(
@@ -166,7 +170,7 @@ var FileUploadRow = function (_Component) {
                     _react2.default.createElement(
                         'span',
                         { className: 'is-mobile label' },
-                        'Embargo Date'
+                        embargoDateColumn
                     )
                 ),
                 this.props.requireFileAccess && this._isOpenAccess(access_condition_id) && _react2.default.createElement(
@@ -181,7 +185,7 @@ var FileUploadRow = function (_Component) {
                     _react2.default.createElement(
                         'span',
                         { className: 'is-mobile label' },
-                        'Embargo Date'
+                        embargoDateColumn
                     )
                 ),
                 this.props.progress === 0 && _react2.default.createElement(
@@ -239,7 +243,10 @@ FileUploadRow.defaultProps = {
             confirmationMessage: 'Are you sure you want to remove this file from the uploaded queue?',
             cancelButtonLabel: 'No',
             confirmButtonLabel: 'Yes'
-        }
+        },
+        filenameColumn: 'File name',
+        fileAccessColumn: 'File Access',
+        embargoDateColumn: 'Embargo Date'
     }
 };
 
