@@ -78,12 +78,12 @@ var FileUploadAccessSelector = function (_Component) {
                 {
                     id: fieldName,
                     name: fieldName,
-                    autoWidth: true,
-                    className: 'selectField',
+                    className: 'selectField requiredField',
                     hintText: initialValue,
                     maxHeight: 250,
                     onChange: this._onChange,
                     errorText: this.state.value === null ? errorMessage : '',
+                    floatingLabelFixed: true,
                     value: this.state.value },
                 _react2.default.createElement(_MenuItem2.default, { value: -1, primaryText: initialValue, key: -1, disabled: true }),
                 accessOptions
@@ -107,7 +107,7 @@ FileUploadAccessSelector.defaultProps = {
     },
     defaultConfig: {
         fileMetaKey: 'access_condition_id',
-        fieldName: 'accessDate',
+        fieldName: 'accessCondition',
         accessIds: [CLOSED_ACCESS_ID, OPEN_ACCESS_ID]
     }
 };

@@ -165,30 +165,31 @@ export class FileUploader extends PureComponent {
                     onDropped={ this.setUploadedFiles }
                     uploadedFiles={ uploadedFiles }
                     clearErrors={ clearErrors } />
+                <div className="metadata-container">
+                    {
+                         uploadedFiles.length > 0 && (
+                            <FileUploadRowHeader onDeleteAll={ this.deleteAllFiles } requireFileAccess={ requireFileAccess } />
+                         )
+                    }
 
-                {
-                     uploadedFiles.length > 0 && (
-                        <FileUploadRowHeader onDeleteAll={ this.deleteAllFiles } requireFileAccess={ requireFileAccess } />
-                     )
-                }
+                    { uploadedFilesRow }
 
-                { uploadedFilesRow }
+                    {
+                        requireFileAccess && this._isAnyOpenAccess(uploadedFiles) &&
+                            <div style={{position: 'relative', width: '100%'}} className={!termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox'}>
+                                <Checkbox label={ accessTermsAndConditions } onCheck={ this.acceptTermsAndConditions } checked={ termsAndConditions } />
+                            </div>
+                    }
 
-                {
-                    requireFileAccess && this._isAnyOpenAccess(uploadedFiles) &&
-                        <div style={{position: 'relative', width: '100%'}} className={!termsAndConditions ? 'error-checkbox' : {}}>
-                            <Checkbox label={ accessTermsAndConditions } onCheck={ this.acceptTermsAndConditions } checked={ termsAndConditions } />
-                        </div>
-                }
-
-                {
-                    overallProgress > 0 &&
-                    <LinearProgress
-                        className="upload-overall"
-                        mode="determinate"
-                        value={ overallProgress }
-                    />
-                }
+                    {
+                        overallProgress > 0 &&
+                        <LinearProgress
+                            className="upload-overall"
+                            mode="determinate"
+                            value={ overallProgress }
+                        />
+                    }
+                </div>
             </div>
         );
     }

@@ -24,7 +24,7 @@ export default class FileUploadAccessSelector extends Component {
         },
         defaultConfig: {
             fileMetaKey: 'access_condition_id',
-            fieldName: 'accessDate',
+            fieldName: 'accessCondition',
             accessIds: [
                 CLOSED_ACCESS_ID,
                 OPEN_ACCESS_ID
@@ -54,12 +54,12 @@ export default class FileUploadAccessSelector extends Component {
             <SelectField
                 id={ fieldName }
                 name={ fieldName }
-                autoWidth
-                className="selectField"
+                className="selectField requiredField"
                 hintText={ initialValue }
                 maxHeight={ 250 }
                 onChange={ this._onChange }
                 errorText={ this.state.value === null ? errorMessage : '' }
+                floatingLabelFixed
                 value={ this.state.value }>
                 <MenuItem value={ -1 } primaryText={ initialValue }  key={ -1 } disabled />
                 { accessOptions }

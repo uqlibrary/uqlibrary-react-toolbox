@@ -32,11 +32,6 @@ exports[`FileUploadDropzone renders correctly without any setup 1`] = `
   <div>
     <div
       className="columns"
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
     >
       <div
         className="column"
@@ -182,11 +177,6 @@ exports[`FileUploadDropzone renders row for uploaded files 1`] = `
   <div>
     <div
       className="columns"
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
     >
       <div
         className="column"
@@ -332,11 +322,6 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
   <div>
     <div
       className="columns"
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
     >
       <div
         className="column"
@@ -541,11 +526,6 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
   <div>
     <div
       className="columns"
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
     >
       <div
         className="column"

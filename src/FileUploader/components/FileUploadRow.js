@@ -74,36 +74,44 @@ class FileUploadRow extends Component {
         const { deleteRecordConfirmation } = this.props.locale;
         const { access_condition_id } = this.state;
         return (
-            <div className="columns is-gapless is-mobile uploadedFileRow datalist datalist-row">
+            <div className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix">
                 <ConfirmDialogBox
                     onRef={ ref => (this.confirmationBox = ref) }
                     onAction={ this._deleteFile }
                     locale={ deleteRecordConfirmation } />
-                <div className="column datalist-text filename">
-                    <span className="filenameLabel">{ this.props.uploadedFile.name }</span>
-                    <span className="filesizeLabel datalist-text-subtitle">{this._calculateFilesizeToDisplay(this.props.uploadedFile.size )}</span>
+                <div className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile">
+                    <FontIcon className="material-icons mobile-icon">attachment</FontIcon>
+                    <span className="file-name">{ this.props.uploadedFile.name }</span>
+                    <span className="datalist-text-subtitle secondary-info-mobile">{this._calculateFilesizeToDisplay(this.props.uploadedFile.size )}</span>
+                    <span className="is-mobile label">File name</span>
                 </div>
                 {
                     this.props.requireFileAccess &&
-                    <div className="column datalist-text file-access">
-                        <FileUploadAccessSelector onAccessChanged={ this._updateFileMetadata }/>
+                    <div className="column datalist-text file-access-selector is-3-desktop is-3-tablet is-12-mobile">
+                        <FontIcon className="material-icons mobile-icon">lock_outline</FontIcon>
+                        <FileUploadAccessSelector onAccessChanged={ this._updateFileMetadata } />
+                        <span className="is-mobile label">File Access</span>
                     </div>
                 }
                 {
                     this.props.requireFileAccess && !this._isOpenAccess(access_condition_id) &&
-                    <div className="column datalist-text embargo-date">
+                    <div className="column datalist-text no-embargo-date is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
+                        <FontIcon className="material-icons mobile-icon">date_range</FontIcon>
                         <span>No Date</span>
+                        <span className="is-mobile label">Embargo Date</span>
                     </div>
                 }
                 {
                     this.props.requireFileAccess && this._isOpenAccess(access_condition_id) &&
-                    <div className="column datalist-text embargo-date">
+                    <div className="column datalist-text embargo-date-selector is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
+                        <FontIcon className="material-icons mobile-icon">date_range</FontIcon>
                         <FileUploadEmbargoDate onDateChanged={ this._updateFileMetadata }/>
+                        <span className="is-mobile label">Embargo Date</span>
                     </div>
                 }
                 {
                     this.props.progress === 0 &&
-                        <div className="column is-narrow uploadedFileDelete datalist-buttons">
+                        <div className="column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless">
                             <IconButton tooltip={ this.props.locale.deleteHint } onTouchTap={ this._showConfirmation }>
                                 <FontIcon className="material-icons deleteIcon">delete</FontIcon>
                             </IconButton>

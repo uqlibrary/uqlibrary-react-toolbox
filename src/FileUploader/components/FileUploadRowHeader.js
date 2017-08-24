@@ -38,26 +38,26 @@ export default class FileUploadRowHeader extends Component {
         const { filenameColumn, fileAccessColumn, embargoDateColumn, deleteAllFiles, deleteAllFilesConfirmation } = this.props.locale;
 
         return (
-            <div className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header">
+            <div className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile">
                 <ConfirmDialogBox onRef={ ref => (this.confirmationBox = ref) }
                                   onAction={ this.props.onDeleteAll }
                                   locale={ deleteAllFilesConfirmation } />
-                <div className="column filename datalist-title" style={{ textIndent: '12px' }}>
+                <div className="column datalist-title is-6-desktop is-6-tablet is-12-mobile header">
                     { filenameColumn }
                 </div>
                 {
                     this.props.requireFileAccess &&
-                    <div className="column file-access datalist-title requiredField">
+                    <div className="column datalist-title is-3-desktop is-3-tablet is-12-mobile header">
                         { fileAccessColumn }
                     </div>
                 }
                 {
                     this.props.requireFileAccess &&
-                    <div className="column embargo-date datalist-title">
+                    <div className="column datalist-title is-2-desktop is-2-tablet is-12-mobile header">
                         { embargoDateColumn }
                     </div>
                 }
-                <div className="column is-narrow buttons datalist-buttons">
+                <div className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header">
                     <IconButton tooltip={ deleteAllFiles } onTouchTap={ this._showConfirmation }>
                         <FontIcon className="material-icons">delete_forever</FontIcon>
                     </IconButton>

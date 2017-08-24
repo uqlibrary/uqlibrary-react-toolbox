@@ -42,12 +42,13 @@ export default class FileUploadEmbargoDate extends Component {
         const {dateFormat, currentDateString, fieldName} = this.props.defaultConfig;
         return (
             <DatePicker
-                className="datepicker"
+                className="embargo-date requiredField"
                 DateTimeFormat={dateFormat}
                 firstDayOfWeek={0}
                 hintText={currentDateString}
                 locale={datePickerLocale}
                 errorText={this.state.value === null ? errorMessage : ''}
+                id={fieldName}
                 name={fieldName}
                 onChange={this._onChange}
             />

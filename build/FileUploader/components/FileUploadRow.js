@@ -104,7 +104,7 @@ var FileUploadRow = function (_Component) {
 
             return _react2.default.createElement(
                 'div',
-                { className: 'columns is-gapless is-mobile uploadedFileRow datalist datalist-row' },
+                { className: 'columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix' },
                 _react2.default.createElement(_.ConfirmDialogBox, {
                     onRef: function onRef(ref) {
                         return _this2.confirmationBox = ref;
@@ -113,40 +113,80 @@ var FileUploadRow = function (_Component) {
                     locale: deleteRecordConfirmation }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'column datalist-text filename' },
+                    { className: 'column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile' },
+                    _react2.default.createElement(
+                        _FontIcon2.default,
+                        { className: 'material-icons mobile-icon' },
+                        'attachment'
+                    ),
                     _react2.default.createElement(
                         'span',
-                        { className: 'filenameLabel' },
+                        { className: 'file-name' },
                         this.props.uploadedFile.name
                     ),
                     _react2.default.createElement(
                         'span',
-                        { className: 'filesizeLabel datalist-text-subtitle' },
+                        { className: 'datalist-text-subtitle secondary-info-mobile' },
                         this._calculateFilesizeToDisplay(this.props.uploadedFile.size)
+                    ),
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'is-mobile label' },
+                        'File name'
                     )
                 ),
                 this.props.requireFileAccess && _react2.default.createElement(
                     'div',
-                    { className: 'column datalist-text file-access' },
-                    _react2.default.createElement(_FileUploadAccessSelector2.default, { onAccessChanged: this._updateFileMetadata })
+                    { className: 'column datalist-text file-access-selector is-3-desktop is-3-tablet is-12-mobile' },
+                    _react2.default.createElement(
+                        _FontIcon2.default,
+                        { className: 'material-icons mobile-icon' },
+                        'lock_outline'
+                    ),
+                    _react2.default.createElement(_FileUploadAccessSelector2.default, { onAccessChanged: this._updateFileMetadata }),
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'is-mobile label' },
+                        'File Access'
+                    )
                 ),
                 this.props.requireFileAccess && !this._isOpenAccess(access_condition_id) && _react2.default.createElement(
                     'div',
-                    { className: 'column datalist-text embargo-date' },
+                    { className: 'column datalist-text no-embargo-date is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile' },
+                    _react2.default.createElement(
+                        _FontIcon2.default,
+                        { className: 'material-icons mobile-icon' },
+                        'date_range'
+                    ),
                     _react2.default.createElement(
                         'span',
                         null,
                         'No Date'
+                    ),
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'is-mobile label' },
+                        'Embargo Date'
                     )
                 ),
                 this.props.requireFileAccess && this._isOpenAccess(access_condition_id) && _react2.default.createElement(
                     'div',
-                    { className: 'column datalist-text embargo-date' },
-                    _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata })
+                    { className: 'column datalist-text embargo-date-selector is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile' },
+                    _react2.default.createElement(
+                        _FontIcon2.default,
+                        { className: 'material-icons mobile-icon' },
+                        'date_range'
+                    ),
+                    _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata }),
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'is-mobile label' },
+                        'Embargo Date'
+                    )
                 ),
                 this.props.progress === 0 && _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow uploadedFileDelete datalist-buttons' },
+                    { className: 'column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless' },
                     _react2.default.createElement(
                         _IconButton2.default,
                         { tooltip: this.props.locale.deleteHint, onTouchTap: this._showConfirmation },

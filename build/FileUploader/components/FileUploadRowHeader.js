@@ -62,7 +62,7 @@ var FileUploadRowHeader = function (_Component) {
 
             return _react2.default.createElement(
                 'div',
-                { className: 'columns is-gapless is-mobile uploadedFileHeader datalist datalist-header' },
+                { className: 'columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile' },
                 _react2.default.createElement(_.ConfirmDialogBox, { onRef: function onRef(ref) {
                         return _this2.confirmationBox = ref;
                     },
@@ -70,22 +70,22 @@ var FileUploadRowHeader = function (_Component) {
                     locale: deleteAllFilesConfirmation }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'column filename datalist-title', style: { textIndent: '12px' } },
+                    { className: 'column datalist-title is-6-desktop is-6-tablet is-12-mobile header' },
                     filenameColumn
                 ),
                 this.props.requireFileAccess && _react2.default.createElement(
                     'div',
-                    { className: 'column file-access datalist-title requiredField' },
+                    { className: 'column datalist-title is-3-desktop is-3-tablet is-12-mobile header' },
                     fileAccessColumn
                 ),
                 this.props.requireFileAccess && _react2.default.createElement(
                     'div',
-                    { className: 'column embargo-date datalist-title' },
+                    { className: 'column datalist-title is-2-desktop is-2-tablet is-12-mobile header' },
                     embargoDateColumn
                 ),
                 _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow buttons datalist-buttons' },
+                    { className: 'column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header' },
                     _react2.default.createElement(
                         _IconButton2.default,
                         { tooltip: deleteAllFiles, onTouchTap: this._showConfirmation },

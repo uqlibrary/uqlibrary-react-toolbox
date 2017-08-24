@@ -41,6 +41,9 @@
   }
 }
 
+.metadata-container {
+  padding: 10px;
+}
 
 //Desktop
 @media (min-width: 768px) {
@@ -66,6 +69,34 @@
       }
     }
   }
+
+  .headers {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.7);
+    .header {
+      white-space: nowrap !important;
+      text-overflow: ellipsis !important;
+      line-height: 40px !important;
+    }
+  }
+
+  .buttons {
+    padding-top: 8px !important;
+  }
+
+  .file-info {
+    .file-name {
+      line-height: 48px !important;
+    }
+  }
+
+  .no-embargo-date {
+    span {
+      line-height: 48px !important;
+    }
+  }
+
 }
 //Mobile
 @media (max-width: 768px) {
@@ -94,9 +125,91 @@
       }
     }
   }
+
+  .file-info {
+    display: inline !important;
+    .file-name {
+      display: inline-block !important;
+      line-height: 24px;
+      font-size: 14px;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+  }
+
+  .secondary-info-mobile {
+    display: inline-block;
+    float: right;
+    margin-top: 0 !important;
+  }
+
+  .embargo-date {
+    height: 22px;
+    min-width: 235px !important;
+    > div {
+      height: 30px !important;
+      width: 200px !important;
+      div {
+        font-size: 14px;
+        position: unset !important;
+      }
+      input {
+        bottom: 30px;
+        width: 200px !important;
+      }
+      & div:nth-child(4) {
+        position: relative;
+        font-size: 9px !important;
+        float: right;
+        margin-right: 50px;
+        margin-top: -32px;
+      }
+    }
+  }
+
+  .file-access-selector .selectField {
+    > div {
+      font-size: 14px !important;
+      & div {
+        font-size: 14px;
+      }
+    }
+  }
+  .uploadedFileDelete {
+    float: right;
+  }
+
+  .open-access-checkbox {
+    label {
+      width: calc(100% - 45px);
+      text-align: justify;
+    }
+  }
 }
 
 
+.file-access-selector {
+  hr {
+    display: none;
+  }
+  .selectField {
+    font-size: 14px !important;
+    max-width: 200px;
+  }
+}
+
+.embargo-date-selector {
+  hr {
+    display: none;
+  }
+  input {
+    font-size: 14px !important;
+  }
+  div {
+    font-size: 14px;
+  }
+}
 .upload-progress-ghost{
 
 }

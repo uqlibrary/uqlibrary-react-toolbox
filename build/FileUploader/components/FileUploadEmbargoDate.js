@@ -60,12 +60,13 @@ var FileUploadEmbargoDate = function (_Component) {
                 fieldName = _props$defaultConfig.fieldName;
 
             return _react2.default.createElement(_DatePicker2.default, {
-                className: 'datepicker',
+                className: 'embargo-date requiredField',
                 DateTimeFormat: dateFormat,
                 firstDayOfWeek: 0,
                 hintText: currentDateString,
                 locale: datePickerLocale,
                 errorText: this.state.value === null ? errorMessage : '',
+                id: fieldName,
                 name: fieldName,
                 onChange: this._onChange
             });
