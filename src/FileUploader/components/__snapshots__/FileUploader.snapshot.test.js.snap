@@ -56,11 +56,6 @@ exports[`FileUploader renders correctly without any setup 1`] = `
       <div>
         <div
           className="columns"
-          style={
-            Object {
-              "marginTop": "12px",
-            }
-          }
         >
           <div
             className="column"
@@ -232,11 +227,6 @@ exports[`FileUploader renders row for uploaded files 1`] = `
       <div>
         <div
           className="columns"
-          style={
-            Object {
-              "marginTop": "12px",
-            }
-          }
         >
           <div
             className="column"
@@ -419,11 +409,6 @@ exports[`FileUploader renders row for uploaded files 2`] = `
       <div>
         <div
           className="columns"
-          style={
-            Object {
-              "marginTop": "12px",
-            }
-          }
         >
           <div
             className="column"
@@ -1524,11 +1509,6 @@ exports[`FileUploader renders row for uploaded files 3`] = `
       <div>
         <div
           className="columns"
-          style={
-            Object {
-              "marginTop": "12px",
-            }
-          }
         >
           <div
             className="column"
@@ -2306,11 +2286,6 @@ exports[`FileUploader renders row for uploaded files 4`] = `
       <div>
         <div
           className="columns"
-          style={
-            Object {
-              "marginTop": "12px",
-            }
-          }
         >
           <div
             className="column"
@@ -2482,11 +2457,6 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
       <div>
         <div
           className="columns"
-          style={
-            Object {
-              "marginTop": "12px",
-            }
-          }
         >
           <div
             className="column"
@@ -2669,11 +2639,6 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
       <div>
         <div
           className="columns"
-          style={
-            Object {
-              "marginTop": "12px",
-            }
-          }
         >
           <div
             className="column"
@@ -6577,11 +6542,6 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
       <div>
         <div
           className="columns"
-          style={
-            Object {
-              "marginTop": "12px",
-            }
-          }
         >
           <div
             className="column"
@@ -10487,11 +10447,6 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
       <div>
         <div
           className="columns"
-          style={
-            Object {
-              "marginTop": "12px",
-            }
-          }
         >
           <div
             className="column"
@@ -15571,11 +15526,6 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
       <div>
         <div
           className="columns"
-          style={
-            Object {
-              "marginTop": "12px",
-            }
-          }
         >
           <div
             className="column"

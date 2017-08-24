@@ -27,7 +27,7 @@ class AuthorsPublicationTypesCountChart extends React.Component {
         this.state = {
             options: {
                 chart: {
-                    height: 300,
+                    height: 320,
                     plotShadow: false,
                     plotBorderWidth: 0,
                     spacingBottom: 10,
