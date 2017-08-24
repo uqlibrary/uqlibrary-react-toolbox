@@ -5,6 +5,7 @@ exports[`AuthorsPublicationsPerYearChart snapshot tests it should render chart c
   chartOptions={
     Object {
       "chart": Object {
+        "height": 320,
         "type": "column",
       },
       "legend": Object {

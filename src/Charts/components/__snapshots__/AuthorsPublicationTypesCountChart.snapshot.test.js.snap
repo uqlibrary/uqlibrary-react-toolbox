@@ -5,7 +5,7 @@ exports[`AuthorsPublicationTypesCountChart snapshot tests it should render chart
   chartOptions={
     Object {
       "chart": Object {
-        "height": 300,
+        "height": 320,
         "plotBorderWidth": 0,
         "plotShadow": false,
         "spacingBottom": 10,
