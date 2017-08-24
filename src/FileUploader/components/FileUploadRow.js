@@ -20,7 +20,8 @@ class FileUploadRow extends Component {
         locale: PropTypes.object,
         progress: PropTypes.number,
         requireFileAccess: PropTypes.bool.isRequired,
-        fileSizeUnit: PropTypes.string
+        fileSizeUnit: PropTypes.string,
+        disabled: PropTypes.bool
     };
 
     static defaultProps = {
@@ -89,7 +90,7 @@ class FileUploadRow extends Component {
                     this.props.requireFileAccess &&
                     <div className="column datalist-text file-access-selector is-3-desktop is-3-tablet is-12-mobile">
                         <FontIcon className="material-icons mobile-icon">lock_outline</FontIcon>
-                        <FileUploadAccessSelector onAccessChanged={ this._updateFileMetadata } />
+                        <FileUploadAccessSelector onAccessChanged={ this._updateFileMetadata } disabled={ this.props.disabled } />
                         <span className="is-mobile label">File Access</span>
                     </div>
                 }
@@ -105,14 +106,14 @@ class FileUploadRow extends Component {
                     this.props.requireFileAccess && this._isOpenAccess(access_condition_id) &&
                     <div className="column datalist-text embargo-date-selector is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
                         <FontIcon className="material-icons mobile-icon">date_range</FontIcon>
-                        <FileUploadEmbargoDate onDateChanged={ this._updateFileMetadata }/>
+                        <FileUploadEmbargoDate onDateChanged={ this._updateFileMetadata } disabled={ this.props.disabled }/>
                         <span className="is-mobile label">Embargo Date</span>
                     </div>
                 }
                 {
                     this.props.progress === 0 &&
                         <div className="column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless">
-                            <IconButton tooltip={ this.props.locale.deleteHint } onTouchTap={ this._showConfirmation }>
+                            <IconButton tooltip={ this.props.locale.deleteHint } onTouchTap={ this._showConfirmation } disabled={ this.props.disabled }>
                                 <FontIcon className="material-icons deleteIcon">delete</FontIcon>
                             </IconButton>
                         </div>

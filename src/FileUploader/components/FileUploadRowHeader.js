@@ -8,7 +8,8 @@ export default class FileUploadRowHeader extends Component {
     static propTypes = {
         onDeleteAll: PropTypes.func.isRequired,
         locale: PropTypes.object,
-        requireFileAccess: PropTypes.bool
+        requireFileAccess: PropTypes.bool,
+        disabled: PropTypes.bool
     };
 
     static defaultProps = {
@@ -58,7 +59,7 @@ export default class FileUploadRowHeader extends Component {
                     </div>
                 }
                 <div className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header">
-                    <IconButton tooltip={ deleteAllFiles } onTouchTap={ this._showConfirmation }>
+                    <IconButton tooltip={ deleteAllFiles } onTouchTap={ this._showConfirmation } disabled={ this.props.disabled }>
                         <FontIcon className="material-icons">delete_forever</FontIcon>
                     </IconButton>
                 </div>

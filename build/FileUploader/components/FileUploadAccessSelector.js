@@ -84,6 +84,7 @@ var FileUploadAccessSelector = function (_Component) {
                     onChange: this._onChange,
                     errorText: this.state.value === null ? errorMessage : '',
                     floatingLabelFixed: true,
+                    disabled: this.props.disabled,
                     value: this.state.value },
                 _react2.default.createElement(_MenuItem2.default, { value: -1, primaryText: initialValue, key: -1, disabled: true }),
                 accessOptions
@@ -97,7 +98,8 @@ var FileUploadAccessSelector = function (_Component) {
 FileUploadAccessSelector.propTypes = {
     onAccessChanged: _propTypes2.default.func,
     locale: _propTypes2.default.object,
-    defaultConfig: _propTypes2.default.object
+    defaultConfig: _propTypes2.default.object,
+    disabled: _propTypes2.default.bool
 };
 FileUploadAccessSelector.defaultProps = {
     locale: {

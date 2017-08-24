@@ -10,7 +10,8 @@ export default class FileUploadAccessSelector extends Component {
     static propTypes = {
         onAccessChanged: PropTypes.func,
         locale: PropTypes.object,
-        defaultConfig: PropTypes.object
+        defaultConfig: PropTypes.object,
+        disabled: PropTypes.bool
     };
 
     static defaultProps = {
@@ -60,6 +61,7 @@ export default class FileUploadAccessSelector extends Component {
                 onChange={ this._onChange }
                 errorText={ this.state.value === null ? errorMessage : '' }
                 floatingLabelFixed
+                disabled = { this.props.disabled }
                 value={ this.state.value }>
                 <MenuItem value={ -1 } primaryText={ initialValue }  key={ -1 } disabled />
                 { accessOptions }

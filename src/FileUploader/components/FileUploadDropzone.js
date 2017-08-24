@@ -11,7 +11,8 @@ class FileUploadDropzone extends PureComponent {
         maxFiles: PropTypes.number.isRequired,
         uploadedFiles: PropTypes.array,
         locale: PropTypes.object,
-        clearErrors: PropTypes.bool
+        clearErrors: PropTypes.bool,
+        disabled: PropTypes.bool
     };
 
     static defaultProps = {
@@ -238,6 +239,8 @@ class FileUploadDropzone extends PureComponent {
                             maxSize={ this.props.maxSize }
                             onDrop={ this.onDrop }
                             style={{ padding: '10px' }}
+                            disabled={ this.props.disabled }
+                            disableClick={ this.props.disabled }
                             disablePreview>
                             <FileUploadDropzoneStaticContent />
                         </Dropzone>

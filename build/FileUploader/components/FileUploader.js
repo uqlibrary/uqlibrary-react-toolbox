@@ -193,7 +193,8 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     fileSizeUnit: fileSizeUnit,
                     onDelete: _this2.deleteFile,
                     onAttributeChanged: _this2.replaceFile,
-                    requireFileAccess: requireFileAccess });
+                    requireFileAccess: requireFileAccess,
+                    disabled: _this2.props.disabled });
             });
 
             return _react2.default.createElement(
@@ -207,13 +208,14 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 _react2.default.createElement(_FileUploadDropzone2.default, {
                     maxSize: this._calculateMaxFileSize(),
                     maxFiles: fileUploadLimit,
+                    disabled: this.props.disabled,
                     onDropped: this.setUploadedFiles,
                     uploadedFiles: uploadedFiles,
                     clearErrors: clearErrors }),
                 _react2.default.createElement(
                     'div',
                     { className: 'metadata-container' },
-                    uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, { onDeleteAll: this.deleteAllFiles, requireFileAccess: requireFileAccess }),
+                    uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, { onDeleteAll: this.deleteAllFiles, requireFileAccess: requireFileAccess, disabled: this.props.disabled }),
                     uploadedFilesRow,
                     requireFileAccess && this._isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(
                         'div',
@@ -239,7 +241,8 @@ FileUploader.propTypes = {
     defaultConfig: _propTypes2.default.object,
     overallProgress: _propTypes2.default.number,
     requireFileAccess: _propTypes2.default.bool,
-    clearFileUpload: _propTypes2.default.func
+    clearFileUpload: _propTypes2.default.func,
+    disabled: _propTypes2.default.bool
 };
 FileUploader.defaultProps = {
     overallProgress: 0,

@@ -143,7 +143,7 @@ var FileUploadRow = function (_Component) {
                         { className: 'material-icons mobile-icon' },
                         'lock_outline'
                     ),
-                    _react2.default.createElement(_FileUploadAccessSelector2.default, { onAccessChanged: this._updateFileMetadata }),
+                    _react2.default.createElement(_FileUploadAccessSelector2.default, { onAccessChanged: this._updateFileMetadata, disabled: this.props.disabled }),
                     _react2.default.createElement(
                         'span',
                         { className: 'is-mobile label' },
@@ -177,7 +177,7 @@ var FileUploadRow = function (_Component) {
                         { className: 'material-icons mobile-icon' },
                         'date_range'
                     ),
-                    _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata }),
+                    _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata, disabled: this.props.disabled }),
                     _react2.default.createElement(
                         'span',
                         { className: 'is-mobile label' },
@@ -189,7 +189,7 @@ var FileUploadRow = function (_Component) {
                     { className: 'column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless' },
                     _react2.default.createElement(
                         _IconButton2.default,
-                        { tooltip: this.props.locale.deleteHint, onTouchTap: this._showConfirmation },
+                        { tooltip: this.props.locale.deleteHint, onTouchTap: this._showConfirmation, disabled: this.props.disabled },
                         _react2.default.createElement(
                             _FontIcon2.default,
                             { className: 'material-icons deleteIcon' },
@@ -228,7 +228,8 @@ FileUploadRow.propTypes = {
     locale: _propTypes2.default.object,
     progress: _propTypes2.default.number,
     requireFileAccess: _propTypes2.default.bool.isRequired,
-    fileSizeUnit: _propTypes2.default.string
+    fileSizeUnit: _propTypes2.default.string,
+    disabled: _propTypes2.default.bool
 };
 FileUploadRow.defaultProps = {
     locale: {

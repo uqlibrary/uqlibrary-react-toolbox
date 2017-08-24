@@ -313,6 +313,8 @@ var FileUploadDropzone = function (_PureComponent) {
                                 maxSize: this.props.maxSize,
                                 onDrop: this.onDrop,
                                 style: { padding: '10px' },
+                                disabled: this.props.disabled,
+                                disableClick: this.props.disabled,
                                 disablePreview: true },
                             _react2.default.createElement(_FileUploadDropzoneStaticContent2.default, null)
                         )
@@ -332,7 +334,8 @@ FileUploadDropzone.propTypes = {
     maxFiles: _propTypes2.default.number.isRequired,
     uploadedFiles: _propTypes2.default.array,
     locale: _propTypes2.default.object,
-    clearErrors: _propTypes2.default.bool
+    clearErrors: _propTypes2.default.bool,
+    disabled: _propTypes2.default.bool
 };
 FileUploadDropzone.defaultProps = {
     locale: {

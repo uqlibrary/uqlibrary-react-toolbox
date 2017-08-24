@@ -68,7 +68,8 @@ var FileUploadEmbargoDate = function (_Component) {
                 errorText: this.state.value === null ? errorMessage : '',
                 id: fieldName,
                 name: fieldName,
-                onChange: this._onChange
+                onChange: this._onChange,
+                disabled: this.props.disabled
             });
         }
     }]);
@@ -79,7 +80,8 @@ var FileUploadEmbargoDate = function (_Component) {
 FileUploadEmbargoDate.propTypes = {
     locale: _propTypes2.default.object,
     defaultConfig: _propTypes2.default.object,
-    onDateChanged: _propTypes2.default.func
+    onDateChanged: _propTypes2.default.func,
+    disabled: _propTypes2.default.bool
 };
 FileUploadEmbargoDate.defaultProps = {
     locale: {

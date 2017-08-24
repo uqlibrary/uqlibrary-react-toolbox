@@ -8,7 +8,8 @@ export default class FileUploadEmbargoDate extends Component {
     static propTypes = {
         locale: PropTypes.object,
         defaultConfig: PropTypes.object,
-        onDateChanged: PropTypes.func
+        onDateChanged: PropTypes.func,
+        disabled: PropTypes.bool
     };
 
     static defaultProps = {
@@ -51,6 +52,7 @@ export default class FileUploadEmbargoDate extends Component {
                 id={fieldName}
                 name={fieldName}
                 onChange={this._onChange}
+                disabled={ this.props.disabled }
             />
         );
     }

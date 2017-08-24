@@ -35,7 +35,8 @@ export class FileUploader extends PureComponent {
         defaultConfig: PropTypes.object,
         overallProgress: PropTypes.number,
         requireFileAccess: PropTypes.bool,
-        clearFileUpload: PropTypes.func
+        clearFileUpload: PropTypes.func,
+        disabled: PropTypes.bool
     };
 
     static defaultProps = {
@@ -153,7 +154,8 @@ export class FileUploader extends PureComponent {
                 fileSizeUnit={ fileSizeUnit }
                 onDelete={ this.deleteFile }
                 onAttributeChanged={ this.replaceFile }
-                requireFileAccess={ requireFileAccess } />);
+                requireFileAccess={ requireFileAccess }
+                disabled={ this.props.disabled } />);
         });
 
         return (
@@ -162,13 +164,14 @@ export class FileUploader extends PureComponent {
                 <FileUploadDropzone
                     maxSize={ this._calculateMaxFileSize() }
                     maxFiles={ fileUploadLimit }
+                    disabled={ this.props.disabled }
                     onDropped={ this.setUploadedFiles }
                     uploadedFiles={ uploadedFiles }
                     clearErrors={ clearErrors } />
                 <div className="metadata-container">
                     {
                          uploadedFiles.length > 0 && (
-                            <FileUploadRowHeader onDeleteAll={ this.deleteAllFiles } requireFileAccess={ requireFileAccess } />
+                            <FileUploadRowHeader onDeleteAll={ this.deleteAllFiles } requireFileAccess={ requireFileAccess } disabled={ this.props.disabled } />
                          )
                     }
 

@@ -88,7 +88,7 @@ var FileUploadRowHeader = function (_Component) {
                     { className: 'column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header' },
                     _react2.default.createElement(
                         _IconButton2.default,
-                        { tooltip: deleteAllFiles, onTouchTap: this._showConfirmation },
+                        { tooltip: deleteAllFiles, onTouchTap: this._showConfirmation, disabled: this.props.disabled },
                         _react2.default.createElement(
                             _FontIcon2.default,
                             { className: 'material-icons' },
@@ -106,7 +106,8 @@ var FileUploadRowHeader = function (_Component) {
 FileUploadRowHeader.propTypes = {
     onDeleteAll: _propTypes2.default.func.isRequired,
     locale: _propTypes2.default.object,
-    requireFileAccess: _propTypes2.default.bool
+    requireFileAccess: _propTypes2.default.bool,
+    disabled: _propTypes2.default.bool
 };
 FileUploadRowHeader.defaultProps = {
     locale: {
