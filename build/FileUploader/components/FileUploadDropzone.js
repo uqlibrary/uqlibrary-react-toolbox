@@ -48,42 +48,42 @@ var FileUploadDropzone = function (_PureComponent) {
 
         var _this = _possibleConstructorReturn(this, (FileUploadDropzone.__proto__ || Object.getPrototypeOf(FileUploadDropzone)).call(this, props));
 
-        _this._clearAccepted = function () {
+        _this.clearAccepted = function () {
             _this.accepted = new Map();
         };
 
-        _this._difference = function (accepted, rejected) {
+        _this.difference = function (accepted, rejected) {
             return new Set([].concat(_toConsumableArray(accepted)).filter(function (file) {
                 return !rejected.has(file);
             }));
         };
 
-        _this._add = function (files) {
+        _this.add = function (files) {
             [].concat(_toConsumableArray(files)).map(function (file) {
                 return _this.accepted.set(file.name, file);
             });
         };
 
-        _this._validate = function (file) {
+        _this.validate = function (file) {
             var type = file.type === '';
             if (type) {
-                _this._setError('folder', file);
+                _this.setError('folder', file);
             }
 
             var length = file.name.length > 45;
             if (length) {
-                _this._setError('fileNameLength', file);
+                _this.setError('fileNameLength', file);
             }
 
             var period = file.name.split('.').length > 2;
             if (period) {
-                _this._setError('fileName', file);
+                _this.setError('fileName', file);
             }
 
             return type || length || period;
         };
 
-        _this._setError = function (errorType, file) {
+        _this.setError = function (errorType, file) {
             var files = void 0;
             if (!(file instanceof Array)) {
                 files = [file];
@@ -95,7 +95,7 @@ var FileUploadDropzone = function (_PureComponent) {
             });
         };
 
-        _this._processErrors = function (errors) {
+        _this.processErrors = function (errors) {
             var _this$props$locale$va = _this.props.locale.validation,
                 single = _this$props$locale$va.single,
                 multiple = _this$props$locale$va.multiple;
@@ -153,37 +153,37 @@ var FileUploadDropzone = function (_PureComponent) {
                 errorMessage: errorMessages.join('; ')
             });
 
-            _this._resetErrors();
+            _this.resetErrors();
         };
 
-        _this._resetErrors = function () {
+        _this.resetErrors = function () {
             _this.errors = new Map();
         };
 
-        _this.onDrop = function (accepted, rejected) {
+        _this._onDrop = function (accepted, rejected) {
             /*
              * Set error for rejected files (maxFileSize rule)
              */
             if (rejected.length > 0) {
-                _this._setError('maxFileSize', rejected);
+                _this.setError('maxFileSize', rejected);
             }
 
             /*
              * Validate accepted files and get list of invalid files (check fileName, fileNameLength, folder)
              */
             var invalid = accepted.filter(function (file) {
-                return _this._validate(file);
+                return _this.validate(file);
             });
 
             /*
              * Remove invalid files
              */
-            var filtered = _this._difference(new Set(accepted), new Set(invalid));
+            var filtered = _this.difference(new Set(accepted), new Set(invalid));
 
             /*
              * Duplicates will be removed by setting up file.name as key
              */
-            _this._add(filtered);
+            _this.add(filtered);
 
             /*
              * If max files uploaded, send max files and set error for ignored files
@@ -192,7 +192,7 @@ var FileUploadDropzone = function (_PureComponent) {
 
             if (_this.accepted.size > maxFiles) {
                 _this.props.onDropped([].concat(_toConsumableArray(_this.accepted.values())).slice(0, maxFiles));
-                _this._setError('maxFiles', [].concat(_toConsumableArray(_this.accepted.values())).slice(maxFiles));
+                _this.setError('maxFiles', [].concat(_toConsumableArray(_this.accepted.values())).slice(maxFiles));
             } else {
                 _this.props.onDropped([].concat(_toConsumableArray(_this.accepted.values())));
             }
@@ -200,10 +200,10 @@ var FileUploadDropzone = function (_PureComponent) {
             /*
              * Process any errors
              */
-            _this._processErrors(_this.errors);
+            _this.processErrors(_this.errors);
         };
 
-        _this.onKeyPress = function () {
+        _this._onKeyPress = function () {
             _this.dropzoneRef.open();
         };
 
@@ -214,19 +214,25 @@ var FileUploadDropzone = function (_PureComponent) {
         _this.accepted = new Map();
         _this.errors = new Map();
 
-        _this.onDrop.bind(_this);
+        _this._onDrop.bind(_this);
+        _this._onKeyPress.bind(_this);
         return _this;
     }
 
     _createClass(FileUploadDropzone, [{
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
-            this._clearAccepted();
-            this._add(nextProps.uploadedFiles);
-            this._resetErrors();
+            this.clearAccepted();
+            this.add(nextProps.uploadedFiles);
+            this.resetErrors();
 
-            if (nextProps.clearErrors) this._processErrors(this.errors);
+            if (nextProps.clearErrors) this.processErrors(this.errors);
         }
+
+        /**
+         * Clear accepted files
+         */
+
 
         /**
          * Diff of two sets
@@ -286,6 +292,11 @@ var FileUploadDropzone = function (_PureComponent) {
          * @private
          */
 
+
+        /**
+         * Open dropzone on key pressed
+         */
+
     }, {
         key: 'render',
         value: function render() {
@@ -303,7 +314,7 @@ var FileUploadDropzone = function (_PureComponent) {
                     { className: 'columns' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'column', tabIndex: '0', onKeyPress: this.onKeyPress },
+                        { className: 'column', tabIndex: '0', onKeyPress: this._onKeyPress },
                         _react2.default.createElement(
                             _reactDropzone2.default,
                             {
@@ -311,7 +322,7 @@ var FileUploadDropzone = function (_PureComponent) {
                                     _this2.dropzoneRef = node;
                                 },
                                 maxSize: this.props.maxSize,
-                                onDrop: this.onDrop,
+                                onDrop: this._onDrop,
                                 style: { padding: '10px' },
                                 disabled: this.props.disabled,
                                 disableClick: this.props.disabled,

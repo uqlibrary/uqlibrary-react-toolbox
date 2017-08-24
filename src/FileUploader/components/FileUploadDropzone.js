@@ -46,18 +46,22 @@ class FileUploadDropzone extends PureComponent {
         this.accepted = new Map();
         this.errors = new Map();
 
-        this.onDrop.bind(this);
+        this._onDrop.bind(this);
+        this._onKeyPress.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
-        this._clearAccepted();
-        this._add(nextProps.uploadedFiles);
-        this._resetErrors();
+        this.clearAccepted();
+        this.add(nextProps.uploadedFiles);
+        this.resetErrors();
 
-        if (nextProps.clearErrors) this._processErrors(this.errors);
+        if (nextProps.clearErrors) this.processErrors(this.errors);
     }
 
-    _clearAccepted = () => {
+    /**
+     * Clear accepted files
+     */
+    clearAccepted = () => {
         this.accepted = new Map();
     };
 
@@ -69,7 +73,7 @@ class FileUploadDropzone extends PureComponent {
      * @returns {Set}
      * @private
      */
-    _difference = (accepted, rejected) => {
+    difference = (accepted, rejected) => {
         return new Set([...accepted].filter(file => !rejected.has(file)));
     };
 
@@ -79,7 +83,7 @@ class FileUploadDropzone extends PureComponent {
      * @param files
      * @private
      */
-    _add = (files) => {
+    add = (files) => {
         [...files].map(file => this.accepted.set(file.name, file));
     };
 
@@ -90,20 +94,20 @@ class FileUploadDropzone extends PureComponent {
      * @returns {boolean}
      * @private
      */
-    _validate = (file) => {
+    validate = (file) => {
         const type = file.type === '';
         if (type) {
-            this._setError('folder', file);
+            this.setError('folder', file);
         }
 
         const length = file.name.length > 45;
         if (length) {
-            this._setError('fileNameLength', file);
+            this.setError('fileNameLength', file);
         }
 
         const period = file.name.split('.').length > 2;
         if (period) {
-            this._setError('fileName', file);
+            this.setError('fileName', file);
         }
 
         return type || length || period;
@@ -116,7 +120,7 @@ class FileUploadDropzone extends PureComponent {
      * @param file
      * @private
      */
-    _setError = (errorType, file) => {
+    setError = (errorType, file) => {
         let files;
         if (!(file instanceof Array)) {
             files = [file];
@@ -131,7 +135,7 @@ class FileUploadDropzone extends PureComponent {
      *
      * @private
      */
-    _processErrors = (errors) => {
+    processErrors = (errors) => {
         const { single, multiple } = this.props.locale.validation;
         const errorMessages = [];
         let message;
@@ -161,7 +165,7 @@ class FileUploadDropzone extends PureComponent {
             errorMessage: errorMessages.join('; ')
         });
 
-        this._resetErrors();
+        this.resetErrors();
     };
 
     /**
@@ -169,7 +173,7 @@ class FileUploadDropzone extends PureComponent {
      *
      * @private
      */
-    _resetErrors = () => {
+    resetErrors = () => {
         this.errors = new Map();
     };
 
@@ -180,30 +184,30 @@ class FileUploadDropzone extends PureComponent {
      * @param rejected
      * @private
      */
-    onDrop = (accepted, rejected) => {
+    _onDrop = (accepted, rejected) => {
         /*
          * Set error for rejected files (maxFileSize rule)
          */
         if (rejected.length > 0) {
-            this._setError('maxFileSize', rejected);
+            this.setError('maxFileSize', rejected);
         }
 
         /*
          * Validate accepted files and get list of invalid files (check fileName, fileNameLength, folder)
          */
         const invalid = accepted.filter((file) => {
-            return this._validate(file);
+            return this.validate(file);
         });
 
         /*
          * Remove invalid files
          */
-        const filtered = this._difference(new Set(accepted), new Set(invalid));
+        const filtered = this.difference(new Set(accepted), new Set(invalid));
 
         /*
          * Duplicates will be removed by setting up file.name as key
          */
-        this._add(filtered);
+        this.add(filtered);
 
         /*
          * If max files uploaded, send max files and set error for ignored files
@@ -211,7 +215,7 @@ class FileUploadDropzone extends PureComponent {
         const { maxFiles } = this.props;
         if (this.accepted.size > maxFiles) {
             this.props.onDropped([...this.accepted.values()].slice(0, maxFiles));
-            this._setError('maxFiles', [...this.accepted.values()].slice(maxFiles));
+            this.setError('maxFiles', [...this.accepted.values()].slice(maxFiles));
         } else {
             this.props.onDropped([...this.accepted.values()]);
         }
@@ -219,10 +223,13 @@ class FileUploadDropzone extends PureComponent {
         /*
          * Process any errors
          */
-        this._processErrors(this.errors);
+        this.processErrors(this.errors);
     };
 
-    onKeyPress = () => {
+    /**
+     * Open dropzone on key pressed
+     */
+    _onKeyPress = () => {
         this.dropzoneRef.open();
     };
 
@@ -233,11 +240,11 @@ class FileUploadDropzone extends PureComponent {
         return (
             <div>
                 <div className="columns">
-                    <div className="column"  tabIndex="0" onKeyPress={ this.onKeyPress }>
+                    <div className="column"  tabIndex="0" onKeyPress={ this._onKeyPress }>
                         <Dropzone
                             ref={ (node) => { this.dropzoneRef = node; }}
                             maxSize={ this.props.maxSize }
-                            onDrop={ this.onDrop }
+                            onDrop={ this._onDrop }
                             style={{ padding: '10px' }}
                             disabled={ this.props.disabled }
                             disableClick={ this.props.disabled }

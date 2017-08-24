@@ -81,7 +81,7 @@ describe('FileUploadDropzone', () => {
             }
         ];
 
-        wrapper.instance().onDrop(accepted, rejected);
+        wrapper.instance()._onDrop(accepted, rejected);
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
 
@@ -103,7 +103,7 @@ describe('FileUploadDropzone', () => {
             }
         ];
 
-        wrapper.instance().onDrop(moreFiles, []);
+        wrapper.instance()._onDrop(moreFiles, []);
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
         expect(onDroppedCallback).toHaveBeenCalled();

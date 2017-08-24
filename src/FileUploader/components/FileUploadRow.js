@@ -56,7 +56,7 @@ class FileUploadRow extends Component {
     };
 
     _updateFileMetadata = (update) => {
-        if (update.key === 'access_condition_id' && !this._isOpenAccess(update.value) && this.props.uploadedFile.hasOwnProperty('date')) {
+        if (update.key === 'access_condition_id' && !this.isOpenAccess(update.value) && this.props.uploadedFile.hasOwnProperty('date')) {
             delete this.props.uploadedFile.date;
         }
 
@@ -65,11 +65,11 @@ class FileUploadRow extends Component {
         if (this.props.onAttributeChanged) this.props.onAttributeChanged(this.props.uploadedFile, this.props.index);
     };
 
-    _isOpenAccess = (accessConditionId) => {
+    isOpenAccess = (accessConditionId) => {
         return accessConditionId === OPEN_ACCESS_ID;
     };
 
-    _calculateFilesizeToDisplay = (size) => {
+    calculateFilesizeToDisplay = (size) => {
         const exponent = Math.floor(Math.log(size) / Math.log(sizeBase));
         return `${(size / Math.pow(sizeBase, exponent)).toFixed(1)}${Object.keys(sizeUnitText).map(key => (sizeUnitText[key]))[exponent]}`;
     };
@@ -86,7 +86,7 @@ class FileUploadRow extends Component {
                 <div className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile">
                     <FontIcon className="material-icons mobile-icon">attachment</FontIcon>
                     <span className="file-name">{ this.props.uploadedFile.name }</span>
-                    <span className="datalist-text-subtitle secondary-info-mobile">{this._calculateFilesizeToDisplay(this.props.uploadedFile.size )}</span>
+                    <span className="datalist-text-subtitle secondary-info-mobile">{this.calculateFilesizeToDisplay(this.props.uploadedFile.size )}</span>
                     <span className="is-mobile label">{ filenameColumn }</span>
                 </div>
                 {
@@ -98,7 +98,7 @@ class FileUploadRow extends Component {
                     </div>
                 }
                 {
-                    this.props.requireFileAccess && !this._isOpenAccess(access_condition_id) &&
+                    this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) &&
                     <div className="column datalist-text no-embargo-date is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
                         <FontIcon className="material-icons mobile-icon">date_range</FontIcon>
                         <span>No Date</span>
@@ -106,7 +106,7 @@ class FileUploadRow extends Component {
                     </div>
                 }
                 {
-                    this.props.requireFileAccess && this._isOpenAccess(access_condition_id) &&
+                    this.props.requireFileAccess && this.isOpenAccess(access_condition_id) &&
                     <div className="column datalist-text embargo-date-selector is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
                         <FontIcon className="material-icons mobile-icon">date_range</FontIcon>
                         <FileUploadEmbargoDate onDateChanged={ this._updateFileMetadata } disabled={ this.props.disabled }/>

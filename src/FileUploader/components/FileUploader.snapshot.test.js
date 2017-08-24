@@ -55,16 +55,16 @@ describe('FileUploader', () => {
             }
         ];
 
-        wrapper.instance().setUploadedFiles(files);
+        wrapper.instance()._setUploadedFiles(files);
         tree = toJson(wrapper);
 
         expect(tree).toMatchSnapshot();
 
-        wrapper.instance().deleteFile({}, 0);
+        wrapper.instance()._deleteFile({}, 0);
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
 
-        wrapper.instance().deleteAllFiles();
+        wrapper.instance()._deleteAllFiles();
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });
@@ -87,20 +87,20 @@ describe('FileUploader', () => {
             }
         ];
 
-        wrapper.instance().setUploadedFiles(files);
+        wrapper.instance()._setUploadedFiles(files);
         tree = toJson(wrapper);
 
         expect(tree).toMatchSnapshot();
 
-        wrapper.instance().replaceFile({ name: 'a.txt', size: 100, access_condition_id: 8 }, 0);
+        wrapper.instance()._replaceFile({ name: 'a.txt', size: 100, access_condition_id: 8 }, 0);
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
 
-        wrapper.instance().replaceFile({ name: 'a.txt', size: 100, access_condition_id: 9 }, 0);
+        wrapper.instance()._replaceFile({ name: 'a.txt', size: 100, access_condition_id: 9 }, 0);
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
 
-        wrapper.instance().replaceFile({ name: 'a.txt', size: 100, access_condition_id: 9, date: '10/10/2017' }, 0);
+        wrapper.instance()._replaceFile({ name: 'a.txt', size: 100, access_condition_id: 9, date: '10/10/2017' }, 0);
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });

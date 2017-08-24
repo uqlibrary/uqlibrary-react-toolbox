@@ -67,7 +67,7 @@ var FileUploadRow = function (_Component) {
         };
 
         _this._updateFileMetadata = function (update) {
-            if (update.key === 'access_condition_id' && !_this._isOpenAccess(update.value) && _this.props.uploadedFile.hasOwnProperty('date')) {
+            if (update.key === 'access_condition_id' && !_this.isOpenAccess(update.value) && _this.props.uploadedFile.hasOwnProperty('date')) {
                 delete _this.props.uploadedFile.date;
             }
 
@@ -76,11 +76,11 @@ var FileUploadRow = function (_Component) {
             if (_this.props.onAttributeChanged) _this.props.onAttributeChanged(_this.props.uploadedFile, _this.props.index);
         };
 
-        _this._isOpenAccess = function (accessConditionId) {
+        _this.isOpenAccess = function (accessConditionId) {
             return accessConditionId === _FileUploadAccessSelector.OPEN_ACCESS_ID;
         };
 
-        _this._calculateFilesizeToDisplay = function (size) {
+        _this.calculateFilesizeToDisplay = function (size) {
             var exponent = Math.floor(Math.log(size) / Math.log(_FileUploader.sizeBase));
             return '' + (size / Math.pow(_FileUploader.sizeBase, exponent)).toFixed(1) + Object.keys(_FileUploader.sizeUnitText).map(function (key) {
                 return _FileUploader.sizeUnitText[key];
@@ -131,7 +131,7 @@ var FileUploadRow = function (_Component) {
                     _react2.default.createElement(
                         'span',
                         { className: 'datalist-text-subtitle secondary-info-mobile' },
-                        this._calculateFilesizeToDisplay(this.props.uploadedFile.size)
+                        this.calculateFilesizeToDisplay(this.props.uploadedFile.size)
                     ),
                     _react2.default.createElement(
                         'span',
@@ -154,7 +154,7 @@ var FileUploadRow = function (_Component) {
                         fileAccessColumn
                     )
                 ),
-                this.props.requireFileAccess && !this._isOpenAccess(access_condition_id) && _react2.default.createElement(
+                this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) && _react2.default.createElement(
                     'div',
                     { className: 'column datalist-text no-embargo-date is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile' },
                     _react2.default.createElement(
@@ -173,7 +173,7 @@ var FileUploadRow = function (_Component) {
                         embargoDateColumn
                     )
                 ),
-                this.props.requireFileAccess && this._isOpenAccess(access_condition_id) && _react2.default.createElement(
+                this.props.requireFileAccess && this.isOpenAccess(access_condition_id) && _react2.default.createElement(
                     'div',
                     { className: 'column datalist-text embargo-date-selector is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile' },
                     _react2.default.createElement(

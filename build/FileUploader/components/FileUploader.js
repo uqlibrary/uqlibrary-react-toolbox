@@ -69,7 +69,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
         var _this = _possibleConstructorReturn(this, (FileUploader.__proto__ || Object.getPrototypeOf(FileUploader)).call(this, props));
 
-        _this.deleteFile = function (file, index) {
+        _this._deleteFile = function (file, index) {
             _this.setState({
                 uploadedFiles: _this.state.uploadedFiles.filter(function (_, i) {
                     return i !== index;
@@ -78,26 +78,26 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             });
         };
 
-        _this.replaceFile = function (file, index) {
+        _this._replaceFile = function (file, index) {
             _this.setState({
                 uploadedFiles: [].concat(_toConsumableArray(_this.state.uploadedFiles.slice(0, index)), [file], _toConsumableArray(_this.state.uploadedFiles.slice(index + 1))),
                 clearErrors: true
             });
         };
 
-        _this.deleteAllFiles = function () {
+        _this._deleteAllFiles = function () {
             _this.setState({ uploadedFiles: [], clearErrors: true });
         };
 
-        _this.setUploadedFiles = function (files) {
+        _this._setUploadedFiles = function (files) {
             _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)), clearErrors: false });
         };
 
-        _this.acceptTermsAndConditions = function (event, value) {
+        _this._acceptTermsAndConditions = function (event, value) {
             _this.setState({ termsAndConditions: value });
         };
 
-        _this._calculateMaxFileSize = function () {
+        _this.calculateMaxFileSize = function () {
             var _this$props$defaultCo = _this.props.defaultConfig,
                 maxFileSize = _this$props$defaultCo.maxFileSize,
                 fileSizeUnit = _this$props$defaultCo.fileSizeUnit;
@@ -105,25 +105,25 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
         };
 
-        _this._isOpenAccess = function (file) {
-            return _this._hasAccess(file) && file.access_condition_id === _FileUploadAccessSelector.OPEN_ACCESS_ID;
+        _this.isOpenAccess = function (file) {
+            return _this.hasAccess(file) && file.access_condition_id === _FileUploadAccessSelector.OPEN_ACCESS_ID;
         };
 
-        _this._isAnyOpenAccess = function (files) {
+        _this.isAnyOpenAccess = function (files) {
             return files.filter(function (file) {
-                return _this._isOpenAccess(file);
+                return _this.isOpenAccess(file);
             }).length > 0;
         };
 
-        _this._hasAccess = function (file) {
+        _this.hasAccess = function (file) {
             return file.hasOwnProperty('access_condition_id');
         };
 
-        _this._hasEmbargoDate = function (file) {
+        _this.hasEmbargoDate = function (file) {
             return file.hasOwnProperty('date') && (file.date !== null || file.date !== undefined);
         };
 
-        _this._isFileUploadValid = function (_ref) {
+        _this.isFileUploadValid = function (_ref) {
             var uploadedFiles = _ref.uploadedFiles,
                 termsAndConditions = _ref.termsAndConditions;
 
@@ -131,13 +131,13 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
             if (_this.props.requireFileAccess) {
                 if (uploadedFiles.filter(function (file) {
-                    return !_this._hasAccess(file);
+                    return !_this.hasAccess(file);
                 }).length > 0) isValid = false;
 
                 if (uploadedFiles.filter(function (file) {
-                    return _this._isOpenAccess(file);
+                    return _this.isOpenAccess(file);
                 }).filter(function (file) {
-                    return !(_this._hasEmbargoDate(file) && termsAndConditions);
+                    return !(_this.hasEmbargoDate(file) && termsAndConditions);
                 }).length > 0) isValid = false;
             }
 
@@ -155,13 +155,103 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
     _createClass(FileUploader, [{
         key: 'componentWillUpdate',
         value: function componentWillUpdate(nextProps, nextState) {
-            if (this.props.onChange) this.props.onChange({ queue: nextState.uploadedFiles, isValid: this._isFileUploadValid(nextState) });
+            if (this.props.onChange) this.props.onChange({ queue: nextState.uploadedFiles, isValid: this.isFileUploadValid(nextState) });
         }
     }, {
         key: 'componentWillUnmount',
         value: function componentWillUnmount() {
             this.props.clearFileUpload();
         }
+
+        /**
+         * Delete file on a given index
+         *
+         * @param file
+         * @param index
+         * @private
+         */
+
+
+        /**
+         * Replace file on a given index
+         *
+         * @param file
+         * @param index
+         * @private
+         */
+
+
+        /**
+         * Delete all files
+         *
+         * @private
+         */
+
+
+        /**
+         * Set uploaded files
+         *
+         * @param files
+         * @private
+         */
+
+
+        /**
+         * Accept terms and conditions
+         *
+         * @param event
+         * @param value
+         * @private
+         */
+
+
+        /**
+         * Calculate max file size allowed by dropzone
+         *
+         * @returns {number}
+         */
+
+
+        /**
+         * Check if file is open access
+         *
+         * @param file
+         * @returns {boolean}
+         */
+
+
+        /**
+         * Check if any file is open access
+         *
+         * @param files
+         * @returns {boolean}
+         */
+
+
+        /**
+         * Check if file as access conditions field
+         *
+         * @param file
+         * @returns {boolean}
+         */
+
+
+        /**
+         * Check if file has embargo date field
+         *
+         * @param file
+         * @returns {boolean}
+         */
+
+
+        /**
+         * Check if entire file uploader is valid including access conditions, embargo date and t&c
+         *
+         * @param uploadedFiles
+         * @param termsAndConditions
+         * @returns {boolean}
+         */
+
     }, {
         key: 'render',
         value: function render() {
@@ -191,8 +281,8 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     index: index,
                     uploadedFile: file,
                     fileSizeUnit: fileSizeUnit,
-                    onDelete: _this2.deleteFile,
-                    onAttributeChanged: _this2.replaceFile,
+                    onDelete: _this2._deleteFile,
+                    onAttributeChanged: _this2._replaceFile,
                     requireFileAccess: requireFileAccess,
                     disabled: _this2.props.disabled });
             });
@@ -206,21 +296,21 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     instructionsDisplay
                 ),
                 _react2.default.createElement(_FileUploadDropzone2.default, {
-                    maxSize: this._calculateMaxFileSize(),
+                    maxSize: this.calculateMaxFileSize(),
                     maxFiles: fileUploadLimit,
                     disabled: this.props.disabled,
-                    onDropped: this.setUploadedFiles,
+                    onDropped: this._setUploadedFiles,
                     uploadedFiles: uploadedFiles,
                     clearErrors: clearErrors }),
                 _react2.default.createElement(
                     'div',
                     { className: 'metadata-container' },
-                    uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, { onDeleteAll: this.deleteAllFiles, requireFileAccess: requireFileAccess, disabled: this.props.disabled }),
+                    uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, { onDeleteAll: this._deleteAllFiles, requireFileAccess: requireFileAccess, disabled: this.props.disabled }),
                     uploadedFilesRow,
-                    requireFileAccess && this._isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(
+                    requireFileAccess && this.isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(
                         'div',
                         { style: { position: 'relative', width: '100%' }, className: !termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox' },
-                        _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this.acceptTermsAndConditions, checked: termsAndConditions })
+                        _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this._acceptTermsAndConditions, checked: termsAndConditions })
                     ),
                     overallProgress > 0 && _react2.default.createElement(_LinearProgress2.default, {
                         className: 'upload-overall',

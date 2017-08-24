@@ -63,21 +63,35 @@ export class FileUploader extends PureComponent {
     }
 
     componentWillUpdate(nextProps, nextState) {
-        if (this.props.onChange) this.props.onChange({queue: nextState.uploadedFiles, isValid: this._isFileUploadValid(nextState)});
+        if (this.props.onChange) this.props.onChange({queue: nextState.uploadedFiles, isValid: this.isFileUploadValid(nextState)});
     }
 
     componentWillUnmount() {
         this.props.clearFileUpload();
     }
 
-    deleteFile = (file, index) => {
+    /**
+     * Delete file on a given index
+     *
+     * @param file
+     * @param index
+     * @private
+     */
+    _deleteFile = (file, index) => {
         this.setState({
             uploadedFiles: this.state.uploadedFiles.filter((_, i) => i !== index),
             clearErrors: true
         });
     };
 
-    replaceFile = (file, index) => {
+    /**
+     * Replace file on a given index
+     *
+     * @param file
+     * @param index
+     * @private
+     */
+    _replaceFile = (file, index) => {
         this.setState({
             uploadedFiles: [
                 ...this.state.uploadedFiles.slice(0, index),
@@ -88,47 +102,101 @@ export class FileUploader extends PureComponent {
         });
     };
 
-    deleteAllFiles = () => {
+    /**
+     * Delete all files
+     *
+     * @private
+     */
+    _deleteAllFiles = () => {
         this.setState({ uploadedFiles: [], clearErrors: true });
     };
 
-    setUploadedFiles = (files) => {
+    /**
+     * Set uploaded files
+     *
+     * @param files
+     * @private
+     */
+    _setUploadedFiles = (files) => {
         this.setState({ uploadedFiles: [...files], clearErrors: false });
     };
 
-    acceptTermsAndConditions = (event, value) => {
+    /**
+     * Accept terms and conditions
+     *
+     * @param event
+     * @param value
+     * @private
+     */
+    _acceptTermsAndConditions = (event, value) => {
         this.setState({ termsAndConditions: value });
     };
 
-    _calculateMaxFileSize = () => {
+    /**
+     * Calculate max file size allowed by dropzone
+     *
+     * @returns {number}
+     */
+    calculateMaxFileSize = () => {
         const { maxFileSize, fileSizeUnit } = this.props.defaultConfig;
         return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
     };
 
-    _isOpenAccess = (file) => {
-        return this._hasAccess(file) && file.access_condition_id === OPEN_ACCESS_ID;
+    /**
+     * Check if file is open access
+     *
+     * @param file
+     * @returns {boolean}
+     */
+    isOpenAccess = (file) => {
+        return this.hasAccess(file) && file.access_condition_id === OPEN_ACCESS_ID;
     };
 
-    _isAnyOpenAccess = (files) => {
-        return files.filter((file) => (this._isOpenAccess(file))).length > 0;
+    /**
+     * Check if any file is open access
+     *
+     * @param files
+     * @returns {boolean}
+     */
+    isAnyOpenAccess = (files) => {
+        return files.filter((file) => (this.isOpenAccess(file))).length > 0;
     };
 
-    _hasAccess = (file) => {
+    /**
+     * Check if file as access conditions field
+     *
+     * @param file
+     * @returns {boolean}
+     */
+    hasAccess = (file) => {
         return file.hasOwnProperty('access_condition_id');
     };
 
-    _hasEmbargoDate = (file) => {
+    /**
+     * Check if file has embargo date field
+     *
+     * @param file
+     * @returns {boolean}
+     */
+    hasEmbargoDate = (file) => {
         return file.hasOwnProperty('date') && (file.date !== null || file.date !== undefined);
     };
 
-    _isFileUploadValid = ({uploadedFiles, termsAndConditions}) => {
+    /**
+     * Check if entire file uploader is valid including access conditions, embargo date and t&c
+     *
+     * @param uploadedFiles
+     * @param termsAndConditions
+     * @returns {boolean}
+     */
+    isFileUploadValid = ({uploadedFiles, termsAndConditions}) => {
         let isValid = true;
 
         if (this.props.requireFileAccess) {
-            if (uploadedFiles.filter((file) => (!this._hasAccess(file))).length > 0) isValid = false;
+            if (uploadedFiles.filter((file) => (!this.hasAccess(file))).length > 0) isValid = false;
 
-            if (uploadedFiles.filter((file) => (this._isOpenAccess(file)))
-                    .filter((file) => (!(this._hasEmbargoDate(file) && termsAndConditions)))
+            if (uploadedFiles.filter((file) => (this.isOpenAccess(file)))
+                    .filter((file) => (!(this.hasEmbargoDate(file) && termsAndConditions)))
                     .length > 0) isValid = false;
         }
 
@@ -152,8 +220,8 @@ export class FileUploader extends PureComponent {
                 index={ index }
                 uploadedFile={ file }
                 fileSizeUnit={ fileSizeUnit }
-                onDelete={ this.deleteFile }
-                onAttributeChanged={ this.replaceFile }
+                onDelete={ this._deleteFile }
+                onAttributeChanged={ this._replaceFile }
                 requireFileAccess={ requireFileAccess }
                 disabled={ this.props.disabled } />);
         });
@@ -162,25 +230,25 @@ export class FileUploader extends PureComponent {
             <div>
                 <h4 className="sub-title">{ instructionsDisplay }</h4>
                 <FileUploadDropzone
-                    maxSize={ this._calculateMaxFileSize() }
+                    maxSize={ this.calculateMaxFileSize() }
                     maxFiles={ fileUploadLimit }
                     disabled={ this.props.disabled }
-                    onDropped={ this.setUploadedFiles }
+                    onDropped={ this._setUploadedFiles }
                     uploadedFiles={ uploadedFiles }
                     clearErrors={ clearErrors } />
                 <div className="metadata-container">
                     {
                          uploadedFiles.length > 0 && (
-                            <FileUploadRowHeader onDeleteAll={ this.deleteAllFiles } requireFileAccess={ requireFileAccess } disabled={ this.props.disabled } />
+                            <FileUploadRowHeader onDeleteAll={ this._deleteAllFiles } requireFileAccess={ requireFileAccess } disabled={ this.props.disabled } />
                          )
                     }
 
                     { uploadedFilesRow }
 
                     {
-                        requireFileAccess && this._isAnyOpenAccess(uploadedFiles) &&
+                        requireFileAccess && this.isAnyOpenAccess(uploadedFiles) &&
                             <div style={{position: 'relative', width: '100%'}} className={!termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox'}>
-                                <Checkbox label={ accessTermsAndConditions } onCheck={ this.acceptTermsAndConditions } checked={ termsAndConditions } />
+                                <Checkbox label={ accessTermsAndConditions } onCheck={ this._acceptTermsAndConditions } checked={ termsAndConditions } />
                             </div>
                     }
 
