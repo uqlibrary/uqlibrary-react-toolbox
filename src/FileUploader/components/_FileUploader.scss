@@ -87,13 +87,13 @@
 
   .file-info {
     .file-name {
-      line-height: 48px !important;
+      line-height: 48px;
     }
   }
 
   .no-embargo-date {
     span {
-      line-height: 48px !important;
+      line-height: 48px;
     }
   }
 
@@ -129,12 +129,8 @@
   .file-info {
     display: inline !important;
     .file-name {
-      display: inline-block !important;
-      line-height: 24px;
       font-size: 14px;
-      white-space: nowrap !important;
-      overflow: hidden !important;
-      text-overflow: ellipsis !important;
+      line-height: unset !important;
     }
   }
 
@@ -142,6 +138,17 @@
     display: inline-block;
     float: right;
     margin-top: 0 !important;
+  }
+
+  .no-embargo-date {
+    margin-top: 8px !important;
+    span {
+      line-height: unset !important;
+    }
+  }
+
+  .embargo-date-selector {
+    margin-top: 8px !important;
   }
 
   .embargo-date {
@@ -168,11 +175,17 @@
     }
   }
 
-  .file-access-selector .selectField {
-    > div {
-      font-size: 14px !important;
-      & div {
-        font-size: 14px;
+  .file-access-selector {
+    margin-top: 8px !important;
+  }
+
+  .file-access-selector {
+    .selectField {
+      > div {
+        font-size: 14px !important;
+        & div {
+          font-size: 14px;
+        }
       }
     }
   }
