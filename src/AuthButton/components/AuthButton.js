@@ -5,7 +5,6 @@ import SocialPerson from 'material-ui/svg-icons/social/person';
 import PropTypes from 'prop-types';
 
 class AuthButton extends React.Component {
-
     static propTypes = {
         isAuthorizedUser: PropTypes.bool.isRequired,
         loginUrl: PropTypes.string.isRequired,

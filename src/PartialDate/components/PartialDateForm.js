@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import TextField from 'material-ui/TextField';
@@ -6,6 +6,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
 const moment = require('moment');
+
 class PartialDateForm extends Component {
     static propTypes = {
         locale: PropTypes.object,
@@ -30,7 +31,7 @@ class PartialDateForm extends Component {
             minNumberCharCode: 48,
             maxNumberCharCode: 57
         },
-        months: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ],
+        months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         dateFormat: 'YYYY-MM-DD',
         allowPartial: false
     };
@@ -51,7 +52,7 @@ class PartialDateForm extends Component {
 
     _validate = (state) => {
         let valid;
-        const { day, month, year } = state;
+        const {day, month, year} = state;
 
         if (this.props.allowPartial) {
             valid = !isNaN(year) && year !== null && moment(state).isValid();
@@ -63,8 +64,8 @@ class PartialDateForm extends Component {
     };
 
     _displayErrors = (state, valid) => {
-        const { day, month, year } = state;
-        const { locale } = this.props;
+        const {day, month, year} = state;
+        const {locale} = this.props;
 
         this.errors.year = isNaN(year) ? locale.validationMessage.year : '';
 
@@ -72,8 +73,8 @@ class PartialDateForm extends Component {
             this.errors.month = (year && month < 0) ? locale.validationMessage.month : '';
             this.errors.day = (day && year && month > -1 && !valid) ? locale.validationMessage.day : '';
         } else {
-            this.errors.month = month < 0  ? locale.validationMessage.month : '';
-            this.errors.day = (isNaN(day) || ((month !== null || month > -1) && year && !valid))  ? locale.validationMessage.day : '';
+            this.errors.month = month < 0 ? locale.validationMessage.month : '';
+            this.errors.day = (isNaN(day) || ((month !== null || month > -1) && year && !valid)) ? locale.validationMessage.day : '';
         }
     };
 
@@ -106,65 +107,65 @@ class PartialDateForm extends Component {
     };
 
     render() {
-        const { locale, months, className } = this.props;
+        const {locale, months, className} = this.props;
         const renderMonths = months.map((month, index) =>
-            <MenuItem key={index} value={index} primaryText={month} />
+            <MenuItem key={index} value={index} primaryText={month}/>
         );
 
         return (
-                <div className="columns is-gapless-mobile">
-                    <div className="column">
-                        <TextField
-                            name="day"
-                            type="text"
-                            maxLength="2"
-                            style={{ marginTop: '12px' }}
-                            className={ !this.props.allowPartial ? className : '' }
-                            fullWidth
-                            disabled={this.props.disabled}
-                            floatingLabelText={ locale.dayLabel }
-                            floatingLabelFixed
-                            errorText={ this.errors.day }
-                            onKeyPress={ this._isNumber }
-                            onChange={ this._onDateChanged('day') }
-                            onBlur={ !this.props.allowPartial ? this._onDateChanged('day') : undefined }
-                        />
-                    </div>
-                    <div className="column">
-                        <SelectField
-                            name="month"
-                            dropDownMenuProps={{ animated: false }}
-                            fullWidth
-                            disabled={this.props.disabled}
-                            value={ this.state.month }
-                            style={{ marginTop: '12px' }}
-                            className={ !this.props.allowPartial ? className : '' }
-                            floatingLabelText={ locale.monthLabel }
-                            floatingLabelFixed
-                            errorText={ this.errors.month }
-                            onChange={ this._onDateChanged('month') }>
-                            <MenuItem key={-1} value={-1} primaryText=""/>
-                            { renderMonths }
-                        </SelectField>
-                    </div>
-                    <div className="column">
-                        <TextField
-                            name="year"
-                            type="text"
-                            fullWidth
-                            style={{ marginTop: '12px' }}
-                            className={ className }
-                            maxLength="4"
-                            disabled={this.props.disabled}
-                            floatingLabelText={ locale.yearLabel }
-                            floatingLabelFixed
-                            errorText={ this.errors.year }
-                            onKeyPress={ this._isNumber }
-                            onChange={ this._onDateChanged('year') }
-                            onBlur={ this._onDateChanged('year') }
-                        />
-                    </div>
+            <div className="columns is-gapless-mobile">
+                <div className="column">
+                    <TextField
+                        name="day"
+                        type="text"
+                        maxLength="2"
+                        style={{marginTop: '12px'}}
+                        className={!this.props.allowPartial ? className : ''}
+                        fullWidth
+                        disabled={this.props.disabled}
+                        floatingLabelText={locale.dayLabel}
+                        floatingLabelFixed
+                        errorText={this.errors.day}
+                        onKeyPress={this._isNumber}
+                        onChange={this._onDateChanged('day')}
+                        onBlur={!this.props.allowPartial ? this._onDateChanged('day') : undefined}
+                    />
                 </div>
+                <div className="column">
+                    <SelectField
+                        name="month"
+                        dropDownMenuProps={{animated: false}}
+                        fullWidth
+                        disabled={this.props.disabled}
+                        value={this.state.month}
+                        style={{marginTop: '12px'}}
+                        className={!this.props.allowPartial ? className : ''}
+                        floatingLabelText={locale.monthLabel}
+                        floatingLabelFixed
+                        errorText={this.errors.month}
+                        onChange={this._onDateChanged('month')}>
+                        <MenuItem key={-1} value={-1} primaryText=""/>
+                        {renderMonths}
+                    </SelectField>
+                </div>
+                <div className="column">
+                    <TextField
+                        name="year"
+                        type="text"
+                        fullWidth
+                        style={{marginTop: '12px'}}
+                        className={className}
+                        maxLength="4"
+                        disabled={this.props.disabled}
+                        floatingLabelText={locale.yearLabel}
+                        floatingLabelFixed
+                        errorText={this.errors.year}
+                        onKeyPress={this._isNumber}
+                        onChange={this._onDateChanged('year')}
+                        onBlur={this._onDateChanged('year')}
+                    />
+                </div>
+            </div>
         );
     }
 }

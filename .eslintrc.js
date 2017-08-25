@@ -193,10 +193,8 @@ module.exports = {
             "components": [ "Image" ]
         }],
         "jsx-a11y/interactive-supports-focus" : 2,
-        "jsx-a11y/href-no-hash": [ 2, {
-            "components": [ "Link" ],
-            "specialLink": [ "hrefLeft", "hrefRight" ]
-        }]
+        "jsx-a11y/href-no-hash": "off",
+        "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
     },
     "plugins": [
         "react",

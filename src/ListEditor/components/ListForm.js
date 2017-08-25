@@ -4,7 +4,6 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 export default class ListForm extends Component {
-
     static propTypes = {
         onAdd: PropTypes.func.isRequired,
         isValid: PropTypes.func,
@@ -13,7 +12,9 @@ export default class ListForm extends Component {
     };
 
     static defaultProps = {
-        isValid: () => { return ''; },
+        isValid: () => {
+            return '';
+        },
         locale: {
             inputFieldLabel: 'Item name',
             inputFieldHint: 'Please type the item name',
@@ -30,7 +31,7 @@ export default class ListForm extends Component {
 
     addItem = (event) => {
         // add item if user hits 'enter' key on input field
-        if(this.props.disabled
+        if (this.props.disabled
             || this.props.isValid(this.state.itemName) !== ''
             || (event && event.key && (event.key !== 'Enter' || this.state.itemName.length === 0))) {
             return;
@@ -67,7 +68,7 @@ export default class ListForm extends Component {
                         onChange={this.onNameChanged}
                         onKeyPress={this.addItem}
                         errorText={this.props.isValid(this.state.itemName)}
-                        disabled={this.props.disabled} />
+                        disabled={this.props.disabled}/>
                 </div>
                 <div className="column is-narrow">
                     <RaisedButton
@@ -76,7 +77,7 @@ export default class ListForm extends Component {
                         primary
                         label={this.props.locale.addButtonLabel}
                         disabled={this.props.disabled || this.props.isValid(this.state.itemName) !== '' || this.state.itemName.trim().length === 0}
-                        onClick={this.addItem} />
+                        onClick={this.addItem}/>
                 </div>
             </div>
         );

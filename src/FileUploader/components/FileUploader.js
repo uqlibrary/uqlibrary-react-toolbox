@@ -28,7 +28,6 @@ export const sizeUnitText = {
 export const sizeBase = 1000;
 
 export class FileUploader extends PureComponent {
-
     static propTypes = {
         onChange: PropTypes.func,
         locale: PropTypes.object,
@@ -193,11 +192,16 @@ export class FileUploader extends PureComponent {
         let isValid = true;
 
         if (this.props.requireFileAccess) {
-            if (uploadedFiles.filter((file) => (!this.hasAccess(file))).length > 0) isValid = false;
+            if (uploadedFiles.filter((file) => (!this.hasAccess(file))).length > 0) {
+                isValid = false;
+            }
 
-            if (uploadedFiles.filter((file) => (this.isOpenAccess(file)))
-                    .filter((file) => (!(this.hasEmbargoDate(file) && termsAndConditions)))
-                    .length > 0) isValid = false;
+            if (uploadedFiles
+                .filter((file) => (this.isOpenAccess(file)))
+                .filter((file) => (!(this.hasEmbargoDate(file) && termsAndConditions)))
+                .length > 0) {
+                isValid = false;
+            }
         }
 
         return isValid;
@@ -238,9 +242,11 @@ export class FileUploader extends PureComponent {
                     clearErrors={ clearErrors } />
                 <div className="metadata-container">
                     {
-                         uploadedFiles.length > 0 && (
-                            <FileUploadRowHeader onDeleteAll={ this._deleteAllFiles } requireFileAccess={ requireFileAccess } disabled={ this.props.disabled } />
-                         )
+                        uploadedFiles.length > 0 &&
+                        <FileUploadRowHeader
+                            onDeleteAll={ this._deleteAllFiles }
+                            requireFileAccess={ requireFileAccess }
+                            disabled={ this.props.disabled } />
                     }
 
                     { uploadedFilesRow }

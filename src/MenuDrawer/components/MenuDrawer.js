@@ -16,28 +16,28 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
             docked={docked}>
             <div className="layout-fill side-drawer">
                 <div className="logo-wrapper">
-                    {logoImage && <img src={logoImage} alt={logoText} />}
+                    {logoImage && <img src={logoImage} alt={logoText}/>}
                 </div>
                 <List className="main-menu">
                     {menuItems.map((menuItem, index) =>
                         menuItem.primaryText && menuItem.linkTo && (
                             <span className="menu-item-container" key={index}>
                                 {menuItem.divider ?
-                                    (<Divider />)
+                                    (<Divider/>)
                                     :
                                     (menuItem.target && menuItem.linkTo.indexOf('http') === -1 ?
                                         (<a href={menuItem.linkTo} target={menuItem.target}>
-                                            <ListItem primaryText={menuItem.primaryText}
-                                                      secondaryText={menuItem.secondaryText}
-                                                      leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null}
-                                            />
+                                            <ListItem
+                                                primaryText={menuItem.primaryText}
+                                                secondaryText={menuItem.secondaryText}
+                                                leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null} />
                                         </a>)
                                         :
                                         (<Link to={menuItem.linkTo}>
-                                            <ListItem primaryText={menuItem.primaryText}
-                                                      secondaryText={menuItem.secondaryText}
-                                                      leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null}
-                                            />
+                                            <ListItem
+                                                primaryText={menuItem.primaryText}
+                                                secondaryText={menuItem.secondaryText}
+                                                leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null} />
                                         </Link>)
                                     )
                                 }

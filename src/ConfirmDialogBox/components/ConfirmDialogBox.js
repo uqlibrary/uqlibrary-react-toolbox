@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 
 export default class ConfirmDialogBox extends Component {
-
     static propTypes = {
         locale: PropTypes.object,
         onAction: PropTypes.func,
@@ -74,19 +73,21 @@ export default class ConfirmDialogBox extends Component {
                 {
                     !this.props.hideCancelButton &&
                     <div className="column is-narrow">
-                        <RaisedButton label={this.props.locale.cancelButtonLabel}
-                                      fullWidth
-                                      className="ConfirmDialogBox-actions-cancel"
-                                      onTouchTap={this._onCancelAction}/>
+                        <RaisedButton
+                            label={this.props.locale.cancelButtonLabel}
+                            fullWidth
+                            className="ConfirmDialogBox-actions-cancel"
+                            onTouchTap={this._onCancelAction}/>
                     </div>
                 }
                 <div className="column is-narrow">
-                    <RaisedButton label={this.props.locale.confirmButtonLabel}
-                                  fullWidth
-                                  className="ConfirmDialogBox-actions-confirm"
-                                  secondary
-                                  keyboardFocused
-                                  onTouchTap={this._onAction}/>
+                    <RaisedButton
+                        label={this.props.locale.confirmButtonLabel}
+                        fullWidth
+                        className="ConfirmDialogBox-actions-confirm"
+                        secondary
+                        keyboardFocused
+                        onTouchTap={this._onAction}/>
                 </div>
                 <div className="is-clearfix"/>
             </div>

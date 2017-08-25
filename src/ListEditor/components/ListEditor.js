@@ -5,7 +5,6 @@ import ListRow from './ListRow';
 import ListForm from './ListForm';
 
 export default class ListsEditor extends Component {
-
     static propTypes = {
         className: PropTypes.string,
         searchKey: PropTypes.object.isRequired,
@@ -51,7 +50,7 @@ export default class ListsEditor extends Component {
     addItem = (item) => {
         if (this.props.maxCount === 0 || this.state.itemList.length < this.props.maxCount) {
             this.setState({
-                itemList: [ ...this.state.itemList, item]
+                itemList: [...this.state.itemList, item]
             });
         }
     }
@@ -102,7 +101,7 @@ export default class ListsEditor extends Component {
                 onMoveDown={this.moveDownList}
                 onDelete={this.deleteItem}
                 {...(this.props.locale && this.props.locale.row ? this.props.locale.row : {})}
-                disabled={this.props.disabled} />
+                disabled={this.props.disabled}/>
         ));
 
         return (
@@ -111,13 +110,13 @@ export default class ListsEditor extends Component {
                     onAdd={this.addItem}
                     {...(this.props.locale && this.props.locale.form ? this.props.locale.form : {})}
                     isValid={this.props.isValid}
-                    disabled={this.props.disabled || (this.props.maxCount > 0 && this.state.itemList.length >= this.props.maxCount)} />
+                    disabled={this.props.disabled || (this.props.maxCount > 0 && this.state.itemList.length >= this.props.maxCount)}/>
                 {
                     this.state.itemList.length > 0 &&
                     <ListRowHeader
                         {...(this.props.locale && this.props.locale.header ? this.props.locale.header : {})}
                         onDeleteAll={this.deleteAllItems}
-                        disabled={this.props.disabled} />
+                        disabled={this.props.disabled}/>
                 }
                 {renderListsRows}
             </div>

@@ -2,11 +2,9 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
-
 import {ConfirmDialogBox} from 'uqlibrary-react-toolbox';
 
 export default class ListRow extends Component {
-
     static propTypes = {
         index: PropTypes.number.isRequired,
         item: PropTypes.string.isRequired,
@@ -59,7 +57,7 @@ export default class ListRow extends Component {
                 <ConfirmDialogBox
                     onRef={ref => (this.confirmationBox = ref)}
                     onAction={this.deleteRecord}
-                    locale={this.props.locale.deleteRecordConfirmation} />
+                    locale={this.props.locale.deleteRecordConfirmation}/>
                 <div className="column datalist-text">
                     {this.props.item}
                 </div>

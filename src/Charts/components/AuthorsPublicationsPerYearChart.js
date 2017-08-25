@@ -3,7 +3,6 @@ import {PropTypes} from 'prop-types';
 import Chart from './Chart';
 
 class AuthorsPublicationsPerYearChart extends React.Component {
-
     static propTypes = {
         yAxisTitle: PropTypes.string,
         series: PropTypes.array,

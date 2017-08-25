@@ -40,9 +40,10 @@ export default class FileUploadRowHeader extends Component {
 
         return (
             <div className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile">
-                <ConfirmDialogBox onRef={ ref => (this.confirmationBox = ref) }
-                                  onAction={ this.props.onDeleteAll }
-                                  locale={ deleteAllFilesConfirmation } />
+                <ConfirmDialogBox
+                    onRef={ref => (this.confirmationBox = ref)}
+                    onAction={this.props.onDeleteAll}
+                    locale={deleteAllFilesConfirmation}/>
                 <div className="column datalist-title is-6-desktop is-6-tablet is-12-mobile header">
                     { filenameColumn }
                 </div>
