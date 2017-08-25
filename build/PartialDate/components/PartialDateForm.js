@@ -145,6 +145,7 @@ var PartialDateForm = function (_Component) {
                         style: { marginTop: '12px' },
                         className: !this.props.allowPartial ? className : '',
                         fullWidth: true,
+                        disabled: this.props.disabled,
                         floatingLabelText: locale.dayLabel,
                         floatingLabelFixed: true,
                         errorText: this.errors.day,
@@ -162,6 +163,7 @@ var PartialDateForm = function (_Component) {
                             name: 'month',
                             dropDownMenuProps: { animated: false },
                             fullWidth: true,
+                            disabled: this.props.disabled,
                             value: this.state.month,
                             style: { marginTop: '12px' },
                             className: !this.props.allowPartial ? className : '',
@@ -183,6 +185,7 @@ var PartialDateForm = function (_Component) {
                         style: { marginTop: '12px' },
                         className: className,
                         maxLength: '4',
+                        disabled: this.props.disabled,
                         floatingLabelText: locale.yearLabel,
                         floatingLabelFixed: true,
                         errorText: this.errors.year,
@@ -203,6 +206,7 @@ PartialDateForm.propTypes = {
     onChange: _propTypes2.default.func,
     dateFormat: _propTypes2.default.string,
     allowPartial: _propTypes2.default.bool,
+    disabled: _propTypes2.default.bool,
     months: _propTypes2.default.array,
     className: _propTypes2.default.string
 };

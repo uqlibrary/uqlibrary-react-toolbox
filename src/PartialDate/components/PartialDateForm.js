@@ -12,6 +12,7 @@ class PartialDateForm extends Component {
         onChange: PropTypes.func,
         dateFormat: PropTypes.string,
         allowPartial: PropTypes.bool,
+        disabled: PropTypes.bool,
         months: PropTypes.array,
         className: PropTypes.string
     };
@@ -120,6 +121,7 @@ class PartialDateForm extends Component {
                             style={{ marginTop: '12px' }}
                             className={ !this.props.allowPartial ? className : '' }
                             fullWidth
+                            disabled={this.props.disabled}
                             floatingLabelText={ locale.dayLabel }
                             floatingLabelFixed
                             errorText={ this.errors.day }
@@ -133,6 +135,7 @@ class PartialDateForm extends Component {
                             name="month"
                             dropDownMenuProps={{ animated: false }}
                             fullWidth
+                            disabled={this.props.disabled}
                             value={ this.state.month }
                             style={{ marginTop: '12px' }}
                             className={ !this.props.allowPartial ? className : '' }
@@ -152,6 +155,7 @@ class PartialDateForm extends Component {
                             style={{ marginTop: '12px' }}
                             className={ className }
                             maxLength="4"
+                            disabled={this.props.disabled}
                             floatingLabelText={ locale.yearLabel }
                             floatingLabelFixed
                             errorText={ this.errors.year }

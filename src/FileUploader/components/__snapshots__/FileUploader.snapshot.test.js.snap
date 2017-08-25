@@ -3516,6 +3516,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -3878,8 +3879,8 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                         openImmediately={false}
                         style={
                           Object {
+                            "WebkitOpacity": 1,
                             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                            "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                             "backgroundColor": "rgba(0,0,0,0)",
                             "border": "none",
                             "color": "rgba(0, 0, 0, 0.87)",
@@ -3907,8 +3908,8 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                           onFocus={[Function]}
                           style={
                             Object {
+                              "WebkitOpacity": 1,
                               "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                              "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                               "backgroundColor": "rgba(0,0,0,0)",
                               "border": "none",
                               "color": "rgba(0, 0, 0, 0.87)",
@@ -4198,6 +4199,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                             canAutoPosition={true}
                             onRequestClose={[Function]}
                             open={false}
+                            scrollableContainer="window"
                             style={
                               Object {
                                 "overflowY": "auto",
@@ -4345,6 +4347,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -4664,7 +4667,8 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 1px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 1,
                                 "borderColor": "#e0e0e0",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -4682,7 +4686,8 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 2px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 2,
                                 "borderColor": "#f44336",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -5312,6 +5317,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -5674,8 +5680,8 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                         openImmediately={false}
                         style={
                           Object {
+                            "WebkitOpacity": 1,
                             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                            "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                             "backgroundColor": "rgba(0,0,0,0)",
                             "border": "none",
                             "color": "rgba(0, 0, 0, 0.87)",
@@ -5703,8 +5709,8 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                           onFocus={[Function]}
                           style={
                             Object {
+                              "WebkitOpacity": 1,
                               "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                              "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                               "backgroundColor": "rgba(0,0,0,0)",
                               "border": "none",
                               "color": "rgba(0, 0, 0, 0.87)",
@@ -5994,6 +6000,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                             canAutoPosition={true}
                             onRequestClose={[Function]}
                             open={false}
+                            scrollableContainer="window"
                             style={
                               Object {
                                 "overflowY": "auto",
@@ -6141,6 +6148,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -6460,7 +6468,8 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 1px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 1,
                                 "borderColor": "#e0e0e0",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -6478,7 +6487,8 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 2px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 2,
                                 "borderColor": "#f44336",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -7592,6 +7602,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -7954,8 +7965,8 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                         openImmediately={false}
                         style={
                           Object {
+                            "WebkitOpacity": 1,
                             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                            "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                             "backgroundColor": "rgba(0,0,0,0)",
                             "border": "none",
                             "color": "rgba(0, 0, 0, 0.87)",
@@ -7983,8 +7994,8 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                           onFocus={[Function]}
                           style={
                             Object {
+                              "WebkitOpacity": 1,
                               "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                              "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                               "backgroundColor": "rgba(0,0,0,0)",
                               "border": "none",
                               "color": "rgba(0, 0, 0, 0.87)",
@@ -8274,6 +8285,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                             canAutoPosition={true}
                             onRequestClose={[Function]}
                             open={false}
+                            scrollableContainer="window"
                             style={
                               Object {
                                 "overflowY": "auto",
@@ -8421,6 +8433,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -8740,7 +8753,8 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 1px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 1,
                                 "borderColor": "#e0e0e0",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -8758,7 +8772,8 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 2px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 2,
                                 "borderColor": "#f44336",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -9388,6 +9403,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -9750,8 +9766,8 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                         openImmediately={false}
                         style={
                           Object {
+                            "WebkitOpacity": 1,
                             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                            "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                             "backgroundColor": "rgba(0,0,0,0)",
                             "border": "none",
                             "color": "rgba(0, 0, 0, 0.87)",
@@ -9779,8 +9795,8 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                           onFocus={[Function]}
                           style={
                             Object {
+                              "WebkitOpacity": 1,
                               "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                              "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                               "backgroundColor": "rgba(0,0,0,0)",
                               "border": "none",
                               "color": "rgba(0, 0, 0, 0.87)",
@@ -10070,6 +10086,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                             canAutoPosition={true}
                             onRequestClose={[Function]}
                             open={false}
+                            scrollableContainer="window"
                             style={
                               Object {
                                 "overflowY": "auto",
@@ -10217,6 +10234,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -10536,7 +10554,8 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 1px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 1,
                                 "borderColor": "#e0e0e0",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -10554,7 +10573,8 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 2px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 2,
                                 "borderColor": "#f44336",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -11668,6 +11688,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -12030,8 +12051,8 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                         openImmediately={false}
                         style={
                           Object {
+                            "WebkitOpacity": 1,
                             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                            "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                             "backgroundColor": "rgba(0,0,0,0)",
                             "border": "none",
                             "color": "rgba(0, 0, 0, 0.87)",
@@ -12059,8 +12080,8 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                           onFocus={[Function]}
                           style={
                             Object {
+                              "WebkitOpacity": 1,
                               "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                              "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                               "backgroundColor": "rgba(0,0,0,0)",
                               "border": "none",
                               "color": "rgba(0, 0, 0, 0.87)",
@@ -12350,6 +12371,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                             canAutoPosition={true}
                             onRequestClose={[Function]}
                             open={false}
+                            scrollableContainer="window"
                             style={
                               Object {
                                 "overflowY": "auto",
@@ -12497,6 +12519,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -12816,7 +12839,8 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 1px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 1,
                                 "borderColor": "#e0e0e0",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -12834,7 +12858,8 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 2px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 2,
                                 "borderColor": "#f44336",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -13464,6 +13489,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -13826,8 +13852,8 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                         openImmediately={false}
                         style={
                           Object {
+                            "WebkitOpacity": 1,
                             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                            "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                             "backgroundColor": "rgba(0,0,0,0)",
                             "border": "none",
                             "color": "rgba(0, 0, 0, 0.87)",
@@ -13855,8 +13881,8 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                           onFocus={[Function]}
                           style={
                             Object {
+                              "WebkitOpacity": 1,
                               "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                              "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                               "backgroundColor": "rgba(0,0,0,0)",
                               "border": "none",
                               "color": "rgba(0, 0, 0, 0.87)",
@@ -14146,6 +14172,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                             canAutoPosition={true}
                             onRequestClose={[Function]}
                             open={false}
+                            scrollableContainer="window"
                             style={
                               Object {
                                 "overflowY": "auto",
@@ -14293,6 +14320,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -14612,7 +14640,8 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 1px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 1,
                                 "borderColor": "#e0e0e0",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -14630,7 +14659,8 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 2px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 2,
                                 "borderColor": "#f44336",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -15246,6 +15276,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                           "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                           "calendarYearBackgroundColor": "#ffffff",
                           "color": "#00bcd4",
+                          "headerColor": "#00bcd4",
                           "selectColor": "#0097a7",
                           "selectTextColor": "#ffffff",
                           "textColor": "#ffffff",
@@ -15691,6 +15722,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                           "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                           "calendarYearBackgroundColor": "#ffffff",
                           "color": "#00bcd4",
+                          "headerColor": "#00bcd4",
                           "selectColor": "#0097a7",
                           "selectTextColor": "#ffffff",
                           "textColor": "#ffffff",
@@ -16026,7 +16058,6 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                             "height": "100%",
                             "left": 0,
                             "muiPrepared": true,
-                            "overflow": "hidden",
                             "position": "absolute",
                             "top": 0,
                             "width": "100%",
@@ -16039,7 +16070,6 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                               "height": "100%",
                               "left": 0,
                               "muiPrepared": true,
-                              "overflow": "hidden",
                               "position": "absolute",
                               "top": 0,
                               "width": "100%",
@@ -16920,6 +16950,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -17282,8 +17313,8 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                         openImmediately={false}
                         style={
                           Object {
+                            "WebkitOpacity": 1,
                             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                            "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                             "backgroundColor": "rgba(0,0,0,0)",
                             "border": "none",
                             "color": "rgba(0, 0, 0, 0.87)",
@@ -17311,8 +17342,8 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                           onFocus={[Function]}
                           style={
                             Object {
+                              "WebkitOpacity": 1,
                               "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                              "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                               "backgroundColor": "rgba(0,0,0,0)",
                               "border": "none",
                               "color": "rgba(0, 0, 0, 0.87)",
@@ -17602,6 +17633,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                             canAutoPosition={true}
                             onRequestClose={[Function]}
                             open={false}
+                            scrollableContainer="window"
                             style={
                               Object {
                                 "overflowY": "auto",
@@ -17749,6 +17781,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -18068,7 +18101,8 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 1px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 1,
                                 "borderColor": "#e0e0e0",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -18086,7 +18120,8 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 2px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 2,
                                 "borderColor": "#f44336",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -18716,6 +18751,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -19078,8 +19114,8 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                         openImmediately={false}
                         style={
                           Object {
+                            "WebkitOpacity": 1,
                             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                            "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                             "backgroundColor": "rgba(0,0,0,0)",
                             "border": "none",
                             "color": "rgba(0, 0, 0, 0.87)",
@@ -19107,8 +19143,8 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                           onFocus={[Function]}
                           style={
                             Object {
+                              "WebkitOpacity": 1,
                               "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                              "WebkitTextFillColor": "rgba(0, 0, 0, 0.87)",
                               "backgroundColor": "rgba(0,0,0,0)",
                               "border": "none",
                               "color": "rgba(0, 0, 0, 0.87)",
@@ -19398,6 +19434,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                             canAutoPosition={true}
                             onRequestClose={[Function]}
                             open={false}
+                            scrollableContainer="window"
                             style={
                               Object {
                                 "overflowY": "auto",
@@ -19545,6 +19582,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                               "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                               "calendarYearBackgroundColor": "#ffffff",
                               "color": "#00bcd4",
+                              "headerColor": "#00bcd4",
                               "selectColor": "#0097a7",
                               "selectTextColor": "#ffffff",
                               "textColor": "#ffffff",
@@ -19864,7 +19902,8 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 1px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 1,
                                 "borderColor": "#e0e0e0",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -19882,7 +19921,8 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                             aria-hidden="true"
                             style={
                               Object {
-                                "borderBottom": "solid 2px",
+                                "borderBottomStyle": "solid",
+                                "borderBottomWidth": 2,
                                 "borderColor": "#f44336",
                                 "borderLeft": "none",
                                 "borderRight": "none",
@@ -20498,6 +20538,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                           "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                           "calendarYearBackgroundColor": "#ffffff",
                           "color": "#00bcd4",
+                          "headerColor": "#00bcd4",
                           "selectColor": "#0097a7",
                           "selectTextColor": "#ffffff",
                           "textColor": "#ffffff",
@@ -20943,6 +20984,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                           "calendarTextColor": "rgba(0, 0, 0, 0.87)",
                           "calendarYearBackgroundColor": "#ffffff",
                           "color": "#00bcd4",
+                          "headerColor": "#00bcd4",
                           "selectColor": "#0097a7",
                           "selectTextColor": "#ffffff",
                           "textColor": "#ffffff",
@@ -21278,7 +21320,6 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                             "height": "100%",
                             "left": 0,
                             "muiPrepared": true,
-                            "overflow": "hidden",
                             "position": "absolute",
                             "top": 0,
                             "width": "100%",
@@ -21291,7 +21332,6 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                               "height": "100%",
                               "left": 0,
                               "muiPrepared": true,
-                              "overflow": "hidden",
                               "position": "absolute",
                               "top": 0,
                               "width": "100%",
