@@ -232,7 +232,7 @@ export class FileUploader extends PureComponent {
                 <FileUploadDropzone
                     maxSize={ this.calculateMaxFileSize() }
                     maxFiles={ fileUploadLimit }
-                    disabled={ this.props.disabled }
+                    disabled={ this.props.disabled || uploadedFiles.length === 10 }
                     onDropped={ this._setUploadedFiles }
                     uploadedFiles={ uploadedFiles }
                     clearErrors={ clearErrors } />
