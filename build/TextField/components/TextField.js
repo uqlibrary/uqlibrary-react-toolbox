@@ -32,13 +32,16 @@ var TextFieldWrapper = function TextFieldWrapper(props) {
         'div',
         { style: { position: 'relative', width: '100%' } },
         _react2.default.createElement(_TextField2.default, filteredProps),
-        props.helpText && _react2.default.createElement(_HelpDrawer.HelpIcon, { title: props.helpTitle, text: props.helpText, buttonLabel: 'Ok' })
+        props.help && props.help.text && _react2.default.createElement(_HelpDrawer.HelpIcon, props.help)
     );
 };
 
 TextFieldWrapper.propTypes = _extends({}, _TextField2.default.propTypes, {
-    helpTitle: _propTypes2.default.string,
-    helpText: _propTypes2.default.any
+    help: _propTypes2.default.shape({
+        title: _propTypes2.default.string,
+        text: _propTypes2.default.any,
+        buttonLabel: _propTypes2.default.string
+    })
 });
 
 exports.default = TextFieldWrapper;

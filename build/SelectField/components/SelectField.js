@@ -38,13 +38,23 @@ var SelectFieldWrapper = function SelectFieldWrapper(props) {
         'div',
         { style: { position: 'relative', width: '100%' } },
         _react2.default.createElement(_SelectField2.default, filteredProps),
-        props.helpText && _react2.default.createElement(_HelpDrawer.HelpIcon, { title: props.helpTitle, text: props.helpText, buttonLabel: 'Ok' })
+        props.help && props.help.text && _react2.default.createElement(_HelpDrawer.HelpIcon, props.help)
     );
 };
 
 SelectFieldWrapper.propTypes = _extends({}, _SelectField2.default.propTypes, {
-    helpTitle: _propTypes2.default.string,
-    helpText: _propTypes2.default.any
+    help: _propTypes2.default.shape({
+        title: _propTypes2.default.string,
+        text: _propTypes2.default.any,
+        buttonLabel: _propTypes2.default.string
+    })
 });
+
+SelectFieldWrapper.defaultProps = {
+    // TODO: investigate why disabling animation throws errors
+    // disable animation to keep focus on the input element
+    dropDownMenuProps: { animated: false },
+    maxHeight: 250
+};
 
 exports.default = SelectFieldWrapper;

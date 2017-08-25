@@ -13,4 +13,13 @@ Object.defineProperty(exports, 'AuthorsPublicationsPerYearChart', {
   }
 });
 
+var _AuthorsPublicationTypesCountChart = require('./components/AuthorsPublicationTypesCountChart');
+
+Object.defineProperty(exports, 'AuthorsPublicationTypesCountChart', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_AuthorsPublicationTypesCountChart).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

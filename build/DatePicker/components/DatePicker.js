@@ -44,15 +44,18 @@ function DatePickerWrapper(props) {
         'div',
         { style: { position: 'relative', width: '100%' } },
         _react2.default.createElement(_DatePicker2.default, filteredProps),
-        props.helpText && _react2.default.createElement(
+        props.help && props.help.text && _react2.default.createElement(
             'div',
             { style: { position: 'absolute', top: '20px', right: 0 } },
-            _react2.default.createElement(_HelpDrawer.HelpIcon, { title: props.helpTitle, text: props.helpText, buttonLabel: 'Ok' })
+            _react2.default.createElement(_HelpDrawer.HelpIcon, props.help)
         )
     );
 }
 
 DatePickerWrapper.propTypes = _extends({}, _DatePicker2.default.propTypes, {
-    helpTitle: _propTypes2.default.string,
-    helpText: _propTypes2.default.any
+    help: _propTypes2.default.shape({
+        title: _propTypes2.default.string,
+        text: _propTypes2.default.any,
+        buttonLabel: _propTypes2.default.string
+    })
 });

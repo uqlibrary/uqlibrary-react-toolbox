@@ -1,0 +1,70 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import FontIcon from 'material-ui/FontIcon';
+import IconButton from 'material-ui/IconButton';
+import {ConfirmDialogBox} from '../..';
+
+export default class FileUploadRowHeader extends Component {
+    static propTypes = {
+        onDeleteAll: PropTypes.func.isRequired,
+        locale: PropTypes.object,
+        requireFileAccess: PropTypes.bool,
+        disabled: PropTypes.bool
+    };
+
+    static defaultProps = {
+        locale: {
+            filenameColumn: 'Filename',
+            fileAccessColumn: 'Access conditions',
+            embargoDateColumn: 'Embargo release date',
+            deleteAllFiles: 'Remove all files from the upload queue',
+            deleteAllFilesConfirmation: {
+                confirmationTitle: 'Delete all',
+                confirmationMessage: 'Are you sure you want to delete all files?',
+                cancelButtonLabel: 'No',
+                confirmButtonLabel: 'Yes'
+            }
+        }
+    };
+
+    constructor(props) {
+        super(props);
+    }
+
+    _showConfirmation = () => {
+        this.confirmationBox.showConfirmation();
+    };
+
+    render() {
+        const { filenameColumn, fileAccessColumn, embargoDateColumn, deleteAllFiles, deleteAllFilesConfirmation } = this.props.locale;
+
+        return (
+            <div className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile">
+                <ConfirmDialogBox
+                    onRef={ref => (this.confirmationBox = ref)}
+                    onAction={this.props.onDeleteAll}
+                    locale={deleteAllFilesConfirmation}/>
+                <div className="column datalist-title is-6-desktop is-6-tablet is-12-mobile header">
+                    { filenameColumn }
+                </div>
+                {
+                    this.props.requireFileAccess &&
+                    <div className="column datalist-title is-3-desktop is-3-tablet is-12-mobile header">
+                        { fileAccessColumn }
+                    </div>
+                }
+                {
+                    this.props.requireFileAccess &&
+                    <div className="column datalist-title is-2-desktop is-2-tablet is-12-mobile header">
+                        { embargoDateColumn }
+                    </div>
+                }
+                <div className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header">
+                    <IconButton tooltip={ deleteAllFiles } onTouchTap={ this._showConfirmation } disabled={ this.props.disabled }>
+                        <FontIcon className="material-icons">delete_forever</FontIcon>
+                    </IconButton>
+                </div>
+            </div>
+        );
+    }
+}

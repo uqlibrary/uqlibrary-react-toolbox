@@ -1,0 +1,17 @@
+@import '../../../sass/variables';
+
+@media all and (max-width: 768px) {
+  .dialog-actions {
+    .column {
+      padding-top: 0px !important;
+    }
+  }
+}
+
+@media all and (min-width: 768px) {
+  .dialog-actions {
+    .column {
+      padding-left: 0px !important;
+    }
+  }
+}

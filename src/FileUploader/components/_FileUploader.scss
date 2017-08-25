@@ -1,0 +1,228 @@
+@import '../../../sass/variables';
+
+.file-instructions {
+  margin: 20px 0 0 0;
+  padding: 16px;
+  background-color: #F5F5F5;
+  border: 2px dashed #8D8D8D;
+  font-size: 0.9em;
+  line-height: 1.2em;
+
+  div, span, h3 {
+    color: #757575 !important;
+  }
+
+  h3 {
+    font-weight: bold !important;
+  }
+
+  .upload-instructions {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center !important;
+    .material-icons {
+      font-size: 36px !important;
+    }
+  }
+}
+
+.sub-title {
+  font-size: 16px;
+  padding-bottom: 12px;
+  padding-top: 8px;
+}
+
+.disclaimer {
+  font-size: 12px;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.metadata-container {
+  padding: 10px;
+}
+
+//Desktop
+@media (min-width: 768px) {
+  .fileUploadErrorMessage {
+    padding: 12px;
+    color: darken($error-color, 10%);
+    border: 1px solid darken($error-color, 10%);
+    background-color: rgba($error-color, 0.025);
+    vertical-align: middle;
+    .Message {
+      line-height: 50px;
+      text-indent: 12px;
+      margin-top: 0px !important;
+    }
+    .Icon {
+      text-align: center;
+      margin: 0 !important;
+      font-size: 48px;
+      .material-icons {
+        font-size: 48px !important;
+        color: darken($error-color, 10%) !important;
+        margin: 0px auto !important;
+      }
+    }
+  }
+
+  .headers {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.7);
+    .header {
+      white-space: nowrap !important;
+      text-overflow: ellipsis !important;
+      line-height: 40px !important;
+    }
+  }
+
+  .buttons {
+    padding-top: 8px !important;
+  }
+
+  .file-info {
+    .file-name {
+      line-height: 48px;
+    }
+  }
+
+  .no-embargo-date {
+    span {
+      line-height: 48px;
+    }
+  }
+
+}
+//Mobile
+@media (max-width: 768px) {
+  .fileUploadErrorMessage {
+    padding: 12px;
+    min-height: 60px;
+    color: darken($error-color, 10%);
+    border: 1px solid darken($error-color, 10%);
+    background-color: rgba($error-color, 0.025);
+    vertical-align: middle;
+    .Message {
+      padding: 12px !important;
+      line-height: 18px;
+      margin-top: 0px !important;
+    }
+    .Icon {
+      text-align: center;
+      margin: 0 0 10px 0;
+      font-size: 48px;
+      height: 60px !important;
+      width: 60px !important;
+      .material-icons {
+        font-size: 48px !important;
+        color: darken($error-color, 10%) !important;
+        margin: 0px auto !important;
+      }
+    }
+  }
+
+  .file-info {
+    display: inline !important;
+    .file-name {
+      font-size: 14px;
+      line-height: unset !important;
+    }
+  }
+
+  .secondary-info-mobile {
+    display: inline-block;
+    float: right;
+    margin-top: 0 !important;
+  }
+
+  .no-embargo-date {
+    margin-top: 8px !important;
+    span {
+      line-height: unset !important;
+    }
+  }
+
+  .embargo-date-selector {
+    margin-top: 8px !important;
+  }
+
+  .embargo-date {
+    height: 22px;
+    min-width: 235px !important;
+    > div {
+      height: 30px !important;
+      width: 200px !important;
+      div {
+        font-size: 14px;
+        position: unset !important;
+      }
+      input {
+        bottom: 30px;
+        width: 200px !important;
+      }
+      & div:nth-child(4) {
+        position: relative;
+        font-size: 9px !important;
+        float: right;
+        margin-right: 50px;
+        margin-top: -32px;
+      }
+    }
+  }
+
+  .file-access-selector {
+    margin-top: 8px !important;
+  }
+
+  .file-access-selector {
+    .selectField {
+      > div {
+        font-size: 14px !important;
+        & div {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .uploadedFileDelete {
+    float: right;
+  }
+
+  .open-access-checkbox {
+    label {
+      width: calc(100% - 45px);
+      text-align: justify;
+    }
+  }
+}
+
+
+.file-access-selector {
+  hr {
+    display: none;
+  }
+  .selectField {
+    font-size: 14px !important;
+    max-width: 200px;
+  }
+}
+
+.embargo-date-selector {
+  hr {
+    display: none;
+  }
+  input {
+    font-size: 14px !important;
+  }
+  div {
+    font-size: 14px;
+  }
+}
+.upload-progress-ghost{
+
+}

@@ -9,8 +9,7 @@ function filterProps(props) {
 
     delete validProps.input;
     delete validProps.meta;
-    delete validProps.helpText;
-    delete validProps.helpTitle;
+    delete validProps.help;
 
     validProps.errorText = props.forceError || props.meta && props.meta.touched ? props.meta.error || props.meta.warn || undefined : undefined;
     return validProps;

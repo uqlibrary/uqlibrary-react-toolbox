@@ -33,7 +33,7 @@ function AppLoader(_ref) {
             { className: 'app-loader-content column is-centered' },
             _react2.default.createElement(
                 'h1',
-                { className: 'display-2 color-reverse' },
+                { className: 'title is-2 color-reverse' },
                 title
             ),
             _react2.default.createElement('br', null),

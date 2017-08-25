@@ -13,17 +13,25 @@ const SelectFieldWrapper = props => {
     return (
         <div style={{position: 'relative', width: '100%'}}>
             <SelectField {...filteredProps} />
-            {props.helpText && (
-                <HelpIcon title={props.helpTitle} text={props.helpText} buttonLabel="Ok" />
-            )}
+            {props.help && props.help.text && <HelpIcon {...props.help} />}
         </div>
     );
 };
 
 SelectFieldWrapper.propTypes = {
     ...SelectField.propTypes,
-    helpTitle: PropTypes.string,
-    helpText: PropTypes.any
+    help: PropTypes.shape({
+        title: PropTypes.string,
+        text: PropTypes.any,
+        buttonLabel: PropTypes.string
+    })
+};
+
+SelectFieldWrapper.defaultProps = {
+    // TODO: investigate why disabling animation throws errors
+    // disable animation to keep focus on the input element
+    dropDownMenuProps: {animated: false},
+    maxHeight: 250
 };
 
 export default SelectFieldWrapper;

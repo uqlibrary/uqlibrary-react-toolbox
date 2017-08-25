@@ -60,7 +60,7 @@ var Chart = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement('div', { ref: 'chart' });
+            return _react2.default.createElement('div', { className: this.props.className, ref: 'chart' });
         }
     }]);
 
@@ -68,6 +68,7 @@ var Chart = function (_React$Component) {
 }(_react2.default.Component);
 
 Chart.propTypes = {
-    chartOptions: _propTypes.PropTypes.object.isRequired
+    chartOptions: _propTypes.PropTypes.object.isRequired,
+    className: _propTypes.PropTypes.string
 };
 exports.default = Chart;

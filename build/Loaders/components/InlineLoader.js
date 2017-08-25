@@ -33,7 +33,7 @@ function InlineLoader(_ref) {
         _react2.default.createElement('br', null),
         _react2.default.createElement(
             'span',
-            { className: 'headline' },
+            { className: 'title is-4' },
             message
         ),
         ' ',

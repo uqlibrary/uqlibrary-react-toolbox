@@ -11,24 +11,6 @@ module.exports = {
         "sinon": true,
         "__DEV__": true
     },
-    "ecmaFeatures": {
-        "arrowFunctions": true,
-        "blockBindings": true,
-        "classes": true,
-        "defaultParams": true,
-        "destructuring": true,
-        "forOf": true,
-        "generators": false,
-        "modules": true,
-        "objectLiteralComputedProperties": true,
-        "objectLiteralDuplicateProperties": false,
-        "objectLiteralShorthandMethods": true,
-        "objectLiteralShorthandProperties": true,
-        "spread": true,
-        "superInFunctions": true,
-        "templateStrings": true,
-        "jsx": true
-    },
     "rules": {
         "no-var": 2,                     // http://eslint.org/docs/rules/no-var
         "prefer-const": 2,               // http://eslint.org/docs/rules/prefer-const
@@ -142,7 +124,6 @@ module.exports = {
         "no-multiple-empty-lines": [2, { // http://eslint.org/docs/rules/no-multiple-empty-lines
             "max": 2
         }],
-        "no-nested-ternary": 2,          // http://eslint.org/docs/rules/no-nested-ternary
         "no-new-object": 2,              // http://eslint.org/docs/rules/no-new-object
         "no-spaced-func": 2,             // http://eslint.org/docs/rules/no-spaced-func
         "no-trailing-spaces": 2,         // http://eslint.org/docs/rules/no-trailing-spaces
@@ -190,14 +171,12 @@ module.exports = {
         "jsx-a11y/html-has-lang" : 2,
         "jsx-a11y/click-events-have-key-events" : 2,
         "jsx-a11y/no-onchange" : 2,
-        "jsx-a11y/img-has-alt": [ 2, {
+        "jsx-a11y/alt-text": [ 2, {
             "components": [ "Image" ]
         }],
-        "jsx-a11y/onclick-has-focus" : 2,
-        "jsx-a11y/href-no-hash": [ 2, {
-            "components": [ "Link" ],
-            "specialLink": [ "hrefLeft", "hrefRight" ]
-        }]
+        "jsx-a11y/interactive-supports-focus" : 2,
+        "jsx-a11y/href-no-hash": "off",
+        "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
     },
     "plugins": [
         "react",

@@ -1,0 +1,233 @@
+@import '../../../sass/variables';
+
+// Desktop
+@media (min-width: 768px) {
+  .forAlerts {
+    margin: -12px 0 0 0 !important;
+  }
+
+  .alertWrapper {
+    border-radius: 3px;
+    margin: 12px auto 24px auto !important;
+    padding: 12px !important;
+
+    .column {
+      padding: 12px !important;
+    }
+
+    .alertIcon {
+      float: left;
+      margin-right: -6px !important;
+      span {
+        font-size: 40px !important;
+      }
+    }
+    .alertText {
+      font-weight: normal !important;
+      font-size: 14px !important;
+      line-height: 18px;
+      margin: 12px 12px 12px 0 !important;
+      .alertTitle {
+        font-weight: bold !important;
+        font-size: 14px !important
+      }
+    }
+    // Help
+    &.help, &.help_outline {
+      border: 1px solid lighten($theme-color, 10%);
+      background-color: darken($theme-color, 5%);
+      .alertText, .alertTitle {
+        color: $text-color-reverse !important;
+      }
+      .alertIcon span {
+        color: $text-color-reverse !important;
+      }
+      svg.alertDismiss {
+          fill: $text-color-reverse !important;
+      }
+      button.alertAction {
+        background-color: darken($theme-color, 12%) !important;
+        margin: 6px 0 !important;
+        color: $text-color-reverse !important;
+      }
+    }
+
+    // Error
+    &.error, &.error_outline {
+      border: 1px solid lighten($error-color, 10%);
+      background-color: darken($error-color, 5%);
+      .alertText, .alertTitle {
+        color: $text-color-reverse !important;
+      }
+      .alertIcon span {
+        color: $text-color-reverse !important;
+      }
+      svg.alertDismiss {
+          fill: $text-color-reverse !important;
+      }
+      button.alertAction {
+        background-color: darken($error-color, 15%) !important;
+        margin: 6px 0 !important;
+        color: $text-color-reverse !important;
+      }
+    }
+
+    // Warning
+    &.warning {
+      border: 1px solid lighten($warning-color, 10%);
+      background-color: darken($warning-color, 5%);
+      .alertText, .alertTitle {
+        color: $text-color-reverse !important;
+      }
+      .alertIcon span {
+        color: $text-color-reverse !important;
+      }
+      svg.alertDismiss {
+          fill: $text-color-reverse !important;
+      }
+      button.alertAction {
+        background-color: darken($warning-color, 10%) !important;
+        margin: 6px 0 !important;
+        color: $text-color-reverse !important;
+      }
+    }
+
+    // Info
+    &.info, &.info_outline {
+      border: 1px solid lighten($info-color, 10%);
+      background-color: darken($info-color, 5%);
+      .alertText, .alertTitle {
+        color: $text-color-reverse;
+      }
+      .alertIcon span {
+        color: rgba($text-color-reverse, 0.9) !important;
+      }
+      svg.alertDismiss {
+          fill: $text-color-reverse !important;
+      }
+      button.alertAction {
+        background-color: darken($info-color, 15%) !important;
+        margin: 6px 0 !important;
+        color: $text-color-reverse !important;
+      }
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 768px) {
+  .forAlerts {
+    padding-top: 0 !important;
+    padding-bottom: 12px !important;
+    margin: 0 auto !important;
+  }
+
+  .alertWrapper {
+    border-radius: 3px;
+    margin: 12px 0 !important;
+    padding: 12px 24px !important;
+    min-height: 40px;
+
+    .alertIcon {
+      float: left;
+      padding-bottom: 1px;
+      height: 100%;
+      margin: 0 !important;
+      span {
+        font-size: 40px !important;
+        &.material-icons {
+          padding: 12px 12px 0 0 !important;
+        }
+      }
+    }
+    .alertText {
+      font-weight: normal !important;
+      font-size: 14px !important;
+      line-height: 20px !important;
+      padding: 23px 0 6px 0 !important;
+      margin: 0 !important;
+      .alertTitle {
+        font-weight: bold !important;
+        font-size: 14px !important
+      }
+    }
+    button.alertAction{
+      width: 100% !important;
+      height: auto !important;
+      line-height: 18px !important;
+      white-space: normal !important;
+      padding: 12px !important;
+    }
+
+    // Help
+    &.help, &.help_outline {
+      border: 1px solid lighten($theme-color, 10%);
+      background-color: darken($theme-color, 5%);
+      .alertText, .alertTitle {
+        color: $text-color-reverse !important;
+      }
+      .alertIcon span {
+        color: $text-color-reverse !important;
+      }
+      button.alertAction {
+        width: 100%;
+        background-color: darken($theme-color, 12%) !important;
+        margin: 12px 0 6px 0 !important;
+        color: $text-color-reverse !important;
+      }
+    }
+
+    // Error
+    &.error, &.error_outline {
+      border: 1px solid lighten($error-color, 10%);
+      background-color: darken($error-color, 5%);
+      .alertText, .alertTitle {
+        color: $text-color-reverse !important;
+      }
+      .alertIcon span {
+        color: $text-color-reverse !important;
+      }
+      button.alertAction {
+        width: 100%;
+        background-color: darken($error-color, 15%) !important;
+        margin: 12px 0 6px 0 !important;
+        color: $text-color-reverse !important;
+      }
+    }
+
+    // Warning
+    &.warning {
+      border: 1px solid lighten($warning-color, 10%);
+      background-color: darken($warning-color, 0%);
+      .alertText, .alertTitle {
+        color: $text-color-reverse !important;
+      }
+      .alertIcon span {
+        color: $text-color-reverse !important;
+      }
+      button.alertAction {
+        width: 100%;
+        background-color: darken($warning-color, 5%) !important;
+        margin: 12px 0 6px 0 !important;
+        color: $text-color-reverse !important;
+      }
+    }
+
+    // Info
+    &.info, &.info_outline {
+      border: 1px solid lighten($info-color, 10%);
+      background-color: darken($info-color, 5%);
+      .alertText, .alertTitle {
+        color: $text-color-reverse;
+      }
+      .alertIcon span {
+        color: rgba($text-color-reverse, 0.9) !important;
+      }
+      .alertDismiss button {
+        svg {
+          fill: $text-color-reverse !important;
+        }
+      }
+    }
+  }
+}

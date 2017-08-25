@@ -20,10 +20,6 @@ var _RaisedButton = require('material-ui/RaisedButton');
 
 var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
-var _Divider = require('material-ui/Divider');
-
-var _Divider2 = _interopRequireDefault(_Divider);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var propTypes = {
@@ -66,21 +62,20 @@ var HelpDrawer = function HelpDrawer(_ref) {
                 'div',
                 { className: 'content' },
                 _react2.default.createElement(
-                    'h1',
-                    { className: 'headline' },
+                    'span',
+                    { className: 'title is-5' },
                     title
                 ),
-                _react2.default.createElement(_Divider2.default, { style: { margin: '10px 0px 20px 0px' } }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'subhead' },
+                    { className: 'body-1' },
                     text
                 )
             ),
             _react2.default.createElement(
                 'div',
                 { className: 'layout-padding' },
-                _react2.default.createElement(_RaisedButton2.default, { secondary: true, label: buttonLabel, onTouchTap: toggleDrawer, style: { float: 'right' } })
+                _react2.default.createElement(_RaisedButton2.default, { secondary: true, label: buttonLabel, onTouchTap: toggleDrawer, className: 'is-pulled-right' })
             )
         )
     );
