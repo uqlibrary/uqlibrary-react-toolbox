@@ -298,7 +298,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 _react2.default.createElement(_FileUploadDropzone2.default, {
                     maxSize: this.calculateMaxFileSize(),
                     maxFiles: fileUploadLimit,
-                    disabled: this.props.disabled,
+                    disabled: this.props.disabled || uploadedFiles.length === 10,
                     onDropped: this._setUploadedFiles,
                     uploadedFiles: uploadedFiles,
                     clearErrors: clearErrors }),

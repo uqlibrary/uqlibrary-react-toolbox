@@ -27,6 +27,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
     </h4>
     <FileUploadDropzone
       clearErrors={false}
+      disabled={false}
       locale={
         Object {
           "errorTitle": "Upload Errors",
@@ -65,6 +66,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
             <Dropzone
               disableClick={false}
               disablePreview={true}
+              disabled={false}
               maxSize={5000000000}
               minSize={0}
               multiple={true}
@@ -78,6 +80,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
             >
               <div
                 className=""
+                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -201,6 +204,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
     </h4>
     <FileUploadDropzone
       clearErrors={false}
+      disabled={false}
       locale={
         Object {
           "errorTitle": "Upload Errors",
@@ -239,6 +243,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
             <Dropzone
               disableClick={false}
               disablePreview={true}
+              disabled={false}
               maxSize={5000000000}
               minSize={0}
               multiple={true}
@@ -252,6 +257,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
             >
               <div
                 className=""
+                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -375,6 +381,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
     </h4>
     <FileUploadDropzone
       clearErrors={false}
+      disabled={false}
       locale={
         Object {
           "errorTitle": "Upload Errors",
@@ -424,6 +431,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
             <Dropzone
               disableClick={false}
               disablePreview={true}
+              disabled={false}
               maxSize={5000000000}
               minSize={0}
               multiple={true}
@@ -437,6 +445,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
             >
               <div
                 className=""
+                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -1542,6 +1551,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
     </h4>
     <FileUploadDropzone
       clearErrors={true}
+      disabled={false}
       locale={
         Object {
           "errorTitle": "Upload Errors",
@@ -1587,6 +1597,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
             <Dropzone
               disableClick={false}
               disablePreview={true}
+              disabled={false}
               maxSize={5000000000}
               minSize={0}
               multiple={true}
@@ -1600,6 +1611,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
             >
               <div
                 className=""
+                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -2357,6 +2369,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
     </h4>
     <FileUploadDropzone
       clearErrors={true}
+      disabled={false}
       locale={
         Object {
           "errorTitle": "Upload Errors",
@@ -2395,6 +2408,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
             <Dropzone
               disableClick={false}
               disablePreview={true}
+              disabled={false}
               maxSize={5000000000}
               minSize={0}
               multiple={true}
@@ -2408,6 +2422,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
             >
               <div
                 className=""
+                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -2531,6 +2546,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
     </h4>
     <FileUploadDropzone
       clearErrors={false}
+      disabled={false}
       locale={
         Object {
           "errorTitle": "Upload Errors",
@@ -2569,6 +2585,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
             <Dropzone
               disableClick={false}
               disablePreview={true}
+              disabled={false}
               maxSize={5000000000}
               minSize={0}
               multiple={true}
@@ -2582,6 +2599,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
             >
               <div
                 className=""
+                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -2705,6 +2723,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
     </h4>
     <FileUploadDropzone
       clearErrors={false}
+      disabled={false}
       locale={
         Object {
           "errorTitle": "Upload Errors",
@@ -2754,6 +2773,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
             <Dropzone
               disableClick={false}
               disablePreview={true}
+              disabled={false}
               maxSize={5000000000}
               minSize={0}
               multiple={true}
@@ -2767,6 +2787,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
             >
               <div
                 className=""
+                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -6788,6 +6809,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
     </h4>
     <FileUploadDropzone
       clearErrors={true}
+      disabled={false}
       locale={
         Object {
           "errorTitle": "Upload Errors",
@@ -6838,6 +6860,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
             <Dropzone
               disableClick={false}
               disablePreview={true}
+              disabled={false}
               maxSize={5000000000}
               minSize={0}
               multiple={true}
@@ -6851,6 +6874,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
             >
               <div
                 className=""
+                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -10874,6 +10898,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
     </h4>
     <FileUploadDropzone
       clearErrors={true}
+      disabled={false}
       locale={
         Object {
           "errorTitle": "Upload Errors",
@@ -10924,6 +10949,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
             <Dropzone
               disableClick={false}
               disablePreview={true}
+              disabled={false}
               maxSize={5000000000}
               minSize={0}
               multiple={true}
@@ -10937,6 +10963,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
             >
               <div
                 className=""
+                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -16133,6 +16160,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
     </h4>
     <FileUploadDropzone
       clearErrors={true}
+      disabled={false}
       locale={
         Object {
           "errorTitle": "Upload Errors",
@@ -16184,6 +16212,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
             <Dropzone
               disableClick={false}
               disablePreview={true}
+              disabled={false}
               maxSize={5000000000}
               minSize={0}
               multiple={true}
@@ -16197,6 +16226,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
             >
               <div
                 className=""
+                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
