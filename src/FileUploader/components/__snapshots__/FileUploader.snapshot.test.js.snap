@@ -79,8 +79,8 @@ exports[`FileUploader renders correctly without any setup 1`] = `
               }
             >
               <div
+                aria-disabled={false}
                 className=""
-                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -155,6 +155,8 @@ exports[`FileUploader renders correctly without any setup 1`] = `
                   </div>
                 </FileUploadDropzoneStaticContent>
                 <input
+                  autoComplete="off"
+                  disabled={false}
                   multiple={true}
                   onChange={[Function]}
                   style={
@@ -256,8 +258,8 @@ exports[`FileUploader renders row for uploaded files 1`] = `
               }
             >
               <div
+                aria-disabled={false}
                 className=""
-                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -332,6 +334,8 @@ exports[`FileUploader renders row for uploaded files 1`] = `
                   </div>
                 </FileUploadDropzoneStaticContent>
                 <input
+                  autoComplete="off"
+                  disabled={false}
                   multiple={true}
                   onChange={[Function]}
                   style={
@@ -444,8 +448,8 @@ exports[`FileUploader renders row for uploaded files 2`] = `
               }
             >
               <div
+                aria-disabled={false}
                 className=""
-                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -520,6 +524,8 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                   </div>
                 </FileUploadDropzoneStaticContent>
                 <input
+                  autoComplete="off"
+                  disabled={false}
                   multiple={true}
                   onChange={[Function]}
                   style={
@@ -1610,8 +1616,8 @@ exports[`FileUploader renders row for uploaded files 3`] = `
               }
             >
               <div
+                aria-disabled={false}
                 className=""
-                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -1686,6 +1692,8 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                   </div>
                 </FileUploadDropzoneStaticContent>
                 <input
+                  autoComplete="off"
+                  disabled={false}
                   multiple={true}
                   onChange={[Function]}
                   style={
@@ -2421,8 +2429,8 @@ exports[`FileUploader renders row for uploaded files 4`] = `
               }
             >
               <div
+                aria-disabled={false}
                 className=""
-                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -2497,6 +2505,8 @@ exports[`FileUploader renders row for uploaded files 4`] = `
                   </div>
                 </FileUploadDropzoneStaticContent>
                 <input
+                  autoComplete="off"
+                  disabled={false}
                   multiple={true}
                   onChange={[Function]}
                   style={
@@ -2598,8 +2608,8 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
               }
             >
               <div
+                aria-disabled={false}
                 className=""
-                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -2674,6 +2684,8 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
                   </div>
                 </FileUploadDropzoneStaticContent>
                 <input
+                  autoComplete="off"
+                  disabled={false}
                   multiple={true}
                   onChange={[Function]}
                   style={
@@ -2786,8 +2798,8 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
               }
             >
               <div
+                aria-disabled={false}
                 className=""
-                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -2862,6 +2874,8 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                   </div>
                 </FileUploadDropzoneStaticContent>
                 <input
+                  autoComplete="off"
+                  disabled={false}
                   multiple={true}
                   onChange={[Function]}
                   style={
@@ -6873,8 +6887,8 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
               }
             >
               <div
+                aria-disabled={false}
                 className=""
-                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -6949,6 +6963,8 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                   </div>
                 </FileUploadDropzoneStaticContent>
                 <input
+                  autoComplete="off"
+                  disabled={false}
                   multiple={true}
                   onChange={[Function]}
                   style={
@@ -10962,8 +10978,8 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
               }
             >
               <div
+                aria-disabled={false}
                 className=""
-                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -11038,6 +11054,8 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                   </div>
                 </FileUploadDropzoneStaticContent>
                 <input
+                  autoComplete="off"
+                  disabled={false}
                   multiple={true}
                   onChange={[Function]}
                   style={
@@ -16225,8 +16243,8 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
               }
             >
               <div
+                aria-disabled={false}
                 className=""
-                disabled={false}
                 onClick={[Function]}
                 onDragEnter={[Function]}
                 onDragLeave={[Function]}
@@ -16301,6 +16319,8 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                   </div>
                 </FileUploadDropzoneStaticContent>
                 <input
+                  autoComplete="off"
+                  disabled={false}
                   multiple={true}
                   onChange={[Function]}
                   style={

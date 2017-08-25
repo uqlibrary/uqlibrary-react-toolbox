@@ -41,6 +41,7 @@ exports[`FileUploadDropzone renders correctly without any setup 1`] = `
         <Dropzone
           disableClick={false}
           disablePreview={true}
+          disabled={false}
           maxSize={1000}
           minSize={0}
           multiple={true}
@@ -53,6 +54,7 @@ exports[`FileUploadDropzone renders correctly without any setup 1`] = `
           }
         >
           <div
+            aria-disabled={false}
             className=""
             onClick={[Function]}
             onDragEnter={[Function]}
@@ -128,6 +130,8 @@ exports[`FileUploadDropzone renders correctly without any setup 1`] = `
               </div>
             </FileUploadDropzoneStaticContent>
             <input
+              autoComplete="off"
+              disabled={false}
               multiple={true}
               onChange={[Function]}
               style={
@@ -186,6 +190,7 @@ exports[`FileUploadDropzone renders row for uploaded files 1`] = `
         <Dropzone
           disableClick={false}
           disablePreview={true}
+          disabled={false}
           maxSize={1000}
           minSize={0}
           multiple={true}
@@ -198,6 +203,7 @@ exports[`FileUploadDropzone renders row for uploaded files 1`] = `
           }
         >
           <div
+            aria-disabled={false}
             className=""
             onClick={[Function]}
             onDragEnter={[Function]}
@@ -273,6 +279,8 @@ exports[`FileUploadDropzone renders row for uploaded files 1`] = `
               </div>
             </FileUploadDropzoneStaticContent>
             <input
+              autoComplete="off"
+              disabled={false}
               multiple={true}
               onChange={[Function]}
               style={
@@ -331,6 +339,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
         <Dropzone
           disableClick={false}
           disablePreview={true}
+          disabled={false}
           maxSize={1000}
           minSize={0}
           multiple={true}
@@ -343,6 +352,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
           }
         >
           <div
+            aria-disabled={false}
             className=""
             onClick={[Function]}
             onDragEnter={[Function]}
@@ -418,6 +428,8 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
               </div>
             </FileUploadDropzoneStaticContent>
             <input
+              autoComplete="off"
+              disabled={false}
               multiple={true}
               onChange={[Function]}
               style={
@@ -535,6 +547,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
         <Dropzone
           disableClick={false}
           disablePreview={true}
+          disabled={false}
           maxSize={1000}
           minSize={0}
           multiple={true}
@@ -547,6 +560,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
           }
         >
           <div
+            aria-disabled={false}
             className=""
             onClick={[Function]}
             onDragEnter={[Function]}
@@ -622,6 +636,8 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
               </div>
             </FileUploadDropzoneStaticContent>
             <input
+              autoComplete="off"
+              disabled={false}
               multiple={true}
               onChange={[Function]}
               style={
