@@ -91,7 +91,7 @@ export default class ListsEditor extends Component {
     }
 
     render() {
-        const renderListsRows = this.state.itemList.map((item, index) =>
+        const renderListsRows = this.state.itemList.map((item, index) => (
             <ListRow
                 key={index}
                 index={index}
@@ -103,7 +103,7 @@ export default class ListsEditor extends Component {
                 onDelete={this.deleteItem}
                 {...(this.props.locale && this.props.locale.row ? this.props.locale.row : {})}
                 disabled={this.props.disabled} />
-        );
+        ));
 
         return (
             <div className={this.props.className}>
