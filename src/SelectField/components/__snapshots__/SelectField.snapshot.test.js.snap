@@ -12,6 +12,11 @@ exports[`SelectfieldWrapper snapshots tests renders SelectField component 1`] = 
   <SelectField
     autoWidth={false}
     disabled={false}
+    dropDownMenuProps={
+      Object {
+        "animated": false,
+      }
+    }
     floatingLabelText="This is a test selectfield component"
     fullWidth={true}
     maxHeight={250}

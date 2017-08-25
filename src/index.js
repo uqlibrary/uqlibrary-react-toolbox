@@ -3,6 +3,7 @@ export {MenuDrawer} from './MenuDrawer';
 export {DatePicker} from './DatePicker';
 export {TextField} from './TextField';
 export {SelectField} from './SelectField';
+export {ListEditorField} from './ListEditor';
 export {StandardCard} from './StandardCard';
 export {StandardPage} from './StandardPage';
 export {AppLoader} from './Loaders';
