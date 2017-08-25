@@ -63,17 +63,17 @@ function MenuDrawer(_ref) {
                         menuItem.divider ? _react2.default.createElement(_Divider2.default, null) : menuItem.target && menuItem.linkTo.indexOf('http') === -1 ? _react2.default.createElement(
                             'a',
                             { href: menuItem.linkTo, target: menuItem.target },
-                            _react2.default.createElement(_List.ListItem, { primaryText: menuItem.primaryText,
+                            _react2.default.createElement(_List.ListItem, {
+                                primaryText: menuItem.primaryText,
                                 secondaryText: menuItem.secondaryText,
-                                leftIcon: menuItem.leftIcon ? menuItem.leftIcon : null
-                            })
+                                leftIcon: menuItem.leftIcon ? menuItem.leftIcon : null })
                         ) : _react2.default.createElement(
                             _reactRouterDom.Link,
                             { to: menuItem.linkTo },
-                            _react2.default.createElement(_List.ListItem, { primaryText: menuItem.primaryText,
+                            _react2.default.createElement(_List.ListItem, {
+                                primaryText: menuItem.primaryText,
                                 secondaryText: menuItem.secondaryText,
-                                leftIcon: menuItem.leftIcon ? menuItem.leftIcon : null
-                            })
+                                leftIcon: menuItem.leftIcon ? menuItem.leftIcon : null })
                         )
                     );
                 })

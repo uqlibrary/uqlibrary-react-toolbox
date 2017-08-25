@@ -62,7 +62,8 @@ var ListRowHeader = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'columns is-gapless is-mobile listHeader datalist datalist-header' },
-                _react2.default.createElement(_uqlibraryReactToolbox.ConfirmDialogBox, { onRef: function onRef(ref) {
+                _react2.default.createElement(_uqlibraryReactToolbox.ConfirmDialogBox, {
+                    onRef: function onRef(ref) {
                         return _this2.confirmationBox = ref;
                     },
                     onAction: this.props.onDeleteAll,

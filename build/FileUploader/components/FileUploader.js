@@ -132,13 +132,17 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             if (_this.props.requireFileAccess) {
                 if (uploadedFiles.filter(function (file) {
                     return !_this.hasAccess(file);
-                }).length > 0) isValid = false;
+                }).length > 0) {
+                    isValid = false;
+                }
 
                 if (uploadedFiles.filter(function (file) {
                     return _this.isOpenAccess(file);
                 }).filter(function (file) {
                     return !(_this.hasEmbargoDate(file) && termsAndConditions);
-                }).length > 0) isValid = false;
+                }).length > 0) {
+                    isValid = false;
+                }
             }
 
             return isValid;
@@ -298,14 +302,17 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 _react2.default.createElement(_FileUploadDropzone2.default, {
                     maxSize: this.calculateMaxFileSize(),
                     maxFiles: fileUploadLimit,
-                    disabled: this.props.disabled || uploadedFiles.length === 10,
+                    disabled: this.props.disabled || uploadedFiles.length === fileUploadLimit,
                     onDropped: this._setUploadedFiles,
                     uploadedFiles: uploadedFiles,
                     clearErrors: clearErrors }),
                 _react2.default.createElement(
                     'div',
                     { className: 'metadata-container' },
-                    uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, { onDeleteAll: this._deleteAllFiles, requireFileAccess: requireFileAccess, disabled: this.props.disabled }),
+                    uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, {
+                        onDeleteAll: this._deleteAllFiles,
+                        requireFileAccess: requireFileAccess,
+                        disabled: this.props.disabled }),
                     uploadedFilesRow,
                     requireFileAccess && this.isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(
                         'div',

@@ -96,7 +96,8 @@ var ConfirmDialogBox = function (_Component) {
                 !this.props.hideCancelButton && _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow' },
-                    _react2.default.createElement(_RaisedButton2.default, { label: this.props.locale.cancelButtonLabel,
+                    _react2.default.createElement(_RaisedButton2.default, {
+                        label: this.props.locale.cancelButtonLabel,
                         fullWidth: true,
                         className: 'ConfirmDialogBox-actions-cancel',
                         onTouchTap: this._onCancelAction })
@@ -104,7 +105,8 @@ var ConfirmDialogBox = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow' },
-                    _react2.default.createElement(_RaisedButton2.default, { label: this.props.locale.confirmButtonLabel,
+                    _react2.default.createElement(_RaisedButton2.default, {
+                        label: this.props.locale.confirmButtonLabel,
                         fullWidth: true,
                         className: 'ConfirmDialogBox-actions-confirm',
                         secondary: true,

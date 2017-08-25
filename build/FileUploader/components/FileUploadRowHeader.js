@@ -63,7 +63,8 @@ var FileUploadRowHeader = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile' },
-                _react2.default.createElement(_.ConfirmDialogBox, { onRef: function onRef(ref) {
+                _react2.default.createElement(_.ConfirmDialogBox, {
+                    onRef: function onRef(ref) {
                         return _this2.confirmationBox = ref;
                     },
                     onAction: this.props.onDeleteAll,

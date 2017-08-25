@@ -69,7 +69,8 @@ var Alert = function Alert(_ref) {
                 action && actionButtonLabel && _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow is-12-mobile' },
-                    _react2.default.createElement(_FlatButton2.default, { label: actionButtonLabel,
+                    _react2.default.createElement(_FlatButton2.default, {
+                        label: actionButtonLabel,
                         onTouchTap: action,
                         className: 'alertAction' })
                 ),
