@@ -53,7 +53,7 @@ SelectFieldWrapper.propTypes = _extends({}, _SelectField2.default.propTypes, {
 SelectFieldWrapper.defaultProps = {
     // TODO: investigate why disabling animation throws errors
     // disable animation to keep focus on the input element
-    dropDownMenuProps: { animated: false },
+    // dropDownMenuProps: {animated: false},
     maxHeight: 250
 };
 
