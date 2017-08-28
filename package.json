@@ -1,6 +1,6 @@
 {
   "name": "uqlibrary-react-toolbox",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "main": "build/index.js",
   "license": "MIT",
   "jest": {
@@ -114,6 +114,7 @@
     "react": "^15.6.1",
     "react-autosuggest": "^9.3.1",
     "react-dom": "^15.6.1",
+    "react-dropzone": "^4.1.0",
     "react-hot-loader": "3.0.0-beta.6",
     "react-modal": "^2.2.2",
     "react-redux": "^5.0.2",
@@ -124,16 +125,15 @@
     "redux-form": "^7.0.0",
     "redux-immutable": "^4.0.0",
     "redux-thunk": "^2.2.0",
-    "timezones.json": "^1.2.1",
-    "react-dropzone": "^4.1.0"
+    "timezones.json": "^1.2.1"
   },
   "peerDependencies": {
     "babel-polyfill": "^6",
     "material-ui": ">= 0.15.0 < 1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "webpack": "1 || ^2 || ^2.1.0-beta || ^2.2.0-rc || ^3",
-    "react-dropzone": "^4.1.0"
+    "react-dropzone": "^4.1.0",
+    "webpack": "1 || ^2 || ^2.1.0-beta || ^2.2.0-rc || ^3"
   },
   "scripts": {
     "test": "jest",
