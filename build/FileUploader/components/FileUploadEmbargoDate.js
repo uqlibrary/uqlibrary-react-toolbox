@@ -43,7 +43,7 @@ var FileUploadEmbargoDate = function (_Component) {
         };
 
         _this.state = {
-            value: null
+            value: new Date()
         };
         return _this;
     }
@@ -51,10 +51,7 @@ var FileUploadEmbargoDate = function (_Component) {
     _createClass(FileUploadEmbargoDate, [{
         key: 'render',
         value: function render() {
-            var _props$locale = this.props.locale,
-                datePickerLocale = _props$locale.datePickerLocale,
-                errorMessage = _props$locale.errorMessage,
-                datePickerHint = _props$locale.datePickerHint;
+            var datePickerLocale = this.props.locale.datePickerLocale;
             var _props$defaultConfig = this.props.defaultConfig,
                 dateFormat = _props$defaultConfig.dateFormat,
                 fieldName = _props$defaultConfig.fieldName;
@@ -63,10 +60,9 @@ var FileUploadEmbargoDate = function (_Component) {
                 className: 'embargo-date-picker requiredField',
                 DateTimeFormat: dateFormat,
                 firstDayOfWeek: 0,
-                hintText: datePickerHint,
                 locale: datePickerLocale,
                 autoOk: true,
-                errorText: this.state.value === null ? errorMessage : '',
+                value: this.state.value,
                 id: fieldName,
                 name: fieldName,
                 onChange: this._onChange,
@@ -86,9 +82,7 @@ FileUploadEmbargoDate.propTypes = {
 };
 FileUploadEmbargoDate.defaultProps = {
     locale: {
-        datePickerLocale: 'en-AU',
-        errorMessage: 'This field is required',
-        datePickerHint: 'Select embargo date'
+        datePickerLocale: 'en-AU'
     },
     defaultConfig: {
         fileMetaKey: 'date',
