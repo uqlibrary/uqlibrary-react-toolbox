@@ -53,18 +53,19 @@ var FileUploadEmbargoDate = function (_Component) {
         value: function render() {
             var _props$locale = this.props.locale,
                 datePickerLocale = _props$locale.datePickerLocale,
-                errorMessage = _props$locale.errorMessage;
+                errorMessage = _props$locale.errorMessage,
+                datePickerHint = _props$locale.datePickerHint;
             var _props$defaultConfig = this.props.defaultConfig,
                 dateFormat = _props$defaultConfig.dateFormat,
-                currentDateString = _props$defaultConfig.currentDateString,
                 fieldName = _props$defaultConfig.fieldName;
 
             return _react2.default.createElement(_DatePicker2.default, {
-                className: 'embargo-date requiredField',
+                className: 'embargo-date-picker requiredField',
                 DateTimeFormat: dateFormat,
                 firstDayOfWeek: 0,
-                hintText: currentDateString,
+                hintText: datePickerHint,
                 locale: datePickerLocale,
+                autoOk: true,
                 errorText: this.state.value === null ? errorMessage : '',
                 id: fieldName,
                 name: fieldName,
@@ -86,12 +87,12 @@ FileUploadEmbargoDate.propTypes = {
 FileUploadEmbargoDate.defaultProps = {
     locale: {
         datePickerLocale: 'en-AU',
-        errorMessage: 'This field is required'
+        errorMessage: 'This field is required',
+        datePickerHint: 'Select embargo date'
     },
     defaultConfig: {
         fileMetaKey: 'date',
         dateFormat: global.Intl.DateTimeFormat,
-        currentDateString: moment().format('DD/MM/YYYY'),
         fieldName: 'accessDate'
     }
 };

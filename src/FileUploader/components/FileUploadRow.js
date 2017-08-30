@@ -34,8 +34,10 @@ class FileUploadRow extends Component {
                 confirmButtonLabel: 'Yes'
             },
             filenameColumn: 'File name',
-            fileAccessColumn: 'File Access',
-            embargoDateColumn: 'Embargo Date',
+            fileAccessColumn: 'File access',
+            embargoDateColumn: 'Embargo date',
+            embargoDateDefault: 'Date required for open access only',
+            embargoDateClosedAccess: 'No date required'
         }
     };
 
@@ -65,6 +67,10 @@ class FileUploadRow extends Component {
         if (this.props.onAttributeChanged) this.props.onAttributeChanged(this.props.uploadedFile, this.props.index);
     };
 
+    isAccessSelected = (accessConditionId) => {
+        return accessConditionId !== null;
+    };
+
     isOpenAccess = (accessConditionId) => {
         return accessConditionId === OPEN_ACCESS_ID;
     };
@@ -75,7 +81,7 @@ class FileUploadRow extends Component {
     };
 
     render() {
-        const { deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn } = this.props.locale;
+        const { deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateDefault, embargoDateClosedAccess } = this.props.locale;
         const { access_condition_id } = this.state;
         return (
             <div className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix">
@@ -84,35 +90,44 @@ class FileUploadRow extends Component {
                     onAction={ this._deleteFile }
                     locale={ deleteRecordConfirmation } />
                 <div className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile">
-                    <FontIcon className="material-icons mobile-icon">attachment</FontIcon>
-                    <span className="file-name">{ this.props.uploadedFile.name }</span>
-                    <span className="datalist-text-subtitle secondary-info-mobile">{this.calculateFilesizeToDisplay(this.props.uploadedFile.size )}</span>
-                    <span className="is-mobile label">{ filenameColumn }</span>
+                    <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">attachment</FontIcon>
+                    <div className="file-name">
+                        <span className="truncated">{ this.props.uploadedFile.name }</span>
+                        <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{ filenameColumn }</span>
+                    </div>
+                    <div className="datalist-text-subtitle secondary-info-mobile">{this.calculateFilesizeToDisplay(this.props.uploadedFile.size )}</div>
                 </div>
-                {
-                    this.props.requireFileAccess &&
-                    <div className="column datalist-text file-access-selector is-3-desktop is-3-tablet is-12-mobile">
-                        <FontIcon className="material-icons mobile-icon">lock_outline</FontIcon>
-                        <FileUploadAccessSelector onAccessChanged={ this._updateFileMetadata } disabled={ this.props.disabled } />
-                        <span className="is-mobile label">{ fileAccessColumn }</span>
+                <div className="column datalist-text is-3-desktop is-3-tablet is-12-mobile">
+                    {
+                        this.props.requireFileAccess &&
+                            <div className="file-access-selector">
+                                <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
+                                <div className="select-container">
+                                    <FileUploadAccessSelector onAccessChanged={ this._updateFileMetadata } disabled={ this.props.disabled } />
+                                    <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{ fileAccessColumn }</span>
+                                </div>
+                            </div>
+                    }
+                </div>
+                <div className="column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
+                    <div className="embargo-date-info">
+                        <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
+                        {
+                            this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) &&
+                            <div className="no-embargo-date ">
+                                <span>{this.isAccessSelected(access_condition_id) && !this.isOpenAccess(access_condition_id) ? embargoDateClosedAccess : embargoDateDefault}</span>
+                                <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{ embargoDateColumn }</span>
+                            </div>
+                        }
+                        {
+                            this.props.requireFileAccess && this.isOpenAccess(access_condition_id) &&
+                            <div className="embargo-date-selector ">
+                                <FileUploadEmbargoDate onDateChanged={ this._updateFileMetadata } disabled={ this.props.disabled }/>
+                                <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{ embargoDateColumn }</span>
+                            </div>
+                        }
                     </div>
-                }
-                {
-                    this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) &&
-                    <div className="column datalist-text no-embargo-date is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
-                        <FontIcon className="material-icons mobile-icon">date_range</FontIcon>
-                        <span>No Date</span>
-                        <span className="is-mobile label">{ embargoDateColumn }</span>
-                    </div>
-                }
-                {
-                    this.props.requireFileAccess && this.isOpenAccess(access_condition_id) &&
-                    <div className="column datalist-text embargo-date-selector is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
-                        <FontIcon className="material-icons mobile-icon">date_range</FontIcon>
-                        <FileUploadEmbargoDate onDateChanged={ this._updateFileMetadata } disabled={ this.props.disabled }/>
-                        <span className="is-mobile label">{ embargoDateColumn }</span>
-                    </div>
-                }
+                </div>
                 {
                     this.props.progress === 0 &&
                         <div className="column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless">

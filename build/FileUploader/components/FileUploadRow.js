@@ -76,6 +76,10 @@ var FileUploadRow = function (_Component) {
             if (_this.props.onAttributeChanged) _this.props.onAttributeChanged(_this.props.uploadedFile, _this.props.index);
         };
 
+        _this.isAccessSelected = function (accessConditionId) {
+            return accessConditionId !== null;
+        };
+
         _this.isOpenAccess = function (accessConditionId) {
             return accessConditionId === _FileUploadAccessSelector.OPEN_ACCESS_ID;
         };
@@ -103,7 +107,9 @@ var FileUploadRow = function (_Component) {
                 deleteRecordConfirmation = _props$locale.deleteRecordConfirmation,
                 filenameColumn = _props$locale.filenameColumn,
                 fileAccessColumn = _props$locale.fileAccessColumn,
-                embargoDateColumn = _props$locale.embargoDateColumn;
+                embargoDateColumn = _props$locale.embargoDateColumn,
+                embargoDateDefault = _props$locale.embargoDateDefault,
+                embargoDateClosedAccess = _props$locale.embargoDateClosedAccess;
             var access_condition_id = this.state.access_condition_id;
 
             return _react2.default.createElement(
@@ -120,72 +126,87 @@ var FileUploadRow = function (_Component) {
                     { className: 'column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile' },
                     _react2.default.createElement(
                         _FontIcon2.default,
-                        { className: 'material-icons mobile-icon' },
+                        { className: 'material-icons mobile-icon is-hidden-desktop is-hidden-tablet' },
                         'attachment'
                     ),
                     _react2.default.createElement(
-                        'span',
+                        'div',
                         { className: 'file-name' },
-                        this.props.uploadedFile.name
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'truncated' },
+                            this.props.uploadedFile.name
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },
+                            filenameColumn
+                        )
                     ),
                     _react2.default.createElement(
-                        'span',
+                        'div',
                         { className: 'datalist-text-subtitle secondary-info-mobile' },
                         this.calculateFilesizeToDisplay(this.props.uploadedFile.size)
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'is-mobile label' },
-                        filenameColumn
                     )
                 ),
-                this.props.requireFileAccess && _react2.default.createElement(
+                _react2.default.createElement(
                     'div',
-                    { className: 'column datalist-text file-access-selector is-3-desktop is-3-tablet is-12-mobile' },
-                    _react2.default.createElement(
-                        _FontIcon2.default,
-                        { className: 'material-icons mobile-icon' },
-                        'lock_outline'
-                    ),
-                    _react2.default.createElement(_FileUploadAccessSelector2.default, { onAccessChanged: this._updateFileMetadata, disabled: this.props.disabled }),
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'is-mobile label' },
-                        fileAccessColumn
+                    { className: 'column datalist-text is-3-desktop is-3-tablet is-12-mobile' },
+                    this.props.requireFileAccess && _react2.default.createElement(
+                        'div',
+                        { className: 'file-access-selector' },
+                        _react2.default.createElement(
+                            _FontIcon2.default,
+                            { className: 'material-icons mobile-icon is-hidden-desktop is-hidden-tablet' },
+                            'lock_outline'
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'select-container' },
+                            _react2.default.createElement(_FileUploadAccessSelector2.default, { onAccessChanged: this._updateFileMetadata, disabled: this.props.disabled }),
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },
+                                fileAccessColumn
+                            )
+                        )
                     )
                 ),
-                this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) && _react2.default.createElement(
+                _react2.default.createElement(
                     'div',
-                    { className: 'column datalist-text no-embargo-date is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile' },
+                    { className: 'column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile' },
                     _react2.default.createElement(
-                        _FontIcon2.default,
-                        { className: 'material-icons mobile-icon' },
-                        'date_range'
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        null,
-                        'No Date'
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'is-mobile label' },
-                        embargoDateColumn
-                    )
-                ),
-                this.props.requireFileAccess && this.isOpenAccess(access_condition_id) && _react2.default.createElement(
-                    'div',
-                    { className: 'column datalist-text embargo-date-selector is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile' },
-                    _react2.default.createElement(
-                        _FontIcon2.default,
-                        { className: 'material-icons mobile-icon' },
-                        'date_range'
-                    ),
-                    _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata, disabled: this.props.disabled }),
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'is-mobile label' },
-                        embargoDateColumn
+                        'div',
+                        { className: 'embargo-date-info' },
+                        _react2.default.createElement(
+                            _FontIcon2.default,
+                            { className: 'material-icons mobile-icon is-hidden-desktop is-hidden-tablet' },
+                            'date_range'
+                        ),
+                        this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) && _react2.default.createElement(
+                            'div',
+                            { className: 'no-embargo-date ' },
+                            _react2.default.createElement(
+                                'span',
+                                null,
+                                this.isAccessSelected(access_condition_id) && !this.isOpenAccess(access_condition_id) ? embargoDateClosedAccess : embargoDateDefault
+                            ),
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },
+                                embargoDateColumn
+                            )
+                        ),
+                        this.props.requireFileAccess && this.isOpenAccess(access_condition_id) && _react2.default.createElement(
+                            'div',
+                            { className: 'embargo-date-selector ' },
+                            _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata, disabled: this.props.disabled }),
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },
+                                embargoDateColumn
+                            )
+                        )
                     )
                 ),
                 this.props.progress === 0 && _react2.default.createElement(
@@ -245,8 +266,10 @@ FileUploadRow.defaultProps = {
             confirmButtonLabel: 'Yes'
         },
         filenameColumn: 'File name',
-        fileAccessColumn: 'File Access',
-        embargoDateColumn: 'Embargo Date'
+        fileAccessColumn: 'File access',
+        embargoDateColumn: 'Embargo date',
+        embargoDateDefault: 'Date required for open access only',
+        embargoDateClosedAccess: 'No date required'
     }
 };
 
