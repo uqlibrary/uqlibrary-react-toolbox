@@ -63,7 +63,6 @@ export default class FileUploadAccessSelector extends Component {
                 floatingLabelFixed
                 disabled = { this.props.disabled }
                 value={ this.state.value }>
-                <MenuItem value={ -1 } primaryText={ initialValue }  key={ -1 } disabled />
                 { accessOptions }
             </SelectField>
         );

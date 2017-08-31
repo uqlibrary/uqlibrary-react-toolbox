@@ -45,6 +45,28 @@
   padding: 10px;
 }
 
+.file-access-selector {
+  hr {
+    display: none;
+  }
+  .selectField {
+    font-size: 14px !important;
+    max-width: 200px;
+  }
+}
+
+.embargo-date-picker {
+  hr {
+    display: none;
+  }
+  input {
+    font-size: 14px !important;
+  }
+  div {
+    font-size: 14px;
+  }
+}
+
 //Desktop
 @media (min-width: 768px) {
   .fileUploadErrorMessage {
@@ -126,11 +148,22 @@
     }
   }
 
+  /*
+   * File information
+   */
   .file-info {
-    display: inline !important;
+    display: flex !important;
     .file-name {
-      font-size: 14px;
-      line-height: unset !important;
+      flex-direction: column;
+      display: flex;
+      flex-grow: 2;
+      padding-left: 10px;
+      min-width: 0;
+      .truncated {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 
@@ -140,55 +173,65 @@
     margin-top: 0 !important;
   }
 
-  .no-embargo-date {
-    margin-top: 8px !important;
-    span {
-      line-height: unset !important;
+  /*
+   * Access selector
+   */
+  .file-access-selector {
+    display: flex;
+    span:nth-child(1) {
+      padding-top: 12px;
     }
-  }
-
-  .embargo-date-selector {
-    margin-top: 8px !important;
-  }
-
-  .embargo-date {
-    height: 22px;
-    min-width: 235px !important;
-    > div {
-      height: 30px !important;
-      width: 200px !important;
-      div {
-        font-size: 14px;
-        position: unset !important;
+    .select-container {
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+      .selectField {
+        div:nth-child(4) {
+          font-size: 9px !important;
+          margin-top: -12px;
+        }
       }
-      input {
-        bottom: 30px;
-        width: 200px !important;
-      }
-      & div:nth-child(4) {
-        position: relative;
-        font-size: 9px !important;
-        float: right;
-        margin-right: 50px;
-        margin-top: -32px;
+      span {
+        margin-top: -8px;
       }
     }
   }
 
-  .file-access-selector {
-    margin-top: 8px !important;
-  }
-
-  .file-access-selector {
-    .selectField {
-      > div {
-        font-size: 14px !important;
-        & div {
-          font-size: 14px;
+  /*
+   * Embargo date
+   */
+  .embargo-date-info {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    .material-icons {
+      padding-top: 12px;
+    }
+    .no-embargo-date {
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+    }
+    .embargo-date-selector {
+      display: flex;
+      flex-direction: column;
+      span {
+        padding-left: 10px;
+      }
+      .embargo-date-picker {
+        margin-left: 10px;
+        div:nth-child(1) {
+          height: unset !important;
+          width: 200px;
+          div:nth-child(4) {
+            font-size: 9px !important;
+          }
         }
       }
     }
   }
+
   .uploadedFileDelete {
     float: right;
   }
@@ -197,32 +240,9 @@
     label {
       width: calc(100% - 45px);
       text-align: justify;
+      margin-left: -6px;
     }
   }
 }
 
 
-.file-access-selector {
-  hr {
-    display: none;
-  }
-  .selectField {
-    font-size: 14px !important;
-    max-width: 200px;
-  }
-}
-
-.embargo-date-selector {
-  hr {
-    display: none;
-  }
-  input {
-    font-size: 14px !important;
-  }
-  div {
-    font-size: 14px;
-  }
-}
-.upload-progress-ghost{
-
-}

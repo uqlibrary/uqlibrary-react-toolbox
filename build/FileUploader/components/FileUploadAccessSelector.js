@@ -86,7 +86,6 @@ var FileUploadAccessSelector = function (_Component) {
                     floatingLabelFixed: true,
                     disabled: this.props.disabled,
                     value: this.state.value },
-                _react2.default.createElement(_MenuItem2.default, { value: -1, primaryText: initialValue, key: -1, disabled: true }),
                 accessOptions
             );
         }

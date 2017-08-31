@@ -37,13 +37,13 @@ var FileUploadEmbargoDate = function (_Component) {
         var _this = _possibleConstructorReturn(this, (FileUploadEmbargoDate.__proto__ || Object.getPrototypeOf(FileUploadEmbargoDate)).call(this, props));
 
         _this._onChange = function (event, value) {
-            var date = moment(value).format('DD/MM/YYYY');
+            var date = moment(value);
             _this.setState({ value: date });
-            _this.props.onDateChanged({ key: _this.props.defaultConfig.fileMetaKey, value: date });
+            _this.props.onDateChanged({ key: _this.props.defaultConfig.fileMetaKey, value: date.format('DD/MM/YYYY') });
         };
 
         _this.state = {
-            value: null
+            value: new Date()
         };
         return _this;
     }
@@ -51,21 +51,18 @@ var FileUploadEmbargoDate = function (_Component) {
     _createClass(FileUploadEmbargoDate, [{
         key: 'render',
         value: function render() {
-            var _props$locale = this.props.locale,
-                datePickerLocale = _props$locale.datePickerLocale,
-                errorMessage = _props$locale.errorMessage;
+            var datePickerLocale = this.props.locale.datePickerLocale;
             var _props$defaultConfig = this.props.defaultConfig,
                 dateFormat = _props$defaultConfig.dateFormat,
-                currentDateString = _props$defaultConfig.currentDateString,
                 fieldName = _props$defaultConfig.fieldName;
 
             return _react2.default.createElement(_DatePicker2.default, {
-                className: 'embargo-date requiredField',
+                className: 'embargo-date-picker requiredField',
                 DateTimeFormat: dateFormat,
                 firstDayOfWeek: 0,
-                hintText: currentDateString,
                 locale: datePickerLocale,
-                errorText: this.state.value === null ? errorMessage : '',
+                autoOk: true,
+                value: this.state.value,
                 id: fieldName,
                 name: fieldName,
                 onChange: this._onChange,
@@ -85,13 +82,11 @@ FileUploadEmbargoDate.propTypes = {
 };
 FileUploadEmbargoDate.defaultProps = {
     locale: {
-        datePickerLocale: 'en-AU',
-        errorMessage: 'This field is required'
+        datePickerLocale: 'en-AU'
     },
     defaultConfig: {
         fileMetaKey: 'date',
         dateFormat: global.Intl.DateTimeFormat,
-        currentDateString: moment().format('DD/MM/YYYY'),
         fieldName: 'accessDate'
     }
 };
