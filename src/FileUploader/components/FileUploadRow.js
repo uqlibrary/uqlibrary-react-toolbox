@@ -36,7 +36,6 @@ class FileUploadRow extends Component {
             filenameColumn: 'File name',
             fileAccessColumn: 'File access',
             embargoDateColumn: 'Embargo date',
-            embargoDateDefault: 'Date required for open access only',
             embargoDateClosedAccess: 'No date required'
         }
     };
@@ -67,10 +66,6 @@ class FileUploadRow extends Component {
         if (this.props.onAttributeChanged) this.props.onAttributeChanged(this.props.uploadedFile, this.props.index);
     };
 
-    isAccessSelected = (accessConditionId) => {
-        return accessConditionId !== null;
-    };
-
     isOpenAccess = (accessConditionId) => {
         return accessConditionId === OPEN_ACCESS_ID;
     };
@@ -81,7 +76,7 @@ class FileUploadRow extends Component {
     };
 
     render() {
-        const { deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateDefault, embargoDateClosedAccess } = this.props.locale;
+        const { deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateClosedAccess } = this.props.locale;
         const { access_condition_id } = this.state;
         return (
             <div className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix">
@@ -115,7 +110,7 @@ class FileUploadRow extends Component {
                         {
                             this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) &&
                             <div className="no-embargo-date ">
-                                <span>{this.isAccessSelected(access_condition_id) && !this.isOpenAccess(access_condition_id) ? embargoDateClosedAccess : embargoDateDefault}</span>
+                                <span>{embargoDateClosedAccess}</span>
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{ embargoDateColumn }</span>
                             </div>
                         }

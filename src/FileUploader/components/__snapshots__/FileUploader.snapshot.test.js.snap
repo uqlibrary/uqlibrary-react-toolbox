@@ -857,7 +857,6 @@ exports[`FileUploader renders row for uploaded files 2`] = `
               },
               "embargoDateClosedAccess": "No date required",
               "embargoDateColumn": "Embargo date",
-              "embargoDateDefault": "Date required for open access only",
               "fileAccessColumn": "File access",
               "filenameColumn": "File name",
             }
@@ -1246,7 +1245,6 @@ exports[`FileUploader renders row for uploaded files 2`] = `
               },
               "embargoDateClosedAccess": "No date required",
               "embargoDateColumn": "Embargo date",
-              "embargoDateDefault": "Date required for open access only",
               "fileAccessColumn": "File access",
               "filenameColumn": "File name",
             }
@@ -2107,7 +2105,6 @@ exports[`FileUploader renders row for uploaded files 3`] = `
               },
               "embargoDateClosedAccess": "No date required",
               "embargoDateColumn": "Embargo date",
-              "embargoDateDefault": "Date required for open access only",
               "fileAccessColumn": "File access",
               "filenameColumn": "File name",
             }
@@ -3340,7 +3337,6 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
               },
               "embargoDateClosedAccess": "No date required",
               "embargoDateColumn": "Embargo date",
-              "embargoDateDefault": "Date required for open access only",
               "fileAccessColumn": "File access",
               "filenameColumn": "File name",
             }
@@ -4936,7 +4932,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                   className="no-embargo-date "
                 >
                   <span>
-                    Date required for open access only
+                    No date required
                   </span>
                   <span
                     className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
@@ -5163,7 +5159,6 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
               },
               "embargoDateClosedAccess": "No date required",
               "embargoDateColumn": "Embargo date",
-              "embargoDateDefault": "Date required for open access only",
               "fileAccessColumn": "File access",
               "filenameColumn": "File name",
             }
@@ -6759,7 +6754,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                   className="no-embargo-date "
                 >
                   <span>
-                    Date required for open access only
+                    No date required
                   </span>
                   <span
                     className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
@@ -7474,7 +7469,6 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
               },
               "embargoDateClosedAccess": "No date required",
               "embargoDateColumn": "Embargo date",
-              "embargoDateDefault": "Date required for open access only",
               "fileAccessColumn": "File access",
               "filenameColumn": "File name",
             }
@@ -9071,7 +9065,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                   className="no-embargo-date "
                 >
                   <span>
-                    Date required for open access only
+                    No date required
                   </span>
                   <span
                     className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
@@ -9298,7 +9292,6 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
               },
               "embargoDateClosedAccess": "No date required",
               "embargoDateColumn": "Embargo date",
-              "embargoDateDefault": "Date required for open access only",
               "fileAccessColumn": "File access",
               "filenameColumn": "File name",
             }
@@ -10894,7 +10887,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                   className="no-embargo-date "
                 >
                   <span>
-                    Date required for open access only
+                    No date required
                   </span>
                   <span
                     className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
@@ -11609,7 +11602,6 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
               },
               "embargoDateClosedAccess": "No date required",
               "embargoDateColumn": "Embargo date",
-              "embargoDateDefault": "Date required for open access only",
               "fileAccessColumn": "File access",
               "filenameColumn": "File name",
             }
@@ -13206,7 +13198,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                   className="no-embargo-date "
                 >
                   <span>
-                    Date required for open access only
+                    No date required
                   </span>
                   <span
                     className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
@@ -13433,7 +13425,6 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
               },
               "embargoDateClosedAccess": "No date required",
               "embargoDateColumn": "Embargo date",
-              "embargoDateDefault": "Date required for open access only",
               "fileAccessColumn": "File access",
               "filenameColumn": "File name",
             }
@@ -15029,7 +15020,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                   className="no-embargo-date "
                 >
                   <span>
-                    Date required for open access only
+                    No date required
                   </span>
                   <span
                     className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
@@ -16919,7 +16910,6 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
               },
               "embargoDateClosedAccess": "No date required",
               "embargoDateColumn": "Embargo date",
-              "embargoDateDefault": "Date required for open access only",
               "fileAccessColumn": "File access",
               "filenameColumn": "File name",
             }
@@ -18517,7 +18507,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                   className="no-embargo-date "
                 >
                   <span>
-                    Date required for open access only
+                    No date required
                   </span>
                   <span
                     className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
@@ -18744,7 +18734,6 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
               },
               "embargoDateClosedAccess": "No date required",
               "embargoDateColumn": "Embargo date",
-              "embargoDateDefault": "Date required for open access only",
               "fileAccessColumn": "File access",
               "filenameColumn": "File name",
             }
@@ -20340,7 +20329,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                   className="no-embargo-date "
                 >
                   <span>
-                    Date required for open access only
+                    No date required
                   </span>
                   <span
                     className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"

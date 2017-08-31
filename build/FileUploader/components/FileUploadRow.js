@@ -76,10 +76,6 @@ var FileUploadRow = function (_Component) {
             if (_this.props.onAttributeChanged) _this.props.onAttributeChanged(_this.props.uploadedFile, _this.props.index);
         };
 
-        _this.isAccessSelected = function (accessConditionId) {
-            return accessConditionId !== null;
-        };
-
         _this.isOpenAccess = function (accessConditionId) {
             return accessConditionId === _FileUploadAccessSelector.OPEN_ACCESS_ID;
         };
@@ -108,7 +104,6 @@ var FileUploadRow = function (_Component) {
                 filenameColumn = _props$locale.filenameColumn,
                 fileAccessColumn = _props$locale.fileAccessColumn,
                 embargoDateColumn = _props$locale.embargoDateColumn,
-                embargoDateDefault = _props$locale.embargoDateDefault,
                 embargoDateClosedAccess = _props$locale.embargoDateClosedAccess;
             var access_condition_id = this.state.access_condition_id;
 
@@ -189,7 +184,7 @@ var FileUploadRow = function (_Component) {
                             _react2.default.createElement(
                                 'span',
                                 null,
-                                this.isAccessSelected(access_condition_id) && !this.isOpenAccess(access_condition_id) ? embargoDateClosedAccess : embargoDateDefault
+                                embargoDateClosedAccess
                             ),
                             _react2.default.createElement(
                                 'span',
@@ -268,7 +263,6 @@ FileUploadRow.defaultProps = {
         filenameColumn: 'File name',
         fileAccessColumn: 'File access',
         embargoDateColumn: 'Embargo date',
-        embargoDateDefault: 'Date required for open access only',
         embargoDateClosedAccess: 'No date required'
     }
 };
