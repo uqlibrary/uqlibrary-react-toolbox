@@ -22,7 +22,7 @@ function StandardPage(_ref) {
 
     return _react2.default.createElement(
         'div',
-        { className: 'layout-fill ' + className },
+        { className: '' + className },
         _react2.default.createElement(
             'h1',
             { className: 'title is-3' },

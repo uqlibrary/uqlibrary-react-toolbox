@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function StandardPage({title, className, children}) {
     return (
-        <div className={`layout-fill ${className}`}>
+        <div className={`${className}`}>
             <h1 className="title is-3">{title}</h1>
             <div className="layout-card">
                 {children}

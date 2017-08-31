@@ -5,6 +5,7 @@ export {TextField} from './TextField';
 export {SelectField} from './SelectField';
 export {ListEditorField} from './ListEditor';
 export {StandardCard} from './StandardCard';
+export {StandardRighthandCard} from './StandardRighthandCard';
 export {StandardPage} from './StandardPage';
 export {AppLoader} from './Loaders';
 export {InlineLoader} from './Loaders';
