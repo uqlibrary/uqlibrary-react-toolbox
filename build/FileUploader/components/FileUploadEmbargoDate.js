@@ -45,6 +45,7 @@ var FileUploadEmbargoDate = function (_Component) {
         _this.state = {
             value: new Date()
         };
+        _this.minDate = new Date();
         return _this;
     }
 
@@ -62,6 +63,7 @@ var FileUploadEmbargoDate = function (_Component) {
                 firstDayOfWeek: 0,
                 locale: datePickerLocale,
                 autoOk: true,
+                minDate: this.minDate,
                 value: this.state.value,
                 id: fieldName,
                 name: fieldName,

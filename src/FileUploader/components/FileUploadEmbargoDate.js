@@ -28,6 +28,7 @@ export default class FileUploadEmbargoDate extends Component {
         this.state = {
             value: new Date()
         };
+        this.minDate = new Date();
     }
 
     _onChange = (event, value) => {
@@ -46,6 +47,7 @@ export default class FileUploadEmbargoDate extends Component {
                 firstDayOfWeek={0}
                 locale={datePickerLocale}
                 autoOk
+                minDate={this.minDate}
                 value={this.state.value}
                 id={fieldName}
                 name={fieldName}
