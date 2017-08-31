@@ -180,7 +180,7 @@ var FileUploadRow = function (_Component) {
                         ),
                         this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) && _react2.default.createElement(
                             'div',
-                            { className: 'no-embargo-date ' },
+                            { className: 'no-embargo-date' },
                             _react2.default.createElement(
                                 'span',
                                 null,
@@ -194,7 +194,7 @@ var FileUploadRow = function (_Component) {
                         ),
                         this.props.requireFileAccess && this.isOpenAccess(access_condition_id) && _react2.default.createElement(
                             'div',
-                            { className: 'embargo-date-selector ' },
+                            { className: 'embargo-date-selector' },
                             _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata, disabled: this.props.disabled }),
                             _react2.default.createElement(
                                 'span',

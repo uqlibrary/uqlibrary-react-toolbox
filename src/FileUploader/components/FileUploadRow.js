@@ -109,14 +109,14 @@ class FileUploadRow extends Component {
                         <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
                         {
                             this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) &&
-                            <div className="no-embargo-date ">
+                            <div className="no-embargo-date">
                                 <span>{embargoDateClosedAccess}</span>
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{ embargoDateColumn }</span>
                             </div>
                         }
                         {
                             this.props.requireFileAccess && this.isOpenAccess(access_condition_id) &&
-                            <div className="embargo-date-selector ">
+                            <div className="embargo-date-selector">
                                 <FileUploadEmbargoDate onDateChanged={ this._updateFileMetadata } disabled={ this.props.disabled }/>
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{ embargoDateColumn }</span>
                             </div>

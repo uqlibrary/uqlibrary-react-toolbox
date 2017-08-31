@@ -42,34 +42,48 @@ var FileUploadEmbargoDate = function (_Component) {
             _this.props.onDateChanged({ key: _this.props.defaultConfig.fileMetaKey, value: date.format('DD/MM/YYYY') });
         };
 
+        _this._onKeyPress = function () {
+            _this.datePickerRef.openDialog();
+        };
+
         _this.state = {
             value: new Date()
         };
         _this.minDate = new Date();
+        _this.datePickerRef = null;
         return _this;
     }
 
     _createClass(FileUploadEmbargoDate, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var datePickerLocale = this.props.locale.datePickerLocale;
             var _props$defaultConfig = this.props.defaultConfig,
                 dateFormat = _props$defaultConfig.dateFormat,
                 fieldName = _props$defaultConfig.fieldName;
 
-            return _react2.default.createElement(_DatePicker2.default, {
-                className: 'embargo-date-picker requiredField',
-                DateTimeFormat: dateFormat,
-                firstDayOfWeek: 0,
-                locale: datePickerLocale,
-                autoOk: true,
-                minDate: this.minDate,
-                value: this.state.value,
-                id: fieldName,
-                name: fieldName,
-                onChange: this._onChange,
-                disabled: this.props.disabled
-            });
+            return _react2.default.createElement(
+                'div',
+                { tabIndex: 0, onKeyPress: this._onKeyPress },
+                _react2.default.createElement(_DatePicker2.default, {
+                    className: 'embargo-date-picker requiredField',
+                    DateTimeFormat: dateFormat,
+                    firstDayOfWeek: 0,
+                    locale: datePickerLocale,
+                    autoOk: true,
+                    minDate: this.minDate,
+                    value: this.state.value,
+                    id: fieldName,
+                    name: fieldName,
+                    onChange: this._onChange,
+                    disabled: this.props.disabled,
+                    ref: function ref(datePicker) {
+                        return _this2.datePickerRef = datePicker;
+                    }
+                })
+            );
         }
     }]);
 

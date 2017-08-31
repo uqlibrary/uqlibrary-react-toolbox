@@ -56,6 +56,7 @@
 }
 
 .embargo-date-picker {
+  display: block;
   hr {
     display: none;
   }
@@ -64,6 +65,8 @@
   }
   div {
     font-size: 14px;
+    width: unset !important;
+    max-width: 256px;
   }
 }
 
@@ -118,7 +121,11 @@
       line-height: 48px;
     }
   }
-
+  .open-access-checkbox {
+    label {
+      text-align: justify;
+    }
+  }
 }
 //Mobile
 @media (max-width: 768px) {

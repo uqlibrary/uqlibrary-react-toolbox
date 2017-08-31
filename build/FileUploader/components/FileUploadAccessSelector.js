@@ -80,6 +80,7 @@ var FileUploadAccessSelector = function (_Component) {
                     name: fieldName,
                     className: 'selectField requiredField',
                     hintText: initialValue,
+                    dropDownMenuProps: { animated: false },
                     maxHeight: 250,
                     onChange: this._onChange,
                     errorText: this.state.value === null ? errorMessage : '',

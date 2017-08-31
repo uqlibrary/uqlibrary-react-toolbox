@@ -29,6 +29,7 @@ export default class FileUploadEmbargoDate extends Component {
             value: new Date()
         };
         this.minDate = new Date();
+        this.datePickerRef = null;
     }
 
     _onChange = (event, value) => {
@@ -37,23 +38,30 @@ export default class FileUploadEmbargoDate extends Component {
         this.props.onDateChanged({ key: this.props.defaultConfig.fileMetaKey, value: date.format('DD/MM/YYYY') });
     };
 
+    _onKeyPress = () => {
+        this.datePickerRef.openDialog();
+    };
+
     render() {
         const {datePickerLocale} = this.props.locale;
         const {dateFormat, fieldName} = this.props.defaultConfig;
         return (
-            <DatePicker
-                className="embargo-date-picker requiredField"
-                DateTimeFormat={dateFormat}
-                firstDayOfWeek={0}
-                locale={datePickerLocale}
-                autoOk
-                minDate={this.minDate}
-                value={this.state.value}
-                id={fieldName}
-                name={fieldName}
-                onChange={this._onChange}
-                disabled={ this.props.disabled }
-            />
+            <div tabIndex={0} onKeyPress={this._onKeyPress}>
+                <DatePicker
+                    className="embargo-date-picker requiredField"
+                    DateTimeFormat={dateFormat}
+                    firstDayOfWeek={0}
+                    locale={datePickerLocale}
+                    autoOk
+                    minDate={this.minDate}
+                    value={this.state.value}
+                    id={fieldName}
+                    name={fieldName}
+                    onChange={this._onChange}
+                    disabled={ this.props.disabled }
+                    ref={ (datePicker) => (this.datePickerRef = datePicker)}
+                />
+            </div>
         );
     }
 }

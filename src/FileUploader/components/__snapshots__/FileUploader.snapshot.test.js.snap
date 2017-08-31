@@ -3533,6 +3533,11 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                       autoWidth={false}
                       className="selectField requiredField"
                       disabled={false}
+                      dropDownMenuProps={
+                        Object {
+                          "animated": false,
+                        }
+                      }
                       errorText="This field is required"
                       floatingLabelFixed={true}
                       fullWidth={false}
@@ -4020,7 +4025,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                 "vertical": "top",
                               }
                             }
-                            animated={true}
+                            animated={false}
                             autoWidth={false}
                             disabled={false}
                             iconButton={<NavigationArrowDropDown />}
@@ -4359,7 +4364,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                     "vertical": "top",
                                   }
                                 }
-                                animated={true}
+                                animated={false}
                                 animation={[Function]}
                                 autoCloseWhenOffScreen={true}
                                 canAutoPosition={true}
@@ -4929,7 +4934,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                   </span>
                 </FontIcon>
                 <div
-                  className="no-embargo-date "
+                  className="no-embargo-date"
                 >
                   <span>
                     No date required
@@ -5355,6 +5360,11 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                       autoWidth={false}
                       className="selectField requiredField"
                       disabled={false}
+                      dropDownMenuProps={
+                        Object {
+                          "animated": false,
+                        }
+                      }
                       errorText="This field is required"
                       floatingLabelFixed={true}
                       fullWidth={false}
@@ -5842,7 +5852,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                 "vertical": "top",
                               }
                             }
-                            animated={true}
+                            animated={false}
                             autoWidth={false}
                             disabled={false}
                             iconButton={<NavigationArrowDropDown />}
@@ -6181,7 +6191,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                     "vertical": "top",
                                   }
                                 }
-                                animated={true}
+                                animated={false}
                                 animation={[Function]}
                                 autoCloseWhenOffScreen={true}
                                 canAutoPosition={true}
@@ -6751,7 +6761,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                   </span>
                 </FontIcon>
                 <div
-                  className="no-embargo-date "
+                  className="no-embargo-date"
                 >
                   <span>
                     No date required
@@ -7666,6 +7676,11 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                       autoWidth={false}
                       className="selectField requiredField"
                       disabled={false}
+                      dropDownMenuProps={
+                        Object {
+                          "animated": false,
+                        }
+                      }
                       errorText="This field is required"
                       floatingLabelFixed={true}
                       fullWidth={false}
@@ -8153,7 +8168,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                 "vertical": "top",
                               }
                             }
-                            animated={true}
+                            animated={false}
                             autoWidth={false}
                             disabled={false}
                             iconButton={<NavigationArrowDropDown />}
@@ -8492,7 +8507,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                     "vertical": "top",
                                   }
                                 }
-                                animated={true}
+                                animated={false}
                                 animation={[Function]}
                                 autoCloseWhenOffScreen={true}
                                 canAutoPosition={true}
@@ -9062,7 +9077,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                   </span>
                 </FontIcon>
                 <div
-                  className="no-embargo-date "
+                  className="no-embargo-date"
                 >
                   <span>
                     No date required
@@ -9488,6 +9503,11 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                       autoWidth={false}
                       className="selectField requiredField"
                       disabled={false}
+                      dropDownMenuProps={
+                        Object {
+                          "animated": false,
+                        }
+                      }
                       errorText="This field is required"
                       floatingLabelFixed={true}
                       fullWidth={false}
@@ -9975,7 +9995,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                 "vertical": "top",
                               }
                             }
-                            animated={true}
+                            animated={false}
                             autoWidth={false}
                             disabled={false}
                             iconButton={<NavigationArrowDropDown />}
@@ -10314,7 +10334,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                     "vertical": "top",
                                   }
                                 }
-                                animated={true}
+                                animated={false}
                                 animation={[Function]}
                                 autoCloseWhenOffScreen={true}
                                 canAutoPosition={true}
@@ -10884,7 +10904,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                   </span>
                 </FontIcon>
                 <div
-                  className="no-embargo-date "
+                  className="no-embargo-date"
                 >
                   <span>
                     No date required
@@ -11799,6 +11819,11 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                       autoWidth={false}
                       className="selectField requiredField"
                       disabled={false}
+                      dropDownMenuProps={
+                        Object {
+                          "animated": false,
+                        }
+                      }
                       errorText="This field is required"
                       floatingLabelFixed={true}
                       fullWidth={false}
@@ -12286,7 +12311,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                 "vertical": "top",
                               }
                             }
-                            animated={true}
+                            animated={false}
                             autoWidth={false}
                             disabled={false}
                             iconButton={<NavigationArrowDropDown />}
@@ -12625,7 +12650,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                     "vertical": "top",
                                   }
                                 }
-                                animated={true}
+                                animated={false}
                                 animation={[Function]}
                                 autoCloseWhenOffScreen={true}
                                 canAutoPosition={true}
@@ -13195,7 +13220,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                   </span>
                 </FontIcon>
                 <div
-                  className="no-embargo-date "
+                  className="no-embargo-date"
                 >
                   <span>
                     No date required
@@ -13621,6 +13646,11 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                       autoWidth={false}
                       className="selectField requiredField"
                       disabled={false}
+                      dropDownMenuProps={
+                        Object {
+                          "animated": false,
+                        }
+                      }
                       errorText="This field is required"
                       floatingLabelFixed={true}
                       fullWidth={false}
@@ -14108,7 +14138,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                 "vertical": "top",
                               }
                             }
-                            animated={true}
+                            animated={false}
                             autoWidth={false}
                             disabled={false}
                             iconButton={<NavigationArrowDropDown />}
@@ -14447,7 +14477,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                     "vertical": "top",
                                   }
                                 }
-                                animated={true}
+                                animated={false}
                                 animation={[Function]}
                                 autoCloseWhenOffScreen={true}
                                 canAutoPosition={true}
@@ -15017,7 +15047,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                   </span>
                 </FontIcon>
                 <div
-                  className="no-embargo-date "
+                  className="no-embargo-date"
                 >
                   <span>
                     No date required
@@ -17108,6 +17138,11 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                       autoWidth={false}
                       className="selectField requiredField"
                       disabled={false}
+                      dropDownMenuProps={
+                        Object {
+                          "animated": false,
+                        }
+                      }
                       errorText="This field is required"
                       floatingLabelFixed={true}
                       fullWidth={false}
@@ -17595,7 +17630,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                 "vertical": "top",
                               }
                             }
-                            animated={true}
+                            animated={false}
                             autoWidth={false}
                             disabled={false}
                             iconButton={<NavigationArrowDropDown />}
@@ -17934,7 +17969,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                     "vertical": "top",
                                   }
                                 }
-                                animated={true}
+                                animated={false}
                                 animation={[Function]}
                                 autoCloseWhenOffScreen={true}
                                 canAutoPosition={true}
@@ -18504,7 +18539,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                   </span>
                 </FontIcon>
                 <div
-                  className="no-embargo-date "
+                  className="no-embargo-date"
                 >
                   <span>
                     No date required
@@ -18930,6 +18965,11 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                       autoWidth={false}
                       className="selectField requiredField"
                       disabled={false}
+                      dropDownMenuProps={
+                        Object {
+                          "animated": false,
+                        }
+                      }
                       errorText="This field is required"
                       floatingLabelFixed={true}
                       fullWidth={false}
@@ -19417,7 +19457,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                 "vertical": "top",
                               }
                             }
-                            animated={true}
+                            animated={false}
                             autoWidth={false}
                             disabled={false}
                             iconButton={<NavigationArrowDropDown />}
@@ -19756,7 +19796,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                     "vertical": "top",
                                   }
                                 }
-                                animated={true}
+                                animated={false}
                                 animation={[Function]}
                                 autoCloseWhenOffScreen={true}
                                 canAutoPosition={true}
@@ -20326,7 +20366,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                   </span>
                 </FontIcon>
                 <div
-                  className="no-embargo-date "
+                  className="no-embargo-date"
                 >
                   <span>
                     No date required
