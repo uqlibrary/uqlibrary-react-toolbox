@@ -106,48 +106,11 @@ display: flex;
 - include normilize.css - to level css of all browsers, remove all styles from all h1-h5
 
 
-## Redux Forms Implementation Tips
-If you need to do redux forms and want to include reusable components which uses a function that requires the form name (eg getFormValues('formName')), do the following:
-
-1. Setup redux forms in your main component as per normal. 
-```
-const formName = 'someFormName';
-    :
-    :
-someForm = reduxForm({
-    form: someFormName
-})(someForm);
-```
-
-2. Pass in the form name to your shared component. Note that `form` is a reserved word in redux-forms v6+ which isn’t clearly documented from what I could see
-
-```
-<Authors form={formName} />
-```
-
-3. Using the author container as an example, do the following to connect `getFormValues` or similar functions that require a form name as an argument
-
-```
-someFormContainer = connect((state, initialProps) => {
-    return {
-        formValues: getFormValues(initialProps.form || 'aDefaultFormName')(state) || Immutable.Map({})
-    };
-});
-```
-
-4. Since it’s considered as a wizard form within the redux-forms language, you don’t need to specify the `form` prop in the reduxForm() call. ie you can do this
-
-```
-let someFormContainer = reduxForm({
-    destroyOnUnmount: false
-})(componentName);
-```
-
 ## NPM release procedures
 ####Login
 You need to log into npm via the terminal/command prompt as the correct user in order to publish. 
 
-    1. Log in as the owner of the uq-library-toolbox with the command _npm adduser_
+    1. Log in as the owner (username: `uqlibrary`, password in password management system search for `npm`) of the uq-library-toolbox with the command _npm adduser_
     2. Verify you’re the correct owner by running the command _npm whoami_
     3. Once verified, execute the command release command below.
 
