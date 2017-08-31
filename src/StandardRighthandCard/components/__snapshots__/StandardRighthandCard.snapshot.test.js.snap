@@ -5,7 +5,7 @@ exports[`Snapshot tests for StandardRighthandCard component renders StandardRigh
   className="StandardRighthandCard"
 >
   <div
-    className="columns is-gapless is-mobile facetsTitle"
+    className="columns is-gapless is-mobile StandardRighthandCardTitle"
   >
     <div
       className="column"
@@ -34,7 +34,7 @@ exports[`Snapshot tests for StandardRighthandCard component renders StandardRigh
   className="StandardRighthandCard"
 >
   <div
-    className="columns is-gapless is-mobile facetsTitle"
+    className="columns is-gapless is-mobile StandardRighthandCardTitle"
   >
     <div
       className="column"
@@ -64,7 +64,7 @@ exports[`Snapshot tests for StandardRighthandCard component renders StandardRigh
   className="StandardRighthandCard"
 >
   <div
-    className="columns is-gapless is-mobile facetsTitle"
+    className="columns is-gapless is-mobile StandardRighthandCardTitle"
   >
     <div
       className="column"

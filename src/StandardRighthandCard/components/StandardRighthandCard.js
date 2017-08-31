@@ -5,7 +5,7 @@ import {HelpIcon} from '../../index';
 export default function StandardRighthandCard({title, children, help}) {
     return (
         <div className="StandardRighthandCard">
-            <div className="columns is-gapless is-mobile facetsTitle">
+            <div className="columns is-gapless is-mobile StandardRighthandCardTitle">
                 <div className="column">
                     {title && <h2 className="title is-5">{title}</h2>}
                 </div>

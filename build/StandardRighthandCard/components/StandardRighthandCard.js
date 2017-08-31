@@ -27,7 +27,7 @@ function StandardRighthandCard(_ref) {
         { className: 'StandardRighthandCard' },
         _react2.default.createElement(
             'div',
-            { className: 'columns is-gapless is-mobile facetsTitle' },
+            { className: 'columns is-gapless is-mobile StandardRighthandCardTitle' },
             _react2.default.createElement(
                 'div',
                 { className: 'column' },

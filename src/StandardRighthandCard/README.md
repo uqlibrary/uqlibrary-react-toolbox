@@ -5,7 +5,7 @@ component for a right hand panel wrapper
 ## Props
 
 - `title: PropTypes.string.isRequired`
-- `help: PropTypes.object`, eg {title: 'About', text: 'help text..', buttonLabel:'Close'}
+- `help: PropTypes.object`, eg {title: 'Help title', text: 'Some help text..', buttonLabel:'OK'}
 
 ## Usage
 
@@ -17,11 +17,9 @@ import React from 'react';
 import {StandardRighthandCard} from 'uqlibrary-react-toolbox';
         
 const App = () => (
-  <div>
-    <StandardRighthandCard title='Title' help={locale.components.somthing.help}>
-      Content
+    <StandardRighthandCard title={txt.component.title} help={txt.component.help}>
+        Some content here.
     </StandardRighthandCard>
-  </div>
 );
 
 ReactDOM.render(
