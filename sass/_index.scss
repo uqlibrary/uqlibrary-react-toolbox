@@ -13,6 +13,9 @@
 @import "~bulma/sass/elements/title";
 @import './bulmaHelpers';
 
+// Material animation mixins
+@import "~@material/animation/mixins";
+
 html, body {
   padding: 0;
   margin: 0;
