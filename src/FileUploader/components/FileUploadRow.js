@@ -11,6 +11,8 @@ import FileUploadEmbargoDate from './FileUploadEmbargoDate';
 import {OPEN_ACCESS_ID} from './FileUploadAccessSelector';
 import { sizeUnitText, sizeBase } from './FileUploader';
 
+const moment = require('moment');
+
 class FileUploadRow extends Component {
     static propTypes = {
         index: PropTypes.number.isRequired,
@@ -59,6 +61,10 @@ class FileUploadRow extends Component {
     _updateFileMetadata = (update) => {
         if (update.key === 'access_condition_id' && !this.isOpenAccess(update.value) && this.props.uploadedFile.hasOwnProperty('date')) {
             delete this.props.uploadedFile.date;
+        }
+
+        if (update.key === 'access_condition_id' && this.isOpenAccess(update.value) && !this.props.uploadedFile.hasOwnProperty('date')) {
+            this.props.uploadedFile.date = moment().format('DD/MM/YYYY');
         }
 
         this.setState({ [update.key]: update.value });

@@ -50,6 +50,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var moment = require('moment');
+
 var FileUploadRow = function (_Component) {
     _inherits(FileUploadRow, _Component);
 
@@ -69,6 +71,10 @@ var FileUploadRow = function (_Component) {
         _this._updateFileMetadata = function (update) {
             if (update.key === 'access_condition_id' && !_this.isOpenAccess(update.value) && _this.props.uploadedFile.hasOwnProperty('date')) {
                 delete _this.props.uploadedFile.date;
+            }
+
+            if (update.key === 'access_condition_id' && _this.isOpenAccess(update.value) && !_this.props.uploadedFile.hasOwnProperty('date')) {
+                _this.props.uploadedFile.date = moment().format('DD/MM/YYYY');
             }
 
             _this.setState(_defineProperty({}, update.key, update.value));
