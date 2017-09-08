@@ -74,7 +74,7 @@ var FileUploadRow = function (_Component) {
             }
 
             if (update.key === 'access_condition_id' && _this.isOpenAccess(update.value) && !_this.props.uploadedFile.hasOwnProperty('date')) {
-                _this.props.uploadedFile.date = moment().format('DD/MM/YYYY');
+                _this.props.uploadedFile.date = moment().format('DD-MM-YYYY');
             }
 
             _this.setState(_defineProperty({}, update.key, update.value));
