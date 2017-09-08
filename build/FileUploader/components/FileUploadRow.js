@@ -136,18 +136,16 @@ var FileUploadRow = function (_Component) {
                         _react2.default.createElement(
                             'span',
                             { className: 'truncated' },
-                            this.props.uploadedFile.name
+                            this.props.uploadedFile.name,
+                            ' (',
+                            this.calculateFilesizeToDisplay(this.props.uploadedFile.size),
+                            ')'
                         ),
                         _react2.default.createElement(
                             'span',
                             { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },
                             filenameColumn
                         )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'datalist-text-subtitle secondary-info-mobile' },
-                        this.calculateFilesizeToDisplay(this.props.uploadedFile.size)
                     )
                 ),
                 _react2.default.createElement(

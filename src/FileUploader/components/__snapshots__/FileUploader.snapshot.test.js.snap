@@ -980,17 +980,15 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                   className="truncated"
                 >
                   a.txt
+                   (
+                  100.0B
+                  )
                 </span>
                 <span
                   className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
                 >
                   File name
                 </span>
-              </div>
-              <div
-                className="datalist-text-subtitle secondary-info-mobile"
-              >
-                100.0B
               </div>
             </div>
             <div
@@ -1368,17 +1366,15 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                   className="truncated"
                 >
                   b.txt
+                   (
+                  100.0B
+                  )
                 </span>
                 <span
                   className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
                 >
                   File name
                 </span>
-              </div>
-              <div
-                className="datalist-text-subtitle secondary-info-mobile"
-              >
-                100.0B
               </div>
             </div>
             <div
@@ -2228,17 +2224,15 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                   className="truncated"
                 >
                   b.txt
+                   (
+                  100.0B
+                  )
                 </span>
                 <span
                   className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
                 >
                   File name
                 </span>
-              </div>
-              <div
-                className="datalist-text-subtitle secondary-info-mobile"
-              >
-                100.0B
               </div>
             </div>
             <div
@@ -3460,17 +3454,15 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                   className="truncated"
                 >
                   a.txt
+                   (
+                  100.0B
+                  )
                 </span>
                 <span
                   className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
                 >
                   File name
                 </span>
-              </div>
-              <div
-                className="datalist-text-subtitle secondary-info-mobile"
-              >
-                100.0B
               </div>
             </div>
             <div
@@ -5287,17 +5279,15 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                   className="truncated"
                 >
                   b.txt
+                   (
+                  100.0B
+                  )
                 </span>
                 <span
                   className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
                 >
                   File name
                 </span>
-              </div>
-              <div
-                className="datalist-text-subtitle secondary-info-mobile"
-              >
-                100.0B
               </div>
             </div>
             <div
@@ -7603,17 +7593,15 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                   className="truncated"
                 >
                   a.txt
+                   (
+                  100.0B
+                  )
                 </span>
                 <span
                   className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
                 >
                   File name
                 </span>
-              </div>
-              <div
-                className="datalist-text-subtitle secondary-info-mobile"
-              >
-                100.0B
               </div>
             </div>
             <div
@@ -9430,17 +9418,15 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                   className="truncated"
                 >
                   b.txt
+                   (
+                  100.0B
+                  )
                 </span>
                 <span
                   className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
                 >
                   File name
                 </span>
-              </div>
-              <div
-                className="datalist-text-subtitle secondary-info-mobile"
-              >
-                100.0B
               </div>
             </div>
             <div
@@ -11746,17 +11732,15 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                   className="truncated"
                 >
                   a.txt
+                   (
+                  100.0B
+                  )
                 </span>
                 <span
                   className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
                 >
                   File name
                 </span>
-              </div>
-              <div
-                className="datalist-text-subtitle secondary-info-mobile"
-              >
-                100.0B
               </div>
             </div>
             <div
@@ -13573,17 +13557,15 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                   className="truncated"
                 >
                   b.txt
+                   (
+                  100.0B
+                  )
                 </span>
                 <span
                   className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
                 >
                   File name
                 </span>
-              </div>
-              <div
-                className="datalist-text-subtitle secondary-info-mobile"
-              >
-                100.0B
               </div>
             </div>
             <div
@@ -17065,17 +17047,15 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                   className="truncated"
                 >
                   a.txt
+                   (
+                  100.0B
+                  )
                 </span>
                 <span
                   className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
                 >
                   File name
                 </span>
-              </div>
-              <div
-                className="datalist-text-subtitle secondary-info-mobile"
-              >
-                100.0B
               </div>
             </div>
             <div
@@ -18892,17 +18872,15 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                   className="truncated"
                 >
                   b.txt
+                   (
+                  100.0B
+                  )
                 </span>
                 <span
                   className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
                 >
                   File name
                 </span>
-              </div>
-              <div
-                className="datalist-text-subtitle secondary-info-mobile"
-              >
-                100.0B
               </div>
             </div>
             <div
