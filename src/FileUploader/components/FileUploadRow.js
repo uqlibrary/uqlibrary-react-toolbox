@@ -64,7 +64,7 @@ class FileUploadRow extends Component {
         }
 
         if (update.key === 'access_condition_id' && this.isOpenAccess(update.value) && !this.props.uploadedFile.hasOwnProperty('date')) {
-            this.props.uploadedFile.date = moment().format('DD/MM/YYYY');
+            this.props.uploadedFile.date = moment().format('DD-MM-YYYY');
         }
 
         this.setState({ [update.key]: update.value });
