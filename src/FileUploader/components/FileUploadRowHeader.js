@@ -44,12 +44,12 @@ export default class FileUploadRowHeader extends Component {
                     onRef={ref => (this.confirmationBox = ref)}
                     onAction={this.props.onDeleteAll}
                     locale={deleteAllFilesConfirmation}/>
-                <div className="column datalist-title is-6-desktop is-6-tablet is-12-mobile header">
+                <div className="column datalist-title is-6-desktop is-5-tablet is-12-mobile header">
                     { filenameColumn }
                 </div>
                 {
                     this.props.requireFileAccess &&
-                    <div className="column datalist-title is-3-desktop is-3-tablet is-12-mobile header">
+                    <div className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header">
                         { fileAccessColumn }
                     </div>
                 }

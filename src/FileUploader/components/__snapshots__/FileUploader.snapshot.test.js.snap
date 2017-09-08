@@ -637,7 +637,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
             </Dialog>
           </ConfirmDialogBox>
           <div
-            className="column datalist-title is-6-desktop is-6-tablet is-12-mobile header"
+            className="column datalist-title is-6-desktop is-5-tablet is-12-mobile header"
           >
             Filename
           </div>
@@ -947,7 +947,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
               </Dialog>
             </ConfirmDialogBox>
             <div
-              className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile"
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
             >
               <FontIcon
                 className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
@@ -994,7 +994,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
               </div>
             </div>
             <div
-              className="column datalist-text is-3-desktop is-3-tablet is-12-mobile"
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
             />
             <div
               className="column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile"
@@ -1335,7 +1335,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
               </Dialog>
             </ConfirmDialogBox>
             <div
-              className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile"
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
             >
               <FontIcon
                 className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
@@ -1382,7 +1382,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
               </div>
             </div>
             <div
-              className="column datalist-text is-3-desktop is-3-tablet is-12-mobile"
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
             />
             <div
               className="column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile"
@@ -1885,7 +1885,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
             </Dialog>
           </ConfirmDialogBox>
           <div
-            className="column datalist-title is-6-desktop is-6-tablet is-12-mobile header"
+            className="column datalist-title is-6-desktop is-5-tablet is-12-mobile header"
           >
             Filename
           </div>
@@ -2195,7 +2195,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
               </Dialog>
             </ConfirmDialogBox>
             <div
-              className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile"
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
             >
               <FontIcon
                 className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
@@ -2242,7 +2242,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
               </div>
             </div>
             <div
-              className="column datalist-text is-3-desktop is-3-tablet is-12-mobile"
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
             />
             <div
               className="column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile"
@@ -3107,12 +3107,12 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
             </Dialog>
           </ConfirmDialogBox>
           <div
-            className="column datalist-title is-6-desktop is-6-tablet is-12-mobile header"
+            className="column datalist-title is-6-desktop is-5-tablet is-12-mobile header"
           >
             Filename
           </div>
           <div
-            className="column datalist-title is-3-desktop is-3-tablet is-12-mobile header"
+            className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header"
           >
             Access conditions
           </div>
@@ -3427,7 +3427,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
               </Dialog>
             </ConfirmDialogBox>
             <div
-              className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile"
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
             >
               <FontIcon
                 className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
@@ -3474,7 +3474,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
               </div>
             </div>
             <div
-              className="column datalist-text is-3-desktop is-3-tablet is-12-mobile"
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
             >
               <div
                 className="file-access-selector"
@@ -5254,7 +5254,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
               </Dialog>
             </ConfirmDialogBox>
             <div
-              className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile"
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
             >
               <FontIcon
                 className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
@@ -5301,7 +5301,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
               </div>
             </div>
             <div
-              className="column datalist-text is-3-desktop is-3-tablet is-12-mobile"
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
             >
               <div
                 className="file-access-selector"
@@ -7248,12 +7248,12 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
             </Dialog>
           </ConfirmDialogBox>
           <div
-            className="column datalist-title is-6-desktop is-6-tablet is-12-mobile header"
+            className="column datalist-title is-6-desktop is-5-tablet is-12-mobile header"
           >
             Filename
           </div>
           <div
-            className="column datalist-title is-3-desktop is-3-tablet is-12-mobile header"
+            className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header"
           >
             Access conditions
           </div>
@@ -7570,7 +7570,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
               </Dialog>
             </ConfirmDialogBox>
             <div
-              className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile"
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
             >
               <FontIcon
                 className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
@@ -7617,7 +7617,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
               </div>
             </div>
             <div
-              className="column datalist-text is-3-desktop is-3-tablet is-12-mobile"
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
             >
               <div
                 className="file-access-selector"
@@ -9397,7 +9397,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
               </Dialog>
             </ConfirmDialogBox>
             <div
-              className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile"
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
             >
               <FontIcon
                 className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
@@ -9444,7 +9444,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
               </div>
             </div>
             <div
-              className="column datalist-text is-3-desktop is-3-tablet is-12-mobile"
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
             >
               <div
                 className="file-access-selector"
@@ -11391,12 +11391,12 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
             </Dialog>
           </ConfirmDialogBox>
           <div
-            className="column datalist-title is-6-desktop is-6-tablet is-12-mobile header"
+            className="column datalist-title is-6-desktop is-5-tablet is-12-mobile header"
           >
             Filename
           </div>
           <div
-            className="column datalist-title is-3-desktop is-3-tablet is-12-mobile header"
+            className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header"
           >
             Access conditions
           </div>
@@ -11713,7 +11713,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
               </Dialog>
             </ConfirmDialogBox>
             <div
-              className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile"
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
             >
               <FontIcon
                 className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
@@ -11760,7 +11760,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
               </div>
             </div>
             <div
-              className="column datalist-text is-3-desktop is-3-tablet is-12-mobile"
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
             >
               <div
                 className="file-access-selector"
@@ -13540,7 +13540,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
               </Dialog>
             </ConfirmDialogBox>
             <div
-              className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile"
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
             >
               <FontIcon
                 className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
@@ -13587,7 +13587,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
               </div>
             </div>
             <div
-              className="column datalist-text is-3-desktop is-3-tablet is-12-mobile"
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
             >
               <div
                 className="file-access-selector"
@@ -16708,12 +16708,12 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
             </Dialog>
           </ConfirmDialogBox>
           <div
-            className="column datalist-title is-6-desktop is-6-tablet is-12-mobile header"
+            className="column datalist-title is-6-desktop is-5-tablet is-12-mobile header"
           >
             Filename
           </div>
           <div
-            className="column datalist-title is-3-desktop is-3-tablet is-12-mobile header"
+            className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header"
           >
             Access conditions
           </div>
@@ -17032,7 +17032,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
               </Dialog>
             </ConfirmDialogBox>
             <div
-              className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile"
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
             >
               <FontIcon
                 className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
@@ -17079,7 +17079,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
               </div>
             </div>
             <div
-              className="column datalist-text is-3-desktop is-3-tablet is-12-mobile"
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
             >
               <div
                 className="file-access-selector"
@@ -18859,7 +18859,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
               </Dialog>
             </ConfirmDialogBox>
             <div
-              className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile"
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
             >
               <FontIcon
                 className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
@@ -18906,7 +18906,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
               </div>
             </div>
             <div
-              className="column datalist-text is-3-desktop is-3-tablet is-12-mobile"
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
             >
               <div
                 className="file-access-selector"

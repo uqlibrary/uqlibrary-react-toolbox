@@ -90,7 +90,7 @@ class FileUploadRow extends Component {
                     onRef={ ref => (this.confirmationBox = ref) }
                     onAction={ this._deleteFile }
                     locale={ deleteRecordConfirmation } />
-                <div className="column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile">
+                <div className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile">
                     <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">attachment</FontIcon>
                     <div className="file-name">
                         <span className="truncated">{ this.props.uploadedFile.name }</span>
@@ -98,7 +98,7 @@ class FileUploadRow extends Component {
                     </div>
                     <div className="datalist-text-subtitle secondary-info-mobile">{this.calculateFilesizeToDisplay(this.props.uploadedFile.size )}</div>
                 </div>
-                <div className="column datalist-text is-3-desktop is-3-tablet is-12-mobile">
+                <div className="column datalist-text is-3-desktop is-4-tablet is-12-mobile">
                     {
                         this.props.requireFileAccess &&
                             <div className="file-access-selector">

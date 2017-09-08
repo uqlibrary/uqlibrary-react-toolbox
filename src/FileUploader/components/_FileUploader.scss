@@ -113,6 +113,12 @@
   .file-info {
     .file-name {
       line-height: 48px;
+      display: flex;
+      .truncated {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 

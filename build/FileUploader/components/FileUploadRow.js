@@ -124,7 +124,7 @@ var FileUploadRow = function (_Component) {
                     locale: deleteRecordConfirmation }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'column datalist-text file-info is-6-desktop is-6-tablet is-12-mobile' },
+                    { className: 'column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile' },
                     _react2.default.createElement(
                         _FontIcon2.default,
                         { className: 'material-icons mobile-icon is-hidden-desktop is-hidden-tablet' },
@@ -152,7 +152,7 @@ var FileUploadRow = function (_Component) {
                 ),
                 _react2.default.createElement(
                     'div',
-                    { className: 'column datalist-text is-3-desktop is-3-tablet is-12-mobile' },
+                    { className: 'column datalist-text is-3-desktop is-4-tablet is-12-mobile' },
                     this.props.requireFileAccess && _react2.default.createElement(
                         'div',
                         { className: 'file-access-selector' },

@@ -71,12 +71,12 @@ var FileUploadRowHeader = function (_Component) {
                     locale: deleteAllFilesConfirmation }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'column datalist-title is-6-desktop is-6-tablet is-12-mobile header' },
+                    { className: 'column datalist-title is-6-desktop is-5-tablet is-12-mobile header' },
                     filenameColumn
                 ),
                 this.props.requireFileAccess && _react2.default.createElement(
                     'div',
-                    { className: 'column datalist-title is-3-desktop is-3-tablet is-12-mobile header' },
+                    { className: 'column datalist-title is-3-desktop is-4-tablet is-12-mobile header' },
                     fileAccessColumn
                 ),
                 this.props.requireFileAccess && _react2.default.createElement(
