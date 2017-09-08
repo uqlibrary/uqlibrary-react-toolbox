@@ -93,10 +93,9 @@ class FileUploadRow extends Component {
                 <div className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile">
                     <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">attachment</FontIcon>
                     <div className="file-name">
-                        <span className="truncated">{ this.props.uploadedFile.name }</span>
+                        <span className="truncated">{ this.props.uploadedFile.name } ({this.calculateFilesizeToDisplay(this.props.uploadedFile.size )})</span>
                         <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{ filenameColumn }</span>
                     </div>
-                    <div className="datalist-text-subtitle secondary-info-mobile">{this.calculateFilesizeToDisplay(this.props.uploadedFile.size )}</div>
                 </div>
                 <div className="column datalist-text is-3-desktop is-4-tablet is-12-mobile">
                     {
