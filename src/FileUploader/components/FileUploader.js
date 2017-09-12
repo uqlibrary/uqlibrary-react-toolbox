@@ -221,7 +221,7 @@ export class FileUploader extends PureComponent {
 
     render() {
         const {instructions, accessTermsAndConditions} = this.props.locale;
-        const {maxFileSize, fileSizeUnit, fileUploadLimit, dateFormat} = this.props.defaultConfig;
+        const {maxFileSize, fileSizeUnit, fileUploadLimit} = this.props.defaultConfig;
         const {requireFileAccess, overallProgress} = this.props;
         const {uploadedFiles, clearErrors, termsAndConditions} = this.state;
 

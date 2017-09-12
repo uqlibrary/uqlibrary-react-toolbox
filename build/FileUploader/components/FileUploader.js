@@ -273,8 +273,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             var _props$defaultConfig = this.props.defaultConfig,
                 maxFileSize = _props$defaultConfig.maxFileSize,
                 fileSizeUnit = _props$defaultConfig.fileSizeUnit,
-                fileUploadLimit = _props$defaultConfig.fileUploadLimit,
-                dateFormat = _props$defaultConfig.dateFormat;
+                fileUploadLimit = _props$defaultConfig.fileUploadLimit;
             var _props = this.props,
                 requireFileAccess = _props.requireFileAccess,
                 overallProgress = _props.overallProgress;
