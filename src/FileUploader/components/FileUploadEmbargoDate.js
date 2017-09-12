@@ -5,6 +5,10 @@ import DatePicker from 'material-ui/DatePicker';
 const moment = require('moment');
 
 export default class FileUploadEmbargoDate extends Component {
+    static contextTypes = {
+        embargoDateFormat: PropTypes.string
+    };
+
     static propTypes = {
         locale: PropTypes.object,
         defaultConfig: PropTypes.object,
@@ -18,7 +22,7 @@ export default class FileUploadEmbargoDate extends Component {
         },
         defaultConfig: {
             fileMetaKey: 'date',
-            dateFormat: global.Intl.DateTimeFormat,
+            dateTimeFormat: global.Intl.DateTimeFormat,
             fieldName: 'accessDate'
         }
     };
@@ -34,8 +38,8 @@ export default class FileUploadEmbargoDate extends Component {
 
     _onChange = (event, value) => {
         const date = moment(value);
-        this.setState({ value: date.toDate() });
-        this.props.onDateChanged({ key: this.props.defaultConfig.fileMetaKey, value: date.format('DD-MM-YYYY') });
+        this.setState({value: date.toDate()});
+        this.props.onDateChanged({key: this.props.defaultConfig.fileMetaKey, value: date.format(this.context.embargoDateFormat)});
     };
 
     _onKeyPress = () => {
@@ -44,12 +48,12 @@ export default class FileUploadEmbargoDate extends Component {
 
     render() {
         const {datePickerLocale} = this.props.locale;
-        const {dateFormat, fieldName} = this.props.defaultConfig;
+        const {dateTimeFormat, fieldName} = this.props.defaultConfig;
         return (
             <div tabIndex={0} onKeyPress={this._onKeyPress}>
                 <DatePicker
                     className="embargo-date-picker requiredField"
-                    DateTimeFormat={dateFormat}
+                    DateTimeFormat={dateTimeFormat}
                     firstDayOfWeek={0}
                     locale={datePickerLocale}
                     autoOk
@@ -58,8 +62,8 @@ export default class FileUploadEmbargoDate extends Component {
                     id={fieldName}
                     name={fieldName}
                     onChange={this._onChange}
-                    disabled={ this.props.disabled }
-                    ref={ (datePicker) => (this.datePickerRef = datePicker)}
+                    disabled={this.props.disabled}
+                    ref={(datePicker) => (this.datePickerRef = datePicker)}
                 />
             </div>
         );

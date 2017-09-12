@@ -9,11 +9,15 @@ import FileUploadAccessSelector from './FileUploadAccessSelector';
 import FileUploadEmbargoDate from './FileUploadEmbargoDate';
 
 import {OPEN_ACCESS_ID} from './FileUploadAccessSelector';
-import { sizeUnitText, sizeBase } from './FileUploader';
+import {sizeUnitText, sizeBase} from './FileUploader';
 
 const moment = require('moment');
 
 class FileUploadRow extends Component {
+    static contextTypes = {
+        embargoDateFormat: PropTypes.string
+    };
+
     static propTypes = {
         index: PropTypes.number.isRequired,
         uploadedFile: PropTypes.object.isRequired,
@@ -64,10 +68,10 @@ class FileUploadRow extends Component {
         }
 
         if (update.key === 'access_condition_id' && this.isOpenAccess(update.value) && !this.props.uploadedFile.hasOwnProperty('date')) {
-            this.props.uploadedFile.date = moment().format('DD-MM-YYYY');
+            this.props.uploadedFile.date = moment().format(this.context.embargoDateFormat);
         }
 
-        this.setState({ [update.key]: update.value });
+        this.setState({[update.key]: update.value});
         this.props.uploadedFile[update.key] = update.value;
         if (this.props.onAttributeChanged) this.props.onAttributeChanged(this.props.uploadedFile, this.props.index);
     };
@@ -82,19 +86,19 @@ class FileUploadRow extends Component {
     };
 
     render() {
-        const { deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateClosedAccess } = this.props.locale;
-        const { access_condition_id } = this.state;
+        const {deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateClosedAccess} = this.props.locale;
+        const {access_condition_id} = this.state;
         return (
             <div className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix">
                 <ConfirmDialogBox
-                    onRef={ ref => (this.confirmationBox = ref) }
-                    onAction={ this._deleteFile }
-                    locale={ deleteRecordConfirmation } />
+                    onRef={ref => (this.confirmationBox = ref)}
+                    onAction={this._deleteFile}
+                    locale={deleteRecordConfirmation} />
                 <div className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile">
                     <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">attachment</FontIcon>
                     <div className="file-name">
-                        <span className="truncated">{ this.props.uploadedFile.name } ({this.calculateFilesizeToDisplay(this.props.uploadedFile.size )})</span>
-                        <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{ filenameColumn }</span>
+                        <span className="truncated">{this.props.uploadedFile.name} ({this.calculateFilesizeToDisplay(this.props.uploadedFile.size)})</span>
+                        <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{filenameColumn}</span>
                     </div>
                 </div>
                 <div className="column datalist-text is-3-desktop is-4-tablet is-12-mobile">
@@ -103,8 +107,8 @@ class FileUploadRow extends Component {
                             <div className="file-access-selector">
                                 <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
                                 <div className="select-container">
-                                    <FileUploadAccessSelector onAccessChanged={ this._updateFileMetadata } disabled={ this.props.disabled } />
-                                    <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{ fileAccessColumn }</span>
+                                    <FileUploadAccessSelector onAccessChanged={this._updateFileMetadata} disabled={this.props.disabled} />
+                                    <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{fileAccessColumn}</span>
                                 </div>
                             </div>
                     }
@@ -116,14 +120,14 @@ class FileUploadRow extends Component {
                             this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) &&
                             <div className="no-embargo-date">
                                 <span>{embargoDateClosedAccess}</span>
-                                <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{ embargoDateColumn }</span>
+                                <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }
                         {
                             this.props.requireFileAccess && this.isOpenAccess(access_condition_id) &&
                             <div className="embargo-date-selector">
-                                <FileUploadEmbargoDate onDateChanged={ this._updateFileMetadata } disabled={ this.props.disabled }/>
-                                <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{ embargoDateColumn }</span>
+                                <FileUploadEmbargoDate onDateChanged={this._updateFileMetadata} disabled={this.props.disabled} />
+                                <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }
                     </div>
@@ -131,7 +135,7 @@ class FileUploadRow extends Component {
                 {
                     this.props.progress === 0 &&
                         <div className="column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless">
-                            <IconButton tooltip={ this.props.locale.deleteHint } onTouchTap={ this._showConfirmation } disabled={ this.props.disabled }>
+                            <IconButton tooltip={this.props.locale.deleteHint} onTouchTap={this._showConfirmation} disabled={this.props.disabled}>
                                 <FontIcon className="material-icons deleteIcon">delete</FontIcon>
                             </IconButton>
                         </div>
@@ -142,9 +146,9 @@ class FileUploadRow extends Component {
                             <CircularProgress
                                 className="upload-progress"
                                 mode="determinate"
-                                value={ this.props.progress }
-                                size={ 20 }
-                                thickness={ 4 }
+                                value={this.props.progress}
+                                size={20}
+                                thickness={4}
                             />
                         </div>
                 }

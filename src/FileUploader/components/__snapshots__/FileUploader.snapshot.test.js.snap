@@ -10,6 +10,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
       "maxFileSize": 5,
     }
   }
+  embargoDateFormat="YYYY-MM-DD"
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -189,6 +190,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
       "maxFileSize": 5,
     }
   }
+  embargoDateFormat="YYYY-MM-DD"
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -368,6 +370,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
       "maxFileSize": 5,
     }
   }
+  embargoDateFormat="YYYY-MM-DD"
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -1616,6 +1619,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
       "maxFileSize": 5,
     }
   }
+  embargoDateFormat="YYYY-MM-DD"
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -2474,6 +2478,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
       "maxFileSize": 5,
     }
   }
+  embargoDateFormat="YYYY-MM-DD"
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -2653,6 +2658,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
       "maxFileSize": 5,
     }
   }
+  embargoDateFormat="YYYY-MM-DD"
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -2832,6 +2838,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
       "maxFileSize": 5,
     }
   }
+  embargoDateFormat="YYYY-MM-DD"
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -6968,6 +6975,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
       "maxFileSize": 5,
     }
   }
+  embargoDateFormat="YYYY-MM-DD"
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -11107,6 +11115,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
       "maxFileSize": 5,
     }
   }
+  embargoDateFormat="YYYY-MM-DD"
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -16419,6 +16428,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
       "maxFileSize": 5,
     }
   }
+  embargoDateFormat="YYYY-MM-DD"
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",

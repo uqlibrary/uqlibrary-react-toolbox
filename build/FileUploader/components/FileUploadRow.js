@@ -74,7 +74,7 @@ var FileUploadRow = function (_Component) {
             }
 
             if (update.key === 'access_condition_id' && _this.isOpenAccess(update.value) && !_this.props.uploadedFile.hasOwnProperty('date')) {
-                _this.props.uploadedFile.date = moment().format('DD-MM-YYYY');
+                _this.props.uploadedFile.date = moment().format(_this.context.embargoDateFormat);
             }
 
             _this.setState(_defineProperty({}, update.key, update.value));
@@ -244,6 +244,9 @@ var FileUploadRow = function (_Component) {
     return FileUploadRow;
 }(_react.Component);
 
+FileUploadRow.contextTypes = {
+    embargoDateFormat: _propTypes2.default.string
+};
 FileUploadRow.propTypes = {
     index: _propTypes2.default.number.isRequired,
     uploadedFile: _propTypes2.default.object.isRequired,

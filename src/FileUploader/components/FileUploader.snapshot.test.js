@@ -1,14 +1,15 @@
 jest.dontMock('./FileUploader');
 
-import { mount } from 'enzyme';
-import { createStore } from 'redux';
+import {mount} from 'enzyme';
+import {createStore} from 'redux';
 import Immutable from 'immutable';
 import fileUploadReducer from '../reducer';
 import toJson from 'enzyme-to-json';
 import React from 'react';
-import { FileUploader } from './FileUploader';
+import {FileUploader} from './FileUploader';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import PropTypes from 'prop-types';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 function setup(props) {
     let defaultProps = {
@@ -27,6 +28,10 @@ function setup(props) {
         }
     });
 }
+
+beforeAll(() => {
+    injectTapEventPlugin();
+});
 
 describe('FileUploader', () => {
     it('renders correctly without any setup', () => {

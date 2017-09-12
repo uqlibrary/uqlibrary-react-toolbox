@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import { clearFileUpload } from '../actions';
+import {clearFileUpload} from '../actions';
 
 import LinearProgress from 'material-ui/LinearProgress';
 import Checkbox from 'material-ui/Checkbox';
@@ -9,7 +9,7 @@ import FileUploadDropzone from './FileUploadDropzone';
 import FileUploadRowHeader from './FileUploadRowHeader';
 import FileUploadRow from './FileUploadRow';
 
-import { OPEN_ACCESS_ID } from './FileUploadAccessSelector';
+import {OPEN_ACCESS_ID} from './FileUploadAccessSelector';
 
 export const sizeExponent = {
     ['B']: 0,
@@ -28,6 +28,10 @@ export const sizeUnitText = {
 export const sizeBase = 1000;
 
 export class FileUploader extends PureComponent {
+    static childContextTypes = {
+        embargoDateFormat: PropTypes.string
+    };
+
     static propTypes = {
         onChange: PropTypes.func,
         locale: PropTypes.object,
@@ -35,7 +39,8 @@ export class FileUploader extends PureComponent {
         overallProgress: PropTypes.number,
         requireFileAccess: PropTypes.bool,
         clearFileUpload: PropTypes.func,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
+        embargoDateFormat: PropTypes.string
     };
 
     static defaultProps = {
@@ -49,7 +54,8 @@ export class FileUploader extends PureComponent {
             maxFileSize: 5,
             fileSizeUnit: 'G'
         },
-        requireFileAccess: false
+        requireFileAccess: false,
+        embargoDateFormat: 'YYYY-MM-DD'
     };
 
     constructor(props) {
@@ -60,6 +66,12 @@ export class FileUploader extends PureComponent {
             termsAndConditions: false
         };
     }
+
+    getChildContext = () => {
+        return {
+            embargoDateFormat: this.props.embargoDateFormat
+        };
+    };
 
     componentWillUpdate(nextProps, nextState) {
         if (this.props.onChange) this.props.onChange({queue: nextState.uploadedFiles, isValid: this.isFileUploadValid(nextState)});
@@ -107,7 +119,7 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _deleteAllFiles = () => {
-        this.setState({ uploadedFiles: [], clearErrors: true });
+        this.setState({uploadedFiles: [], clearErrors: true});
     };
 
     /**
@@ -117,7 +129,7 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _setUploadedFiles = (files) => {
-        this.setState({ uploadedFiles: [...files], clearErrors: false });
+        this.setState({uploadedFiles: [...files], clearErrors: false});
     };
 
     /**
@@ -128,7 +140,7 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _acceptTermsAndConditions = (event, value) => {
-        this.setState({ termsAndConditions: value });
+        this.setState({termsAndConditions: value});
     };
 
     /**
@@ -137,7 +149,7 @@ export class FileUploader extends PureComponent {
      * @returns {number}
      */
     calculateMaxFileSize = () => {
-        const { maxFileSize, fileSizeUnit } = this.props.defaultConfig;
+        const {maxFileSize, fileSizeUnit} = this.props.defaultConfig;
         return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
     };
 
@@ -208,10 +220,10 @@ export class FileUploader extends PureComponent {
     };
 
     render() {
-        const { instructions, accessTermsAndConditions } = this.props.locale;
-        const { maxFileSize, fileSizeUnit, fileUploadLimit } = this.props.defaultConfig;
-        const { requireFileAccess, overallProgress } = this.props;
-        const { uploadedFiles, clearErrors, termsAndConditions } = this.state;
+        const {instructions, accessTermsAndConditions} = this.props.locale;
+        const {maxFileSize, fileSizeUnit, fileUploadLimit, dateFormat} = this.props.defaultConfig;
+        const {requireFileAccess, overallProgress} = this.props;
+        const {uploadedFiles, clearErrors, termsAndConditions} = this.state;
 
         const instructionsDisplay = instructions
             .replace('[fileUploadLimit]', fileUploadLimit)
@@ -219,42 +231,45 @@ export class FileUploader extends PureComponent {
             .replace('[fileSizeUnit]', sizeUnitText[fileSizeUnit] || 'B');
 
         const uploadedFilesRow = this.state.uploadedFiles.map((file, index) => {
-            return (<FileUploadRow
-                key={ file.name }
-                index={ index }
-                uploadedFile={ file }
-                fileSizeUnit={ fileSizeUnit }
-                onDelete={ this._deleteFile }
-                onAttributeChanged={ this._replaceFile }
-                requireFileAccess={ requireFileAccess }
-                disabled={ this.props.disabled } />);
+            return (
+                <FileUploadRow
+                    key={file.name}
+                    index={index}
+                    uploadedFile={file}
+                    fileSizeUnit={fileSizeUnit}
+                    onDelete={this._deleteFile}
+                    onAttributeChanged={this._replaceFile}
+                    requireFileAccess={requireFileAccess}
+                    disabled={this.props.disabled}
+                />
+            );
         });
 
         return (
             <div>
-                <h4 className="sub-title">{ instructionsDisplay }</h4>
+                <h4 className="sub-title">{instructionsDisplay}</h4>
                 <FileUploadDropzone
-                    maxSize={ this.calculateMaxFileSize() }
-                    maxFiles={ fileUploadLimit }
-                    disabled={ this.props.disabled || uploadedFiles.length === fileUploadLimit }
-                    onDropped={ this._setUploadedFiles }
-                    uploadedFiles={ uploadedFiles }
-                    clearErrors={ clearErrors } />
+                    maxSize={this.calculateMaxFileSize()}
+                    maxFiles={fileUploadLimit}
+                    disabled={this.props.disabled || uploadedFiles.length === fileUploadLimit}
+                    onDropped={this._setUploadedFiles}
+                    uploadedFiles={uploadedFiles}
+                    clearErrors={clearErrors} />
                 <div className="metadata-container">
                     {
                         uploadedFiles.length > 0 &&
                         <FileUploadRowHeader
-                            onDeleteAll={ this._deleteAllFiles }
-                            requireFileAccess={ requireFileAccess }
-                            disabled={ this.props.disabled } />
+                            onDeleteAll={this._deleteAllFiles}
+                            requireFileAccess={requireFileAccess}
+                            disabled={this.props.disabled} />
                     }
 
-                    { uploadedFilesRow }
+                    {uploadedFilesRow}
 
                     {
                         requireFileAccess && this.isAnyOpenAccess(uploadedFiles) &&
                             <div style={{position: 'relative', width: '100%'}} className={!termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox'}>
-                                <Checkbox label={ accessTermsAndConditions } onCheck={ this._acceptTermsAndConditions } checked={ termsAndConditions } />
+                                <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={termsAndConditions} />
                             </div>
                     }
 
@@ -263,7 +278,7 @@ export class FileUploader extends PureComponent {
                         <LinearProgress
                             className="upload-overall"
                             mode="determinate"
-                            value={ overallProgress }
+                            value={overallProgress}
                         />
                     }
                 </div>

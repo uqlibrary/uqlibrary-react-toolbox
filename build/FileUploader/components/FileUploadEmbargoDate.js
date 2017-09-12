@@ -39,7 +39,7 @@ var FileUploadEmbargoDate = function (_Component) {
         _this._onChange = function (event, value) {
             var date = moment(value);
             _this.setState({ value: date.toDate() });
-            _this.props.onDateChanged({ key: _this.props.defaultConfig.fileMetaKey, value: date.format('DD-MM-YYYY') });
+            _this.props.onDateChanged({ key: _this.props.defaultConfig.fileMetaKey, value: date.format(_this.context.embargoDateFormat) });
         };
 
         _this._onKeyPress = function () {
@@ -61,7 +61,7 @@ var FileUploadEmbargoDate = function (_Component) {
 
             var datePickerLocale = this.props.locale.datePickerLocale;
             var _props$defaultConfig = this.props.defaultConfig,
-                dateFormat = _props$defaultConfig.dateFormat,
+                dateTimeFormat = _props$defaultConfig.dateTimeFormat,
                 fieldName = _props$defaultConfig.fieldName;
 
             return _react2.default.createElement(
@@ -69,7 +69,7 @@ var FileUploadEmbargoDate = function (_Component) {
                 { tabIndex: 0, onKeyPress: this._onKeyPress },
                 _react2.default.createElement(_DatePicker2.default, {
                     className: 'embargo-date-picker requiredField',
-                    DateTimeFormat: dateFormat,
+                    DateTimeFormat: dateTimeFormat,
                     firstDayOfWeek: 0,
                     locale: datePickerLocale,
                     autoOk: true,
@@ -90,6 +90,9 @@ var FileUploadEmbargoDate = function (_Component) {
     return FileUploadEmbargoDate;
 }(_react.Component);
 
+FileUploadEmbargoDate.contextTypes = {
+    embargoDateFormat: _propTypes2.default.string
+};
 FileUploadEmbargoDate.propTypes = {
     locale: _propTypes2.default.object,
     defaultConfig: _propTypes2.default.object,
@@ -102,7 +105,7 @@ FileUploadEmbargoDate.defaultProps = {
     },
     defaultConfig: {
         fileMetaKey: 'date',
-        dateFormat: global.Intl.DateTimeFormat,
+        dateTimeFormat: global.Intl.DateTimeFormat,
         fieldName: 'accessDate'
     }
 };
