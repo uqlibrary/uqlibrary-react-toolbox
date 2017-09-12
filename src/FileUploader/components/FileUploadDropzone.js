@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
-import { Alert } from '../..';
+import {Alert} from '../..';
 import FileUploadDropzoneStaticContent from './FileUploadDropzoneStaticContent';
 
 class FileUploadDropzone extends PureComponent {
@@ -136,7 +136,7 @@ class FileUploadDropzone extends PureComponent {
      * @private
      */
     processErrors = (errors) => {
-        const { single, multiple } = this.props.locale.validation;
+        const {single, multiple} = this.props.locale.validation;
         const errorMessages = [];
         let message;
 
@@ -212,7 +212,7 @@ class FileUploadDropzone extends PureComponent {
         /*
          * If max files uploaded, send max files and set error for ignored files
          */
-        const { maxFiles } = this.props;
+        const {maxFiles} = this.props;
         if (this.accepted.size > maxFiles) {
             this.props.onDropped([...this.accepted.values()].slice(0, maxFiles));
             this.setError('maxFiles', [...this.accepted.values()].slice(maxFiles));
@@ -234,20 +234,20 @@ class FileUploadDropzone extends PureComponent {
     };
 
     render() {
-        const { errorTitle } = this.props.locale;
-        const { errorMessage } = this.state;
+        const {errorTitle} = this.props.locale;
+        const {errorMessage} = this.state;
 
         return (
             <div>
                 <div className="columns">
-                    <div className="column"  tabIndex="0" onKeyPress={ this._onKeyPress }>
+                    <div className="column"  tabIndex="0" onKeyPress={this._onKeyPress}>
                         <Dropzone
-                            ref={ (node) => { this.dropzoneRef = node; }}
-                            maxSize={ this.props.maxSize }
-                            onDrop={ this._onDrop }
-                            style={{ padding: '10px' }}
-                            disabled={ this.props.disabled }
-                            disableClick={ this.props.disabled }
+                            ref={(node) => {this.dropzoneRef = node;}}
+                            maxSize={this.props.maxSize}
+                            onDrop={this._onDrop}
+                            style={{padding: '10px'}}
+                            disabled={this.props.disabled}
+                            disableClick={this.props.disabled}
                             disablePreview>
                             <FileUploadDropzoneStaticContent />
                         </Dropzone>
@@ -255,7 +255,7 @@ class FileUploadDropzone extends PureComponent {
                 </div>
                 {
                     errorMessage.length > 0 && (
-                        <Alert title={ errorTitle } message={ errorMessage } type="error" />
+                        <Alert title={errorTitle} message={errorMessage} type="error" />
                     )
                 }
             </div>

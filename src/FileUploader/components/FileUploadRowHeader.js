@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
@@ -36,7 +36,7 @@ export default class FileUploadRowHeader extends Component {
     };
 
     render() {
-        const { filenameColumn, fileAccessColumn, embargoDateColumn, deleteAllFiles, deleteAllFilesConfirmation } = this.props.locale;
+        const {filenameColumn, fileAccessColumn, embargoDateColumn, deleteAllFiles, deleteAllFilesConfirmation} = this.props.locale;
 
         return (
             <div className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile">
@@ -45,22 +45,22 @@ export default class FileUploadRowHeader extends Component {
                     onAction={this.props.onDeleteAll}
                     locale={deleteAllFilesConfirmation}/>
                 <div className="column datalist-title is-6-desktop is-5-tablet is-12-mobile header">
-                    { filenameColumn }
+                    {filenameColumn}
                 </div>
                 {
                     this.props.requireFileAccess &&
                     <div className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header">
-                        { fileAccessColumn }
+                        {fileAccessColumn}
                     </div>
                 }
                 {
                     this.props.requireFileAccess &&
                     <div className="column datalist-title is-2-desktop is-2-tablet is-12-mobile header">
-                        { embargoDateColumn }
+                        {embargoDateColumn}
                     </div>
                 }
                 <div className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header">
-                    <IconButton tooltip={ deleteAllFiles } onTouchTap={ this._showConfirmation } disabled={ this.props.disabled }>
+                    <IconButton tooltip={deleteAllFiles} onTouchTap={this._showConfirmation} disabled={this.props.disabled}>
                         <FontIcon className="material-icons">delete_forever</FontIcon>
                     </IconButton>
                 </div>

@@ -41,30 +41,30 @@ export default class FileUploadAccessSelector extends Component {
     }
 
     _onChange = (event, index, value) => {
-        this.setState({ value: value });
-        this.props.onAccessChanged({ key: this.props.defaultConfig.fileMetaKey, value: value });
+        this.setState({value: value});
+        this.props.onAccessChanged({key: this.props.defaultConfig.fileMetaKey, value: value});
     };
 
     render() {
         const {initialValue, accessSelectOptionsText, errorMessage} = this.props.locale;
         const {fieldName, accessIds} = this.props.defaultConfig;
 
-        const accessOptions = accessIds.map((access, index) => (<MenuItem value={ access } primaryText={ accessSelectOptionsText[access] } key={ index } />));
+        const accessOptions = accessIds.map((access, index) => (<MenuItem value={access} primaryText={accessSelectOptionsText[access]} key={index} />));
 
         return (
             <SelectField
-                id={ fieldName }
-                name={ fieldName }
+                id={fieldName}
+                name={fieldName}
                 className="selectField requiredField"
-                hintText={ initialValue }
+                hintText={initialValue}
                 dropDownMenuProps={{animated: false}}
-                maxHeight={ 250 }
-                onChange={ this._onChange }
-                errorText={ this.state.value === null ? errorMessage : '' }
+                maxHeight={250}
+                onChange={this._onChange}
+                errorText={this.state.value === null ? errorMessage : ''}
                 floatingLabelFixed
-                disabled = { this.props.disabled }
-                value={ this.state.value }>
-                { accessOptions }
+                disabled = {this.props.disabled}
+                value={this.state.value}>
+                {accessOptions}
             </SelectField>
         );
     }
