@@ -45,7 +45,7 @@ var Alert = function Alert(_ref) {
             { className: type + ' alertWrapper' },
             _react2.default.createElement(
                 'div',
-                { className: 'columns is-gapless is-multiline is-mobile' },
+                { className: 'columns is-multiline is-mobile' },
                 _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow alertIcon' },

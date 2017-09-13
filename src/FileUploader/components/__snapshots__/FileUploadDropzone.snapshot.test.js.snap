@@ -457,7 +457,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
           className="error alertWrapper"
         >
           <div
-            className="columns is-gapless is-multiline is-mobile"
+            className="columns is-multiline is-mobile"
           >
             <div
               className="column is-narrow alertIcon"
@@ -665,7 +665,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
           className="error alertWrapper"
         >
           <div
-            className="columns is-gapless is-multiline is-mobile"
+            className="columns is-multiline is-mobile"
           >
             <div
               className="column is-narrow alertIcon"

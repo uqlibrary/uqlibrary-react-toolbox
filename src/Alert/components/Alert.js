@@ -9,7 +9,7 @@ const Alert = ({title, message, type, action, actionButtonLabel, allowDismiss, d
     return (
         <div className="forAlerts">
             <div className={type + ' alertWrapper'}>
-                <div className="columns is-gapless is-multiline is-mobile">
+                <div className="columns is-multiline is-mobile">
                     <div className="column is-narrow alertIcon">
                         <FontIcon className="material-icons">{type}</FontIcon>
                     </div>
