@@ -93,7 +93,7 @@ html, body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0px auto !important;
-  padding-top: 100px !important;
+  padding-top: 99px;
 
   .body-1 {
     padding: 0px 24px 24px 24px !important;
@@ -103,5 +103,10 @@ html, body {
     width: 100%;
     max-height: 100%;
     height: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .content-container {
+    padding-top: 70px;
   }
 }
