@@ -128,15 +128,9 @@
     min-height: 40px;
 
     .alertIcon {
-      float: left;
-      padding-bottom: 1px;
-      height: 100%;
-      margin: 0 !important;
+      margin-right: 0 !important;
       span {
         font-size: 40px !important;
-        &.material-icons {
-          padding: 12px 12px 0 0 !important;
-        }
       }
     }
     .alertText {
