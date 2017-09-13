@@ -69,12 +69,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
         var _this = _possibleConstructorReturn(this, (FileUploader.__proto__ || Object.getPrototypeOf(FileUploader)).call(this, props));
 
-        _this.getChildContext = function () {
-            return {
-                embargoDateFormat: _this.props.embargoDateFormat
-            };
-        };
-
         _this._deleteFile = function (file, index) {
             _this.setState({
                 uploadedFiles: _this.state.uploadedFiles.filter(function (_, i) {
@@ -339,9 +333,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
     return FileUploader;
 }(_react.PureComponent);
 
-FileUploader.childContextTypes = {
-    embargoDateFormat: _propTypes2.default.string
-};
 FileUploader.propTypes = {
     onChange: _propTypes2.default.func,
     locale: _propTypes2.default.object,
@@ -349,8 +340,7 @@ FileUploader.propTypes = {
     overallProgress: _propTypes2.default.number,
     requireFileAccess: _propTypes2.default.bool,
     clearFileUpload: _propTypes2.default.func,
-    disabled: _propTypes2.default.bool,
-    embargoDateFormat: _propTypes2.default.string
+    disabled: _propTypes2.default.bool
 };
 FileUploader.defaultProps = {
     overallProgress: 0,
@@ -363,8 +353,7 @@ FileUploader.defaultProps = {
         maxFileSize: 5,
         fileSizeUnit: 'G'
     },
-    requireFileAccess: false,
-    embargoDateFormat: 'YYYY-MM-DD'
+    requireFileAccess: false
 };
 
 

@@ -28,10 +28,6 @@ export const sizeUnitText = {
 export const sizeBase = 1000;
 
 export class FileUploader extends PureComponent {
-    static childContextTypes = {
-        embargoDateFormat: PropTypes.string
-    };
-
     static propTypes = {
         onChange: PropTypes.func,
         locale: PropTypes.object,
@@ -39,8 +35,7 @@ export class FileUploader extends PureComponent {
         overallProgress: PropTypes.number,
         requireFileAccess: PropTypes.bool,
         clearFileUpload: PropTypes.func,
-        disabled: PropTypes.bool,
-        embargoDateFormat: PropTypes.string
+        disabled: PropTypes.bool
     };
 
     static defaultProps = {
@@ -54,8 +49,7 @@ export class FileUploader extends PureComponent {
             maxFileSize: 5,
             fileSizeUnit: 'G'
         },
-        requireFileAccess: false,
-        embargoDateFormat: 'YYYY-MM-DD'
+        requireFileAccess: false
     };
 
     constructor(props) {
@@ -66,12 +60,6 @@ export class FileUploader extends PureComponent {
             termsAndConditions: false
         };
     }
-
-    getChildContext = () => {
-        return {
-            embargoDateFormat: this.props.embargoDateFormat
-        };
-    };
 
     componentWillUpdate(nextProps, nextState) {
         if (this.props.onChange) this.props.onChange({queue: nextState.uploadedFiles, isValid: this.isFileUploadValid(nextState)});

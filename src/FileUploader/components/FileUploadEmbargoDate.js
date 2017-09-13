@@ -5,10 +5,6 @@ import DatePicker from 'material-ui/DatePicker';
 const moment = require('moment');
 
 export default class FileUploadEmbargoDate extends Component {
-    static contextTypes = {
-        embargoDateFormat: PropTypes.string
-    };
-
     static propTypes = {
         locale: PropTypes.object,
         defaultConfig: PropTypes.object,
@@ -39,7 +35,7 @@ export default class FileUploadEmbargoDate extends Component {
     _onChange = (event, value) => {
         const date = moment(value);
         this.setState({value: date.toDate()});
-        this.props.onDateChanged({key: this.props.defaultConfig.fileMetaKey, value: date.format(this.context.embargoDateFormat)});
+        this.props.onDateChanged({key: this.props.defaultConfig.fileMetaKey, value: date.format()});
     };
 
     _onKeyPress = () => {

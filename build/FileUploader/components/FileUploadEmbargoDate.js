@@ -39,7 +39,7 @@ var FileUploadEmbargoDate = function (_Component) {
         _this._onChange = function (event, value) {
             var date = moment(value);
             _this.setState({ value: date.toDate() });
-            _this.props.onDateChanged({ key: _this.props.defaultConfig.fileMetaKey, value: date.format(_this.context.embargoDateFormat) });
+            _this.props.onDateChanged({ key: _this.props.defaultConfig.fileMetaKey, value: date.format() });
         };
 
         _this._onKeyPress = function () {
@@ -90,9 +90,6 @@ var FileUploadEmbargoDate = function (_Component) {
     return FileUploadEmbargoDate;
 }(_react.Component);
 
-FileUploadEmbargoDate.contextTypes = {
-    embargoDateFormat: _propTypes2.default.string
-};
 FileUploadEmbargoDate.propTypes = {
     locale: _propTypes2.default.object,
     defaultConfig: _propTypes2.default.object,

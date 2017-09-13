@@ -14,10 +14,6 @@ import {sizeUnitText, sizeBase} from './FileUploader';
 const moment = require('moment');
 
 class FileUploadRow extends Component {
-    static contextTypes = {
-        embargoDateFormat: PropTypes.string
-    };
-
     static propTypes = {
         index: PropTypes.number.isRequired,
         uploadedFile: PropTypes.object.isRequired,
@@ -68,7 +64,7 @@ class FileUploadRow extends Component {
         }
 
         if (update.key === 'access_condition_id' && this.isOpenAccess(update.value) && !this.props.uploadedFile.hasOwnProperty('date')) {
-            this.props.uploadedFile.date = moment().format(this.context.embargoDateFormat);
+            this.props.uploadedFile.date = moment().format();
         }
 
         this.setState({[update.key]: update.value});
