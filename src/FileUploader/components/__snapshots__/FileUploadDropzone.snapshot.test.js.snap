@@ -446,7 +446,6 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
     <Alert
       allowDismiss={false}
       message="File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; Invalid file name (a.text.txt)"
-      outsideLayout={false}
       title="Upload Errors"
       type="error"
     >
@@ -654,7 +653,6 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
     <Alert
       allowDismiss={false}
       message="Only 3 files are allowed to be uploaded. File (d.txt) ignored"
-      outsideLayout={false}
       title="Upload Errors"
       type="error"
     >

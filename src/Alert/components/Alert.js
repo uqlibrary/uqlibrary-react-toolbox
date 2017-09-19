@@ -42,8 +42,7 @@ const Alert = ({title, message, type, action, actionButtonLabel, allowDismiss, d
 Alert.propTypes = {
     message: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline']),
-    outsideLayout: PropTypes.bool,
+    type: PropTypes.oneOf(['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline', 'done']),
     action: PropTypes.func,
     actionButtonLabel: PropTypes.string,
     allowDismiss: PropTypes.bool,
@@ -54,7 +53,6 @@ Alert.defaultProps = {
     message: 'Unexpected error',
     title: 'Error',
     type: 'error',
-    outsideLayout: false,
     allowDismiss: false
 };
 

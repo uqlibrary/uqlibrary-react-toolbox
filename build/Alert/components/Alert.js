@@ -91,8 +91,7 @@ var Alert = function Alert(_ref) {
 Alert.propTypes = {
     message: _propTypes.PropTypes.string.isRequired,
     title: _propTypes.PropTypes.string.isRequired,
-    type: _propTypes.PropTypes.oneOf(['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline']),
-    outsideLayout: _propTypes.PropTypes.bool,
+    type: _propTypes.PropTypes.oneOf(['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline', 'done']),
     action: _propTypes.PropTypes.func,
     actionButtonLabel: _propTypes.PropTypes.string,
     allowDismiss: _propTypes.PropTypes.bool,
@@ -103,7 +102,6 @@ Alert.defaultProps = {
     message: 'Unexpected error',
     title: 'Error',
     type: 'error',
-    outsideLayout: false,
     allowDismiss: false
 };
 
