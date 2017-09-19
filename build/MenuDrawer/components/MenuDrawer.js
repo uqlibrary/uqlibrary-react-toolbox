@@ -41,9 +41,7 @@ function MenuDrawer(_ref) {
             containerClassName: 'main-drawer',
             open: drawerOpen,
             width: 320,
-            onRequestChange: function onRequestChange() {
-                return toggleDrawer(!drawerOpen);
-            },
+            onRequestChange: toggleDrawer(),
             docked: docked },
         _react2.default.createElement(
             'div',
