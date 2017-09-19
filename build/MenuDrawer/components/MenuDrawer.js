@@ -41,9 +41,6 @@ function MenuDrawer(_ref) {
             containerClassName: 'main-drawer',
             open: drawerOpen,
             width: 320,
-            onRequestChange: function onRequestChange() {
-                return toggleDrawer(!drawerOpen);
-            },
             docked: docked },
         _react2.default.createElement(
             'div',
@@ -66,6 +63,7 @@ function MenuDrawer(_ref) {
                             _react2.default.createElement(_List.ListItem, {
                                 primaryText: menuItem.primaryText,
                                 secondaryText: menuItem.secondaryText,
+                                onClick: toggleDrawer,
                                 leftIcon: menuItem.leftIcon ? menuItem.leftIcon : null })
                         ) : _react2.default.createElement(
                             _reactRouterDom.Link,
@@ -73,6 +71,7 @@ function MenuDrawer(_ref) {
                             _react2.default.createElement(_List.ListItem, {
                                 primaryText: menuItem.primaryText,
                                 secondaryText: menuItem.secondaryText,
+                                onClick: toggleDrawer,
                                 leftIcon: menuItem.leftIcon ? menuItem.leftIcon : null })
                         )
                     );
