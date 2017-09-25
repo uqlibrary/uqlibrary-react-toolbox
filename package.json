@@ -147,11 +147,6 @@
     "release": "np",
     "eslint": "eslint 'src/**/*.js' --quiet"
   },
-  "babel": {
-    "presets": [
-      "latest"
-    ]
-  },
   "engines": {
     "npm": ">=3",
     "node": ">=6.2.2"
