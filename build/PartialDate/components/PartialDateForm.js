@@ -38,6 +38,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var moment = require('moment');
 
+var _ref = _react2.default.createElement(_MenuItem2.default, { key: -1, value: -1, primaryText: '' });
+
 var PartialDateForm = function (_Component) {
     _inherits(PartialDateForm, _Component);
 
@@ -171,7 +173,7 @@ var PartialDateForm = function (_Component) {
                             floatingLabelFixed: true,
                             errorText: this.errors.month,
                             onChange: this._onDateChanged('month') },
-                        _react2.default.createElement(_MenuItem2.default, { key: -1, value: -1, primaryText: '' }),
+                        _ref,
                         renderMonths
                     )
                 ),
@@ -201,15 +203,6 @@ var PartialDateForm = function (_Component) {
     return PartialDateForm;
 }(_react.Component);
 
-PartialDateForm.propTypes = {
-    locale: _propTypes2.default.object,
-    onChange: _propTypes2.default.func,
-    dateFormat: _propTypes2.default.string,
-    allowPartial: _propTypes2.default.bool,
-    disabled: _propTypes2.default.bool,
-    months: _propTypes2.default.array,
-    className: _propTypes2.default.string
-};
 PartialDateForm.defaultProps = {
     locale: {
         dayLabel: 'Day',

@@ -46,13 +46,3 @@ function StandardRighthandCard(_ref) {
         children
     );
 }
-
-StandardRighthandCard.propTypes = {
-    children: _propTypes2.default.any,
-    title: _propTypes2.default.string,
-    help: _propTypes2.default.shape({
-        title: _propTypes2.default.string,
-        text: _propTypes2.default.any,
-        buttonLabel: _propTypes2.default.string
-    })
-};

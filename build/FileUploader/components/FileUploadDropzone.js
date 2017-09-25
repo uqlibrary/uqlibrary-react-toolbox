@@ -40,6 +40,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var _ref3 = _react2.default.createElement(_FileUploadDropzoneStaticContent2.default, null);
+
 var FileUploadDropzone = function (_PureComponent) {
     _inherits(FileUploadDropzone, _PureComponent);
 
@@ -103,36 +105,39 @@ var FileUploadDropzone = function (_PureComponent) {
             var errorMessages = [];
             var message = void 0;
 
+            var _loop = function _loop(errorCode, files) {
+                var fileNames = [];
+                files.map(function (file) {
+                    fileNames.push(file.name);
+                });
+
+                if (files.length > 1) {
+                    message = multiple[errorCode].replace('[numberOfFiles]', files.length).replace('[filenames]', fileNames.join(', '));
+                } else if (files.length === 1) {
+                    message = single[errorCode].replace('[filename]', fileNames.join(', '));
+                }
+
+                if (errorCode === 'maxFiles') {
+                    errorMessages.push(message.replace('[maxNumberOfFiles]', _this.props.maxFiles));
+                } else {
+                    errorMessages.push(message);
+                }
+            };
+
             var _iteratorNormalCompletion = true;
             var _didIteratorError = false;
             var _iteratorError = undefined;
 
             try {
-                var _loop = function _loop() {
-                    var _step$value = _slicedToArray(_step.value, 2),
-                        errorCode = _step$value[0],
-                        files = _step$value[1];
-
-                    var fileNames = [];
-                    files.map(function (file) {
-                        fileNames.push(file.name);
-                    });
-
-                    if (files.length > 1) {
-                        message = multiple[errorCode].replace('[numberOfFiles]', files.length).replace('[filenames]', fileNames.join(', '));
-                    } else if (files.length === 1) {
-                        message = single[errorCode].replace('[filename]', fileNames.join(', '));
-                    }
-
-                    if (errorCode === 'maxFiles') {
-                        errorMessages.push(message.replace('[maxNumberOfFiles]', _this.props.maxFiles));
-                    } else {
-                        errorMessages.push(message);
-                    }
-                };
-
                 for (var _iterator = errors.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    _loop();
+                    var _ref = _step.value;
+
+                    var _ref2 = _slicedToArray(_ref, 2);
+
+                    var errorCode = _ref2[0];
+                    var files = _ref2[1];
+
+                    _loop(errorCode, files);
                 }
             } catch (err) {
                 _didIteratorError = true;
@@ -327,7 +332,7 @@ var FileUploadDropzone = function (_PureComponent) {
                                 disabled: this.props.disabled,
                                 disableClick: this.props.disabled,
                                 disablePreview: true },
-                            _react2.default.createElement(_FileUploadDropzoneStaticContent2.default, null)
+                            _ref3
                         )
                     )
                 ),
@@ -339,15 +344,6 @@ var FileUploadDropzone = function (_PureComponent) {
     return FileUploadDropzone;
 }(_react.PureComponent);
 
-FileUploadDropzone.propTypes = {
-    onDropped: _propTypes2.default.func.isRequired,
-    maxSize: _propTypes2.default.number.isRequired,
-    maxFiles: _propTypes2.default.number.isRequired,
-    uploadedFiles: _propTypes2.default.array,
-    locale: _propTypes2.default.object,
-    clearErrors: _propTypes2.default.bool,
-    disabled: _propTypes2.default.bool
-};
 FileUploadDropzone.defaultProps = {
     locale: {
         validation: {

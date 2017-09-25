@@ -34,6 +34,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var _ref = _react2.default.createElement(_person2.default, null);
+
+var _ref2 = _react2.default.createElement(_personOutline2.default, null);
+
 var AuthButton = function (_React$Component) {
     _inherits(AuthButton, _React$Component);
 
@@ -62,7 +66,7 @@ var AuthButton = function (_React$Component) {
                     { tooltipPosition: 'bottom-left', onClick: this.redirectUser,
                         tooltip: this.props.isAuthorizedUser ? this.props.signOutTooltipText : this.props.signInTooltipText,
                         className: this.props.isAuthorizedUser ? 'log-out-button' : 'log-in-button' },
-                    this.props.isAuthorizedUser ? _react2.default.createElement(_person2.default, null) : _react2.default.createElement(_personOutline2.default, null)
+                    this.props.isAuthorizedUser ? _ref : _ref2
                 )
             );
         }
@@ -71,13 +75,6 @@ var AuthButton = function (_React$Component) {
     return AuthButton;
 }(_react2.default.Component);
 
-AuthButton.propTypes = {
-    isAuthorizedUser: _propTypes2.default.bool.isRequired,
-    loginUrl: _propTypes2.default.string.isRequired,
-    logoutUrl: _propTypes2.default.string.isRequired,
-    signOutTooltipText: _propTypes2.default.string,
-    signInTooltipText: _propTypes2.default.string
-};
 AuthButton.defaultProps = {
     signOutTooltipText: 'Log out',
     signInTooltipText: 'Log in'

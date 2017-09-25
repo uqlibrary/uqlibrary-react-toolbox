@@ -90,12 +90,6 @@ var FileUploadEmbargoDate = function (_Component) {
     return FileUploadEmbargoDate;
 }(_react.Component);
 
-FileUploadEmbargoDate.propTypes = {
-    locale: _propTypes2.default.object,
-    defaultConfig: _propTypes2.default.object,
-    onDateChanged: _propTypes2.default.func,
-    disabled: _propTypes2.default.bool
-};
 FileUploadEmbargoDate.defaultProps = {
     locale: {
         datePickerLocale: 'en-AU'

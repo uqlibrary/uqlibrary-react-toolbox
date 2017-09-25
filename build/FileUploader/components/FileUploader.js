@@ -333,15 +333,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
     return FileUploader;
 }(_react.PureComponent);
 
-FileUploader.propTypes = {
-    onChange: _propTypes2.default.func,
-    locale: _propTypes2.default.object,
-    defaultConfig: _propTypes2.default.object,
-    overallProgress: _propTypes2.default.number,
-    requireFileAccess: _propTypes2.default.bool,
-    clearFileUpload: _propTypes2.default.func,
-    disabled: _propTypes2.default.bool
-};
 FileUploader.defaultProps = {
     overallProgress: 0,
     locale: {

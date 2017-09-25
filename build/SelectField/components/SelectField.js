@@ -4,8 +4,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -41,14 +39,6 @@ var SelectFieldWrapper = function SelectFieldWrapper(props) {
         props.help && props.help.text && _react2.default.createElement(_HelpDrawer.HelpIcon, props.help)
     );
 };
-
-SelectFieldWrapper.propTypes = _extends({}, _SelectField2.default.propTypes, {
-    help: _propTypes2.default.shape({
-        title: _propTypes2.default.string,
-        text: _propTypes2.default.any,
-        buttonLabel: _propTypes2.default.string
-    })
-});
 
 SelectFieldWrapper.defaultProps = {
     // TODO: investigate why disabling animation throws errors

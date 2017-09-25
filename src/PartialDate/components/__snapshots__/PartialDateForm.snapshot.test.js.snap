@@ -65,6 +65,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="-1"
         primaryText=""
         targetOrigin={
           Object {
@@ -86,6 +87,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="0"
         primaryText="January"
         targetOrigin={
           Object {
@@ -107,6 +109,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="1"
         primaryText="February"
         targetOrigin={
           Object {
@@ -128,6 +131,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="2"
         primaryText="March"
         targetOrigin={
           Object {
@@ -149,6 +153,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="3"
         primaryText="April"
         targetOrigin={
           Object {
@@ -170,6 +175,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="4"
         primaryText="May"
         targetOrigin={
           Object {
@@ -191,6 +197,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="5"
         primaryText="June"
         targetOrigin={
           Object {
@@ -212,6 +219,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="6"
         primaryText="July"
         targetOrigin={
           Object {
@@ -233,6 +241,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="7"
         primaryText="August"
         targetOrigin={
           Object {
@@ -254,6 +263,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="8"
         primaryText="September"
         targetOrigin={
           Object {
@@ -275,6 +285,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="9"
         primaryText="October"
         targetOrigin={
           Object {
@@ -296,6 +307,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="10"
         primaryText="November"
         targetOrigin={
           Object {
@@ -317,6 +329,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="11"
         primaryText="December"
         targetOrigin={
           Object {
@@ -420,6 +433,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="-1"
         primaryText=""
         targetOrigin={
           Object {
@@ -441,6 +455,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="0"
         primaryText="January"
         targetOrigin={
           Object {
@@ -462,6 +477,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="1"
         primaryText="February"
         targetOrigin={
           Object {
@@ -483,6 +499,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="2"
         primaryText="March"
         targetOrigin={
           Object {
@@ -504,6 +521,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="3"
         primaryText="April"
         targetOrigin={
           Object {
@@ -525,6 +543,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="4"
         primaryText="May"
         targetOrigin={
           Object {
@@ -546,6 +565,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="5"
         primaryText="June"
         targetOrigin={
           Object {
@@ -567,6 +587,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="6"
         primaryText="July"
         targetOrigin={
           Object {
@@ -588,6 +609,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="7"
         primaryText="August"
         targetOrigin={
           Object {
@@ -609,6 +631,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="8"
         primaryText="September"
         targetOrigin={
           Object {
@@ -630,6 +653,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="9"
         primaryText="October"
         targetOrigin={
           Object {
@@ -651,6 +675,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="10"
         primaryText="November"
         targetOrigin={
           Object {
@@ -672,6 +697,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="11"
         primaryText="December"
         targetOrigin={
           Object {
@@ -777,6 +803,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="-1"
         primaryText=""
         targetOrigin={
           Object {
@@ -798,6 +825,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="0"
         primaryText="January"
         targetOrigin={
           Object {
@@ -819,6 +847,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="1"
         primaryText="February"
         targetOrigin={
           Object {
@@ -840,6 +869,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="2"
         primaryText="March"
         targetOrigin={
           Object {
@@ -861,6 +891,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="3"
         primaryText="April"
         targetOrigin={
           Object {
@@ -882,6 +913,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="4"
         primaryText="May"
         targetOrigin={
           Object {
@@ -903,6 +935,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="5"
         primaryText="June"
         targetOrigin={
           Object {
@@ -924,6 +957,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="6"
         primaryText="July"
         targetOrigin={
           Object {
@@ -945,6 +979,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="7"
         primaryText="August"
         targetOrigin={
           Object {
@@ -966,6 +1001,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="8"
         primaryText="September"
         targetOrigin={
           Object {
@@ -987,6 +1023,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="9"
         primaryText="October"
         targetOrigin={
           Object {
@@ -1008,6 +1045,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="10"
         primaryText="November"
         targetOrigin={
           Object {
@@ -1029,6 +1067,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
         disabled={false}
         focusState="none"
         insetChildren={false}
+        key="11"
         primaryText="December"
         targetOrigin={
           Object {

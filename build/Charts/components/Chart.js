@@ -67,8 +67,4 @@ var Chart = function (_React$Component) {
     return Chart;
 }(_react2.default.Component);
 
-Chart.propTypes = {
-    chartOptions: _propTypes.PropTypes.object.isRequired,
-    className: _propTypes.PropTypes.string
-};
 exports.default = Chart;

@@ -32,6 +32,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var _ref = _react2.default.createElement(
+    _FontIcon2.default,
+    { className: 'material-icons' },
+    'delete_forever'
+);
+
 var FileUploadRowHeader = function (_Component) {
     _inherits(FileUploadRowHeader, _Component);
 
@@ -90,11 +96,7 @@ var FileUploadRowHeader = function (_Component) {
                     _react2.default.createElement(
                         _IconButton2.default,
                         { tooltip: deleteAllFiles, onTouchTap: this._showConfirmation, disabled: this.props.disabled },
-                        _react2.default.createElement(
-                            _FontIcon2.default,
-                            { className: 'material-icons' },
-                            'delete_forever'
-                        )
+                        _ref
                     )
                 )
             );
@@ -104,12 +106,6 @@ var FileUploadRowHeader = function (_Component) {
     return FileUploadRowHeader;
 }(_react.Component);
 
-FileUploadRowHeader.propTypes = {
-    onDeleteAll: _propTypes2.default.func.isRequired,
-    locale: _propTypes2.default.object,
-    requireFileAccess: _propTypes2.default.bool,
-    disabled: _propTypes2.default.bool
-};
 FileUploadRowHeader.defaultProps = {
     locale: {
         filenameColumn: 'Filename',

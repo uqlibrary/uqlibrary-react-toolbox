@@ -32,6 +32,24 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var _ref = _react2.default.createElement(
+    _FontIcon2.default,
+    { className: 'material-icons' },
+    'keyboard_arrow_up'
+);
+
+var _ref2 = _react2.default.createElement(
+    _FontIcon2.default,
+    { className: 'material-icons' },
+    'keyboard_arrow_down'
+);
+
+var _ref3 = _react2.default.createElement(
+    _FontIcon2.default,
+    { className: 'material-icons deleteIcon' },
+    'delete'
+);
+
 var ListRow = function (_Component) {
     _inherits(ListRow, _Component);
 
@@ -88,11 +106,7 @@ var ListRow = function (_Component) {
                             onTouchTap: this.onMoveUp,
                             className: 'reorderUp',
                             disabled: this.props.disabled },
-                        _react2.default.createElement(
-                            _FontIcon2.default,
-                            { className: 'material-icons' },
-                            'keyboard_arrow_up'
-                        )
+                        _ref
                     ),
                     this.props.canMoveDown && _react2.default.createElement(
                         _IconButton2.default,
@@ -101,11 +115,7 @@ var ListRow = function (_Component) {
                             onTouchTap: this.onMoveDown,
                             className: 'reorderDown',
                             disabled: this.props.disabled },
-                        _react2.default.createElement(
-                            _FontIcon2.default,
-                            { className: 'material-icons' },
-                            'keyboard_arrow_down'
-                        )
+                        _ref2
                     )
                 ),
                 _react2.default.createElement(
@@ -118,11 +128,7 @@ var ListRow = function (_Component) {
                             tooltip: this.props.locale.deleteHint,
                             onTouchTap: this.showConfirmation,
                             disabled: this.props.disabled },
-                        _react2.default.createElement(
-                            _FontIcon2.default,
-                            { className: 'material-icons deleteIcon' },
-                            'delete'
-                        )
+                        _ref3
                     )
                 )
             );
@@ -132,17 +138,6 @@ var ListRow = function (_Component) {
     return ListRow;
 }(_react.Component);
 
-ListRow.propTypes = {
-    index: _propTypes2.default.number.isRequired,
-    item: _propTypes2.default.string.isRequired,
-    canMoveUp: _propTypes2.default.bool,
-    canMoveDown: _propTypes2.default.bool,
-    onMoveUp: _propTypes2.default.func,
-    onMoveDown: _propTypes2.default.func,
-    onDelete: _propTypes2.default.func,
-    locale: _propTypes2.default.object,
-    disabled: _propTypes2.default.bool
-};
 ListRow.defaultProps = {
     locale: {
         moveUpHint: 'Move item up the order',

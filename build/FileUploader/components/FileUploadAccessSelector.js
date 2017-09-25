@@ -95,12 +95,6 @@ var FileUploadAccessSelector = function (_Component) {
     return FileUploadAccessSelector;
 }(_react.Component);
 
-FileUploadAccessSelector.propTypes = {
-    onAccessChanged: _propTypes2.default.func,
-    locale: _propTypes2.default.object,
-    defaultConfig: _propTypes2.default.object,
-    disabled: _propTypes2.default.bool
-};
 FileUploadAccessSelector.defaultProps = {
     locale: {
         initialValue: 'Select access conditions',

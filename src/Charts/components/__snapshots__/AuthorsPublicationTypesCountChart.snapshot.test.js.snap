@@ -42,7 +42,7 @@ exports[`AuthorsPublicationTypesCountChart snapshot tests it should render chart
           "size": "100%",
         },
       },
-      "series": Object {},
+      "series": Array [],
       "subtitle": Object {
         "text": "",
       },

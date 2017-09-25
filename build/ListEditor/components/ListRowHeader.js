@@ -32,6 +32,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var _ref = _react2.default.createElement(
+    _FontIcon2.default,
+    { className: 'material-icons' },
+    'delete_forever'
+);
+
 var ListRowHeader = function (_Component) {
     _inherits(ListRowHeader, _Component);
 
@@ -87,11 +93,7 @@ var ListRowHeader = function (_Component) {
                             tooltip: deleteAll,
                             onTouchTap: this.showConfirmation,
                             disabled: this.props.disabled },
-                        _react2.default.createElement(
-                            _FontIcon2.default,
-                            { className: 'material-icons' },
-                            'delete_forever'
-                        )
+                        _ref
                     )
                 )
             );
@@ -101,11 +103,6 @@ var ListRowHeader = function (_Component) {
     return ListRowHeader;
 }(_react.Component);
 
-ListRowHeader.propTypes = {
-    onDeleteAll: _propTypes2.default.func.isRequired,
-    locale: _propTypes2.default.object,
-    disabled: _propTypes2.default.bool
-};
 ListRowHeader.defaultProps = {
     locale: {
         nameColumn: 'Name',

@@ -146,15 +146,6 @@ var ListsEditor = function (_Component) {
     return ListsEditor;
 }(_react.Component);
 
-ListsEditor.propTypes = {
-    className: _propTypes2.default.string,
-    searchKey: _propTypes2.default.object.isRequired,
-    maxCount: _propTypes2.default.number,
-    isValid: _propTypes2.default.func,
-    disabled: _propTypes2.default.bool,
-    onChange: _propTypes2.default.func,
-    locale: _propTypes2.default.object
-};
 ListsEditor.defaultProps = {
     maxCount: 0,
     searchKey: {

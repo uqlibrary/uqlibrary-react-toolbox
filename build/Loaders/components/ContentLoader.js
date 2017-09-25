@@ -34,7 +34,3 @@ function ContentLoader(_ref) {
         )
     );
 }
-
-ContentLoader.propTypes = {
-    message: _propTypes2.default.string
-};

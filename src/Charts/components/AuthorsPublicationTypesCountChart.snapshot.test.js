@@ -16,7 +16,7 @@ function setup({series, categories, yAxisTitle}) {
 
 describe('AuthorsPublicationTypesCountChart snapshot tests', () => {
     it('it should render chart component', () => {
-        const app = setup({series: {}});
+        const app = setup({series: []});
         expect(toJson(app)).toMatchSnapshot();
     });
 });

@@ -27,6 +27,8 @@ var _Drawer2 = _interopRequireDefault(_Drawer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _ref2 = _react2.default.createElement(_Divider2.default, null);
+
 function MenuDrawer(_ref) {
     var menuItems = _ref.menuItems,
         toggleDrawer = _ref.toggleDrawer,
@@ -60,7 +62,7 @@ function MenuDrawer(_ref) {
                     return menuItem.primaryText && menuItem.linkTo && _react2.default.createElement(
                         'span',
                         { className: 'menu-item-container', key: index },
-                        menuItem.divider ? _react2.default.createElement(_Divider2.default, null) : menuItem.target && menuItem.linkTo.indexOf('http') === -1 ? _react2.default.createElement(
+                        menuItem.divider ? _ref2 : menuItem.target && menuItem.linkTo.indexOf('http') === -1 ? _react2.default.createElement(
                             'a',
                             { href: menuItem.linkTo, target: menuItem.target },
                             _react2.default.createElement(_List.ListItem, {
@@ -83,12 +85,3 @@ function MenuDrawer(_ref) {
         )
     );
 }
-
-MenuDrawer.propTypes = {
-    menuItems: _propTypes2.default.array.isRequired,
-    logoImage: _propTypes2.default.string,
-    logoText: _propTypes2.default.string,
-    drawerOpen: _propTypes2.default.bool,
-    docked: _propTypes2.default.bool,
-    toggleDrawer: _propTypes2.default.func
-};

@@ -30,6 +30,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var _ref = _react2.default.createElement('div', { className: 'column is-hidden-mobile' });
+
+var _ref2 = _react2.default.createElement('div', { className: 'is-clearfix' });
+
 var ConfirmDialogBox = function (_Component) {
     _inherits(ConfirmDialogBox, _Component);
 
@@ -92,7 +96,7 @@ var ConfirmDialogBox = function (_Component) {
             var actions = [_react2.default.createElement(
                 'div',
                 { className: 'columns dialog-actions ConfirmDialogBox-actions' },
-                _react2.default.createElement('div', { className: 'column is-hidden-mobile' }),
+                _ref,
                 !this.props.hideCancelButton && _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow' },
@@ -113,7 +117,7 @@ var ConfirmDialogBox = function (_Component) {
                         keyboardFocused: true,
                         onTouchTap: this._onAction })
                 ),
-                _react2.default.createElement('div', { className: 'is-clearfix' })
+                _ref2
             )];
 
             return _react2.default.createElement(
@@ -131,13 +135,6 @@ var ConfirmDialogBox = function (_Component) {
     return ConfirmDialogBox;
 }(_react.Component);
 
-ConfirmDialogBox.propTypes = {
-    locale: _propTypes2.default.object,
-    onAction: _propTypes2.default.func,
-    onCancelAction: _propTypes2.default.func,
-    hideCancelButton: _propTypes2.default.bool,
-    onRef: _propTypes2.default.func
-};
 ConfirmDialogBox.defaultProps = {
     hideCancelButton: false,
     locale: {

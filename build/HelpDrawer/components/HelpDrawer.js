@@ -81,7 +81,6 @@ var HelpDrawer = function HelpDrawer(_ref) {
     );
 };
 
-HelpDrawer.propTypes = propTypes;
 HelpDrawer.defaultProps = defaultProps;
 
 exports.default = HelpDrawer;

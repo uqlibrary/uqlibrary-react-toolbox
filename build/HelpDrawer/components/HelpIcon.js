@@ -62,7 +62,6 @@ var HelpIcon = function HelpIcon(_ref) {
     );
 };
 
-HelpIcon.propTypes = propTypes;
 HelpIcon.defaultProps = defaultProps;
 
 exports.default = HelpIcon;

@@ -28,6 +28,8 @@ var _close2 = _interopRequireDefault(_close);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _ref2 = _react2.default.createElement(_close2.default, { className: 'alertDismiss' });
+
 var Alert = function Alert(_ref) {
     var title = _ref.title,
         message = _ref.message,
@@ -80,22 +82,12 @@ var Alert = function Alert(_ref) {
                     _react2.default.createElement(
                         _IconButton2.default,
                         { onTouchTap: dismissAction },
-                        _react2.default.createElement(_close2.default, { className: 'alertDismiss' })
+                        _ref2
                     )
                 )
             )
         )
     );
-};
-
-Alert.propTypes = {
-    message: _propTypes.PropTypes.string.isRequired,
-    title: _propTypes.PropTypes.string.isRequired,
-    type: _propTypes.PropTypes.oneOf(['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline', 'done']),
-    action: _propTypes.PropTypes.func,
-    actionButtonLabel: _propTypes.PropTypes.string,
-    allowDismiss: _propTypes.PropTypes.bool,
-    dismissAction: _propTypes.PropTypes.func
 };
 
 Alert.defaultProps = {

@@ -19,32 +19,42 @@ var _CircularProgress2 = _interopRequireDefault(_CircularProgress);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _ref2 = _react2.default.createElement('br', null);
+
+var _ref3 = _react2.default.createElement('br', null);
+
+var _ref4 = _react2.default.createElement(_CircularProgress2.default, { size: 60, thickness: 8 });
+
+var _ref5 = _react2.default.createElement('br', null);
+
+var _ref6 = _react2.default.createElement('br', null);
+
+var _ref7 = _react2.default.createElement('br', null);
+
+var _ref8 = _react2.default.createElement('br', null);
+
 function InlineLoader(_ref) {
     var message = _ref.message;
 
     return _react2.default.createElement(
         'div',
         { className: 'column align-center' },
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(_CircularProgress2.default, { size: 60, thickness: 8 }),
+        _ref2,
+        _ref3,
+        _ref4,
         ' ',
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null),
+        _ref5,
+        _ref6,
         _react2.default.createElement(
             'span',
             { className: 'title is-4' },
             message
         ),
         ' ',
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('br', null)
+        _ref7,
+        _ref8
     );
 }
-
-InlineLoader.propTypes = {
-    message: _propTypes2.default.string
-};
 
 InlineLoader.defaultProps = {
     message: 'Loading...'

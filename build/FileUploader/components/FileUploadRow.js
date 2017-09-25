@@ -52,6 +52,36 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var moment = require('moment');
 
+var _ref = _react2.default.createElement(
+    _FontIcon2.default,
+    { className: 'material-icons mobile-icon is-hidden-desktop is-hidden-tablet' },
+    'attachment'
+);
+
+var _ref2 = _react2.default.createElement(
+    _FontIcon2.default,
+    { className: 'material-icons mobile-icon is-hidden-desktop is-hidden-tablet' },
+    'lock_outline'
+);
+
+var _ref3 = _react2.default.createElement(
+    _FontIcon2.default,
+    { className: 'material-icons mobile-icon is-hidden-desktop is-hidden-tablet' },
+    'date_range'
+);
+
+var _ref4 = _react2.default.createElement(
+    _FontIcon2.default,
+    { className: 'material-icons deleteIcon' },
+    'delete'
+);
+
+var _ref5 = _react2.default.createElement(
+    _FontIcon2.default,
+    { className: 'material-icons green-tick' },
+    'done'
+);
+
 var FileUploadRow = function (_Component) {
     _inherits(FileUploadRow, _Component);
 
@@ -125,11 +155,7 @@ var FileUploadRow = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile' },
-                    _react2.default.createElement(
-                        _FontIcon2.default,
-                        { className: 'material-icons mobile-icon is-hidden-desktop is-hidden-tablet' },
-                        'attachment'
-                    ),
+                    _ref,
                     _react2.default.createElement(
                         'div',
                         { className: 'file-name' },
@@ -154,11 +180,7 @@ var FileUploadRow = function (_Component) {
                     this.props.requireFileAccess && _react2.default.createElement(
                         'div',
                         { className: 'file-access-selector' },
-                        _react2.default.createElement(
-                            _FontIcon2.default,
-                            { className: 'material-icons mobile-icon is-hidden-desktop is-hidden-tablet' },
-                            'lock_outline'
-                        ),
+                        _ref2,
                         _react2.default.createElement(
                             'div',
                             { className: 'select-container' },
@@ -177,11 +199,7 @@ var FileUploadRow = function (_Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'embargo-date-info' },
-                        _react2.default.createElement(
-                            _FontIcon2.default,
-                            { className: 'material-icons mobile-icon is-hidden-desktop is-hidden-tablet' },
-                            'date_range'
-                        ),
+                        _ref3,
                         this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) && _react2.default.createElement(
                             'div',
                             { className: 'no-embargo-date' },
@@ -214,11 +232,7 @@ var FileUploadRow = function (_Component) {
                     _react2.default.createElement(
                         _IconButton2.default,
                         { tooltip: this.props.locale.deleteHint, onTouchTap: this._showConfirmation, disabled: this.props.disabled },
-                        _react2.default.createElement(
-                            _FontIcon2.default,
-                            { className: 'material-icons deleteIcon' },
-                            'delete'
-                        )
+                        _ref4
                     )
                 ),
                 this.props.progress > 0 && this.props.progress !== 100 && _react2.default.createElement(
@@ -232,11 +246,7 @@ var FileUploadRow = function (_Component) {
                         thickness: 4
                     })
                 ),
-                this.props.progress === 100 && _react2.default.createElement(
-                    _FontIcon2.default,
-                    { className: 'material-icons green-tick' },
-                    'done'
-                )
+                this.props.progress === 100 && _ref5
             );
         }
     }]);
@@ -244,17 +254,6 @@ var FileUploadRow = function (_Component) {
     return FileUploadRow;
 }(_react.Component);
 
-FileUploadRow.propTypes = {
-    index: _propTypes2.default.number.isRequired,
-    uploadedFile: _propTypes2.default.object.isRequired,
-    onDelete: _propTypes2.default.func.isRequired,
-    onAttributeChanged: _propTypes2.default.func.isRequired,
-    locale: _propTypes2.default.object,
-    progress: _propTypes2.default.number,
-    requireFileAccess: _propTypes2.default.bool.isRequired,
-    fileSizeUnit: _propTypes2.default.string,
-    disabled: _propTypes2.default.bool
-};
 FileUploadRow.defaultProps = {
     locale: {
         deleteHint: 'Remove this file',

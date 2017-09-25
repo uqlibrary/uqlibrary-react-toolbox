@@ -95,10 +95,6 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
     return AuthorsPublicationTypesCountChart;
 }(_react2.default.Component);
 
-AuthorsPublicationTypesCountChart.propTypes = {
-    className: _propTypes.PropTypes.string,
-    series: _propTypes.PropTypes.array
-};
 AuthorsPublicationTypesCountChart.defaultProps = {
     series: [{
         name: 'Publications count by type',

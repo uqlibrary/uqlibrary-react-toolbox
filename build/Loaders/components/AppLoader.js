@@ -19,6 +19,14 @@ var _CircularProgress2 = _interopRequireDefault(_CircularProgress);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _ref2 = _react2.default.createElement('br', null);
+
+var _ref3 = _react2.default.createElement('br', null);
+
+var _ref4 = _react2.default.createElement('br', null);
+
+var _ref5 = _react2.default.createElement('br', null);
+
 function AppLoader(_ref) {
     var title = _ref.title,
         logoImage = _ref.logoImage,
@@ -36,22 +44,15 @@ function AppLoader(_ref) {
                 { className: 'title is-2 color-reverse' },
                 title
             ),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
+            _ref2,
+            _ref3,
             _react2.default.createElement(_CircularProgress2.default, { size: 80, thickness: 8, color: progressColor }),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
+            _ref4,
+            _ref5,
             logoImage && _react2.default.createElement('img', { src: logoImage, alt: logoText })
         )
     );
 }
-
-AppLoader.propTypes = {
-    title: _propTypes2.default.string.isRequired,
-    logoImage: _propTypes2.default.string,
-    logoText: _propTypes2.default.string,
-    progressColor: _propTypes2.default.string
-};
 
 AppLoader.defaultProps = {
     progressColor: '#FFF'

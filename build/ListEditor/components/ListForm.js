@@ -106,12 +106,6 @@ var ListForm = function (_Component) {
     return ListForm;
 }(_react.Component);
 
-ListForm.propTypes = {
-    onAdd: _propTypes2.default.func.isRequired,
-    isValid: _propTypes2.default.func,
-    locale: _propTypes2.default.object,
-    disabled: _propTypes2.default.bool
-};
 ListForm.defaultProps = {
     isValid: function isValid() {
         return '';
