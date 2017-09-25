@@ -138,6 +138,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -316,6 +317,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -505,6 +507,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -705,6 +708,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                       "fontWeight": "inherit",
                       "height": 48,
                       "margin": 0,
+                      "muiPrepared": true,
                       "outline": "none",
                       "overflow": "visible",
                       "padding": 12,
@@ -753,6 +757,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                               "fontSize": "10px",
                               "left": 24,
                               "lineHeight": "22px",
+                              "muiPrepared": true,
                               "opacity": 0,
                               "overflow": "hidden",
                               "padding": "0 8px",
@@ -771,6 +776,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                                 "backgroundColor": "transparent",
                                 "borderRadius": "50%",
                                 "left": "50%",
+                                "muiPrepared": true,
                                 "position": "absolute",
                                 "top": 0,
                                 "transform": "translate(-50%, -50%)",
@@ -781,6 +787,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                           <span
                             style={
                               Object {
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "whiteSpace": "nowrap",
                               }
@@ -806,6 +813,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -958,6 +966,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
@@ -1008,6 +1017,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -1086,6 +1096,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                         "fontWeight": "inherit",
                         "height": 48,
                         "margin": 0,
+                        "muiPrepared": true,
                         "outline": "none",
                         "overflow": "visible",
                         "padding": 12,
@@ -1134,6 +1145,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                                 "fontSize": "10px",
                                 "left": 24,
                                 "lineHeight": "22px",
+                                "muiPrepared": true,
                                 "opacity": 0,
                                 "overflow": "hidden",
                                 "padding": "0 8px",
@@ -1152,6 +1164,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                                   "backgroundColor": "transparent",
                                   "borderRadius": "50%",
                                   "left": "50%",
+                                  "muiPrepared": true,
                                   "position": "absolute",
                                   "top": 0,
                                   "transform": "translate(-50%, -50%)",
@@ -1162,6 +1175,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                             <span
                               style={
                                 Object {
+                                  "muiPrepared": true,
                                   "position": "relative",
                                   "whiteSpace": "nowrap",
                                 }
@@ -1187,6 +1201,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                                 "color": "rgba(0, 0, 0, 0.87)",
                                 "display": "inline-block",
                                 "fontSize": 24,
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                 "userSelect": "none",
@@ -1340,6 +1355,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
@@ -1390,6 +1406,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -1468,6 +1485,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                         "fontWeight": "inherit",
                         "height": 48,
                         "margin": 0,
+                        "muiPrepared": true,
                         "outline": "none",
                         "overflow": "visible",
                         "padding": 12,
@@ -1516,6 +1534,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                                 "fontSize": "10px",
                                 "left": 24,
                                 "lineHeight": "22px",
+                                "muiPrepared": true,
                                 "opacity": 0,
                                 "overflow": "hidden",
                                 "padding": "0 8px",
@@ -1534,6 +1553,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                                   "backgroundColor": "transparent",
                                   "borderRadius": "50%",
                                   "left": "50%",
+                                  "muiPrepared": true,
                                   "position": "absolute",
                                   "top": 0,
                                   "transform": "translate(-50%, -50%)",
@@ -1544,6 +1564,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                             <span
                               style={
                                 Object {
+                                  "muiPrepared": true,
                                   "position": "relative",
                                   "whiteSpace": "nowrap",
                                 }
@@ -1569,6 +1590,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                                 "color": "rgba(0, 0, 0, 0.87)",
                                 "display": "inline-block",
                                 "fontSize": 24,
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                 "userSelect": "none",
@@ -1737,6 +1759,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -1937,6 +1960,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                       "fontWeight": "inherit",
                       "height": 48,
                       "margin": 0,
+                      "muiPrepared": true,
                       "outline": "none",
                       "overflow": "visible",
                       "padding": 12,
@@ -1985,6 +2009,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                               "fontSize": "10px",
                               "left": 24,
                               "lineHeight": "22px",
+                              "muiPrepared": true,
                               "opacity": 0,
                               "overflow": "hidden",
                               "padding": "0 8px",
@@ -2003,6 +2028,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                                 "backgroundColor": "transparent",
                                 "borderRadius": "50%",
                                 "left": "50%",
+                                "muiPrepared": true,
                                 "position": "absolute",
                                 "top": 0,
                                 "transform": "translate(-50%, -50%)",
@@ -2013,6 +2039,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                           <span
                             style={
                               Object {
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "whiteSpace": "nowrap",
                               }
@@ -2038,6 +2065,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -2190,6 +2218,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
@@ -2240,6 +2269,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -2318,6 +2348,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                         "fontWeight": "inherit",
                         "height": 48,
                         "margin": 0,
+                        "muiPrepared": true,
                         "outline": "none",
                         "overflow": "visible",
                         "padding": 12,
@@ -2366,6 +2397,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                                 "fontSize": "10px",
                                 "left": 24,
                                 "lineHeight": "22px",
+                                "muiPrepared": true,
                                 "opacity": 0,
                                 "overflow": "hidden",
                                 "padding": "0 8px",
@@ -2384,6 +2416,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                                   "backgroundColor": "transparent",
                                   "borderRadius": "50%",
                                   "left": "50%",
+                                  "muiPrepared": true,
                                   "position": "absolute",
                                   "top": 0,
                                   "transform": "translate(-50%, -50%)",
@@ -2394,6 +2427,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                             <span
                               style={
                                 Object {
+                                  "muiPrepared": true,
                                   "position": "relative",
                                   "whiteSpace": "nowrap",
                                 }
@@ -2419,6 +2453,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                                 "color": "rgba(0, 0, 0, 0.87)",
                                 "display": "inline-block",
                                 "fontSize": 24,
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                 "userSelect": "none",
@@ -2580,6 +2615,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -2758,6 +2794,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -2947,6 +2984,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -3157,6 +3195,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                       "fontWeight": "inherit",
                       "height": 48,
                       "margin": 0,
+                      "muiPrepared": true,
                       "outline": "none",
                       "overflow": "visible",
                       "padding": 12,
@@ -3205,6 +3244,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                               "fontSize": "10px",
                               "left": 24,
                               "lineHeight": "22px",
+                              "muiPrepared": true,
                               "opacity": 0,
                               "overflow": "hidden",
                               "padding": "0 8px",
@@ -3223,6 +3263,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                 "backgroundColor": "transparent",
                                 "borderRadius": "50%",
                                 "left": "50%",
+                                "muiPrepared": true,
                                 "position": "absolute",
                                 "top": 0,
                                 "transform": "translate(-50%, -50%)",
@@ -3233,6 +3274,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                           <span
                             style={
                               Object {
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "whiteSpace": "nowrap",
                               }
@@ -3258,6 +3300,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -3410,6 +3453,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
@@ -3457,6 +3501,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -3538,6 +3583,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                               "fontSize": 16,
                               "height": 48,
                               "lineHeight": "24px",
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": 256,
@@ -3970,6 +4016,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                 Object {
                                   "bottom": 12,
                                   "color": "rgba(0, 0, 0, 0.3)",
+                                  "muiPrepared": true,
                                   "opacity": 1,
                                   "position": "absolute",
                                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -4051,6 +4098,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                   "fontFamily": "Roboto, sans-serif",
                                   "fontSize": 15,
                                   "height": "100%",
+                                  "muiPrepared": true,
                                   "outline": "none",
                                   "padding": 0,
                                   "position": "relative",
@@ -4103,6 +4151,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                       Object {
                                         "cursor": "pointer",
                                         "height": "100%",
+                                        "muiPrepared": true,
                                         "position": "relative",
                                         "width": "100%",
                                       }
@@ -4115,6 +4164,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                           "boxSizing": "border-box",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -4124,6 +4174,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                           "color": "rgba(0, 0, 0, 0.87)",
                                           "height": "56px",
                                           "lineHeight": "56px",
+                                          "muiPrepared": true,
                                           "opacity": 1,
                                           "overflow": "hidden",
                                           "paddingLeft": 0,
@@ -4215,6 +4266,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                               "fontWeight": "inherit",
                                               "height": 48,
                                               "margin": 0,
+                                              "muiPrepared": true,
                                               "outline": "none",
                                               "overflow": "visible",
                                               "padding": 12,
@@ -4270,6 +4322,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                                         "display": "inline-block",
                                                         "fill": "inherit",
                                                         "height": 24,
+                                                        "muiPrepared": true,
                                                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                                         "userSelect": "none",
                                                         "width": 24,
@@ -4295,6 +4348,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                           "bottom": 1,
                                           "left": 0,
                                           "margin": "-1px 24px",
+                                          "muiPrepared": true,
                                           "position": "absolute",
                                           "right": 0,
                                         }
@@ -4308,6 +4362,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                           "clear": "both",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -4804,6 +4859,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "width": "100%",
                                   }
@@ -4822,6 +4878,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "transform": "scaleX(1)",
                                     "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -4838,6 +4895,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                 "color": "#f44336",
                                 "fontSize": 12,
                                 "lineHeight": "12px",
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               }
@@ -4877,6 +4935,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -4967,6 +5026,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                         "fontWeight": "inherit",
                         "height": 48,
                         "margin": 0,
+                        "muiPrepared": true,
                         "outline": "none",
                         "overflow": "visible",
                         "padding": 12,
@@ -5015,6 +5075,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                 "fontSize": "10px",
                                 "left": 24,
                                 "lineHeight": "22px",
+                                "muiPrepared": true,
                                 "opacity": 0,
                                 "overflow": "hidden",
                                 "padding": "0 8px",
@@ -5033,6 +5094,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                   "backgroundColor": "transparent",
                                   "borderRadius": "50%",
                                   "left": "50%",
+                                  "muiPrepared": true,
                                   "position": "absolute",
                                   "top": 0,
                                   "transform": "translate(-50%, -50%)",
@@ -5043,6 +5105,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                             <span
                               style={
                                 Object {
+                                  "muiPrepared": true,
                                   "position": "relative",
                                   "whiteSpace": "nowrap",
                                 }
@@ -5068,6 +5131,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                 "color": "rgba(0, 0, 0, 0.87)",
                                 "display": "inline-block",
                                 "fontSize": 24,
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                 "userSelect": "none",
@@ -5221,6 +5285,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
@@ -5268,6 +5333,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -5349,6 +5415,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                               "fontSize": 16,
                               "height": 48,
                               "lineHeight": "24px",
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": 256,
@@ -5781,6 +5848,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                 Object {
                                   "bottom": 12,
                                   "color": "rgba(0, 0, 0, 0.3)",
+                                  "muiPrepared": true,
                                   "opacity": 1,
                                   "position": "absolute",
                                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -5862,6 +5930,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                   "fontFamily": "Roboto, sans-serif",
                                   "fontSize": 15,
                                   "height": "100%",
+                                  "muiPrepared": true,
                                   "outline": "none",
                                   "padding": 0,
                                   "position": "relative",
@@ -5914,6 +5983,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                       Object {
                                         "cursor": "pointer",
                                         "height": "100%",
+                                        "muiPrepared": true,
                                         "position": "relative",
                                         "width": "100%",
                                       }
@@ -5926,6 +5996,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                           "boxSizing": "border-box",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -5935,6 +6006,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                           "color": "rgba(0, 0, 0, 0.87)",
                                           "height": "56px",
                                           "lineHeight": "56px",
+                                          "muiPrepared": true,
                                           "opacity": 1,
                                           "overflow": "hidden",
                                           "paddingLeft": 0,
@@ -6026,6 +6098,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                               "fontWeight": "inherit",
                                               "height": 48,
                                               "margin": 0,
+                                              "muiPrepared": true,
                                               "outline": "none",
                                               "overflow": "visible",
                                               "padding": 12,
@@ -6081,6 +6154,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                                         "display": "inline-block",
                                                         "fill": "inherit",
                                                         "height": 24,
+                                                        "muiPrepared": true,
                                                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                                         "userSelect": "none",
                                                         "width": 24,
@@ -6106,6 +6180,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                           "bottom": 1,
                                           "left": 0,
                                           "margin": "-1px 24px",
+                                          "muiPrepared": true,
                                           "position": "absolute",
                                           "right": 0,
                                         }
@@ -6119,6 +6194,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                           "clear": "both",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -6615,6 +6691,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "width": "100%",
                                   }
@@ -6633,6 +6710,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "transform": "scaleX(1)",
                                     "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -6649,6 +6727,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                 "color": "#f44336",
                                 "fontSize": 12,
                                 "lineHeight": "12px",
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               }
@@ -6688,6 +6767,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -6778,6 +6858,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                         "fontWeight": "inherit",
                         "height": 48,
                         "margin": 0,
+                        "muiPrepared": true,
                         "outline": "none",
                         "overflow": "visible",
                         "padding": 12,
@@ -6826,6 +6907,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                 "fontSize": "10px",
                                 "left": 24,
                                 "lineHeight": "22px",
+                                "muiPrepared": true,
                                 "opacity": 0,
                                 "overflow": "hidden",
                                 "padding": "0 8px",
@@ -6844,6 +6926,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                   "backgroundColor": "transparent",
                                   "borderRadius": "50%",
                                   "left": "50%",
+                                  "muiPrepared": true,
                                   "position": "absolute",
                                   "top": 0,
                                   "transform": "translate(-50%, -50%)",
@@ -6854,6 +6937,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                             <span
                               style={
                                 Object {
+                                  "muiPrepared": true,
                                   "position": "relative",
                                   "whiteSpace": "nowrap",
                                 }
@@ -6879,6 +6963,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                 "color": "rgba(0, 0, 0, 0.87)",
                                 "display": "inline-block",
                                 "fontSize": 24,
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                 "userSelect": "none",
@@ -7052,6 +7137,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -7262,6 +7348,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                       "fontWeight": "inherit",
                       "height": 48,
                       "margin": 0,
+                      "muiPrepared": true,
                       "outline": "none",
                       "overflow": "visible",
                       "padding": 12,
@@ -7310,6 +7397,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                               "fontSize": "10px",
                               "left": 24,
                               "lineHeight": "22px",
+                              "muiPrepared": true,
                               "opacity": 0,
                               "overflow": "hidden",
                               "padding": "0 8px",
@@ -7328,6 +7416,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                 "backgroundColor": "transparent",
                                 "borderRadius": "50%",
                                 "left": "50%",
+                                "muiPrepared": true,
                                 "position": "absolute",
                                 "top": 0,
                                 "transform": "translate(-50%, -50%)",
@@ -7338,6 +7427,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                           <span
                             style={
                               Object {
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "whiteSpace": "nowrap",
                               }
@@ -7363,6 +7453,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -7517,6 +7608,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
@@ -7564,6 +7656,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -7645,6 +7738,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                               "fontSize": 16,
                               "height": 48,
                               "lineHeight": "24px",
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": 256,
@@ -8077,6 +8171,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                 Object {
                                   "bottom": 12,
                                   "color": "rgba(0, 0, 0, 0.3)",
+                                  "muiPrepared": true,
                                   "opacity": 1,
                                   "position": "absolute",
                                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -8158,6 +8253,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                   "fontFamily": "Roboto, sans-serif",
                                   "fontSize": 15,
                                   "height": "100%",
+                                  "muiPrepared": true,
                                   "outline": "none",
                                   "padding": 0,
                                   "position": "relative",
@@ -8210,6 +8306,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                       Object {
                                         "cursor": "pointer",
                                         "height": "100%",
+                                        "muiPrepared": true,
                                         "position": "relative",
                                         "width": "100%",
                                       }
@@ -8222,6 +8319,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                           "boxSizing": "border-box",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -8231,6 +8329,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                           "color": "rgba(0, 0, 0, 0.87)",
                                           "height": "56px",
                                           "lineHeight": "56px",
+                                          "muiPrepared": true,
                                           "opacity": 1,
                                           "overflow": "hidden",
                                           "paddingLeft": 0,
@@ -8322,6 +8421,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                               "fontWeight": "inherit",
                                               "height": 48,
                                               "margin": 0,
+                                              "muiPrepared": true,
                                               "outline": "none",
                                               "overflow": "visible",
                                               "padding": 12,
@@ -8377,6 +8477,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                                         "display": "inline-block",
                                                         "fill": "inherit",
                                                         "height": 24,
+                                                        "muiPrepared": true,
                                                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                                         "userSelect": "none",
                                                         "width": 24,
@@ -8402,6 +8503,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                           "bottom": 1,
                                           "left": 0,
                                           "margin": "-1px 24px",
+                                          "muiPrepared": true,
                                           "position": "absolute",
                                           "right": 0,
                                         }
@@ -8415,6 +8517,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                           "clear": "both",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -8911,6 +9014,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "width": "100%",
                                   }
@@ -8929,6 +9033,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "transform": "scaleX(1)",
                                     "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -8945,6 +9050,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                 "color": "#f44336",
                                 "fontSize": 12,
                                 "lineHeight": "12px",
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               }
@@ -8984,6 +9090,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -9074,6 +9181,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                         "fontWeight": "inherit",
                         "height": 48,
                         "margin": 0,
+                        "muiPrepared": true,
                         "outline": "none",
                         "overflow": "visible",
                         "padding": 12,
@@ -9122,6 +9230,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                 "fontSize": "10px",
                                 "left": 24,
                                 "lineHeight": "22px",
+                                "muiPrepared": true,
                                 "opacity": 0,
                                 "overflow": "hidden",
                                 "padding": "0 8px",
@@ -9140,6 +9249,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                   "backgroundColor": "transparent",
                                   "borderRadius": "50%",
                                   "left": "50%",
+                                  "muiPrepared": true,
                                   "position": "absolute",
                                   "top": 0,
                                   "transform": "translate(-50%, -50%)",
@@ -9150,6 +9260,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                             <span
                               style={
                                 Object {
+                                  "muiPrepared": true,
                                   "position": "relative",
                                   "whiteSpace": "nowrap",
                                 }
@@ -9175,6 +9286,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                 "color": "rgba(0, 0, 0, 0.87)",
                                 "display": "inline-block",
                                 "fontSize": 24,
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                 "userSelect": "none",
@@ -9328,6 +9440,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
@@ -9375,6 +9488,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -9456,6 +9570,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                               "fontSize": 16,
                               "height": 48,
                               "lineHeight": "24px",
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": 256,
@@ -9888,6 +10003,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                 Object {
                                   "bottom": 12,
                                   "color": "rgba(0, 0, 0, 0.3)",
+                                  "muiPrepared": true,
                                   "opacity": 1,
                                   "position": "absolute",
                                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -9969,6 +10085,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                   "fontFamily": "Roboto, sans-serif",
                                   "fontSize": 15,
                                   "height": "100%",
+                                  "muiPrepared": true,
                                   "outline": "none",
                                   "padding": 0,
                                   "position": "relative",
@@ -10021,6 +10138,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                       Object {
                                         "cursor": "pointer",
                                         "height": "100%",
+                                        "muiPrepared": true,
                                         "position": "relative",
                                         "width": "100%",
                                       }
@@ -10033,6 +10151,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                           "boxSizing": "border-box",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -10042,6 +10161,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                           "color": "rgba(0, 0, 0, 0.87)",
                                           "height": "56px",
                                           "lineHeight": "56px",
+                                          "muiPrepared": true,
                                           "opacity": 1,
                                           "overflow": "hidden",
                                           "paddingLeft": 0,
@@ -10133,6 +10253,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                               "fontWeight": "inherit",
                                               "height": 48,
                                               "margin": 0,
+                                              "muiPrepared": true,
                                               "outline": "none",
                                               "overflow": "visible",
                                               "padding": 12,
@@ -10188,6 +10309,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                                         "display": "inline-block",
                                                         "fill": "inherit",
                                                         "height": 24,
+                                                        "muiPrepared": true,
                                                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                                         "userSelect": "none",
                                                         "width": 24,
@@ -10213,6 +10335,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                           "bottom": 1,
                                           "left": 0,
                                           "margin": "-1px 24px",
+                                          "muiPrepared": true,
                                           "position": "absolute",
                                           "right": 0,
                                         }
@@ -10226,6 +10349,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                           "clear": "both",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -10722,6 +10846,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "width": "100%",
                                   }
@@ -10740,6 +10865,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "transform": "scaleX(1)",
                                     "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -10756,6 +10882,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                 "color": "#f44336",
                                 "fontSize": 12,
                                 "lineHeight": "12px",
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               }
@@ -10795,6 +10922,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -10885,6 +11013,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                         "fontWeight": "inherit",
                         "height": 48,
                         "margin": 0,
+                        "muiPrepared": true,
                         "outline": "none",
                         "overflow": "visible",
                         "padding": 12,
@@ -10933,6 +11062,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                 "fontSize": "10px",
                                 "left": 24,
                                 "lineHeight": "22px",
+                                "muiPrepared": true,
                                 "opacity": 0,
                                 "overflow": "hidden",
                                 "padding": "0 8px",
@@ -10951,6 +11081,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                   "backgroundColor": "transparent",
                                   "borderRadius": "50%",
                                   "left": "50%",
+                                  "muiPrepared": true,
                                   "position": "absolute",
                                   "top": 0,
                                   "transform": "translate(-50%, -50%)",
@@ -10961,6 +11092,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                             <span
                               style={
                                 Object {
+                                  "muiPrepared": true,
                                   "position": "relative",
                                   "whiteSpace": "nowrap",
                                 }
@@ -10986,6 +11118,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                 "color": "rgba(0, 0, 0, 0.87)",
                                 "display": "inline-block",
                                 "fontSize": 24,
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                 "userSelect": "none",
@@ -11159,6 +11292,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -11369,6 +11503,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                       "fontWeight": "inherit",
                       "height": 48,
                       "margin": 0,
+                      "muiPrepared": true,
                       "outline": "none",
                       "overflow": "visible",
                       "padding": 12,
@@ -11417,6 +11552,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                               "fontSize": "10px",
                               "left": 24,
                               "lineHeight": "22px",
+                              "muiPrepared": true,
                               "opacity": 0,
                               "overflow": "hidden",
                               "padding": "0 8px",
@@ -11435,6 +11571,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                 "backgroundColor": "transparent",
                                 "borderRadius": "50%",
                                 "left": "50%",
+                                "muiPrepared": true,
                                 "position": "absolute",
                                 "top": 0,
                                 "transform": "translate(-50%, -50%)",
@@ -11445,6 +11582,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                           <span
                             style={
                               Object {
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "whiteSpace": "nowrap",
                               }
@@ -11470,6 +11608,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -11624,6 +11763,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
@@ -11671,6 +11811,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -11752,6 +11893,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                               "fontSize": 16,
                               "height": 48,
                               "lineHeight": "24px",
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": 256,
@@ -12184,6 +12326,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                 Object {
                                   "bottom": 12,
                                   "color": "rgba(0, 0, 0, 0.3)",
+                                  "muiPrepared": true,
                                   "opacity": 1,
                                   "position": "absolute",
                                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -12265,6 +12408,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                   "fontFamily": "Roboto, sans-serif",
                                   "fontSize": 15,
                                   "height": "100%",
+                                  "muiPrepared": true,
                                   "outline": "none",
                                   "padding": 0,
                                   "position": "relative",
@@ -12317,6 +12461,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                       Object {
                                         "cursor": "pointer",
                                         "height": "100%",
+                                        "muiPrepared": true,
                                         "position": "relative",
                                         "width": "100%",
                                       }
@@ -12329,6 +12474,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                           "boxSizing": "border-box",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -12338,6 +12484,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                           "color": "rgba(0, 0, 0, 0.87)",
                                           "height": "56px",
                                           "lineHeight": "56px",
+                                          "muiPrepared": true,
                                           "opacity": 1,
                                           "overflow": "hidden",
                                           "paddingLeft": 0,
@@ -12429,6 +12576,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                               "fontWeight": "inherit",
                                               "height": 48,
                                               "margin": 0,
+                                              "muiPrepared": true,
                                               "outline": "none",
                                               "overflow": "visible",
                                               "padding": 12,
@@ -12484,6 +12632,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                                         "display": "inline-block",
                                                         "fill": "inherit",
                                                         "height": 24,
+                                                        "muiPrepared": true,
                                                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                                         "userSelect": "none",
                                                         "width": 24,
@@ -12509,6 +12658,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                           "bottom": 1,
                                           "left": 0,
                                           "margin": "-1px 24px",
+                                          "muiPrepared": true,
                                           "position": "absolute",
                                           "right": 0,
                                         }
@@ -12522,6 +12672,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                           "clear": "both",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -13018,6 +13169,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "width": "100%",
                                   }
@@ -13036,6 +13188,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "transform": "scaleX(1)",
                                     "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -13052,6 +13205,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                 "color": "#f44336",
                                 "fontSize": 12,
                                 "lineHeight": "12px",
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               }
@@ -13091,6 +13245,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -13181,6 +13336,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                         "fontWeight": "inherit",
                         "height": 48,
                         "margin": 0,
+                        "muiPrepared": true,
                         "outline": "none",
                         "overflow": "visible",
                         "padding": 12,
@@ -13229,6 +13385,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                 "fontSize": "10px",
                                 "left": 24,
                                 "lineHeight": "22px",
+                                "muiPrepared": true,
                                 "opacity": 0,
                                 "overflow": "hidden",
                                 "padding": "0 8px",
@@ -13247,6 +13404,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                   "backgroundColor": "transparent",
                                   "borderRadius": "50%",
                                   "left": "50%",
+                                  "muiPrepared": true,
                                   "position": "absolute",
                                   "top": 0,
                                   "transform": "translate(-50%, -50%)",
@@ -13257,6 +13415,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                             <span
                               style={
                                 Object {
+                                  "muiPrepared": true,
                                   "position": "relative",
                                   "whiteSpace": "nowrap",
                                 }
@@ -13282,6 +13441,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                 "color": "rgba(0, 0, 0, 0.87)",
                                 "display": "inline-block",
                                 "fontSize": 24,
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                 "userSelect": "none",
@@ -13435,6 +13595,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
@@ -13482,6 +13643,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -13563,6 +13725,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                               "fontSize": 16,
                               "height": 48,
                               "lineHeight": "24px",
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": 256,
@@ -13995,6 +14158,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                 Object {
                                   "bottom": 12,
                                   "color": "rgba(0, 0, 0, 0.3)",
+                                  "muiPrepared": true,
                                   "opacity": 1,
                                   "position": "absolute",
                                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -14076,6 +14240,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                   "fontFamily": "Roboto, sans-serif",
                                   "fontSize": 15,
                                   "height": "100%",
+                                  "muiPrepared": true,
                                   "outline": "none",
                                   "padding": 0,
                                   "position": "relative",
@@ -14128,6 +14293,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                       Object {
                                         "cursor": "pointer",
                                         "height": "100%",
+                                        "muiPrepared": true,
                                         "position": "relative",
                                         "width": "100%",
                                       }
@@ -14140,6 +14306,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                           "boxSizing": "border-box",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -14149,6 +14316,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                           "color": "rgba(0, 0, 0, 0.87)",
                                           "height": "56px",
                                           "lineHeight": "56px",
+                                          "muiPrepared": true,
                                           "opacity": 1,
                                           "overflow": "hidden",
                                           "paddingLeft": 0,
@@ -14240,6 +14408,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                               "fontWeight": "inherit",
                                               "height": 48,
                                               "margin": 0,
+                                              "muiPrepared": true,
                                               "outline": "none",
                                               "overflow": "visible",
                                               "padding": 12,
@@ -14295,6 +14464,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                                         "display": "inline-block",
                                                         "fill": "inherit",
                                                         "height": 24,
+                                                        "muiPrepared": true,
                                                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                                         "userSelect": "none",
                                                         "width": 24,
@@ -14320,6 +14490,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                           "bottom": 1,
                                           "left": 0,
                                           "margin": "-1px 24px",
+                                          "muiPrepared": true,
                                           "position": "absolute",
                                           "right": 0,
                                         }
@@ -14333,6 +14504,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                           "clear": "both",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -14829,6 +15001,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "width": "100%",
                                   }
@@ -14847,6 +15020,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "transform": "scaleX(1)",
                                     "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -14863,6 +15037,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                 "color": "#f44336",
                                 "fontSize": 12,
                                 "lineHeight": "12px",
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               }
@@ -14902,6 +15077,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -14992,6 +15168,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                         "fontWeight": "inherit",
                         "height": 48,
                         "margin": 0,
+                        "muiPrepared": true,
                         "outline": "none",
                         "overflow": "visible",
                         "padding": 12,
@@ -15040,6 +15217,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                 "fontSize": "10px",
                                 "left": 24,
                                 "lineHeight": "22px",
+                                "muiPrepared": true,
                                 "opacity": 0,
                                 "overflow": "hidden",
                                 "padding": "0 8px",
@@ -15058,6 +15236,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                   "backgroundColor": "transparent",
                                   "borderRadius": "50%",
                                   "left": "50%",
+                                  "muiPrepared": true,
                                   "position": "absolute",
                                   "top": 0,
                                   "transform": "translate(-50%, -50%)",
@@ -15068,6 +15247,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                             <span
                               style={
                                 Object {
+                                  "muiPrepared": true,
                                   "position": "relative",
                                   "whiteSpace": "nowrap",
                                 }
@@ -15093,6 +15273,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                 "color": "rgba(0, 0, 0, 0.87)",
                                 "display": "inline-block",
                                 "fontSize": 24,
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                 "userSelect": "none",
@@ -15181,6 +15362,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                   "cursor": "pointer",
                   "display": "table",
                   "height": "auto",
+                  "muiPrepared": true,
                   "overflow": "visible",
                   "position": "relative",
                   "width": "100%",
@@ -15210,6 +15392,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                     "height": "100%",
                     "left": 0,
                     "margin": 0,
+                    "muiPrepared": true,
                     "opacity": 0,
                     "padding": 0,
                     "pointerEvents": "all",
@@ -15238,6 +15421,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                       "height": 24,
                       "marginLeft": 0,
                       "marginRight": 16,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "width": 24,
@@ -15277,6 +15461,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                               "display": "inline-block",
                               "fill": "rgba(0, 0, 0, 0.87)",
                               "height": 24,
+                              "muiPrepared": true,
                               "opacity": 1,
                               "position": "absolute",
                               "transition": "opacity 1000ms cubic-bezier(0.23, 1, 0.32, 1) 200ms",
@@ -15328,6 +15513,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                               "display": "inline-block",
                               "fill": "#00bcd4",
                               "height": 24,
+                              "muiPrepared": true,
                               "opacity": 0,
                               "position": "absolute",
                               "transform": "scale(0)",
@@ -16237,6 +16423,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                           Object {
                             "height": "100%",
                             "left": 0,
+                            "muiPrepared": true,
                             "position": "absolute",
                             "top": 0,
                             "width": "100%",
@@ -16248,6 +16435,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                             Object {
                               "height": "100%",
                               "left": 0,
+                              "muiPrepared": true,
                               "position": "absolute",
                               "top": 0,
                               "width": "100%",
@@ -16266,6 +16454,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                       "float": "left",
                       "fontFamily": "Roboto, sans-serif",
                       "lineHeight": "24px",
+                      "muiPrepared": true,
                       "position": "relative",
                       "width": "calc(100% - 60px)",
                     }
@@ -16434,6 +16623,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -16644,6 +16834,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                       "fontWeight": "inherit",
                       "height": 48,
                       "margin": 0,
+                      "muiPrepared": true,
                       "outline": "none",
                       "overflow": "visible",
                       "padding": 12,
@@ -16692,6 +16883,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                               "fontSize": "10px",
                               "left": 24,
                               "lineHeight": "22px",
+                              "muiPrepared": true,
                               "opacity": 0,
                               "overflow": "hidden",
                               "padding": "0 8px",
@@ -16710,6 +16902,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                 "backgroundColor": "transparent",
                                 "borderRadius": "50%",
                                 "left": "50%",
+                                "muiPrepared": true,
                                 "position": "absolute",
                                 "top": 0,
                                 "transform": "translate(-50%, -50%)",
@@ -16720,6 +16913,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                           <span
                             style={
                               Object {
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "whiteSpace": "nowrap",
                               }
@@ -16745,6 +16939,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                               "color": "rgba(0, 0, 0, 0.87)",
                               "display": "inline-block",
                               "fontSize": 24,
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "userSelect": "none",
@@ -16901,6 +17096,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
@@ -16948,6 +17144,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -17029,6 +17226,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                               "fontSize": 16,
                               "height": 48,
                               "lineHeight": "24px",
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": 256,
@@ -17461,6 +17659,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                 Object {
                                   "bottom": 12,
                                   "color": "rgba(0, 0, 0, 0.3)",
+                                  "muiPrepared": true,
                                   "opacity": 1,
                                   "position": "absolute",
                                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -17542,6 +17741,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                   "fontFamily": "Roboto, sans-serif",
                                   "fontSize": 15,
                                   "height": "100%",
+                                  "muiPrepared": true,
                                   "outline": "none",
                                   "padding": 0,
                                   "position": "relative",
@@ -17594,6 +17794,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                       Object {
                                         "cursor": "pointer",
                                         "height": "100%",
+                                        "muiPrepared": true,
                                         "position": "relative",
                                         "width": "100%",
                                       }
@@ -17606,6 +17807,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                           "boxSizing": "border-box",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -17615,6 +17817,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                           "color": "rgba(0, 0, 0, 0.87)",
                                           "height": "56px",
                                           "lineHeight": "56px",
+                                          "muiPrepared": true,
                                           "opacity": 1,
                                           "overflow": "hidden",
                                           "paddingLeft": 0,
@@ -17706,6 +17909,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                               "fontWeight": "inherit",
                                               "height": 48,
                                               "margin": 0,
+                                              "muiPrepared": true,
                                               "outline": "none",
                                               "overflow": "visible",
                                               "padding": 12,
@@ -17761,6 +17965,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                                         "display": "inline-block",
                                                         "fill": "inherit",
                                                         "height": 24,
+                                                        "muiPrepared": true,
                                                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                                         "userSelect": "none",
                                                         "width": 24,
@@ -17786,6 +17991,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                           "bottom": 1,
                                           "left": 0,
                                           "margin": "-1px 24px",
+                                          "muiPrepared": true,
                                           "position": "absolute",
                                           "right": 0,
                                         }
@@ -17799,6 +18005,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                           "clear": "both",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -18295,6 +18502,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "width": "100%",
                                   }
@@ -18313,6 +18521,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "transform": "scaleX(1)",
                                     "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -18329,6 +18538,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                 "color": "#f44336",
                                 "fontSize": 12,
                                 "lineHeight": "12px",
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               }
@@ -18368,6 +18578,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -18458,6 +18669,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                         "fontWeight": "inherit",
                         "height": 48,
                         "margin": 0,
+                        "muiPrepared": true,
                         "outline": "none",
                         "overflow": "visible",
                         "padding": 12,
@@ -18506,6 +18718,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                 "fontSize": "10px",
                                 "left": 24,
                                 "lineHeight": "22px",
+                                "muiPrepared": true,
                                 "opacity": 0,
                                 "overflow": "hidden",
                                 "padding": "0 8px",
@@ -18524,6 +18737,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                   "backgroundColor": "transparent",
                                   "borderRadius": "50%",
                                   "left": "50%",
+                                  "muiPrepared": true,
                                   "position": "absolute",
                                   "top": 0,
                                   "transform": "translate(-50%, -50%)",
@@ -18534,6 +18748,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                             <span
                               style={
                                 Object {
+                                  "muiPrepared": true,
                                   "position": "relative",
                                   "whiteSpace": "nowrap",
                                 }
@@ -18559,6 +18774,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                 "color": "rgba(0, 0, 0, 0.87)",
                                 "display": "inline-block",
                                 "fontSize": 24,
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                 "userSelect": "none",
@@ -18712,6 +18928,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "userSelect": "none",
@@ -18759,6 +18976,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -18840,6 +19058,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                               "fontSize": 16,
                               "height": 48,
                               "lineHeight": "24px",
+                              "muiPrepared": true,
                               "position": "relative",
                               "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               "width": 256,
@@ -19272,6 +19491,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                 Object {
                                   "bottom": 12,
                                   "color": "rgba(0, 0, 0, 0.3)",
+                                  "muiPrepared": true,
                                   "opacity": 1,
                                   "position": "absolute",
                                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -19353,6 +19573,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                   "fontFamily": "Roboto, sans-serif",
                                   "fontSize": 15,
                                   "height": "100%",
+                                  "muiPrepared": true,
                                   "outline": "none",
                                   "padding": 0,
                                   "position": "relative",
@@ -19405,6 +19626,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                       Object {
                                         "cursor": "pointer",
                                         "height": "100%",
+                                        "muiPrepared": true,
                                         "position": "relative",
                                         "width": "100%",
                                       }
@@ -19417,6 +19639,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                           "boxSizing": "border-box",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -19426,6 +19649,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                           "color": "rgba(0, 0, 0, 0.87)",
                                           "height": "56px",
                                           "lineHeight": "56px",
+                                          "muiPrepared": true,
                                           "opacity": 1,
                                           "overflow": "hidden",
                                           "paddingLeft": 0,
@@ -19517,6 +19741,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                               "fontWeight": "inherit",
                                               "height": 48,
                                               "margin": 0,
+                                              "muiPrepared": true,
                                               "outline": "none",
                                               "overflow": "visible",
                                               "padding": 12,
@@ -19572,6 +19797,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                                         "display": "inline-block",
                                                         "fill": "inherit",
                                                         "height": 24,
+                                                        "muiPrepared": true,
                                                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                                         "userSelect": "none",
                                                         "width": 24,
@@ -19597,6 +19823,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                           "bottom": 1,
                                           "left": 0,
                                           "margin": "-1px 24px",
+                                          "muiPrepared": true,
                                           "position": "absolute",
                                           "right": 0,
                                         }
@@ -19610,6 +19837,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                           "clear": "both",
                                           "content": "' '",
                                           "display": "table",
+                                          "muiPrepared": true,
                                         }
                                       }
                                     />
@@ -20106,6 +20334,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "width": "100%",
                                   }
@@ -20124,6 +20353,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                     "bottom": 8,
                                     "boxSizing": "content-box",
                                     "margin": 0,
+                                    "muiPrepared": true,
                                     "position": "absolute",
                                     "transform": "scaleX(1)",
                                     "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -20140,6 +20370,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                 "color": "#f44336",
                                 "fontSize": 12,
                                 "lineHeight": "12px",
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                               }
@@ -20179,6 +20410,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                         "color": "rgba(0, 0, 0, 0.87)",
                         "display": "inline-block",
                         "fontSize": 24,
+                        "muiPrepared": true,
                         "position": "relative",
                         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "userSelect": "none",
@@ -20269,6 +20501,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                         "fontWeight": "inherit",
                         "height": 48,
                         "margin": 0,
+                        "muiPrepared": true,
                         "outline": "none",
                         "overflow": "visible",
                         "padding": 12,
@@ -20317,6 +20550,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                 "fontSize": "10px",
                                 "left": 24,
                                 "lineHeight": "22px",
+                                "muiPrepared": true,
                                 "opacity": 0,
                                 "overflow": "hidden",
                                 "padding": "0 8px",
@@ -20335,6 +20569,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                   "backgroundColor": "transparent",
                                   "borderRadius": "50%",
                                   "left": "50%",
+                                  "muiPrepared": true,
                                   "position": "absolute",
                                   "top": 0,
                                   "transform": "translate(-50%, -50%)",
@@ -20345,6 +20580,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                             <span
                               style={
                                 Object {
+                                  "muiPrepared": true,
                                   "position": "relative",
                                   "whiteSpace": "nowrap",
                                 }
@@ -20370,6 +20606,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                 "color": "rgba(0, 0, 0, 0.87)",
                                 "display": "inline-block",
                                 "fontSize": 24,
+                                "muiPrepared": true,
                                 "position": "relative",
                                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                                 "userSelect": "none",
@@ -20458,6 +20695,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                   "cursor": "pointer",
                   "display": "table",
                   "height": "auto",
+                  "muiPrepared": true,
                   "overflow": "visible",
                   "position": "relative",
                   "width": "100%",
@@ -20487,6 +20725,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                     "height": "100%",
                     "left": 0,
                     "margin": 0,
+                    "muiPrepared": true,
                     "opacity": 0,
                     "padding": 0,
                     "pointerEvents": "all",
@@ -20515,6 +20754,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                       "height": 24,
                       "marginLeft": 0,
                       "marginRight": 16,
+                      "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "width": 24,
@@ -20554,6 +20794,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                               "display": "inline-block",
                               "fill": "rgba(0, 0, 0, 0.87)",
                               "height": 24,
+                              "muiPrepared": true,
                               "opacity": 1,
                               "position": "absolute",
                               "transition": "opacity 1000ms cubic-bezier(0.23, 1, 0.32, 1) 200ms",
@@ -20605,6 +20846,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                               "display": "inline-block",
                               "fill": "#00bcd4",
                               "height": 24,
+                              "muiPrepared": true,
                               "opacity": 0,
                               "position": "absolute",
                               "transform": "scale(0)",
@@ -21514,6 +21756,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                           Object {
                             "height": "100%",
                             "left": 0,
+                            "muiPrepared": true,
                             "position": "absolute",
                             "top": 0,
                             "width": "100%",
@@ -21525,6 +21768,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                             Object {
                               "height": "100%",
                               "left": 0,
+                              "muiPrepared": true,
                               "position": "absolute",
                               "top": 0,
                               "width": "100%",
@@ -21543,6 +21787,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                       "float": "left",
                       "fontFamily": "Roboto, sans-serif",
                       "lineHeight": "24px",
+                      "muiPrepared": true,
                       "position": "relative",
                       "width": "calc(100% - 60px)",
                     }
