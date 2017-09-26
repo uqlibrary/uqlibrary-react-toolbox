@@ -233,7 +233,7 @@
     }
 
     // Done
-    &.info, &.info_outline {
+    &.done {
       background-color: darken($available-color, 10%);
       .alertText, .alertTitle {
         color: $text-color-reverse;
