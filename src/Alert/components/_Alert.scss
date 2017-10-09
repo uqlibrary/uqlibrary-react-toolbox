@@ -230,10 +230,16 @@
           fill: $text-color-reverse !important;
         }
       }
+      button.alertAction {
+        width: 100%;
+        background-color: darken($info-color, 15%) !important;
+        margin: 12px 0 6px 0 !important;
+        color: $text-color-reverse !important;
+      }
     }
 
     // Done
-    &.info, &.info_outline {
+    &.done {
       background-color: darken($available-color, 10%);
       .alertText, .alertTitle {
         color: $text-color-reverse;
