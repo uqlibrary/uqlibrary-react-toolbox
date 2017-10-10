@@ -5,7 +5,7 @@ exports[`Snapshot tests for StandardPage component renders StandardPage with tit
   className="undefined"
 >
   <h1
-    className="title is-3"
+    className="pageTitle"
   >
     standard page title
   </h1>

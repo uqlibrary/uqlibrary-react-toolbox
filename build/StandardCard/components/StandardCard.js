@@ -39,7 +39,7 @@ function StandardCard(_ref) {
                     { className: 'column' },
                     title && _react2.default.createElement(
                         'h2',
-                        { className: 'title is-4' },
+                        { className: 'cardTitle' },
                         title
                     )
                 ),
