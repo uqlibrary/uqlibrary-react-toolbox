@@ -24,13 +24,13 @@ exports[`Alert snapshots test renders Alert of error type 1`] = `
       <div
         className="column alertText"
       >
-        <span
-          className="alertTitle"
-        >
-          This is a title
-           - 
-        </span>
-        This is the message
+        <div>
+          <b>
+            This is a title
+          </b>
+           - 
+          This is the message
+        </div>
       </div>
     </div>
   </div>
@@ -61,13 +61,13 @@ exports[`Alert snapshots test renders Alert of error type should render action b
       <div
         className="column alertText"
       >
-        <span
-          className="alertTitle"
-        >
-          This is a title
-           - 
-        </span>
-        This is a message
+        <div>
+          <b>
+            This is a title
+          </b>
+           - 
+          This is a message
+        </div>
       </div>
       <div
         className="column is-narrow is-12-mobile"
@@ -117,13 +117,13 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       <div
         className="column alertText"
       >
-        <span
-          className="alertTitle"
-        >
-          This is a title
-           - 
-        </span>
-        This is a message
+        <div>
+          <b>
+            This is a title
+          </b>
+           - 
+          This is a message
+        </div>
       </div>
       <div
         className="column is-narrow is-hidden-mobile"
@@ -170,13 +170,13 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       <div
         className="column alertText"
       >
-        <span
-          className="alertTitle"
-        >
-          This is a title
-           - 
-        </span>
-        This is a message
+        <div>
+          <b>
+            This is a title
+          </b>
+           - 
+          This is a message
+        </div>
       </div>
       <div
         className="column is-narrow is-12-mobile"

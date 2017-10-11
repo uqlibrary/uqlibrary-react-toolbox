@@ -14,7 +14,7 @@ const Alert = ({title, message, type, action, actionButtonLabel, allowDismiss, d
                         <FontIcon className="material-icons">{type}</FontIcon>
                     </div>
                     <div className="column alertText">
-                        <span className="alertTitle">{title} - </span>{message}
+                        <div><b>{title}</b>&nbsp;-&nbsp;{message}</div>
                     </div>
                     {
                         action && actionButtonLabel &&

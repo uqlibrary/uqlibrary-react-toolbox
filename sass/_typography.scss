@@ -1,12 +1,12 @@
 @import 'variables';
 
-.body-1 { font-size: $text-body-normal; font-weight: $text-weight-medium; line-height: 22px;}
+.body-1 { font-size: $text-body-normal; font-weight: $text-weight-normal; line-height: 22px;}
 .body-2 { font-size: $text-body-normal; font-weight: $text-weight-bold; }
 .caption { font-size: $text-body-xsmall; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family;
-  font-weight: $text-weight-medium;
+  font-weight: $text-weight-normal;
 }
 
 a {

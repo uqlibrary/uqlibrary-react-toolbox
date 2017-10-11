@@ -61,12 +61,16 @@ var Alert = function Alert(_ref) {
                     'div',
                     { className: 'column alertText' },
                     _react2.default.createElement(
-                        'span',
-                        { className: 'alertTitle' },
-                        title,
-                        ' - '
-                    ),
-                    message
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                            'b',
+                            null,
+                            title
+                        ),
+                        '\xA0-\xA0',
+                        message
+                    )
                 ),
                 action && actionButtonLabel && _react2.default.createElement(
                     'div',

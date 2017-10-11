@@ -1,41 +1,48 @@
 @import '../../../sass/variables';
 
+// Common
+.alertWrapper {
+  .column{
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+  margin: 12px auto 24px auto !important;
+  padding: 12px !important;
+  .alertIcon {
+    padding: 16px !important;
+    width: 40px;
+    height: 40px;
+    span {
+      font-size: 40px !important;
+    }
+  }
+  .alertText {
+    font-weight: $text-weight-normal !important;
+    font-size: $text-body-normal !important;
+    margin: 12px 12px 12px 0 !important;
+    .alertTitle {
+      font-weight: bold !important;
+      font-size: $text-weight-normal !important
+    }
+  }
+}
+
 // Desktop
 @include tablet {
   .forAlerts {
     margin: -12px 0 0 0 !important;
   }
-
   .alertWrapper {
-    margin: 12px auto 24px auto !important;
-    padding: 12px !important;
-
-    .column {
-      padding: 12px !important;
-    }
-
-    .alertIcon {
-      padding: 16px 0 16px 16px !important;
-      width: 40px;
-      height: 40px;
-      span {
-        font-size: 40px !important;
-      }
-    }
-
     .alertText {
-      font-weight: $text-weight-medium !important;
-      font-size: $text-body-normal !important;
-      line-height: 24px !important;
-      margin: 12px 12px 12px 0 !important;
-      .alertTitle {
-        font-weight: bold !important;
-        font-size: $text-weight-medium !important
-      }
+      display: flex !important;
+      align-items: center !important;
     }
-
     button.alertAction {
-      margin: 6px 0 !important;
+      margin: 18px 0 !important;
+      vertical-align: middle;
+    }
+    svg.alertDismiss {
+      margin: 12px 0 !important;
     }
 
     // Help
@@ -148,7 +155,7 @@
 }
 
 // Mobile
-@media (max-width: 768px) {
+@include mobile {
   .forAlerts {
     padding-top: 0 !important;
     padding-bottom: 12px !important;
@@ -156,36 +163,22 @@
   }
 
   .alertWrapper {
-    margin: 12px 0 !important;
     padding: 24px !important;
-    min-height: 40px;
+    margin: 6px 0 !important;
 
-    .alertIcon {
-      margin-right: 0 !important;
-      span {
-        font-size: 40px !important;
-      }
-    }
     .alertText {
-      font-weight: normal !important;
-      font-size: 14px !important;
-      line-height: 20px !important;
-      padding: 12px 12px 12px 0 !important;
-      margin: 0 !important;
-      .alertTitle {
-        font-weight: bold !important;
-        font-size: 14px !important
-      }
+      margin: 18px 0 0 0 !important;
+      padding-bottom: 0 !important;
     }
 
     button.alertAction {
-      width: calc(100% - 24px);
+      width: calc(100%);
       line-height: 18px !important;
       margin: 0 !important;
     }
 
     // Help
-    &.help, &.help_outline {
+    &.help {
       background-color: darken($theme-color, 5%);
       .alertText, .alertTitle {
         color: $text-color-reverse !important;
@@ -196,6 +189,20 @@
       button.alertAction {
         background-color: darken($theme-color, 12%) !important;
         color: $text-color-reverse !important;
+      }
+    }
+
+    &.help_outline {
+      background-color: lighten($secondary-color, 50%);
+      .alertText, .alertTitle {
+        color: $text-color !important;
+      }
+      .alertIcon span {
+        color: $text-color !important;
+      }
+      button.alertAction {
+        background-color: lighten($secondary-color, 40%) !important;
+        color: $text-color !important;
       }
     }
 
@@ -238,11 +245,6 @@
       .alertIcon span {
         color: rgba($text-color-reverse, 0.9) !important;
       }
-      .alertDismiss button {
-        svg {
-          fill: $text-color-reverse !important;
-        }
-      }
       button.alertAction {
         background-color: darken($info-color, 20%) !important;
         color: $text-color-reverse !important;
@@ -257,11 +259,6 @@
       }
       .alertIcon span {
         color: rgba($text-color-reverse, 0.9) !important;
-      }
-      .alertDismiss button {
-        svg {
-          fill: $text-color-reverse !important;
-        }
       }
       button.alertAction {
         background-color: darken($available-color, 15%) !important;

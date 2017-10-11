@@ -489,13 +489,13 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
             <div
               className="column alertText"
             >
-              <span
-                className="alertTitle"
-              >
-                Upload Errors
-                 - 
-              </span>
-              File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; Invalid file name (a.text.txt)
+              <div>
+                <b>
+                  Upload Errors
+                </b>
+                 - 
+                File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; Invalid file name (a.text.txt)
+              </div>
             </div>
           </div>
         </div>
@@ -696,13 +696,13 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
             <div
               className="column alertText"
             >
-              <span
-                className="alertTitle"
-              >
-                Upload Errors
-                 - 
-              </span>
-              Only 3 files are allowed to be uploaded. File (d.txt) ignored
+              <div>
+                <b>
+                  Upload Errors
+                </b>
+                 - 
+                Only 3 files are allowed to be uploaded. File (d.txt) ignored
+              </div>
             </div>
           </div>
         </div>
