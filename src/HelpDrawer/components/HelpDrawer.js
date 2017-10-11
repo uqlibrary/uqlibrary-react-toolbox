@@ -27,11 +27,11 @@ const HelpDrawer = ({title, text, buttonLabel, open, hide}) => {
             openSecondary
             docked={false}
             disableSwipeToOpen
-            width={380}
+            width={310}
             onRequestChange={toggleDrawer}>
             <div className="layout-fill side-drawer">
                 <div className="content">
-                    <span className="title is-5">{title}</span>
+                    <span className="cardTitle">{title}</span>
                     <div className="body-1">{text}</div>
                 </div>
                 <div className="layout-padding">

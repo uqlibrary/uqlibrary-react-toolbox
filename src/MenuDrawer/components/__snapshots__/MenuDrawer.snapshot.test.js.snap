@@ -9,7 +9,7 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
   open={null}
   openSecondary={false}
   swipeAreaWidth={30}
-  width={320}
+  width={310}
   zDepth={2}
 >
   <div
@@ -101,7 +101,7 @@ exports[`MenuDrawer snapshots tests renders menu with logo 1`] = `
   open={false}
   openSecondary={false}
   swipeAreaWidth={30}
-  width={320}
+  width={310}
   zDepth={2}
 >
   <div
@@ -198,7 +198,7 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
   open={false}
   openSecondary={false}
   swipeAreaWidth={30}
-  width={320}
+  width={310}
   zDepth={2}
 >
   <div

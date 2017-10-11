@@ -1,9 +1,6 @@
 // Vendor
-@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
 
-// Reset the bulma breakpoints
-$tablet: 768px;
-$desktop: 1024px;
 // Bulma includes
 @import "~bulma/sass/utilities/initial-variables";
 @import "~bulma/sass/utilities/derived-variables";
@@ -12,8 +9,6 @@ $desktop: 1024px;
 @import "~bulma/sass/base/helpers";
 
 // Imports
-@import 'table';
-@import 'typography';
 @import 'variables';
 @import 'components';
 
@@ -45,11 +40,11 @@ html, body {
 }
 @include mobile {
   .layout-card {
-    margin: 0px auto 24px auto;
-    padding: 0px 10px 24px 10px;
+    margin: 0 auto 24px auto;
+    padding: 0 10px 24px 10px;
   }
   .content-container {
-    padding-top: 70px;
+    padding-top: 70px !important;
   }
 }
 
@@ -60,11 +55,6 @@ html, body {
 
 .standard-card {
   margin-bottom: 24px !important;
-}
-
-// Cards should always fill their available space.
-.card-full-height {
-  height: 100% !important;
 }
 
 .layout-container {
@@ -96,11 +86,10 @@ html, body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0px auto !important;
-  padding-top: 99px;
+  padding: 99px auto 0 auto !important;
 
   .body-1 {
-    padding: 0px 24px 24px 24px !important;
+    padding: 0 24px 24px 24px !important;
   }
   > *:first-child {
     margin: 0;

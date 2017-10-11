@@ -9,7 +9,7 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
   open={true}
   openSecondary={true}
   swipeAreaWidth={30}
-  width={380}
+  width={310}
   zDepth={2}
 >
   <div
@@ -19,7 +19,7 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
       className="content"
     >
       <span
-        className="title is-5"
+        className="cardTitle"
       >
         HelpDrawer Title
       </span>

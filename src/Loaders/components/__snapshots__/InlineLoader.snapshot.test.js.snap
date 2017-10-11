@@ -18,7 +18,7 @@ exports[`InlineLoader snapshots tests renders loader 1`] = `
   <br />
   <br />
   <span
-    className="title is-4"
+    className="cardTitle"
   >
     Waiting to load...
   </span>

@@ -1,6 +1,9 @@
 @import '../../../sass/variables';
 
 .help-drawer {
+  .cardTitle{
+    color: $theme-color !important;
+  }
   .app-bar {
     height: 75px;
     background-color: $theme-color;

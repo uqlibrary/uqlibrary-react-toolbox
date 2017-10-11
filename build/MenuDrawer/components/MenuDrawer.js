@@ -42,7 +42,7 @@ function MenuDrawer(_ref) {
         {
             containerClassName: 'main-drawer',
             open: drawerOpen,
-            width: 320,
+            width: 310,
             onRequestChange: function onRequestChange() {
                 return toggleDrawer(!drawerOpen);
             },

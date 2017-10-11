@@ -1,9 +1,11 @@
+@import "../../../sass/variables";
+
 .error-checkbox {
   label {
-    color: #FF3A11 !important;
+    color: $error-color !important;
   }
 
   svg {
-    fill: #FF3A11 !important;
+    fill: $error-color !important;
   }
 }

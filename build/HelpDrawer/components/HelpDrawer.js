@@ -53,7 +53,7 @@ var HelpDrawer = function HelpDrawer(_ref) {
             openSecondary: true,
             docked: false,
             disableSwipeToOpen: true,
-            width: 380,
+            width: 310,
             onRequestChange: toggleDrawer },
         _react2.default.createElement(
             'div',
@@ -63,7 +63,7 @@ var HelpDrawer = function HelpDrawer(_ref) {
                 { className: 'content' },
                 _react2.default.createElement(
                     'span',
-                    { className: 'title is-5' },
+                    { className: 'cardTitle' },
                     title
                 ),
                 _react2.default.createElement(

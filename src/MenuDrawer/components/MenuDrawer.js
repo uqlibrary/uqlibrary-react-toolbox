@@ -11,7 +11,7 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
         <Drawer
             containerClassName="main-drawer"
             open={drawerOpen}
-            width={320}
+            width={310}
             onRequestChange={() => toggleDrawer(!drawerOpen)}
             docked={docked}>
             <div className="layout-fill side-drawer">

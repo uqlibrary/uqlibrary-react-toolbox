@@ -3,17 +3,17 @@
 .file-instructions {
   margin: 20px 0 0 0;
   padding: 16px;
-  background-color: #F5F5F5;
-  border: 2px dashed #8D8D8D;
-  font-size: 0.9em;
-  line-height: 1.2em;
+  background-color: $secondary-color-light;
+  border: 2px dashed lighten($secondary-color, 20%); // #8D8D8D
+  font-size: $text-body-small;
+  line-height: $text-line-height-small;
 
   div, span, h3 {
-    color: #757575 !important;
+    color: $secondary-color !important;
   }
 
   h3 {
-    font-weight: bold !important;
+    font-weight: $text-weight-bold !important;
   }
 
   .upload-instructions {
@@ -28,16 +28,15 @@
 }
 
 .sub-title {
-  font-size: 16px;
-  padding-bottom: 12px;
-  padding-top: 8px;
+  font-size: $text-body-large;
+  padding: 0 !important;
 }
 
 .disclaimer {
-  font-size: 12px;
+  font-size: $text-body-small;
 
   span {
-    font-weight: bold;
+    font-weight: $text-weight-bold;
   }
 }
 
@@ -50,7 +49,7 @@
     display: none;
   }
   .selectField {
-    font-size: 14px !important;
+    font-size: $text-body-normal !important;
     max-width: 200px;
   }
 }
@@ -61,17 +60,17 @@
     display: none;
   }
   input {
-    font-size: 14px !important;
+    font-size: $text-body-normal !important;
   }
   div {
-    font-size: 14px;
+    font-size: $text-body-normal;
     width: unset !important;
     max-width: 256px;
   }
 }
 
 //Desktop
-@media (min-width: 768px) {
+@include tablet {
   .fileUploadErrorMessage {
     padding: 12px;
     color: darken($error-color, 10%);
@@ -134,7 +133,7 @@
   }
 }
 //Mobile
-@media (max-width: 768px) {
+@include mobile {
   .fileUploadErrorMessage {
     padding: 12px;
     min-height: 60px;
