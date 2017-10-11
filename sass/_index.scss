@@ -37,14 +37,9 @@ html, body {
   margin: 24px auto;
   width: 90%;
   padding: 0;
-}
-@include mobile {
-  .layout-card {
+  @include mobile {
     margin: 0 auto 24px auto;
     padding: 0 10px 24px 10px;
-  }
-  .content-container {
-    padding-top: 70px !important;
   }
 }
 
@@ -57,29 +52,6 @@ html, body {
   margin-bottom: 24px !important;
 }
 
-.layout-container {
-  width: calc(100% - 200px);
-  margin: 24px auto;
-  max-width: 1200px;
-  margin-right: 24px !important;
-
-  &:last-child {
-    margin-bottom: 100px;
-  }
-}
-
-.layout-title {
-  width: 1200px;
-  margin: 24px auto;
-  max-width: 95%;
-}
-
-// Centering helper
-.is-centered {
-  text-align: center;
-  align-content: center;
-}
-
 // The container which houses content
 .content-container {
   width: 100%;
@@ -87,6 +59,9 @@ html, body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding-top: 99px !important;
+  @include mobile {
+    padding-top: 70px !important;
+  }
 
   .body-1 {
     padding: 0 24px 24px 24px !important;
