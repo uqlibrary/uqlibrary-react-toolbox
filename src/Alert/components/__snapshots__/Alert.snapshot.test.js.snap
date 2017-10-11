@@ -2,35 +2,31 @@
 
 exports[`Alert snapshots test renders Alert of error type 1`] = `
 <div
-  className="forAlerts"
+  className="error alertWrapper"
 >
   <div
-    className="error alertWrapper"
+    className="columns is-multiline is-mobile"
   >
     <div
-      className="columns is-multiline is-mobile"
+      className="column is-narrow alertIcon"
     >
-      <div
-        className="column is-narrow alertIcon"
+      <FontIcon
+        className="material-icons"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
-        <FontIcon
-          className="material-icons"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          error
-        </FontIcon>
-      </div>
-      <div
-        className="column alertText"
-      >
-        <div>
-          <b>
-            This is a title
-          </b>
-           - 
-          This is the message
-        </div>
+        error
+      </FontIcon>
+    </div>
+    <div
+      className="column alertText"
+    >
+      <div>
+        <b>
+          This is a title
+        </b>
+         - 
+        This is the message
       </div>
     </div>
   </div>
@@ -39,55 +35,51 @@ exports[`Alert snapshots test renders Alert of error type 1`] = `
 
 exports[`Alert snapshots test renders Alert of error type should render action button 1`] = `
 <div
-  className="forAlerts"
+  className="error alertWrapper"
 >
   <div
-    className="error alertWrapper"
+    className="columns is-multiline is-mobile"
   >
     <div
-      className="columns is-multiline is-mobile"
+      className="column is-narrow alertIcon"
     >
-      <div
-        className="column is-narrow alertIcon"
+      <FontIcon
+        className="material-icons"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
-        <FontIcon
-          className="material-icons"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          error
-        </FontIcon>
+        error
+      </FontIcon>
+    </div>
+    <div
+      className="column alertText"
+    >
+      <div>
+        <b>
+          This is a title
+        </b>
+         - 
+        This is a message
       </div>
-      <div
-        className="column alertText"
-      >
-        <div>
-          <b>
-            This is a title
-          </b>
-           - 
-          This is a message
-        </div>
-      </div>
-      <div
-        className="column is-narrow is-12-mobile"
-      >
-        <FlatButton
-          className="alertAction"
-          disabled={false}
-          fullWidth={false}
-          label="Do something"
-          labelPosition="after"
-          labelStyle={Object {}}
-          onKeyboardFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onTouchStart={[Function]}
-          onTouchTap={[Function]}
-          primary={false}
-          secondary={false}
-        />
-      </div>
+    </div>
+    <div
+      className="column is-narrow-tablet is-12-mobile"
+    >
+      <FlatButton
+        className="alertAction"
+        disabled={false}
+        fullWidth={true}
+        label="Do something"
+        labelPosition="after"
+        labelStyle={Object {}}
+        onKeyboardFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        primary={false}
+        secondary={false}
+      />
     </div>
   </div>
 </div>
@@ -95,52 +87,49 @@ exports[`Alert snapshots test renders Alert of error type should render action b
 
 exports[`Alert snapshots test renders Alert of error type should render dismiss icon button 1`] = `
 <div
-  className="forAlerts"
+  className="error alertWrapper"
 >
   <div
-    className="error alertWrapper"
+    className="columns is-multiline is-mobile"
   >
     <div
-      className="columns is-multiline is-mobile"
+      className="column is-narrow alertIcon"
     >
-      <div
-        className="column is-narrow alertIcon"
+      <FontIcon
+        className="material-icons"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
-        <FontIcon
-          className="material-icons"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          error
-        </FontIcon>
+        error
+      </FontIcon>
+    </div>
+    <div
+      className="column alertText"
+    >
+      <div>
+        <b>
+          This is a title
+        </b>
+         - 
+        This is a message
       </div>
-      <div
-        className="column alertText"
+    </div>
+    <div
+      className="column is-narrow-tablet is-hidden-mobile"
+    >
+      <IconButton
+        className="alertDismissButton"
+        disableTouchRipple={false}
+        disabled={false}
+        iconStyle={Object {}}
+        onTouchTap={[Function]}
+        tooltipPosition="bottom-center"
+        touch={false}
       >
-        <div>
-          <b>
-            This is a title
-          </b>
-           - 
-          This is a message
-        </div>
-      </div>
-      <div
-        className="column is-narrow is-hidden-mobile"
-      >
-        <IconButton
-          disableTouchRipple={false}
-          disabled={false}
-          iconStyle={Object {}}
-          onTouchTap={[Function]}
-          tooltipPosition="bottom-center"
-          touch={false}
-        >
-          <NavigationClose
-            className="alertDismiss"
-          />
-        </IconButton>
-      </div>
+        <NavigationClose
+          className="alertDismiss"
+        />
+      </IconButton>
     </div>
   </div>
 </div>
@@ -148,71 +137,68 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
 
 exports[`Alert snapshots test renders Alert of error type should render dismiss icon button and action button 1`] = `
 <div
-  className="forAlerts"
+  className="error alertWrapper"
 >
   <div
-    className="error alertWrapper"
+    className="columns is-multiline is-mobile"
   >
     <div
-      className="columns is-multiline is-mobile"
+      className="column is-narrow alertIcon"
     >
-      <div
-        className="column is-narrow alertIcon"
+      <FontIcon
+        className="material-icons"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
-        <FontIcon
-          className="material-icons"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          error
-        </FontIcon>
+        error
+      </FontIcon>
+    </div>
+    <div
+      className="column alertText"
+    >
+      <div>
+        <b>
+          This is a title
+        </b>
+         - 
+        This is a message
       </div>
-      <div
-        className="column alertText"
+    </div>
+    <div
+      className="column is-narrow-tablet is-12-mobile"
+    >
+      <FlatButton
+        className="alertAction"
+        disabled={false}
+        fullWidth={true}
+        label="Do something"
+        labelPosition="after"
+        labelStyle={Object {}}
+        onKeyboardFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        primary={false}
+        secondary={false}
+      />
+    </div>
+    <div
+      className="column is-narrow-tablet is-hidden-mobile"
+    >
+      <IconButton
+        className="alertDismissButton"
+        disableTouchRipple={false}
+        disabled={false}
+        iconStyle={Object {}}
+        onTouchTap={[Function]}
+        tooltipPosition="bottom-center"
+        touch={false}
       >
-        <div>
-          <b>
-            This is a title
-          </b>
-           - 
-          This is a message
-        </div>
-      </div>
-      <div
-        className="column is-narrow is-12-mobile"
-      >
-        <FlatButton
-          className="alertAction"
-          disabled={false}
-          fullWidth={false}
-          label="Do something"
-          labelPosition="after"
-          labelStyle={Object {}}
-          onKeyboardFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onTouchStart={[Function]}
-          onTouchTap={[Function]}
-          primary={false}
-          secondary={false}
+        <NavigationClose
+          className="alertDismiss"
         />
-      </div>
-      <div
-        className="column is-narrow is-hidden-mobile"
-      >
-        <IconButton
-          disableTouchRipple={false}
-          disabled={false}
-          iconStyle={Object {}}
-          onTouchTap={[Function]}
-          tooltipPosition="bottom-center"
-          touch={false}
-        >
-          <NavigationClose
-            className="alertDismiss"
-          />
-        </IconButton>
-      </div>
+      </IconButton>
     </div>
   </div>
 </div>

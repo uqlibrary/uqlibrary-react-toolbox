@@ -1,20 +1,17 @@
 // Vendor
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
+// Bulma includes
+@import "~bulma/sass/utilities/variables";
+@import "~bulma/sass/utilities/mixins";
+@import "~bulma/sass/grid/columns";
+@import './bulmaHelpers';
+
 // Imports
 @import 'table';
 @import 'typography';
 @import 'variables';
 @import 'components';
-
-// Bulma layout includes
-@import "~bulma/sass/utilities/all";
-@import "~bulma/sass/grid/columns";
-@import "~bulma/sass/elements/title";
-@import './bulmaHelpers';
-
-// Material animation mixins
-@import "~@material/animation/mixins";
 
 html, body {
   padding: 0;

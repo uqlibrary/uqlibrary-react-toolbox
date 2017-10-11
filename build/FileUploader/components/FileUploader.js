@@ -309,7 +309,9 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     clearErrors: clearErrors }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'metadata-container' },
+                    { className: 'metadata-container',
+                        style: uploadedFilesRow.length === 0 ? { display: 'none' } : { display: 'block' }
+                    },
                     uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, {
                         onDeleteAll: this._deleteAllFiles,
                         requireFileAccess: requireFileAccess,

@@ -41,53 +41,50 @@ var Alert = function Alert(_ref) {
 
     return _react2.default.createElement(
         'div',
-        { className: 'forAlerts' },
+        { className: type + ' alertWrapper' },
         _react2.default.createElement(
             'div',
-            { className: type + ' alertWrapper' },
+            { className: 'columns is-multiline is-mobile' },
             _react2.default.createElement(
                 'div',
-                { className: 'columns is-multiline is-mobile' },
+                { className: 'column is-narrow alertIcon' },
+                _react2.default.createElement(
+                    _FontIcon2.default,
+                    { className: 'material-icons' },
+                    type
+                )
+            ),
+            _react2.default.createElement(
+                'div',
+                { className: 'column alertText' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow alertIcon' },
+                    null,
                     _react2.default.createElement(
-                        _FontIcon2.default,
-                        { className: 'material-icons' },
-                        type
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'column alertText' },
-                    _react2.default.createElement(
-                        'div',
+                        'b',
                         null,
-                        _react2.default.createElement(
-                            'b',
-                            null,
-                            title
-                        ),
-                        '\xA0-\xA0',
-                        message
-                    )
-                ),
-                action && actionButtonLabel && _react2.default.createElement(
-                    'div',
-                    { className: 'column is-narrow is-12-mobile' },
-                    _react2.default.createElement(_FlatButton2.default, {
-                        label: actionButtonLabel,
-                        onTouchTap: action,
-                        className: 'alertAction' })
-                ),
-                allowDismiss && dismissAction && _react2.default.createElement(
-                    'div',
-                    { className: 'column is-narrow is-hidden-mobile' },
-                    _react2.default.createElement(
-                        _IconButton2.default,
-                        { onTouchTap: dismissAction },
-                        _ref2
-                    )
+                        title
+                    ),
+                    '\xA0-\xA0',
+                    message
+                )
+            ),
+            action && actionButtonLabel && _react2.default.createElement(
+                'div',
+                { className: 'column is-narrow-tablet is-12-mobile' },
+                _react2.default.createElement(_FlatButton2.default, {
+                    label: actionButtonLabel,
+                    onTouchTap: action,
+                    fullWidth: true,
+                    className: 'alertAction' })
+            ),
+            allowDismiss && dismissAction && _react2.default.createElement(
+                'div',
+                { className: 'column is-narrow-tablet is-hidden-mobile' },
+                _react2.default.createElement(
+                    _IconButton2.default,
+                    { onTouchTap: dismissAction, className: 'alertDismissButton' },
+                    _ref2
                 )
             )
         )

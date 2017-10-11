@@ -245,7 +245,7 @@ class FileUploadDropzone extends PureComponent {
                             ref={(node) => {this.dropzoneRef = node;}}
                             maxSize={this.props.maxSize}
                             onDrop={this._onDrop}
-                            style={{padding: '10px'}}
+                            style={{padding: '0px'}}
                             disabled={this.props.disabled}
                             disableClick={this.props.disabled}
                             disablePreview>
