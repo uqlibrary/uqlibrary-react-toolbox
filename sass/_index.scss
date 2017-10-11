@@ -2,10 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
 // Bulma includes
-@import "~bulma/sass/utilities/variables";
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/derived-variables";
 @import "~bulma/sass/utilities/mixins";
 @import "~bulma/sass/grid/columns";
-@import './bulmaHelpers';
+@import "~bulma/sass/base/helpers";
+$tablet: 767px;
+$desktop: 1024px;
 
 // Imports
 @import 'table';
