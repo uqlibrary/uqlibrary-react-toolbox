@@ -9,7 +9,7 @@ exports[`HelpDrawer snapshots tests renders menu 1`] = `
   open={true}
   openSecondary={true}
   swipeAreaWidth={30}
-  width={310}
+  width={320}
   zDepth={2}
 >
   <div

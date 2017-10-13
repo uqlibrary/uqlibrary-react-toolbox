@@ -53,7 +53,7 @@ var HelpDrawer = function HelpDrawer(_ref) {
             openSecondary: true,
             docked: false,
             disableSwipeToOpen: true,
-            width: 310,
+            width: 320,
             onRequestChange: toggleDrawer },
         _react2.default.createElement(
             'div',

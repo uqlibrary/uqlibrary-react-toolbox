@@ -25,9 +25,19 @@ var _Drawer = require('material-ui/Drawer');
 
 var _Drawer2 = _interopRequireDefault(_Drawer);
 
+var _IconButton = require('material-ui/IconButton');
+
+var _IconButton2 = _interopRequireDefault(_IconButton);
+
+var _keyboardArrowLeft = require('material-ui/svg-icons/hardware/keyboard-arrow-left');
+
+var _keyboardArrowLeft2 = _interopRequireDefault(_keyboardArrowLeft);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _ref2 = _react2.default.createElement(_Divider2.default, null);
+var _ref2 = _react2.default.createElement(_keyboardArrowLeft2.default, { color: 'white' });
+
+var _ref3 = _react2.default.createElement(_Divider2.default, null);
 
 function MenuDrawer(_ref) {
     var menuItems = _ref.menuItems,
@@ -35,14 +45,16 @@ function MenuDrawer(_ref) {
         drawerOpen = _ref.drawerOpen,
         docked = _ref.docked,
         logoImage = _ref.logoImage,
-        logoText = _ref.logoText;
+        logoText = _ref.logoText,
+        isMobile = _ref.isMobile;
 
+    console.log('Is this mobile? : ' + isMobile);
     return _react2.default.createElement(
         _Drawer2.default,
         {
             containerClassName: 'main-drawer',
             open: drawerOpen,
-            width: 310,
+            width: 320,
             onRequestChange: function onRequestChange() {
                 return toggleDrawer(!drawerOpen);
             },
@@ -53,7 +65,24 @@ function MenuDrawer(_ref) {
             _react2.default.createElement(
                 'div',
                 { className: 'logo-wrapper' },
-                logoImage && _react2.default.createElement('img', { src: logoImage, alt: logoText })
+                !isMobile ? logoImage && _react2.default.createElement('img', { src: logoImage, alt: logoText }) : _react2.default.createElement(
+                    'div',
+                    { className: 'columns is-gapless is-mobile' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'column is-centered' },
+                        logoImage && _react2.default.createElement('img', { src: logoImage, alt: logoText })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'column is-narrow' },
+                        _react2.default.createElement(
+                            _IconButton2.default,
+                            { onTouchTap: toggleDrawer },
+                            _ref2
+                        )
+                    )
+                )
             ),
             _react2.default.createElement(
                 _List.List,
@@ -62,7 +91,7 @@ function MenuDrawer(_ref) {
                     return menuItem.primaryText && menuItem.linkTo && _react2.default.createElement(
                         'span',
                         { className: 'menu-item-container', key: index },
-                        menuItem.divider ? _ref2 : menuItem.target && menuItem.linkTo.indexOf('http') === -1 ? _react2.default.createElement(
+                        menuItem.divider ? _ref3 : menuItem.target && menuItem.linkTo.indexOf('http') === -1 ? _react2.default.createElement(
                             'a',
                             { href: menuItem.linkTo, target: menuItem.target },
                             _react2.default.createElement(_List.ListItem, {

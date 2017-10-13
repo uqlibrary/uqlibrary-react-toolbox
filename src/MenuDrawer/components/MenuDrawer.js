@@ -5,18 +5,32 @@ import {Link} from 'react-router-dom';
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Drawer from 'material-ui/Drawer';
+import IconButton from 'material-ui/IconButton';
+import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 
-export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText}) {
+export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText, isMobile}) {
+    console.log('Is this mobile? : ' + isMobile);
     return (
         <Drawer
             containerClassName="main-drawer"
             open={drawerOpen}
-            width={310}
+            width={320}
             onRequestChange={() => toggleDrawer(!drawerOpen)}
             docked={docked}>
             <div className="layout-fill side-drawer">
                 <div className="logo-wrapper">
-                    {logoImage && <img src={logoImage} alt={logoText}/>}
+                    {!isMobile ? (logoImage && <img src={logoImage} alt={logoText}/>) : (
+                        <div className="columns is-gapless is-mobile">
+                            <div className="column is-centered">
+                                {logoImage && <img src={logoImage} alt={logoText}/>}
+                            </div>
+                            <div className="column is-narrow">
+                                <IconButton onTouchTap={toggleDrawer}>
+                                    <HardwareKeyboardArrowLeft color={'white'} />
+                                </IconButton>
+                            </div>
+                        </div>
+                    )}
                 </div>
                 <List className="main-menu">
                     {menuItems.map((menuItem, index) =>
@@ -58,6 +72,7 @@ MenuDrawer.propTypes = {
     logoText: PropTypes.string,
     drawerOpen: PropTypes.bool,
     docked: PropTypes.bool,
-    toggleDrawer: PropTypes.func
+    toggleDrawer: PropTypes.func,
+    isMobile: PropTypes.any
 };
 
