@@ -17,14 +17,8 @@
         height: 100%;
       }
     }
-
-    .main-menu {
-      padding-top: 0 !important;
-
-      a {
-        font-weight: $text-weight-normal;
-        text-decoration: none;
-      }
+    .menu-item-container a:hover {
+      text-decoration: none !important;
     }
   }
 }

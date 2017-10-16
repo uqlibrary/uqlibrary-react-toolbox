@@ -29,7 +29,7 @@
 
 .sub-title {
   font-size: $text-body-large;
-  padding: 0 !important;
+  padding: 0;
 }
 
 .disclaimer {
@@ -69,94 +69,82 @@
   }
 }
 
-//Desktop
-@include tablet {
-  .fileUploadErrorMessage {
-    padding: 12px;
-    color: darken($error-color, 10%);
-    border: 1px solid darken($error-color, 10%);
-    background-color: rgba($error-color, 0.025);
-    vertical-align: middle;
-    .Message {
-      line-height: 50px;
-      text-indent: 12px;
-      margin-top: 0px !important;
-    }
-    .Icon {
-      text-align: center;
-      margin: 0 !important;
-      font-size: 48px;
-      .material-icons {
-        font-size: 48px !important;
-        color: darken($error-color, 10%) !important;
-        margin: 0px auto !important;
-      }
-    }
+.fileUploadErrorMessage {
+  padding: 12px;
+  color: darken($error-color, 10%);
+  border: 1px solid darken($error-color, 10%);
+  background-color: rgba($error-color, 0.025);
+  vertical-align: middle;
+  .Message {
+    line-height: 50px;
+    text-indent: 12px;
+    margin-top: 0px !important;
   }
-
-  .headers {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.7);
-    .header {
-      white-space: nowrap !important;
-      text-overflow: ellipsis !important;
-      line-height: 40px !important;
-    }
-  }
-
-  .buttons {
-    padding-top: 8px !important;
-  }
-
-  .file-info {
-    .file-name {
-      line-height: 48px;
-      display: flex;
-      .truncated {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    }
-  }
-
-  .no-embargo-date {
-    span {
-      line-height: 48px;
-    }
-  }
-  .open-access-checkbox {
-    label {
-      text-align: justify;
+  .Icon {
+    text-align: center;
+    margin: 0 !important;
+    font-size: 48px;
+    .material-icons {
+      font-size: 48px !important;
+      color: darken($error-color, 10%) !important;
+      margin: 0px auto !important;
     }
   }
 }
+
+.headers {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7);
+  .header {
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    line-height: 40px !important;
+  }
+}
+
+.buttons {
+  padding-top: 8px !important;
+}
+
+.file-info {
+  .file-name {
+    line-height: 48px;
+    display: flex;
+    .truncated {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.no-embargo-date {
+  span {
+    line-height: 48px;
+  }
+}
+
+.open-access-checkbox {
+  label {
+    text-align: justify;
+  }
+}
+
 //Mobile
 @include mobile {
   .fileUploadErrorMessage {
-    padding: 12px;
     min-height: 60px;
-    color: darken($error-color, 10%);
-    border: 1px solid darken($error-color, 10%);
-    background-color: rgba($error-color, 0.025);
-    vertical-align: middle;
+
     .Message {
       padding: 12px !important;
       line-height: 18px;
       margin-top: 0px !important;
     }
     .Icon {
-      text-align: center;
       margin: 0 0 10px 0;
-      font-size: 48px;
       height: 60px !important;
       width: 60px !important;
-      .material-icons {
-        font-size: 48px !important;
-        color: darken($error-color, 10%) !important;
-        margin: 0px auto !important;
-      }
     }
   }
 
@@ -165,12 +153,13 @@
    */
   .file-info {
     display: flex !important;
-    .file-name {
+    .file-name, .embargo-date-info {
       flex-direction: column;
       display: flex;
       flex-grow: 2;
       padding-left: 10px;
       min-width: 0;
+      line-height: $text-line-height-large !important;
       .truncated {
         white-space: nowrap;
         overflow: hidden;
@@ -218,6 +207,9 @@
       display: flex;
       flex-direction: column;
       padding-left: 10px;
+       span {
+         line-height: $text-line-height-large !important;
+       }
     }
     .embargo-date-selector {
       display: flex;

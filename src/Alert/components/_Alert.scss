@@ -134,10 +134,10 @@
 // Desktop
 @include tablet {
   .alertWrapper {
-    margin: 12px 0 !important;
+    margin: 12px 0;
     .alertText {
-      display: flex !important;
-      align-items: center !important;
+      display: flex;
+      align-items: center;
     }
     button.alertAction {
       margin: 18px 0 !important;
