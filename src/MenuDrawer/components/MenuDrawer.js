@@ -19,18 +19,16 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
             docked={docked}>
             <div className="layout-fill side-drawer">
                 <div className="logo-wrapper">
-                    {!isMobile ? (logoImage && <img src={logoImage} alt={logoText}/>) : (
-                        <div className="columns is-gapless is-mobile">
-                            <div className="column is-centered">
-                                {logoImage && <img src={logoImage} alt={logoText}/>}
-                            </div>
-                            <div className="column is-narrow">
-                                <IconButton onTouchTap={toggleDrawer}>
-                                    <HardwareKeyboardArrowLeft color={'white'} />
-                                </IconButton>
-                            </div>
+                    <div className="columns is-gapless is-mobile">
+                        <div className="column is-centered">
+                            {logoImage && <img src={logoImage} alt={logoText}/>}
                         </div>
-                    )}
+                        <div className="column is-narrow is-hidden-tablet menuCloseButton">
+                            <IconButton onTouchTap={toggleDrawer}>
+                                <HardwareKeyboardArrowLeft />
+                            </IconButton>
+                        </div>
+                    </div>
                 </div>
                 <List className="main-menu">
                     {menuItems.map((menuItem, index) =>

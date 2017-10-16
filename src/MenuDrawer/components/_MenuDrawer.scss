@@ -21,4 +21,9 @@
       text-decoration: none !important;
     }
   }
+  @include mobile{
+    .menuCloseButton button svg {
+      fill: $text-color-reverse !important;
+    }
+  }
 }

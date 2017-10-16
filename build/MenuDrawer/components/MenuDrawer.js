@@ -35,7 +35,7 @@ var _keyboardArrowLeft2 = _interopRequireDefault(_keyboardArrowLeft);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _ref2 = _react2.default.createElement(_keyboardArrowLeft2.default, { color: 'white' });
+var _ref2 = _react2.default.createElement(_keyboardArrowLeft2.default, null);
 
 var _ref3 = _react2.default.createElement(_Divider2.default, null);
 
@@ -65,7 +65,7 @@ function MenuDrawer(_ref) {
             _react2.default.createElement(
                 'div',
                 { className: 'logo-wrapper' },
-                !isMobile ? logoImage && _react2.default.createElement('img', { src: logoImage, alt: logoText }) : _react2.default.createElement(
+                _react2.default.createElement(
                     'div',
                     { className: 'columns is-gapless is-mobile' },
                     _react2.default.createElement(
@@ -75,7 +75,7 @@ function MenuDrawer(_ref) {
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'column is-narrow' },
+                        { className: 'column is-narrow is-hidden-tablet menuCloseButton' },
                         _react2.default.createElement(
                             _IconButton2.default,
                             { onTouchTap: toggleDrawer },
