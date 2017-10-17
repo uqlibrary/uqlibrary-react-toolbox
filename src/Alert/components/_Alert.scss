@@ -30,6 +30,10 @@
         font-size: 14px !important
       }
     }
+    button.alertAction {
+      margin: 6px 0 !important;
+    }
+
     // Help
     &.help, &.help_outline {
       background-color: darken($theme-color, 5%);
@@ -44,7 +48,6 @@
       }
       button.alertAction {
         background-color: darken($theme-color, 12%) !important;
-        margin: 6px 0 !important;
         color: $text-color-reverse !important;
       }
     }
@@ -63,7 +66,6 @@
       }
       button.alertAction {
         background-color: darken($error-color, 15%) !important;
-        margin: 6px 0 !important;
         color: $text-color-reverse !important;
       }
     }
@@ -82,7 +84,6 @@
       }
       button.alertAction {
         background-color: darken($warning-color, 10%) !important;
-        margin: 6px 0 !important;
         color: $text-color-reverse !important;
       }
     }
@@ -101,7 +102,6 @@
       }
       button.alertAction {
         background-color: darken($info-color, 15%) !important;
-        margin: 6px 0 !important;
         color: $text-color-reverse !important;
       }
     }
@@ -120,7 +120,6 @@
       }
       button.alertAction {
         background-color: darken($available-color, 20%) !important;
-        margin: 6px 0 !important;
         color: $text-color-reverse !important;
       }
     }
@@ -157,12 +156,11 @@
         font-size: 14px !important
       }
     }
-    button.alertAction{
-      width: calc(100% - 24px) !important;
-      height: auto !important;
+
+    button.alertAction {
+      width: calc(100% - 24px);
       line-height: 18px !important;
-      white-space: normal !important;
-      padding: 12px !important;
+      margin: 0 !important;
     }
 
     // Help
@@ -175,9 +173,7 @@
         color: $text-color-reverse !important;
       }
       button.alertAction {
-        width: 100%;
         background-color: darken($theme-color, 12%) !important;
-        margin: 12px 0 6px 0 !important;
         color: $text-color-reverse !important;
       }
     }
@@ -192,16 +188,14 @@
         color: $text-color-reverse !important;
       }
       button.alertAction {
-        width: 100%;
         background-color: darken($error-color, 15%) !important;
-        margin: 12px 0 6px 0 !important;
         color: $text-color-reverse !important;
       }
     }
 
     // Warning
     &.warning {
-      background-color: darken($warning-color, 0%);
+      background-color: darken($warning-color, 5%);
       .alertText, .alertTitle {
         color: $text-color-reverse !important;
       }
@@ -209,9 +203,7 @@
         color: $text-color-reverse !important;
       }
       button.alertAction {
-        width: 100%;
-        background-color: darken($warning-color, 5%) !important;
-        margin: 12px 0 6px 0 !important;
+        background-color: darken($warning-color, 10%) !important;
         color: $text-color-reverse !important;
       }
     }
@@ -230,6 +222,10 @@
           fill: $text-color-reverse !important;
         }
       }
+      button.alertAction {
+        background-color: darken($info-color, 20%) !important;
+        color: $text-color-reverse !important;
+      }
     }
 
     // Done
@@ -245,6 +241,10 @@
         svg {
           fill: $text-color-reverse !important;
         }
+      }
+      button.alertAction {
+        background-color: darken($available-color, 15%) !important;
+        color: $text-color-reverse !important;
       }
     }
   }
