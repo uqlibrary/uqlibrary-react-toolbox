@@ -45,10 +45,8 @@ function MenuDrawer(_ref) {
         drawerOpen = _ref.drawerOpen,
         docked = _ref.docked,
         logoImage = _ref.logoImage,
-        logoText = _ref.logoText,
-        isMobile = _ref.isMobile;
+        logoText = _ref.logoText;
 
-    console.log('Is this mobile? : ' + isMobile);
     return _react2.default.createElement(
         _Drawer2.default,
         {

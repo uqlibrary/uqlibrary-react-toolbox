@@ -136,7 +136,12 @@ var PartialDateForm = function (_Component) {
 
             return _react2.default.createElement(
                 'div',
-                { className: 'columns is-gapless-mobile' },
+                { className: 'columns is-multiline is-gapless-mobile' },
+                _react2.default.createElement(
+                    'div',
+                    { className: this.props.floatingTitleRequired ? 'column is-12 dateTitle required' : 'column is-12 dateTitle' },
+                    this.props.floatingTitle
+                ),
                 _react2.default.createElement(
                     'div',
                     { className: 'column' },
@@ -144,16 +149,14 @@ var PartialDateForm = function (_Component) {
                         name: 'day',
                         type: 'text',
                         maxLength: '2',
-                        style: { marginTop: '12px' },
                         className: !this.props.allowPartial ? className : '',
                         fullWidth: true,
                         disabled: this.props.disabled,
-                        floatingLabelText: locale.dayLabel,
-                        floatingLabelFixed: true,
                         errorText: this.errors.day,
                         onKeyPress: this._isNumber,
                         onChange: this._onDateChanged('day'),
-                        onBlur: !this.props.allowPartial ? this._onDateChanged('day') : undefined
+                        onBlur: !this.props.allowPartial ? this._onDateChanged('day') : undefined,
+                        hintText: locale.dayLabel
                     })
                 ),
                 _react2.default.createElement(
@@ -167,10 +170,8 @@ var PartialDateForm = function (_Component) {
                             fullWidth: true,
                             disabled: this.props.disabled,
                             value: this.state.month,
-                            style: { marginTop: '12px' },
                             className: !this.props.allowPartial ? className : '',
-                            floatingLabelText: locale.monthLabel,
-                            floatingLabelFixed: true,
+                            hintText: locale.monthLabel,
                             errorText: this.errors.month,
                             onChange: this._onDateChanged('month') },
                         _ref,
@@ -184,12 +185,10 @@ var PartialDateForm = function (_Component) {
                         name: 'year',
                         type: 'text',
                         fullWidth: true,
-                        style: { marginTop: '12px' },
                         className: className,
                         maxLength: '4',
                         disabled: this.props.disabled,
-                        floatingLabelText: locale.yearLabel,
-                        floatingLabelFixed: true,
+                        hintText: locale.yearLabel,
                         errorText: this.errors.year,
                         onKeyPress: this._isNumber,
                         onChange: this._onDateChanged('year'),
@@ -218,6 +217,8 @@ PartialDateForm.defaultProps = {
     },
     months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     dateFormat: 'YYYY-MM-DD',
-    allowPartial: false
+    allowPartial: false,
+    floatingTitle: 'Enter a date',
+    floatingTitleRequired: false
 };
 exports.default = PartialDateForm;
