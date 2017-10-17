@@ -8,7 +8,7 @@ import Drawer from 'material-ui/Drawer';
 import IconButton from 'material-ui/IconButton';
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 
-export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText, isMobile}) {
+export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText}) {
     return (
         <Drawer
             containerClassName="main-drawer"
@@ -69,7 +69,6 @@ MenuDrawer.propTypes = {
     logoText: PropTypes.string,
     drawerOpen: PropTypes.bool,
     docked: PropTypes.bool,
-    toggleDrawer: PropTypes.func,
-    isMobile: PropTypes.any
+    toggleDrawer: PropTypes.func
 };
 
