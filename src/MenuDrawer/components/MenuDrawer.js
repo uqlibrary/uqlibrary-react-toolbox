@@ -9,7 +9,6 @@ import IconButton from 'material-ui/IconButton';
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 
 export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText, isMobile}) {
-    console.log('Is this mobile? : ' + isMobile);
     return (
         <Drawer
             containerClassName="main-drawer"
