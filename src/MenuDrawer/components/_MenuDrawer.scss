@@ -17,13 +17,13 @@
         height: 100%;
       }
     }
-
-    .main-menu {
-      padding-top: 0 !important;
-
-      a {
-        text-decoration: none;
-      }
+    .menu-item-container a:hover {
+      text-decoration: none !important;
+    }
+  }
+  @include mobile{
+    .menuCloseButton button svg {
+      fill: $text-color-reverse !important;
     }
   }
 }

@@ -7,33 +7,32 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 const Alert = ({title, message, type, action, actionButtonLabel, allowDismiss, dismissAction}) => {
     return (
-        <div className="forAlerts">
-            <div className={type + ' alertWrapper'}>
-                <div className="columns is-multiline is-mobile">
-                    <div className="column is-narrow alertIcon">
-                        <FontIcon className="material-icons">{type}</FontIcon>
-                    </div>
-                    <div className="column alertText">
-                        <span className="alertTitle">{title} - </span>{message}
-                    </div>
-                    {
-                        action && actionButtonLabel &&
-                        <div className="column is-narrow is-12-mobile">
-                            <FlatButton
-                                label={actionButtonLabel}
-                                onTouchTap={action}
-                                className="alertAction"/>
-                        </div>
-                    }
-                    {
-                        allowDismiss && dismissAction &&
-                        <div className="column is-narrow is-hidden-mobile">
-                            <IconButton onTouchTap={dismissAction}>
-                                <NavigationClose className="alertDismiss"/>
-                            </IconButton>
-                        </div>
-                    }
+        <div className={type + ' alertWrapper'}>
+            <div className="columns is-multiline is-mobile">
+                <div className="column is-narrow alertIcon">
+                    <FontIcon className="material-icons">{type}</FontIcon>
                 </div>
+                <div className="column alertText">
+                    <div><b>{title}</b>&nbsp;-&nbsp;{message}</div>
+                </div>
+                {
+                    action && actionButtonLabel &&
+                    <div className="column is-narrow-tablet is-12-mobile">
+                        <FlatButton
+                            label={actionButtonLabel}
+                            onTouchTap={action}
+                            fullWidth
+                            className="alertAction"/>
+                    </div>
+                }
+                {
+                    allowDismiss && dismissAction &&
+                    <div className="column is-narrow-tablet is-hidden-mobile">
+                        <IconButton onTouchTap={dismissAction} className="alertDismissButton">
+                            <NavigationClose className="alertDismiss"/>
+                        </IconButton>
+                    </div>
+                }
             </div>
         </div>
     );

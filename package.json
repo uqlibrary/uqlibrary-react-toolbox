@@ -111,7 +111,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "bulma": "^0.5.1",
+    "bulma": "^0.6.0",
     "highcharts": "^5.0.10",
     "immutable": "^3.8.1",
     "material-ui": "^0.18.0",

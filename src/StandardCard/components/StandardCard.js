@@ -10,7 +10,7 @@ export default function StandardCard({title, help, className, children}) {
             <CardHeader className="card-header">
                 <div className="columns is-gapless is-mobile">
                     <div className="column">
-                        {title && <h2 className="title is-4">{title}</h2>}
+                        {title && <h2 className="cardTitle">{title}</h2>}
                     </div>
                     {help && help.text &&
                     <div className="column is-narrow is-helpicon">

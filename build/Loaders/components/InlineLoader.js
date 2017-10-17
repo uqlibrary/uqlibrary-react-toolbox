@@ -47,7 +47,7 @@ function InlineLoader(_ref) {
         _ref6,
         _react2.default.createElement(
             'span',
-            { className: 'title is-4' },
+            { className: 'cardTitle' },
             message
         ),
         ' ',

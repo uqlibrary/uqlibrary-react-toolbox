@@ -74,7 +74,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
               preventDropOnDocument={true}
               style={
                 Object {
-                  "padding": "10px",
+                  "padding": "0px",
                 }
               }
             >
@@ -89,7 +89,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
                 onDrop={[Function]}
                 style={
                   Object {
-                    "padding": "10px",
+                    "padding": "0px",
                   }
                 }
               >
@@ -174,6 +174,11 @@ exports[`FileUploader renders correctly without any setup 1`] = `
     </FileUploadDropzone>
     <div
       className="metadata-container"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
     />
   </div>
 </FileUploader>
@@ -253,7 +258,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
               preventDropOnDocument={true}
               style={
                 Object {
-                  "padding": "10px",
+                  "padding": "0px",
                 }
               }
             >
@@ -268,7 +273,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
                 onDrop={[Function]}
                 style={
                   Object {
-                    "padding": "10px",
+                    "padding": "0px",
                   }
                 }
               >
@@ -353,6 +358,11 @@ exports[`FileUploader renders row for uploaded files 1`] = `
     </FileUploadDropzone>
     <div
       className="metadata-container"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
     />
   </div>
 </FileUploader>
@@ -443,7 +453,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
               preventDropOnDocument={true}
               style={
                 Object {
-                  "padding": "10px",
+                  "padding": "0px",
                 }
               }
             >
@@ -458,7 +468,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                 onDrop={[Function]}
                 style={
                   Object {
-                    "padding": "10px",
+                    "padding": "0px",
                   }
                 }
               >
@@ -543,6 +553,11 @@ exports[`FileUploader renders row for uploaded files 2`] = `
     </FileUploadDropzone>
     <div
       className="metadata-container"
+      style={
+        Object {
+          "display": "block",
+        }
+      }
     >
       <FileUploadRowHeader
         locale={
@@ -1695,7 +1710,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
               preventDropOnDocument={true}
               style={
                 Object {
-                  "padding": "10px",
+                  "padding": "0px",
                 }
               }
             >
@@ -1710,7 +1725,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                 onDrop={[Function]}
                 style={
                   Object {
-                    "padding": "10px",
+                    "padding": "0px",
                   }
                 }
               >
@@ -1795,6 +1810,11 @@ exports[`FileUploader renders row for uploaded files 3`] = `
     </FileUploadDropzone>
     <div
       className="metadata-container"
+      style={
+        Object {
+          "display": "block",
+        }
+      }
     >
       <FileUploadRowHeader
         locale={
@@ -2551,7 +2571,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
               preventDropOnDocument={true}
               style={
                 Object {
-                  "padding": "10px",
+                  "padding": "0px",
                 }
               }
             >
@@ -2566,7 +2586,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
                 onDrop={[Function]}
                 style={
                   Object {
-                    "padding": "10px",
+                    "padding": "0px",
                   }
                 }
               >
@@ -2651,6 +2671,11 @@ exports[`FileUploader renders row for uploaded files 4`] = `
     </FileUploadDropzone>
     <div
       className="metadata-container"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
     />
   </div>
 </FileUploader>
@@ -2730,7 +2755,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
               preventDropOnDocument={true}
               style={
                 Object {
-                  "padding": "10px",
+                  "padding": "0px",
                 }
               }
             >
@@ -2745,7 +2770,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
                 onDrop={[Function]}
                 style={
                   Object {
-                    "padding": "10px",
+                    "padding": "0px",
                   }
                 }
               >
@@ -2830,6 +2855,11 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
     </FileUploadDropzone>
     <div
       className="metadata-container"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
     />
   </div>
 </FileUploader>
@@ -2920,7 +2950,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
               preventDropOnDocument={true}
               style={
                 Object {
-                  "padding": "10px",
+                  "padding": "0px",
                 }
               }
             >
@@ -2935,7 +2965,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                 onDrop={[Function]}
                 style={
                   Object {
-                    "padding": "10px",
+                    "padding": "0px",
                   }
                 }
               >
@@ -3020,6 +3050,11 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
     </FileUploadDropzone>
     <div
       className="metadata-container"
+      style={
+        Object {
+          "display": "block",
+        }
+      }
     >
       <FileUploadRowHeader
         locale={
@@ -7073,7 +7108,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
               preventDropOnDocument={true}
               style={
                 Object {
-                  "padding": "10px",
+                  "padding": "0px",
                 }
               }
             >
@@ -7088,7 +7123,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                 onDrop={[Function]}
                 style={
                   Object {
-                    "padding": "10px",
+                    "padding": "0px",
                   }
                 }
               >
@@ -7173,6 +7208,11 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
     </FileUploadDropzone>
     <div
       className="metadata-container"
+      style={
+        Object {
+          "display": "block",
+        }
+      }
     >
       <FileUploadRowHeader
         locale={
@@ -11228,7 +11268,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
               preventDropOnDocument={true}
               style={
                 Object {
-                  "padding": "10px",
+                  "padding": "0px",
                 }
               }
             >
@@ -11243,7 +11283,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                 onDrop={[Function]}
                 style={
                   Object {
-                    "padding": "10px",
+                    "padding": "0px",
                   }
                 }
               >
@@ -11328,6 +11368,11 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
     </FileUploadDropzone>
     <div
       className="metadata-container"
+      style={
+        Object {
+          "display": "block",
+        }
+      }
     >
       <FileUploadRowHeader
         locale={
@@ -16559,7 +16604,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
               preventDropOnDocument={true}
               style={
                 Object {
-                  "padding": "10px",
+                  "padding": "0px",
                 }
               }
             >
@@ -16574,7 +16619,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                 onDrop={[Function]}
                 style={
                   Object {
-                    "padding": "10px",
+                    "padding": "0px",
                   }
                 }
               >
@@ -16659,6 +16704,11 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
     </FileUploadDropzone>
     <div
       className="metadata-container"
+      style={
+        Object {
+          "display": "block",
+        }
+      }
     >
       <FileUploadRowHeader
         locale={

@@ -49,7 +49,7 @@ exports[`FileUploadDropzone renders correctly without any setup 1`] = `
           preventDropOnDocument={true}
           style={
             Object {
-              "padding": "10px",
+              "padding": "0px",
             }
           }
         >
@@ -64,7 +64,7 @@ exports[`FileUploadDropzone renders correctly without any setup 1`] = `
             onDrop={[Function]}
             style={
               Object {
-                "padding": "10px",
+                "padding": "0px",
               }
             }
           >
@@ -198,7 +198,7 @@ exports[`FileUploadDropzone renders row for uploaded files 1`] = `
           preventDropOnDocument={true}
           style={
             Object {
-              "padding": "10px",
+              "padding": "0px",
             }
           }
         >
@@ -213,7 +213,7 @@ exports[`FileUploadDropzone renders row for uploaded files 1`] = `
             onDrop={[Function]}
             style={
               Object {
-                "padding": "10px",
+                "padding": "0px",
               }
             }
           >
@@ -347,7 +347,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
           preventDropOnDocument={true}
           style={
             Object {
-              "padding": "10px",
+              "padding": "0px",
             }
           }
         >
@@ -362,7 +362,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
             onDrop={[Function]}
             style={
               Object {
-                "padding": "10px",
+                "padding": "0px",
               }
             }
           >
@@ -450,51 +450,47 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
       type="error"
     >
       <div
-        className="forAlerts"
+        className="error alertWrapper"
       >
         <div
-          className="error alertWrapper"
+          className="columns is-multiline is-mobile"
         >
           <div
-            className="columns is-multiline is-mobile"
+            className="column is-narrow alertIcon"
           >
-            <div
-              className="column is-narrow alertIcon"
+            <FontIcon
+              className="material-icons"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
             >
-              <FontIcon
+              <span
                 className="material-icons"
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
-              >
-                <span
-                  className="material-icons"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fontSize": 24,
-                      "muiPrepared": true,
-                      "position": "relative",
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                    }
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "display": "inline-block",
+                    "fontSize": 24,
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "userSelect": "none",
                   }
-                >
-                  error
-                </span>
-              </FontIcon>
-            </div>
-            <div
-              className="column alertText"
-            >
-              <span
-                className="alertTitle"
+                }
               >
-                Upload Errors
-                 - 
+                error
               </span>
+            </FontIcon>
+          </div>
+          <div
+            className="column alertText"
+          >
+            <div>
+              <b>
+                Upload Errors
+              </b>
+               - 
               File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; Invalid file name (a.text.txt)
             </div>
           </div>
@@ -554,7 +550,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
           preventDropOnDocument={true}
           style={
             Object {
-              "padding": "10px",
+              "padding": "0px",
             }
           }
         >
@@ -569,7 +565,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
             onDrop={[Function]}
             style={
               Object {
-                "padding": "10px",
+                "padding": "0px",
               }
             }
           >
@@ -657,51 +653,47 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
       type="error"
     >
       <div
-        className="forAlerts"
+        className="error alertWrapper"
       >
         <div
-          className="error alertWrapper"
+          className="columns is-multiline is-mobile"
         >
           <div
-            className="columns is-multiline is-mobile"
+            className="column is-narrow alertIcon"
           >
-            <div
-              className="column is-narrow alertIcon"
+            <FontIcon
+              className="material-icons"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
             >
-              <FontIcon
+              <span
                 className="material-icons"
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
-              >
-                <span
-                  className="material-icons"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fontSize": 24,
-                      "muiPrepared": true,
-                      "position": "relative",
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                    }
+                style={
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "display": "inline-block",
+                    "fontSize": 24,
+                    "muiPrepared": true,
+                    "position": "relative",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "userSelect": "none",
                   }
-                >
-                  error
-                </span>
-              </FontIcon>
-            </div>
-            <div
-              className="column alertText"
-            >
-              <span
-                className="alertTitle"
+                }
               >
-                Upload Errors
-                 - 
+                error
               </span>
+            </FontIcon>
+          </div>
+          <div
+            className="column alertText"
+          >
+            <div>
+              <b>
+                Upload Errors
+              </b>
+               - 
               Only 3 files are allowed to be uploaded. File (d.txt) ignored
             </div>
           </div>

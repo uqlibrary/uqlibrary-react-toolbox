@@ -33,7 +33,7 @@ function StandardRighthandCard(_ref) {
                 { className: 'column' },
                 title && _react2.default.createElement(
                     'h2',
-                    { className: 'title is-5' },
+                    { className: 'cardTitle' },
                     title
                 )
             ),

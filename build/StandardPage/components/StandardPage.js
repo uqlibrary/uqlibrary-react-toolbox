@@ -25,7 +25,7 @@ function StandardPage(_ref) {
         { className: '' + className },
         _react2.default.createElement(
             'h1',
-            { className: 'title is-3' },
+            { className: 'pageTitle' },
             title
         ),
         _react2.default.createElement(

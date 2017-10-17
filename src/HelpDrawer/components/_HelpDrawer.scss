@@ -1,6 +1,9 @@
 @import '../../../sass/variables';
 
 .help-drawer {
+  .cardTitle{
+    color: $theme-color;
+  }
   .app-bar {
     height: 75px;
     background-color: $theme-color;
@@ -9,16 +12,11 @@
     box-sizing: border-box;
     width: 100%;
   }
-
-  span.title {
-    margin: 0px !important;
-    color: $theme-color;
-  }
   .body-1 {
     padding-top: 24px;
   }
   .content {
-    padding: 24px !important;
+    padding: 24px;
     overflow-y: auto;
   }
 }

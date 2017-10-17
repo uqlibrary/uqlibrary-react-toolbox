@@ -7,7 +7,7 @@ export default function StandardRighthandCard({title, children, help}) {
         <div className="StandardRighthandCard">
             <div className="columns is-gapless is-mobile StandardRighthandCardTitle">
                 <div className="column">
-                    {title && <h2 className="title is-5">{title}</h2>}
+                    {title && <h2 className="cardTitle">{title}</h2>}
                 </div>
                 {help && help.text &&
                 <div className="column is-narrow is-helpicon">

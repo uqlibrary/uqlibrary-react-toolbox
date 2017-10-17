@@ -243,7 +243,9 @@ export class FileUploader extends PureComponent {
                     onDropped={this._setUploadedFiles}
                     uploadedFiles={uploadedFiles}
                     clearErrors={clearErrors} />
-                <div className="metadata-container">
+                <div className="metadata-container"
+                    style={uploadedFilesRow.length === 0 ? ({display: 'none'}) : ({display: 'block'})}
+                >
                     {
                         uploadedFiles.length > 0 &&
                         <FileUploadRowHeader

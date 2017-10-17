@@ -17,7 +17,29 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
   >
     <div
       className="logo-wrapper"
-    />
+    >
+      <div
+        className="columns is-gapless is-mobile"
+      >
+        <div
+          className="column is-centered"
+        />
+        <div
+          className="column is-narrow is-hidden-tablet menuCloseButton"
+        >
+          <IconButton
+            disableTouchRipple={false}
+            disabled={false}
+            iconStyle={Object {}}
+            onTouchTap={[Function]}
+            tooltipPosition="bottom-center"
+            touch={false}
+          >
+            <HardwareKeyboardArrowLeft />
+          </IconButton>
+        </div>
+      </div>
+    </div>
     <List
       className="main-menu"
     >
@@ -110,10 +132,32 @@ exports[`MenuDrawer snapshots tests renders menu with logo 1`] = `
     <div
       className="logo-wrapper"
     >
-      <img
-        alt="desc of image"
-        src="http://image/image.svg"
-      />
+      <div
+        className="columns is-gapless is-mobile"
+      >
+        <div
+          className="column is-centered"
+        >
+          <img
+            alt="desc of image"
+            src="http://image/image.svg"
+          />
+        </div>
+        <div
+          className="column is-narrow is-hidden-tablet menuCloseButton"
+        >
+          <IconButton
+            disableTouchRipple={false}
+            disabled={false}
+            iconStyle={Object {}}
+            onTouchTap={[Function]}
+            tooltipPosition="bottom-center"
+            touch={false}
+          >
+            <HardwareKeyboardArrowLeft />
+          </IconButton>
+        </div>
+      </div>
     </div>
     <List
       className="main-menu"
@@ -206,7 +250,29 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
   >
     <div
       className="logo-wrapper"
-    />
+    >
+      <div
+        className="columns is-gapless is-mobile"
+      >
+        <div
+          className="column is-centered"
+        />
+        <div
+          className="column is-narrow is-hidden-tablet menuCloseButton"
+        >
+          <IconButton
+            disableTouchRipple={false}
+            disabled={false}
+            iconStyle={Object {}}
+            onTouchTap={[Function]}
+            tooltipPosition="bottom-center"
+            touch={false}
+          >
+            <HardwareKeyboardArrowLeft />
+          </IconButton>
+        </div>
+      </div>
+    </div>
     <List
       className="main-menu"
     >
