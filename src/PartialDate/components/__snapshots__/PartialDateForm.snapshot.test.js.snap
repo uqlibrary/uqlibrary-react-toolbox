@@ -2,28 +2,28 @@
 
 exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] = `
 <div
-  className="columns is-gapless-mobile"
+  className="columns is-multiline is-gapless-mobile"
 >
+  <div
+    className="column is-12 dateTitle"
+  >
+    Enter a date
+  </div>
   <div
     className="column"
   >
     <TextField
       className=""
       disabled={false}
-      floatingLabelFixed={true}
-      floatingLabelText="Day"
+      floatingLabelFixed={false}
       fullWidth={true}
+      hintText="Day"
       maxLength="2"
       multiLine={false}
       name="day"
       onChange={[Function]}
       onKeyPress={[Function]}
       rows={1}
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
       type="text"
       underlineShow={true}
     />
@@ -40,17 +40,11 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
           "animated": false,
         }
       }
-      floatingLabelFixed={true}
-      floatingLabelText="Month"
       fullWidth={true}
+      hintText="Month"
       multiple={false}
       name="month"
       onChange={[Function]}
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
       value={null}
     >
       <MenuItem
@@ -346,9 +340,9 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
   >
     <TextField
       disabled={false}
-      floatingLabelFixed={true}
-      floatingLabelText="Year"
+      floatingLabelFixed={false}
       fullWidth={true}
+      hintText="Year"
       maxLength="4"
       multiLine={false}
       name="year"
@@ -356,11 +350,6 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
       onChange={[Function]}
       onKeyPress={[Function]}
       rows={1}
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
       type="text"
       underlineShow={true}
     />
@@ -370,28 +359,28 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
 
 exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`] = `
 <div
-  className="columns is-gapless-mobile"
+  className="columns is-multiline is-gapless-mobile"
 >
+  <div
+    className="column is-12 dateTitle"
+  >
+    Enter a date
+  </div>
   <div
     className="column"
   >
     <TextField
       className=""
       disabled={false}
-      floatingLabelFixed={true}
-      floatingLabelText="Day"
+      floatingLabelFixed={false}
       fullWidth={true}
+      hintText="Day"
       maxLength="2"
       multiLine={false}
       name="day"
       onChange={[Function]}
       onKeyPress={[Function]}
       rows={1}
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
       type="text"
       underlineShow={true}
     />
@@ -408,17 +397,11 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
           "animated": false,
         }
       }
-      floatingLabelFixed={true}
-      floatingLabelText="Month"
       fullWidth={true}
+      hintText="Month"
       multiple={false}
       name="month"
       onChange={[Function]}
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
       value={null}
     >
       <MenuItem
@@ -715,9 +698,9 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
     <TextField
       className="requiredField"
       disabled={false}
-      floatingLabelFixed={true}
-      floatingLabelText="Year"
+      floatingLabelFixed={false}
       fullWidth={true}
+      hintText="Year"
       maxLength="4"
       multiLine={false}
       name="year"
@@ -725,11 +708,6 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
       onChange={[Function]}
       onKeyPress={[Function]}
       rows={1}
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
       type="text"
       underlineShow={true}
     />
@@ -739,17 +717,22 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
 
 exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`] = `
 <div
-  className="columns is-gapless-mobile"
+  className="columns is-multiline is-gapless-mobile"
 >
+  <div
+    className="column is-12 dateTitle"
+  >
+    Enter a date
+  </div>
   <div
     className="column"
   >
     <TextField
       className="requiredField"
       disabled={false}
-      floatingLabelFixed={true}
-      floatingLabelText="Day"
+      floatingLabelFixed={false}
       fullWidth={true}
+      hintText="Day"
       maxLength="2"
       multiLine={false}
       name="day"
@@ -757,11 +740,6 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
       onChange={[Function]}
       onKeyPress={[Function]}
       rows={1}
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
       type="text"
       underlineShow={true}
     />
@@ -778,17 +756,11 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
           "animated": false,
         }
       }
-      floatingLabelFixed={true}
-      floatingLabelText="Month"
       fullWidth={true}
+      hintText="Month"
       multiple={false}
       name="month"
       onChange={[Function]}
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
       value={null}
     >
       <MenuItem
@@ -1085,9 +1057,9 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
     <TextField
       className="requiredField"
       disabled={false}
-      floatingLabelFixed={true}
-      floatingLabelText="Year"
+      floatingLabelFixed={false}
       fullWidth={true}
+      hintText="Year"
       maxLength="4"
       multiLine={false}
       name="year"
@@ -1095,11 +1067,6 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
       onChange={[Function]}
       onKeyPress={[Function]}
       rows={1}
-      style={
-        Object {
-          "marginTop": "12px",
-        }
-      }
       type="text"
       underlineShow={true}
     />

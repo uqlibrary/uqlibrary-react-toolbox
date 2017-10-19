@@ -4,6 +4,8 @@ exports[`Redux-form Field PartialDateField snapshots tests renders PartialDateFi
 <PartialDateForm
   allowPartial={true}
   dateFormat="YYYY-MM-DD"
+  floatingTitle="Enter a date"
+  floatingTitleRequired={false}
   input={
     Object {
       "onChange": [Function],
@@ -49,6 +51,8 @@ exports[`Redux-form Field PartialDateField snapshots tests renders PartialDateFi
   allowPartial={false}
   className="requiredField"
   dateFormat="YYYY-MM-DD"
+  floatingTitle="Enter a date"
+  floatingTitleRequired={false}
   input={
     Object {
       "onChange": [Function],
@@ -94,6 +98,8 @@ exports[`Redux-form Field PartialDateField snapshots tests renders PartialDateFi
   allowPartial={true}
   className="requiredField"
   dateFormat="YYYY-MM-DD"
+  floatingTitle="Enter a date"
+  floatingTitleRequired={false}
   input={
     Object {
       "onChange": [Function],

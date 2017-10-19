@@ -15,7 +15,9 @@ class PartialDateForm extends Component {
         allowPartial: PropTypes.bool,
         disabled: PropTypes.bool,
         months: PropTypes.array,
-        className: PropTypes.string
+        className: PropTypes.string,
+        floatingTitle: PropTypes.string.isRequired,
+        floatingTitleRequired: PropTypes.bool
     };
 
     static defaultProps = {
@@ -33,7 +35,9 @@ class PartialDateForm extends Component {
         },
         months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         dateFormat: 'YYYY-MM-DD',
-        allowPartial: false
+        allowPartial: false,
+        floatingTitle: 'Enter a date',
+        floatingTitleRequired: false
     };
 
     constructor(props) {
@@ -113,22 +117,23 @@ class PartialDateForm extends Component {
         );
 
         return (
-            <div className="columns is-gapless-mobile">
+            <div className="columns is-multiline is-gapless-mobile">
+                <div className={this.props.floatingTitleRequired ? ('column is-12 dateTitle required') : ('column is-12 dateTitle')}>
+                    {this.props.floatingTitle}
+                </div>
                 <div className="column">
                     <TextField
                         name="day"
                         type="text"
                         maxLength="2"
-                        style={{marginTop: '12px'}}
                         className={!this.props.allowPartial ? className : ''}
                         fullWidth
                         disabled={this.props.disabled}
-                        floatingLabelText={locale.dayLabel}
-                        floatingLabelFixed
                         errorText={this.errors.day}
                         onKeyPress={this._isNumber}
                         onChange={this._onDateChanged('day')}
                         onBlur={!this.props.allowPartial ? this._onDateChanged('day') : undefined}
+                        hintText={locale.dayLabel}
                     />
                 </div>
                 <div className="column">
@@ -138,10 +143,8 @@ class PartialDateForm extends Component {
                         fullWidth
                         disabled={this.props.disabled}
                         value={this.state.month}
-                        style={{marginTop: '12px'}}
                         className={!this.props.allowPartial ? className : ''}
-                        floatingLabelText={locale.monthLabel}
-                        floatingLabelFixed
+                        hintText={locale.monthLabel}
                         errorText={this.errors.month}
                         onChange={this._onDateChanged('month')}>
                         <MenuItem key={-1} value={-1} primaryText=""/>
@@ -153,12 +156,10 @@ class PartialDateForm extends Component {
                         name="year"
                         type="text"
                         fullWidth
-                        style={{marginTop: '12px'}}
                         className={className}
                         maxLength="4"
                         disabled={this.props.disabled}
-                        floatingLabelText={locale.yearLabel}
-                        floatingLabelFixed
+                        hintText={locale.yearLabel}
                         errorText={this.errors.year}
                         onKeyPress={this._isNumber}
                         onChange={this._onDateChanged('year')}
