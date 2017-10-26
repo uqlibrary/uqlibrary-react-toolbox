@@ -1,0 +1,10 @@
+// Fixes text input where the hint text wraps, and sits over a floating label
+@include mobile {
+  .input-long-hint > div:first-of-type {
+    width: 100% !important;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
