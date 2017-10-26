@@ -26,4 +26,18 @@ describe('TextFieldWrapper snapshots tests', () => {
         const tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });
+    it('renders TextField component appending a class', () => {
+        const props =
+            {
+                name: 'testField',
+                type: 'text',
+                fullWidth: true,
+                floatingLabelText: 'This is a test textfield component',
+                className: 'requiredField'
+            };
+
+        const wrapper = setup(props);
+        const tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
 });
