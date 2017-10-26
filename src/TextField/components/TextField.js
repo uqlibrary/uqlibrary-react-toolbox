@@ -7,6 +7,7 @@ import {HelpIcon} from '../../HelpDrawer';
 
 const TextFieldWrapper = props => {
     const filteredProps = propFilter(props, TextField.propTypes);
+    delete filteredProps.className;
     const classProps = props.className ? props.className + ' input-long-hint' : 'input-long-hint';
     return (
         <div style={{position: 'relative', width: '100%'}}>
