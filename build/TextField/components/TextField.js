@@ -29,11 +29,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var TextFieldWrapper = function TextFieldWrapper(props) {
     var filteredProps = (0, _filterProps2.default)(props, _TextField2.default.propTypes);
     delete filteredProps.className;
-    var classProps = props.className ? props.className + ' input-long-hint' : 'input-long-hint';
     return _react2.default.createElement(
         'div',
         { style: { position: 'relative', width: '100%' } },
-        _react2.default.createElement(_TextField2.default, _extends({}, filteredProps, { className: classProps })),
+        _react2.default.createElement(_TextField2.default, _extends({}, filteredProps, { className: (props.className ? props.className : '') + ' input-long-hint' })),
         props.help && props.help.text && _react2.default.createElement(_HelpDrawer.HelpIcon, props.help)
     );
 };
