@@ -1,7 +1,5 @@
 @import '../../../sass/variables';
-
-// A solution for a floating title look-alike for a combination of inputs (ie. partial dates)
-.dateTitle{
+.dateTitle {
   margin: 28px 0 -10px 0;
   @include mobile {
     margin: 28px 0 -6px 0;
