@@ -28,7 +28,7 @@ const handlers = {
 
         return {
             ...uploadProgress,
-            [`${file}`]: 'failed',
+            [`${file}`]: 0,
             overall: Object.values(uploadProgress).reduce((sum, current) => (sum + current), 0) / Object.values(uploadProgress).length
         };
     },

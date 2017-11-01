@@ -34,7 +34,7 @@ var handlers = (_handlers = {}, _defineProperty(_handlers, _actions.FILE_UPLOAD_
     delete uploadProgress.overall;
     delete uploadProgress.file;
 
-    return _extends({}, uploadProgress, (_extends3 = {}, _defineProperty(_extends3, '' + file, 'failed'), _defineProperty(_extends3, 'overall', Object.values(uploadProgress).reduce(function (sum, current) {
+    return _extends({}, uploadProgress, (_extends3 = {}, _defineProperty(_extends3, '' + file, 0), _defineProperty(_extends3, 'overall', Object.values(uploadProgress).reduce(function (sum, current) {
         return sum + current;
     }, 0) / Object.values(uploadProgress).length), _extends3));
 }), _defineProperty(_handlers, _actions.FILE_UPLOAD_CLEARED, function () {
