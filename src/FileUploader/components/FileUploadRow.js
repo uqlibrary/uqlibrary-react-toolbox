@@ -13,7 +13,7 @@ import {sizeUnitText, sizeBase} from './FileUploader';
 
 const moment = require('moment');
 
-class FileUploadRow extends Component {
+export class FileUploadRow extends Component {
     static propTypes = {
         index: PropTypes.number.isRequired,
         uploadedFile: PropTypes.object.isRequired,
