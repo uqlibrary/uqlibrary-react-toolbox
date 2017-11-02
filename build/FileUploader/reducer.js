@@ -12,6 +12,12 @@ var _actions = require('./actions');
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var getValues = function getValues(obj) {
+    return Object.keys(obj).map(function (key) {
+        return obj[key];
+    });
+};
+
 var handlers = (_handlers = {}, _defineProperty(_handlers, _actions.FILE_UPLOAD_PROGRESS + '@', function undefined(state, action) {
     var file = action.type.substring(action.type.indexOf('@') + 1, action.type.length);
 
@@ -20,9 +26,9 @@ var handlers = (_handlers = {}, _defineProperty(_handlers, _actions.FILE_UPLOAD_
     delete uploadProgress.overall;
 
     return _extends({}, uploadProgress, {
-        overall: Object.values(uploadProgress).reduce(function (sum, current) {
+        overall: getValues(uploadProgress).reduce(function (sum, current) {
             return sum + current;
-        }, 0) / Object.values(uploadProgress).length
+        }, 0) / getValues(uploadProgress).length
     });
 }), _defineProperty(_handlers, _actions.FILE_UPLOADED_FAILED + '@', function undefined(state, action) {
     var _extends3;
@@ -34,9 +40,9 @@ var handlers = (_handlers = {}, _defineProperty(_handlers, _actions.FILE_UPLOAD_
     delete uploadProgress.overall;
     delete uploadProgress.file;
 
-    return _extends({}, uploadProgress, (_extends3 = {}, _defineProperty(_extends3, '' + file, 0), _defineProperty(_extends3, 'overall', Object.values(uploadProgress).reduce(function (sum, current) {
+    return _extends({}, uploadProgress, (_extends3 = {}, _defineProperty(_extends3, '' + file, 0), _defineProperty(_extends3, 'overall', getValues(uploadProgress).reduce(function (sum, current) {
         return sum + current;
-    }, 0) / Object.values(uploadProgress).length), _extends3));
+    }, 0) / getValues(uploadProgress).length), _extends3));
 }), _defineProperty(_handlers, _actions.FILE_UPLOAD_CLEARED, function () {
     return {
         overall: 0
