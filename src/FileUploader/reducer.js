@@ -1,5 +1,7 @@
 import { FILE_UPLOAD_PROGRESS, FILE_UPLOADED_FAILED, FILE_UPLOAD_CLEARED } from './actions';
 
+const getValues = (obj) => Object.keys(obj).map(key => obj[key]);
+
 const handlers = {
     [`${FILE_UPLOAD_PROGRESS}@`]: (state, action) => {
         const file = action.type.substring(action.type.indexOf('@') + 1, action.type.length);
@@ -13,7 +15,7 @@ const handlers = {
 
         return {
             ...uploadProgress,
-            overall: Object.values(uploadProgress).reduce((sum, current) => (sum + current), 0) / Object.values(uploadProgress).length
+            overall: getValues(uploadProgress).reduce((sum, current) => (sum + current), 0) / getValues(uploadProgress).length
         };
     },
     [`${FILE_UPLOADED_FAILED}@`]: (state, action) => {
@@ -28,8 +30,8 @@ const handlers = {
 
         return {
             ...uploadProgress,
-            [`${file}`]: 'failed',
-            overall: Object.values(uploadProgress).reduce((sum, current) => (sum + current), 0) / Object.values(uploadProgress).length
+            [`${file}`]: 0,
+            overall: getValues(uploadProgress).reduce((sum, current) => (sum + current), 0) / getValues(uploadProgress).length
         };
     },
     [FILE_UPLOAD_CLEARED]: () => {

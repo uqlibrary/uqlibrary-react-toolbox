@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.FileUploadRow = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -82,7 +83,7 @@ var _ref5 = _react2.default.createElement(
     'done'
 );
 
-var FileUploadRow = function (_Component) {
+var FileUploadRow = exports.FileUploadRow = function (_Component) {
     _inherits(FileUploadRow, _Component);
 
     function FileUploadRow(props) {
