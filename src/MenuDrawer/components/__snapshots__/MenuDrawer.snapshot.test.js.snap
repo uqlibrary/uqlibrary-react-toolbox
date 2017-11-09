@@ -52,8 +52,15 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
         tabIndex={-1}
         type="button"
       >
-        <span
-          className="skipButton"
+        <RaisedButton
+          className="skipNavButton"
+          disabled={false}
+          fullWidth={false}
+          labelPosition="after"
+          onTouchTap={[Function]}
+          primary={false}
+          secondary={true}
+          tabIndex={-1}
         />
       </div>
       <span
@@ -176,8 +183,15 @@ exports[`MenuDrawer snapshots tests renders menu with logo 1`] = `
         tabIndex={-1}
         type="button"
       >
-        <span
-          className="skipButton"
+        <RaisedButton
+          className="skipNavButton"
+          disabled={false}
+          fullWidth={false}
+          labelPosition="after"
+          onTouchTap={[Function]}
+          primary={false}
+          secondary={true}
+          tabIndex={-1}
         />
       </div>
       <span
@@ -295,8 +309,15 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
         tabIndex={-1}
         type="button"
       >
-        <span
-          className="skipButton"
+        <RaisedButton
+          className="skipNavButton"
+          disabled={false}
+          fullWidth={false}
+          labelPosition="after"
+          onTouchTap={[Function]}
+          primary={false}
+          secondary={true}
+          tabIndex={-1}
         />
       </div>
       <span

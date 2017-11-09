@@ -15,6 +15,10 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _List = require('material-ui/List');
 
+var _RaisedButton = require('material-ui/RaisedButton');
+
+var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
 var _Divider = require('material-ui/Divider');
 
 var _Divider2 = _interopRequireDefault(_Divider);
@@ -33,10 +37,8 @@ var _keyboardArrowLeft2 = _interopRequireDefault(_keyboardArrowLeft);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _ref2 = _react2.default.createElement(_keyboardArrowLeft2.default, null);
-
 // import {Link} from 'react-router-dom';
-
+var _ref2 = _react2.default.createElement(_keyboardArrowLeft2.default, null);
 
 var _ref3 = _react2.default.createElement(_Divider2.default, null);
 
@@ -55,13 +57,12 @@ function MenuDrawer(_ref) {
 
     var onNavigate = function onNavigate(url, target) {
         url.indexOf('http://') === -1 ? history.push(url) : window.open(url, target);
-        toggleDrawer();
+        !docked && toggleDrawer();
     };
     var skipNav = function skipNav() {
-        if (!docked) toggleDrawer();
+        !docked && toggleDrawer();
         document.getElementById('contentContainer').focus();
     };
-
     return _react2.default.createElement(
         _Drawer2.default,
         {
@@ -104,16 +105,17 @@ function MenuDrawer(_ref) {
                     'div',
                     { type: 'button',
                         className: 'skipNav',
-                        tabIndex: drawerOpen ? 1 : -1,
+                        tabIndex: docked ? 1 : -1,
                         onClick: skipNav.bind(this),
                         onKeyPress: skipNav.bind(this),
-                        'aria-label': skipNavAriaLabel
-                    },
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'skipButton' },
-                        skipNavTitle
-                    )
+                        'aria-label': skipNavAriaLabel },
+                    _react2.default.createElement(_RaisedButton2.default, {
+                        secondary: true,
+                        className: 'skipNavButton',
+                        label: skipNavTitle,
+                        onTouchTap: skipNav.bind(this),
+                        tabIndex: -1
+                    })
                 ),
                 menuItems.map(function (menuItem, index) {
                     return menuItem.primaryText && menuItem.linkTo && _react2.default.createElement(

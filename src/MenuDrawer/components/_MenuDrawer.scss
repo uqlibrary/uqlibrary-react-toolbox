@@ -20,17 +20,14 @@
     &:focus {
       left:0;
     }
-    .skipButton {
-      background-color: $accent-color;
-      color: $text-color-reverse;
-      font-size: $text-body-normal;
-      text-transform: uppercase;
+    .skipNavButton {
       position: absolute;
       top: 25%;
       left: calc(50% - 90px);
-      padding: 12px;
       text-align: center;
-      width: 150px;
+      width: 160px;
+      white-space: normal;
+      overflow: visible;
       z-index: 999;
     }
   }

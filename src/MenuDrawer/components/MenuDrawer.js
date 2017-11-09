@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 // import {Link} from 'react-router-dom';
 import {List, ListItem} from 'material-ui/List';
+import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 import Drawer from 'material-ui/Drawer';
 import IconButton from 'material-ui/IconButton';
@@ -10,10 +11,10 @@ import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-a
 export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText, history, skipNavTitle, skipNavAriaLabel}) {
     const onNavigate = (url, target) => {
         url.indexOf('http://') === -1 ? history.push(url) : window.open(url, target);
-        toggleDrawer();
+        !docked && toggleDrawer();
     };
     const skipNav = () => {
-        if (!docked) toggleDrawer();
+        !docked && toggleDrawer();
         document.getElementById('contentContainer').focus();
     };
     return (
@@ -39,13 +40,17 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
                 <List className="main-menu" id="mainMenu" tabIndex={-1}>
                     <div type="button"
                         className="skipNav"
-                        tabIndex={drawerOpen ? 1 : -1}
+                        tabIndex={docked ? 1 : -1}
                         onClick={skipNav.bind(this)}
                         onKeyPress={skipNav.bind(this)}
                         aria-label={skipNavAriaLabel}>
-                        <span className="skipButton">
-                            {skipNavTitle}
-                        </span>
+                        <RaisedButton
+                            secondary
+                            className="skipNavButton"
+                            label={skipNavTitle}
+                            onTouchTap={skipNav.bind(this)}
+                            tabIndex={-1}
+                        />
                     </div>
                     {menuItems.map((menuItem, index) =>
                         menuItem.primaryText && menuItem.linkTo && (
