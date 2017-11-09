@@ -13,8 +13,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactRouterDom = require('react-router-dom');
-
 var _List = require('material-ui/List');
 
 var _Divider = require('material-ui/Divider');
@@ -37,15 +35,43 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _ref2 = _react2.default.createElement(_keyboardArrowLeft2.default, null);
 
-var _ref3 = _react2.default.createElement(_Divider2.default, null);
+// import {Link} from 'react-router-dom';
+
+
+var _ref3 = _react2.default.createElement(
+    'span',
+    { className: 'skipButton' },
+    'Skip Navigation'
+);
+
+var _ref4 = _react2.default.createElement(_Divider2.default, null);
 
 function MenuDrawer(_ref) {
+    var _this = this;
+
     var menuItems = _ref.menuItems,
         toggleDrawer = _ref.toggleDrawer,
         drawerOpen = _ref.drawerOpen,
         docked = _ref.docked,
         logoImage = _ref.logoImage,
-        logoText = _ref.logoText;
+        logoText = _ref.logoText,
+        history = _ref.history;
+
+
+    var onNavigate = function onNavigate(to, target) {
+        if (to.indexOf('http://') === -1) {
+            history.push(to);
+        } else {
+            window.open(to, target);
+        }
+        toggleDrawer();
+    };
+
+    var skipNav = function skipNav() {
+        if (!docked) toggleDrawer();
+        // Skip the main nav, and focus on the content of the page
+        document.getElementById('contentContainer').focus();
+    };
 
     return _react2.default.createElement(
         _Drawer2.default,
@@ -84,28 +110,29 @@ function MenuDrawer(_ref) {
             ),
             _react2.default.createElement(
                 _List.List,
-                { className: 'main-menu' },
+                { className: 'main-menu', id: 'mainMenu', tabIndex: -1 },
+                _react2.default.createElement(
+                    'div',
+                    { type: 'button',
+                        className: 'skipNav',
+                        tabIndex: drawerOpen ? 1 : -1,
+                        onClick: skipNav.bind(this),
+                        onKeyPress: skipNav.bind(this),
+                        'aria-label': 'Click to skip navigation'
+                    },
+                    _ref3
+                ),
                 menuItems.map(function (menuItem, index) {
                     return menuItem.primaryText && menuItem.linkTo && _react2.default.createElement(
                         'span',
                         { className: 'menu-item-container', key: index },
-                        menuItem.divider ? _ref3 : menuItem.target && menuItem.linkTo.indexOf('http') === -1 ? _react2.default.createElement(
-                            'a',
-                            { href: menuItem.linkTo, target: menuItem.target },
-                            _react2.default.createElement(_List.ListItem, {
-                                primaryText: menuItem.primaryText,
-                                secondaryText: menuItem.secondaryText,
-                                onClick: toggleDrawer,
-                                leftIcon: menuItem.leftIcon ? menuItem.leftIcon : null })
-                        ) : _react2.default.createElement(
-                            _reactRouterDom.Link,
-                            { to: menuItem.linkTo },
-                            _react2.default.createElement(_List.ListItem, {
-                                primaryText: menuItem.primaryText,
-                                secondaryText: menuItem.secondaryText,
-                                onClick: toggleDrawer,
-                                leftIcon: menuItem.leftIcon ? menuItem.leftIcon : null })
-                        )
+                        menuItem.divider ? _ref4 : _react2.default.createElement(_List.ListItem, {
+                            primaryText: menuItem.primaryText,
+                            secondaryText: menuItem.secondaryText,
+                            onTouchTap: onNavigate.bind(_this, menuItem.linkTo, menuItem.target),
+                            leftIcon: menuItem.leftIcon ? menuItem.leftIcon : null,
+                            tabIndex: drawerOpen ? 2 : -1
+                        })
                     );
                 })
             )

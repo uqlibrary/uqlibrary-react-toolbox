@@ -42,72 +42,80 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
     </div>
     <List
       className="main-menu"
+      id="mainMenu"
+      tabIndex={-1}
     >
+      <div
+        aria-label="Click to skip navigation"
+        className="skipNav"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={-1}
+        type="button"
+      >
+        <span
+          className="skipButton"
+        >
+          Skip Navigation
+        </span>
+      </div>
       <span
         className="menu-item-container"
         key="0"
       >
-        <Link
-          replace={false}
-          to="/"
-        >
-          <ListItem
-            autoGenerateNestedIndicator={true}
-            containerElement="span"
-            disableKeyboardFocus={false}
-            disabled={false}
-            initiallyOpen={false}
-            insetChildren={false}
-            leftIcon={null}
-            nestedItems={Array []}
-            nestedLevel={0}
-            onClick={[Function]}
-            onKeyboardFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            onNestedListToggle={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            open={null}
-            primaryText="Primary text 0"
-            primaryTogglesNestedList={false}
-            secondaryText="secondary text 0"
-            secondaryTextLines={1}
-          />
-        </Link>
+        <ListItem
+          autoGenerateNestedIndicator={true}
+          containerElement="span"
+          disableKeyboardFocus={false}
+          disabled={false}
+          initiallyOpen={false}
+          insetChildren={false}
+          leftIcon={null}
+          nestedItems={Array []}
+          nestedLevel={0}
+          onKeyboardFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onNestedListToggle={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          onTouchTap={[Function]}
+          open={null}
+          primaryText="Primary text 0"
+          primaryTogglesNestedList={false}
+          secondaryText="secondary text 0"
+          secondaryTextLines={1}
+          tabIndex={-1}
+        />
       </span>
       <span
         className="menu-item-container"
         key="2"
       >
-        <Link
-          replace={false}
-          to="/xyz"
-        >
-          <ListItem
-            autoGenerateNestedIndicator={true}
-            containerElement="span"
-            disableKeyboardFocus={false}
-            disabled={false}
-            initiallyOpen={false}
-            insetChildren={false}
-            leftIcon={null}
-            nestedItems={Array []}
-            nestedLevel={0}
-            onClick={[Function]}
-            onKeyboardFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            onNestedListToggle={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            open={null}
-            primaryText="Primary text 1"
-            primaryTogglesNestedList={false}
-            secondaryText="secondary text 1"
-            secondaryTextLines={1}
-          />
-        </Link>
+        <ListItem
+          autoGenerateNestedIndicator={true}
+          containerElement="span"
+          disableKeyboardFocus={false}
+          disabled={false}
+          initiallyOpen={false}
+          insetChildren={false}
+          leftIcon={null}
+          nestedItems={Array []}
+          nestedLevel={0}
+          onKeyboardFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onNestedListToggle={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          onTouchTap={[Function]}
+          open={null}
+          primaryText="Primary text 1"
+          primaryTogglesNestedList={false}
+          secondaryText="secondary text 1"
+          secondaryTextLines={1}
+          tabIndex={-1}
+        />
       </span>
     </List>
   </div>
@@ -161,72 +169,80 @@ exports[`MenuDrawer snapshots tests renders menu with logo 1`] = `
     </div>
     <List
       className="main-menu"
+      id="mainMenu"
+      tabIndex={-1}
     >
+      <div
+        aria-label="Click to skip navigation"
+        className="skipNav"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={-1}
+        type="button"
+      >
+        <span
+          className="skipButton"
+        >
+          Skip Navigation
+        </span>
+      </div>
       <span
         className="menu-item-container"
         key="0"
       >
-        <Link
-          replace={false}
-          to="/"
-        >
-          <ListItem
-            autoGenerateNestedIndicator={true}
-            containerElement="span"
-            disableKeyboardFocus={false}
-            disabled={false}
-            initiallyOpen={false}
-            insetChildren={false}
-            leftIcon={null}
-            nestedItems={Array []}
-            nestedLevel={0}
-            onClick={[Function]}
-            onKeyboardFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            onNestedListToggle={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            open={null}
-            primaryText="Primary text 0"
-            primaryTogglesNestedList={false}
-            secondaryText="secondary text 0"
-            secondaryTextLines={1}
-          />
-        </Link>
+        <ListItem
+          autoGenerateNestedIndicator={true}
+          containerElement="span"
+          disableKeyboardFocus={false}
+          disabled={false}
+          initiallyOpen={false}
+          insetChildren={false}
+          leftIcon={null}
+          nestedItems={Array []}
+          nestedLevel={0}
+          onKeyboardFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onNestedListToggle={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          onTouchTap={[Function]}
+          open={null}
+          primaryText="Primary text 0"
+          primaryTogglesNestedList={false}
+          secondaryText="secondary text 0"
+          secondaryTextLines={1}
+          tabIndex={-1}
+        />
       </span>
       <span
         className="menu-item-container"
         key="1"
       >
-        <Link
-          replace={false}
-          to="/abc"
-        >
-          <ListItem
-            autoGenerateNestedIndicator={true}
-            containerElement="span"
-            disableKeyboardFocus={false}
-            disabled={false}
-            initiallyOpen={false}
-            insetChildren={false}
-            leftIcon={null}
-            nestedItems={Array []}
-            nestedLevel={0}
-            onClick={[Function]}
-            onKeyboardFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            onNestedListToggle={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            open={null}
-            primaryText="Primary text 0"
-            primaryTogglesNestedList={false}
-            secondaryText="secondary text 0"
-            secondaryTextLines={1}
-          />
-        </Link>
+        <ListItem
+          autoGenerateNestedIndicator={true}
+          containerElement="span"
+          disableKeyboardFocus={false}
+          disabled={false}
+          initiallyOpen={false}
+          insetChildren={false}
+          leftIcon={null}
+          nestedItems={Array []}
+          nestedLevel={0}
+          onKeyboardFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onNestedListToggle={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          onTouchTap={[Function]}
+          open={null}
+          primaryText="Primary text 0"
+          primaryTogglesNestedList={false}
+          secondaryText="secondary text 0"
+          secondaryTextLines={1}
+          tabIndex={-1}
+        />
       </span>
     </List>
   </div>
@@ -275,72 +291,80 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
     </div>
     <List
       className="main-menu"
+      id="mainMenu"
+      tabIndex={-1}
     >
+      <div
+        aria-label="Click to skip navigation"
+        className="skipNav"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={-1}
+        type="button"
+      >
+        <span
+          className="skipButton"
+        >
+          Skip Navigation
+        </span>
+      </div>
       <span
         className="menu-item-container"
         key="0"
       >
-        <Link
-          replace={false}
-          to="/"
-        >
-          <ListItem
-            autoGenerateNestedIndicator={true}
-            containerElement="span"
-            disableKeyboardFocus={false}
-            disabled={false}
-            initiallyOpen={false}
-            insetChildren={false}
-            leftIcon={null}
-            nestedItems={Array []}
-            nestedLevel={0}
-            onClick={[Function]}
-            onKeyboardFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            onNestedListToggle={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            open={null}
-            primaryText="Primary text 0"
-            primaryTogglesNestedList={false}
-            secondaryText="secondary text 0"
-            secondaryTextLines={1}
-          />
-        </Link>
+        <ListItem
+          autoGenerateNestedIndicator={true}
+          containerElement="span"
+          disableKeyboardFocus={false}
+          disabled={false}
+          initiallyOpen={false}
+          insetChildren={false}
+          leftIcon={null}
+          nestedItems={Array []}
+          nestedLevel={0}
+          onKeyboardFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onNestedListToggle={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          onTouchTap={[Function]}
+          open={null}
+          primaryText="Primary text 0"
+          primaryTogglesNestedList={false}
+          secondaryText="secondary text 0"
+          secondaryTextLines={1}
+          tabIndex={-1}
+        />
       </span>
       <span
         className="menu-item-container"
         key="1"
       >
-        <Link
-          replace={false}
-          to="/abc"
-        >
-          <ListItem
-            autoGenerateNestedIndicator={true}
-            containerElement="span"
-            disableKeyboardFocus={false}
-            disabled={false}
-            initiallyOpen={false}
-            insetChildren={false}
-            leftIcon={null}
-            nestedItems={Array []}
-            nestedLevel={0}
-            onClick={[Function]}
-            onKeyboardFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            onNestedListToggle={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            open={null}
-            primaryText="Primary text 0"
-            primaryTogglesNestedList={false}
-            secondaryText="secondary text 0"
-            secondaryTextLines={1}
-          />
-        </Link>
+        <ListItem
+          autoGenerateNestedIndicator={true}
+          containerElement="span"
+          disableKeyboardFocus={false}
+          disabled={false}
+          initiallyOpen={false}
+          insetChildren={false}
+          leftIcon={null}
+          nestedItems={Array []}
+          nestedLevel={0}
+          onKeyboardFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onNestedListToggle={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          onTouchTap={[Function]}
+          open={null}
+          primaryText="Primary text 0"
+          primaryTogglesNestedList={false}
+          secondaryText="secondary text 0"
+          secondaryTextLines={1}
+          tabIndex={-1}
+        />
       </span>
     </List>
   </div>
