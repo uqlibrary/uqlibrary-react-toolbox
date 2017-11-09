@@ -7,9 +7,7 @@ import Divider from 'material-ui/Divider';
 import Drawer from 'material-ui/Drawer';
 import IconButton from 'material-ui/IconButton';
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
-
 export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText, history}) {
-
     const onNavigate = (to, target) => {
         if (to.indexOf('http://') === -1) {
             history.push(to);
