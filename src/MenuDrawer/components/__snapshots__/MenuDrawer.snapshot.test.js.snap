@@ -46,7 +46,6 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
       tabIndex={-1}
     >
       <div
-        aria-label="Click to skip navigation"
         className="skipNav"
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -55,9 +54,7 @@ exports[`MenuDrawer snapshots tests renders menu with dividers 1`] = `
       >
         <span
           className="skipButton"
-        >
-          Skip Navigation
-        </span>
+        />
       </div>
       <span
         className="menu-item-container"
@@ -173,7 +170,6 @@ exports[`MenuDrawer snapshots tests renders menu with logo 1`] = `
       tabIndex={-1}
     >
       <div
-        aria-label="Click to skip navigation"
         className="skipNav"
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -182,9 +178,7 @@ exports[`MenuDrawer snapshots tests renders menu with logo 1`] = `
       >
         <span
           className="skipButton"
-        >
-          Skip Navigation
-        </span>
+        />
       </div>
       <span
         className="menu-item-container"
@@ -295,7 +289,6 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
       tabIndex={-1}
     >
       <div
-        aria-label="Click to skip navigation"
         className="skipNav"
         onClick={[Function]}
         onKeyPress={[Function]}
@@ -304,9 +297,7 @@ exports[`MenuDrawer snapshots tests renders menu without dividers 1`] = `
       >
         <span
           className="skipButton"
-        >
-          Skip Navigation
-        </span>
+        />
       </div>
       <span
         className="menu-item-container"

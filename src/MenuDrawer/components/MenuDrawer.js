@@ -7,23 +7,15 @@ import Divider from 'material-ui/Divider';
 import Drawer from 'material-ui/Drawer';
 import IconButton from 'material-ui/IconButton';
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
-export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText, history}) {
-    const onNavigate = (to, target) => {
-        if (to.indexOf('http://') === -1) {
-            history.push(to);
-        } else {
-            window.open(to, target);
-        }
+export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText, history, skipNavTitle, skipNavAriaLabel}) {
+    const onNavigate = (url, target) => {
+        url.indexOf('http://') === -1 ? history.push(url) : window.open(url, target);
         toggleDrawer();
     };
-
     const skipNav = () => {
-        // If the main menu isnt docked (large desktop) then toggle its state to hide
         if (!docked) toggleDrawer();
-        // Focus on the content container
         document.getElementById('contentContainer').focus();
     };
-
     return (
         <Drawer
             containerClassName="main-drawer"
@@ -50,10 +42,9 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
                         tabIndex={drawerOpen ? 1 : -1}
                         onClick={skipNav.bind(this)}
                         onKeyPress={skipNav.bind(this)}
-                        aria-label="Click to skip navigation"
-                    >
+                        aria-label={skipNavAriaLabel}>
                         <span className="skipButton">
-                            Skip Navigation
+                            {skipNavTitle}
                         </span>
                     </div>
                     {menuItems.map((menuItem, index) =>
@@ -62,15 +53,13 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
                                 {menuItem.divider ?
                                     (<Divider/>)
                                     :
-                                    (
-                                        <ListItem
-                                            primaryText={menuItem.primaryText}
-                                            secondaryText={menuItem.secondaryText}
-                                            onTouchTap={onNavigate.bind(this, menuItem.linkTo, menuItem.target)}
-                                            leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null}
-                                            tabIndex={drawerOpen ? 2 : -1}
-                                        />
-                                    )
+                                    (<ListItem
+                                        primaryText={menuItem.primaryText}
+                                        secondaryText={menuItem.secondaryText}
+                                        onTouchTap={onNavigate.bind(this, menuItem.linkTo, menuItem.target)}
+                                        leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null}
+                                        tabIndex={drawerOpen ? 2 : -1}
+                                    />)
                                 }
                             </span>
                         )
@@ -88,6 +77,8 @@ MenuDrawer.propTypes = {
     drawerOpen: PropTypes.bool,
     docked: PropTypes.bool,
     toggleDrawer: PropTypes.func,
-    history: PropTypes.object.isRequired
+    history: PropTypes.object.isRequired,
+    skipNavTitle: PropTypes.string,
+    skipNavAriaLabel: PropTypes.string
 };
 

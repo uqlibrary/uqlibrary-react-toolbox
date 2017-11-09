@@ -38,13 +38,7 @@ var _ref2 = _react2.default.createElement(_keyboardArrowLeft2.default, null);
 // import {Link} from 'react-router-dom';
 
 
-var _ref3 = _react2.default.createElement(
-    'span',
-    { className: 'skipButton' },
-    'Skip Navigation'
-);
-
-var _ref4 = _react2.default.createElement(_Divider2.default, null);
+var _ref3 = _react2.default.createElement(_Divider2.default, null);
 
 function MenuDrawer(_ref) {
     var _this = this;
@@ -55,21 +49,16 @@ function MenuDrawer(_ref) {
         docked = _ref.docked,
         logoImage = _ref.logoImage,
         logoText = _ref.logoText,
-        history = _ref.history;
+        history = _ref.history,
+        skipNavTitle = _ref.skipNavTitle,
+        skipNavAriaLabel = _ref.skipNavAriaLabel;
 
-
-    var onNavigate = function onNavigate(to, target) {
-        if (to.indexOf('http://') === -1) {
-            history.push(to);
-        } else {
-            window.open(to, target);
-        }
+    var onNavigate = function onNavigate(url, target) {
+        url.indexOf('http://') === -1 ? history.push(url) : window.open(url, target);
         toggleDrawer();
     };
-
     var skipNav = function skipNav() {
         if (!docked) toggleDrawer();
-        // Skip the main nav, and focus on the content of the page
         document.getElementById('contentContainer').focus();
     };
 
@@ -118,15 +107,19 @@ function MenuDrawer(_ref) {
                         tabIndex: drawerOpen ? 1 : -1,
                         onClick: skipNav.bind(this),
                         onKeyPress: skipNav.bind(this),
-                        'aria-label': 'Click to skip navigation'
+                        'aria-label': skipNavAriaLabel
                     },
-                    _ref3
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'skipButton' },
+                        skipNavTitle
+                    )
                 ),
                 menuItems.map(function (menuItem, index) {
                     return menuItem.primaryText && menuItem.linkTo && _react2.default.createElement(
                         'span',
                         { className: 'menu-item-container', key: index },
-                        menuItem.divider ? _ref4 : _react2.default.createElement(_List.ListItem, {
+                        menuItem.divider ? _ref3 : _react2.default.createElement(_List.ListItem, {
                             primaryText: menuItem.primaryText,
                             secondaryText: menuItem.secondaryText,
                             onTouchTap: onNavigate.bind(_this, menuItem.linkTo, menuItem.target),
