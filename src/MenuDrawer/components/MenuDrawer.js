@@ -8,6 +8,7 @@ import Drawer from 'material-ui/Drawer';
 import IconButton from 'material-ui/IconButton';
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText, history}) {
+
     const onNavigate = (to, target) => {
         if (to.indexOf('http://') === -1) {
             history.push(to);
@@ -18,8 +19,9 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
     };
 
     const skipNav = () => {
+        // If the main menu isnt docked (large desktop) then toggle its state to hide
         if (!docked) toggleDrawer();
-        // Skip the main nav, and focus on the content of the page
+        // Focus on the content container
         document.getElementById('contentContainer').focus();
     };
 
