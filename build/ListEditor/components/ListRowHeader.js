@@ -22,7 +22,7 @@ var _IconButton = require('material-ui/IconButton');
 
 var _IconButton2 = _interopRequireDefault(_IconButton);
 
-var _ConfirmDialogBox = require('../../ConfirmDialogBox');
+var _index = require('../../index');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -68,7 +68,7 @@ var ListRowHeader = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'columns is-gapless is-mobile listHeader datalist datalist-header' },
-                _react2.default.createElement(_ConfirmDialogBox.ConfirmDialogBox, {
+                _react2.default.createElement(_index.ConfirmDialogBox, {
                     onRef: function onRef(ref) {
                         return _this2.confirmationBox = ref;
                     },
@@ -79,7 +79,7 @@ var ListRowHeader = function (_Component) {
                     { className: 'column name datalist-title' },
                     nameColumn
                 ),
-                _react2.default.createElement(
+                !this.props.hideReorder && _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow is-hidden-mobile order datalist-title' },
                     reorderColumn

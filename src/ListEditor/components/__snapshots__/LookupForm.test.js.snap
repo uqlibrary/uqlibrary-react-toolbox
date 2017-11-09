@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LookupForm tests  should render lookup form 1`] = `
+<div
+  className="columns"
+>
+  <div
+    className="column"
+  >
+    <inputField
+      floatingLabelText="Item name"
+      hintText="Please type the item name, then select from the list"
+      input={
+        Object {
+          "onChange": [Function],
+        }
+      }
+    />
+  </div>
+</div>
+`;

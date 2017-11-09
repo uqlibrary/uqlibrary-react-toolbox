@@ -6,21 +6,22 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-exports.default = ListEditorField;
+exports.default = FreeTextListEditor;
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _FreeTextListEditor = require('./components/FreeTextListEditor');
+var _FreeTextForm = require('./FreeTextForm');
 
-var _FreeTextListEditor2 = _interopRequireDefault(_FreeTextListEditor);
+var _FreeTextForm2 = _interopRequireDefault(_FreeTextForm);
+
+var _ListEditor = require('./ListEditor');
+
+var _ListEditor2 = _interopRequireDefault(_ListEditor);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function ListEditorField(fieldProps) {
-    return _react2.default.createElement(_FreeTextListEditor2.default, _extends({
-        errorText: fieldProps.meta ? fieldProps.meta.error : null,
-        onChange: fieldProps.input.onChange
-    }, fieldProps));
+function FreeTextListEditor(fieldProps) {
+    return _react2.default.createElement(_ListEditor2.default, _extends({ formComponent: _FreeTextForm2.default }, fieldProps));
 }

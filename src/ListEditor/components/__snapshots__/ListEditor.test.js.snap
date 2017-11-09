@@ -2,16 +2,9 @@
 
 exports[`ListEditor tests  rendering full component as disabled 1`] = `
 <div>
-  <ListForm
+  <undefined
     disabled={true}
     isValid={[Function]}
-    locale={
-      Object {
-        "addButtonLabel": "Add",
-        "inputFieldHint": "Please type the item name",
-        "inputFieldLabel": "Item name",
-      }
-    }
     onAdd={[Function]}
   />
 </div>
@@ -21,16 +14,9 @@ exports[`ListEditor tests  rendering full component with a defined className 1`]
 <div
   className="requiredField"
 >
-  <ListForm
+  <undefined
     disabled={false}
     isValid={[Function]}
-    locale={
-      Object {
-        "addButtonLabel": "Add",
-        "inputFieldHint": "Please type the item name",
-        "inputFieldLabel": "Item name",
-      }
-    }
     onAdd={[Function]}
   />
 </div>

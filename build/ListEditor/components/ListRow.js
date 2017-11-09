@@ -22,7 +22,7 @@ var _IconButton = require('material-ui/IconButton');
 
 var _IconButton2 = _interopRequireDefault(_IconButton);
 
-var _ConfirmDialogBox = require('../../ConfirmDialogBox');
+var _index = require('../../index');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85,7 +85,7 @@ var ListRow = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'columns is-gapless is-mobile listRow datalist datalist-row' },
-                _react2.default.createElement(_ConfirmDialogBox.ConfirmDialogBox, {
+                _react2.default.createElement(_index.ConfirmDialogBox, {
                     onRef: function onRef(ref) {
                         return _this2.confirmationBox = ref;
                     },
@@ -94,12 +94,12 @@ var ListRow = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'column datalist-text' },
-                    this.props.item
+                    this.props.item.value ? this.props.item.value : this.props.item
                 ),
                 _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow is-hidden-mobile listReorder datalist-buttons' },
-                    this.props.canMoveUp && _react2.default.createElement(
+                    !this.props.hideReorder && this.props.canMoveUp && _react2.default.createElement(
                         _IconButton2.default,
                         {
                             tooltip: this.props.locale.moveUpHint,
@@ -108,7 +108,7 @@ var ListRow = function (_Component) {
                             disabled: this.props.disabled },
                         _ref
                     ),
-                    this.props.canMoveDown && _react2.default.createElement(
+                    !this.props.hideReorder && this.props.canMoveDown && _react2.default.createElement(
                         _IconButton2.default,
                         {
                             tooltip: this.props.locale.moveDownHint,

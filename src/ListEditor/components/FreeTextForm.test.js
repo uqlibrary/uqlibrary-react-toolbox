@@ -1,9 +1,7 @@
-jest.dontMock('./ListForm');
-
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import React from 'react';
-import ListForm from './ListForm';
+import FreeTextForm from './FreeTextForm';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 beforeAll(() => {
@@ -18,10 +16,10 @@ function setup({onAdd, isValid, disabled}){
         disabled // : PropTypes.bool
         //locale, // : PropTypes.object,
     };
-    return shallow(<ListForm {...props} />);
+    return shallow(<FreeTextForm {...props} />);
 }
 
-describe('ListForm tests ', () => {
+describe('FreeTextForm tests ', () => {
     it('rendering active form', () => {
         const wrapper = setup({ });
         expect(toJson(wrapper)).toMatchSnapshot();

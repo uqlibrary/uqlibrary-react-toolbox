@@ -24,10 +24,6 @@ var _ListRow = require('./ListRow');
 
 var _ListRow2 = _interopRequireDefault(_ListRow);
 
-var _ListForm = require('./ListForm');
-
-var _ListForm2 = _interopRequireDefault(_ListForm);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -57,7 +53,8 @@ var ListsEditor = function (_Component) {
         };
 
         _this.addItem = function (item) {
-            if (_this.props.maxCount === 0 || _this.state.itemList.length < _this.props.maxCount) {
+            console.log(item);
+            if ((_this.props.maxCount === 0 || _this.state.itemList.length < _this.props.maxCount) && (!_this.props.distinctOnly || _this.state.itemList.indexOf(item) === -1)) {
                 _this.setState({
                     itemList: [].concat(_toConsumableArray(_this.state.itemList), [item])
                 });
@@ -124,19 +121,23 @@ var ListsEditor = function (_Component) {
                     onMoveDown: _this2.moveDownList,
                     onDelete: _this2.deleteItem
                 }, _this2.props.locale && _this2.props.locale.row ? _this2.props.locale.row : {}, {
+                    hideReorder: _this2.props.hideReorder,
                     disabled: _this2.props.disabled }));
             });
 
             return _react2.default.createElement(
                 'div',
                 { className: this.props.className },
-                _react2.default.createElement(_ListForm2.default, _extends({
+                _react2.default.createElement(this.props.formComponent, _extends({
+                    inputField: this.props.inputField,
                     onAdd: this.addItem
                 }, this.props.locale && this.props.locale.form ? this.props.locale.form : {}, {
                     isValid: this.props.isValid,
-                    disabled: this.props.disabled || this.props.maxCount > 0 && this.state.itemList.length >= this.props.maxCount })),
+                    disabled: this.props.disabled || this.props.maxCount > 0 && this.state.itemList.length >= this.props.maxCount,
+                    errorText: this.props.errorText })),
                 this.state.itemList.length > 0 && _react2.default.createElement(_ListRowHeader2.default, _extends({}, this.props.locale && this.props.locale.header ? this.props.locale.header : {}, {
                     onDeleteAll: this.deleteAllItems,
+                    hideReorder: this.props.hideReorder,
                     disabled: this.props.disabled })),
                 renderListsRows
             );
@@ -147,7 +148,8 @@ var ListsEditor = function (_Component) {
 }(_react.Component);
 
 ListsEditor.defaultProps = {
-    maxCount: 0,
+    hideReorder: false,
+    distinctOnly: false,
     searchKey: {
         value: 'rek_value',
         order: 'rek_order'
