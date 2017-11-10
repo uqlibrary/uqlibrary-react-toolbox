@@ -53,16 +53,24 @@ function MenuDrawer(_ref) {
         logoText = _ref.logoText,
         history = _ref.history,
         skipNavTitle = _ref.skipNavTitle,
-        skipNavAriaLabel = _ref.skipNavAriaLabel;
+        skipNavAriaLabel = _ref.skipNavAriaLabel,
+        SkipNavFocusElementId = _ref.SkipNavFocusElementId;
 
     var onNavigate = function onNavigate(url, target) {
-        url.indexOf('http://') === -1 ? history.push(url) : window.open(url, target);
+        url.indexOf('http') === -1 ? history.push(url) : window.open(url, target);
+        SkipNavFocusElementId && document.getElementById(SkipNavFocusElementId).focus();
         !docked && toggleDrawer();
     };
     var skipNav = function skipNav() {
+        SkipNavFocusElementId && document.getElementById(SkipNavFocusElementId).focus();
         !docked && toggleDrawer();
-        document.getElementById('contentContainer').focus();
     };
+
+    // When the menu drawer is opened, make sure the focus is on the menu
+    drawerOpen && !docked && window.setTimeout(function () {
+        document.getElementById('mainMenu').focus();
+    }, 0);
+
     return _react2.default.createElement(
         _Drawer2.default,
         {
@@ -105,6 +113,7 @@ function MenuDrawer(_ref) {
                     'div',
                     { type: 'button',
                         className: 'skipNav',
+                        id: 'skipNav',
                         tabIndex: docked ? 1 : -1,
                         onClick: skipNav.bind(this),
                         onKeyPress: skipNav.bind(this),
@@ -117,7 +126,7 @@ function MenuDrawer(_ref) {
                         tabIndex: -1
                     })
                 ),
-                menuItems.map(function (menuItem, index) {
+                drawerOpen && menuItems.map(function (menuItem, index) {
                     return menuItem.primaryText && menuItem.linkTo && _react2.default.createElement(
                         'span',
                         { className: 'menu-item-container', key: index },
@@ -126,7 +135,7 @@ function MenuDrawer(_ref) {
                             secondaryText: menuItem.secondaryText,
                             onTouchTap: onNavigate.bind(_this, menuItem.linkTo, menuItem.target),
                             leftIcon: menuItem.leftIcon ? menuItem.leftIcon : null,
-                            tabIndex: drawerOpen ? 2 : -1
+                            tabIndex: 2
                         })
                     );
                 })
