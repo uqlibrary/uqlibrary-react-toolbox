@@ -25,7 +25,7 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
     };
 
     if(drawerOpen && !docked) {
-        setTimeout(()=>focusOnElementId('mainMenu'), 0);
+        setTimeout(focusOnElementId.bind(this, 'mainMenu'), 0);
     }
 
     return (

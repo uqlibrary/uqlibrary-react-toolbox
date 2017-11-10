@@ -71,9 +71,8 @@ function MenuDrawer(_ref) {
     };
 
     if (drawerOpen && !docked) {
-        setTimeout(function () {
-            return focusOnElementId('mainMenu');
-        }, 0);
+        // setTimeout(()=>focusOnElementId('mainMenu'), 0);
+        setTimeout(focusOnElementId.bind(this, 'mainMenu'), 0);
     }
 
     return _react2.default.createElement(
