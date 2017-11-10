@@ -9,20 +9,24 @@ import Drawer from 'material-ui/Drawer';
 import IconButton from 'material-ui/IconButton';
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 
-export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText, history, skipNavTitle, skipNavAriaLabel, SkipNavFocusElementId}) {
-    const onNavigate = (url, target) => {
-        url.indexOf('http') === -1 ? history.push(url) : window.open(url, target);
-        SkipNavFocusElementId && document.getElementById(SkipNavFocusElementId).focus();
-        !docked && toggleDrawer();
-    };
-    const skipNav = () => {
-        SkipNavFocusElementId && document.getElementById(SkipNavFocusElementId).focus();
-        !docked && toggleDrawer();
+export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText, history, skipNavTitle, skipNavAriaLabel, skipNavFocusElementId}) {
+    const focusOnElementId = (elementId) => {
+        return document.getElementById(elementId).focus();
     };
 
-    (drawerOpen && !docked) && window.setTimeout(() => {
-        document.getElementById('mainMenu').focus();
-    }, 0);
+    const onSkipOrNavigate = (url, target) => {
+        if (url && url.indexOf('http') === -1) {
+            history.push(url);
+        } else if (url && url.indexOf('http') !== -1 && target) {
+            window.open(url, target);
+        }
+        if(skipNavFocusElementId) focusOnElementId(skipNavFocusElementId);
+        if(!docked) toggleDrawer();
+    };
+
+    if(drawerOpen && !docked) {
+        setTimeout(()=>focusOnElementId('mainMenu'), 0);
+    }
 
     return (
         <Drawer
@@ -49,14 +53,14 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
                         className="skipNav"
                         id="skipNav"
                         tabIndex={docked ? 1 : -1}
-                        onClick={skipNav.bind(this)}
-                        onKeyPress={skipNav.bind(this)}
+                        onClick={onSkipOrNavigate.bind(this, null, null)}
+                        onKeyPress={onSkipOrNavigate.bind(this, null, null)}
                         aria-label={skipNavAriaLabel}>
                         <RaisedButton
                             secondary
                             className="skipNavButton"
                             label={skipNavTitle}
-                            onTouchTap={skipNav.bind(this)}
+                            onTouchTap={onSkipOrNavigate.bind(this, null, null)}
                             tabIndex={-1}
                         />
                     </div>
@@ -70,7 +74,7 @@ export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked,
                                     (<ListItem
                                         primaryText={menuItem.primaryText}
                                         secondaryText={menuItem.secondaryText}
-                                        onTouchTap={onNavigate.bind(this, menuItem.linkTo, menuItem.target)}
+                                        onTouchTap={onSkipOrNavigate.bind(this, menuItem.linkTo, menuItem.target)}
                                         leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null}
                                         tabIndex={2}
                                     />)
@@ -95,6 +99,6 @@ MenuDrawer.propTypes = {
     history: PropTypes.object.isRequired,
     skipNavTitle: PropTypes.string,
     skipNavAriaLabel: PropTypes.string,
-    SkipNavFocusElementId: PropTypes.string
+    skipNavFocusElementId: PropTypes.string
 };
 
