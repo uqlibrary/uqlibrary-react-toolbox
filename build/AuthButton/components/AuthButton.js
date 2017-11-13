@@ -64,6 +64,7 @@ var AuthButton = function (_React$Component) {
                 _react2.default.createElement(
                     _IconButton2.default,
                     { tooltipPosition: 'bottom-left', onClick: this.redirectUser,
+                        hoveredStyle: this.props.hoveredStyle,
                         tooltip: this.props.isAuthorizedUser ? this.props.signOutTooltipText : this.props.signInTooltipText,
                         className: this.props.isAuthorizedUser ? 'log-out-button' : 'log-in-button' },
                     this.props.isAuthorizedUser ? _ref : _ref2

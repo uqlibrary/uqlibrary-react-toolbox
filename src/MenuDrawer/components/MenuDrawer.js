@@ -1,67 +1,97 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import {Link} from 'react-router-dom';
+// import {SkipNavigation} from './SkipNavigation';
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Drawer from 'material-ui/Drawer';
 import IconButton from 'material-ui/IconButton';
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
+import RaisedButton from 'material-ui/RaisedButton';
 
-export default function MenuDrawer({menuItems, toggleDrawer, drawerOpen, docked, logoImage, logoText}) {
+const MenuDrawer = ({menuItems, onToggleDrawer, drawerOpen, docked, logoImage,
+    logoText, history, locale}) => {
+    const focusOnElementId = (elementId) => {
+        if (document.getElementById(elementId)) {
+            document.getElementById(elementId).focus();
+        }
+    };
+    const navigateToLink = (url, target = '_blank') => {
+        if (url && url.indexOf('http') === -1) {
+            history.push(url);
+        } else if (url && url.indexOf('http') !== -1) {
+            window.open(url, target);
+        }
+        if (!docked) onToggleDrawer();
+    };
+    const skipMenuItems = () => {
+        focusOnElementId('afterMenuDrawer');
+    };
+    const renderMenuItems = items => (
+        items.map((menuItem, index) => (
+            menuItem.divider
+                ? <Divider key={`menu_item_${index}`}/>
+                : <span className="menu-item-container" key={`menu_item_${index}`}>
+                    <ListItem
+                        primaryText={menuItem.primaryText}
+                        secondaryText={menuItem.secondaryText}
+                        onTouchTap={navigateToLink.bind(this, menuItem.linkTo, menuItem.target)}
+                        leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null}/>
+                </span>
+        )));
+
+    if (drawerOpen && !docked) {
+        // set focus on menu on mobile view if menu is opened
+        setTimeout(focusOnElementId.bind(this, 'mainMenu'), 0);
+    }
     return (
         <Drawer
             containerClassName="main-drawer"
             open={drawerOpen}
             width={320}
-            onRequestChange={() => toggleDrawer(!drawerOpen)}
+            onRequestChange={onToggleDrawer}
             docked={docked}>
-            <div className="layout-fill side-drawer">
-                <div className="logo-wrapper">
-                    <div className="columns is-gapless is-mobile">
-                        <div className="column is-centered">
-                            {logoImage && <img src={logoImage} alt={logoText}/>}
-                        </div>
-                        <div className="column is-narrow is-hidden-tablet menuCloseButton">
-                            <IconButton onTouchTap={toggleDrawer}>
-                                <HardwareKeyboardArrowLeft />
-                            </IconButton>
+            {
+                drawerOpen &&
+                <div className="layout-fill side-drawer">
+                    <div className="logo-wrapper">
+                        <div className="columns is-gapless is-mobile">
+                            <div className="column is-centered">
+                                {logoImage && <img src={logoImage} alt={logoText}/>}
+                            </div>
+                            <div className="column is-narrow is-hidden-tablet menuCloseButton">
+                                <IconButton onTouchTap={onToggleDrawer} aria-label={locale.closeMenuLabel}>
+                                    <HardwareKeyboardArrowLeft/>
+                                </IconButton>
+                            </div>
                         </div>
                     </div>
+                    <List className="main-menu" id="mainMenu" tabIndex={-1}>
+                        {
+                            docked &&
+                            <div className="skipNav" type="button"
+                                id="skipNav"
+                                onClick={skipMenuItems.bind(this)}
+                                onKeyPress={skipMenuItems.bind(this)}
+                                tabIndex={1}
+                                aria-label={locale.skipNavAriaLabel}>
+                                <RaisedButton
+                                    secondary
+                                    onTouchTap={skipMenuItems.bind(this)}
+                                    className="skipNavButton"
+                                    label={locale.skipNavTitle}
+                                    tabIndex={-1}/>
+                            </div>
+                        }
+                        {
+                            renderMenuItems(menuItems)
+                        }
+                    </List>
+                    <div id="afterMenuDrawer" tabIndex={-1} />
                 </div>
-                <List className="main-menu">
-                    {menuItems.map((menuItem, index) =>
-                        menuItem.primaryText && menuItem.linkTo && (
-                            <span className="menu-item-container" key={index}>
-                                {menuItem.divider ?
-                                    (<Divider/>)
-                                    :
-                                    (menuItem.target && menuItem.linkTo.indexOf('http') === -1 ?
-                                        (<a href={menuItem.linkTo} target={menuItem.target}>
-                                            <ListItem
-                                                primaryText={menuItem.primaryText}
-                                                secondaryText={menuItem.secondaryText}
-                                                onClick={toggleDrawer}
-                                                leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null} />
-                                        </a>)
-                                        :
-                                        (<Link to={menuItem.linkTo}>
-                                            <ListItem
-                                                primaryText={menuItem.primaryText}
-                                                secondaryText={menuItem.secondaryText}
-                                                onClick={toggleDrawer}
-                                                leftIcon={menuItem.leftIcon ? menuItem.leftIcon : null} />
-                                        </Link>)
-                                    )
-                                }
-                            </span>
-                        )
-                    )}
-                </List>
-            </div>
+            }
         </Drawer>
     );
-}
+};
 
 MenuDrawer.propTypes = {
     menuItems: PropTypes.array.isRequired,
@@ -69,6 +99,13 @@ MenuDrawer.propTypes = {
     logoText: PropTypes.string,
     drawerOpen: PropTypes.bool,
     docked: PropTypes.bool,
-    toggleDrawer: PropTypes.func
+    onToggleDrawer: PropTypes.func,
+    history: PropTypes.object.isRequired,
+    locale: PropTypes.shape({
+        skipNavTitle: PropTypes.string,
+        skipNavAriaLabel: PropTypes.string,
+        closeMenuLabel: PropTypes.string
+    })
 };
 
+export default MenuDrawer;

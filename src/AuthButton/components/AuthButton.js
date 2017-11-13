@@ -10,7 +10,8 @@ class AuthButton extends React.Component {
         loginUrl: PropTypes.string.isRequired,
         logoutUrl: PropTypes.string.isRequired,
         signOutTooltipText: PropTypes.string,
-        signInTooltipText: PropTypes.string
+        signInTooltipText: PropTypes.string,
+        hoveredStyle: PropTypes.object
     }
 
     static defaultProps = {
@@ -32,6 +33,7 @@ class AuthButton extends React.Component {
         return (
             <div className="auth-button-wrapper">
                 <IconButton tooltipPosition="bottom-left" onClick={this.redirectUser}
+                    hoveredStyle={this.props.hoveredStyle}
                     tooltip={this.props.isAuthorizedUser ? this.props.signOutTooltipText : this.props.signInTooltipText}
                     className={this.props.isAuthorizedUser ? 'log-out-button' : 'log-in-button'}>
                     {this.props.isAuthorizedUser ? <SocialPerson /> : <SocialPersonOutline />}
