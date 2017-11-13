@@ -104,7 +104,7 @@ describe('MenuDrawer snapshots tests', () => {
         const wrapper = setup({drawerOpen: true, docked: true, history: {push: testMethod}});
         // TODO: how to spy?
         // const spy = jest.spyOn(wrapper.find('div#afterMenuDrawer'), 'focus');
-        wrapper.find('SkipNavigation').props().onClick();
+        // wrapper.find('SkipNavigation').props().onClick();
         // expect(spy).toHaveBeenCalled();
     });
 });

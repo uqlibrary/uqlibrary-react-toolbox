@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {SkipNavigation} from './SkipNavigation';
+// import {SkipNavigation} from './SkipNavigation';
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Drawer from 'material-ui/Drawer';
 import IconButton from 'material-ui/IconButton';
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const MenuDrawer = ({menuItems, onToggleDrawer, drawerOpen, docked, logoImage,
     logoText, history, locale}) => {
@@ -42,7 +43,6 @@ const MenuDrawer = ({menuItems, onToggleDrawer, drawerOpen, docked, logoImage,
         // set focus on menu on mobile view if menu is opened
         setTimeout(focusOnElementId.bind(this, 'mainMenu'), 0);
     }
-
     return (
         <Drawer
             containerClassName="main-drawer"
@@ -68,7 +68,19 @@ const MenuDrawer = ({menuItems, onToggleDrawer, drawerOpen, docked, logoImage,
                     <List className="main-menu" id="mainMenu" tabIndex={-1}>
                         {
                             docked &&
-                            <SkipNavigation onClick={skipMenuItems} locale={locale}/>
+                            <div className="skipNav" type="button"
+                                id="skipNav"
+                                onClick={skipMenuItems.bind(this)}
+                                onKeyPress={skipMenuItems.bind(this)}
+                                tabIndex={1}
+                                aria-label={locale.skipNavAriaLabel}>
+                                <RaisedButton
+                                    secondary
+                                    onTouchTap={skipMenuItems.bind(this)}
+                                    className="skipNavButton"
+                                    label={locale.skipNavTitle}
+                                    tabIndex={-1}/>
+                            </div>
                         }
                         {
                             renderMenuItems(menuItems)

@@ -175,16 +175,27 @@ exports[`MenuDrawer snapshots tests should render opened drawer with menus, divi
       id="mainMenu"
       tabIndex={-1}
     >
-      <SkipNavigation
-        locale={
-          Object {
-            "closeMenuLabel": "Close menu",
-            "skipNavAriaLabel": "Skip navigation",
-            "skipNavTitle": "Skip navigation",
-          }
-        }
+      <div
+        aria-label="Skip navigation"
+        className="skipNav"
+        id="skipNav"
         onClick={[Function]}
-      />
+        onKeyPress={[Function]}
+        tabIndex={1}
+        type="button"
+      >
+        <RaisedButton
+          className="skipNavButton"
+          disabled={false}
+          fullWidth={false}
+          label="Skip navigation"
+          labelPosition="after"
+          onTouchTap={[Function]}
+          primary={false}
+          secondary={true}
+          tabIndex={-1}
+        />
+      </div>
       <span
         className="menu-item-container"
         key="menu_item_0"
