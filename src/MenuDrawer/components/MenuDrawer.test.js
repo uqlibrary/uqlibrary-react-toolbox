@@ -1,10 +1,11 @@
 jest.dontMock('./MenuDrawer');
 
 import {shallow} from 'enzyme';
+import toJson from 'enzyme-to-json';
 import React from 'react';
 import MenuDrawer from './MenuDrawer';
 
-function setup(logo, logoAlt, drawerOpen, menuItems, docked) {
+function setup(drawerOpen, menuItems, docked, logoImage, logoText) {
 
     const defaultMenuItems = [
         {
@@ -16,7 +17,7 @@ function setup(logo, logoAlt, drawerOpen, menuItems, docked) {
             divider: true
         },
         {
-            linkTo: '/my-plans',
+            linkTo: '/xyz',
             primaryText: 'Primary text 1',
             secondaryText: 'secondary text 1'
         }
@@ -24,21 +25,57 @@ function setup(logo, logoAlt, drawerOpen, menuItems, docked) {
 
 
     const props = {
-        logo,
-        logoAlt,
         menuItems: menuItems ? menuItems : defaultMenuItems,
         drawerOpen: drawerOpen,
         docked: docked,
         toggleDrawer: () => { },
+        logoImage,
+        logoText
     };
 
     return shallow(<MenuDrawer {...props} />);
 }
 
-describe('MenuDrawer unit tests tests', () => {
-    it('true is true', () => {
-        // proper unit tests are required for components with logic operations
+describe('MenuDrawer snapshots tests', () => {
+    it('renders menu with dividers', () => {
         const wrapper = setup();
-        expect(true).toBe(true);
+        const tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
+    it('renders menu without dividers', () => {
+        const menuItems = [
+            {
+                linkTo: '/',
+                primaryText: 'Primary text 0',
+                secondaryText: 'secondary text 0'
+            },
+            {
+                linkTo: '/abc',
+                primaryText: 'Primary text 0',
+                secondaryText: 'secondary text 0'
+            }
+        ];
+        const wrapper = setup(false, menuItems, false);
+        const tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
+    it('renders menu with logo', () => {
+        const menuItems = [
+            {
+                linkTo: '/',
+                primaryText: 'Primary text 0',
+                secondaryText: 'secondary text 0'
+            },
+            {
+                linkTo: '/abc',
+                primaryText: 'Primary text 0',
+                secondaryText: 'secondary text 0'
+            }
+        ];
+        const wrapper = setup(false, menuItems, false, 'http://image/image.svg', 'desc of image');
+        const tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
     });
 });
+
+
