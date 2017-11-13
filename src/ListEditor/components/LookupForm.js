@@ -27,7 +27,6 @@ export default class LookupForm extends Component {
     }
 
     render() {
-        console.log(this.props.errorText);
         return (
             <div className="columns">
                 <div className="column">

@@ -40,7 +40,6 @@ var LookupForm = function (_Component) {
     _createClass(LookupForm, [{
         key: 'render',
         value: function render() {
-            console.log(this.props.errorText);
             return _react2.default.createElement(
                 'div',
                 { className: 'columns' },
