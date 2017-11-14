@@ -41,7 +41,7 @@ class AuthorsPublicationTypesCountChart extends React.Component {
                     symbolRadius: 0,
                     floating: true,
                     layout: 'vertical',
-                    y: -100
+                    y: -110
                 },
                 tooltip: {
                     enabled: false
@@ -55,10 +55,10 @@ class AuthorsPublicationTypesCountChart extends React.Component {
                 plotOptions: {
                     pie: {
                         showInLegend: true,
+                        startAngle: 90,
                         dataLabels: {
-                            connectorWidth: 0,
-                            distance: -25,
-                            // overflow: 'none',
+                            allowOverlap: false,
+                            distance: 12,
                             className: 'pieLabels ',
                             format: '{y}',
                             useHTML: true,
@@ -66,8 +66,8 @@ class AuthorsPublicationTypesCountChart extends React.Component {
                         },
                         shadow: false,
                         center: ['50%', '50%'],
-                        size: '100%',
-                        innerSize: '60%',
+                        size: '95%',
+                        innerSize: '65%',
                         borderColor: 'none',
                     },
                 },
@@ -77,6 +77,7 @@ class AuthorsPublicationTypesCountChart extends React.Component {
     }
 
     render() {
+        console.log('DATA : ' + JSON.stringify(this.props.series));
         return (
             <Chart className={this.props.className + ' authors-publication-types-count-chart'} chartOptions={this.state.options} />
         );
