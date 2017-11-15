@@ -63,10 +63,12 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
                 plotOptions: {
                     pie: {
                         showInLegend: true,
-                        startAngle: 90,
+                        startAngle: 45,
                         dataLabels: {
                             allowOverlap: false,
-                            distance: 12,
+                            distance: 10,
+                            padding: 2,
+                            softConnector: true,
                             className: 'pieLabels ',
                             format: '{y}',
                             useHTML: true,
@@ -74,7 +76,7 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
                         },
                         shadow: false,
                         center: ['50%', '50%'],
-                        size: '95%',
+                        size: '90%',
                         innerSize: '65%',
                         borderColor: 'none'
                     }
