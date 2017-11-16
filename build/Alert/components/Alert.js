@@ -30,6 +30,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _ref2 = _react2.default.createElement(_close2.default, { className: 'alertDismiss' });
 
+var _ref3 = _react2.default.createElement('div', { className: 'column is-narrow noDismiss is-hidden-mobile' });
+
 var Alert = function Alert(_ref) {
     var title = _ref.title,
         message = _ref.message,
@@ -86,7 +88,8 @@ var Alert = function Alert(_ref) {
                     { onTouchTap: dismissAction, className: 'alertDismissButton' },
                     _ref2
                 )
-            )
+            ),
+            action && actionButtonLabel && !allowDismiss && !dismissAction && _ref3
         )
     );
 };

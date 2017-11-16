@@ -33,6 +33,11 @@ const Alert = ({title, message, type, action, actionButtonLabel, allowDismiss, d
                         </IconButton>
                     </div>
                 }
+                {
+                    action && actionButtonLabel && !allowDismiss && !dismissAction &&
+                        <div className="column is-narrow noDismiss is-hidden-mobile" />
+
+                }
             </div>
         </div>
     );

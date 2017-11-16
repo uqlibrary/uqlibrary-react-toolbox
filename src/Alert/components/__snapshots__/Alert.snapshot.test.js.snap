@@ -81,6 +81,9 @@ exports[`Alert snapshots test renders Alert of error type should render action b
         secondary={false}
       />
     </div>
+    <div
+      className="column is-narrow noDismiss is-hidden-mobile"
+    />
   </div>
 </div>
 `;
