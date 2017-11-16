@@ -17,7 +17,7 @@ const Alert = ({title, message, type, action, actionButtonLabel, allowDismiss, d
                 </div>
                 {
                     action && actionButtonLabel &&
-                    <div className="column is-narrow-tablet is-12-mobile">
+                    <div className={`column is-narrow-tablet is-12-mobile ${!allowDismiss && !dismissAction && 'noDismiss'} `}>
                         <FlatButton
                             label={actionButtonLabel}
                             onTouchTap={action}
@@ -32,11 +32,6 @@ const Alert = ({title, message, type, action, actionButtonLabel, allowDismiss, d
                             <NavigationClose className="alertDismiss"/>
                         </IconButton>
                     </div>
-                }
-                {
-                    action && actionButtonLabel && !allowDismiss && !dismissAction &&
-                        <div className="column is-narrow noDismiss is-hidden-mobile" />
-
                 }
             </div>
         </div>

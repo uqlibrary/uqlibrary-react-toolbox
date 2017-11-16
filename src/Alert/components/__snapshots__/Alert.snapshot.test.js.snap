@@ -63,7 +63,7 @@ exports[`Alert snapshots test renders Alert of error type should render action b
       </div>
     </div>
     <div
-      className="column is-narrow-tablet is-12-mobile"
+      className="column is-narrow-tablet is-12-mobile noDismiss "
     >
       <FlatButton
         className="alertAction"
@@ -81,9 +81,6 @@ exports[`Alert snapshots test renders Alert of error type should render action b
         secondary={false}
       />
     </div>
-    <div
-      className="column is-narrow noDismiss is-hidden-mobile"
-    />
   </div>
 </div>
 `;
@@ -168,7 +165,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       </div>
     </div>
     <div
-      className="column is-narrow-tablet is-12-mobile"
+      className="column is-narrow-tablet is-12-mobile false "
     >
       <FlatButton
         className="alertAction"

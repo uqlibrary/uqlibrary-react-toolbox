@@ -44,15 +44,7 @@ var AuthButton = function (_React$Component) {
     function AuthButton(props) {
         _classCallCheck(this, AuthButton);
 
-        var _this = _possibleConstructorReturn(this, (AuthButton.__proto__ || Object.getPrototypeOf(AuthButton)).call(this, props));
-
-        _this.redirectUser = function () {
-            var redirectUrl = _this.props.isAuthorizedUser ? _this.props.logoutUrl : _this.props.loginUrl;
-            var returnUrl = window.btoa(window.location.href);
-            window.location.href = redirectUrl + '?return=' + returnUrl;
-        };
-
-        return _this;
+        return _possibleConstructorReturn(this, (AuthButton.__proto__ || Object.getPrototypeOf(AuthButton)).call(this, props));
     }
 
     _createClass(AuthButton, [{
@@ -63,7 +55,7 @@ var AuthButton = function (_React$Component) {
                 { className: 'auth-button-wrapper' },
                 _react2.default.createElement(
                     _IconButton2.default,
-                    { tooltipPosition: 'bottom-left', onClick: this.redirectUser,
+                    { tooltipPosition: 'bottom-left', onClick: this.props.onClick,
                         hoveredStyle: this.props.hoveredStyle,
                         tooltip: this.props.isAuthorizedUser ? this.props.signOutTooltipText : this.props.signInTooltipText,
                         className: this.props.isAuthorizedUser ? 'log-out-button' : 'log-in-button' },
