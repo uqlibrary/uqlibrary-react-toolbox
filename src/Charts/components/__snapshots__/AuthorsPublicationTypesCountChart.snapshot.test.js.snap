@@ -17,6 +17,9 @@ exports[`AuthorsPublicationTypesCountChart snapshot tests it should render chart
       "legend": Object {
         "align": "center",
         "floating": true,
+        "itemStyle": Object {
+          "width": 110,
+        },
         "layout": "vertical",
         "symbolRadius": 0,
         "y": -110,
