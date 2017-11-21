@@ -37,6 +37,9 @@ class AuthorsPublicationTypesCountChart extends React.Component {
                     enabled: false
                 },
                 legend: {
+                    itemStyle: {
+                        width: 110
+                    },
                     align: 'center',
                     symbolRadius: 0,
                     floating: true,
