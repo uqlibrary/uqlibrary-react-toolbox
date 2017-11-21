@@ -90,7 +90,6 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
     _createClass(AuthorsPublicationTypesCountChart, [{
         key: 'render',
         value: function render() {
-            console.log('DATA : ' + JSON.stringify(this.props.series));
             return _react2.default.createElement(_Chart2.default, { className: this.props.className + ' authors-publication-types-count-chart', chartOptions: this.state.options });
         }
     }]);
