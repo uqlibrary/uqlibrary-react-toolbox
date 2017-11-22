@@ -71,7 +71,7 @@ var Alert = function Alert(_ref) {
             ),
             action && actionButtonLabel && _react2.default.createElement(
                 'div',
-                { className: 'column is-narrow-tablet is-12-mobile ' + (!allowDismiss && !dismissAction && 'noDismiss') + ' ' },
+                { className: 'column is-narrow-tablet is-12-mobile' + (!allowDismiss && !dismissAction ? ' noDismiss' : '') },
                 _react2.default.createElement(_FlatButton2.default, {
                     label: actionButtonLabel,
                     onTouchTap: action,
