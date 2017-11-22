@@ -3,7 +3,7 @@ jest.dontMock('../components/AuthButton');
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import React from 'react';
-import {AuthButton} from '../components/AuthButton';
+import AuthButton from '../components/AuthButton';
 
 function setup({...props}) {
     return shallow(<AuthButton {...props} />);

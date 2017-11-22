@@ -3,11 +3,14 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.AuthButton = undefined;
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _IconButton = require('material-ui/IconButton');
 
@@ -27,7 +30,7 @@ var _ref2 = _react2.default.createElement(_person2.default, null);
 
 var _ref3 = _react2.default.createElement(_personOutline2.default, null);
 
-var AuthButton = exports.AuthButton = function AuthButton(_ref) {
+var AuthButton = function AuthButton(_ref) {
     var isAuthorizedUser = _ref.isAuthorizedUser,
         _ref$signOutTooltipTe = _ref.signOutTooltipText,
         signOutTooltipText = _ref$signOutTooltipTe === undefined ? 'Log out' : _ref$signOutTooltipTe,
@@ -51,3 +54,5 @@ var AuthButton = exports.AuthButton = function AuthButton(_ref) {
         )
     );
 };
+
+exports.default = AuthButton;
