@@ -17,7 +17,7 @@ const Alert = ({title, message, type, action, actionButtonLabel, allowDismiss, d
                 </div>
                 {
                     action && actionButtonLabel &&
-                    <div className={`column is-narrow-tablet is-12-mobile ${!allowDismiss && !dismissAction && 'noDismiss'} `}>
+                    <div className={`column is-narrow-tablet is-12-mobile${(!allowDismiss && !dismissAction) ? ' noDismiss' : ''}`}>
                         <FlatButton
                             label={actionButtonLabel}
                             onTouchTap={action}

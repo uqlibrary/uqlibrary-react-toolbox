@@ -5,18 +5,7 @@ import toJson from 'enzyme-to-json';
 import React from 'react';
 import Alert from '../components/Alert';
 
-function setup({title, message, type, outsideLayout, action, actionButtonLabel, allowDismiss, dismissAction}) {
-    const props = {
-        title: title || 'This is a title',
-        message: message || 'This is a message',
-        type: type || 'error',
-        outsideLayout,
-        action,
-        actionButtonLabel,
-        allowDismiss,
-        dismissAction
-    };
-
+function setup({...props}) {
     return shallow(<Alert {...props} />);
 }
 

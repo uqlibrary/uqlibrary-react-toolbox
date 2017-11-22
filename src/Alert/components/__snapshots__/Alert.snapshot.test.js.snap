@@ -56,14 +56,14 @@ exports[`Alert snapshots test renders Alert of error type should render action b
     >
       <div>
         <b>
-          This is a title
+          Error
         </b>
          - 
-        This is a message
+        Unexpected error
       </div>
     </div>
     <div
-      className="column is-narrow-tablet is-12-mobile noDismiss "
+      className="column is-narrow-tablet is-12-mobile noDismiss"
     >
       <FlatButton
         className="alertAction"
@@ -108,10 +108,10 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
     >
       <div>
         <b>
-          This is a title
+          Error
         </b>
          - 
-        This is a message
+        Unexpected error
       </div>
     </div>
     <div
@@ -158,14 +158,14 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
     >
       <div>
         <b>
-          This is a title
+          Error
         </b>
          - 
-        This is a message
+        Unexpected error
       </div>
     </div>
     <div
-      className="column is-narrow-tablet is-12-mobile false "
+      className="column is-narrow-tablet is-12-mobile"
     >
       <FlatButton
         className="alertAction"
