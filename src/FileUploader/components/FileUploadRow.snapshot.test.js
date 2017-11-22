@@ -58,11 +58,13 @@ describe('FileUploadRow', () => {
 
     it('shows confirmation on delete file', () => {
         const testFunction = jest.fn();
+        const showMockFunc = jest.fn();
+
         const wrapper = setup({onDelete: testFunction});
+        wrapper.instance().confirmationBox.showConfirmation = showMockFunc;
 
         wrapper.instance()._showConfirmation();
-        expect(toJson(wrapper)).toMatchSnapshot();
-        expect(wrapper.find('Dialog').props().open).toBeTruthy();
+        expect(showMockFunc).toBeCalled();
 
         wrapper.instance()._deleteFile();
         expect(testFunction).toBeCalled();

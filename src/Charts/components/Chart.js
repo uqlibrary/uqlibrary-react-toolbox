@@ -15,10 +15,8 @@ class Chart extends React.Component {
     }
 
     componentDidMount() {
-        this.chart = new Highcharts.Chart(
-            findDOMNode(this.refs.chart),
-            this.props.chartOptions
-        );
+        const chartNode = findDOMNode(this.refs.chart);
+        this.chart = chartNode ? new Highcharts.Chart(chartNode, this.props.chartOptions) : null;
     }
 
     componentDidUpdate() {
