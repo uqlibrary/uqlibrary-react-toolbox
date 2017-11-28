@@ -29,7 +29,7 @@ var _CircularProgress = require('material-ui/CircularProgress');
 
 var _CircularProgress2 = _interopRequireDefault(_CircularProgress);
 
-var _ = require('../..');
+var _ConfirmDialogBox = require('../../ConfirmDialogBox');
 
 var _FileUploadAccessSelector = require('./FileUploadAccessSelector');
 
@@ -147,7 +147,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix' },
-                _react2.default.createElement(_.ConfirmDialogBox, {
+                _react2.default.createElement(_ConfirmDialogBox.ConfirmDialogBox, {
                     onRef: function onRef(ref) {
                         return _this2.confirmationBox = ref;
                     },

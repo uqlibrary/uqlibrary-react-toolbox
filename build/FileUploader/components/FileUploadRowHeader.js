@@ -22,7 +22,7 @@ var _IconButton = require('material-ui/IconButton');
 
 var _IconButton2 = _interopRequireDefault(_IconButton);
 
-var _ = require('../..');
+var _ConfirmDialogBox = require('../../ConfirmDialogBox');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -69,7 +69,7 @@ var FileUploadRowHeader = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile' },
-                _react2.default.createElement(_.ConfirmDialogBox, {
+                _react2.default.createElement(_ConfirmDialogBox.ConfirmDialogBox, {
                     onRef: function onRef(ref) {
                         return _this2.confirmationBox = ref;
                     },

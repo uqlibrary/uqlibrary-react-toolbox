@@ -16,7 +16,7 @@ var _NavigationPrompt = require('./NavigationPrompt');
 
 var _NavigationPrompt2 = _interopRequireDefault(_NavigationPrompt);
 
-var _index = require('../../index');
+var _ConfirmDialogBox = require('../../ConfirmDialogBox');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31,7 +31,7 @@ var NavigationDialogBox = function NavigationDialogBox(_ref) {
         _NavigationPrompt2.default,
         { when: when },
         function (_setNavigationConfirmation, _onConfirm, _onCancel) {
-            return _react2.default.createElement(_index.ConfirmDialogBox, {
+            return _react2.default.createElement(_ConfirmDialogBox.ConfirmDialogBox, {
                 onRef: _setNavigationConfirmation,
                 onAction: _onConfirm,
                 onCancelAction: _onCancel,

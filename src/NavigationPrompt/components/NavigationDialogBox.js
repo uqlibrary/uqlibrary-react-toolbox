@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NavigationPrompt from './NavigationPrompt';
-import {ConfirmDialogBox} from '../../index';
+import {ConfirmDialogBox} from '../../ConfirmDialogBox';
 
 const NavigationDialogBox = ({when, txt}) => {
     if (!when) return <span />;
