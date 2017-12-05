@@ -1,23 +1,24 @@
-import Immutable from 'immutable';
-
 import {
     HIDE,
     SHOW
 } from './actions';
 
-const initialState = Immutable.fromJS({
+const initialState = {
     open: false,
     title: '',
     text: '',
     buttonLabel: 'OK'
-});
+};
 
 const helpDrawerReducer = (state = initialState, action) => {
     switch (action.type) {
         case SHOW:
-            return Immutable.fromJS({...action.payload, open: true});
+            return {
+                ...action.payload,
+                open: true
+            };
         case HIDE:
-            return initialState;
+            return {...initialState};
         default:
             return state;
     }
