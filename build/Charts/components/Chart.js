@@ -41,7 +41,9 @@ var Chart = function (_React$Component) {
     _createClass(Chart, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            this.chart = new _highcharts2.default.Chart((0, _reactDom.findDOMNode)(this.refs.chart), this.props.chartOptions);
+            if (this.refs && this.refs.chart) {
+                this.chart = new _highcharts2.default.Chart((0, _reactDom.findDOMNode)(this.refs.chart), this.props.chartOptions);
+            }
         }
     }, {
         key: 'componentDidUpdate',

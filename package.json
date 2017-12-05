@@ -26,7 +26,11 @@
     "moduleNameMapper": {
       "\\.(css|scss|sass)$": "<rootDir>/__mocks__/styles.js",
       "\\.(jpg|jpeg|svg)$": "<rootDir>/__mocks__/images.js"
-    }
+    },
+    "setupFiles": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
   },
   "repository": {
     "type": "git",
@@ -69,6 +73,7 @@
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.1",
     "enzyme": "^3.2.0",
+    "enzyme-adapter-react-15": "^1.0.5",
     "enzyme-to-json": "^3.2.2",
     "eslint": "^4.5.0",
     "eslint-config-airbnb": "^16.1.0",

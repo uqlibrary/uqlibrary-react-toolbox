@@ -83,7 +83,7 @@ class AuthorsPublicationTypesCountChart extends React.Component {
 
     render() {
         return (
-            <Chart className={this.props.className + ' authors-publication-types-count-chart'} chartOptions={this.state.options} />
+            <Chart className={`${this.props.className || ''} authors-publication-types-count-chart`} chartOptions={this.state.options} />
         );
     }
 }

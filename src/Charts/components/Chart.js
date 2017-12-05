@@ -15,10 +15,12 @@ class Chart extends React.Component {
     }
 
     componentDidMount() {
-        this.chart = new Highcharts.Chart(
-            findDOMNode(this.refs.chart),
-            this.props.chartOptions
-        );
+        if (this.refs && this.refs.chart) {
+            this.chart = new Highcharts.Chart(
+                findDOMNode(this.refs.chart),
+                this.props.chartOptions
+            );
+        }
     }
 
     componentDidUpdate() {

@@ -36,9 +36,7 @@ beforeAll(() => {
 describe('FileUploader', () => {
     it('renders correctly without any setup', () => {
         const wrapper = setup({});
-
         const tree = toJson(wrapper);
-
         expect(tree).toMatchSnapshot();
     });
 
@@ -61,15 +59,21 @@ describe('FileUploader', () => {
         ];
 
         wrapper.instance()._setUploadedFiles(files);
+        wrapper.update();
+
         tree = toJson(wrapper);
 
         expect(tree).toMatchSnapshot();
 
         wrapper.instance()._deleteFile({}, 0);
+        wrapper.update();
+
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
 
         wrapper.instance()._deleteAllFiles();
+        wrapper.update();
+
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });
@@ -93,19 +97,27 @@ describe('FileUploader', () => {
         ];
 
         wrapper.instance()._setUploadedFiles(files);
+        wrapper.update();
+
         tree = toJson(wrapper);
 
         expect(tree).toMatchSnapshot();
 
         wrapper.instance()._replaceFile({ name: 'a.txt', size: 100, access_condition_id: 8 }, 0);
+        wrapper.update();
+
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
 
         wrapper.instance()._replaceFile({ name: 'a.txt', size: 100, access_condition_id: 9 }, 0);
+        wrapper.update();
+
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
 
         wrapper.instance()._replaceFile({ name: 'a.txt', size: 100, access_condition_id: 9, date: '10/10/2017' }, 0);
+        wrapper.update();
+
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });

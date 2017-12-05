@@ -1,21 +1,21 @@
-jest.dontMock('./AuthorsPublicationTypesCountChart');
+/* eslint-disable */
 
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import AuthorsPublicationTypesCountChart from './AuthorsPublicationTypesCountChart';
 
-function setup({series, categories, yAxisTitle}) {
-    const props = {
-        series
-    };
-    return shallow(<AuthorsPublicationTypesCountChart {...props} />);
+function setup(testProps, isShallow = false) {
+    if (isShallow)
+        return shallow(<AuthorsPublicationTypesCountChart {...testProps} />);
+
+    return mount(<AuthorsPublicationTypesCountChart {...testProps} />);
 }
 
 
-describe('AuthorsPublicationTypesCountChart snapshot tests', () => {
-    it('it should render chart component', () => {
+describe('AuthorsPublicationTypesCountChart ', () => {
+    it('should render empty chart component', () => {
         const app = setup({series: []});
         expect(toJson(app)).toMatchSnapshot();
     });
