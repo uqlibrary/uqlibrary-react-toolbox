@@ -6,19 +6,29 @@ a set of reusable components for UQ Library applications
 [![Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox.svg)](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox)
 [![Dev Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox/dev-status.svg)](https://david-dm.org/uqlibrary/uqlibrary-react-toolbox?type=dev)
 
-- [AsyncAutoCompleteSelect](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/AsyncAutoCompleteSelect)
-- [AutoCompleteSelect](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/AutoCompleteSelect)
-- [Authors](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Authors)
-- [HelpDrawer](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/HelpDrawer)
-- [MenuDrawer](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/MenuDrawer)
-- [SASS](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/sass)
-- [SelectField](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/SelectField)
-- [TextField](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/TextField)
-- [Toggle](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Toggle)
-- [Toolbox](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/TextField)
-- [StaticPage](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/StaticPage)
-- [Loaders](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Loaders)
+- [Alert]()
+- [AuthButton]()
+- [AutoSuggestField]()
 - [Charts](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Charts)
+- [Checkbox]()
+- [ConfirmDialBox]()
+- [DatePicker]()
+- [FileUploader]()
+- [HelpDrawer](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/HelpDrawer)
+- [helpers]()
+- [ListEditor]()
+- [Loaders](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/Loaders)
+- [MenuDrawer](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/MenuDrawer)
+- [NavigationPrompt]()
+- [PartialDate]()
+- [ScrollToTop]()
+- [SelectField](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/SelectField)
+- [StandardCard]()
+- [StandardPage]()
+- [StandardRighthandCard]()
+- [Stepper]()
+- [TextField](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/TextField)
+- [SASS](https://github.com/uqlibrary/uqlibrary-react-toolbox/tree/master/src/sass)
 
 ## Setup
 
@@ -62,6 +72,13 @@ Finally add an entry into the src/index.js file
 
 - Pass in all dataSources as a prop for maximum flexibility of data sources
 - Add comments to methods if the methods does more than one thing
+
+#### Optimisation Guidelines
+
+- do not use functional components
+- component should extend React.PureComponent if props are simple 
+- component should extend React.Component, shouldComponentUpdate() should be implemented if props have objects
+- import explicit and specific components (do not import all), eg DO NOT `import {HelpIcon} from '../../index';` DO `import {HelpIcon} from '../../HelpDrawer';`
   
 #### Naming conventions
 
