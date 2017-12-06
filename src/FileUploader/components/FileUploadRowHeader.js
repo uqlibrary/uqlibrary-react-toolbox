@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
-import {ConfirmDialogBox} from '../..';
+import {ConfirmDialogBox} from '../../ConfirmDialogBox';
 
 export default class FileUploadRowHeader extends Component {
     static propTypes = {

@@ -1,6 +1,6 @@
 jest.dontMock('./ListEditor');
 
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import React from 'react';
 import ListEditor from './ListEditor';
@@ -10,40 +10,61 @@ beforeAll(() => {
     injectTapEventPlugin();
 });
 
-function setup({className, searchKey, maxCount, isValid, disabled, onChange}) {
+function setup(testProps, isShallow = true) {
+    // props
+    // formComponent: PropTypes.func.isRequired,
+    // inputField: PropTypes.func, // eg connected auto complete fields
+    // className: PropTypes.string,
+    // searchKey: PropTypes.object.isRequired,
+    // maxCount: PropTypes.number,
+    // isValid: PropTypes.func,
+    // disabled: PropTypes.bool,
+    // onChange: PropTypes.func,
+    // locale: PropTypes.object,
+    // hideReorder: PropTypes.bool,
+    // distinctOnly: PropTypes.bool,
+    // errorText: PropTypes.string
 
     const props = {
-        className, // : PropTypes.string,
-        searchKey: searchKey || {value: 'value', order: 'order'}, // : PropTypes.object.isRequired,
-        maxCount: maxCount || 0, // PropTypes.number,
-        isValid: isValid || jest.fn(), // PropTypes.func,
-        disabled: disabled || false, // PropTypes.bool,
-        onChange: onChange || jest.fn() // PropTypes.func,
-        // locale: PropTypes.object
+        ...testProps,
+        className: testProps.className || 'testClass', // : PropTypes.string,
+        searchKey: testProps.searchKey || {value: 'value', order: 'order'}, // : PropTypes.object.isRequired,
+        maxCount: testProps.maxCount || 0, // PropTypes.number,
+        isValid: testProps.isValid || jest.fn(), // PropTypes.func,
+        disabled: testProps.disabled || false, // PropTypes.bool,
+        onChange: testProps.onChange || jest.fn(), // PropTypes.func,
+        formComponent: testProps.formComponent || jest.fn(),
+        inputField: testProps.inputField || jest.fn(),
+        hideReorder: testProps.hideOrder || false,
+        distinctOnly: testProps.distinctOnly || false,
+        errorText: testProps.errorText || ''
     };
 
-    return shallow(<ListEditor {...props} />);
+    if (isShallow)
+        return shallow(<ListEditor {...props} />);
+
+    return mount(<ListEditor {...props} />);
 }
 
 describe('ListEditor tests ', () => {
-    it('rendering full component with a defined className', () => {
+    it('should render full component with a defined className', () => {
         const wrapper = setup({ className: 'requiredField' });
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 
-    it('rendering full component as disabled', () => {
+    it('should render full component as disabled', () => {
         const wrapper = setup({ disabled: true });
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 
-    it('appending an item to the list', () => {
+    it('should render an item to the list', () => {
         const wrapper = setup({ });
         expect(wrapper.state().itemList.length).toEqual(0);
         wrapper.instance().addItem('one');
         expect(wrapper.state().itemList.length).toEqual(1);
     });
 
-    it('deleting an item from the list', () => {
+    it('should delete an item from the list', () => {
         const wrapper = setup({ });
         wrapper.setState({ itemList: [ 'one', 'two', 'three' ]});
         expect(wrapper.state().itemList.length).toEqual(3);
@@ -51,7 +72,7 @@ describe('ListEditor tests ', () => {
         expect(wrapper.state().itemList.length).toEqual(2);
     });
 
-    it('deleting all items from a list', () => {
+    it('should delete all items from a list', () => {
         const wrapper = setup({ });
         wrapper.setState({ itemList: ['one', 'two', 'three'] });
         expect(wrapper.state().itemList.length).toEqual(3);
@@ -59,7 +80,7 @@ describe('ListEditor tests ', () => {
         expect(wrapper.state().itemList.length).toEqual(0);
     });
 
-    it('moving up an item', () => {
+    it('should move up an item', () => {
         const wrapper = setup({ });
         wrapper.setState({ itemList: ['one', 'two', 'three']});
         expect(wrapper.state().itemList.length).toEqual(3);
@@ -69,7 +90,7 @@ describe('ListEditor tests ', () => {
         expect(wrapper.state().itemList[1]).toEqual('one');
     });
 
-    it('moving down an item', () => {
+    it('should move down an item', () => {
         const wrapper = setup({ });
         wrapper.setState({ itemList: ['one', 'two', 'three']});
         expect(wrapper.state().itemList.length).toEqual(3);

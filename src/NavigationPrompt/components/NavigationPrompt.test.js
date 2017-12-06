@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import {Provider} from 'react-redux';
 import Immutable from 'immutable';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import {ConfirmDialogBox} from '../../index';
+import {ConfirmDialogBox} from '../../ConfirmDialogBox';
 
 const create = () => {
     const initialState = Immutable.Map();

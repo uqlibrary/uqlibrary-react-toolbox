@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {HelpIcon} from '../../index';
+import {HelpIcon} from '../../HelpDrawer';
 
 export default function StandardRighthandCard({title, children, help}) {
     return (
