@@ -32,6 +32,17 @@ class AuthorsPublicationTypesCountChart extends React.Component {
                     plotBorderWidth: 0,
                     spacingBottom: 10,
                     type: 'pie',
+                    events: {
+                        beforePrint: function() {
+                            this.oldhasUserSize = this.hasUserSize;
+                            this.resetParams = [this.chartWidth, this.chartHeight, false];
+                            this.setSize(100, 100, false);
+                        },
+                        afterPrint: function() {
+                            this.setSize.apply(this, this.resetParams);
+                            this.hasUserSize = this.oldhasUserSize;
+                        }
+                    }
                 },
                 credits: {
                     enabled: false

@@ -8,6 +8,10 @@ exports[`AuthorsPublicationTypesCountChart  should render empty chart component 
     chartOptions={
       Object {
         "chart": Object {
+          "events": Object {
+            "afterPrint": [Function],
+            "beforePrint": [Function],
+          },
           "height": 320,
           "plotBorderWidth": 0,
           "plotShadow": false,
