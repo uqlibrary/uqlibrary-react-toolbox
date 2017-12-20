@@ -36,6 +36,10 @@ var Chart = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Chart.__proto__ || Object.getPrototypeOf(Chart)).call(this, props));
 
+        _this.printUpdate = function () {
+            _this.chart.reflow();
+        };
+
         _this.chart = null;
         return _this;
     }
@@ -64,6 +68,14 @@ var Chart = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
+            if (window.matchMedia) {
+                var mediaQueryList = window.matchMedia('print');
+                mediaQueryList.addListener(function () {
+                    _this2.printUpdate();
+                });
+            }
             return _react2.default.createElement('div', { className: this.props.className, ref: 'chart' });
         }
     }]);

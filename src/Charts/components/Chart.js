@@ -35,8 +35,17 @@ class Chart extends React.Component {
             this.chart.destroy();
         }
     }
+    printUpdate = () => {
+        this.chart.reflow();
+    };
 
     render() {
+        if (window.matchMedia) {
+            const mediaQueryList = window.matchMedia('print');
+            mediaQueryList.addListener(() => {
+                this.printUpdate();
+            });
+        }
         return (
             <div className={this.props.className} ref="chart" />
         );

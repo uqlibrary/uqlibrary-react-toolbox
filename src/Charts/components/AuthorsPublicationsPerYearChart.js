@@ -25,18 +25,7 @@ class AuthorsPublicationsPerYearChart extends React.Component {
                 },
                 chart: {
                     type: 'column',
-                    height: 320,
-                    events: {
-                        beforePrint: function() {
-                            this.oldhasUserSize = this.hasUserSize;
-                            this.resetParams = [this.chartWidth, this.chartHeight, false];
-                            this.setSize(100, 100, false);
-                        },
-                        afterPrint: function() {
-                            this.setSize.apply(this, this.resetParams);
-                            this.hasUserSize = this.oldhasUserSize;
-                        }
-                    }
+                    height: 320
                 },
                 plotOptions: {
                     column: {

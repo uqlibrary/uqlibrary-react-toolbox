@@ -10,10 +10,6 @@ exports[`AuthorsPublicationsPerYearChart  should render empty chart component 1`
     chartOptions={
       Object {
         "chart": Object {
-          "events": Object {
-            "afterPrint": [Function],
-            "beforePrint": [Function],
-          },
           "height": 320,
           "type": "column",
         },

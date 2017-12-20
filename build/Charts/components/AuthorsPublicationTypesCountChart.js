@@ -39,18 +39,7 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
                     plotShadow: false,
                     plotBorderWidth: 0,
                     spacingBottom: 10,
-                    type: 'pie',
-                    events: {
-                        beforePrint: function beforePrint() {
-                            this.oldhasUserSize = this.hasUserSize;
-                            this.resetParams = [this.chartWidth, this.chartHeight, false];
-                            this.setSize(100, 100, false);
-                        },
-                        afterPrint: function afterPrint() {
-                            this.setSize.apply(this, this.resetParams);
-                            this.hasUserSize = this.oldhasUserSize;
-                        }
-                    }
+                    type: 'pie'
                 },
                 credits: {
                     enabled: false
