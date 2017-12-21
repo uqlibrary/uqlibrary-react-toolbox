@@ -31,7 +31,6 @@ exports[`AuthorsPublicationsPerYearChart  should render empty chart component 1`
         "title": Object {
           "text": null,
         },
-        "tooltip": Object {},
         "xAxis": Object {
           "categories": Array [],
           "labels": Object {

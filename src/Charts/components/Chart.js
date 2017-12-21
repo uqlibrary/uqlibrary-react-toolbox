@@ -22,6 +22,12 @@ class Chart extends React.Component {
                 this.props.chartOptions
             );
         }
+        window.onbeforeprint = () => {
+            this.chart.reflow();
+        };
+        window.onafterprint = () => {
+            this.chart.reflow();
+        };
     }
 
     componentDidUpdate() {
