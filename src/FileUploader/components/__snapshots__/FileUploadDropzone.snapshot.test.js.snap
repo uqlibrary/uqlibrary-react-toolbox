@@ -456,7 +456,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
           className="columns is-multiline is-mobile"
         >
           <div
-            className="column is-narrow alertIcon undefined"
+            className="column is-narrow alertIcon"
           >
             <FontIcon
               className="material-icons"
@@ -484,7 +484,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
             </FontIcon>
           </div>
           <div
-            className="column alertText undefined"
+            className="column alertText"
           >
             <div>
               <b>
@@ -659,7 +659,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
           className="columns is-multiline is-mobile"
         >
           <div
-            className="column is-narrow alertIcon undefined"
+            className="column is-narrow alertIcon"
           >
             <FontIcon
               className="material-icons"
@@ -687,7 +687,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
             </FontIcon>
           </div>
           <div
-            className="column alertText undefined"
+            className="column alertText"
           >
             <div>
               <b>
