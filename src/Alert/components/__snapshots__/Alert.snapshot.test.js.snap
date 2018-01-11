@@ -8,7 +8,7 @@ exports[`Alert snapshots test renders Alert of error type 1`] = `
     className="columns is-multiline is-mobile"
   >
     <div
-      className="column is-narrow alertIcon false"
+      className="column is-narrow alertIcon undefined"
     >
       <FontIcon
         className="material-icons"
@@ -19,7 +19,7 @@ exports[`Alert snapshots test renders Alert of error type 1`] = `
       </FontIcon>
     </div>
     <div
-      className="column alertText false"
+      className="column alertText undefined"
     >
       <div>
         <b>
@@ -97,7 +97,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
     className="columns is-multiline is-mobile"
   >
     <div
-      className="column is-narrow alertIcon false"
+      className="column is-narrow alertIcon undefined"
     >
       <FontIcon
         className="material-icons"
@@ -108,7 +108,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       </FontIcon>
     </div>
     <div
-      className="column alertText false"
+      className="column alertText undefined"
     >
       <div>
         <b>

@@ -47,7 +47,7 @@ var Alert = function Alert(_ref) {
             { className: 'columns is-multiline is-mobile' },
             _react2.default.createElement(
                 'div',
-                { className: 'column is-narrow alertIcon ' + (!!action && 'linked'), onClick: action, onKeyDown: action },
+                { className: 'column is-narrow alertIcon ' + (action && 'linked'), onClick: action, onKeyDown: action },
                 _react2.default.createElement(
                     _FontIcon2.default,
                     { className: 'material-icons' },
@@ -56,7 +56,7 @@ var Alert = function Alert(_ref) {
             ),
             _react2.default.createElement(
                 'div',
-                { className: 'column alertText ' + (!!action && 'linked'), onClick: action, onKeyDown: action },
+                { className: 'column alertText ' + (action && 'linked'), onClick: action, onKeyDown: action },
                 _react2.default.createElement(
                     'div',
                     null,
