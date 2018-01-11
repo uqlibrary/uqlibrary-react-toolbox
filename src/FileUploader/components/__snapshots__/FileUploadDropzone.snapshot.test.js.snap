@@ -450,13 +450,13 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
       type="error"
     >
       <div
-        className="error alertWrapper"
+        className="error alertWrapper "
       >
         <div
           className="columns is-multiline is-mobile"
         >
           <div
-            className="column is-narrow alertIcon"
+            className="column is-narrow alertIcon false"
           >
             <FontIcon
               className="material-icons"
@@ -484,7 +484,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
             </FontIcon>
           </div>
           <div
-            className="column alertText"
+            className="column alertText false"
           >
             <div>
               <b>
@@ -653,13 +653,13 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
       type="error"
     >
       <div
-        className="error alertWrapper"
+        className="error alertWrapper "
       >
         <div
           className="columns is-multiline is-mobile"
         >
           <div
-            className="column is-narrow alertIcon"
+            className="column is-narrow alertIcon false"
           >
             <FontIcon
               className="material-icons"
@@ -687,7 +687,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
             </FontIcon>
           </div>
           <div
-            className="column alertText"
+            className="column alertText false"
           >
             <div>
               <b>
