@@ -3,6 +3,9 @@
 // Common
 .alertWrapper {
   padding: 12px !important;
+  .linked:hover {
+    cursor: pointer;
+  }
   .column{
     padding: 0px !important;
     margin: 0px !important;

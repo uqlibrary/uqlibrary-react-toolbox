@@ -2,7 +2,7 @@
 
 exports[`Alert snapshots test renders Alert of error type 1`] = `
 <div
-  className="error alertWrapper"
+  className="error alertWrapper "
 >
   <div
     className="columns is-multiline is-mobile"
@@ -35,13 +35,15 @@ exports[`Alert snapshots test renders Alert of error type 1`] = `
 
 exports[`Alert snapshots test renders Alert of error type should render action button 1`] = `
 <div
-  className="error alertWrapper"
+  className="error alertWrapper "
 >
   <div
     className="columns is-multiline is-mobile"
   >
     <div
-      className="column is-narrow alertIcon"
+      className="column is-narrow alertIcon linked"
+      onClick={[Function]}
+      onKeyDown={[Function]}
     >
       <FontIcon
         className="material-icons"
@@ -52,7 +54,9 @@ exports[`Alert snapshots test renders Alert of error type should render action b
       </FontIcon>
     </div>
     <div
-      className="column alertText"
+      className="column alertText linked"
+      onClick={[Function]}
+      onKeyDown={[Function]}
     >
       <div>
         <b>
@@ -87,7 +91,7 @@ exports[`Alert snapshots test renders Alert of error type should render action b
 
 exports[`Alert snapshots test renders Alert of error type should render dismiss icon button 1`] = `
 <div
-  className="error alertWrapper"
+  className="error alertWrapper "
 >
   <div
     className="columns is-multiline is-mobile"
@@ -137,13 +141,15 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
 
 exports[`Alert snapshots test renders Alert of error type should render dismiss icon button and action button 1`] = `
 <div
-  className="error alertWrapper"
+  className="error alertWrapper "
 >
   <div
     className="columns is-multiline is-mobile"
   >
     <div
-      className="column is-narrow alertIcon"
+      className="column is-narrow alertIcon linked"
+      onClick={[Function]}
+      onKeyDown={[Function]}
     >
       <FontIcon
         className="material-icons"
@@ -154,7 +160,9 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       </FontIcon>
     </div>
     <div
-      className="column alertText"
+      className="column alertText linked"
+      onClick={[Function]}
+      onKeyDown={[Function]}
     >
       <div>
         <b>
