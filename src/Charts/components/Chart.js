@@ -2,6 +2,7 @@ import React from 'react';
 import {PropTypes} from 'prop-types';
 import {findDOMNode} from 'react-dom';
 import Highcharts from 'highcharts';
+import 'highcharts-exporting';
 
 class Chart extends React.Component {
     static propTypes = {
@@ -21,6 +22,12 @@ class Chart extends React.Component {
                 this.props.chartOptions
             );
         }
+        window.onbeforeprint = () => {
+            this.chart.reflow();
+        };
+        window.onafterprint = () => {
+            this.chart.reflow();
+        };
     }
 
     componentDidUpdate() {
@@ -34,8 +41,17 @@ class Chart extends React.Component {
             this.chart.destroy();
         }
     }
+    printUpdate = () => {
+        this.chart.reflow();
+    };
 
     render() {
+        if (window.matchMedia) {
+            const mediaQueryList = window.matchMedia('print');
+            mediaQueryList.addListener(() => {
+                this.printUpdate();
+            });
+        }
         return (
             <div className={this.props.className} ref="chart" />
         );

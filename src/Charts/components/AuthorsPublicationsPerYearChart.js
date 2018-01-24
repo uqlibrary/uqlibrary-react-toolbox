@@ -57,14 +57,6 @@ class AuthorsPublicationsPerYearChart extends React.Component {
                     floating: true,
                     shadow: false
                 },
-                tooltip: {
-                    // TODO: fix formatter display of tooltip - this.x is no longer in the correct scope
-                    // formatter: () => {
-                    //     return '<b>' + this.x + '</b><br/>' +
-                    //         this.series.name + ': ' + this.y + '<br/>' +
-                    //         'Total: ' + this.point.stackTotal;
-                    // }
-                },
                 series: this.props.series
             }
         };

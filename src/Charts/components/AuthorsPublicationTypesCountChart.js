@@ -31,7 +31,7 @@ class AuthorsPublicationTypesCountChart extends React.Component {
                     plotShadow: false,
                     plotBorderWidth: 0,
                     spacingBottom: 10,
-                    type: 'pie',
+                    type: 'pie'
                 },
                 credits: {
                     enabled: false

@@ -18,6 +18,8 @@ var _highcharts = require('highcharts');
 
 var _highcharts2 = _interopRequireDefault(_highcharts);
 
+require('highcharts-exporting');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -34,6 +36,10 @@ var Chart = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Chart.__proto__ || Object.getPrototypeOf(Chart)).call(this, props));
 
+        _this.printUpdate = function () {
+            _this.chart.reflow();
+        };
+
         _this.chart = null;
         return _this;
     }
@@ -41,9 +47,17 @@ var Chart = function (_React$Component) {
     _createClass(Chart, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            var _this2 = this;
+
             if (this.refs && this.refs.chart) {
                 this.chart = new _highcharts2.default.Chart((0, _reactDom.findDOMNode)(this.refs.chart), this.props.chartOptions);
             }
+            window.onbeforeprint = function () {
+                _this2.chart.reflow();
+            };
+            window.onafterprint = function () {
+                _this2.chart.reflow();
+            };
         }
     }, {
         key: 'componentDidUpdate',
@@ -62,6 +76,14 @@ var Chart = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this3 = this;
+
+            if (window.matchMedia) {
+                var mediaQueryList = window.matchMedia('print');
+                mediaQueryList.addListener(function () {
+                    _this3.printUpdate();
+                });
+            }
             return _react2.default.createElement('div', { className: this.props.className, ref: 'chart' });
         }
     }]);
