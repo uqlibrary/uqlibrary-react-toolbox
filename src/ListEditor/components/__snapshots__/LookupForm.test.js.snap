@@ -12,7 +12,7 @@ exports[`LookupForm tests  should render lookup form 1`] = `
       hintText="Please type the item name, then select from the list"
       input={
         Object {
-          "onChange": [Function],
+          "onChange": [MockFunction],
         }
       }
     />

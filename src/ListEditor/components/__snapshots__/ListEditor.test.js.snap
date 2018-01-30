@@ -7,8 +7,8 @@ exports[`ListEditor tests  should render full component as disabled 1`] = `
   <mockConstructor
     disabled={true}
     errorText=""
-    inputField={[Function]}
-    isValid={[Function]}
+    inputField={[MockFunction]}
+    isValid={[MockFunction]}
     onAdd={[Function]}
   />
 </div>
@@ -21,8 +21,8 @@ exports[`ListEditor tests  should render full component with a defined className
   <mockConstructor
     disabled={false}
     errorText=""
-    inputField={[Function]}
-    isValid={[Function]}
+    inputField={[MockFunction]}
+    isValid={[MockFunction]}
     onAdd={[Function]}
   />
 </div>

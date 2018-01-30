@@ -5,7 +5,7 @@ exports[`MenuDrawer snapshots tests should render empty drawer 1`] = `
   containerClassName="main-drawer"
   disableSwipeToOpen={false}
   docked={false}
-  onRequestChange={[Function]}
+  onRequestChange={[MockFunction]}
   open={false}
   openSecondary={false}
   swipeAreaWidth={30}
@@ -19,7 +19,7 @@ exports[`MenuDrawer snapshots tests should render opened drawer with menus, divi
   containerClassName="main-drawer"
   disableSwipeToOpen={false}
   docked={false}
-  onRequestChange={[Function]}
+  onRequestChange={[MockFunction]}
   open={true}
   openSecondary={false}
   swipeAreaWidth={30}
@@ -46,7 +46,7 @@ exports[`MenuDrawer snapshots tests should render opened drawer with menus, divi
             disableTouchRipple={false}
             disabled={false}
             iconStyle={Object {}}
-            onTouchTap={[Function]}
+            onTouchTap={[MockFunction]}
             tooltipPosition="bottom-center"
             touch={false}
           >
@@ -134,7 +134,7 @@ exports[`MenuDrawer snapshots tests should render opened drawer with menus, divi
   containerClassName="main-drawer"
   disableSwipeToOpen={false}
   docked={true}
-  onRequestChange={[Function]}
+  onRequestChange={[MockFunction]}
   open={true}
   openSecondary={false}
   swipeAreaWidth={30}
@@ -161,7 +161,7 @@ exports[`MenuDrawer snapshots tests should render opened drawer with menus, divi
             disableTouchRipple={false}
             disabled={false}
             iconStyle={Object {}}
-            onTouchTap={[Function]}
+            onTouchTap={[MockFunction]}
             tooltipPosition="bottom-center"
             touch={false}
           >

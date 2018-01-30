@@ -2,7 +2,7 @@
 
 exports[`FileUploader renders correctly without any setup 1`] = `
 <FileUploader
-  clearFileUpload={[Function]}
+  clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -63,7 +63,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
             onKeyPress={[Function]}
             tabIndex="0"
           >
-            <Dropzone
+            <t
               disableClick={false}
               disablePreview={true}
               disabled={false}
@@ -167,7 +167,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
                   type="file"
                 />
               </div>
-            </Dropzone>
+            </t>
           </div>
         </div>
       </div>
@@ -186,7 +186,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
 
 exports[`FileUploader renders row for uploaded files 1`] = `
 <FileUploader
-  clearFileUpload={[Function]}
+  clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -247,7 +247,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
             onKeyPress={[Function]}
             tabIndex="0"
           >
-            <Dropzone
+            <t
               disableClick={false}
               disablePreview={true}
               disabled={false}
@@ -351,7 +351,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
                   type="file"
                 />
               </div>
-            </Dropzone>
+            </t>
           </div>
         </div>
       </div>
@@ -370,7 +370,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
 
 exports[`FileUploader renders row for uploaded files 2`] = `
 <FileUploader
-  clearFileUpload={[Function]}
+  clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -442,7 +442,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
             onKeyPress={[Function]}
             tabIndex="0"
           >
-            <Dropzone
+            <t
               disableClick={false}
               disablePreview={true}
               disabled={false}
@@ -546,7 +546,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                   type="file"
                 />
               </div>
-            </Dropzone>
+            </t>
           </div>
         </div>
       </div>
@@ -1631,7 +1631,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
 
 exports[`FileUploader renders row for uploaded files 3`] = `
 <FileUploader
-  clearFileUpload={[Function]}
+  clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -1699,7 +1699,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
             onKeyPress={[Function]}
             tabIndex="0"
           >
-            <Dropzone
+            <t
               disableClick={false}
               disablePreview={true}
               disabled={false}
@@ -1803,7 +1803,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                   type="file"
                 />
               </div>
-            </Dropzone>
+            </t>
           </div>
         </div>
       </div>
@@ -2499,7 +2499,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
 
 exports[`FileUploader renders row for uploaded files 4`] = `
 <FileUploader
-  clearFileUpload={[Function]}
+  clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -2560,7 +2560,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
             onKeyPress={[Function]}
             tabIndex="0"
           >
-            <Dropzone
+            <t
               disableClick={false}
               disablePreview={true}
               disabled={false}
@@ -2664,7 +2664,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
                   type="file"
                 />
               </div>
-            </Dropzone>
+            </t>
           </div>
         </div>
       </div>
@@ -2683,7 +2683,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
 
 exports[`FileUploader renders row for uploaded files with access required 1`] = `
 <FileUploader
-  clearFileUpload={[Function]}
+  clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -2744,7 +2744,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
             onKeyPress={[Function]}
             tabIndex="0"
           >
-            <Dropzone
+            <t
               disableClick={false}
               disablePreview={true}
               disabled={false}
@@ -2848,7 +2848,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
                   type="file"
                 />
               </div>
-            </Dropzone>
+            </t>
           </div>
         </div>
       </div>
@@ -2867,7 +2867,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
 
 exports[`FileUploader renders row for uploaded files with access required 2`] = `
 <FileUploader
-  clearFileUpload={[Function]}
+  clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -2939,7 +2939,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
             onKeyPress={[Function]}
             tabIndex="0"
           >
-            <Dropzone
+            <t
               disableClick={false}
               disablePreview={true}
               disabled={false}
@@ -3043,7 +3043,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                   type="file"
                 />
               </div>
-            </Dropzone>
+            </t>
           </div>
         </div>
       </div>
@@ -7024,7 +7024,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
 
 exports[`FileUploader renders row for uploaded files with access required 3`] = `
 <FileUploader
-  clearFileUpload={[Function]}
+  clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -7097,7 +7097,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
             onKeyPress={[Function]}
             tabIndex="0"
           >
-            <Dropzone
+            <t
               disableClick={false}
               disablePreview={true}
               disabled={false}
@@ -7201,7 +7201,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                   type="file"
                 />
               </div>
-            </Dropzone>
+            </t>
           </div>
         </div>
       </div>
@@ -11184,7 +11184,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
 
 exports[`FileUploader renders row for uploaded files with access required 4`] = `
 <FileUploader
-  clearFileUpload={[Function]}
+  clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -11257,7 +11257,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
             onKeyPress={[Function]}
             tabIndex="0"
           >
-            <Dropzone
+            <t
               disableClick={false}
               disablePreview={true}
               disabled={false}
@@ -11361,7 +11361,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                   type="file"
                 />
               </div>
-            </Dropzone>
+            </t>
           </div>
         </div>
       </div>
@@ -16519,7 +16519,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
 
 exports[`FileUploader renders row for uploaded files with access required 5`] = `
 <FileUploader
-  clearFileUpload={[Function]}
+  clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
       "fileSizeUnit": "G",
@@ -16593,7 +16593,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
             onKeyPress={[Function]}
             tabIndex="0"
           >
-            <Dropzone
+            <t
               disableClick={false}
               disablePreview={true}
               disabled={false}
@@ -16697,7 +16697,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                   type="file"
                 />
               </div>
-            </Dropzone>
+            </t>
           </div>
         </div>
       </div>

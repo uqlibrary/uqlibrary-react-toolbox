@@ -42,8 +42,8 @@ exports[`Alert snapshots test renders Alert of error type should render action b
   >
     <div
       className="column is-narrow alertIcon linked"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      onClick={[MockFunction]}
+      onKeyDown={[MockFunction]}
     >
       <FontIcon
         className="material-icons"
@@ -55,8 +55,8 @@ exports[`Alert snapshots test renders Alert of error type should render action b
     </div>
     <div
       className="column alertText linked"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      onClick={[MockFunction]}
+      onKeyDown={[MockFunction]}
     >
       <div>
         <b>
@@ -80,7 +80,7 @@ exports[`Alert snapshots test renders Alert of error type should render action b
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         onTouchStart={[Function]}
-        onTouchTap={[Function]}
+        onTouchTap={[MockFunction]}
         primary={false}
         secondary={false}
       />
@@ -126,7 +126,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
         disableTouchRipple={false}
         disabled={false}
         iconStyle={Object {}}
-        onTouchTap={[Function]}
+        onTouchTap={[MockFunction]}
         tooltipPosition="bottom-center"
         touch={false}
       >
@@ -148,8 +148,8 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
   >
     <div
       className="column is-narrow alertIcon linked"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      onClick={[MockFunction]}
+      onKeyDown={[MockFunction]}
     >
       <FontIcon
         className="material-icons"
@@ -161,8 +161,8 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
     </div>
     <div
       className="column alertText linked"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      onClick={[MockFunction]}
+      onKeyDown={[MockFunction]}
     >
       <div>
         <b>
@@ -186,7 +186,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         onTouchStart={[Function]}
-        onTouchTap={[Function]}
+        onTouchTap={[MockFunction]}
         primary={false}
         secondary={false}
       />
@@ -199,7 +199,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
         disableTouchRipple={false}
         disabled={false}
         iconStyle={Object {}}
-        onTouchTap={[Function]}
+        onTouchTap={[MockFunction]}
         tooltipPosition="bottom-center"
         touch={false}
       >

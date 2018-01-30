@@ -8,9 +8,9 @@ exports[`AutoSuggestField component should render 1`] = `
   hintText="Please type text"
   itemsList={Array []}
   itemsListLoading={false}
-  loadSuggestions={[Function]}
+  loadSuggestions={[MockFunction]}
   maxResults={7}
-  onChange={[Function]}
+  onChange={[MockFunction]}
 />
 `;
 
@@ -18,9 +18,9 @@ exports[`AutoSuggestField component should render autosuggest field and call act
 <Provider
   store={
     Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "subscribe": [Function],
+      "dispatch": [MockFunction],
+      "getState": [MockFunction],
+      "subscribe": [MockFunction],
     }
   }
 >
@@ -31,9 +31,17 @@ exports[`AutoSuggestField component should render autosuggest field and call act
     hintText="Please type text"
     itemsList={Array []}
     itemsListLoading={false}
-    loadSuggestions={[Function]}
+    loadSuggestions={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            undefined,
+          ],
+        ],
+      }
+    }
     maxResults={7}
-    onChange={[Function]}
+    onChange={[MockFunction]}
   >
     <AutoComplete
       anchorOrigin={
@@ -1574,9 +1582,9 @@ exports[`AutoSuggestField component should render with className set 1`] = `
 <Provider
   store={
     Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "subscribe": [Function],
+      "dispatch": [MockFunction],
+      "getState": [MockFunction],
+      "subscribe": [MockFunction],
     }
   }
 >
@@ -1588,9 +1596,17 @@ exports[`AutoSuggestField component should render with className set 1`] = `
     hintText="Please type text"
     itemsList={Array []}
     itemsListLoading={false}
-    loadSuggestions={[Function]}
+    loadSuggestions={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            undefined,
+          ],
+        ],
+      }
+    }
     maxResults={7}
-    onChange={[Function]}
+    onChange={[MockFunction]}
   >
     <AutoComplete
       anchorOrigin={
@@ -3134,9 +3150,9 @@ exports[`AutoSuggestField component should render with disabled flag set to true
 <Provider
   store={
     Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "subscribe": [Function],
+      "dispatch": [MockFunction],
+      "getState": [MockFunction],
+      "subscribe": [MockFunction],
     }
   }
 >
@@ -3148,9 +3164,17 @@ exports[`AutoSuggestField component should render with disabled flag set to true
     hintText="Please type text"
     itemsList={Array []}
     itemsListLoading={false}
-    loadSuggestions={[Function]}
+    loadSuggestions={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            undefined,
+          ],
+        ],
+      }
+    }
     maxResults={7}
-    onChange={[Function]}
+    onChange={[MockFunction]}
   >
     <AutoComplete
       anchorOrigin={
