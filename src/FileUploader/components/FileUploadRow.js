@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import FontIcon from 'material-ui/FontIcon';
@@ -48,6 +49,12 @@ export class FileUploadRow extends Component {
             access_condition_id: null,
             date: null
         };
+    }
+
+    componentDidMount() {
+        if (this.refs.hasOwnProperty('accessConditionSelector0')) {
+            ReactDOM.findDOMNode(this.refs.accessConditionSelector0).getElementsByTagName('button').item(0).focus();
+        }
     }
 
     _showConfirmation = () => {
@@ -103,7 +110,7 @@ export class FileUploadRow extends Component {
                             <div className="file-access-selector">
                                 <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
                                 <div className="select-container">
-                                    <FileUploadAccessSelector onAccessChanged={this._updateFileMetadata} disabled={this.props.disabled} />
+                                    <FileUploadAccessSelector onAccessChanged={this._updateFileMetadata} disabled={this.props.disabled} ref={`accessConditionSelector${this.props.index}`} />
                                     <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{fileAccessColumn}</span>
                                 </div>
                             </div>
