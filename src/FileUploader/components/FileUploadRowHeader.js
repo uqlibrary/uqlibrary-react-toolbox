@@ -49,14 +49,12 @@ export default class FileUploadRowHeader extends Component {
                 </div>
                 <div className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header">
                     {
-                        this.props.requireFileAccess &&
-                            {fileAccessColumn}
+                        this.props.requireFileAccess && fileAccessColumn
                     }
                 </div>
                 <div className="column datalist-title is-2-desktop is-2-tablet is-12-mobile header">
                     {
-                        this.props.requireFileAccess &&
-                            {embargoDateColumn}
+                        this.props.requireFileAccess && embargoDateColumn
                     }
                 </div>
                 <div className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header">
