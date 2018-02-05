@@ -140,6 +140,9 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
         value: function componentDidMount() {
             if (this.refs.hasOwnProperty('accessConditionSelector0')) {
                 _reactDom2.default.findDOMNode(this.refs.accessConditionSelector0).getElementsByTagName('button').item(0).focus();
+            } else if (this.refs.hasOwnProperty('fileName0')) {
+                // if access condition is not required, then scroll into filename
+                this.refs.fileName0.scrollIntoView();
             }
         }
     }, {
@@ -170,7 +173,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                     _ref,
                     _react2.default.createElement(
                         'div',
-                        { className: 'file-name' },
+                        { className: 'file-name', ref: 'fileName' + this.props.index },
                         _react2.default.createElement(
                             'span',
                             { className: 'truncated' },
