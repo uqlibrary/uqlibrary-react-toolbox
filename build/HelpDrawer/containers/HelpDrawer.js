@@ -15,7 +15,7 @@ var _HelpDrawer2 = _interopRequireDefault(_HelpDrawer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var HelpDrawerContainer = (0, _reactRedux.connect)(function (state) {
-    return state.get('helpDrawer').toJS();
+    return state.get('helpDrawer') ? state.get('helpDrawer').toJS() : {};
 }, function (dispatch) {
     return {
         hide: function hide() {

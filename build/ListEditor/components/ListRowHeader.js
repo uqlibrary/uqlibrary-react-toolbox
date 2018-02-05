@@ -79,7 +79,7 @@ var ListRowHeader = function (_Component) {
                     { className: 'column name datalist-title' },
                     nameColumn
                 ),
-                _react2.default.createElement(
+                !this.props.hideReorder && _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow is-hidden-mobile order datalist-title' },
                     reorderColumn

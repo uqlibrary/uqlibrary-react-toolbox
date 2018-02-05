@@ -7,14 +7,15 @@ import {ConfirmDialogBox} from '../../ConfirmDialogBox';
 export default class ListRow extends Component {
     static propTypes = {
         index: PropTypes.number.isRequired,
-        item: PropTypes.string.isRequired,
+        item: PropTypes.any.isRequired,
         canMoveUp: PropTypes.bool,
         canMoveDown: PropTypes.bool,
         onMoveUp: PropTypes.func,
         onMoveDown: PropTypes.func,
         onDelete: PropTypes.func,
         locale: PropTypes.object,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
+        hideReorder: PropTypes.bool
     };
 
     static defaultProps = {
@@ -59,10 +60,12 @@ export default class ListRow extends Component {
                     onAction={this.deleteRecord}
                     locale={this.props.locale.deleteRecordConfirmation}/>
                 <div className="column datalist-text">
-                    {this.props.item}
+                    {
+                        this.props.item.value ? this.props.item.value : this.props.item
+                    }
                 </div>
                 <div className="column is-narrow is-hidden-mobile listReorder datalist-buttons">
-                    {this.props.canMoveUp &&
+                    {!this.props.hideReorder && this.props.canMoveUp &&
                     <IconButton
                         tooltip={this.props.locale.moveUpHint}
                         onTouchTap={this.onMoveUp}
@@ -71,7 +74,7 @@ export default class ListRow extends Component {
                         <FontIcon className="material-icons">keyboard_arrow_up</FontIcon>
                     </IconButton>
                     }
-                    {this.props.canMoveDown &&
+                    {!this.props.hideReorder && this.props.canMoveDown &&
                     <IconButton
                         tooltip={this.props.locale.moveDownHint}
                         onTouchTap={this.onMoveDown}

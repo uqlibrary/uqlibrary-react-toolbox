@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -28,68 +30,88 @@ var _close2 = _interopRequireDefault(_close);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _ref2 = _react2.default.createElement(_close2.default, { className: 'alertDismiss' });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Alert = function Alert(_ref) {
-    var title = _ref.title,
-        message = _ref.message,
-        type = _ref.type,
-        action = _ref.action,
-        actionButtonLabel = _ref.actionButtonLabel,
-        allowDismiss = _ref.allowDismiss,
-        dismissAction = _ref.dismissAction;
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-    return _react2.default.createElement(
-        'div',
-        { className: type + ' alertWrapper' },
-        _react2.default.createElement(
-            'div',
-            { className: 'columns is-multiline is-mobile' },
-            _react2.default.createElement(
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _ref = _react2.default.createElement(_close2.default, { className: 'alertDismiss' });
+
+var Alert = function (_PureComponent) {
+    _inherits(Alert, _PureComponent);
+
+    function Alert(props) {
+        _classCallCheck(this, Alert);
+
+        return _possibleConstructorReturn(this, (Alert.__proto__ || Object.getPrototypeOf(Alert)).call(this, props));
+    }
+
+    _createClass(Alert, [{
+        key: 'shouldComponentUpdate',
+        value: function shouldComponentUpdate(nextProps) {
+            return nextProps.message !== this.props.message || nextProps.title !== this.props.title || nextProps.type !== this.props.type || nextProps.action !== this.props.action || nextProps.actionButtonLabel !== this.props.actionButtonLabel || nextProps.allowDismiss !== this.props.allowDismiss || nextProps.dismissAction !== this.props.dismissAction;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
                 'div',
-                { className: 'column is-narrow alertIcon' },
-                _react2.default.createElement(
-                    _FontIcon2.default,
-                    { className: 'material-icons' },
-                    type
-                )
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'column alertText' },
+                { className: this.props.type + ' alertWrapper ' },
                 _react2.default.createElement(
                     'div',
-                    null,
+                    { className: 'columns is-multiline is-mobile' },
                     _react2.default.createElement(
-                        'b',
-                        null,
-                        title
+                        'div',
+                        { className: 'column is-narrow alertIcon' + (this.props.action ? ' linked' : ''), onClick: this.props.action,
+                            onKeyDown: this.props.action },
+                        _react2.default.createElement(
+                            _FontIcon2.default,
+                            { className: 'material-icons' },
+                            this.props.type
+                        )
                     ),
-                    '\xA0-\xA0',
-                    message
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'column alertText' + (this.props.action ? ' linked' : ''), onClick: this.props.action, onKeyDown: this.props.action },
+                        _react2.default.createElement(
+                            'div',
+                            null,
+                            _react2.default.createElement(
+                                'b',
+                                null,
+                                this.props.title
+                            ),
+                            '\xA0-\xA0',
+                            this.props.message
+                        )
+                    ),
+                    this.props.action && this.props.actionButtonLabel && _react2.default.createElement(
+                        'div',
+                        {
+                            className: 'column is-narrow-tablet is-12-mobile' + (!this.props.allowDismiss && !this.props.dismissAction ? ' noDismiss' : '') },
+                        _react2.default.createElement(_FlatButton2.default, {
+                            label: this.props.actionButtonLabel,
+                            onTouchTap: this.props.action,
+                            fullWidth: true,
+                            className: 'alertAction' })
+                    ),
+                    this.props.allowDismiss && this.props.dismissAction && _react2.default.createElement(
+                        'div',
+                        { className: 'column is-narrow-tablet is-hidden-mobile' },
+                        _react2.default.createElement(
+                            _IconButton2.default,
+                            { onTouchTap: this.props.dismissAction, className: 'alertDismissButton' },
+                            _ref
+                        )
+                    )
                 )
-            ),
-            action && actionButtonLabel && _react2.default.createElement(
-                'div',
-                { className: 'column is-narrow-tablet is-12-mobile' },
-                _react2.default.createElement(_FlatButton2.default, {
-                    label: actionButtonLabel,
-                    onTouchTap: action,
-                    fullWidth: true,
-                    className: 'alertAction' })
-            ),
-            allowDismiss && dismissAction && _react2.default.createElement(
-                'div',
-                { className: 'column is-narrow-tablet is-hidden-mobile' },
-                _react2.default.createElement(
-                    _IconButton2.default,
-                    { onTouchTap: dismissAction, className: 'alertDismissButton' },
-                    _ref2
-                )
-            )
-        )
-    );
-};
+            );
+        }
+    }]);
+
+    return Alert;
+}(_react.PureComponent);
 
 Alert.defaultProps = {
     message: 'Unexpected error',
@@ -97,5 +119,4 @@ Alert.defaultProps = {
     type: 'error',
     allowDismiss: false
 };
-
 exports.default = Alert;

@@ -12,12 +12,15 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ListEditor = require('./components/ListEditor');
+var _FreeTextListEditor = require('./components/FreeTextListEditor');
 
-var _ListEditor2 = _interopRequireDefault(_ListEditor);
+var _FreeTextListEditor2 = _interopRequireDefault(_FreeTextListEditor);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ListEditorField(fieldProps) {
-    return _react2.default.createElement(_ListEditor2.default, _extends({ onChange: fieldProps.input.onChange }, fieldProps));
+    return _react2.default.createElement(_FreeTextListEditor2.default, _extends({
+        errorText: fieldProps.meta ? fieldProps.meta.error : null,
+        onChange: fieldProps.input.onChange
+    }, fieldProps));
 }

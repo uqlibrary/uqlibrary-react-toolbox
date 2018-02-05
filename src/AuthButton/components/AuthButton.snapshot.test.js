@@ -5,14 +5,7 @@ import toJson from 'enzyme-to-json';
 import React from 'react';
 import AuthButton from '../components/AuthButton';
 
-function setup({
-        isAuthorizedUser = false,
-        loginUrl = 'https://login',
-        logoutUrl = 'https://logout',
-        loginText = 'login into the system',
-        logoutText = 'logout'
-    }) {
-    const props = {isAuthorizedUser, loginUrl, logoutUrl, loginText, logoutText};
+function setup({...props}) {
     return shallow(<AuthButton {...props} />);
 }
 

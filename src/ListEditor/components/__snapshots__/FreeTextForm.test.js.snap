@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ListForm tests  rendering active form 1`] = `
+exports[`FreeTextForm tests  rendering active form 1`] = `
 <div
   className="columns"
 >
@@ -9,7 +9,7 @@ exports[`ListForm tests  rendering active form 1`] = `
   >
     <TextField
       disabled={false}
-      errorText=""
+      errorText={null}
       floatingLabelFixed={false}
       floatingLabelText="Item name"
       fullWidth={true}
@@ -40,7 +40,7 @@ exports[`ListForm tests  rendering active form 1`] = `
 </div>
 `;
 
-exports[`ListForm tests  rendering disabled form 1`] = `
+exports[`FreeTextForm tests  rendering disabled form 1`] = `
 <div
   className="columns"
 >
@@ -49,7 +49,7 @@ exports[`ListForm tests  rendering disabled form 1`] = `
   >
     <TextField
       disabled={true}
-      errorText=""
+      errorText={null}
       floatingLabelFixed={false}
       floatingLabelText="Item name"
       fullWidth={true}

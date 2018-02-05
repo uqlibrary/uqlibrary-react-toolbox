@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {Card, CardText, CardHeader} from 'material-ui/Card';
-import {HelpIcon} from '../../index';
+import {HelpIcon} from '../../HelpDrawer';
 
 export default function StandardCard({title, help, className, children}) {
     return (

@@ -26,7 +26,7 @@ exports[`FileUploadDropzone renders correctly without any setup 1`] = `
   }
   maxFiles={3}
   maxSize={1000}
-  onDropped={[Function]}
+  onDropped={[MockFunction]}
   uploadedFiles={Array []}
 >
   <div>
@@ -38,7 +38,7 @@ exports[`FileUploadDropzone renders correctly without any setup 1`] = `
         onKeyPress={[Function]}
         tabIndex="0"
       >
-        <Dropzone
+        <t
           disableClick={false}
           disablePreview={true}
           disabled={false}
@@ -142,7 +142,7 @@ exports[`FileUploadDropzone renders correctly without any setup 1`] = `
               type="file"
             />
           </div>
-        </Dropzone>
+        </t>
       </div>
     </div>
   </div>
@@ -175,7 +175,7 @@ exports[`FileUploadDropzone renders row for uploaded files 1`] = `
   }
   maxFiles={3}
   maxSize={1000}
-  onDropped={[Function]}
+  onDropped={[MockFunction]}
   uploadedFiles={Array []}
 >
   <div>
@@ -187,7 +187,7 @@ exports[`FileUploadDropzone renders row for uploaded files 1`] = `
         onKeyPress={[Function]}
         tabIndex="0"
       >
-        <Dropzone
+        <t
           disableClick={false}
           disablePreview={true}
           disabled={false}
@@ -291,7 +291,7 @@ exports[`FileUploadDropzone renders row for uploaded files 1`] = `
               type="file"
             />
           </div>
-        </Dropzone>
+        </t>
       </div>
     </div>
   </div>
@@ -324,7 +324,21 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
   }
   maxFiles={3}
   maxSize={1000}
-  onDropped={[Function]}
+  onDropped={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Array [
+            Object {
+              "name": "a.txt",
+              "size": 500,
+              "type": "text/text",
+            },
+          ],
+        ],
+      ],
+    }
+  }
   uploadedFiles={Array []}
 >
   <div>
@@ -336,7 +350,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
         onKeyPress={[Function]}
         tabIndex="0"
       >
-        <Dropzone
+        <t
           disableClick={false}
           disablePreview={true}
           disabled={false}
@@ -440,7 +454,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
               type="file"
             />
           </div>
-        </Dropzone>
+        </t>
       </div>
     </div>
     <Alert
@@ -450,7 +464,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
       type="error"
     >
       <div
-        className="error alertWrapper"
+        className="error alertWrapper "
       >
         <div
           className="columns is-multiline is-mobile"
@@ -527,7 +541,40 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
   }
   maxFiles={3}
   maxSize={1000}
-  onDropped={[Function]}
+  onDropped={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Array [
+            Object {
+              "name": "a.txt",
+              "size": 500,
+              "type": "text/text",
+            },
+          ],
+        ],
+        Array [
+          Array [
+            Object {
+              "name": "a.txt",
+              "size": 500,
+              "type": "text/text",
+            },
+            Object {
+              "name": "b.txt",
+              "size": 100,
+              "type": "text/text",
+            },
+            Object {
+              "name": "c.txt",
+              "size": 100,
+              "type": "text/text",
+            },
+          ],
+        ],
+      ],
+    }
+  }
   uploadedFiles={Array []}
 >
   <div>
@@ -539,7 +586,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
         onKeyPress={[Function]}
         tabIndex="0"
       >
-        <Dropzone
+        <t
           disableClick={false}
           disablePreview={true}
           disabled={false}
@@ -643,7 +690,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
               type="file"
             />
           </div>
-        </Dropzone>
+        </t>
       </div>
     </div>
     <Alert
@@ -653,7 +700,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
       type="error"
     >
       <div
-        className="error alertWrapper"
+        className="error alertWrapper "
       >
         <div
           className="columns is-multiline is-mobile"

@@ -1,5 +1,7 @@
 # ListEditor
 
+TODO: update LookupListEditor
+
 ReduxForm Field - adds ability for users to add a list of items (strings) to a record,
 data is passed to redux form values in the following format:
 

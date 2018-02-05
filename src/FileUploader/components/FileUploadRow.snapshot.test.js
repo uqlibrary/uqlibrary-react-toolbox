@@ -61,10 +61,14 @@ describe('FileUploadRow', () => {
         const wrapper = setup({onDelete: testFunction});
 
         wrapper.instance()._showConfirmation();
+        wrapper.update();
+
         expect(toJson(wrapper)).toMatchSnapshot();
         expect(wrapper.find('Dialog').props().open).toBeTruthy();
 
         wrapper.instance()._deleteFile();
+        wrapper.update();
+
         expect(testFunction).toBeCalled();
     });
 
@@ -78,6 +82,8 @@ describe('FileUploadRow', () => {
         const wrapper = setup({requireFileAccess: true, onAttributeChanged: testFunction, uploadedFile: file});
 
         wrapper.instance()._updateFileMetadata({key: 'access_condition_id', value: 8});
+        wrapper.update();
+
         expect(testFunction).toBeCalled();
         expect(wrapper.state().access_condition_id).toEqual(8);
         expect(wrapper.props().uploadedFile.date).toBeUndefined();
@@ -89,6 +95,8 @@ describe('FileUploadRow', () => {
         const wrapper = setup({requireFileAccess: true, onAttributeChanged: testFunction});
 
         wrapper.instance()._updateFileMetadata({key: 'access_condition_id', value: 9});
+        wrapper.update();
+
         expect(testFunction).toBeCalled();
         expect(wrapper.state().access_condition_id).toEqual(9);
         expect(wrapper.props().uploadedFile.date).toBeDefined();

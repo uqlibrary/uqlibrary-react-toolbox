@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 import CircularProgress from 'material-ui/CircularProgress';
-import {ConfirmDialogBox} from '../..';
+import {ConfirmDialogBox} from '../../ConfirmDialogBox';
+
 import FileUploadAccessSelector from './FileUploadAccessSelector';
 import FileUploadEmbargoDate from './FileUploadEmbargoDate';
 

@@ -8,7 +8,8 @@ export default class ListRowHeader extends Component {
     static propTypes = {
         onDeleteAll: PropTypes.func.isRequired,
         locale: PropTypes.object,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
+        hideReorder: PropTypes.bool
     };
 
     static defaultProps = {
@@ -43,7 +44,10 @@ export default class ListRowHeader extends Component {
                     onAction={this.props.onDeleteAll}
                     locale={deleteAllConfirmation}/>
                 <div className="column name datalist-title">{nameColumn}</div>
-                <div className="column is-narrow is-hidden-mobile order datalist-title">{reorderColumn}</div>
+                {
+                    !this.props.hideReorder &&
+                    <div className="column is-narrow is-hidden-mobile order datalist-title">{reorderColumn}</div>
+                }
                 <div className="column is-narrow buttons datalist-buttons">
                     <IconButton
                         tooltip={deleteAll}

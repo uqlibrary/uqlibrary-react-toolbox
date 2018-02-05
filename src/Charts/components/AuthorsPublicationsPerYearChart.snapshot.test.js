@@ -1,26 +1,22 @@
-jest.dontMock('./AuthorsPublicationsPerYearChart');
+/* eslint-disable */
 
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import AthorsPublicationsPerYearChart from './AuthorsPublicationsPerYearChart';
-import {publicationYearsBig, publicationYearsSmall, publicationYearsTiny, publicationYearsZero} from './data/publicationYears';
+import AuthorsPublicationsPerYearChart from './AuthorsPublicationsPerYearChart';
 
-function setup({series, categories, yAxisTitle}) {
-    const props = {
-        series,
-        categories,
-        yAxisTitle
-    };
-    return shallow(<AthorsPublicationsPerYearChart {...props} />);
+function setup(testProps, isShallow = false) {
+    if (isShallow)
+        return shallow(<AuthorsPublicationsPerYearChart {...testProps} />);
+
+    return mount(<AuthorsPublicationsPerYearChart {...testProps} />);
 }
 
 
-describe('AuthorsPublicationsPerYearChart snapshot tests', () => {
-    it('it should render chart component', () => {
+describe('AuthorsPublicationsPerYearChart ', () => {
+    it('should render empty chart component', () => {
         const app = setup({series: [], categories: [], yAxisTitle: 'title'});
         expect(toJson(app)).toMatchSnapshot();
     });
 });
-

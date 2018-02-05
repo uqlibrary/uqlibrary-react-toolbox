@@ -1,23 +1,22 @@
-jest.dontMock('./Chart');
+/* eslint-disable */
 
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import Chart from './Chart';
 
-function setup(chartOptions) {
-    const props = {
-        chartOptions
-    };
-    return shallow(<Chart chartOptions={chartOptions} />);
+function setup(testProps, isShallow = false) {
+    if (isShallow)
+        return shallow(<Chart {...testProps} />);
+
+    return mount(<Chart {...testProps} />);
 }
 
-
 describe('Chart snapshot tests', () => {
-    it('it should render empty chart component', () => {
+    it('it should mount empty chart component', () => {
         const app = setup({
-            options: {
+            chartOptions: {
                 title: {
                     text: null
                 },
@@ -57,7 +56,7 @@ describe('Chart snapshot tests', () => {
                     }
                 },
                 series: [{"name":"Journal Article","data":[]},{"name":"Conference Paper","data":[]},{"name":"Book Chapter","data":[]},{"name":"Book","data":[]},{"name":"Other","data":[]}]
-            }
+            },
         });
 
         expect(toJson(app)).toMatchSnapshot();

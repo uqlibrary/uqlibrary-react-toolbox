@@ -2,21 +2,26 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ListRowHeader from './ListRowHeader';
 import ListRow from './ListRow';
-import ListForm from './ListForm';
 
 export default class ListsEditor extends Component {
     static propTypes = {
+        formComponent: PropTypes.func.isRequired,
+        inputField: PropTypes.func, // eg connected auto complete fields
         className: PropTypes.string,
         searchKey: PropTypes.object.isRequired,
         maxCount: PropTypes.number,
         isValid: PropTypes.func,
         disabled: PropTypes.bool,
         onChange: PropTypes.func,
-        locale: PropTypes.object
+        locale: PropTypes.object,
+        hideReorder: PropTypes.bool,
+        distinctOnly: PropTypes.bool,
+        errorText: PropTypes.string
     };
 
     static defaultProps = {
-        maxCount: 0,
+        hideReorder: false,
+        distinctOnly: false,
         searchKey: {
             value: 'rek_value',
             order: 'rek_order'
@@ -48,7 +53,8 @@ export default class ListsEditor extends Component {
     }
 
     addItem = (item) => {
-        if (this.props.maxCount === 0 || this.state.itemList.length < this.props.maxCount) {
+        if ((this.props.maxCount === 0 || this.state.itemList.length < this.props.maxCount)
+            && (!this.props.distinctOnly || this.state.itemList.indexOf(item) === -1)) {
             this.setState({
                 itemList: [...this.state.itemList, item]
             });
@@ -101,21 +107,25 @@ export default class ListsEditor extends Component {
                 onMoveDown={this.moveDownList}
                 onDelete={this.deleteItem}
                 {...(this.props.locale && this.props.locale.row ? this.props.locale.row : {})}
+                hideReorder={this.props.hideReorder}
                 disabled={this.props.disabled}/>
         ));
 
         return (
             <div className={this.props.className}>
-                <ListForm
+                <this.props.formComponent
+                    inputField={this.props.inputField}
                     onAdd={this.addItem}
                     {...(this.props.locale && this.props.locale.form ? this.props.locale.form : {})}
                     isValid={this.props.isValid}
-                    disabled={this.props.disabled || (this.props.maxCount > 0 && this.state.itemList.length >= this.props.maxCount)}/>
+                    disabled={this.props.disabled || (this.props.maxCount > 0 && this.state.itemList.length >= this.props.maxCount)}
+                    errorText={this.props.errorText} />
                 {
                     this.state.itemList.length > 0 &&
                     <ListRowHeader
                         {...(this.props.locale && this.props.locale.header ? this.props.locale.header : {})}
                         onDeleteAll={this.deleteAllItems}
+                        hideReorder={this.props.hideReorder}
                         disabled={this.props.disabled}/>
                 }
                 {renderListsRows}

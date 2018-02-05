@@ -2,7 +2,7 @@
 
 exports[`Alert snapshots test renders Alert of error type 1`] = `
 <div
-  className="error alertWrapper"
+  className="error alertWrapper "
 >
   <div
     className="columns is-multiline is-mobile"
@@ -35,13 +35,15 @@ exports[`Alert snapshots test renders Alert of error type 1`] = `
 
 exports[`Alert snapshots test renders Alert of error type should render action button 1`] = `
 <div
-  className="error alertWrapper"
+  className="error alertWrapper "
 >
   <div
     className="columns is-multiline is-mobile"
   >
     <div
-      className="column is-narrow alertIcon"
+      className="column is-narrow alertIcon linked"
+      onClick={[MockFunction]}
+      onKeyDown={[MockFunction]}
     >
       <FontIcon
         className="material-icons"
@@ -52,18 +54,20 @@ exports[`Alert snapshots test renders Alert of error type should render action b
       </FontIcon>
     </div>
     <div
-      className="column alertText"
+      className="column alertText linked"
+      onClick={[MockFunction]}
+      onKeyDown={[MockFunction]}
     >
       <div>
         <b>
-          This is a title
+          Error
         </b>
          - 
-        This is a message
+        Unexpected error
       </div>
     </div>
     <div
-      className="column is-narrow-tablet is-12-mobile"
+      className="column is-narrow-tablet is-12-mobile noDismiss"
     >
       <FlatButton
         className="alertAction"
@@ -76,7 +80,7 @@ exports[`Alert snapshots test renders Alert of error type should render action b
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         onTouchStart={[Function]}
-        onTouchTap={[Function]}
+        onTouchTap={[MockFunction]}
         primary={false}
         secondary={false}
       />
@@ -87,7 +91,7 @@ exports[`Alert snapshots test renders Alert of error type should render action b
 
 exports[`Alert snapshots test renders Alert of error type should render dismiss icon button 1`] = `
 <div
-  className="error alertWrapper"
+  className="error alertWrapper "
 >
   <div
     className="columns is-multiline is-mobile"
@@ -108,10 +112,10 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
     >
       <div>
         <b>
-          This is a title
+          Error
         </b>
          - 
-        This is a message
+        Unexpected error
       </div>
     </div>
     <div
@@ -122,7 +126,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
         disableTouchRipple={false}
         disabled={false}
         iconStyle={Object {}}
-        onTouchTap={[Function]}
+        onTouchTap={[MockFunction]}
         tooltipPosition="bottom-center"
         touch={false}
       >
@@ -137,13 +141,15 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
 
 exports[`Alert snapshots test renders Alert of error type should render dismiss icon button and action button 1`] = `
 <div
-  className="error alertWrapper"
+  className="error alertWrapper "
 >
   <div
     className="columns is-multiline is-mobile"
   >
     <div
-      className="column is-narrow alertIcon"
+      className="column is-narrow alertIcon linked"
+      onClick={[MockFunction]}
+      onKeyDown={[MockFunction]}
     >
       <FontIcon
         className="material-icons"
@@ -154,14 +160,16 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       </FontIcon>
     </div>
     <div
-      className="column alertText"
+      className="column alertText linked"
+      onClick={[MockFunction]}
+      onKeyDown={[MockFunction]}
     >
       <div>
         <b>
-          This is a title
+          Error
         </b>
          - 
-        This is a message
+        Unexpected error
       </div>
     </div>
     <div
@@ -178,7 +186,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         onTouchStart={[Function]}
-        onTouchTap={[Function]}
+        onTouchTap={[MockFunction]}
         primary={false}
         secondary={false}
       />
@@ -191,7 +199,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
         disableTouchRipple={false}
         disabled={false}
         iconStyle={Object {}}
-        onTouchTap={[Function]}
+        onTouchTap={[MockFunction]}
         tooltipPosition="bottom-center"
         touch={false}
       >

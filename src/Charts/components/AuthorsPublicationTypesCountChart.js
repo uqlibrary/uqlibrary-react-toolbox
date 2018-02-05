@@ -31,17 +31,20 @@ class AuthorsPublicationTypesCountChart extends React.Component {
                     plotShadow: false,
                     plotBorderWidth: 0,
                     spacingBottom: 10,
-                    type: 'pie',
+                    type: 'pie'
                 },
                 credits: {
                     enabled: false
                 },
                 legend: {
+                    itemStyle: {
+                        width: 110
+                    },
                     align: 'center',
                     symbolRadius: 0,
                     floating: true,
                     layout: 'vertical',
-                    y: -100
+                    y: -110
                 },
                 tooltip: {
                     enabled: false
@@ -55,10 +58,12 @@ class AuthorsPublicationTypesCountChart extends React.Component {
                 plotOptions: {
                     pie: {
                         showInLegend: true,
+                        startAngle: 45,
                         dataLabels: {
-                            connectorWidth: 0,
-                            distance: -25,
-                            // overflow: 'none',
+                            allowOverlap: false,
+                            distance: 10,
+                            padding: 2,
+                            softConnector: true,
                             className: 'pieLabels ',
                             format: '{y}',
                             useHTML: true,
@@ -66,10 +71,10 @@ class AuthorsPublicationTypesCountChart extends React.Component {
                         },
                         shadow: false,
                         center: ['50%', '50%'],
-                        size: '100%',
-                        innerSize: '60%',
-                        borderColor: 'none',
-                    },
+                        size: '90%',
+                        innerSize: '65%',
+                        borderColor: 'none'
+                    }
                 },
                 series: this.props.series
             }
@@ -78,7 +83,7 @@ class AuthorsPublicationTypesCountChart extends React.Component {
 
     render() {
         return (
-            <Chart className={this.props.className + ' authors-publication-types-count-chart'} chartOptions={this.state.options} />
+            <Chart className={`${this.props.className || ''} authors-publication-types-count-chart`} chartOptions={this.state.options} />
         );
     }
 }

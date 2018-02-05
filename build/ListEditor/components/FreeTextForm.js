@@ -30,13 +30,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ListForm = function (_Component) {
-    _inherits(ListForm, _Component);
+var FreeTextForm = function (_Component) {
+    _inherits(FreeTextForm, _Component);
 
-    function ListForm(props) {
-        _classCallCheck(this, ListForm);
+    function FreeTextForm(props) {
+        _classCallCheck(this, FreeTextForm);
 
-        var _this = _possibleConstructorReturn(this, (ListForm.__proto__ || Object.getPrototypeOf(ListForm)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (FreeTextForm.__proto__ || Object.getPrototypeOf(FreeTextForm)).call(this, props));
 
         _this.addItem = function (event) {
             // add item if user hits 'enter' key on input field
@@ -68,7 +68,7 @@ var ListForm = function (_Component) {
         return _this;
     }
 
-    _createClass(ListForm, [{
+    _createClass(FreeTextForm, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -85,7 +85,7 @@ var ListForm = function (_Component) {
                         value: this.state.itemName,
                         onChange: this.onNameChanged,
                         onKeyPress: this.addItem,
-                        errorText: this.props.isValid(this.state.itemName),
+                        errorText: this.props.isValid(this.state.itemName) || this.props.errorText ? (this.props.errorText || '') + ' ' + this.props.isValid(this.state.itemName) : null,
                         disabled: this.props.disabled })
                 ),
                 _react2.default.createElement(
@@ -103,10 +103,10 @@ var ListForm = function (_Component) {
         }
     }]);
 
-    return ListForm;
+    return FreeTextForm;
 }(_react.Component);
 
-ListForm.defaultProps = {
+FreeTextForm.defaultProps = {
     isValid: function isValid() {
         return '';
     },
@@ -116,4 +116,4 @@ ListForm.defaultProps = {
         addButtonLabel: 'Add'
     }
 };
-exports.default = ListForm;
+exports.default = FreeTextForm;

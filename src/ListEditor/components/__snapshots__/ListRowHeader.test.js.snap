@@ -14,7 +14,7 @@ exports[`ListRowHeader renders  header for contributor editor control with delet
         "confirmationTitle": "Delete all",
       }
     }
-    onAction={[Function]}
+    onAction={[MockFunction]}
     onRef={[Function]}
   />
   <div
@@ -65,7 +65,7 @@ exports[`ListRowHeader renders  header for contributor editor control with name 
         "confirmationTitle": "Delete all",
       }
     }
-    onAction={[Function]}
+    onAction={[MockFunction]}
     onRef={[Function]}
   />
   <div

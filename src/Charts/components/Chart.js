@@ -2,6 +2,7 @@ import React from 'react';
 import {PropTypes} from 'prop-types';
 import {findDOMNode} from 'react-dom';
 import Highcharts from 'highcharts';
+import 'highcharts-exporting';
 
 class Chart extends React.Component {
     static propTypes = {
@@ -15,10 +16,12 @@ class Chart extends React.Component {
     }
 
     componentDidMount() {
-        this.chart = new Highcharts.Chart(
-            findDOMNode(this.refs.chart),
-            this.props.chartOptions
-        );
+        if (this.refs && this.refs.chart) {
+            this.chart = new Highcharts.Chart(
+                findDOMNode(this.refs.chart),
+                this.props.chartOptions
+            );
+        }
     }
 
     componentDidUpdate() {
@@ -34,6 +37,12 @@ class Chart extends React.Component {
     }
 
     render() {
+        if (window.matchMedia) {
+            const mediaQueryList = window.matchMedia('print');
+            mediaQueryList.addListener(() => {
+                this.chart.reflow();
+            });
+        }
         return (
             <div className={this.props.className} ref="chart" />
         );

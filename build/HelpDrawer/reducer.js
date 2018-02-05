@@ -18,7 +18,8 @@ var initialState = _immutable2.default.fromJS({
     open: false,
     title: '',
     text: '',
-    buttonLabel: 'OK'
+    buttonLabel: 'OK',
+    tooltip: 'Click for more information'
 });
 
 var helpDrawerReducer = function helpDrawerReducer() {

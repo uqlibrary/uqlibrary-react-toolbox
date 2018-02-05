@@ -18,8 +18,8 @@ exports[`FileUploadRow renders correctly with file upload success 1`] = `
       "filenameColumn": "File name",
     }
   }
-  onAttributeChanged={[Function]}
-  onDelete={[Function]}
+  onAttributeChanged={[MockFunction]}
+  onDelete={[MockFunction]}
   progress={100}
   requireFileAccess={false}
   uploadedFile={
@@ -229,8 +229,8 @@ exports[`FileUploadRow renders correctly with uploaded file 1`] = `
       "filenameColumn": "File name",
     }
   }
-  onAttributeChanged={[Function]}
-  onDelete={[Function]}
+  onAttributeChanged={[MockFunction]}
+  onDelete={[MockFunction]}
   progress={0}
   requireFileAccess={false}
   uploadedFile={
@@ -604,8 +604,8 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
       "filenameColumn": "File name",
     }
   }
-  onAttributeChanged={[Function]}
-  onDelete={[Function]}
+  onAttributeChanged={[MockFunction]}
+  onDelete={[MockFunction]}
   progress={50}
   requireFileAccess={false}
   uploadedFile={
@@ -864,8 +864,8 @@ exports[`FileUploadRow shows confirmation on delete file 1`] = `
       "filenameColumn": "File name",
     }
   }
-  onAttributeChanged={[Function]}
-  onDelete={[Function]}
+  onAttributeChanged={[MockFunction]}
+  onDelete={[MockFunction]}
   progress={0}
   requireFileAccess={false}
   uploadedFile={

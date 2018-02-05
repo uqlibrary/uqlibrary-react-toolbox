@@ -3,18 +3,17 @@ import PropTypes from 'prop-types';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-export default class ListForm extends Component {
+export default class FreeTextForm extends Component {
     static propTypes = {
         onAdd: PropTypes.func.isRequired,
         isValid: PropTypes.func,
         locale: PropTypes.object,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
+        errorText: PropTypes.string
     };
 
     static defaultProps = {
-        isValid: () => {
-            return '';
-        },
+        isValid: () => '',
         locale: {
             inputFieldLabel: 'Item name',
             inputFieldHint: 'Please type the item name',
@@ -67,8 +66,10 @@ export default class ListForm extends Component {
                         value={this.state.itemName}
                         onChange={this.onNameChanged}
                         onKeyPress={this.addItem}
-                        errorText={this.props.isValid(this.state.itemName)}
-                        disabled={this.props.disabled}/>
+                        errorText={this.props.isValid(this.state.itemName) || this.props.errorText
+                            ? `${this.props.errorText || ''} ${this.props.isValid(this.state.itemName)}`
+                            : null}
+                        disabled={this.props.disabled} />
                 </div>
                 <div className="column is-narrow">
                     <RaisedButton

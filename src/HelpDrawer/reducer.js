@@ -9,7 +9,8 @@ const initialState = Immutable.fromJS({
     open: false,
     title: '',
     text: '',
-    buttonLabel: 'OK'
+    buttonLabel: 'OK',
+    tooltip: 'Click for more information'
 });
 
 const helpDrawerReducer = (state = initialState, action) => {

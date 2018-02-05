@@ -45,11 +45,14 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
                     enabled: false
                 },
                 legend: {
+                    itemStyle: {
+                        width: 110
+                    },
                     align: 'center',
                     symbolRadius: 0,
                     floating: true,
                     layout: 'vertical',
-                    y: -100
+                    y: -110
                 },
                 tooltip: {
                     enabled: false
@@ -63,10 +66,12 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
                 plotOptions: {
                     pie: {
                         showInLegend: true,
+                        startAngle: 45,
                         dataLabels: {
-                            connectorWidth: 0,
-                            distance: -25,
-                            // overflow: 'none',
+                            allowOverlap: false,
+                            distance: 10,
+                            padding: 2,
+                            softConnector: true,
                             className: 'pieLabels ',
                             format: '{y}',
                             useHTML: true,
@@ -74,8 +79,8 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
                         },
                         shadow: false,
                         center: ['50%', '50%'],
-                        size: '100%',
-                        innerSize: '60%',
+                        size: '90%',
+                        innerSize: '65%',
                         borderColor: 'none'
                     }
                 },
@@ -88,7 +93,7 @@ var AuthorsPublicationTypesCountChart = function (_React$Component) {
     _createClass(AuthorsPublicationTypesCountChart, [{
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(_Chart2.default, { className: this.props.className + ' authors-publication-types-count-chart', chartOptions: this.state.options });
+            return _react2.default.createElement(_Chart2.default, { className: (this.props.className || '') + ' authors-publication-types-count-chart', chartOptions: this.state.options });
         }
     }]);
 

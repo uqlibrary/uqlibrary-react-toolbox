@@ -15,7 +15,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _Card = require('material-ui/Card');
 
-var _index = require('../../index');
+var _HelpDrawer = require('../../HelpDrawer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46,7 +46,7 @@ function StandardCard(_ref) {
                 help && help.text && _react2.default.createElement(
                     'div',
                     { className: 'column is-narrow is-helpicon' },
-                    _react2.default.createElement(_index.HelpIcon, help)
+                    _react2.default.createElement(_HelpDrawer.HelpIcon, help)
                 )
             )
         ),
