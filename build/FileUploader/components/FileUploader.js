@@ -288,7 +288,8 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     onDelete: _this2._deleteFile,
                     onAttributeChanged: _this2._replaceFile,
                     requireFileAccess: requireFileAccess,
-                    disabled: _this2.props.disabled
+                    disabled: _this2.props.disabled,
+                    defaultAccessConditionId: _this2.props.defaultQuickTemplateId
                 });
             });
 
