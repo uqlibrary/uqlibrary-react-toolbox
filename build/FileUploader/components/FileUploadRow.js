@@ -125,7 +125,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
         };
 
         _this.state = {
-            access_condition_id: props.defaultAccessConditionId || null,
+            access_condition_id: null,
             date: null
         };
         return _this;

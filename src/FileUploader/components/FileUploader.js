@@ -118,6 +118,9 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _setUploadedFiles = (files) => {
+        if (!!this.props.defaultQuickTemplateId && !this.props.requireFileAccess) {
+            files.map((file) => (file.access_condition_id = this.props.defaultQuickTemplateId));
+        }
         this.setState({uploadedFiles: [...files], clearErrors: false});
     };
 
@@ -230,7 +233,6 @@ export class FileUploader extends PureComponent {
                     onAttributeChanged={this._replaceFile}
                     requireFileAccess={requireFileAccess}
                     disabled={this.props.disabled}
-                    defaultAccessConditionId={this.props.defaultQuickTemplateId}
                 />
             );
         });

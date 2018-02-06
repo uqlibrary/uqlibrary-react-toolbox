@@ -22096,10 +22096,12 @@ exports[`FileUploader renders row for uploaded files with default access conditi
       uploadedFiles={
         Array [
           Object {
+            "access_condition_id": 3,
             "name": "a.txt",
             "size": 100,
           },
           Object {
+            "access_condition_id": 3,
             "name": "b.txt",
             "size": 100,
           },
@@ -22520,7 +22522,6 @@ exports[`FileUploader renders row for uploaded files with default access conditi
         </div>
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
-        defaultAccessConditionId={3}
         fileSizeUnit="G"
         index={0}
         key="a.txt"
@@ -22529,13 +22530,13 @@ exports[`FileUploader renders row for uploaded files with default access conditi
         requireFileAccess={false}
         uploadedFile={
           Object {
+            "access_condition_id": 3,
             "name": "a.txt",
             "size": 100,
           }
         }
       >
         <FileUploadRow
-          defaultAccessConditionId={3}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={0}
@@ -22560,6 +22561,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
           requireFileAccess={false}
           uploadedFile={
             Object {
+              "access_condition_id": 3,
               "name": "a.txt",
               "size": 100,
             }
@@ -22911,7 +22913,6 @@ exports[`FileUploader renders row for uploaded files with default access conditi
         </FileUploadRow>
       </Connect(FileUploadRow)>
       <Connect(FileUploadRow)
-        defaultAccessConditionId={3}
         fileSizeUnit="G"
         index={1}
         key="b.txt"
@@ -22920,13 +22921,13 @@ exports[`FileUploader renders row for uploaded files with default access conditi
         requireFileAccess={false}
         uploadedFile={
           Object {
+            "access_condition_id": 3,
             "name": "b.txt",
             "size": 100,
           }
         }
       >
         <FileUploadRow
-          defaultAccessConditionId={3}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={1}
@@ -22951,6 +22952,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
           requireFileAccess={false}
           uploadedFile={
             Object {
+              "access_condition_id": 3,
               "name": "b.txt",
               "size": 100,
             }

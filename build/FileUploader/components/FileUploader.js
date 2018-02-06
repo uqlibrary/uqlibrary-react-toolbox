@@ -90,6 +90,11 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this._setUploadedFiles = function (files) {
+            if (!!_this.props.defaultQuickTemplateId && !_this.props.requireFileAccess) {
+                files.map(function (file) {
+                    return file.access_condition_id = _this.props.defaultQuickTemplateId;
+                });
+            }
             _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)), clearErrors: false });
         };
 
@@ -288,8 +293,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     onDelete: _this2._deleteFile,
                     onAttributeChanged: _this2._replaceFile,
                     requireFileAccess: requireFileAccess,
-                    disabled: _this2.props.disabled,
-                    defaultAccessConditionId: _this2.props.defaultQuickTemplateId
+                    disabled: _this2.props.disabled
                 });
             });
 

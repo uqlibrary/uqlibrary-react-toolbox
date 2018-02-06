@@ -24,8 +24,7 @@ export class FileUploadRow extends Component {
         progress: PropTypes.number,
         requireFileAccess: PropTypes.bool.isRequired,
         fileSizeUnit: PropTypes.string,
-        disabled: PropTypes.bool,
-        defaultAccessConditionId: PropTypes.number
+        disabled: PropTypes.bool
     };
 
     static defaultProps = {
@@ -47,7 +46,7 @@ export class FileUploadRow extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            access_condition_id: props.defaultAccessConditionId || null,
+            access_condition_id: null,
             date: null
         };
     }
