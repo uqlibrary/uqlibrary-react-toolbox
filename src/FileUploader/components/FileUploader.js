@@ -35,7 +35,8 @@ export class FileUploader extends PureComponent {
         overallProgress: PropTypes.number,
         requireFileAccess: PropTypes.bool,
         clearFileUpload: PropTypes.func,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
+        defaultQuickTemplateId: PropTypes.number
     };
 
     static defaultProps = {
@@ -229,6 +230,7 @@ export class FileUploader extends PureComponent {
                     onAttributeChanged={this._replaceFile}
                     requireFileAccess={requireFileAccess}
                     disabled={this.props.disabled}
+                    defaultAccessConditionId={this.props.defaultQuickTemplateId}
                 />
             );
         });

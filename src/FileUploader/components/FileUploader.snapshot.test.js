@@ -121,4 +121,30 @@ describe('FileUploader', () => {
         tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });
+
+    it('renders row for uploaded files with default access condition based on quick template Id', () => {
+        const wrapper = setup({ defaultQuickTemplateId: 3 });
+
+        let tree = toJson(wrapper);
+
+        expect(tree).toMatchSnapshot();
+
+        const files = [
+            {
+                name: 'a.txt',
+                size: 100
+            },
+            {
+                name: 'b.txt',
+                size: 100
+            }
+        ];
+
+        wrapper.instance()._setUploadedFiles(files);
+        wrapper.update();
+
+        tree = toJson(wrapper);
+
+        expect(tree).toMatchSnapshot();
+    });
 });
