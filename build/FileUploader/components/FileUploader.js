@@ -293,6 +293,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     onDelete: _this2._deleteFile,
                     onAttributeChanged: _this2._replaceFile,
                     requireOpenAccessStatus: requireOpenAccessStatus,
+                    defaultAccessConditionIdPresent: !!_this2.props.defaultQuickTemplateId,
                     disabled: _this2.props.disabled
                 });
             });
@@ -321,6 +322,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, {
                         onDeleteAll: this._deleteAllFiles,
                         requireOpenAccessStatus: requireOpenAccessStatus,
+                        defaultAccessConditionIdPresent: !!this.props.defaultQuickTemplateId,
                         disabled: this.props.disabled }),
                     uploadedFilesRow,
                     requireOpenAccessStatus && this.isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(

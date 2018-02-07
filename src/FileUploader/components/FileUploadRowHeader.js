@@ -9,6 +9,7 @@ export default class FileUploadRowHeader extends Component {
         onDeleteAll: PropTypes.func.isRequired,
         locale: PropTypes.object,
         requireOpenAccessStatus: PropTypes.bool,
+        defaultAccessConditionIdPresent: PropTypes.bool,
         disabled: PropTypes.bool
     };
 
@@ -48,13 +49,13 @@ export default class FileUploadRowHeader extends Component {
                     {filenameColumn}
                 </div>
                 {
-                    this.props.requireOpenAccessStatus &&
+                    this.props.requireOpenAccessStatus && !this.props.defaultAccessConditionIdPresent &&
                     <div className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header">
                         {fileAccessColumn}
                     </div>
                 }
                 {
-                    this.props.requireOpenAccessStatus &&
+                    this.props.requireOpenAccessStatus && !this.props.defaultAccessConditionIdPresent &&
                     <div className="column datalist-title is-2-desktop is-2-tablet is-12-mobile header">
                         {embargoDateColumn}
                     </div>

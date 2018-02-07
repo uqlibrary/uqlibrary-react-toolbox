@@ -896,6 +896,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
       }
     >
       <FileUploadRowHeader
+        defaultAccessConditionIdPresent={false}
         locale={
           Object {
             "deleteAllFiles": "Remove all files from the upload queue",
@@ -1183,6 +1184,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
         </div>
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
         index={0}
         key="a.txt"
@@ -1197,6 +1199,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={0}
@@ -1572,6 +1575,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
         </FileUploadRow>
       </Connect(FileUploadRow)>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
         index={1}
         key="b.txt"
@@ -1586,6 +1590,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={1}
@@ -2265,6 +2270,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
       }
     >
       <FileUploadRowHeader
+        defaultAccessConditionIdPresent={false}
         locale={
           Object {
             "deleteAllFiles": "Remove all files from the upload queue",
@@ -2552,6 +2558,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
         </div>
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
         index={0}
         key="b.txt"
@@ -2566,6 +2573,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={0}
@@ -3841,6 +3849,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
       }
     >
       <FileUploadRowHeader
+        defaultAccessConditionIdPresent={false}
         locale={
           Object {
             "deleteAllFiles": "Remove all files from the upload queue",
@@ -4138,6 +4147,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
         </div>
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
         index={0}
         key="a.txt"
@@ -4152,6 +4162,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={0}
@@ -5970,6 +5981,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
         </FileUploadRow>
       </Connect(FileUploadRow)>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
         index={1}
         key="b.txt"
@@ -5984,6 +5996,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={1}
@@ -8111,6 +8124,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
       }
     >
       <FileUploadRowHeader
+        defaultAccessConditionIdPresent={false}
         locale={
           Object {
             "deleteAllFiles": "Remove all files from the upload queue",
@@ -8408,6 +8422,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
         </div>
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
         index={0}
         key="a.txt"
@@ -8423,6 +8438,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={0}
@@ -10242,6 +10258,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
         </FileUploadRow>
       </Connect(FileUploadRow)>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
         index={1}
         key="b.txt"
@@ -10256,6 +10273,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={1}
@@ -12383,6 +12401,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
       }
     >
       <FileUploadRowHeader
+        defaultAccessConditionIdPresent={false}
         locale={
           Object {
             "deleteAllFiles": "Remove all files from the upload queue",
@@ -12680,6 +12699,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
         </div>
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
         index={0}
         key="a.txt"
@@ -12695,6 +12715,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={0}
@@ -14514,6 +14535,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
         </FileUploadRow>
       </Connect(FileUploadRow)>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
         index={1}
         key="b.txt"
@@ -14528,6 +14550,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={1}
@@ -17831,6 +17854,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
       }
     >
       <FileUploadRowHeader
+        defaultAccessConditionIdPresent={false}
         locale={
           Object {
             "deleteAllFiles": "Remove all files from the upload queue",
@@ -18128,6 +18152,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
         </div>
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
         index={0}
         key="a.txt"
@@ -18144,6 +18169,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={0}
@@ -19964,6 +19990,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
         </FileUploadRow>
       </Connect(FileUploadRow)>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
         index={1}
         key="b.txt"
@@ -19978,6 +20005,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={1}
@@ -23579,6 +23607,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
       }
     >
       <FileUploadRowHeader
+        defaultAccessConditionIdPresent={true}
         locale={
           Object {
             "deleteAllFiles": "Remove all files from the upload queue",
@@ -23866,6 +23895,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
         </div>
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={true}
         fileSizeUnit="G"
         index={0}
         key="a.txt"
@@ -23881,6 +23911,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={true}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={0}
@@ -24257,6 +24288,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
         </FileUploadRow>
       </Connect(FileUploadRow)>
       <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={true}
         fileSizeUnit="G"
         index={1}
         key="b.txt"
@@ -24272,6 +24304,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
         }
       >
         <FileUploadRow
+          defaultAccessConditionIdPresent={true}
           dispatch={[Function]}
           fileSizeUnit="G"
           index={1}
@@ -24297,6 +24330,1682 @@ exports[`FileUploader renders row for uploaded files with default access conditi
           uploadedFile={
             Object {
               "access_condition_id": 3,
+              "name": "b.txt",
+              "size": 100,
+            }
+          }
+        >
+          <div
+            className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix"
+          >
+            <ConfirmDialogBox
+              hideCancelButton={false}
+              locale={
+                Object {
+                  "cancelButtonLabel": "No",
+                  "confirmButtonLabel": "Yes",
+                  "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
+                  "confirmationTitle": "Delete file",
+                }
+              }
+              onAction={[Function]}
+              onRef={[Function]}
+            >
+              <Dialog
+                actions={
+                  Array [
+                    <div
+                      className="columns dialog-actions ConfirmDialogBox-actions"
+                    >
+                      <div
+                        className="column is-hidden-mobile"
+                      />
+                      <div
+                        className="column is-narrow"
+                      >
+                        <RaisedButton
+                          className="ConfirmDialogBox-actions-cancel"
+                          disabled={false}
+                          fullWidth={true}
+                          label="No"
+                          labelPosition="after"
+                          onTouchTap={[Function]}
+                          primary={false}
+                          secondary={false}
+                        />
+                      </div>
+                      <div
+                        className="column is-narrow"
+                      >
+                        <RaisedButton
+                          className="ConfirmDialogBox-actions-confirm"
+                          disabled={false}
+                          fullWidth={true}
+                          keyboardFocused={true}
+                          label="Yes"
+                          labelPosition="after"
+                          onTouchTap={[Function]}
+                          primary={false}
+                          secondary={true}
+                        />
+                      </div>
+                      <div
+                        className="is-clearfix"
+                      />
+                    </div>,
+                  ]
+                }
+                autoDetectWindowHeight={true}
+                autoScrollBodyContent={false}
+                modal={true}
+                open={false}
+                repositionOnUpdate={true}
+                title="Delete file"
+              >
+                <RenderToLayer
+                  open={true}
+                  render={[Function]}
+                  useLayerForClickAway={false}
+                />
+              </Dialog>
+            </ConfirmDialogBox>
+            <div
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
+            >
+              <FontIcon
+                className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <span
+                  className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "display": "inline-block",
+                      "fontSize": 24,
+                      "muiPrepared": true,
+                      "position": "relative",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "userSelect": "none",
+                    }
+                  }
+                >
+                  attachment
+                </span>
+              </FontIcon>
+              <div
+                className="file-name"
+              >
+                <span
+                  className="truncated"
+                >
+                  b.txt
+                   (
+                  100.0B
+                  )
+                </span>
+                <span
+                  className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
+                >
+                  File name
+                </span>
+              </div>
+            </div>
+            <div
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
+            />
+            <div
+              className="column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile"
+            >
+              <div
+                className="embargo-date-info"
+              >
+                <FontIcon
+                  className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <span
+                    className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "display": "inline-block",
+                        "fontSize": 24,
+                        "muiPrepared": true,
+                        "position": "relative",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "userSelect": "none",
+                      }
+                    }
+                  >
+                    date_range
+                  </span>
+                </FontIcon>
+              </div>
+            </div>
+            <div
+              className="column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless"
+            >
+              <IconButton
+                disableTouchRipple={false}
+                disabled={false}
+                iconStyle={Object {}}
+                onTouchTap={[Function]}
+                tooltip="Remove this file"
+                tooltipPosition="bottom-center"
+                touch={false}
+              >
+                <EnhancedButton
+                  centerRipple={true}
+                  containerElement="button"
+                  disableTouchRipple={false}
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onKeyboardFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseOut={[Function]}
+                  onTouchStart={[Function]}
+                  onTouchTap={[Function]}
+                  style={
+                    Object {
+                      "boxSizing": "border-box",
+                      "fontSize": 0,
+                      "height": 48,
+                      "overflow": "visible",
+                      "padding": 12,
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "width": 48,
+                    }
+                  }
+                  tabIndex={0}
+                  type="button"
+                >
+                  <button
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOut={[Function]}
+                    onTouchStart={[Function]}
+                    onTouchTap={[Function]}
+                    style={
+                      Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "cursor": "pointer",
+                        "display": "inline-block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 0,
+                        "fontWeight": "inherit",
+                        "height": 48,
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "overflow": "visible",
+                        "padding": 12,
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 48,
+                        "zIndex": 1,
+                      }
+                    }
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <TouchRipple
+                      abortOnScroll={true}
+                      centerRipple={true}
+                      key="touchRipple"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <Tooltip
+                          horizontalPosition="center"
+                          label="Remove this file"
+                          show={false}
+                          style={
+                            Object {
+                              "boxSizing": "border-box",
+                            }
+                          }
+                          touch={false}
+                          verticalPosition="bottom"
+                        >
+                          <div
+                            style={
+                              Object {
+                                "borderRadius": 2,
+                                "boxSizing": "border-box",
+                                "color": "#ffffff",
+                                "fontFamily": "Roboto, sans-serif",
+                                "fontSize": "10px",
+                                "left": 24,
+                                "lineHeight": "22px",
+                                "muiPrepared": true,
+                                "opacity": 0,
+                                "overflow": "hidden",
+                                "padding": "0 8px",
+                                "position": "absolute",
+                                "right": null,
+                                "top": -10000,
+                                "transition": "top 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                "userSelect": "none",
+                                "zIndex": 3000,
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "borderRadius": "50%",
+                                  "left": "50%",
+                                  "muiPrepared": true,
+                                  "position": "absolute",
+                                  "top": 0,
+                                  "transform": "translate(-50%, -50%)",
+                                  "transition": "width 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, height 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, backgroundColor 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                }
+                              }
+                            />
+                            <span
+                              style={
+                                Object {
+                                  "muiPrepared": true,
+                                  "position": "relative",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Remove this file
+                            </span>
+                          </div>
+                        </Tooltip>
+                        <FontIcon
+                          className="material-icons deleteIcon"
+                          key=".0"
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={Object {}}
+                        >
+                          <span
+                            className="material-icons deleteIcon"
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            style={
+                              Object {
+                                "color": "rgba(0, 0, 0, 0.87)",
+                                "display": "inline-block",
+                                "fontSize": 24,
+                                "muiPrepared": true,
+                                "position": "relative",
+                                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                "userSelect": "none",
+                              }
+                            }
+                          >
+                            delete
+                          </span>
+                        </FontIcon>
+                      </div>
+                    </TouchRipple>
+                  </button>
+                </EnhancedButton>
+              </IconButton>
+            </div>
+          </div>
+        </FileUploadRow>
+      </Connect(FileUploadRow)>
+    </div>
+  </div>
+</FileUploader>
+`;
+
+exports[`FileUploader renders row for uploaded files with default access condition based on quick template Id 3`] = `
+<FileUploader
+  clearFileUpload={[MockFunction]}
+  defaultConfig={
+    Object {
+      "fileSizeUnit": "G",
+      "fileUploadLimit": 10,
+      "maxFileSize": 5,
+    }
+  }
+  defaultQuickTemplateId={3}
+  locale={
+    Object {
+      "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
+      "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
+    }
+  }
+  overallProgress={0}
+  requireOpenAccessStatus={true}
+>
+  <div>
+    <h4
+      className="sub-title"
+    >
+      You may add up to 10 files (max 5GB each)
+    </h4>
+    <FileUploadDropzone
+      clearErrors={false}
+      disabled={false}
+      locale={
+        Object {
+          "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+          "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
+          "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+          "validation": Object {
+            "multiple": Object {
+              "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+              "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "folder": "Invalid files ([filenames])",
+              "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+            },
+            "single": Object {
+              "fileName": "Invalid file name ([filename])",
+              "fileNameLength": "Filename ([filename]) is too long",
+              "folder": "Invalid file ([filename])",
+              "maxFileSize": "File ([filename]) is too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+            },
+          },
+        }
+      }
+      maxFiles={10}
+      maxSize={5000000000}
+      onDropped={[Function]}
+      uploadedFiles={Array []}
+    >
+      <div>
+        <div
+          className="columns"
+        >
+          <div
+            className="column"
+            onKeyPress={[Function]}
+            tabIndex="0"
+          >
+            <t
+              disableClick={false}
+              disablePreview={true}
+              disabled={false}
+              maxSize={5000000000}
+              minSize={0}
+              multiple={true}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+              style={
+                Object {
+                  "padding": "0px",
+                }
+              }
+            >
+              <div
+                aria-disabled={false}
+                className=""
+                onClick={[Function]}
+                onDragEnter={[Function]}
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                style={
+                  Object {
+                    "padding": "0px",
+                  }
+                }
+              >
+                <FileUploadDropzoneStaticContent
+                  txt={
+                    Object {
+                      "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
+                      "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
+                    }
+                  }
+                >
+                  <div
+                    className="columns file-instructions"
+                  >
+                    <div
+                      className="column"
+                    >
+                      <h3>
+                        File upload restrictions
+                      </h3>
+                      <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div
+                      className="column upload-instructions"
+                    >
+                      <FontIcon
+                        className="material-icons"
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                      >
+                        <span
+                          className="material-icons"
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fontSize": 24,
+                              "muiPrepared": true,
+                              "position": "relative",
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                            }
+                          }
+                        >
+                          cloud_upload
+                        </span>
+                      </FontIcon>
+                      <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>
+                    </div>
+                  </div>
+                </FileUploadDropzoneStaticContent>
+                <input
+                  autoComplete="off"
+                  disabled={false}
+                  multiple={true}
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                  type="file"
+                />
+              </div>
+            </t>
+          </div>
+        </div>
+      </div>
+    </FileUploadDropzone>
+    <div
+      className="metadata-container"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    />
+  </div>
+</FileUploader>
+`;
+
+exports[`FileUploader renders row for uploaded files with default access condition based on quick template Id 4`] = `
+<FileUploader
+  clearFileUpload={[MockFunction]}
+  defaultConfig={
+    Object {
+      "fileSizeUnit": "G",
+      "fileUploadLimit": 10,
+      "maxFileSize": 5,
+    }
+  }
+  defaultQuickTemplateId={3}
+  locale={
+    Object {
+      "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
+      "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
+    }
+  }
+  overallProgress={0}
+  requireOpenAccessStatus={true}
+>
+  <div>
+    <h4
+      className="sub-title"
+    >
+      You may add up to 10 files (max 5GB each)
+    </h4>
+    <FileUploadDropzone
+      clearErrors={false}
+      disabled={false}
+      locale={
+        Object {
+          "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+          "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
+          "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+          "validation": Object {
+            "multiple": Object {
+              "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+              "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "folder": "Invalid files ([filenames])",
+              "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+            },
+            "single": Object {
+              "fileName": "Invalid file name ([filename])",
+              "fileNameLength": "Filename ([filename]) is too long",
+              "folder": "Invalid file ([filename])",
+              "maxFileSize": "File ([filename]) is too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+            },
+          },
+        }
+      }
+      maxFiles={10}
+      maxSize={5000000000}
+      onDropped={[Function]}
+      uploadedFiles={
+        Array [
+          Object {
+            "name": "a.txt",
+            "size": 100,
+          },
+          Object {
+            "name": "b.txt",
+            "size": 100,
+          },
+        ]
+      }
+    >
+      <div>
+        <div
+          className="columns"
+        >
+          <div
+            className="column"
+            onKeyPress={[Function]}
+            tabIndex="0"
+          >
+            <t
+              disableClick={false}
+              disablePreview={true}
+              disabled={false}
+              maxSize={5000000000}
+              minSize={0}
+              multiple={true}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+              style={
+                Object {
+                  "padding": "0px",
+                }
+              }
+            >
+              <div
+                aria-disabled={false}
+                className=""
+                onClick={[Function]}
+                onDragEnter={[Function]}
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                style={
+                  Object {
+                    "padding": "0px",
+                  }
+                }
+              >
+                <FileUploadDropzoneStaticContent
+                  txt={
+                    Object {
+                      "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
+                      "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
+                    }
+                  }
+                >
+                  <div
+                    className="columns file-instructions"
+                  >
+                    <div
+                      className="column"
+                    >
+                      <h3>
+                        File upload restrictions
+                      </h3>
+                      <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div
+                      className="column upload-instructions"
+                    >
+                      <FontIcon
+                        className="material-icons"
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                      >
+                        <span
+                          className="material-icons"
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fontSize": 24,
+                              "muiPrepared": true,
+                              "position": "relative",
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                            }
+                          }
+                        >
+                          cloud_upload
+                        </span>
+                      </FontIcon>
+                      <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>
+                    </div>
+                  </div>
+                </FileUploadDropzoneStaticContent>
+                <input
+                  autoComplete="off"
+                  disabled={false}
+                  multiple={true}
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                  type="file"
+                />
+              </div>
+            </t>
+          </div>
+        </div>
+      </div>
+    </FileUploadDropzone>
+    <div
+      className="metadata-container"
+      style={
+        Object {
+          "display": "block",
+        }
+      }
+    >
+      <FileUploadRowHeader
+        defaultAccessConditionIdPresent={true}
+        locale={
+          Object {
+            "deleteAllFiles": "Remove all files from the upload queue",
+            "deleteAllFilesConfirmation": Object {
+              "cancelButtonLabel": "No",
+              "confirmButtonLabel": "Yes",
+              "confirmationMessage": "Are you sure you want to delete all files?",
+              "confirmationTitle": "Delete all",
+            },
+            "embargoDateColumn": "Embargo release date",
+            "fileAccessColumn": "Access conditions",
+            "filenameColumn": "Filename",
+          }
+        }
+        onDeleteAll={[Function]}
+        requireOpenAccessStatus={true}
+      >
+        <div
+          className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile"
+        >
+          <ConfirmDialogBox
+            hideCancelButton={false}
+            locale={
+              Object {
+                "cancelButtonLabel": "No",
+                "confirmButtonLabel": "Yes",
+                "confirmationMessage": "Are you sure you want to delete all files?",
+                "confirmationTitle": "Delete all",
+              }
+            }
+            onAction={[Function]}
+            onRef={[Function]}
+          >
+            <Dialog
+              actions={
+                Array [
+                  <div
+                    className="columns dialog-actions ConfirmDialogBox-actions"
+                  >
+                    <div
+                      className="column is-hidden-mobile"
+                    />
+                    <div
+                      className="column is-narrow"
+                    >
+                      <RaisedButton
+                        className="ConfirmDialogBox-actions-cancel"
+                        disabled={false}
+                        fullWidth={true}
+                        label="No"
+                        labelPosition="after"
+                        onTouchTap={[Function]}
+                        primary={false}
+                        secondary={false}
+                      />
+                    </div>
+                    <div
+                      className="column is-narrow"
+                    >
+                      <RaisedButton
+                        className="ConfirmDialogBox-actions-confirm"
+                        disabled={false}
+                        fullWidth={true}
+                        keyboardFocused={true}
+                        label="Yes"
+                        labelPosition="after"
+                        onTouchTap={[Function]}
+                        primary={false}
+                        secondary={true}
+                      />
+                    </div>
+                    <div
+                      className="is-clearfix"
+                    />
+                  </div>,
+                ]
+              }
+              autoDetectWindowHeight={true}
+              autoScrollBodyContent={false}
+              modal={true}
+              open={false}
+              repositionOnUpdate={true}
+              title="Delete all"
+            >
+              <RenderToLayer
+                open={true}
+                render={[Function]}
+                useLayerForClickAway={false}
+              />
+            </Dialog>
+          </ConfirmDialogBox>
+          <div
+            className="column datalist-title is-6-desktop is-5-tablet is-12-mobile header"
+          >
+            Filename
+          </div>
+          <div
+            className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header"
+          >
+            <IconButton
+              disableTouchRipple={false}
+              disabled={false}
+              iconStyle={Object {}}
+              onTouchTap={[Function]}
+              tooltip="Remove all files from the upload queue"
+              tooltipPosition="bottom-center"
+              touch={false}
+            >
+              <EnhancedButton
+                centerRipple={true}
+                containerElement="button"
+                disableTouchRipple={false}
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onKeyboardFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseOut={[Function]}
+                onTouchStart={[Function]}
+                onTouchTap={[Function]}
+                style={
+                  Object {
+                    "boxSizing": "border-box",
+                    "fontSize": 0,
+                    "height": 48,
+                    "overflow": "visible",
+                    "padding": 12,
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "width": 48,
+                  }
+                }
+                tabIndex={0}
+                type="button"
+              >
+                <button
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseOut={[Function]}
+                  onTouchStart={[Function]}
+                  onTouchTap={[Function]}
+                  style={
+                    Object {
+                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                      "background": "none",
+                      "border": 10,
+                      "boxSizing": "border-box",
+                      "cursor": "pointer",
+                      "display": "inline-block",
+                      "fontFamily": "Roboto, sans-serif",
+                      "fontSize": 0,
+                      "fontWeight": "inherit",
+                      "height": 48,
+                      "margin": 0,
+                      "muiPrepared": true,
+                      "outline": "none",
+                      "overflow": "visible",
+                      "padding": 12,
+                      "position": "relative",
+                      "textDecoration": "none",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "verticalAlign": null,
+                      "width": 48,
+                      "zIndex": 1,
+                    }
+                  }
+                  tabIndex={0}
+                  type="button"
+                >
+                  <TouchRipple
+                    abortOnScroll={true}
+                    centerRipple={true}
+                    key="touchRipple"
+                  >
+                    <div
+                      onMouseDown={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                    >
+                      <Tooltip
+                        horizontalPosition="center"
+                        label="Remove all files from the upload queue"
+                        show={false}
+                        style={
+                          Object {
+                            "boxSizing": "border-box",
+                          }
+                        }
+                        touch={false}
+                        verticalPosition="bottom"
+                      >
+                        <div
+                          style={
+                            Object {
+                              "borderRadius": 2,
+                              "boxSizing": "border-box",
+                              "color": "#ffffff",
+                              "fontFamily": "Roboto, sans-serif",
+                              "fontSize": "10px",
+                              "left": 24,
+                              "lineHeight": "22px",
+                              "muiPrepared": true,
+                              "opacity": 0,
+                              "overflow": "hidden",
+                              "padding": "0 8px",
+                              "position": "absolute",
+                              "right": null,
+                              "top": -10000,
+                              "transition": "top 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                              "zIndex": 3000,
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "backgroundColor": "transparent",
+                                "borderRadius": "50%",
+                                "left": "50%",
+                                "muiPrepared": true,
+                                "position": "absolute",
+                                "top": 0,
+                                "transform": "translate(-50%, -50%)",
+                                "transition": "width 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, height 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, backgroundColor 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              }
+                            }
+                          />
+                          <span
+                            style={
+                              Object {
+                                "muiPrepared": true,
+                                "position": "relative",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                          >
+                            Remove all files from the upload queue
+                          </span>
+                        </div>
+                      </Tooltip>
+                      <FontIcon
+                        className="material-icons"
+                        key=".0"
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={Object {}}
+                      >
+                        <span
+                          className="material-icons"
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={
+                            Object {
+                              "color": "rgba(0, 0, 0, 0.87)",
+                              "display": "inline-block",
+                              "fontSize": 24,
+                              "muiPrepared": true,
+                              "position": "relative",
+                              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                              "userSelect": "none",
+                            }
+                          }
+                        >
+                          delete_forever
+                        </span>
+                      </FontIcon>
+                    </div>
+                  </TouchRipple>
+                </button>
+              </EnhancedButton>
+            </IconButton>
+          </div>
+        </div>
+      </FileUploadRowHeader>
+      <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={true}
+        fileSizeUnit="G"
+        index={0}
+        key="a.txt"
+        onAttributeChanged={[Function]}
+        onDelete={[Function]}
+        requireOpenAccessStatus={true}
+        uploadedFile={
+          Object {
+            "name": "a.txt",
+            "size": 100,
+          }
+        }
+      >
+        <FileUploadRow
+          defaultAccessConditionIdPresent={true}
+          dispatch={[Function]}
+          fileSizeUnit="G"
+          index={0}
+          locale={
+            Object {
+              "deleteHint": "Remove this file",
+              "deleteRecordConfirmation": Object {
+                "cancelButtonLabel": "No",
+                "confirmButtonLabel": "Yes",
+                "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
+                "confirmationTitle": "Delete file",
+              },
+              "embargoDateClosedAccess": "No date required",
+              "embargoDateColumn": "Embargo date",
+              "fileAccessColumn": "File access",
+              "filenameColumn": "File name",
+            }
+          }
+          onAttributeChanged={[Function]}
+          onDelete={[Function]}
+          progress={0}
+          requireOpenAccessStatus={true}
+          uploadedFile={
+            Object {
+              "name": "a.txt",
+              "size": 100,
+            }
+          }
+        >
+          <div
+            className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix"
+          >
+            <ConfirmDialogBox
+              hideCancelButton={false}
+              locale={
+                Object {
+                  "cancelButtonLabel": "No",
+                  "confirmButtonLabel": "Yes",
+                  "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
+                  "confirmationTitle": "Delete file",
+                }
+              }
+              onAction={[Function]}
+              onRef={[Function]}
+            >
+              <Dialog
+                actions={
+                  Array [
+                    <div
+                      className="columns dialog-actions ConfirmDialogBox-actions"
+                    >
+                      <div
+                        className="column is-hidden-mobile"
+                      />
+                      <div
+                        className="column is-narrow"
+                      >
+                        <RaisedButton
+                          className="ConfirmDialogBox-actions-cancel"
+                          disabled={false}
+                          fullWidth={true}
+                          label="No"
+                          labelPosition="after"
+                          onTouchTap={[Function]}
+                          primary={false}
+                          secondary={false}
+                        />
+                      </div>
+                      <div
+                        className="column is-narrow"
+                      >
+                        <RaisedButton
+                          className="ConfirmDialogBox-actions-confirm"
+                          disabled={false}
+                          fullWidth={true}
+                          keyboardFocused={true}
+                          label="Yes"
+                          labelPosition="after"
+                          onTouchTap={[Function]}
+                          primary={false}
+                          secondary={true}
+                        />
+                      </div>
+                      <div
+                        className="is-clearfix"
+                      />
+                    </div>,
+                  ]
+                }
+                autoDetectWindowHeight={true}
+                autoScrollBodyContent={false}
+                modal={true}
+                open={false}
+                repositionOnUpdate={true}
+                title="Delete file"
+              >
+                <RenderToLayer
+                  open={true}
+                  render={[Function]}
+                  useLayerForClickAway={false}
+                />
+              </Dialog>
+            </ConfirmDialogBox>
+            <div
+              className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
+            >
+              <FontIcon
+                className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <span
+                  className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                      "display": "inline-block",
+                      "fontSize": 24,
+                      "muiPrepared": true,
+                      "position": "relative",
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "userSelect": "none",
+                    }
+                  }
+                >
+                  attachment
+                </span>
+              </FontIcon>
+              <div
+                className="file-name"
+              >
+                <span
+                  className="truncated"
+                >
+                  a.txt
+                   (
+                  100.0B
+                  )
+                </span>
+                <span
+                  className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
+                >
+                  File name
+                </span>
+              </div>
+            </div>
+            <div
+              className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
+            />
+            <div
+              className="column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile"
+            >
+              <div
+                className="embargo-date-info"
+              >
+                <FontIcon
+                  className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <span
+                    className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "display": "inline-block",
+                        "fontSize": 24,
+                        "muiPrepared": true,
+                        "position": "relative",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "userSelect": "none",
+                      }
+                    }
+                  >
+                    date_range
+                  </span>
+                </FontIcon>
+              </div>
+            </div>
+            <div
+              className="column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless"
+            >
+              <IconButton
+                disableTouchRipple={false}
+                disabled={false}
+                iconStyle={Object {}}
+                onTouchTap={[Function]}
+                tooltip="Remove this file"
+                tooltipPosition="bottom-center"
+                touch={false}
+              >
+                <EnhancedButton
+                  centerRipple={true}
+                  containerElement="button"
+                  disableTouchRipple={false}
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onKeyboardFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseOut={[Function]}
+                  onTouchStart={[Function]}
+                  onTouchTap={[Function]}
+                  style={
+                    Object {
+                      "boxSizing": "border-box",
+                      "fontSize": 0,
+                      "height": 48,
+                      "overflow": "visible",
+                      "padding": 12,
+                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                      "width": 48,
+                    }
+                  }
+                  tabIndex={0}
+                  type="button"
+                >
+                  <button
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOut={[Function]}
+                    onTouchStart={[Function]}
+                    onTouchTap={[Function]}
+                    style={
+                      Object {
+                        "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                        "background": "none",
+                        "border": 10,
+                        "boxSizing": "border-box",
+                        "cursor": "pointer",
+                        "display": "inline-block",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": 0,
+                        "fontWeight": "inherit",
+                        "height": 48,
+                        "margin": 0,
+                        "muiPrepared": true,
+                        "outline": "none",
+                        "overflow": "visible",
+                        "padding": 12,
+                        "position": "relative",
+                        "textDecoration": "none",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "verticalAlign": null,
+                        "width": 48,
+                        "zIndex": 1,
+                      }
+                    }
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <TouchRipple
+                      abortOnScroll={true}
+                      centerRipple={true}
+                      key="touchRipple"
+                    >
+                      <div
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <Tooltip
+                          horizontalPosition="center"
+                          label="Remove this file"
+                          show={false}
+                          style={
+                            Object {
+                              "boxSizing": "border-box",
+                            }
+                          }
+                          touch={false}
+                          verticalPosition="bottom"
+                        >
+                          <div
+                            style={
+                              Object {
+                                "borderRadius": 2,
+                                "boxSizing": "border-box",
+                                "color": "#ffffff",
+                                "fontFamily": "Roboto, sans-serif",
+                                "fontSize": "10px",
+                                "left": 24,
+                                "lineHeight": "22px",
+                                "muiPrepared": true,
+                                "opacity": 0,
+                                "overflow": "hidden",
+                                "padding": "0 8px",
+                                "position": "absolute",
+                                "right": null,
+                                "top": -10000,
+                                "transition": "top 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                "userSelect": "none",
+                                "zIndex": 3000,
+                              }
+                            }
+                          >
+                            <div
+                              style={
+                                Object {
+                                  "backgroundColor": "transparent",
+                                  "borderRadius": "50%",
+                                  "left": "50%",
+                                  "muiPrepared": true,
+                                  "position": "absolute",
+                                  "top": 0,
+                                  "transform": "translate(-50%, -50%)",
+                                  "transition": "width 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, height 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, backgroundColor 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                }
+                              }
+                            />
+                            <span
+                              style={
+                                Object {
+                                  "muiPrepared": true,
+                                  "position": "relative",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                            >
+                              Remove this file
+                            </span>
+                          </div>
+                        </Tooltip>
+                        <FontIcon
+                          className="material-icons deleteIcon"
+                          key=".0"
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          style={Object {}}
+                        >
+                          <span
+                            className="material-icons deleteIcon"
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            style={
+                              Object {
+                                "color": "rgba(0, 0, 0, 0.87)",
+                                "display": "inline-block",
+                                "fontSize": 24,
+                                "muiPrepared": true,
+                                "position": "relative",
+                                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                "userSelect": "none",
+                              }
+                            }
+                          >
+                            delete
+                          </span>
+                        </FontIcon>
+                      </div>
+                    </TouchRipple>
+                  </button>
+                </EnhancedButton>
+              </IconButton>
+            </div>
+          </div>
+        </FileUploadRow>
+      </Connect(FileUploadRow)>
+      <Connect(FileUploadRow)
+        defaultAccessConditionIdPresent={true}
+        fileSizeUnit="G"
+        index={1}
+        key="b.txt"
+        onAttributeChanged={[Function]}
+        onDelete={[Function]}
+        requireOpenAccessStatus={true}
+        uploadedFile={
+          Object {
+            "name": "b.txt",
+            "size": 100,
+          }
+        }
+      >
+        <FileUploadRow
+          defaultAccessConditionIdPresent={true}
+          dispatch={[Function]}
+          fileSizeUnit="G"
+          index={1}
+          locale={
+            Object {
+              "deleteHint": "Remove this file",
+              "deleteRecordConfirmation": Object {
+                "cancelButtonLabel": "No",
+                "confirmButtonLabel": "Yes",
+                "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
+                "confirmationTitle": "Delete file",
+              },
+              "embargoDateClosedAccess": "No date required",
+              "embargoDateColumn": "Embargo date",
+              "fileAccessColumn": "File access",
+              "filenameColumn": "File name",
+            }
+          }
+          onAttributeChanged={[Function]}
+          onDelete={[Function]}
+          progress={0}
+          requireOpenAccessStatus={true}
+          uploadedFile={
+            Object {
               "name": "b.txt",
               "size": 100,
             }
