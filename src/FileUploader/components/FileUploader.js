@@ -43,7 +43,39 @@ export class FileUploader extends PureComponent {
         overallProgress: 0,
         locale: {
             instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
-            accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.'
+            accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
+            validation: {
+                single: {
+                    ['folder']: 'Invalid file ([filename])',
+                    ['fileName']: 'Invalid file name ([filename])',
+                    ['fileNameLength']: 'Filename ([filename]) is too long',
+                    ['maxFileSize']: 'File ([filename]) is too big',
+                    ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'
+                },
+                multiple: {
+                    ['folder']: 'Invalid files ([filenames])',
+                    ['fileName']: '[numberOfFiles] files ([filenames]) have an invalid file name',
+                    ['fileNameLength']: '[numberOfFiles] filenames ([filenames]) are too long',
+                    ['maxFileSize']: '[numberOfFiles] files ([filenames]) are too big',
+                    ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'
+                }
+            },
+            errorTitle: 'Upload Errors',
+            fileUploadRestrictionHeading: (<h3>File upload restrictions</h3>),
+            fileUploadRestrictions: (
+                <div>
+                    Please ensure your files:
+                    <ul>
+                        <li>begin with a letter and are less than 45 characters long</li>
+                        <li>contain only upper and lowercase alphanumeric characters, and underscores</li>
+                        <li>have only a single period which precedes the file extension: “.pdf”</li>
+                        <li>are uploaded individually and not inside a folder</li>
+                    </ul>
+                </div>
+            ),
+            fileUploadInstruction: (
+                <p>Click here to select files, or drag files into this area to upload</p>
+            )
         },
         defaultConfig: {
             fileUploadLimit: 10,

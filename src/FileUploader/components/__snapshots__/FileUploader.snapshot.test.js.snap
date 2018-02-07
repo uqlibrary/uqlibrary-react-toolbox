@@ -13,7 +13,47 @@ exports[`FileUploader renders correctly without any setup 1`] = `
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
     }
   }
   overallProgress={0}
@@ -31,7 +71,47 @@ exports[`FileUploader renders correctly without any setup 1`] = `
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+          "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
           "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+          "validation": Object {
+            "multiple": Object {
+              "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+              "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "folder": "Invalid files ([filenames])",
+              "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+            },
+            "single": Object {
+              "fileName": "Invalid file name ([filename])",
+              "fileNameLength": "Filename ([filename]) is too long",
+              "folder": "Invalid file ([filename])",
+              "maxFileSize": "File ([filename]) is too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+            },
+          },
         }
       }
       maxFiles={10}
@@ -82,7 +162,47 @@ exports[`FileUploader renders correctly without any setup 1`] = `
                   txt={
                     Object {
                       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
                       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
                     }
                   }
                 >
@@ -91,7 +211,28 @@ exports[`FileUploader renders correctly without any setup 1`] = `
                   >
                     <div
                       className="column"
-                    />
+                    >
+                      <h3>
+                        File upload restrictions
+                      </h3>
+                      <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                     <div
                       className="column upload-instructions"
                     >
@@ -119,6 +260,9 @@ exports[`FileUploader renders correctly without any setup 1`] = `
                           cloud_upload
                         </span>
                       </FontIcon>
+                      <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>
                     </div>
                   </div>
                 </FileUploadDropzoneStaticContent>
@@ -165,7 +309,47 @@ exports[`FileUploader renders row for uploaded files 1`] = `
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
     }
   }
   overallProgress={0}
@@ -183,7 +367,47 @@ exports[`FileUploader renders row for uploaded files 1`] = `
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+          "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
           "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+          "validation": Object {
+            "multiple": Object {
+              "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+              "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "folder": "Invalid files ([filenames])",
+              "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+            },
+            "single": Object {
+              "fileName": "Invalid file name ([filename])",
+              "fileNameLength": "Filename ([filename]) is too long",
+              "folder": "Invalid file ([filename])",
+              "maxFileSize": "File ([filename]) is too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+            },
+          },
         }
       }
       maxFiles={10}
@@ -234,7 +458,47 @@ exports[`FileUploader renders row for uploaded files 1`] = `
                   txt={
                     Object {
                       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
                       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
                     }
                   }
                 >
@@ -243,7 +507,28 @@ exports[`FileUploader renders row for uploaded files 1`] = `
                   >
                     <div
                       className="column"
-                    />
+                    >
+                      <h3>
+                        File upload restrictions
+                      </h3>
+                      <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                     <div
                       className="column upload-instructions"
                     >
@@ -271,6 +556,9 @@ exports[`FileUploader renders row for uploaded files 1`] = `
                           cloud_upload
                         </span>
                       </FontIcon>
+                      <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>
                     </div>
                   </div>
                 </FileUploadDropzoneStaticContent>
@@ -317,7 +605,47 @@ exports[`FileUploader renders row for uploaded files 2`] = `
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
     }
   }
   overallProgress={0}
@@ -335,7 +663,47 @@ exports[`FileUploader renders row for uploaded files 2`] = `
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+          "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
           "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+          "validation": Object {
+            "multiple": Object {
+              "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+              "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "folder": "Invalid files ([filenames])",
+              "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+            },
+            "single": Object {
+              "fileName": "Invalid file name ([filename])",
+              "fileNameLength": "Filename ([filename]) is too long",
+              "folder": "Invalid file ([filename])",
+              "maxFileSize": "File ([filename]) is too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+            },
+          },
         }
       }
       maxFiles={10}
@@ -397,7 +765,47 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                   txt={
                     Object {
                       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
                       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
                     }
                   }
                 >
@@ -406,7 +814,28 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                   >
                     <div
                       className="column"
-                    />
+                    >
+                      <h3>
+                        File upload restrictions
+                      </h3>
+                      <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                     <div
                       className="column upload-instructions"
                     >
@@ -434,6 +863,9 @@ exports[`FileUploader renders row for uploaded files 2`] = `
                           cloud_upload
                         </span>
                       </FontIcon>
+                      <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>
                     </div>
                   </div>
                 </FileUploadDropzoneStaticContent>
@@ -1546,7 +1978,47 @@ exports[`FileUploader renders row for uploaded files 3`] = `
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
     }
   }
   overallProgress={0}
@@ -1563,7 +2035,32 @@ exports[`FileUploader renders row for uploaded files 3`] = `
       disabled={false}
       locale={
         Object {
+          "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
           "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
+          "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -1633,7 +2130,54 @@ exports[`FileUploader renders row for uploaded files 3`] = `
                   }
                 }
               >
-                <FileUploadDropzoneStaticContent>
+                <FileUploadDropzoneStaticContent
+                  txt={
+                    Object {
+                      "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
+                      "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
+                    }
+                  }
+                >
                   <div
                     className="columns file-instructions"
                   >
@@ -2414,7 +2958,47 @@ exports[`FileUploader renders row for uploaded files 4`] = `
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
     }
   }
   overallProgress={0}
@@ -2431,7 +3015,32 @@ exports[`FileUploader renders row for uploaded files 4`] = `
       disabled={false}
       locale={
         Object {
+          "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
           "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
+          "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -2494,7 +3103,54 @@ exports[`FileUploader renders row for uploaded files 4`] = `
                   }
                 }
               >
-                <FileUploadDropzoneStaticContent>
+                <FileUploadDropzoneStaticContent
+                  txt={
+                    Object {
+                      "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
+                      "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
+                    }
+                  }
+                >
                   <div
                     className="columns file-instructions"
                   >
@@ -2598,7 +3254,47 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
     }
   }
   overallProgress={0}
@@ -2616,7 +3312,47 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+          "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
           "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+          "validation": Object {
+            "multiple": Object {
+              "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+              "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "folder": "Invalid files ([filenames])",
+              "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+            },
+            "single": Object {
+              "fileName": "Invalid file name ([filename])",
+              "fileNameLength": "Filename ([filename]) is too long",
+              "folder": "Invalid file ([filename])",
+              "maxFileSize": "File ([filename]) is too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+            },
+          },
         }
       }
       maxFiles={10}
@@ -2667,7 +3403,47 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
                   txt={
                     Object {
                       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
                       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
                     }
                   }
                 >
@@ -2676,7 +3452,28 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
                   >
                     <div
                       className="column"
-                    />
+                    >
+                      <h3>
+                        File upload restrictions
+                      </h3>
+                      <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                     <div
                       className="column upload-instructions"
                     >
@@ -2704,6 +3501,9 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
                           cloud_upload
                         </span>
                       </FontIcon>
+                      <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>
                     </div>
                   </div>
                 </FileUploadDropzoneStaticContent>
@@ -2750,7 +3550,47 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
     }
   }
   overallProgress={0}
@@ -2768,7 +3608,47 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+          "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
           "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+          "validation": Object {
+            "multiple": Object {
+              "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+              "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "folder": "Invalid files ([filenames])",
+              "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+            },
+            "single": Object {
+              "fileName": "Invalid file name ([filename])",
+              "fileNameLength": "Filename ([filename]) is too long",
+              "folder": "Invalid file ([filename])",
+              "maxFileSize": "File ([filename]) is too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+            },
+          },
         }
       }
       maxFiles={10}
@@ -2830,7 +3710,47 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                   txt={
                     Object {
                       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
                       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
                     }
                   }
                 >
@@ -2839,7 +3759,28 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                   >
                     <div
                       className="column"
-                    />
+                    >
+                      <h3>
+                        File upload restrictions
+                      </h3>
+                      <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                     <div
                       className="column upload-instructions"
                     >
@@ -2867,6 +3808,9 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                           cloud_upload
                         </span>
                       </FontIcon>
+                      <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>
                     </div>
                   </div>
                 </FileUploadDropzoneStaticContent>
@@ -6875,7 +7819,47 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
     }
   }
   overallProgress={0}
@@ -6892,7 +7876,32 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
       disabled={false}
       locale={
         Object {
+          "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
           "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
+          "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -6967,7 +7976,54 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                   }
                 }
               >
-                <FileUploadDropzoneStaticContent>
+                <FileUploadDropzoneStaticContent
+                  txt={
+                    Object {
+                      "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
+                      "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
+                    }
+                  }
+                >
                   <div
                     className="columns file-instructions"
                   >
@@ -11035,7 +12091,47 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
     }
   }
   overallProgress={0}
@@ -11052,7 +12148,32 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
       disabled={false}
       locale={
         Object {
+          "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
           "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
+          "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -11127,7 +12248,54 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                   }
                 }
               >
-                <FileUploadDropzoneStaticContent>
+                <FileUploadDropzoneStaticContent
+                  txt={
+                    Object {
+                      "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
+                      "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
+                    }
+                  }
+                >
                   <div
                     className="columns file-instructions"
                   >
@@ -16370,7 +17538,47 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
     }
   }
   overallProgress={0}
@@ -16387,7 +17595,32 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
       disabled={false}
       locale={
         Object {
+          "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
           "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
+          "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
           "validation": Object {
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
@@ -16463,7 +17696,54 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                   }
                 }
               >
-                <FileUploadDropzoneStaticContent>
+                <FileUploadDropzoneStaticContent
+                  txt={
+                    Object {
+                      "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
+                      "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
+                    }
+                  }
+                >
                   <div
                     className="columns file-instructions"
                   >
@@ -21709,7 +22989,47 @@ exports[`FileUploader renders row for uploaded files with default access conditi
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
     }
   }
   overallProgress={0}
@@ -21727,7 +23047,47 @@ exports[`FileUploader renders row for uploaded files with default access conditi
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+          "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
           "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+          "validation": Object {
+            "multiple": Object {
+              "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+              "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "folder": "Invalid files ([filenames])",
+              "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+            },
+            "single": Object {
+              "fileName": "Invalid file name ([filename])",
+              "fileNameLength": "Filename ([filename]) is too long",
+              "folder": "Invalid file ([filename])",
+              "maxFileSize": "File ([filename]) is too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+            },
+          },
         }
       }
       maxFiles={10}
@@ -21778,7 +23138,47 @@ exports[`FileUploader renders row for uploaded files with default access conditi
                   txt={
                     Object {
                       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
                       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
                     }
                   }
                 >
@@ -21787,7 +23187,28 @@ exports[`FileUploader renders row for uploaded files with default access conditi
                   >
                     <div
                       className="column"
-                    />
+                    >
+                      <h3>
+                        File upload restrictions
+                      </h3>
+                      <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                     <div
                       className="column upload-instructions"
                     >
@@ -21815,6 +23236,9 @@ exports[`FileUploader renders row for uploaded files with default access conditi
                           cloud_upload
                         </span>
                       </FontIcon>
+                      <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>
                     </div>
                   </div>
                 </FileUploadDropzoneStaticContent>
@@ -21862,7 +23286,47 @@ exports[`FileUploader renders row for uploaded files with default access conditi
   locale={
     Object {
       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+      "errorTitle": "Upload Errors",
+      "fileUploadInstruction": <p>
+        Click here to select files, or drag files into this area to upload
+      </p>,
+      "fileUploadRestrictionHeading": <h3>
+        File upload restrictions
+      </h3>,
+      "fileUploadRestrictions": <div>
+        Please ensure your files:
+        <ul>
+          <li>
+            begin with a letter and are less than 45 characters long
+          </li>
+          <li>
+            contain only upper and lowercase alphanumeric characters, and underscores
+          </li>
+          <li>
+            have only a single period which precedes the file extension: “.pdf”
+          </li>
+          <li>
+            are uploaded individually and not inside a folder
+          </li>
+        </ul>
+      </div>,
       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+      "validation": Object {
+        "multiple": Object {
+          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+        },
+        "single": Object {
+          "fileName": "Invalid file name ([filename])",
+          "fileNameLength": "Filename ([filename]) is too long",
+          "folder": "Invalid file ([filename])",
+          "maxFileSize": "File ([filename]) is too big",
+          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+        },
+      },
     }
   }
   overallProgress={0}
@@ -21880,7 +23344,47 @@ exports[`FileUploader renders row for uploaded files with default access conditi
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+          "errorTitle": "Upload Errors",
+          "fileUploadInstruction": <p>
+            Click here to select files, or drag files into this area to upload
+          </p>,
+          "fileUploadRestrictionHeading": <h3>
+            File upload restrictions
+          </h3>,
+          "fileUploadRestrictions": <div>
+            Please ensure your files:
+            <ul>
+              <li>
+                begin with a letter and are less than 45 characters long
+              </li>
+              <li>
+                contain only upper and lowercase alphanumeric characters, and underscores
+              </li>
+              <li>
+                have only a single period which precedes the file extension: “.pdf”
+              </li>
+              <li>
+                are uploaded individually and not inside a folder
+              </li>
+            </ul>
+          </div>,
           "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+          "validation": Object {
+            "multiple": Object {
+              "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+              "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "folder": "Invalid files ([filenames])",
+              "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+            },
+            "single": Object {
+              "fileName": "Invalid file name ([filename])",
+              "fileNameLength": "Filename ([filename]) is too long",
+              "folder": "Invalid file ([filename])",
+              "maxFileSize": "File ([filename]) is too big",
+              "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+            },
+          },
         }
       }
       maxFiles={10}
@@ -21944,7 +23448,47 @@ exports[`FileUploader renders row for uploaded files with default access conditi
                   txt={
                     Object {
                       "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+                      "errorTitle": "Upload Errors",
+                      "fileUploadInstruction": <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>,
+                      "fileUploadRestrictionHeading": <h3>
+                        File upload restrictions
+                      </h3>,
+                      "fileUploadRestrictions": <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>,
                       "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+                      "validation": Object {
+                        "multiple": Object {
+                          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
+                          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "folder": "Invalid files ([filenames])",
+                          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+                        },
+                        "single": Object {
+                          "fileName": "Invalid file name ([filename])",
+                          "fileNameLength": "Filename ([filename]) is too long",
+                          "folder": "Invalid file ([filename])",
+                          "maxFileSize": "File ([filename]) is too big",
+                          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
+                        },
+                      },
                     }
                   }
                 >
@@ -21953,7 +23497,28 @@ exports[`FileUploader renders row for uploaded files with default access conditi
                   >
                     <div
                       className="column"
-                    />
+                    >
+                      <h3>
+                        File upload restrictions
+                      </h3>
+                      <div>
+                        Please ensure your files:
+                        <ul>
+                          <li>
+                            begin with a letter and are less than 45 characters long
+                          </li>
+                          <li>
+                            contain only upper and lowercase alphanumeric characters, and underscores
+                          </li>
+                          <li>
+                            have only a single period which precedes the file extension: “.pdf”
+                          </li>
+                          <li>
+                            are uploaded individually and not inside a folder
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                     <div
                       className="column upload-instructions"
                     >
@@ -21981,6 +23546,9 @@ exports[`FileUploader renders row for uploaded files with default access conditi
                           cloud_upload
                         </span>
                       </FontIcon>
+                      <p>
+                        Click here to select files, or drag files into this area to upload
+                      </p>
                     </div>
                   </div>
                 </FileUploadDropzoneStaticContent>

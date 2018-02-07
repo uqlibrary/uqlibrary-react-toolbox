@@ -4,8 +4,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _single, _multiple;
-
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -29,8 +27,6 @@ var _FileUploadDropzoneStaticContent = require('./FileUploadDropzoneStaticConten
 var _FileUploadDropzoneStaticContent2 = _interopRequireDefault(_FileUploadDropzoneStaticContent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
@@ -342,52 +338,4 @@ var FileUploadDropzone = function (_PureComponent) {
     return FileUploadDropzone;
 }(_react.PureComponent);
 
-FileUploadDropzone.defaultProps = {
-    locale: {
-        validation: {
-            single: (_single = {}, _defineProperty(_single, 'folder', 'Invalid file ([filename])'), _defineProperty(_single, 'fileName', 'Invalid file name ([filename])'), _defineProperty(_single, 'fileNameLength', 'Filename ([filename]) is too long'), _defineProperty(_single, 'maxFileSize', 'File ([filename]) is too big'), _defineProperty(_single, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'), _single),
-            multiple: (_multiple = {}, _defineProperty(_multiple, 'folder', 'Invalid files ([filenames])'), _defineProperty(_multiple, 'fileName', '[numberOfFiles] files ([filenames]) have an invalid file name'), _defineProperty(_multiple, 'fileNameLength', '[numberOfFiles] filenames ([filenames]) are too long'), _defineProperty(_multiple, 'maxFileSize', '[numberOfFiles] files ([filenames]) are too big'), _defineProperty(_multiple, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'), _multiple)
-        },
-        errorTitle: 'Upload Errors',
-        fileUploadRestrictionHeading: _react2.default.createElement(
-            'h3',
-            null,
-            'File upload restrictions'
-        ),
-        fileUploadRestrictions: _react2.default.createElement(
-            'div',
-            null,
-            'Please ensure your files:',
-            _react2.default.createElement(
-                'ul',
-                null,
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    'begin with a letter and are less than 45 characters long'
-                ),
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    'contain only upper and lowercase alphanumeric characters, and underscores'
-                ),
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    'have only a single period which precedes the file extension: \u201C.pdf\u201D'
-                ),
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    'are uploaded individually and not inside a folder'
-                )
-            )
-        ),
-        fileUploadInstruction: _react2.default.createElement(
-            'p',
-            null,
-            'Click here to select files, or drag files into this area to upload'
-        )
-    }
-};
 exports.default = FileUploadDropzone;
