@@ -57,7 +57,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
     }
   }
   overallProgress={0}
-  requireFileAccess={false}
+  requireOpenAccessStatus={false}
 >
   <div>
     <h4
@@ -353,7 +353,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
     }
   }
   overallProgress={0}
-  requireFileAccess={false}
+  requireOpenAccessStatus={false}
 >
   <div>
     <h4
@@ -649,7 +649,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
     }
   }
   overallProgress={0}
-  requireFileAccess={false}
+  requireOpenAccessStatus={false}
 >
   <div>
     <h4
@@ -911,7 +911,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
           }
         }
         onDeleteAll={[Function]}
-        requireFileAccess={false}
+        requireOpenAccessStatus={false}
       >
         <div
           className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile"
@@ -1188,7 +1188,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
         key="a.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={false}
+        requireOpenAccessStatus={false}
         uploadedFile={
           Object {
             "name": "a.txt",
@@ -1218,7 +1218,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={false}
+          requireOpenAccessStatus={false}
           uploadedFile={
             Object {
               "name": "a.txt",
@@ -1577,7 +1577,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
         key="b.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={false}
+        requireOpenAccessStatus={false}
         uploadedFile={
           Object {
             "name": "b.txt",
@@ -1607,7 +1607,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={false}
+          requireOpenAccessStatus={false}
           uploadedFile={
             Object {
               "name": "b.txt",
@@ -2022,7 +2022,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
     }
   }
   overallProgress={0}
-  requireFileAccess={false}
+  requireOpenAccessStatus={false}
 >
   <div>
     <h4
@@ -2280,7 +2280,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
           }
         }
         onDeleteAll={[Function]}
-        requireFileAccess={false}
+        requireOpenAccessStatus={false}
       >
         <div
           className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile"
@@ -2557,7 +2557,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
         key="b.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={false}
+        requireOpenAccessStatus={false}
         uploadedFile={
           Object {
             "name": "b.txt",
@@ -2587,7 +2587,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={false}
+          requireOpenAccessStatus={false}
           uploadedFile={
             Object {
               "name": "b.txt",
@@ -3002,7 +3002,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
     }
   }
   overallProgress={0}
-  requireFileAccess={false}
+  requireOpenAccessStatus={false}
 >
   <div>
     <h4
@@ -3298,7 +3298,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
     }
   }
   overallProgress={0}
-  requireFileAccess={true}
+  requireOpenAccessStatus={true}
 >
   <div>
     <h4
@@ -3594,7 +3594,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
     }
   }
   overallProgress={0}
-  requireFileAccess={true}
+  requireOpenAccessStatus={true}
 >
   <div>
     <h4
@@ -3856,7 +3856,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
           }
         }
         onDeleteAll={[Function]}
-        requireFileAccess={true}
+        requireOpenAccessStatus={true}
       >
         <div
           className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile"
@@ -4143,7 +4143,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
         key="a.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={true}
+        requireOpenAccessStatus={true}
         uploadedFile={
           Object {
             "name": "a.txt",
@@ -4173,7 +4173,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={true}
+          requireOpenAccessStatus={true}
           uploadedFile={
             Object {
               "name": "a.txt",
@@ -5975,7 +5975,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
         key="b.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={true}
+        requireOpenAccessStatus={true}
         uploadedFile={
           Object {
             "name": "b.txt",
@@ -6005,7 +6005,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={true}
+          requireOpenAccessStatus={true}
           uploadedFile={
             Object {
               "name": "b.txt",
@@ -7863,7 +7863,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
     }
   }
   overallProgress={0}
-  requireFileAccess={true}
+  requireOpenAccessStatus={true}
 >
   <div>
     <h4
@@ -8126,7 +8126,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
           }
         }
         onDeleteAll={[Function]}
-        requireFileAccess={true}
+        requireOpenAccessStatus={true}
       >
         <div
           className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile"
@@ -8413,7 +8413,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
         key="a.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={true}
+        requireOpenAccessStatus={true}
         uploadedFile={
           Object {
             "access_condition_id": 8,
@@ -8444,7 +8444,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={true}
+          requireOpenAccessStatus={true}
           uploadedFile={
             Object {
               "access_condition_id": 8,
@@ -10247,7 +10247,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
         key="b.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={true}
+        requireOpenAccessStatus={true}
         uploadedFile={
           Object {
             "name": "b.txt",
@@ -10277,7 +10277,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={true}
+          requireOpenAccessStatus={true}
           uploadedFile={
             Object {
               "name": "b.txt",
@@ -12135,7 +12135,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
     }
   }
   overallProgress={0}
-  requireFileAccess={true}
+  requireOpenAccessStatus={true}
 >
   <div>
     <h4
@@ -12398,7 +12398,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
           }
         }
         onDeleteAll={[Function]}
-        requireFileAccess={true}
+        requireOpenAccessStatus={true}
       >
         <div
           className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile"
@@ -12685,7 +12685,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
         key="a.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={true}
+        requireOpenAccessStatus={true}
         uploadedFile={
           Object {
             "access_condition_id": 9,
@@ -12716,7 +12716,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={true}
+          requireOpenAccessStatus={true}
           uploadedFile={
             Object {
               "access_condition_id": 9,
@@ -14519,7 +14519,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
         key="b.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={true}
+        requireOpenAccessStatus={true}
         uploadedFile={
           Object {
             "name": "b.txt",
@@ -14549,7 +14549,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={true}
+          requireOpenAccessStatus={true}
           uploadedFile={
             Object {
               "name": "b.txt",
@@ -17582,7 +17582,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
     }
   }
   overallProgress={0}
-  requireFileAccess={true}
+  requireOpenAccessStatus={true}
 >
   <div>
     <h4
@@ -17846,7 +17846,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
           }
         }
         onDeleteAll={[Function]}
-        requireFileAccess={true}
+        requireOpenAccessStatus={true}
       >
         <div
           className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile"
@@ -18133,7 +18133,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
         key="a.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={true}
+        requireOpenAccessStatus={true}
         uploadedFile={
           Object {
             "access_condition_id": 9,
@@ -18165,7 +18165,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={true}
+          requireOpenAccessStatus={true}
           uploadedFile={
             Object {
               "access_condition_id": 9,
@@ -19969,7 +19969,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
         key="b.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={true}
+        requireOpenAccessStatus={true}
         uploadedFile={
           Object {
             "name": "b.txt",
@@ -19999,7 +19999,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={true}
+          requireOpenAccessStatus={true}
           uploadedFile={
             Object {
               "name": "b.txt",
@@ -23033,7 +23033,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
     }
   }
   overallProgress={0}
-  requireFileAccess={false}
+  requireOpenAccessStatus={false}
 >
   <div>
     <h4
@@ -23330,7 +23330,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
     }
   }
   overallProgress={0}
-  requireFileAccess={false}
+  requireOpenAccessStatus={false}
 >
   <div>
     <h4
@@ -23594,7 +23594,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
           }
         }
         onDeleteAll={[Function]}
-        requireFileAccess={false}
+        requireOpenAccessStatus={false}
       >
         <div
           className="columns is-gapless is-mobile uploadedFileHeader datalist datalist-header headers is-hidden-mobile"
@@ -23871,7 +23871,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
         key="a.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={false}
+        requireOpenAccessStatus={false}
         uploadedFile={
           Object {
             "access_condition_id": 3,
@@ -23902,7 +23902,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={false}
+          requireOpenAccessStatus={false}
           uploadedFile={
             Object {
               "access_condition_id": 3,
@@ -24262,7 +24262,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
         key="b.txt"
         onAttributeChanged={[Function]}
         onDelete={[Function]}
-        requireFileAccess={false}
+        requireOpenAccessStatus={false}
         uploadedFile={
           Object {
             "access_condition_id": 3,
@@ -24293,7 +24293,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
           onAttributeChanged={[Function]}
           onDelete={[Function]}
           progress={0}
-          requireFileAccess={false}
+          requireOpenAccessStatus={false}
           uploadedFile={
             Object {
               "access_condition_id": 3,

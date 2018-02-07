@@ -33,7 +33,7 @@ export class FileUploader extends PureComponent {
         locale: PropTypes.object,
         defaultConfig: PropTypes.object,
         overallProgress: PropTypes.number,
-        requireFileAccess: PropTypes.bool,
+        requireOpenAccessStatus: PropTypes.bool,
         clearFileUpload: PropTypes.func,
         disabled: PropTypes.bool,
         defaultQuickTemplateId: PropTypes.number
@@ -82,7 +82,7 @@ export class FileUploader extends PureComponent {
             maxFileSize: 5,
             fileSizeUnit: 'G'
         },
-        requireFileAccess: false
+        requireOpenAccessStatus: false
     };
 
     constructor(props) {
@@ -150,7 +150,7 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _setUploadedFiles = (files) => {
-        if (!!this.props.defaultQuickTemplateId && !this.props.requireFileAccess) {
+        if (!!this.props.defaultQuickTemplateId && !this.props.requireOpenAccessStatus) {
             files.map((file) => (file.access_condition_id = this.props.defaultQuickTemplateId));
         }
         this.setState({uploadedFiles: [...files], clearErrors: false});
@@ -227,7 +227,7 @@ export class FileUploader extends PureComponent {
     isFileUploadValid = ({uploadedFiles, termsAndConditions}) => {
         let isValid = true;
 
-        if (this.props.requireFileAccess) {
+        if (this.props.requireOpenAccessStatus) {
             if (uploadedFiles.filter((file) => (!this.hasAccess(file))).length > 0) {
                 isValid = false;
             }
@@ -246,7 +246,7 @@ export class FileUploader extends PureComponent {
     render() {
         const {instructions, accessTermsAndConditions} = this.props.locale;
         const {maxFileSize, fileSizeUnit, fileUploadLimit} = this.props.defaultConfig;
-        const {requireFileAccess, overallProgress} = this.props;
+        const {requireOpenAccessStatus, overallProgress} = this.props;
         const {uploadedFiles, clearErrors, termsAndConditions} = this.state;
 
         const instructionsDisplay = instructions
@@ -263,7 +263,7 @@ export class FileUploader extends PureComponent {
                     fileSizeUnit={fileSizeUnit}
                     onDelete={this._deleteFile}
                     onAttributeChanged={this._replaceFile}
-                    requireFileAccess={requireFileAccess}
+                    requireOpenAccessStatus={requireOpenAccessStatus}
                     disabled={this.props.disabled}
                 />
             );
@@ -287,14 +287,14 @@ export class FileUploader extends PureComponent {
                         uploadedFiles.length > 0 &&
                         <FileUploadRowHeader
                             onDeleteAll={this._deleteAllFiles}
-                            requireFileAccess={requireFileAccess}
+                            requireOpenAccessStatus={requireOpenAccessStatus}
                             disabled={this.props.disabled} />
                     }
 
                     {uploadedFilesRow}
 
                     {
-                        requireFileAccess && this.isAnyOpenAccess(uploadedFiles) &&
+                        requireOpenAccessStatus && this.isAnyOpenAccess(uploadedFiles) &&
                             <div style={{position: 'relative', width: '100%'}} className={!termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox'}>
                                 <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={termsAndConditions} />
                             </div>

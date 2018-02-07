@@ -22,7 +22,7 @@ export class FileUploadRow extends Component {
         onAttributeChanged: PropTypes.func.isRequired,
         locale: PropTypes.object,
         progress: PropTypes.number,
-        requireFileAccess: PropTypes.bool.isRequired,
+        requireOpenAccessStatus: PropTypes.bool.isRequired,
         fileSizeUnit: PropTypes.string,
         disabled: PropTypes.bool
     };
@@ -100,7 +100,7 @@ export class FileUploadRow extends Component {
                 </div>
                 <div className="column datalist-text is-3-desktop is-4-tablet is-12-mobile">
                     {
-                        this.props.requireFileAccess &&
+                        this.props.requireOpenAccessStatus &&
                             <div className="file-access-selector">
                                 <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
                                 <div className="select-container">
@@ -114,14 +114,14 @@ export class FileUploadRow extends Component {
                     <div className="embargo-date-info">
                         <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
                         {
-                            this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) &&
+                            this.props.requireOpenAccessStatus && !this.isOpenAccess(access_condition_id) &&
                             <div className="no-embargo-date">
                                 <span>{embargoDateClosedAccess}</span>
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }
                         {
-                            this.props.requireFileAccess && this.isOpenAccess(access_condition_id) &&
+                            this.props.requireOpenAccessStatus && this.isOpenAccess(access_condition_id) &&
                             <div className="embargo-date-selector">
                                 <FileUploadEmbargoDate onDateChanged={this._updateFileMetadata} disabled={this.props.disabled} />
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>

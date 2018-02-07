@@ -21,7 +21,7 @@ exports[`FileUploadRow renders correctly with file upload success 1`] = `
   onAttributeChanged={[MockFunction]}
   onDelete={[MockFunction]}
   progress={100}
-  requireFileAccess={false}
+  requireOpenAccessStatus={false}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -232,7 +232,7 @@ exports[`FileUploadRow renders correctly with uploaded file 1`] = `
   onAttributeChanged={[MockFunction]}
   onDelete={[MockFunction]}
   progress={0}
-  requireFileAccess={false}
+  requireOpenAccessStatus={false}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -607,7 +607,7 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
   onAttributeChanged={[MockFunction]}
   onDelete={[MockFunction]}
   progress={50}
-  requireFileAccess={false}
+  requireOpenAccessStatus={false}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -867,7 +867,7 @@ exports[`FileUploadRow shows confirmation on delete file 1`] = `
   onAttributeChanged={[MockFunction]}
   onDelete={[MockFunction]}
   progress={0}
-  requireFileAccess={false}
+  requireOpenAccessStatus={false}
   uploadedFile={
     Object {
       "name": "a.txt",

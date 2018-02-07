@@ -79,7 +79,7 @@ describe('FileUploader', () => {
     });
 
     it('renders row for uploaded files with access required', () => {
-        const wrapper = setup({ requireFileAccess: true });
+        const wrapper = setup({ requireOpenAccessStatus: true });
 
         let tree = toJson(wrapper);
 

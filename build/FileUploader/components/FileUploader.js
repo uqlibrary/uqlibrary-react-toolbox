@@ -90,7 +90,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this._setUploadedFiles = function (files) {
-            if (!!_this.props.defaultQuickTemplateId && !_this.props.requireFileAccess) {
+            if (!!_this.props.defaultQuickTemplateId && !_this.props.requireOpenAccessStatus) {
                 files.map(function (file) {
                     return file.access_condition_id = _this.props.defaultQuickTemplateId;
                 });
@@ -134,7 +134,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
             var isValid = true;
 
-            if (_this.props.requireFileAccess) {
+            if (_this.props.requireOpenAccessStatus) {
                 if (uploadedFiles.filter(function (file) {
                     return !_this.hasAccess(file);
                 }).length > 0) {
@@ -274,7 +274,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 fileSizeUnit = _props$defaultConfig.fileSizeUnit,
                 fileUploadLimit = _props$defaultConfig.fileUploadLimit;
             var _props = this.props,
-                requireFileAccess = _props.requireFileAccess,
+                requireOpenAccessStatus = _props.requireOpenAccessStatus,
                 overallProgress = _props.overallProgress;
             var _state = this.state,
                 uploadedFiles = _state.uploadedFiles,
@@ -292,7 +292,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     fileSizeUnit: fileSizeUnit,
                     onDelete: _this2._deleteFile,
                     onAttributeChanged: _this2._replaceFile,
-                    requireFileAccess: requireFileAccess,
+                    requireOpenAccessStatus: requireOpenAccessStatus,
                     disabled: _this2.props.disabled
                 });
             });
@@ -320,10 +320,10 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     },
                     uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, {
                         onDeleteAll: this._deleteAllFiles,
-                        requireFileAccess: requireFileAccess,
+                        requireOpenAccessStatus: requireOpenAccessStatus,
                         disabled: this.props.disabled }),
                     uploadedFilesRow,
-                    requireFileAccess && this.isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(
+                    requireOpenAccessStatus && this.isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(
                         'div',
                         { style: { position: 'relative', width: '100%' }, className: !termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox' },
                         _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this._acceptTermsAndConditions, checked: termsAndConditions })
@@ -396,7 +396,7 @@ FileUploader.defaultProps = {
         maxFileSize: 5,
         fileSizeUnit: 'G'
     },
-    requireFileAccess: false
+    requireOpenAccessStatus: false
 };
 
 

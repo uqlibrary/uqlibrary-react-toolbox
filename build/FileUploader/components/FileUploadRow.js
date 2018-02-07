@@ -178,7 +178,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'column datalist-text is-3-desktop is-4-tablet is-12-mobile' },
-                    this.props.requireFileAccess && _react2.default.createElement(
+                    this.props.requireOpenAccessStatus && _react2.default.createElement(
                         'div',
                         { className: 'file-access-selector' },
                         _ref2,
@@ -201,7 +201,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         'div',
                         { className: 'embargo-date-info' },
                         _ref3,
-                        this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) && _react2.default.createElement(
+                        this.props.requireOpenAccessStatus && !this.isOpenAccess(access_condition_id) && _react2.default.createElement(
                             'div',
                             { className: 'no-embargo-date' },
                             _react2.default.createElement(
@@ -215,7 +215,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                                 embargoDateColumn
                             )
                         ),
-                        this.props.requireFileAccess && this.isOpenAccess(access_condition_id) && _react2.default.createElement(
+                        this.props.requireOpenAccessStatus && this.isOpenAccess(access_condition_id) && _react2.default.createElement(
                             'div',
                             { className: 'embargo-date-selector' },
                             _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata, disabled: this.props.disabled }),
