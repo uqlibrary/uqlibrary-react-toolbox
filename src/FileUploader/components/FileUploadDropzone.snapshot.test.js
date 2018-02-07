@@ -70,6 +70,11 @@ describe('FileUploadDropzone', () => {
                 type: 'text/text',
                 name: 'a.text.txt',
                 size: 100
+            },
+            {
+                type: 'text/text',
+                name: 'a b.txt',
+                size: 100
             }
         ];
 

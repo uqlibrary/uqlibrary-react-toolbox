@@ -77,12 +77,12 @@ var FileUploadDropzone = function (_PureComponent) {
                 _this.setError('fileNameLength', file);
             }
 
-            var period = file.name.split('.').length > 2;
-            if (period) {
+            var periodOrSpace = file.name.split('.').length > 2 || file.name.split(' ').length > 1;
+            if (periodOrSpace) {
                 _this.setError('fileName', file);
             }
 
-            return type || length || period;
+            return type || length || periodOrSpace;
         };
 
         _this.setError = function (errorType, file) {

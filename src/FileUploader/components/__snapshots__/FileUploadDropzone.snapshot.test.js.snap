@@ -459,7 +459,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
     </div>
     <Alert
       allowDismiss={false}
-      message="File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; Invalid file name (a.text.txt)"
+      message="File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; 2 files (a.text.txt, a b.txt) have an invalid file name"
       title="Upload Errors"
       type="error"
     >
@@ -505,7 +505,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
                 Upload Errors
               </b>
                - 
-              File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; Invalid file name (a.text.txt)
+              File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; 2 files (a.text.txt, a b.txt) have an invalid file name
             </div>
           </div>
         </div>

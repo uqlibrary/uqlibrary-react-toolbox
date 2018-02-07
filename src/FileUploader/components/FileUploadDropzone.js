@@ -105,12 +105,12 @@ class FileUploadDropzone extends PureComponent {
             this.setError('fileNameLength', file);
         }
 
-        const period = file.name.split('.').length > 2;
-        if (period) {
+        const periodOrSpace = file.name.split('.').length > 2 || file.name.split(' ').length > 1;
+        if (periodOrSpace) {
             this.setError('fileName', file);
         }
 
-        return type || length || period;
+        return type || length || periodOrSpace;
     };
 
     /**
