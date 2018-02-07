@@ -33,7 +33,22 @@ class FileUploadDropzone extends PureComponent {
                     ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'
                 }
             },
-            errorTitle: 'Upload Errors'
+            errorTitle: 'Upload Errors',
+            fileUploadRestrictionHeading: (<h3>File upload restrictions</h3>),
+            fileUploadRestrictions: (
+                <div>
+                    Please ensure your files:
+                    <ul>
+                        <li>begin with a letter and are less than 45 characters long</li>
+                        <li>contain only upper and lowercase alphanumeric characters, and underscores</li>
+                        <li>have only a single period which precedes the file extension: “.pdf”</li>
+                        <li>are uploaded individually and not inside a folder</li>
+                    </ul>
+                </div>
+            ),
+            fileUploadInstruction: (
+                <p>Click here to select files, or drag files into this area to upload</p>
+            )
         }
     };
 
@@ -249,7 +264,7 @@ class FileUploadDropzone extends PureComponent {
                             disabled={this.props.disabled}
                             disableClick={this.props.disabled}
                             disablePreview>
-                            <FileUploadDropzoneStaticContent />
+                            <FileUploadDropzoneStaticContent txt={this.props.locale}/>
                         </Dropzone>
                     </div>
                 </div>

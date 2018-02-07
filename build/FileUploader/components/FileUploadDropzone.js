@@ -40,8 +40,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _ref3 = _react2.default.createElement(_FileUploadDropzoneStaticContent2.default, null);
-
 var FileUploadDropzone = function (_PureComponent) {
     _inherits(FileUploadDropzone, _PureComponent);
 
@@ -332,7 +330,7 @@ var FileUploadDropzone = function (_PureComponent) {
                                 disabled: this.props.disabled,
                                 disableClick: this.props.disabled,
                                 disablePreview: true },
-                            _ref3
+                            _react2.default.createElement(_FileUploadDropzoneStaticContent2.default, { txt: this.props.locale })
                         )
                     )
                 ),
@@ -350,7 +348,46 @@ FileUploadDropzone.defaultProps = {
             single: (_single = {}, _defineProperty(_single, 'folder', 'Invalid file ([filename])'), _defineProperty(_single, 'fileName', 'Invalid file name ([filename])'), _defineProperty(_single, 'fileNameLength', 'Filename ([filename]) is too long'), _defineProperty(_single, 'maxFileSize', 'File ([filename]) is too big'), _defineProperty(_single, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'), _single),
             multiple: (_multiple = {}, _defineProperty(_multiple, 'folder', 'Invalid files ([filenames])'), _defineProperty(_multiple, 'fileName', '[numberOfFiles] files ([filenames]) have an invalid file name'), _defineProperty(_multiple, 'fileNameLength', '[numberOfFiles] filenames ([filenames]) are too long'), _defineProperty(_multiple, 'maxFileSize', '[numberOfFiles] files ([filenames]) are too big'), _defineProperty(_multiple, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'), _multiple)
         },
-        errorTitle: 'Upload Errors'
+        errorTitle: 'Upload Errors',
+        fileUploadRestrictionHeading: _react2.default.createElement(
+            'h3',
+            null,
+            'File upload restrictions'
+        ),
+        fileUploadRestrictions: _react2.default.createElement(
+            'div',
+            null,
+            'Please ensure your files:',
+            _react2.default.createElement(
+                'ul',
+                null,
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    'begin with a letter and are less than 45 characters long'
+                ),
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    'contain only upper and lowercase alphanumeric characters, and underscores'
+                ),
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    'have only a single period which precedes the file extension: \u201C.pdf\u201D'
+                ),
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    'are uploaded individually and not inside a folder'
+                )
+            )
+        ),
+        fileUploadInstruction: _react2.default.createElement(
+            'p',
+            null,
+            'Click here to select files, or drag files into this area to upload'
+        )
     }
 };
 exports.default = FileUploadDropzone;

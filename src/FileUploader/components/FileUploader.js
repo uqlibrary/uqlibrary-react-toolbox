@@ -241,6 +241,7 @@ export class FileUploader extends PureComponent {
             <div>
                 <h4 className="sub-title">{instructionsDisplay}</h4>
                 <FileUploadDropzone
+                    locale={this.props.locale}
                     maxSize={this.calculateMaxFileSize()}
                     maxFiles={fileUploadLimit}
                     disabled={this.props.disabled || uploadedFiles.length === fileUploadLimit}
