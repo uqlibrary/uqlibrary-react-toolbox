@@ -73,16 +73,9 @@ class FileUploadDropzone extends PureComponent {
      * @private
      */
     validate = (file) => {
-        const numberOfPeriods = file.name.split('.').length;
-
-        const twoPeriod = numberOfPeriods > 2;
+        const twoPeriod = file.name.split('.').length > 2;
         if (twoPeriod) {
             this.setError('fileName', file);
-        }
-
-        const noPeriod = numberOfPeriods === 1;
-        if (noPeriod) {
-            this.setError('folder', file);
         }
 
         const length = file.name.length > 45;
@@ -95,7 +88,7 @@ class FileUploadDropzone extends PureComponent {
             this.setError('fileName', file);
         }
 
-        return length || twoPeriod || noPeriod || space;
+        return length || twoPeriod || space;
     };
 
     /**
@@ -169,7 +162,20 @@ class FileUploadDropzone extends PureComponent {
      * @param rejected
      * @private
      */
-    _onDrop = (accepted, rejected) => {
+    _onDrop = (accepted, rejected, event) => {
+        /*
+         * From droppedEvent dataTransfer items, determine which items are folders
+         */
+        const droppedFolders = !!event && Array.prototype.filter.call(event.dataTransfer.items, (item) => (item.webkitGetAsEntry().isDirectory))
+            .map((item) => item.webkitGetAsEntry().name);
+
+        /*
+         * Set error for folder
+         */
+        if (droppedFolders.length > 0) {
+            this.setError('folder', accepted.filter(file => droppedFolders.indexOf(file.name) >= 0));
+        }
+
         /*
          * Set error for rejected files (maxFileSize rule)
          */
@@ -178,16 +184,21 @@ class FileUploadDropzone extends PureComponent {
         }
 
         /*
+         * Folders are accepted by dropzone so remove folders from accepted list
+         */
+        const acceptedFiles = droppedFolders.length > 0 ? accepted.filter(file => droppedFolders.indexOf(file.name) === -1) : accepted;
+
+        /*
          * Validate accepted files and get list of invalid files (check fileName, fileNameLength, folder)
          */
-        const invalid = accepted.filter((file) => {
+        const invalid = acceptedFiles.filter((file) => {
             return this.validate(file);
         });
 
         /*
          * Remove invalid files
          */
-        const filtered = this.difference(new Set(accepted), new Set(invalid));
+        const filtered = this.difference(new Set(acceptedFiles), new Set(invalid));
 
         /*
          * Duplicates will be removed by setting up file.name as key

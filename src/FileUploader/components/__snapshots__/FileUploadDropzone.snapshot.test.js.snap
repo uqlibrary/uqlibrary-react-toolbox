@@ -493,6 +493,11 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
               "size": 500,
               "type": "text/text",
             },
+            Object {
+              "name": "folder",
+              "size": 500,
+              "type": "",
+            },
           ],
         ],
       ],
@@ -663,7 +668,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
     </div>
     <Alert
       allowDismiss={false}
-      message="File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; 2 files (a.text.txt, a b.txt) have an invalid file name"
+      message="File (b.txt) is too big; Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; 2 files (a.text.txt, a b.txt) have an invalid file name"
       title="Upload Errors"
       type="error"
     >
@@ -709,7 +714,7 @@ exports[`FileUploadDropzone renders row for uploaded files 2`] = `
                 Upload Errors
               </b>
                - 
-              File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; 2 files (a.text.txt, a b.txt) have an invalid file name
+              File (b.txt) is too big; Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; 2 files (a.text.txt, a b.txt) have an invalid file name
             </div>
           </div>
         </div>
@@ -778,6 +783,11 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
               "size": 500,
               "type": "text/text",
             },
+            Object {
+              "name": "folder",
+              "size": 500,
+              "type": "",
+            },
           ],
         ],
         Array [
@@ -788,12 +798,12 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
               "type": "text/text",
             },
             Object {
-              "name": "b.txt",
-              "size": 100,
-              "type": "text/text",
+              "name": "folder",
+              "size": 500,
+              "type": "",
             },
             Object {
-              "name": "c.txt",
+              "name": "b.txt",
               "size": 100,
               "type": "text/text",
             },
@@ -967,7 +977,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
     </div>
     <Alert
       allowDismiss={false}
-      message="Only 3 files are allowed to be uploaded. File (d.txt) ignored"
+      message="Only 3 files are allowed to be uploaded.  Files (c.txt, d.txt) ignored"
       title="Upload Errors"
       type="error"
     >
@@ -1013,7 +1023,7 @@ exports[`FileUploadDropzone renders row for uploaded files 3`] = `
                 Upload Errors
               </b>
                - 
-              Only 3 files are allowed to be uploaded. File (d.txt) ignored
+              Only 3 files are allowed to be uploaded.  Files (c.txt, d.txt) ignored
             </div>
           </div>
         </div>

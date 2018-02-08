@@ -61,16 +61,9 @@ var FileUploadDropzone = function (_PureComponent) {
         };
 
         _this.validate = function (file) {
-            var numberOfPeriods = file.name.split('.').length;
-
-            var twoPeriod = numberOfPeriods > 2;
+            var twoPeriod = file.name.split('.').length > 2;
             if (twoPeriod) {
                 _this.setError('fileName', file);
-            }
-
-            var noPeriod = numberOfPeriods === 1;
-            if (noPeriod) {
-                _this.setError('folder', file);
             }
 
             var length = file.name.length > 45;
@@ -83,7 +76,7 @@ var FileUploadDropzone = function (_PureComponent) {
                 _this.setError('fileName', file);
             }
 
-            return length || twoPeriod || noPeriod || space;
+            return length || twoPeriod || space;
         };
 
         _this.setError = function (errorType, file) {
@@ -166,7 +159,25 @@ var FileUploadDropzone = function (_PureComponent) {
             _this.errors = new Map();
         };
 
-        _this._onDrop = function (accepted, rejected) {
+        _this._onDrop = function (accepted, rejected, event) {
+            /*
+             * From droppedEvent dataTransfer items, determine which items are folders
+             */
+            var droppedFolders = !!event && Array.prototype.filter.call(event.dataTransfer.items, function (item) {
+                return item.webkitGetAsEntry().isDirectory;
+            }).map(function (item) {
+                return item.webkitGetAsEntry().name;
+            });
+
+            /*
+             * Set error for folder
+             */
+            if (droppedFolders.length > 0) {
+                _this.setError('folder', accepted.filter(function (file) {
+                    return droppedFolders.indexOf(file.name) >= 0;
+                }));
+            }
+
             /*
              * Set error for rejected files (maxFileSize rule)
              */
@@ -175,16 +186,23 @@ var FileUploadDropzone = function (_PureComponent) {
             }
 
             /*
+             * Folders are accepted by dropzone so remove folders from accepted list
+             */
+            var acceptedFiles = droppedFolders.length > 0 ? accepted.filter(function (file) {
+                return droppedFolders.indexOf(file.name) === -1;
+            }) : accepted;
+
+            /*
              * Validate accepted files and get list of invalid files (check fileName, fileNameLength, folder)
              */
-            var invalid = accepted.filter(function (file) {
+            var invalid = acceptedFiles.filter(function (file) {
                 return _this.validate(file);
             });
 
             /*
              * Remove invalid files
              */
-            var filtered = _this.difference(new Set(accepted), new Set(invalid));
+            var filtered = _this.difference(new Set(acceptedFiles), new Set(invalid));
 
             /*
              * Duplicates will be removed by setting up file.name as key
