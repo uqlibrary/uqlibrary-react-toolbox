@@ -61,8 +61,15 @@ var FileUploadDropzone = function (_PureComponent) {
         };
 
         _this.validate = function (file) {
-            var type = file.type === '';
-            if (type) {
+            var numberOfPeriods = file.name.split('.').length;
+
+            var twoPeriod = numberOfPeriods > 2;
+            if (twoPeriod) {
+                _this.setError('fileName', file);
+            }
+
+            var noPeriod = numberOfPeriods === 1;
+            if (noPeriod) {
                 _this.setError('folder', file);
             }
 
@@ -71,12 +78,12 @@ var FileUploadDropzone = function (_PureComponent) {
                 _this.setError('fileNameLength', file);
             }
 
-            var periodOrSpace = file.name.split('.').length > 2 || file.name.split(' ').length > 1;
-            if (periodOrSpace) {
+            var space = file.name.split(' ').length > 1;
+            if (space) {
                 _this.setError('fileName', file);
             }
 
-            return type || length || periodOrSpace;
+            return length || twoPeriod || noPeriod || space;
         };
 
         _this.setError = function (errorType, file) {

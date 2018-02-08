@@ -73,8 +73,15 @@ class FileUploadDropzone extends PureComponent {
      * @private
      */
     validate = (file) => {
-        const type = file.type === '';
-        if (type) {
+        const numberOfPeriods = file.name.split('.').length;
+
+        const twoPeriod = numberOfPeriods > 2;
+        if (twoPeriod) {
+            this.setError('fileName', file);
+        }
+
+        const noPeriod = numberOfPeriods === 1;
+        if (noPeriod) {
             this.setError('folder', file);
         }
 
@@ -83,12 +90,12 @@ class FileUploadDropzone extends PureComponent {
             this.setError('fileNameLength', file);
         }
 
-        const periodOrSpace = file.name.split('.').length > 2 || file.name.split(' ').length > 1;
-        if (periodOrSpace) {
+        const space = file.name.split(' ').length > 1;
+        if (space) {
             this.setError('fileName', file);
         }
 
-        return type || length || periodOrSpace;
+        return length || twoPeriod || noPeriod || space;
     };
 
     /**
