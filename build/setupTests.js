@@ -4,6 +4,14 @@ var _polyfill = require('../__mocks__/polyfill');
 
 var _polyfill2 = _interopRequireDefault(_polyfill);
 
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _enzyme = require('enzyme');
 
 var _enzyme2 = _interopRequireDefault(_enzyme);
@@ -12,6 +20,54 @@ var _enzymeAdapterReact = require('enzyme-adapter-react-15');
 
 var _enzymeAdapterReact2 = _interopRequireDefault(_enzymeAdapterReact);
 
+var _enzymeToJson = require('enzyme-to-json');
+
+var _enzymeToJson2 = _interopRequireDefault(_enzymeToJson);
+
+require('babel-polyfill');
+
+var _reactRedux = require('react-redux');
+
+var _getMuiTheme = require('material-ui/styles/getMuiTheme');
+
+var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
+
+var _reactRouterDom = require('react-router-dom');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_enzyme2.default.configure({ adapter: new _enzymeAdapterReact2.default() }); /* eslint-disable */
+// get a mounted or shallow element
+/* eslint-disable */
+var getElement = function getElement(component, props) {
+    var isShallow = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+
+    if (isShallow) return (0, _enzyme.shallow)(_react2.default.createElement(component, props));
+    return (0, _enzyme.mount)(_react2.default.createElement(
+        _reactRedux.Provider,
+        { store: setupStoreForMount().store },
+        _react2.default.createElement(
+            _reactRouterDom.MemoryRouter,
+            null,
+            _react2.default.createElement(component, props)
+        )
+    ), {
+        context: {
+            muiTheme: (0, _getMuiTheme2.default)()
+        },
+        childContextTypes: {
+            muiTheme: _propTypes2.default.object.isRequired
+        }
+    });
+};
+
+// React Enzyme adapter
+_enzyme2.default.configure({ adapter: new _enzymeAdapterReact2.default() });
+
+// Make Enzyme functions available in all test files without importing
+global.shallow = _enzyme.shallow;
+global.render = _enzyme.render;
+global.mount = _enzyme.mount;
+global.toJson = _enzymeToJson2.default;
+
+// make standard libraries/methods globally available to all tests
+global.getElement = getElement;
