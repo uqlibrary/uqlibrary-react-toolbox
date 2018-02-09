@@ -198,4 +198,28 @@ describe('Component FileUploadDropzone', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
         expect(onDroppedCallback).toHaveBeenCalled();
     });
+
+
+    it('should open files selection dialog', () => {
+        const onDroppedCallback = jest.fn();
+        const props = {
+            onDropped: onDroppedCallback,
+            maxSize: 1000,
+            maxFiles: 5,
+            uploadedFiles: [],
+            clearErrors: false,
+            locale: locale
+        };
+        const wrapper = setup({...props}, false);
+
+        expect(toJson(wrapper)).toMatchSnapshot();
+
+        const testFn = jest.fn();
+        wrapper.instance().dropzoneRef.open = testFn;
+
+        wrapper.instance()._onKeyPress();
+        wrapper.update();
+
+        expect(testFn).toHaveBeenCalled();
+    });
 });
