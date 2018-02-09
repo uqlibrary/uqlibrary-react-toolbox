@@ -141,13 +141,18 @@ export class FileUploadRow extends Component {
                     }
                     {
                         this.props.progress > 0 && this.props.progress !== 100 &&
-                        <div className="upload-progress">
-                            <CircularProgress
-                                mode="determinate"
-                                value={this.props.progress}
-                                size={20}
-                                thickness={4}
-                            />
+                        <div className="upload-progress-info">
+                            <div className="upload-progress">
+                                <CircularProgress
+                                    mode="determinate"
+                                    value={this.props.progress}
+                                    size={20}
+                                    thickness={4}
+                                />
+                            </div>
+                            <div className="upload-progress-text">
+                                <span className="upload-progress-number">{`${this.props.progress}%`}</span>
+                            </div>
                         </div>
                     }
                     {

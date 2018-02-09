@@ -245,13 +245,26 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                     ),
                     this.props.progress > 0 && this.props.progress !== 100 && _react2.default.createElement(
                         'div',
-                        { className: 'upload-progress' },
-                        _react2.default.createElement(_CircularProgress2.default, {
-                            mode: 'determinate',
-                            value: this.props.progress,
-                            size: 20,
-                            thickness: 4
-                        })
+                        { className: 'upload-progress-info' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'upload-progress' },
+                            _react2.default.createElement(_CircularProgress2.default, {
+                                mode: 'determinate',
+                                value: this.props.progress,
+                                size: 20,
+                                thickness: 4
+                            })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'upload-progress-text' },
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'upload-progress-number' },
+                                this.props.progress + '%'
+                            )
+                        )
                     ),
                     this.props.progress === 100 && _ref5
                 )

@@ -785,75 +785,88 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
       className="column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered"
     >
       <div
-        className="upload-progress"
+        className="upload-progress-info"
       >
-        <CircularProgress
-          max={100}
-          min={0}
-          mode="determinate"
-          size={20}
-          thickness={4}
-          value={50}
+        <div
+          className="upload-progress"
         >
-          <div
+          <CircularProgress
             max={100}
             min={0}
             mode="determinate"
-            style={
-              Object {
-                "display": "inline-block",
-                "height": 20,
-                "muiPrepared": true,
-                "position": "relative",
-                "width": 20,
-              }
-            }
+            size={20}
+            thickness={4}
             value={50}
           >
             <div
+              max={100}
+              min={0}
+              mode="determinate"
               style={
                 Object {
                   "display": "inline-block",
                   "height": 20,
                   "muiPrepared": true,
-                  "transition": "20s transform linear 0ms",
-                  "transitionTimingFunction": "linear",
+                  "position": "relative",
                   "width": 20,
                 }
               }
+              value={50}
             >
-              <svg
+              <div
                 style={
                   Object {
+                    "display": "inline-block",
                     "height": 20,
                     "muiPrepared": true,
-                    "position": "relative",
+                    "transition": "20s transform linear 0ms",
+                    "transitionTimingFunction": "linear",
                     "width": 20,
                   }
                 }
-                viewBox="0 0 20 20"
               >
-                <circle
-                  cx={10}
-                  cy={10}
-                  fill="none"
-                  r={8}
-                  strokeMiterlimit="20"
-                  strokeWidth={4}
+                <svg
                   style={
                     Object {
+                      "height": 20,
                       "muiPrepared": true,
-                      "stroke": "#00bcd4",
-                      "strokeDasharray": "25.132741228718345, 50.26548245743669",
-                      "strokeLinecap": "round",
-                      "transition": "0.3s all linear 0ms",
+                      "position": "relative",
+                      "width": 20,
                     }
                   }
-                />
-              </svg>
+                  viewBox="0 0 20 20"
+                >
+                  <circle
+                    cx={10}
+                    cy={10}
+                    fill="none"
+                    r={8}
+                    strokeMiterlimit="20"
+                    strokeWidth={4}
+                    style={
+                      Object {
+                        "muiPrepared": true,
+                        "stroke": "#00bcd4",
+                        "strokeDasharray": "25.132741228718345, 50.26548245743669",
+                        "strokeLinecap": "round",
+                        "transition": "0.3s all linear 0ms",
+                      }
+                    }
+                  />
+                </svg>
+              </div>
             </div>
-          </div>
-        </CircularProgress>
+          </CircularProgress>
+        </div>
+        <div
+          className="upload-progress-text"
+        >
+          <span
+            className="upload-progress-number"
+          >
+            50%
+          </span>
+        </div>
       </div>
     </div>
   </div>
