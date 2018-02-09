@@ -4824,6 +4824,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -5659,6 +5660,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -6658,6 +6660,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -7493,6 +7496,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -9101,6 +9105,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -9936,6 +9941,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -10935,6 +10941,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -11770,6 +11777,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -13378,6 +13386,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -14213,6 +14222,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -15212,6 +15222,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -16047,6 +16058,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -17016,6 +17028,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                           "color": "#ffffff",
                           "rippleBackgroundColor": "#616161",
                         },
+                        "userAgent": undefined,
                         "zIndex": Object {
                           "appBar": 1100,
                           "dialog": 1500,
@@ -17463,6 +17476,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                           "color": "#ffffff",
                           "rippleBackgroundColor": "#616161",
                         },
+                        "userAgent": undefined,
                         "zIndex": Object {
                           "appBar": 1100,
                           "dialog": 1500,
@@ -18833,6 +18847,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -19668,6 +19683,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -20667,6 +20683,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -21502,6 +21519,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -22471,6 +22489,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                           "color": "#ffffff",
                           "rippleBackgroundColor": "#616161",
                         },
+                        "userAgent": undefined,
                         "zIndex": Object {
                           "appBar": 1100,
                           "dialog": 1500,
@@ -22918,6 +22937,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                           "color": "#ffffff",
                           "rippleBackgroundColor": "#616161",
                         },
+                        "userAgent": undefined,
                         "zIndex": Object {
                           "appBar": 1100,
                           "dialog": 1500,
