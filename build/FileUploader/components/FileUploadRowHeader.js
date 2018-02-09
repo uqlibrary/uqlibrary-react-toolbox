@@ -92,7 +92,7 @@ var FileUploadRowHeader = function (_Component) {
                 ),
                 _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header' },
+                    { className: 'column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header is-centered is-vcentered' },
                     _react2.default.createElement(
                         _IconButton2.default,
                         { tooltip: deleteAllFiles, onTouchTap: this._showConfirmation, disabled: this.props.disabled },

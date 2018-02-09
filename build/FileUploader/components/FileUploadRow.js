@@ -78,9 +78,13 @@ var _ref4 = _react2.default.createElement(
 );
 
 var _ref5 = _react2.default.createElement(
-    _FontIcon2.default,
-    { className: 'material-icons green-tick' },
-    'done'
+    'div',
+    { className: 'upload-progress' },
+    _react2.default.createElement(
+        _FontIcon2.default,
+        { className: 'material-icons green-tick' },
+        'done'
+    )
 );
 
 var FileUploadRow = exports.FileUploadRow = function (_Component) {
@@ -227,27 +231,30 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         )
                     )
                 ),
-                this.props.progress === 0 && _react2.default.createElement(
+                _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless' },
-                    _react2.default.createElement(
-                        _IconButton2.default,
-                        { tooltip: this.props.locale.deleteHint, onTouchTap: this._showConfirmation, disabled: this.props.disabled },
-                        _ref4
-                    )
-                ),
-                this.props.progress > 0 && this.props.progress !== 100 && _react2.default.createElement(
-                    'div',
-                    { className: 'upload-progress-wrapper' },
-                    _react2.default.createElement(_CircularProgress2.default, {
-                        className: 'upload-progress',
-                        mode: 'determinate',
-                        value: this.props.progress,
-                        size: 20,
-                        thickness: 4
-                    })
-                ),
-                this.props.progress === 100 && _ref5
+                    { className: 'column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered' },
+                    this.props.progress === 0 && _react2.default.createElement(
+                        'div',
+                        { className: 'datalist-buttons' },
+                        _react2.default.createElement(
+                            _IconButton2.default,
+                            { tooltip: this.props.locale.deleteHint, onTouchTap: this._showConfirmation, disabled: this.props.disabled },
+                            _ref4
+                        )
+                    ),
+                    this.props.progress > 0 && this.props.progress !== 100 && _react2.default.createElement(
+                        'div',
+                        { className: 'upload-progress' },
+                        _react2.default.createElement(_CircularProgress2.default, {
+                            mode: 'determinate',
+                            value: this.props.progress,
+                            size: 20,
+                            thickness: 4
+                        })
+                    ),
+                    this.props.progress === 100 && _ref5
+                )
             );
         }
     }]);

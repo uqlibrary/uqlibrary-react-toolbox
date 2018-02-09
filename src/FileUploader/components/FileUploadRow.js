@@ -130,30 +130,33 @@ export class FileUploadRow extends Component {
                         }
                     </div>
                 </div>
-                {
-                    this.props.progress === 0 &&
-                        <div className="column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless">
+                <div className="column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered">
+                    {
+                        this.props.progress === 0 &&
+                        <div className="datalist-buttons">
                             <IconButton tooltip={this.props.locale.deleteHint} onTouchTap={this._showConfirmation} disabled={this.props.disabled}>
                                 <FontIcon className="material-icons deleteIcon">delete</FontIcon>
                             </IconButton>
                         </div>
-                }
-                {
-                    this.props.progress > 0 && this.props.progress !== 100 &&
-                        <div className="upload-progress-wrapper">
+                    }
+                    {
+                        this.props.progress > 0 && this.props.progress !== 100 &&
+                        <div className="upload-progress">
                             <CircularProgress
-                                className="upload-progress"
                                 mode="determinate"
                                 value={this.props.progress}
                                 size={20}
                                 thickness={4}
                             />
                         </div>
-                }
-                {
-                    this.props.progress === 100 &&
-                        <FontIcon className="material-icons green-tick">done</FontIcon>
-                }
+                    }
+                    {
+                        this.props.progress === 100 &&
+                        <div className="upload-progress">
+                            <FontIcon className="material-icons green-tick">done</FontIcon>
+                        </div>
+                    }
+                </div>
             </div>
         );
     }

@@ -131,6 +131,10 @@
   }
 }
 
+.upload-progress {
+  padding: 12px !important;
+}
+
 //Mobile
 @include mobile {
   .fileUploadErrorMessage {
@@ -228,10 +232,6 @@
         }
       }
     }
-  }
-
-  .uploadedFileDelete {
-    float: right;
   }
 
   .open-access-checkbox {
