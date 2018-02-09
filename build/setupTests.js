@@ -26,31 +26,19 @@ var _enzymeToJson2 = _interopRequireDefault(_enzymeToJson);
 
 require('babel-polyfill');
 
-var _reactRedux = require('react-redux');
-
 var _getMuiTheme = require('material-ui/styles/getMuiTheme');
 
 var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
-
-var _reactRouterDom = require('react-router-dom');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // get a mounted or shallow element
 /* eslint-disable */
-var getElement = function getElement(component, props) {
-    var isShallow = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+var getElement = function getElement(component) {
+    var isShallow = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
-    if (isShallow) return (0, _enzyme.shallow)(_react2.default.createElement(component, props));
-    return (0, _enzyme.mount)(_react2.default.createElement(
-        _reactRedux.Provider,
-        { store: setupStoreForMount().store },
-        _react2.default.createElement(
-            _reactRouterDom.MemoryRouter,
-            null,
-            _react2.default.createElement(component, props)
-        )
-    ), {
+    if (isShallow) return (0, _enzyme.shallow)(component);
+    return (0, _enzyme.mount)(component, {
         context: {
             muiTheme: (0, _getMuiTheme2.default)()
         },
