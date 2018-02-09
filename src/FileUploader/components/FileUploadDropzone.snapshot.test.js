@@ -1,11 +1,7 @@
 jest.dontMock('./FileUploadDropzone');
 
-import { mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import React from 'react';
 import FileUploadDropzone from './FileUploadDropzone';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import PropTypes from 'prop-types';
 
 const locale = {
     validation: {
@@ -42,48 +38,43 @@ const locale = {
     )
 };
 
-function setup(props) {
-    return mount(<FileUploadDropzone {...props} locale={locale} />, {
-        context: {
-            muiTheme: getMuiTheme()
-        },
-        childContextTypes: {
-            muiTheme: PropTypes.object.isRequired
-        }
-    });
+function setup(testProps, isShallow = true) {
+    const props = {
+        ...testProps
+    };
+
+    return getElement(<FileUploadDropzone {...props} />, isShallow);
 }
 
-describe('FileUploadDropzone', () => {
-    it('renders correctly without any setup', () => {
+describe('Component FileUploadDropzone', () => {
+    it('should render correctly without any setup', () => {
         const onDroppedCallback = jest.fn();
         const props = {
             onDropped: onDroppedCallback,
             maxSize: 1000,
             maxFiles: 3,
             uploadedFiles: [],
-            clearErrors: false
+            clearErrors: false,
+            locale: locale
         };
-        const wrapper = setup(props);
+        const wrapper = setup({...props});
 
-        const tree = toJson(wrapper);
-
-        expect(tree).toMatchSnapshot();
+        expect(toJson(wrapper)).toMatchSnapshot();
     });
 
-    it('renders row for uploaded files', () => {
+    it('should render row for uploaded files', () => {
         const onDroppedCallback = jest.fn();
         const props = {
             onDropped: onDroppedCallback,
             maxSize: 1000,
             maxFiles: 3,
             uploadedFiles: [],
-            clearErrors: false
+            clearErrors: false,
+            locale: locale
         };
-        const wrapper = setup(props);
+        const wrapper = setup({...props});
 
-        let tree = toJson(wrapper);
-
-        expect(tree).toMatchSnapshot();
+        expect(toJson(wrapper)).toMatchSnapshot();
 
         const accepted = [
             {
@@ -124,8 +115,7 @@ describe('FileUploadDropzone', () => {
         wrapper.instance()._onDrop(accepted, rejected);
         wrapper.update();
 
-        tree = toJson(wrapper);
-        expect(tree).toMatchSnapshot();
+        expect(toJson(wrapper)).toMatchSnapshot();
 
         const moreFiles = [
             {
@@ -148,8 +138,64 @@ describe('FileUploadDropzone', () => {
         wrapper.instance()._onDrop(moreFiles, []);
         wrapper.update();
 
-        tree = toJson(wrapper);
-        expect(tree).toMatchSnapshot();
+        expect(toJson(wrapper)).toMatchSnapshot();
+        expect(onDroppedCallback).toHaveBeenCalled();
+    });
+
+    it('should render files discarding folders', () => {
+        const onDroppedCallback = jest.fn();
+        const props = {
+            onDropped: onDroppedCallback,
+            maxSize: 1000,
+            maxFiles: 5,
+            uploadedFiles: [],
+            clearErrors: false,
+            locale: locale
+        };
+        const wrapper = setup({...props});
+
+        expect(toJson(wrapper)).toMatchSnapshot();
+
+        const accepted = [
+            {
+                type: 'text/text',
+                name: 'a.txt',
+                size: 500
+            },
+            {
+                type: 'text/text',
+                name: 'a.text.txt',
+                size: 100
+            },
+            {
+                type: 'text/text',
+                name: 'ab.txt',
+                size: 100
+            },
+            {
+                type: '',
+                name: 'test',
+                size: 100
+            }
+        ];
+
+        const event = {
+            dataTransfer: {
+                items: [
+                    {
+                        webkitGetAsEntry: () => ({
+                            name: 'test',
+                            isDirectory: true
+                        })
+                    }
+                ]
+            }
+        };
+
+        wrapper.instance()._onDrop(accepted, [], event);
+        wrapper.update();
+
+        expect(toJson(wrapper)).toMatchSnapshot();
         expect(onDroppedCallback).toHaveBeenCalled();
     });
 });
