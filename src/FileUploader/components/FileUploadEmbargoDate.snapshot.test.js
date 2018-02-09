@@ -2,7 +2,6 @@ jest.dontMock('./FileUploadEmbargoDate');
 
 import React from 'react';
 import FileUploadEmbargoDate from './FileUploadEmbargoDate';
-const moment = require('moment');
 
 function setup(testProps, isShallow = true) {
     const props = {
@@ -21,8 +20,6 @@ describe('Component FileUploadEmbargoDate', () => {
         global.Date.UTC = _Date.UTC;
         global.Date.parse = _Date.parse;
         global.Date.now = _Date.now;
-
-        global.moment = jest.fn(() => moment(new Date('2016-01-01')));
     });
 
     it('should render with default setup', () => {
