@@ -110,7 +110,7 @@ exports[`Component FileUploadRowHeader should render confirmation on delete all 
       Embargo release date
     </div>
     <div
-      className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header"
+      className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header is-centered is-vcentered"
     >
       <IconButton
         disableTouchRipple={false}
@@ -411,7 +411,7 @@ exports[`Component FileUploadRowHeader should render confirmation on delete all 
       Embargo release date
     </div>
     <div
-      className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header"
+      className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header is-centered is-vcentered"
     >
       <IconButton
         disableTouchRipple={false}
@@ -635,7 +635,7 @@ exports[`Component FileUploadRowHeader should render with access condition and e
     Embargo release date
   </div>
   <div
-    className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header"
+    className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header is-centered is-vcentered"
   >
     <IconButton
       disableTouchRipple={false}
@@ -681,7 +681,7 @@ exports[`Component FileUploadRowHeader should render with default setup 1`] = `
     Filename
   </div>
   <div
-    className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header"
+    className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header is-centered is-vcentered"
   >
     <IconButton
       disableTouchRipple={false}
@@ -727,7 +727,7 @@ exports[`Component FileUploadRowHeader should render without access condition ev
     Filename
   </div>
   <div
-    className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header"
+    className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header is-centered is-vcentered"
   >
     <IconButton
       disableTouchRipple={false}
