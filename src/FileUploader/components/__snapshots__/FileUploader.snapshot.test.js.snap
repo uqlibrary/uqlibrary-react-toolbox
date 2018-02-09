@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FileUploader renders correctly without any setup 1`] = `
+exports[`Component FileUploader should render correctly without any setup 1`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -296,7 +296,7 @@ exports[`FileUploader renders correctly without any setup 1`] = `
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files 1`] = `
+exports[`Component FileUploader should render rows for uploaded files 1`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -592,7 +592,7 @@ exports[`FileUploader renders row for uploaded files 1`] = `
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files 2`] = `
+exports[`Component FileUploader should render rows for uploaded files 2`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -1970,7 +1970,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files 3`] = `
+exports[`Component FileUploader should render rows for uploaded files 3`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -2953,7 +2953,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files 4`] = `
+exports[`Component FileUploader should render rows for uploaded files 4`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -3249,7 +3249,7 @@ exports[`FileUploader renders row for uploaded files 4`] = `
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files with access required 1`] = `
+exports[`Component FileUploader should render rows for uploaded files with access required 1`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -3545,7 +3545,7 @@ exports[`FileUploader renders row for uploaded files with access required 1`] = 
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files with access required 2`] = `
+exports[`Component FileUploader should render rows for uploaded files with access required 2`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -7823,7 +7823,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files with access required 3`] = `
+exports[`Component FileUploader should render rows for uploaded files with access required 3`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -12104,7 +12104,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files with access required 4`] = `
+exports[`Component FileUploader should render rows for uploaded files with access required 4`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -17562,7 +17562,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files with access required 5`] = `
+exports[`Component FileUploader should render rows for uploaded files with access required 5`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -23023,7 +23023,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files with default access condition based on quick template Id 1`] = `
+exports[`Component FileUploader should render rows for uploaded files with default access condition based on quick template Id 1`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -23320,7 +23320,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files with default access condition based on quick template Id 2`] = `
+exports[`Component FileUploader should render rows for uploaded files with default access condition based on quick template Id 2`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -24705,7 +24705,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files with default access condition based on quick template Id 3`] = `
+exports[`Component FileUploader should render rows for uploaded files with default access condition based on quick template Id 3`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
@@ -25002,7 +25002,7 @@ exports[`FileUploader renders row for uploaded files with default access conditi
 </FileUploader>
 `;
 
-exports[`FileUploader renders row for uploaded files with default access condition based on quick template Id 4`] = `
+exports[`Component FileUploader should render rows for uploaded files with default access condition based on quick template Id 4`] = `
 <FileUploader
   clearFileUpload={[MockFunction]}
   defaultConfig={
