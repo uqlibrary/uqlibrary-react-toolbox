@@ -85,7 +85,7 @@ export class FileUploadRow extends Component {
 
     render() {
         const {deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateClosedAccess} = this.props.locale;
-        const {access_condition_id} = this.state;
+        const accessConditionId = this.state.access_condition_id;
         return (
             <div className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix">
                 <ConfirmDialogBox
@@ -115,14 +115,14 @@ export class FileUploadRow extends Component {
                     <div className="embargo-date-info">
                         <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
                         {
-                            this.props.requireOpenAccessStatus && !this.isOpenAccess(access_condition_id) && !this.props.defaultAccessConditionIdPresent &&
+                            this.props.requireOpenAccessStatus && !this.isOpenAccess(accessConditionId) && !this.props.defaultAccessConditionIdPresent &&
                             <div className="no-embargo-date">
                                 <span>{embargoDateClosedAccess}</span>
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }
                         {
-                            this.props.requireOpenAccessStatus && this.isOpenAccess(access_condition_id) && !this.props.defaultAccessConditionIdPresent &&
+                            this.props.requireOpenAccessStatus && this.isOpenAccess(accessConditionId) && !this.props.defaultAccessConditionIdPresent &&
                             <div className="embargo-date-selector">
                                 <FileUploadEmbargoDate onDateChanged={this._updateFileMetadata} disabled={this.props.disabled} />
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>

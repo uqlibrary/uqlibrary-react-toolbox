@@ -142,8 +142,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 fileAccessColumn = _props$locale.fileAccessColumn,
                 embargoDateColumn = _props$locale.embargoDateColumn,
                 embargoDateClosedAccess = _props$locale.embargoDateClosedAccess;
-            var access_condition_id = this.state.access_condition_id;
 
+            var accessConditionId = this.state.access_condition_id;
             return _react2.default.createElement(
                 'div',
                 { className: 'columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix' },
@@ -201,7 +201,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         'div',
                         { className: 'embargo-date-info' },
                         _ref3,
-                        this.props.requireOpenAccessStatus && !this.isOpenAccess(access_condition_id) && !this.props.defaultAccessConditionIdPresent && _react2.default.createElement(
+                        this.props.requireOpenAccessStatus && !this.isOpenAccess(accessConditionId) && !this.props.defaultAccessConditionIdPresent && _react2.default.createElement(
                             'div',
                             { className: 'no-embargo-date' },
                             _react2.default.createElement(
@@ -215,7 +215,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                                 embargoDateColumn
                             )
                         ),
-                        this.props.requireOpenAccessStatus && this.isOpenAccess(access_condition_id) && !this.props.defaultAccessConditionIdPresent && _react2.default.createElement(
+                        this.props.requireOpenAccessStatus && this.isOpenAccess(accessConditionId) && !this.props.defaultAccessConditionIdPresent && _react2.default.createElement(
                             'div',
                             { className: 'embargo-date-selector' },
                             _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata, disabled: this.props.disabled }),
