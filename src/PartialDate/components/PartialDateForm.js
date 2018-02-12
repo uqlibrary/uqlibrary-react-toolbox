@@ -126,7 +126,7 @@ class PartialDateForm extends Component {
                         name="day"
                         type="text"
                         maxLength="2"
-                        className={!this.props.allowPartial ? className : ''}
+                        className={!this.props.allowPartial ? className + ' mui-long-labels-fix' : ' mui-long-labels-fix'}
                         fullWidth
                         disabled={this.props.disabled}
                         errorText={this.errors.day}
@@ -143,7 +143,7 @@ class PartialDateForm extends Component {
                         fullWidth
                         disabled={this.props.disabled}
                         value={this.state.month}
-                        className={!this.props.allowPartial ? className : ''}
+                        className={!this.props.allowPartial ? className + ' mui-long-labels-fix' : ' mui-long-labels-fix'}
                         hintText={locale.monthLabel}
                         errorText={this.errors.month}
                         onChange={this._onDateChanged('month')}>
@@ -156,7 +156,7 @@ class PartialDateForm extends Component {
                         name="year"
                         type="text"
                         fullWidth
-                        className={className}
+                        className={className + ' mui-long-labels-fix'}
                         maxLength="4"
                         disabled={this.props.disabled}
                         hintText={locale.yearLabel}

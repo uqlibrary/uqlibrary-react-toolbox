@@ -10,7 +10,7 @@ const TextFieldWrapper = props => {
     delete filteredProps.className;
     return (
         <div style={{position: 'relative', width: '100%'}}>
-            <TextField {...filteredProps} className={`${props.className ? props.className : ''} input-long-hint`} />
+            <TextField {...filteredProps} className={`${props.className ? props.className : ''} mui-long-labels-fix`} />
             {props.help && props.help.text && (
                 <HelpIcon {...props.help} />
             )}

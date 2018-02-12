@@ -127,7 +127,7 @@ export class AutoSuggestField extends Component {
                 fullWidth
                 onUpdateInput={this.textUpdated}
                 onNewRequest={this.valueSelected}
-                className={this.props.className}
+                className={this.props.className + ' mui-long-labels-fix'}
                 dataSourceConfig={this.props.dataSourceConfig}
                 errorText={this.props.errorText}
                 menuProps={{menuItemStyle: {whiteSpace: 'normal', lineHeight: '18px', padding: '8px 0', minHeight: '18px', height: 'auto'}}}

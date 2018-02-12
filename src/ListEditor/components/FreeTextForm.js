@@ -69,7 +69,9 @@ export default class FreeTextForm extends Component {
                         errorText={this.props.isValid(this.state.itemName) || this.props.errorText
                             ? `${this.props.errorText || ''} ${this.props.isValid(this.state.itemName)}`
                             : null}
-                        disabled={this.props.disabled} />
+                        disabled={this.props.disabled}
+                        className="mui-long-labels-fix"
+                    />
                 </div>
                 <div className="column is-narrow">
                     <RaisedButton

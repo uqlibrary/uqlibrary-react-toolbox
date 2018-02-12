@@ -51,6 +51,7 @@ exports[`AutoSuggestField component should render autosuggest field and call act
         }
       }
       animated={true}
+      className="undefined mui-long-labels-fix"
       dataSource={Array []}
       dataSourceConfig={
         Object {
@@ -106,6 +107,7 @@ exports[`AutoSuggestField component should render autosuggest field and call act
       >
         <TextField
           autoComplete="off"
+          className="undefined mui-long-labels-fix"
           disabled={false}
           floatingLabelFixed={false}
           floatingLabelText="Enter text"
@@ -124,6 +126,7 @@ exports[`AutoSuggestField component should render autosuggest field and call act
           value=""
         >
           <div
+            className="undefined mui-long-labels-fix"
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -1619,7 +1622,7 @@ exports[`AutoSuggestField component should render with className set 1`] = `
         }
       }
       animated={true}
-      className="requiredField"
+      className="requiredField mui-long-labels-fix"
       dataSource={Array []}
       dataSourceConfig={
         Object {
@@ -1675,7 +1678,7 @@ exports[`AutoSuggestField component should render with className set 1`] = `
       >
         <TextField
           autoComplete="off"
-          className="requiredField"
+          className="requiredField mui-long-labels-fix"
           disabled={false}
           floatingLabelFixed={false}
           floatingLabelText="Enter text"
@@ -1694,7 +1697,7 @@ exports[`AutoSuggestField component should render with className set 1`] = `
           value=""
         >
           <div
-            className="requiredField"
+            className="requiredField mui-long-labels-fix"
             style={
               Object {
                 "backgroundColor": "transparent",
@@ -3190,6 +3193,7 @@ exports[`AutoSuggestField component should render with disabled flag set to true
         }
       }
       animated={true}
+      className="undefined mui-long-labels-fix"
       dataSource={Array []}
       dataSourceConfig={
         Object {
@@ -3246,6 +3250,7 @@ exports[`AutoSuggestField component should render with disabled flag set to true
       >
         <TextField
           autoComplete="off"
+          className="undefined mui-long-labels-fix"
           disabled={true}
           floatingLabelFixed={false}
           floatingLabelText="Enter text"
@@ -3264,6 +3269,7 @@ exports[`AutoSuggestField component should render with disabled flag set to true
           value=""
         >
           <div
+            className="undefined mui-long-labels-fix"
             style={
               Object {
                 "backgroundColor": "transparent",

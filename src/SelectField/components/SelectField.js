@@ -12,7 +12,7 @@ const SelectFieldWrapper = props => {
     filteredProps.onBlur = () => props.input.onBlur(props.input.value);
     return (
         <div style={{position: 'relative', width: '100%'}}>
-            <SelectField {...filteredProps} />
+            <SelectField {...filteredProps} className="mui-long-labels-fix" />
             {props.help && props.help.text && <HelpIcon {...props.help} />}
         </div>
     );

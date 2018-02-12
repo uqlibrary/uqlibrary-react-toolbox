@@ -8,6 +8,7 @@ exports[`FreeTextForm tests  rendering active form 1`] = `
     className="column"
   >
     <TextField
+      className="mui-long-labels-fix"
       disabled={false}
       errorText={null}
       floatingLabelFixed={false}
@@ -48,6 +49,7 @@ exports[`FreeTextForm tests  rendering disabled form 1`] = `
     className="column"
   >
     <TextField
+      className="mui-long-labels-fix"
       disabled={true}
       errorText={null}
       floatingLabelFixed={false}

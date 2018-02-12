@@ -86,7 +86,9 @@ var FreeTextForm = function (_Component) {
                         onChange: this.onNameChanged,
                         onKeyPress: this.addItem,
                         errorText: this.props.isValid(this.state.itemName) || this.props.errorText ? (this.props.errorText || '') + ' ' + this.props.isValid(this.state.itemName) : null,
-                        disabled: this.props.disabled })
+                        disabled: this.props.disabled,
+                        className: 'mui-long-labels-fix'
+                    })
                 ),
                 _react2.default.createElement(
                     'div',

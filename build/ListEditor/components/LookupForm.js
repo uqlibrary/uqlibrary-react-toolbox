@@ -51,7 +51,9 @@ var LookupForm = function (_Component) {
                         floatingLabelText: this.props.locale.inputFieldLabel,
                         hintText: this.props.locale.inputFieldHint,
                         disabled: this.props.disabled,
-                        errorText: this.props.errorText })
+                        errorText: this.props.errorText,
+                        className: 'mui-long-labels-fix'
+                    })
                 )
             );
         }

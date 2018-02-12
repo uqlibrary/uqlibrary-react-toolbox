@@ -10,7 +10,7 @@ exports[`TextFieldWrapper snapshots tests renders TextField component 1`] = `
   }
 >
   <TextField
-    className=" input-long-hint"
+    className=" mui-long-labels-fix"
     disabled={false}
     floatingLabelFixed={false}
     floatingLabelText="This is a test textfield component"
@@ -34,7 +34,7 @@ exports[`TextFieldWrapper snapshots tests renders TextField component appending 
   }
 >
   <TextField
-    className="requiredField input-long-hint"
+    className="requiredField mui-long-labels-fix"
     disabled={false}
     floatingLabelFixed={false}
     floatingLabelText="This is a test textfield component"

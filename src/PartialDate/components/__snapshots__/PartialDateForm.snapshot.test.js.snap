@@ -13,7 +13,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
     className="column"
   >
     <TextField
-      className=""
+      className=" mui-long-labels-fix"
       disabled={false}
       floatingLabelFixed={false}
       fullWidth={true}
@@ -33,7 +33,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
   >
     <SelectField
       autoWidth={false}
-      className=""
+      className=" mui-long-labels-fix"
       disabled={false}
       dropDownMenuProps={
         Object {
@@ -339,6 +339,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
     className="column"
   >
     <TextField
+      className="undefined mui-long-labels-fix"
       disabled={false}
       floatingLabelFixed={false}
       fullWidth={true}
@@ -370,7 +371,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
     className="column"
   >
     <TextField
-      className=""
+      className=" mui-long-labels-fix"
       disabled={false}
       floatingLabelFixed={false}
       fullWidth={true}
@@ -390,7 +391,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
   >
     <SelectField
       autoWidth={false}
-      className=""
+      className=" mui-long-labels-fix"
       disabled={false}
       dropDownMenuProps={
         Object {
@@ -696,7 +697,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
     className="column"
   >
     <TextField
-      className="requiredField"
+      className="requiredField mui-long-labels-fix"
       disabled={false}
       floatingLabelFixed={false}
       fullWidth={true}
@@ -728,7 +729,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
     className="column"
   >
     <TextField
-      className="requiredField"
+      className="requiredField mui-long-labels-fix"
       disabled={false}
       floatingLabelFixed={false}
       fullWidth={true}
@@ -749,7 +750,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
   >
     <SelectField
       autoWidth={false}
-      className="requiredField"
+      className="requiredField mui-long-labels-fix"
       disabled={false}
       dropDownMenuProps={
         Object {
@@ -1055,7 +1056,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
     className="column"
   >
     <TextField
-      className="requiredField"
+      className="requiredField mui-long-labels-fix"
       disabled={false}
       floatingLabelFixed={false}
       fullWidth={true}
