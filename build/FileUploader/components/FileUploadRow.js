@@ -204,7 +204,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'embargo-date-info' },
-                        _ref3,
+                        this.props.requireOpenAccessStatus && !this.props.defaultAccessConditionIdPresent && _ref3,
                         this.props.requireOpenAccessStatus && !this.isOpenAccess(accessConditionId) && !this.props.defaultAccessConditionIdPresent && _react2.default.createElement(
                             'div',
                             { className: 'no-embargo-date' },
@@ -258,12 +258,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         ),
                         _react2.default.createElement(
                             'div',
-                            { className: 'upload-progress-text' },
-                            _react2.default.createElement(
-                                'span',
-                                { className: 'upload-progress-number' },
-                                this.props.progress + '%'
-                            )
+                            { className: 'upload-progress-number' },
+                            this.props.progress + '%'
                         )
                     ),
                     this.props.progress === 100 && _ref5

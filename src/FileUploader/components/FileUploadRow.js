@@ -113,7 +113,10 @@ export class FileUploadRow extends Component {
                 </div>
                 <div className="column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
                     <div className="embargo-date-info">
-                        <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
+                        {
+                            this.props.requireOpenAccessStatus && !this.props.defaultAccessConditionIdPresent &&
+                            <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
+                        }
                         {
                             this.props.requireOpenAccessStatus && !this.isOpenAccess(accessConditionId) && !this.props.defaultAccessConditionIdPresent &&
                             <div className="no-embargo-date">
@@ -150,9 +153,7 @@ export class FileUploadRow extends Component {
                                     thickness={4}
                                 />
                             </div>
-                            <div className="upload-progress-text">
-                                <span className="upload-progress-number">{`${this.props.progress}%`}</span>
-                            </div>
+                            <div className="upload-progress-number">{`${this.props.progress}%`}</div>
                         </div>
                     }
                     {
