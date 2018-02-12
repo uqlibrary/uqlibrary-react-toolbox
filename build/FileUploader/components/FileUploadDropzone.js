@@ -162,12 +162,29 @@ var FileUploadDropzone = function (_PureComponent) {
         _this._onDrop = function (accepted, rejected, event) {
             /*
              * From droppedEvent dataTransfer items, determine which items are folders
+             * Safari and IE doesn't support event.dataTransfer.items
+             * https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items
+             *
+             * Workaround: check if file doesn't have type set and size is multiple of 4096 bytes
+             *  - This may leave some files without type and size multiple of 4096 to be recognised as folders
+             *  - Or some folders with allowed extensions to be recognized as files
+             *
+             * https://stackoverflow.com/questions/25016442/how-to-distinguish-if-a-file-or-folder-is-being-dragged-prior-to-it-being-droppe
              */
-            var droppedFolders = !!event && Array.prototype.filter.call(event.dataTransfer.items, function (item) {
-                return item.webkitGetAsEntry().isDirectory;
-            }).map(function (item) {
-                return item.webkitGetAsEntry().name;
-            });
+            var droppedFolders = [];
+            if (!!event && !!event.dataTransfer.items) {
+                droppedFolders = Array.prototype.filter.call(event.dataTransfer.items, function (item) {
+                    return item.webkitGetAsEntry().isDirectory;
+                }).map(function (item) {
+                    return item.webkitGetAsEntry().name;
+                });
+            } else if (!!event && !!event.dataTransfer.files) {
+                droppedFolders = Array.prototype.filter.call(event.dataTransfer.files, function (file) {
+                    return !file.type && file.size % 4096 === 0;
+                }).map(function (file) {
+                    return file.name;
+                });
+            }
 
             /*
              * Set error for folder
