@@ -37,7 +37,7 @@ var SelectFieldWrapper = function SelectFieldWrapper(props) {
     return _react2.default.createElement(
         'div',
         { style: { position: 'relative', width: '100%' } },
-        _react2.default.createElement(_SelectField2.default, _extends({}, filteredProps, { className: 'mui-long-labels-fix' })),
+        _react2.default.createElement(_SelectField2.default, _extends({}, filteredProps, { className: (props.className ? props.className : '') + ' mui-long-labels-fix' })),
         props.help && props.help.text && _react2.default.createElement(_HelpDrawer.HelpIcon, props.help)
     );
 };

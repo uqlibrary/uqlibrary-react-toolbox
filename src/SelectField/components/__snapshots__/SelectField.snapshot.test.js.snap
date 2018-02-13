@@ -11,7 +11,7 @@ exports[`SelectfieldWrapper snapshots tests renders SelectField component 1`] = 
 >
   <SelectField
     autoWidth={false}
-    className="mui-long-labels-fix"
+    className=" mui-long-labels-fix"
     disabled={false}
     floatingLabelText="This is a test selectfield component"
     fullWidth={true}

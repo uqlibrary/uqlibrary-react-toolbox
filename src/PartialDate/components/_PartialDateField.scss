@@ -6,7 +6,7 @@
   }
   font-size: $text-body-small;
   color: lighten($secondary-color, 10%);
-  &.required::after {
+  &.required::before {
     content: "*";
     padding-right: 5px;
     padding-left: 5px;
