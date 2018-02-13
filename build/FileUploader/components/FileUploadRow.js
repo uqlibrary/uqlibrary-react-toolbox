@@ -138,11 +138,12 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
     _createClass(FileUploadRow, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            if (this.refs.hasOwnProperty('accessConditionSelector0')) {
-                _reactDom2.default.findDOMNode(this.refs.accessConditionSelector0).getElementsByTagName('button').item(0).focus();
-            } else if (this.refs.hasOwnProperty('fileName0')) {
+            var indexToFocus = this.props.focusOnIndex;
+            if (this.refs.hasOwnProperty('accessConditionSelector' + indexToFocus)) {
+                _reactDom2.default.findDOMNode(this.refs['accessConditionSelector' + indexToFocus]).getElementsByTagName('button').item(0).focus();
+            } else if (this.refs.hasOwnProperty('fileName' + indexToFocus)) {
                 // if access condition is not required, then scroll into filename
-                this.refs.fileName0.scrollIntoView();
+                this.refs['fileName' + indexToFocus].scrollIntoView();
             }
         }
     }, {

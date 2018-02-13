@@ -854,6 +854,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="a.txt"
         onAttributeChanged={[Function]}
@@ -869,6 +870,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
         <FileUploadRow
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -1243,6 +1245,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
       </Connect(FileUploadRow)>
       <Connect(FileUploadRow)
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={1}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -1258,6 +1261,7 @@ exports[`FileUploader renders row for uploaded files 2`] = `
         <FileUploadRow
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={1}
           locale={
             Object {
@@ -2117,6 +2121,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -2132,6 +2137,7 @@ exports[`FileUploader renders row for uploaded files 3`] = `
         <FileUploadRow
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -3367,6 +3373,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="a.txt"
         onAttributeChanged={[Function]}
@@ -3382,6 +3389,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
         <FileUploadRow
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -4041,6 +4049,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -4876,6 +4885,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -5199,6 +5209,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
       </Connect(FileUploadRow)>
       <Connect(FileUploadRow)
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={1}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -5214,6 +5225,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
         <FileUploadRow
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={1}
           locale={
             Object {
@@ -5873,6 +5885,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -6708,6 +6721,7 @@ exports[`FileUploader renders row for uploaded files with access required 2`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -7525,6 +7539,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="a.txt"
         onAttributeChanged={[Function]}
@@ -7541,6 +7556,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
         <FileUploadRow
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -8201,6 +8217,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -9036,6 +9053,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -9359,6 +9377,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
       </Connect(FileUploadRow)>
       <Connect(FileUploadRow)
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={1}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -9374,6 +9393,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
         <FileUploadRow
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={1}
           locale={
             Object {
@@ -10033,6 +10053,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -10868,6 +10889,7 @@ exports[`FileUploader renders row for uploaded files with access required 3`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -11685,6 +11707,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="a.txt"
         onAttributeChanged={[Function]}
@@ -11701,6 +11724,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
         <FileUploadRow
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -12361,6 +12385,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -13196,6 +13221,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -13519,6 +13545,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
       </Connect(FileUploadRow)>
       <Connect(FileUploadRow)
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={1}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -13534,6 +13561,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
         <FileUploadRow
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={1}
           locale={
             Object {
@@ -14193,6 +14221,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -15028,6 +15057,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -15997,6 +16027,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                           "color": "#ffffff",
                           "rippleBackgroundColor": "#616161",
                         },
+                        "userAgent": undefined,
                         "zIndex": Object {
                           "appBar": 1100,
                           "dialog": 1500,
@@ -16444,6 +16475,7 @@ exports[`FileUploader renders row for uploaded files with access required 4`] = 
                           "color": "#ffffff",
                           "rippleBackgroundColor": "#616161",
                         },
+                        "userAgent": undefined,
                         "zIndex": Object {
                           "appBar": 1100,
                           "dialog": 1500,
@@ -17021,6 +17053,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
       </FileUploadRowHeader>
       <Connect(FileUploadRow)
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="a.txt"
         onAttributeChanged={[Function]}
@@ -17038,6 +17071,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
         <FileUploadRow
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -17699,6 +17733,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -18534,6 +18569,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -18857,6 +18893,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
       </Connect(FileUploadRow)>
       <Connect(FileUploadRow)
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={1}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -18872,6 +18909,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
         <FileUploadRow
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={1}
           locale={
             Object {
@@ -19531,6 +19569,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -20366,6 +20405,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                                   "color": "#ffffff",
                                   "rippleBackgroundColor": "#616161",
                                 },
+                                "userAgent": undefined,
                                 "zIndex": Object {
                                   "appBar": 1100,
                                   "dialog": 1500,
@@ -21335,6 +21375,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                           "color": "#ffffff",
                           "rippleBackgroundColor": "#616161",
                         },
+                        "userAgent": undefined,
                         "zIndex": Object {
                           "appBar": 1100,
                           "dialog": 1500,
@@ -21782,6 +21823,7 @@ exports[`FileUploader renders row for uploaded files with access required 5`] = 
                           "color": "#ffffff",
                           "rippleBackgroundColor": "#616161",
                         },
+                        "userAgent": undefined,
                         "zIndex": Object {
                           "appBar": 1100,
                           "dialog": 1500,

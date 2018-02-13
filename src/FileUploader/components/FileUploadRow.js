@@ -25,7 +25,8 @@ export class FileUploadRow extends Component {
         progress: PropTypes.number,
         requireFileAccess: PropTypes.bool.isRequired,
         fileSizeUnit: PropTypes.string,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
+        focusOnIndex: PropTypes.number
     };
 
     static defaultProps = {
@@ -53,11 +54,12 @@ export class FileUploadRow extends Component {
     }
 
     componentDidMount() {
-        if (this.refs.hasOwnProperty('accessConditionSelector0')) {
-            ReactDOM.findDOMNode(this.refs.accessConditionSelector0).getElementsByTagName('button').item(0).focus();
-        } else if (this.refs.hasOwnProperty('fileName0')) {
+        const indexToFocus = this.props.focusOnIndex;
+        if (this.refs.hasOwnProperty(`accessConditionSelector${indexToFocus}`)) {
+            ReactDOM.findDOMNode(this.refs[`accessConditionSelector${indexToFocus}`]).getElementsByTagName('button').item(0).focus();
+        } else if (this.refs.hasOwnProperty(`fileName${indexToFocus}`)) {
             // if access condition is not required, then scroll into filename
-            this.refs.fileName0.scrollIntoView();
+            this.refs[`fileName${indexToFocus}`].scrollIntoView();
         }
     }
 

@@ -546,6 +546,7 @@ exports[`AutoSuggestField component should render autosuggest field and call act
                     "color": "#ffffff",
                     "rippleBackgroundColor": "#616161",
                   },
+                  "userAgent": undefined,
                   "zIndex": Object {
                     "appBar": 1100,
                     "dialog": 1500,
@@ -993,6 +994,7 @@ exports[`AutoSuggestField component should render autosuggest field and call act
                     "color": "#ffffff",
                     "rippleBackgroundColor": "#616161",
                   },
+                  "userAgent": undefined,
                   "zIndex": Object {
                     "appBar": 1100,
                     "dialog": 1500,
@@ -1467,6 +1469,7 @@ exports[`AutoSuggestField component should render autosuggest field and call act
                     "color": "#ffffff",
                     "rippleBackgroundColor": "#616161",
                   },
+                  "userAgent": undefined,
                   "zIndex": Object {
                     "appBar": 1100,
                     "dialog": 1500,
@@ -2114,6 +2117,7 @@ exports[`AutoSuggestField component should render with className set 1`] = `
                     "color": "#ffffff",
                     "rippleBackgroundColor": "#616161",
                   },
+                  "userAgent": undefined,
                   "zIndex": Object {
                     "appBar": 1100,
                     "dialog": 1500,
@@ -2561,6 +2565,7 @@ exports[`AutoSuggestField component should render with className set 1`] = `
                     "color": "#ffffff",
                     "rippleBackgroundColor": "#616161",
                   },
+                  "userAgent": undefined,
                   "zIndex": Object {
                     "appBar": 1100,
                     "dialog": 1500,
@@ -3035,6 +3040,7 @@ exports[`AutoSuggestField component should render with className set 1`] = `
                     "color": "#ffffff",
                     "rippleBackgroundColor": "#616161",
                   },
+                  "userAgent": undefined,
                   "zIndex": Object {
                     "appBar": 1100,
                     "dialog": 1500,
@@ -3680,6 +3686,7 @@ exports[`AutoSuggestField component should render with disabled flag set to true
                     "color": "#ffffff",
                     "rippleBackgroundColor": "#616161",
                   },
+                  "userAgent": undefined,
                   "zIndex": Object {
                     "appBar": 1100,
                     "dialog": 1500,
@@ -4127,6 +4134,7 @@ exports[`AutoSuggestField component should render with disabled flag set to true
                     "color": "#ffffff",
                     "rippleBackgroundColor": "#616161",
                   },
+                  "userAgent": undefined,
                   "zIndex": Object {
                     "appBar": 1100,
                     "dialog": 1500,
@@ -4601,6 +4609,7 @@ exports[`AutoSuggestField component should render with disabled flag set to true
                     "color": "#ffffff",
                     "rippleBackgroundColor": "#616161",
                   },
+                  "userAgent": undefined,
                   "zIndex": Object {
                     "appBar": 1100,
                     "dialog": 1500,
