@@ -31,7 +31,6 @@ class FileUploadDropzone extends PureComponent {
     componentWillReceiveProps(nextProps) {
         this.clearAccepted();
         this.add(nextProps.uploadedFiles);
-        this.resetErrors();
 
         if (nextProps.clearErrors) this.processErrors(this.errors);
     }
@@ -212,8 +211,8 @@ class FileUploadDropzone extends PureComponent {
          */
         const {maxFiles} = this.props;
         if (this.accepted.size > maxFiles) {
-            this.props.onDropped([...this.accepted.values()].slice(0, maxFiles));
             this.setError('maxFiles', [...this.accepted.values()].slice(maxFiles));
+            this.props.onDropped([...this.accepted.values()].slice(0, maxFiles));
         } else {
             this.props.onDropped([...this.accepted.values()]);
         }
@@ -248,8 +247,8 @@ class FileUploadDropzone extends PureComponent {
             droppedFolders =  Array.prototype.filter.call(event.dataTransfer.items, (item) => (item.webkitGetAsEntry().isDirectory))
                 .map((item) => item.webkitGetAsEntry().name);
             this.handleDroppedFiles([...accepted], [...rejected], [...droppedFolders]);
-        } else if (!!event && !!event.dataTransfer && !!event.dataTransfer.files) {
-            this.getDroppedFolders(event.dataTransfer.files).then(result => {
+        } else {
+            this.getDroppedFolders([...accepted]).then(result => {
                 droppedFolders = result.filter(folder => !!folder);
                 this.handleDroppedFiles([...accepted], [...rejected], [...droppedFolders]);
             });

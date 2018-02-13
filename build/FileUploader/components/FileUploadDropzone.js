@@ -206,8 +206,8 @@ var FileUploadDropzone = function (_PureComponent) {
             var maxFiles = _this.props.maxFiles;
 
             if (_this.accepted.size > maxFiles) {
-                _this.props.onDropped([].concat(_toConsumableArray(_this.accepted.values())).slice(0, maxFiles));
                 _this.setError('maxFiles', [].concat(_toConsumableArray(_this.accepted.values())).slice(maxFiles));
+                _this.props.onDropped([].concat(_toConsumableArray(_this.accepted.values())).slice(0, maxFiles));
             } else {
                 _this.props.onDropped([].concat(_toConsumableArray(_this.accepted.values())));
             }
@@ -238,8 +238,8 @@ var FileUploadDropzone = function (_PureComponent) {
                     return item.webkitGetAsEntry().name;
                 });
                 _this.handleDroppedFiles([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(rejected)), [].concat(_toConsumableArray(droppedFolders)));
-            } else if (!!event && !!event.dataTransfer && !!event.dataTransfer.files) {
-                _this.getDroppedFolders(event.dataTransfer.files).then(function (result) {
+            } else {
+                _this.getDroppedFolders([].concat(_toConsumableArray(accepted))).then(function (result) {
                     droppedFolders = result.filter(function (folder) {
                         return !!folder;
                     });
@@ -269,7 +269,6 @@ var FileUploadDropzone = function (_PureComponent) {
         value: function componentWillReceiveProps(nextProps) {
             this.clearAccepted();
             this.add(nextProps.uploadedFiles);
-            this.resetErrors();
 
             if (nextProps.clearErrors) this.processErrors(this.errors);
         }
