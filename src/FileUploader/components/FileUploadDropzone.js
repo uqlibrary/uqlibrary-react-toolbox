@@ -12,7 +12,8 @@ class FileUploadDropzone extends PureComponent {
         uploadedFiles: PropTypes.array,
         locale: PropTypes.object.isRequired,
         clearErrors: PropTypes.bool,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
+        fileNameRestrictions: PropTypes.array.isRequired,
     };
 
     constructor(props) {
@@ -80,6 +81,11 @@ class FileUploadDropzone extends PureComponent {
         const length = file.name.length > 45;
         if (length) {
             this.setError('fileNameLength', file);
+        }
+
+        const restriction = this.props.fileNameRestrictions.filter(startsWith => file.name.toLowerCase().startsWith(startsWith)).length > 0;
+        if (restriction) {
+            this.setError('fileNameRestriction', file);
         }
 
         const space = file.name.split(' ').length > 1;

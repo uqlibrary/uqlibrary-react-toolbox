@@ -272,7 +272,8 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             var _props$defaultConfig = this.props.defaultConfig,
                 maxFileSize = _props$defaultConfig.maxFileSize,
                 fileSizeUnit = _props$defaultConfig.fileSizeUnit,
-                fileUploadLimit = _props$defaultConfig.fileUploadLimit;
+                fileUploadLimit = _props$defaultConfig.fileUploadLimit,
+                fileNameRestrictions = _props$defaultConfig.fileNameRestrictions;
             var _props = this.props,
                 requireOpenAccessStatus = _props.requireOpenAccessStatus,
                 overallProgress = _props.overallProgress;
@@ -310,6 +311,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     locale: this.props.locale,
                     maxSize: this.calculateMaxFileSize(),
                     maxFiles: fileUploadLimit,
+                    fileNameRestrictions: fileNameRestrictions,
                     disabled: this.props.disabled || uploadedFiles.length === fileUploadLimit,
                     onDropped: this._setUploadedFiles,
                     uploadedFiles: uploadedFiles,
@@ -349,8 +351,8 @@ FileUploader.defaultProps = {
         instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
         accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
         validation: {
-            single: (_single = {}, _defineProperty(_single, 'folder', 'Invalid file ([filename])'), _defineProperty(_single, 'fileName', 'Invalid file name ([filename])'), _defineProperty(_single, 'fileNameLength', 'Filename ([filename]) is too long'), _defineProperty(_single, 'maxFileSize', 'File ([filename]) is too big'), _defineProperty(_single, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'), _single),
-            multiple: (_multiple = {}, _defineProperty(_multiple, 'folder', 'Invalid files ([filenames])'), _defineProperty(_multiple, 'fileName', '[numberOfFiles] files ([filenames]) have an invalid file name'), _defineProperty(_multiple, 'fileNameLength', '[numberOfFiles] filenames ([filenames]) are too long'), _defineProperty(_multiple, 'maxFileSize', '[numberOfFiles] files ([filenames]) are too big'), _defineProperty(_multiple, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'), _multiple)
+            single: (_single = {}, _defineProperty(_single, 'folder', 'Invalid file ([filename])'), _defineProperty(_single, 'fileName', 'Invalid file name ([filename])'), _defineProperty(_single, 'fileNameLength', 'Filename ([filename]) is too long'), _defineProperty(_single, 'maxFileSize', 'File ([filename]) is too big'), _defineProperty(_single, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'), _defineProperty(_single, 'fileNameRestriction', 'File ([filename]) has some file naming restrictions'), _single),
+            multiple: (_multiple = {}, _defineProperty(_multiple, 'folder', 'Invalid files ([filenames])'), _defineProperty(_multiple, 'fileName', '[numberOfFiles] files ([filenames]) have an invalid file name'), _defineProperty(_multiple, 'fileNameLength', '[numberOfFiles] filenames ([filenames]) are too long'), _defineProperty(_multiple, 'maxFileSize', '[numberOfFiles] files ([filenames]) are too big'), _defineProperty(_multiple, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'), _defineProperty(_multiple, 'fileNameRestriction', '[numberOfFiles] files ([filenames]) have some file naming restrictions'), _multiple)
         },
         errorTitle: 'Upload Errors',
         fileUploadRestrictionHeading: _react2.default.createElement(
@@ -396,7 +398,8 @@ FileUploader.defaultProps = {
     defaultConfig: {
         fileUploadLimit: 10,
         maxFileSize: 5,
-        fileSizeUnit: 'G'
+        fileSizeUnit: 'G',
+        fileNameRestrictions: ['web_', 'preview_', 'thumbnail_', 'stream_', 'fezacml_', 'presmd_']
     },
     requireOpenAccessStatus: false
 };

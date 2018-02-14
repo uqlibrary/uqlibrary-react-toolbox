@@ -50,14 +50,16 @@ export class FileUploader extends PureComponent {
                     ['fileName']: 'Invalid file name ([filename])',
                     ['fileNameLength']: 'Filename ([filename]) is too long',
                     ['maxFileSize']: 'File ([filename]) is too big',
-                    ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'
+                    ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored',
+                    ['fileNameRestriction']: 'File ([filename]) has some file naming restrictions'
                 },
                 multiple: {
                     ['folder']: 'Invalid files ([filenames])',
                     ['fileName']: '[numberOfFiles] files ([filenames]) have an invalid file name',
                     ['fileNameLength']: '[numberOfFiles] filenames ([filenames]) are too long',
                     ['maxFileSize']: '[numberOfFiles] files ([filenames]) are too big',
-                    ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'
+                    ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored',
+                    ['fileNameRestriction']: '[numberOfFiles] files ([filenames]) have some file naming restrictions'
                 }
             },
             errorTitle: 'Upload Errors',
@@ -80,7 +82,8 @@ export class FileUploader extends PureComponent {
         defaultConfig: {
             fileUploadLimit: 10,
             maxFileSize: 5,
-            fileSizeUnit: 'G'
+            fileSizeUnit: 'G',
+            fileNameRestrictions: ['web_', 'preview_', 'thumbnail_', 'stream_', 'fezacml_', 'presmd_'],
         },
         requireOpenAccessStatus: false
     };
@@ -245,7 +248,7 @@ export class FileUploader extends PureComponent {
 
     render() {
         const {instructions, accessTermsAndConditions} = this.props.locale;
-        const {maxFileSize, fileSizeUnit, fileUploadLimit} = this.props.defaultConfig;
+        const {maxFileSize, fileSizeUnit, fileUploadLimit, fileNameRestrictions} = this.props.defaultConfig;
         const {requireOpenAccessStatus, overallProgress} = this.props;
         const {uploadedFiles, clearErrors, termsAndConditions} = this.state;
 
@@ -277,6 +280,7 @@ export class FileUploader extends PureComponent {
                     locale={this.props.locale}
                     maxSize={this.calculateMaxFileSize()}
                     maxFiles={fileUploadLimit}
+                    fileNameRestrictions={fileNameRestrictions}
                     disabled={this.props.disabled || uploadedFiles.length === fileUploadLimit}
                     onDropped={this._setUploadedFiles}
                     uploadedFiles={uploadedFiles}

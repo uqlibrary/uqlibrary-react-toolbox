@@ -5,6 +5,14 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -42,6 +50,7 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -49,6 +58,7 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -68,6 +78,16 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -100,6 +120,7 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -107,6 +128,7 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -191,6 +213,7 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -198,6 +221,7 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -301,6 +325,14 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -338,6 +370,7 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -345,6 +378,7 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -364,6 +398,16 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -396,6 +440,7 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -403,6 +448,7 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -487,6 +533,7 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -494,6 +541,7 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -597,6 +645,14 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -634,6 +690,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -641,6 +698,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -660,6 +718,16 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -692,6 +760,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -699,6 +768,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -794,6 +864,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -801,6 +872,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -1933,6 +2005,14 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -1970,6 +2050,7 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -1977,6 +2058,7 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -1996,6 +2078,16 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
     <FileUploadDropzone
       clearErrors={true}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -2028,6 +2120,7 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -2035,6 +2128,7 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -2126,6 +2220,7 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -2133,6 +2228,7 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -2895,6 +2991,14 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -2932,6 +3036,7 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -2939,6 +3044,7 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -2958,6 +3064,16 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
     <FileUploadDropzone
       clearErrors={true}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -2990,6 +3106,7 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -2997,6 +3114,7 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -3081,6 +3199,7 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -3088,6 +3207,7 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -3191,6 +3311,14 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -3228,6 +3356,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -3235,6 +3364,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -3254,6 +3384,16 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -3286,6 +3426,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -3293,6 +3434,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -3377,6 +3519,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -3384,6 +3527,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -3487,6 +3631,14 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -3524,6 +3676,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -3531,6 +3684,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -3550,6 +3704,16 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -3582,6 +3746,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -3589,6 +3754,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -3684,6 +3850,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -3691,6 +3858,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -7773,6 +7941,14 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -7810,6 +7986,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -7817,6 +7994,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -7836,6 +8014,16 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     <FileUploadDropzone
       clearErrors={true}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -7868,6 +8056,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -7875,6 +8064,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -7971,6 +8161,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -7978,6 +8169,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -12062,6 +12254,14 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -12099,6 +12299,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -12106,6 +12307,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -12125,6 +12327,16 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     <FileUploadDropzone
       clearErrors={true}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -12157,6 +12369,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -12164,6 +12377,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -12260,6 +12474,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -12267,6 +12482,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -17528,6 +17744,14 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -17565,6 +17789,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -17572,6 +17797,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -17591,6 +17817,16 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     <FileUploadDropzone
       clearErrors={true}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -17623,6 +17859,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -17630,6 +17867,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -17727,6 +17965,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -17734,6 +17973,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -22997,6 +23237,14 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -23035,6 +23283,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -23042,6 +23291,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -23061,6 +23311,16 @@ exports[`Component FileUploader should render rows for uploaded files with defau
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -23093,6 +23353,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -23100,6 +23361,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -23184,6 +23446,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -23191,6 +23454,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -23294,6 +23558,14 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -23332,6 +23604,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -23339,6 +23612,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -23358,6 +23632,16 @@ exports[`Component FileUploader should render rows for uploaded files with defau
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -23390,6 +23674,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -23397,6 +23682,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -23494,6 +23780,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -23501,6 +23788,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -24637,6 +24925,14 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -24675,6 +24971,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -24682,6 +24979,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -24701,6 +24999,16 @@ exports[`Component FileUploader should render rows for uploaded files with defau
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -24733,6 +25041,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -24740,6 +25049,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -24824,6 +25134,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -24831,6 +25142,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -24934,6 +25246,14 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
+      "fileNameRestrictions": Array [
+        "web_",
+        "preview_",
+        "thumbnail_",
+        "stream_",
+        "fezacml_",
+        "presmd_",
+      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -24972,6 +25292,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
         "multiple": Object {
           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -24979,6 +25300,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
         "single": Object {
           "fileName": "Invalid file name ([filename])",
           "fileNameLength": "Filename ([filename]) is too long",
+          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
           "folder": "Invalid file ([filename])",
           "maxFileSize": "File ([filename]) is too big",
           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -24998,6 +25320,16 @@ exports[`Component FileUploader should render rows for uploaded files with defau
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
+      fileNameRestrictions={
+        Array [
+          "web_",
+          "preview_",
+          "thumbnail_",
+          "stream_",
+          "fezacml_",
+          "presmd_",
+        ]
+      }
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -25030,6 +25362,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
             "multiple": Object {
               "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
               "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+              "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
               "folder": "Invalid files ([filenames])",
               "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -25037,6 +25370,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
             "single": Object {
               "fileName": "Invalid file name ([filename])",
               "fileNameLength": "Filename ([filename]) is too long",
+              "fileNameRestriction": "File ([filename]) has some file naming restrictions",
               "folder": "Invalid file ([filename])",
               "maxFileSize": "File ([filename]) is too big",
               "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
@@ -25132,6 +25466,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
                         "multiple": Object {
                           "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
                           "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+                          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
                           "folder": "Invalid files ([filenames])",
                           "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
@@ -25139,6 +25474,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
                         "single": Object {
                           "fileName": "Invalid file name ([filename])",
                           "fileNameLength": "Filename ([filename]) is too long",
+                          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
                           "folder": "Invalid file ([filename])",
                           "maxFileSize": "File ([filename]) is too big",
                           "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",

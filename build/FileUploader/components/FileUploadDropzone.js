@@ -71,6 +71,13 @@ var FileUploadDropzone = function (_PureComponent) {
                 _this.setError('fileNameLength', file);
             }
 
+            var restriction = _this.props.fileNameRestrictions.filter(function (startsWith) {
+                return file.name.toLowerCase().startsWith(startsWith);
+            }).length > 0;
+            if (restriction) {
+                _this.setError('fileNameRestriction', file);
+            }
+
             var space = file.name.split(' ').length > 1;
             if (space) {
                 _this.setError('fileName', file);

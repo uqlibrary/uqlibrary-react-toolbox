@@ -10,14 +10,16 @@ const locale = {
             ['fileName']: 'Invalid file name ([filename])',
             ['fileNameLength']: 'Filename ([filename]) is too long',
             ['maxFileSize']: 'File ([filename]) is too big',
-            ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'
+            ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored',
+            ['fileNameRestriction']: 'File ([filename]) has some file naming restrictions'
         },
         multiple: {
             ['folder']: 'Invalid files ([filenames])',
             ['fileName']: '[numberOfFiles] files ([filenames]) have an invalid file name',
             ['fileNameLength']: '[numberOfFiles] filenames ([filenames]) are too long',
             ['maxFileSize']: '[numberOfFiles] files ([filenames]) are too big',
-            ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'
+            ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored',
+            ['fileNameRestriction']: '[numberOfFiles] files ([filenames]) have some file naming restrictions'
         }
     },
     errorTitle: 'Upload Errors',
@@ -150,7 +152,8 @@ describe('Component FileUploadDropzone', () => {
             maxFiles: 5,
             uploadedFiles: [],
             clearErrors: false,
-            locale: locale
+            locale: locale,
+            fileNameRestrictions: ['web_']
         };
         const wrapper = setup({...props});
 
@@ -175,6 +178,21 @@ describe('Component FileUploadDropzone', () => {
             {
                 type: '',
                 name: 'test',
+                size: 100
+            },
+            {
+                type: 'text/text',
+                name: 'web_a.txt',
+                size: 100
+            },
+            {
+                type: 'text/text',
+                name: 'WEB_b.txt',
+                size: 100
+            },
+            {
+                type: 'text/text',
+                name: 'Web_c.txt',
                 size: 100
             }
         ];
