@@ -30,22 +30,10 @@ exports[`Component FileUploadDropzone should open files selection dialog 1`] = `
         </ul>
       </div>,
       "validation": Object {
-        "multiple": Object {
-          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
-          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
-          "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
-          "folder": "Invalid files ([filenames])",
-          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
-          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
-        },
-        "single": Object {
-          "fileName": "Invalid file name ([filename])",
-          "fileNameLength": "Filename ([filename]) is too long",
-          "fileNameRestriction": "File ([filename]) has some file naming restrictions",
-          "folder": "Invalid file ([filename])",
-          "maxFileSize": "File ([filename]) is too big",
-          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
-        },
+        "fileName": "File(s) ([filenames]) have invalid file name",
+        "folder": "Invalid files ([filenames])",
+        "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+        "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
       },
     }
   }
@@ -121,22 +109,10 @@ exports[`Component FileUploadDropzone should open files selection dialog 1`] = `
                     </ul>
                   </div>,
                   "validation": Object {
-                    "multiple": Object {
-                      "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
-                      "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
-                      "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
-                      "folder": "Invalid files ([filenames])",
-                      "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
-                      "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
-                    },
-                    "single": Object {
-                      "fileName": "Invalid file name ([filename])",
-                      "fileNameLength": "Filename ([filename]) is too long",
-                      "fileNameRestriction": "File ([filename]) has some file naming restrictions",
-                      "folder": "Invalid file ([filename])",
-                      "maxFileSize": "File ([filename]) is too big",
-                      "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
-                    },
+                    "fileName": "File(s) ([filenames]) have invalid file name",
+                    "folder": "Invalid files ([filenames])",
+                    "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+                    "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
                   },
                 }
               }
@@ -274,22 +250,10 @@ exports[`Component FileUploadDropzone should render correctly without any setup 
                 </ul>
               </div>,
               "validation": Object {
-                "multiple": Object {
-                  "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
-                  "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
-                  "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
-                  "folder": "Invalid files ([filenames])",
-                  "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
-                  "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
-                },
-                "single": Object {
-                  "fileName": "Invalid file name ([filename])",
-                  "fileNameLength": "Filename ([filename]) is too long",
-                  "fileNameRestriction": "File ([filename]) has some file naming restrictions",
-                  "folder": "Invalid file ([filename])",
-                  "maxFileSize": "File ([filename]) is too big",
-                  "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
-                },
+                "fileName": "File(s) ([filenames]) have invalid file name",
+                "folder": "Invalid files ([filenames])",
+                "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
               },
             }
           }
@@ -353,22 +317,10 @@ exports[`Component FileUploadDropzone should render files discarding folders 1`]
                 </ul>
               </div>,
               "validation": Object {
-                "multiple": Object {
-                  "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
-                  "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
-                  "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
-                  "folder": "Invalid files ([filenames])",
-                  "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
-                  "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
-                },
-                "single": Object {
-                  "fileName": "Invalid file name ([filename])",
-                  "fileNameLength": "Filename ([filename]) is too long",
-                  "fileNameRestriction": "File ([filename]) has some file naming restrictions",
-                  "folder": "Invalid file ([filename])",
-                  "maxFileSize": "File ([filename]) is too big",
-                  "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
-                },
+                "fileName": "File(s) ([filenames]) have invalid file name",
+                "folder": "Invalid files ([filenames])",
+                "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
               },
             }
           }
@@ -432,22 +384,10 @@ exports[`Component FileUploadDropzone should render files discarding folders 2`]
                 </ul>
               </div>,
               "validation": Object {
-                "multiple": Object {
-                  "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
-                  "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
-                  "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
-                  "folder": "Invalid files ([filenames])",
-                  "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
-                  "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
-                },
-                "single": Object {
-                  "fileName": "Invalid file name ([filename])",
-                  "fileNameLength": "Filename ([filename]) is too long",
-                  "fileNameRestriction": "File ([filename]) has some file naming restrictions",
-                  "folder": "Invalid file ([filename])",
-                  "maxFileSize": "File ([filename]) is too big",
-                  "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
-                },
+                "fileName": "File(s) ([filenames]) have invalid file name",
+                "folder": "Invalid files ([filenames])",
+                "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
               },
             }
           }
@@ -457,7 +397,7 @@ exports[`Component FileUploadDropzone should render files discarding folders 2`]
   </div>
   <Alert
     allowDismiss={false}
-    message="Invalid file (test); Invalid file name (a.text.txt); 3 files (web_a.txt, WEB_b.txt, Web_c.txt) have some file naming restrictions"
+    message="Invalid files (test); File(s) (a.text.txt, web_a.txt, WEB_b.txt, Web_c.txt) have invalid file name"
     title="Upload Errors"
     type="error"
   />
@@ -517,22 +457,10 @@ exports[`Component FileUploadDropzone should render row for uploaded files 1`] =
                 </ul>
               </div>,
               "validation": Object {
-                "multiple": Object {
-                  "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
-                  "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
-                  "fileNameRestriction": "[numberOfFiles] files ([filenames]) have some file naming restrictions",
-                  "folder": "Invalid files ([filenames])",
-                  "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
-                  "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
-                },
-                "single": Object {
-                  "fileName": "Invalid file name ([filename])",
-                  "fileNameLength": "Filename ([filename]) is too long",
-                  "fileNameRestriction": "File ([filename]) has some file naming restrictions",
-                  "folder": "Invalid file ([filename])",
-                  "maxFileSize": "File ([filename]) is too big",
-                  "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
-                },
+                "fileName": "File(s) ([filenames]) have invalid file name",
+                "folder": "Invalid files ([filenames])",
+                "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
               },
             }
           }

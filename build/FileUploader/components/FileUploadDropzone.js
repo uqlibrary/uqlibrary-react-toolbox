@@ -62,28 +62,18 @@ var FileUploadDropzone = function (_PureComponent) {
 
         _this.validate = function (file) {
             var twoPeriod = file.name.split('.').length > 2;
-            if (twoPeriod) {
-                _this.setError('fileName', file);
-            }
-
+            var space = file.name.split(' ').length > 1;
             var length = file.name.length > 45;
-            if (length) {
-                _this.setError('fileNameLength', file);
-            }
-
             var restriction = _this.props.fileNameRestrictions.filter(function (startsWith) {
                 return file.name.toLowerCase().startsWith(startsWith);
             }).length > 0;
-            if (restriction) {
-                _this.setError('fileNameRestriction', file);
-            }
 
-            var space = file.name.split(' ').length > 1;
-            if (space) {
+            if (twoPeriod || space || length || restriction) {
                 _this.setError('fileName', file);
+                return true;
             }
 
-            return length || twoPeriod || space;
+            return false;
         };
 
         _this.setError = function (errorType, file) {
@@ -99,9 +89,7 @@ var FileUploadDropzone = function (_PureComponent) {
         };
 
         _this.processErrors = function (errors) {
-            var _this$props$locale$va = _this.props.locale.validation,
-                single = _this$props$locale$va.single,
-                multiple = _this$props$locale$va.multiple;
+            var validation = _this.props.locale.validation;
 
             var errorMessages = [];
             var message = void 0;
@@ -112,10 +100,8 @@ var FileUploadDropzone = function (_PureComponent) {
                     fileNames.push(file.name);
                 });
 
-                if (files.length > 1) {
-                    message = multiple[errorCode].replace('[numberOfFiles]', files.length).replace('[filenames]', fileNames.join(', '));
-                } else if (files.length === 1) {
-                    message = single[errorCode].replace('[filename]', fileNames.join(', '));
+                if (files.length > 0) {
+                    message = validation[errorCode].replace('[numberOfFiles]', files.length).replace('[filenames]', fileNames.join(', '));
                 }
 
                 if (errorCode === 'maxFiles') {

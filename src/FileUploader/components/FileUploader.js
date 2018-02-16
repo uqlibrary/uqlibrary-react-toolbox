@@ -45,22 +45,10 @@ export class FileUploader extends PureComponent {
             instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
             accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
             validation: {
-                single: {
-                    ['folder']: 'Invalid file ([filename])',
-                    ['fileName']: 'Invalid file name ([filename])',
-                    ['fileNameLength']: 'Filename ([filename]) is too long',
-                    ['maxFileSize']: 'File ([filename]) is too big',
-                    ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored',
-                    ['fileNameRestriction']: 'File ([filename]) has some file naming restrictions'
-                },
-                multiple: {
-                    ['folder']: 'Invalid files ([filenames])',
-                    ['fileName']: '[numberOfFiles] files ([filenames]) have an invalid file name',
-                    ['fileNameLength']: '[numberOfFiles] filenames ([filenames]) are too long',
-                    ['maxFileSize']: '[numberOfFiles] files ([filenames]) are too big',
-                    ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored',
-                    ['fileNameRestriction']: '[numberOfFiles] files ([filenames]) have some file naming restrictions'
-                }
+                ['folder']: 'Invalid files ([filenames])',
+                ['fileName']: 'File(s) ([filenames]) have invalid file name',
+                ['maxFileSize']: 'File(s) ([filenames]) exceed maximum allowed upload file size',
+                ['maxFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded',
             },
             errorTitle: 'Upload Errors',
             fileUploadRestrictionHeading: (<h3>File upload restrictions</h3>),

@@ -7,7 +7,7 @@ exports.FileUploader = exports.sizeBase = exports.sizeUnitText = exports.sizeExp
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _sizeExponent, _sizeUnitText, _single, _multiple;
+var _sizeExponent, _sizeUnitText, _validation;
 
 var _react = require('react');
 
@@ -350,10 +350,7 @@ FileUploader.defaultProps = {
     locale: {
         instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
         accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
-        validation: {
-            single: (_single = {}, _defineProperty(_single, 'folder', 'Invalid file ([filename])'), _defineProperty(_single, 'fileName', 'Invalid file name ([filename])'), _defineProperty(_single, 'fileNameLength', 'Filename ([filename]) is too long'), _defineProperty(_single, 'maxFileSize', 'File ([filename]) is too big'), _defineProperty(_single, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'), _defineProperty(_single, 'fileNameRestriction', 'File ([filename]) has some file naming restrictions'), _single),
-            multiple: (_multiple = {}, _defineProperty(_multiple, 'folder', 'Invalid files ([filenames])'), _defineProperty(_multiple, 'fileName', '[numberOfFiles] files ([filenames]) have an invalid file name'), _defineProperty(_multiple, 'fileNameLength', '[numberOfFiles] filenames ([filenames]) are too long'), _defineProperty(_multiple, 'maxFileSize', '[numberOfFiles] files ([filenames]) are too big'), _defineProperty(_multiple, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'), _defineProperty(_multiple, 'fileNameRestriction', '[numberOfFiles] files ([filenames]) have some file naming restrictions'), _multiple)
-        },
+        validation: (_validation = {}, _defineProperty(_validation, 'folder', 'Invalid files ([filenames])'), _defineProperty(_validation, 'fileName', 'File(s) ([filenames]) have invalid file name'), _defineProperty(_validation, 'maxFileSize', 'File(s) ([filenames]) exceed maximum allowed upload file size'), _defineProperty(_validation, 'maxFiles', 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded'), _validation),
         errorTitle: 'Upload Errors',
         fileUploadRestrictionHeading: _react2.default.createElement(
             'h3',

@@ -74,26 +74,16 @@ class FileUploadDropzone extends PureComponent {
      */
     validate = (file) => {
         const twoPeriod = file.name.split('.').length > 2;
-        if (twoPeriod) {
-            this.setError('fileName', file);
-        }
-
-        const length = file.name.length > 45;
-        if (length) {
-            this.setError('fileNameLength', file);
-        }
-
-        const restriction = this.props.fileNameRestrictions.filter(startsWith => file.name.toLowerCase().startsWith(startsWith)).length > 0;
-        if (restriction) {
-            this.setError('fileNameRestriction', file);
-        }
-
         const space = file.name.split(' ').length > 1;
-        if (space) {
+        const length = file.name.length > 45;
+        const restriction = this.props.fileNameRestrictions.filter(startsWith => file.name.toLowerCase().startsWith(startsWith)).length > 0;
+
+        if (twoPeriod || space || length || restriction) {
             this.setError('fileName', file);
+            return true;
         }
 
-        return length || twoPeriod || space;
+        return false;
     };
 
     /**
@@ -119,7 +109,7 @@ class FileUploadDropzone extends PureComponent {
      * @private
      */
     processErrors = (errors) => {
-        const {single, multiple} = this.props.locale.validation;
+        const {validation} = this.props.locale;
         const errorMessages = [];
         let message;
 
@@ -129,12 +119,10 @@ class FileUploadDropzone extends PureComponent {
                 fileNames.push(file.name);
             });
 
-            if (files.length > 1) {
-                message = multiple[errorCode]
+            if (files.length > 0) {
+                message = validation[errorCode]
                     .replace('[numberOfFiles]', files.length)
                     .replace('[filenames]', fileNames.join(', '));
-            } else if (files.length === 1) {
-                message = single[errorCode].replace('[filename]', fileNames.join(', '));
             }
 
             if (errorCode === 'maxFiles') {
