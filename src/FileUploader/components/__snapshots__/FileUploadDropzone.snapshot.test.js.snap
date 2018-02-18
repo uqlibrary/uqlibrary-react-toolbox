@@ -3,6 +3,7 @@
 exports[`Component FileUploadDropzone should open files selection dialog 1`] = `
 <FileUploadDropzone
   clearErrors={false}
+  fileNameRestrictions={/\\^\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/gi}
   locale={
     Object {
       "errorTitle": "Upload Errors",
