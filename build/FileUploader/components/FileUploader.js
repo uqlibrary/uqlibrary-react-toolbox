@@ -90,7 +90,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this._setUploadedFiles = function (files) {
-            _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)), clearErrors: false });
+            _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)), clearErrors: false, focusOnIndex: files.length + _this.state.uploadedFiles.length - files.length });
         };
 
         _this._acceptTermsAndConditions = function (event, value) {
@@ -288,7 +288,8 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     onDelete: _this2._deleteFile,
                     onAttributeChanged: _this2._replaceFile,
                     requireFileAccess: requireFileAccess,
-                    disabled: _this2.props.disabled
+                    disabled: _this2.props.disabled,
+                    focusOnIndex: _this2.state.focusOnIndex
                 });
             });
 

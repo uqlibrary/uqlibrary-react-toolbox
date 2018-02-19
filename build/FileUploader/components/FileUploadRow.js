@@ -138,11 +138,12 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
     _createClass(FileUploadRow, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            if (this.refs.hasOwnProperty('accessConditionSelector0')) {
-                _reactDom2.default.findDOMNode(this.refs.accessConditionSelector0).getElementsByTagName('button').item(0).focus();
-            } else if (this.refs.hasOwnProperty('fileName0')) {
+            var indexToFocus = this.props.focusOnIndex;
+            if (this.refs.hasOwnProperty('accessConditionSelector' + indexToFocus)) {
+                _reactDom2.default.findDOMNode(this.refs['accessConditionSelector' + indexToFocus]).getElementsByTagName('button').item(0).focus();
+            } else if (this.refs.hasOwnProperty('fileName' + indexToFocus)) {
                 // if access condition is not required, then scroll into filename
-                this.refs.fileName0.scrollIntoView();
+                this.refs['fileName' + indexToFocus].scrollIntoView();
             }
         }
     }, {
@@ -156,8 +157,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 fileAccessColumn = _props$locale.fileAccessColumn,
                 embargoDateColumn = _props$locale.embargoDateColumn,
                 embargoDateClosedAccess = _props$locale.embargoDateClosedAccess;
-            var access_condition_id = this.state.access_condition_id;
 
+            var accessConditionId = this.state.access_condition_id;
             return _react2.default.createElement(
                 'div',
                 { className: 'columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix' },
@@ -215,7 +216,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         'div',
                         { className: 'embargo-date-info' },
                         _ref3,
-                        this.props.requireFileAccess && !this.isOpenAccess(access_condition_id) && _react2.default.createElement(
+                        this.props.requireFileAccess && !this.isOpenAccess(accessConditionId) && _react2.default.createElement(
                             'div',
                             { className: 'no-embargo-date' },
                             _react2.default.createElement(
@@ -229,7 +230,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                                 embargoDateColumn
                             )
                         ),
-                        this.props.requireFileAccess && this.isOpenAccess(access_condition_id) && _react2.default.createElement(
+                        this.props.requireFileAccess && this.isOpenAccess(accessConditionId) && _react2.default.createElement(
                             'div',
                             { className: 'embargo-date-selector' },
                             _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata, disabled: this.props.disabled }),

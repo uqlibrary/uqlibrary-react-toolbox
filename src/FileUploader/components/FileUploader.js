@@ -117,7 +117,7 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _setUploadedFiles = (files) => {
-        this.setState({uploadedFiles: [...files], clearErrors: false});
+        this.setState({uploadedFiles: [...files], clearErrors: false, focusOnIndex: (files.length + this.state.uploadedFiles.length) - files.length});
     };
 
     /**
@@ -229,6 +229,7 @@ export class FileUploader extends PureComponent {
                     onAttributeChanged={this._replaceFile}
                     requireFileAccess={requireFileAccess}
                     disabled={this.props.disabled}
+                    focusOnIndex={this.state.focusOnIndex}
                 />
             );
         });
