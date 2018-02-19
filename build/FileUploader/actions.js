@@ -21,6 +21,13 @@ var notifyProgress = exports.notifyProgress = function notifyProgress(name, prog
     };
 };
 
+var notifyFileUploadProgress = exports.notifyFileUploadProgress = function notifyFileUploadProgress(name, dispatch) {
+    return function (event) {
+        var progress = Math.floor(event.loaded * 100 / event.total);
+        dispatch(notifyProgress(name, progress));
+    };
+};
+
 /**
  * Notify file upload failed for individual file
  *
