@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import FontIcon from 'material-ui/FontIcon';
@@ -51,6 +52,15 @@ export class FileUploadRow extends Component {
         };
     }
 
+    componentDidMount() {
+        if (this.refs.hasOwnProperty('accessConditionSelector0')) {
+            ReactDOM.findDOMNode(this.refs.accessConditionSelector0).getElementsByTagName('button').item(0).focus();
+        } else if (this.refs.hasOwnProperty('fileName0')) {
+            // if access condition is not required, then scroll into filename
+            this.refs.fileName0.scrollIntoView();
+        }
+    }
+
     _showConfirmation = () => {
         this.confirmationBox.showConfirmation();
     };
@@ -93,7 +103,7 @@ export class FileUploadRow extends Component {
                     locale={deleteRecordConfirmation} />
                 <div className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile">
                     <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">attachment</FontIcon>
-                    <div className="file-name">
+                    <div className="file-name" ref={`fileName${this.props.index}`}>
                         <span className="truncated">{this.props.uploadedFile.name} ({this.calculateFilesizeToDisplay(this.props.uploadedFile.size)})</span>
                         <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{filenameColumn}</span>
                     </div>
@@ -104,7 +114,7 @@ export class FileUploadRow extends Component {
                             <div className="file-access-selector">
                                 <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
                                 <div className="select-container">
-                                    <FileUploadAccessSelector onAccessChanged={this._updateFileMetadata} disabled={this.props.disabled} />
+                                    <FileUploadAccessSelector onAccessChanged={this._updateFileMetadata} disabled={this.props.disabled} ref={`accessConditionSelector${this.props.index}`} />
                                     <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{fileAccessColumn}</span>
                                 </div>
                             </div>

@@ -62,7 +62,7 @@ export default class FileUploadAccessSelector extends Component {
                 onChange={this._onChange}
                 errorText={this.state.value === null ? errorMessage : ''}
                 floatingLabelFixed
-                disabled = {this.props.disabled}
+                disabled={this.props.disabled}
                 value={this.state.value}>
                 {accessOptions}
             </SelectField>

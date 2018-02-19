@@ -11,6 +11,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
 var _reactRedux = require('react-redux');
 
 var _propTypes = require('prop-types');
@@ -132,6 +136,16 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
     }
 
     _createClass(FileUploadRow, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            if (this.refs.hasOwnProperty('accessConditionSelector0')) {
+                _reactDom2.default.findDOMNode(this.refs.accessConditionSelector0).getElementsByTagName('button').item(0).focus();
+            } else if (this.refs.hasOwnProperty('fileName0')) {
+                // if access condition is not required, then scroll into filename
+                this.refs.fileName0.scrollIntoView();
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
@@ -159,7 +173,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                     _ref,
                     _react2.default.createElement(
                         'div',
-                        { className: 'file-name' },
+                        { className: 'file-name', ref: 'fileName' + this.props.index },
                         _react2.default.createElement(
                             'span',
                             { className: 'truncated' },
@@ -185,7 +199,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'select-container' },
-                            _react2.default.createElement(_FileUploadAccessSelector2.default, { onAccessChanged: this._updateFileMetadata, disabled: this.props.disabled }),
+                            _react2.default.createElement(_FileUploadAccessSelector2.default, { onAccessChanged: this._updateFileMetadata, disabled: this.props.disabled, ref: 'accessConditionSelector' + this.props.index }),
                             _react2.default.createElement(
                                 'span',
                                 { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },
