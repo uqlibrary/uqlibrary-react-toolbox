@@ -17,7 +17,7 @@ class FileUploadDropzone extends PureComponent {
     };
 
     static defaultProps = {
-        fileNameRestrictions: /^(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/gi
+        fileNameRestrictions: /^(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
     };
 
     constructor(props) {
@@ -77,12 +77,9 @@ class FileUploadDropzone extends PureComponent {
      * @private
      */
     validate = (file) => {
-        const twoPeriod = file.name.split('.').length > 2;
-        const space = file.name.split(' ').length > 1;
-        const length = file.name.length > 45;
-        const restriction = (new RegExp(this.props.fileNameRestrictions, 'i')).test(file.name);
+        const restriction = (new RegExp(this.props.fileNameRestrictions, 'gi')).test(file.name);
 
-        if (twoPeriod || space || length || restriction) {
+        if (restriction) {
             this.setError('fileName', file);
             return true;
         }

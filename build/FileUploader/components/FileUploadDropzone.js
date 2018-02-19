@@ -61,12 +61,9 @@ var FileUploadDropzone = function (_PureComponent) {
         };
 
         _this.validate = function (file) {
-            var twoPeriod = file.name.split('.').length > 2;
-            var space = file.name.split(' ').length > 1;
-            var length = file.name.length > 45;
-            var restriction = new RegExp(_this.props.fileNameRestrictions, 'i').test(file.name);
+            var restriction = new RegExp(_this.props.fileNameRestrictions, 'gi').test(file.name);
 
-            if (twoPeriod || space || length || restriction) {
+            if (restriction) {
                 _this.setError('fileName', file);
                 return true;
             }
@@ -393,6 +390,6 @@ var FileUploadDropzone = function (_PureComponent) {
 }(_react.PureComponent);
 
 FileUploadDropzone.defaultProps = {
-    fileNameRestrictions: /^(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/gi
+    fileNameRestrictions: /^(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
 };
 exports.default = FileUploadDropzone;
