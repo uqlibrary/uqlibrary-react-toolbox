@@ -243,7 +243,7 @@ class FileUploadDropzone extends PureComponent {
                 .map((item) => item.webkitGetAsEntry().name);
             this.handleDroppedFiles([...accepted], [...rejected], [...droppedFolders]);
         } else {
-            return this.getDroppedFolders([...accepted]).then(result => {
+            this.getDroppedFolders([...accepted]).then(result => {
                 droppedFolders = result.filter(folder => !!folder);
                 this.handleDroppedFiles([...accepted], [...rejected], [...droppedFolders]);
             });

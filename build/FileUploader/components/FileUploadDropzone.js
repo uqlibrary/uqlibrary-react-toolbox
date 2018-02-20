@@ -227,7 +227,7 @@ var FileUploadDropzone = function (_PureComponent) {
                 });
                 _this.handleDroppedFiles([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(rejected)), [].concat(_toConsumableArray(droppedFolders)));
             } else {
-                return _this.getDroppedFolders([].concat(_toConsumableArray(accepted))).then(function (result) {
+                _this.getDroppedFolders([].concat(_toConsumableArray(accepted))).then(function (result) {
                     droppedFolders = result.filter(function (folder) {
                         return !!folder;
                     });
