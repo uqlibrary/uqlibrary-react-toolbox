@@ -95,7 +95,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     return file.access_condition_id = _this.props.defaultQuickTemplateId;
                 });
             }
-            _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)), clearErrors: false });
+            _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)), clearErrors: false, focusOnIndex: files.length + _this.state.uploadedFiles.length - files.length });
         };
 
         _this._acceptTermsAndConditions = function (event, value) {
@@ -295,7 +295,8 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     onAttributeChanged: _this2._replaceFile,
                     requireOpenAccessStatus: requireOpenAccessStatus,
                     defaultAccessConditionIdPresent: !!_this2.props.defaultQuickTemplateId,
-                    disabled: _this2.props.disabled
+                    disabled: _this2.props.disabled,
+                    focusOnIndex: _this2.state.focusOnIndex
                 });
             });
 

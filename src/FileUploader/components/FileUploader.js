@@ -143,7 +143,7 @@ export class FileUploader extends PureComponent {
         if (!!this.props.defaultQuickTemplateId && !this.props.requireOpenAccessStatus) {
             files.map((file) => (file.access_condition_id = this.props.defaultQuickTemplateId));
         }
-        this.setState({uploadedFiles: [...files], clearErrors: false});
+        this.setState({uploadedFiles: [...files], clearErrors: false, focusOnIndex: (files.length + this.state.uploadedFiles.length) - files.length});
     };
 
     /**
@@ -256,6 +256,7 @@ export class FileUploader extends PureComponent {
                     requireOpenAccessStatus={requireOpenAccessStatus}
                     defaultAccessConditionIdPresent={!!this.props.defaultQuickTemplateId}
                     disabled={this.props.disabled}
+                    focusOnIndex={this.state.focusOnIndex}
                 />
             );
         });

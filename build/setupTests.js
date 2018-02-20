@@ -50,6 +50,7 @@ var getElement = function getElement(component) {
 
 // React Enzyme adapter
 _enzyme2.default.configure({ adapter: new _enzymeAdapterReact2.default() });
+window.HTMLElement.prototype.scrollIntoView = function () {};
 
 // Make Enzyme functions available in all test files without importing
 global.shallow = _enzyme.shallow;

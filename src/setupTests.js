@@ -26,6 +26,7 @@ const getElement = (component, isShallow = true) => {
 
 // React Enzyme adapter
 Enzyme.configure({ adapter: new Adapter() });
+window.HTMLElement.prototype.scrollIntoView = function() {};
 
 // Make Enzyme functions available in all test files without importing
 global.shallow = shallow;

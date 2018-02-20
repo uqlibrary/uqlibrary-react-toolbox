@@ -907,6 +907,12 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
             Filename
           </div>
           <div
+            className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header"
+          />
+          <div
+            className="column datalist-title is-2-desktop is-2-tablet is-12-mobile header"
+          />
+          <div
             className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header is-centered is-vcentered"
           >
             <IconButton
@@ -1099,6 +1105,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="a.txt"
         onAttributeChanged={[Function]}
@@ -1115,6 +1122,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
           defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -1469,6 +1477,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={1}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -1485,6 +1494,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
           defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={1}
           locale={
             Object {
@@ -2210,6 +2220,12 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
             Filename
           </div>
           <div
+            className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header"
+          />
+          <div
+            className="column datalist-title is-2-desktop is-2-tablet is-12-mobile header"
+          />
+          <div
             className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header is-centered is-vcentered"
           >
             <IconButton
@@ -2402,6 +2418,7 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -2418,6 +2435,7 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
           defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -3883,6 +3901,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="a.txt"
         onAttributeChanged={[Function]}
@@ -3899,6 +3918,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -5723,6 +5743,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={1}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -5739,6 +5760,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={1}
           locale={
             Object {
@@ -8141,6 +8163,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="a.txt"
         onAttributeChanged={[Function]}
@@ -8158,6 +8181,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -9983,6 +10007,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={1}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -9999,6 +10024,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={1}
           locale={
             Object {
@@ -12401,6 +12427,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="a.txt"
         onAttributeChanged={[Function]}
@@ -12418,6 +12445,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -14243,6 +14271,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={1}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -14259,6 +14288,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={1}
           locale={
             Object {
@@ -17839,6 +17869,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="a.txt"
         onAttributeChanged={[Function]}
@@ -17857,6 +17888,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -19683,6 +19715,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={false}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={1}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -19699,6 +19732,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           defaultAccessConditionIdPresent={false}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={1}
           locale={
             Object {
@@ -23346,6 +23380,12 @@ exports[`Component FileUploader should render rows for uploaded files with defau
             Filename
           </div>
           <div
+            className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header"
+          />
+          <div
+            className="column datalist-title is-2-desktop is-2-tablet is-12-mobile header"
+          />
+          <div
             className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header is-centered is-vcentered"
           >
             <IconButton
@@ -23538,6 +23578,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={true}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="a.txt"
         onAttributeChanged={[Function]}
@@ -23555,6 +23596,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
           defaultAccessConditionIdPresent={true}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -23910,6 +23952,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={true}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={1}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -23927,6 +23970,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
           defaultAccessConditionIdPresent={true}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={1}
           locale={
             Object {
@@ -24926,6 +24970,12 @@ exports[`Component FileUploader should render rows for uploaded files with defau
             Filename
           </div>
           <div
+            className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header"
+          />
+          <div
+            className="column datalist-title is-2-desktop is-2-tablet is-12-mobile header"
+          />
+          <div
             className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header is-centered is-vcentered"
           >
             <IconButton
@@ -25118,6 +25168,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={true}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={0}
         key="a.txt"
         onAttributeChanged={[Function]}
@@ -25134,6 +25185,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
           defaultAccessConditionIdPresent={true}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={0}
           locale={
             Object {
@@ -25488,6 +25540,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
       <Connect(FileUploadRow)
         defaultAccessConditionIdPresent={true}
         fileSizeUnit="G"
+        focusOnIndex={0}
         index={1}
         key="b.txt"
         onAttributeChanged={[Function]}
@@ -25504,6 +25557,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
           defaultAccessConditionIdPresent={true}
           dispatch={[Function]}
           fileSizeUnit="G"
+          focusOnIndex={0}
           index={1}
           locale={
             Object {

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import FontIcon from 'material-ui/FontIcon';
@@ -25,6 +26,7 @@ export class FileUploadRow extends Component {
         requireOpenAccessStatus: PropTypes.bool.isRequired,
         fileSizeUnit: PropTypes.string,
         disabled: PropTypes.bool,
+        focusOnIndex: PropTypes.number,
         defaultAccessConditionIdPresent: PropTypes.bool
     };
 
@@ -50,6 +52,16 @@ export class FileUploadRow extends Component {
             access_condition_id: null,
             date: null
         };
+    }
+
+    componentDidMount() {
+        const indexToFocus = this.props.focusOnIndex;
+        if (this.refs.hasOwnProperty(`accessConditionSelector${indexToFocus}`)) {
+            ReactDOM.findDOMNode(this.refs[`accessConditionSelector${indexToFocus}`]).getElementsByTagName('button').item(0).focus();
+        } else if (this.refs.hasOwnProperty(`fileName${indexToFocus}`)) {
+            // if access condition is not required, then scroll into filename
+            this.refs[`fileName${indexToFocus}`].scrollIntoView();
+        }
     }
 
     _showConfirmation = () => {
@@ -94,7 +106,7 @@ export class FileUploadRow extends Component {
                     locale={deleteRecordConfirmation} />
                 <div className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile">
                     <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">attachment</FontIcon>
-                    <div className="file-name">
+                    <div className="file-name" ref={`fileName${this.props.index}`}>
                         <span className="truncated">{this.props.uploadedFile.name} ({this.calculateFilesizeToDisplay(this.props.uploadedFile.size)})</span>
                         <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{filenameColumn}</span>
                     </div>
@@ -105,7 +117,7 @@ export class FileUploadRow extends Component {
                             <div className="file-access-selector">
                                 <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
                                 <div className="select-container">
-                                    <FileUploadAccessSelector onAccessChanged={this._updateFileMetadata} disabled={this.props.disabled} />
+                                    <FileUploadAccessSelector onAccessChanged={this._updateFileMetadata} disabled={this.props.disabled} ref={`accessConditionSelector${this.props.index}`} />
                                     <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{fileAccessColumn}</span>
                                 </div>
                             </div>
