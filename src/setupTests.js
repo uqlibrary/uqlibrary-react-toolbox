@@ -11,7 +11,6 @@ import 'babel-polyfill';
 import {Provider} from 'react-redux';
 import Immutable from 'immutable';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {MemoryRouter} from 'react-router-dom';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -88,9 +87,7 @@ const getElement = (component, props, isShallow = true) => {
     if (isShallow) return shallow(React.createElement(component, props));
     return mount(
         <Provider store={setupStoreForMount().store}>
-            {/*<MemoryRouter>*/}
-                {React.createElement(component, props)}
-            {/*</MemoryRouter>*/}
+            {React.createElement(component, props)}
         </Provider>,
         {
             context: {

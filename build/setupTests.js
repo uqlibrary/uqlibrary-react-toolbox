@@ -36,8 +36,6 @@ var _getMuiTheme = require('material-ui/styles/getMuiTheme');
 
 var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
 
-var _reactRouterDom = require('react-router-dom');
-
 var _reduxThunk = require('redux-thunk');
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
@@ -52,12 +50,12 @@ var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* eslint-disable */
 var setupStoreForActions = function setupStoreForActions() {
     var middlewares = [_reduxThunk2.default];
     var mockStore = (0, _reduxMockStore2.default)(middlewares);
     return mockStore({});
-};
+}; /* eslint-disable */
+
 
 var setupStoreForMount = function setupStoreForMount() {
     var initialState = _immutable2.default.Map();
