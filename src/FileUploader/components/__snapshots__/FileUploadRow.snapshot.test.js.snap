@@ -21,7 +21,7 @@ exports[`FileUploadRow renders correctly with file upload success 1`] = `
   onAttributeChanged={[MockFunction]}
   onDelete={[MockFunction]}
   progress={100}
-  requireOpenAccessStatus={false}
+  requireFileAccess={false}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -156,21 +156,14 @@ exports[`FileUploadRow renders correctly with file upload success 1`] = `
     >
       <div
         className="embargo-date-info"
-      />
-    </div>
-    <div
-      className="column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered"
-    >
-      <div
-        className="upload-progress"
       >
         <FontIcon
-          className="material-icons green-tick"
+          className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
         >
           <span
-            className="material-icons green-tick"
+            className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             style={
@@ -185,11 +178,35 @@ exports[`FileUploadRow renders correctly with file upload success 1`] = `
               }
             }
           >
-            done
+            date_range
           </span>
         </FontIcon>
       </div>
     </div>
+    <FontIcon
+      className="material-icons green-tick"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <span
+        className="material-icons green-tick"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.87)",
+            "display": "inline-block",
+            "fontSize": 24,
+            "muiPrepared": true,
+            "position": "relative",
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "userSelect": "none",
+          }
+        }
+      >
+        done
+      </span>
+    </FontIcon>
   </div>
 </FileUploadRow>
 `;
@@ -215,7 +232,7 @@ exports[`FileUploadRow renders correctly with uploaded file 1`] = `
   onAttributeChanged={[MockFunction]}
   onDelete={[MockFunction]}
   progress={0}
-  requireOpenAccessStatus={false}
+  requireFileAccess={false}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -350,34 +367,82 @@ exports[`FileUploadRow renders correctly with uploaded file 1`] = `
     >
       <div
         className="embargo-date-info"
-      />
+      >
+        <FontIcon
+          className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <span
+            className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "inline-block",
+                "fontSize": 24,
+                "muiPrepared": true,
+                "position": "relative",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "userSelect": "none",
+              }
+            }
+          >
+            date_range
+          </span>
+        </FontIcon>
+      </div>
     </div>
     <div
-      className="column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered"
+      className="column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless"
     >
-      <div
-        className="datalist-buttons"
+      <IconButton
+        disableTouchRipple={false}
+        disabled={false}
+        iconStyle={Object {}}
+        onTouchTap={[Function]}
+        tooltip="Remove this file"
+        tooltipPosition="bottom-center"
+        touch={false}
       >
-        <IconButton
+        <EnhancedButton
+          centerRipple={true}
+          containerElement="button"
           disableTouchRipple={false}
           disabled={false}
-          iconStyle={Object {}}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onKeyboardFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOut={[Function]}
+          onTouchStart={[Function]}
           onTouchTap={[Function]}
-          tooltip="Remove this file"
-          tooltipPosition="bottom-center"
-          touch={false}
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "fontSize": 0,
+              "height": 48,
+              "overflow": "visible",
+              "padding": 12,
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "width": 48,
+            }
+          }
+          tabIndex={0}
+          type="button"
         >
-          <EnhancedButton
-            centerRipple={true}
-            containerElement="button"
-            disableTouchRipple={false}
+          <button
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onKeyUp={[Function]}
-            onKeyboardFocus={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             onMouseOut={[Function]}
@@ -385,164 +450,137 @@ exports[`FileUploadRow renders correctly with uploaded file 1`] = `
             onTouchTap={[Function]}
             style={
               Object {
+                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "background": "none",
+                "border": 10,
                 "boxSizing": "border-box",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fontFamily": "Roboto, sans-serif",
                 "fontSize": 0,
+                "fontWeight": "inherit",
                 "height": 48,
+                "margin": 0,
+                "muiPrepared": true,
+                "outline": "none",
                 "overflow": "visible",
                 "padding": 12,
+                "position": "relative",
+                "textDecoration": "none",
                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "verticalAlign": null,
                 "width": 48,
+                "zIndex": 1,
               }
             }
             tabIndex={0}
             type="button"
           >
-            <button
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
+            <TouchRipple
+              abortOnScroll={true}
+              centerRipple={true}
+              key="touchRipple"
             >
-              <TouchRipple
-                abortOnScroll={true}
-                centerRipple={true}
-                key="touchRipple"
+              <div
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
               >
-                <div
-                  onMouseDown={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
+                <Tooltip
+                  horizontalPosition="center"
+                  label="Remove this file"
+                  show={false}
+                  style={
+                    Object {
+                      "boxSizing": "border-box",
+                    }
+                  }
+                  touch={false}
+                  verticalPosition="bottom"
                 >
-                  <Tooltip
-                    horizontalPosition="center"
-                    label="Remove this file"
-                    show={false}
+                  <div
                     style={
                       Object {
+                        "borderRadius": 2,
                         "boxSizing": "border-box",
+                        "color": "#ffffff",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": "10px",
+                        "left": 24,
+                        "lineHeight": "22px",
+                        "muiPrepared": true,
+                        "opacity": 0,
+                        "overflow": "hidden",
+                        "padding": "0 8px",
+                        "position": "absolute",
+                        "right": null,
+                        "top": -10000,
+                        "transition": "top 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "userSelect": "none",
+                        "zIndex": 3000,
                       }
                     }
-                    touch={false}
-                    verticalPosition="bottom"
                   >
                     <div
                       style={
                         Object {
-                          "borderRadius": 2,
-                          "boxSizing": "border-box",
-                          "color": "#ffffff",
-                          "fontFamily": "Roboto, sans-serif",
-                          "fontSize": "10px",
-                          "left": 24,
-                          "lineHeight": "22px",
+                          "backgroundColor": "transparent",
+                          "borderRadius": "50%",
+                          "left": "50%",
                           "muiPrepared": true,
-                          "opacity": 0,
-                          "overflow": "hidden",
-                          "padding": "0 8px",
                           "position": "absolute",
-                          "right": null,
-                          "top": -10000,
-                          "transition": "top 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "userSelect": "none",
-                          "zIndex": 3000,
+                          "top": 0,
+                          "transform": "translate(-50%, -50%)",
+                          "transition": "width 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, height 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, backgroundColor 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         }
                       }
-                    >
-                      <div
-                        style={
-                          Object {
-                            "backgroundColor": "transparent",
-                            "borderRadius": "50%",
-                            "left": "50%",
-                            "muiPrepared": true,
-                            "position": "absolute",
-                            "top": 0,
-                            "transform": "translate(-50%, -50%)",
-                            "transition": "width 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, height 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, backgroundColor 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          }
-                        }
-                      />
-                      <span
-                        style={
-                          Object {
-                            "muiPrepared": true,
-                            "position": "relative",
-                            "whiteSpace": "nowrap",
-                          }
-                        }
-                      >
-                        Remove this file
-                      </span>
-                    </div>
-                  </Tooltip>
-                  <FontIcon
-                    className="material-icons deleteIcon"
-                    key=".0"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
-                    style={Object {}}
-                  >
+                    />
                     <span
-                      className="material-icons deleteIcon"
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
                       style={
                         Object {
-                          "color": "rgba(0, 0, 0, 0.87)",
-                          "display": "inline-block",
-                          "fontSize": 24,
                           "muiPrepared": true,
                           "position": "relative",
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "userSelect": "none",
+                          "whiteSpace": "nowrap",
                         }
                       }
                     >
-                      delete
+                      Remove this file
                     </span>
-                  </FontIcon>
-                </div>
-              </TouchRipple>
-            </button>
-          </EnhancedButton>
-        </IconButton>
-      </div>
+                  </div>
+                </Tooltip>
+                <FontIcon
+                  className="material-icons deleteIcon"
+                  key=".0"
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={Object {}}
+                >
+                  <span
+                    className="material-icons deleteIcon"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "display": "inline-block",
+                        "fontSize": 24,
+                        "muiPrepared": true,
+                        "position": "relative",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "userSelect": "none",
+                      }
+                    }
+                  >
+                    delete
+                  </span>
+                </FontIcon>
+              </div>
+            </TouchRipple>
+          </button>
+        </EnhancedButton>
+      </IconButton>
     </div>
   </div>
 </FileUploadRow>
@@ -569,7 +607,7 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
   onAttributeChanged={[MockFunction]}
   onDelete={[MockFunction]}
   progress={50}
-  requireOpenAccessStatus={false}
+  requireFileAccess={false}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -704,91 +742,105 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
     >
       <div
         className="embargo-date-info"
-      />
+      >
+        <FontIcon
+          className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <span
+            className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "inline-block",
+                "fontSize": 24,
+                "muiPrepared": true,
+                "position": "relative",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "userSelect": "none",
+              }
+            }
+          >
+            date_range
+          </span>
+        </FontIcon>
+      </div>
     </div>
     <div
-      className="column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered"
+      className="upload-progress-wrapper"
     >
-      <div
-        className="upload-progress-info"
+      <CircularProgress
+        className="upload-progress"
+        max={100}
+        min={0}
+        mode="determinate"
+        size={20}
+        thickness={4}
+        value={50}
       >
         <div
           className="upload-progress"
+          max={100}
+          min={0}
+          mode="determinate"
+          style={
+            Object {
+              "display": "inline-block",
+              "height": 20,
+              "muiPrepared": true,
+              "position": "relative",
+              "width": 20,
+            }
+          }
+          value={50}
         >
-          <CircularProgress
-            max={100}
-            min={0}
-            mode="determinate"
-            size={20}
-            thickness={4}
-            value={50}
+          <div
+            style={
+              Object {
+                "display": "inline-block",
+                "height": 20,
+                "muiPrepared": true,
+                "transition": "20s transform linear 0ms",
+                "transitionTimingFunction": "linear",
+                "width": 20,
+              }
+            }
           >
-            <div
-              max={100}
-              min={0}
-              mode="determinate"
+            <svg
               style={
                 Object {
-                  "display": "inline-block",
                   "height": 20,
                   "muiPrepared": true,
                   "position": "relative",
                   "width": 20,
                 }
               }
-              value={50}
+              viewBox="0 0 20 20"
             >
-              <div
+              <circle
+                cx={10}
+                cy={10}
+                fill="none"
+                r={8}
+                strokeMiterlimit="20"
+                strokeWidth={4}
                 style={
                   Object {
-                    "display": "inline-block",
-                    "height": 20,
                     "muiPrepared": true,
-                    "transition": "20s transform linear 0ms",
-                    "transitionTimingFunction": "linear",
-                    "width": 20,
+                    "stroke": "#00bcd4",
+                    "strokeDasharray": "25.132741228718345, 50.26548245743669",
+                    "strokeLinecap": "round",
+                    "transition": "0.3s all linear 0ms",
                   }
                 }
-              >
-                <svg
-                  style={
-                    Object {
-                      "height": 20,
-                      "muiPrepared": true,
-                      "position": "relative",
-                      "width": 20,
-                    }
-                  }
-                  viewBox="0 0 20 20"
-                >
-                  <circle
-                    cx={10}
-                    cy={10}
-                    fill="none"
-                    r={8}
-                    strokeMiterlimit="20"
-                    strokeWidth={4}
-                    style={
-                      Object {
-                        "muiPrepared": true,
-                        "stroke": "#00bcd4",
-                        "strokeDasharray": "25.132741228718345, 50.26548245743669",
-                        "strokeLinecap": "round",
-                        "transition": "0.3s all linear 0ms",
-                      }
-                    }
-                  />
-                </svg>
-              </div>
-            </div>
-          </CircularProgress>
+              />
+            </svg>
+          </div>
         </div>
-        <div
-          className="upload-progress-number"
-        >
-          50%
-        </div>
-      </div>
+      </CircularProgress>
     </div>
   </div>
 </FileUploadRow>
@@ -815,7 +867,7 @@ exports[`FileUploadRow shows confirmation on delete file 1`] = `
   onAttributeChanged={[MockFunction]}
   onDelete={[MockFunction]}
   progress={0}
-  requireOpenAccessStatus={false}
+  requireFileAccess={false}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -950,34 +1002,82 @@ exports[`FileUploadRow shows confirmation on delete file 1`] = `
     >
       <div
         className="embargo-date-info"
-      />
+      >
+        <FontIcon
+          className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <span
+            className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "inline-block",
+                "fontSize": 24,
+                "muiPrepared": true,
+                "position": "relative",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "userSelect": "none",
+              }
+            }
+          >
+            date_range
+          </span>
+        </FontIcon>
+      </div>
     </div>
     <div
-      className="column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered"
+      className="column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless"
     >
-      <div
-        className="datalist-buttons"
+      <IconButton
+        disableTouchRipple={false}
+        disabled={false}
+        iconStyle={Object {}}
+        onTouchTap={[Function]}
+        tooltip="Remove this file"
+        tooltipPosition="bottom-center"
+        touch={false}
       >
-        <IconButton
+        <EnhancedButton
+          centerRipple={true}
+          containerElement="button"
           disableTouchRipple={false}
           disabled={false}
-          iconStyle={Object {}}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onKeyboardFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOut={[Function]}
+          onTouchStart={[Function]}
           onTouchTap={[Function]}
-          tooltip="Remove this file"
-          tooltipPosition="bottom-center"
-          touch={false}
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "fontSize": 0,
+              "height": 48,
+              "overflow": "visible",
+              "padding": 12,
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "width": 48,
+            }
+          }
+          tabIndex={0}
+          type="button"
         >
-          <EnhancedButton
-            centerRipple={true}
-            containerElement="button"
-            disableTouchRipple={false}
+          <button
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onKeyUp={[Function]}
-            onKeyboardFocus={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             onMouseOut={[Function]}
@@ -985,164 +1085,137 @@ exports[`FileUploadRow shows confirmation on delete file 1`] = `
             onTouchTap={[Function]}
             style={
               Object {
+                "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                "background": "none",
+                "border": 10,
                 "boxSizing": "border-box",
+                "cursor": "pointer",
+                "display": "inline-block",
+                "fontFamily": "Roboto, sans-serif",
                 "fontSize": 0,
+                "fontWeight": "inherit",
                 "height": 48,
+                "margin": 0,
+                "muiPrepared": true,
+                "outline": "none",
                 "overflow": "visible",
                 "padding": 12,
+                "position": "relative",
+                "textDecoration": "none",
                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "verticalAlign": null,
                 "width": 48,
+                "zIndex": 1,
               }
             }
             tabIndex={0}
             type="button"
           >
-            <button
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
+            <TouchRipple
+              abortOnScroll={true}
+              centerRipple={true}
+              key="touchRipple"
             >
-              <TouchRipple
-                abortOnScroll={true}
-                centerRipple={true}
-                key="touchRipple"
+              <div
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
               >
-                <div
-                  onMouseDown={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
+                <Tooltip
+                  horizontalPosition="center"
+                  label="Remove this file"
+                  show={false}
+                  style={
+                    Object {
+                      "boxSizing": "border-box",
+                    }
+                  }
+                  touch={false}
+                  verticalPosition="bottom"
                 >
-                  <Tooltip
-                    horizontalPosition="center"
-                    label="Remove this file"
-                    show={false}
+                  <div
                     style={
                       Object {
+                        "borderRadius": 2,
                         "boxSizing": "border-box",
+                        "color": "#ffffff",
+                        "fontFamily": "Roboto, sans-serif",
+                        "fontSize": "10px",
+                        "left": 24,
+                        "lineHeight": "22px",
+                        "muiPrepared": true,
+                        "opacity": 0,
+                        "overflow": "hidden",
+                        "padding": "0 8px",
+                        "position": "absolute",
+                        "right": null,
+                        "top": -10000,
+                        "transition": "top 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "userSelect": "none",
+                        "zIndex": 3000,
                       }
                     }
-                    touch={false}
-                    verticalPosition="bottom"
                   >
                     <div
                       style={
                         Object {
-                          "borderRadius": 2,
-                          "boxSizing": "border-box",
-                          "color": "#ffffff",
-                          "fontFamily": "Roboto, sans-serif",
-                          "fontSize": "10px",
-                          "left": 24,
-                          "lineHeight": "22px",
+                          "backgroundColor": "transparent",
+                          "borderRadius": "50%",
+                          "left": "50%",
                           "muiPrepared": true,
-                          "opacity": 0,
-                          "overflow": "hidden",
-                          "padding": "0 8px",
                           "position": "absolute",
-                          "right": null,
-                          "top": -10000,
-                          "transition": "top 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "userSelect": "none",
-                          "zIndex": 3000,
+                          "top": 0,
+                          "transform": "translate(-50%, -50%)",
+                          "transition": "width 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, height 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, backgroundColor 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         }
                       }
-                    >
-                      <div
-                        style={
-                          Object {
-                            "backgroundColor": "transparent",
-                            "borderRadius": "50%",
-                            "left": "50%",
-                            "muiPrepared": true,
-                            "position": "absolute",
-                            "top": 0,
-                            "transform": "translate(-50%, -50%)",
-                            "transition": "width 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, height 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, backgroundColor 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          }
-                        }
-                      />
-                      <span
-                        style={
-                          Object {
-                            "muiPrepared": true,
-                            "position": "relative",
-                            "whiteSpace": "nowrap",
-                          }
-                        }
-                      >
-                        Remove this file
-                      </span>
-                    </div>
-                  </Tooltip>
-                  <FontIcon
-                    className="material-icons deleteIcon"
-                    key=".0"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
-                    style={Object {}}
-                  >
+                    />
                     <span
-                      className="material-icons deleteIcon"
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
                       style={
                         Object {
-                          "color": "rgba(0, 0, 0, 0.87)",
-                          "display": "inline-block",
-                          "fontSize": 24,
                           "muiPrepared": true,
                           "position": "relative",
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "userSelect": "none",
+                          "whiteSpace": "nowrap",
                         }
                       }
                     >
-                      delete
+                      Remove this file
                     </span>
-                  </FontIcon>
-                </div>
-              </TouchRipple>
-            </button>
-          </EnhancedButton>
-        </IconButton>
-      </div>
+                  </div>
+                </Tooltip>
+                <FontIcon
+                  className="material-icons deleteIcon"
+                  key=".0"
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={Object {}}
+                >
+                  <span
+                    className="material-icons deleteIcon"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "display": "inline-block",
+                        "fontSize": 24,
+                        "muiPrepared": true,
+                        "position": "relative",
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "userSelect": "none",
+                      }
+                    }
+                  >
+                    delete
+                  </span>
+                </FontIcon>
+              </div>
+            </TouchRipple>
+          </button>
+        </EnhancedButton>
+      </IconButton>
     </div>
   </div>
 </FileUploadRow>

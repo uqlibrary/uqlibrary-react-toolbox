@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _single, _multiple;
+
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -28,6 +30,8 @@ var _FileUploadDropzoneStaticContent2 = _interopRequireDefault(_FileUploadDropzo
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35,6 +39,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _ref3 = _react2.default.createElement(_FileUploadDropzoneStaticContent2.default, null);
 
 var FileUploadDropzone = function (_PureComponent) {
     _inherits(FileUploadDropzone, _PureComponent);
@@ -61,9 +67,9 @@ var FileUploadDropzone = function (_PureComponent) {
         };
 
         _this.validate = function (file) {
-            var twoPeriod = file.name.split('.').length > 2;
-            if (twoPeriod) {
-                _this.setError('fileName', file);
+            var type = file.type === '';
+            if (type) {
+                _this.setError('folder', file);
             }
 
             var length = file.name.length > 45;
@@ -71,12 +77,12 @@ var FileUploadDropzone = function (_PureComponent) {
                 _this.setError('fileNameLength', file);
             }
 
-            var space = file.name.split(' ').length > 1;
-            if (space) {
+            var period = file.name.split('.').length > 2;
+            if (period) {
                 _this.setError('fileName', file);
             }
 
-            return length || twoPeriod || space;
+            return type || length || period;
         };
 
         _this.setError = function (errorType, file) {
@@ -159,25 +165,7 @@ var FileUploadDropzone = function (_PureComponent) {
             _this.errors = new Map();
         };
 
-        _this._onDrop = function (accepted, rejected, event) {
-            /*
-             * From droppedEvent dataTransfer items, determine which items are folders
-             */
-            var droppedFolders = !!event && Array.prototype.filter.call(event.dataTransfer.items, function (item) {
-                return item.webkitGetAsEntry().isDirectory;
-            }).map(function (item) {
-                return item.webkitGetAsEntry().name;
-            });
-
-            /*
-             * Set error for folder
-             */
-            if (droppedFolders.length > 0) {
-                _this.setError('folder', accepted.filter(function (file) {
-                    return droppedFolders.indexOf(file.name) >= 0;
-                }));
-            }
-
+        _this._onDrop = function (accepted, rejected) {
             /*
              * Set error for rejected files (maxFileSize rule)
              */
@@ -186,23 +174,16 @@ var FileUploadDropzone = function (_PureComponent) {
             }
 
             /*
-             * Folders are accepted by dropzone so remove folders from accepted list
-             */
-            var acceptedFiles = droppedFolders.length > 0 ? accepted.filter(function (file) {
-                return droppedFolders.indexOf(file.name) === -1;
-            }) : accepted;
-
-            /*
              * Validate accepted files and get list of invalid files (check fileName, fileNameLength, folder)
              */
-            var invalid = acceptedFiles.filter(function (file) {
+            var invalid = accepted.filter(function (file) {
                 return _this.validate(file);
             });
 
             /*
              * Remove invalid files
              */
-            var filtered = _this.difference(new Set(acceptedFiles), new Set(invalid));
+            var filtered = _this.difference(new Set(accepted), new Set(invalid));
 
             /*
              * Duplicates will be removed by setting up file.name as key
@@ -351,7 +332,7 @@ var FileUploadDropzone = function (_PureComponent) {
                                 disabled: this.props.disabled,
                                 disableClick: this.props.disabled,
                                 disablePreview: true },
-                            _react2.default.createElement(_FileUploadDropzoneStaticContent2.default, { txt: this.props.locale })
+                            _ref3
                         )
                     )
                 ),
@@ -363,4 +344,13 @@ var FileUploadDropzone = function (_PureComponent) {
     return FileUploadDropzone;
 }(_react.PureComponent);
 
+FileUploadDropzone.defaultProps = {
+    locale: {
+        validation: {
+            single: (_single = {}, _defineProperty(_single, 'folder', 'Invalid file ([filename])'), _defineProperty(_single, 'fileName', 'Invalid file name ([filename])'), _defineProperty(_single, 'fileNameLength', 'Filename ([filename]) is too long'), _defineProperty(_single, 'maxFileSize', 'File ([filename]) is too big'), _defineProperty(_single, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'), _single),
+            multiple: (_multiple = {}, _defineProperty(_multiple, 'folder', 'Invalid files ([filenames])'), _defineProperty(_multiple, 'fileName', '[numberOfFiles] files ([filenames]) have an invalid file name'), _defineProperty(_multiple, 'fileNameLength', '[numberOfFiles] filenames ([filenames]) are too long'), _defineProperty(_multiple, 'maxFileSize', '[numberOfFiles] files ([filenames]) are too big'), _defineProperty(_multiple, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'), _multiple)
+        },
+        errorTitle: 'Upload Errors'
+    }
+};
 exports.default = FileUploadDropzone;

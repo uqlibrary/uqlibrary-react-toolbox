@@ -80,19 +80,19 @@ var FileUploadRowHeader = function (_Component) {
                     { className: 'column datalist-title is-6-desktop is-5-tablet is-12-mobile header' },
                     filenameColumn
                 ),
-                this.props.requireOpenAccessStatus && !this.props.defaultAccessConditionIdPresent && _react2.default.createElement(
+                _react2.default.createElement(
                     'div',
                     { className: 'column datalist-title is-3-desktop is-4-tablet is-12-mobile header' },
-                    fileAccessColumn
-                ),
-                this.props.requireOpenAccessStatus && !this.props.defaultAccessConditionIdPresent && _react2.default.createElement(
-                    'div',
-                    { className: 'column datalist-title is-2-desktop is-2-tablet is-12-mobile header' },
-                    embargoDateColumn
+                    this.props.requireFileAccess && fileAccessColumn
                 ),
                 _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header is-centered is-vcentered' },
+                    { className: 'column datalist-title is-2-desktop is-2-tablet is-12-mobile header' },
+                    this.props.requireFileAccess && embargoDateColumn
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header' },
                     _react2.default.createElement(
                         _IconButton2.default,
                         { tooltip: deleteAllFiles, onTouchTap: this._showConfirmation, disabled: this.props.disabled },

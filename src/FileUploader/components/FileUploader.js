@@ -33,56 +33,23 @@ export class FileUploader extends PureComponent {
         locale: PropTypes.object,
         defaultConfig: PropTypes.object,
         overallProgress: PropTypes.number,
-        requireOpenAccessStatus: PropTypes.bool,
+        requireFileAccess: PropTypes.bool,
         clearFileUpload: PropTypes.func,
-        disabled: PropTypes.bool,
-        defaultQuickTemplateId: PropTypes.number
+        disabled: PropTypes.bool
     };
 
     static defaultProps = {
         overallProgress: 0,
         locale: {
             instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
-            accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
-            validation: {
-                single: {
-                    ['folder']: 'Invalid file ([filename])',
-                    ['fileName']: 'Invalid file name ([filename])',
-                    ['fileNameLength']: 'Filename ([filename]) is too long',
-                    ['maxFileSize']: 'File ([filename]) is too big',
-                    ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'
-                },
-                multiple: {
-                    ['folder']: 'Invalid files ([filenames])',
-                    ['fileName']: '[numberOfFiles] files ([filenames]) have an invalid file name',
-                    ['fileNameLength']: '[numberOfFiles] filenames ([filenames]) are too long',
-                    ['maxFileSize']: '[numberOfFiles] files ([filenames]) are too big',
-                    ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'
-                }
-            },
-            errorTitle: 'Upload Errors',
-            fileUploadRestrictionHeading: (<h3>File upload restrictions</h3>),
-            fileUploadRestrictions: (
-                <div>
-                    Please ensure your files:
-                    <ul>
-                        <li>begin with a letter and are less than 45 characters long</li>
-                        <li>contain only upper and lowercase alphanumeric characters, and underscores</li>
-                        <li>have only a single period which precedes the file extension: “.pdf”</li>
-                        <li>are uploaded individually and not inside a folder</li>
-                    </ul>
-                </div>
-            ),
-            fileUploadInstruction: (
-                <p>Click here to select files, or drag files into this area to upload</p>
-            )
+            accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.'
         },
         defaultConfig: {
             fileUploadLimit: 10,
             maxFileSize: 5,
             fileSizeUnit: 'G'
         },
-        requireOpenAccessStatus: false
+        requireFileAccess: false
     };
 
     constructor(props) {
@@ -150,10 +117,7 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _setUploadedFiles = (files) => {
-        if (!!this.props.defaultQuickTemplateId && !this.props.requireOpenAccessStatus) {
-            files.map((file) => (file.access_condition_id = this.props.defaultQuickTemplateId));
-        }
-        this.setState({uploadedFiles: [...files], clearErrors: false});
+        this.setState({uploadedFiles: [...files], clearErrors: false, focusOnIndex: (files.length + this.state.uploadedFiles.length) - files.length});
     };
 
     /**
@@ -227,7 +191,7 @@ export class FileUploader extends PureComponent {
     isFileUploadValid = ({uploadedFiles, termsAndConditions}) => {
         let isValid = true;
 
-        if (this.props.requireOpenAccessStatus) {
+        if (this.props.requireFileAccess) {
             if (uploadedFiles.filter((file) => (!this.hasAccess(file))).length > 0) {
                 isValid = false;
             }
@@ -246,7 +210,7 @@ export class FileUploader extends PureComponent {
     render() {
         const {instructions, accessTermsAndConditions} = this.props.locale;
         const {maxFileSize, fileSizeUnit, fileUploadLimit} = this.props.defaultConfig;
-        const {requireOpenAccessStatus, overallProgress} = this.props;
+        const {requireFileAccess, overallProgress} = this.props;
         const {uploadedFiles, clearErrors, termsAndConditions} = this.state;
 
         const instructionsDisplay = instructions
@@ -263,9 +227,9 @@ export class FileUploader extends PureComponent {
                     fileSizeUnit={fileSizeUnit}
                     onDelete={this._deleteFile}
                     onAttributeChanged={this._replaceFile}
-                    requireOpenAccessStatus={requireOpenAccessStatus}
-                    defaultAccessConditionIdPresent={!!this.props.defaultQuickTemplateId}
+                    requireFileAccess={requireFileAccess}
                     disabled={this.props.disabled}
+                    focusOnIndex={this.state.focusOnIndex}
                 />
             );
         });
@@ -274,7 +238,6 @@ export class FileUploader extends PureComponent {
             <div>
                 <h4 className="sub-title">{instructionsDisplay}</h4>
                 <FileUploadDropzone
-                    locale={this.props.locale}
                     maxSize={this.calculateMaxFileSize()}
                     maxFiles={fileUploadLimit}
                     disabled={this.props.disabled || uploadedFiles.length === fileUploadLimit}
@@ -288,15 +251,14 @@ export class FileUploader extends PureComponent {
                         uploadedFiles.length > 0 &&
                         <FileUploadRowHeader
                             onDeleteAll={this._deleteAllFiles}
-                            requireOpenAccessStatus={requireOpenAccessStatus}
-                            defaultAccessConditionIdPresent={!!this.props.defaultQuickTemplateId}
+                            requireFileAccess={requireFileAccess}
                             disabled={this.props.disabled} />
                     }
 
                     {uploadedFilesRow}
 
                     {
-                        requireOpenAccessStatus && this.isAnyOpenAccess(uploadedFiles) &&
+                        requireFileAccess && this.isAnyOpenAccess(uploadedFiles) &&
                             <div style={{position: 'relative', width: '100%'}} className={!termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox'}>
                                 <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={termsAndConditions} />
                             </div>

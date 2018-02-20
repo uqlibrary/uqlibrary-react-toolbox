@@ -33,14 +33,14 @@ beforeAll(() => {
     injectTapEventPlugin();
 });
 
-describe('Component FileUploader', () => {
-    it('should render correctly without any setup', () => {
+describe('FileUploader', () => {
+    it('renders correctly without any setup', () => {
         const wrapper = setup({});
         const tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });
 
-    it('should render rows for uploaded files', () => {
+    it('renders row for uploaded files', () => {
         const wrapper = setup({});
 
         let tree = toJson(wrapper);
@@ -61,21 +61,25 @@ describe('Component FileUploader', () => {
         wrapper.instance()._setUploadedFiles(files);
         wrapper.update();
 
-        expect(toJson(wrapper)).toMatchSnapshot();
+        tree = toJson(wrapper);
+
+        expect(tree).toMatchSnapshot();
 
         wrapper.instance()._deleteFile({}, 0);
         wrapper.update();
 
-        expect(toJson(wrapper)).toMatchSnapshot();
+        tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
 
         wrapper.instance()._deleteAllFiles();
         wrapper.update();
 
-        expect(toJson(wrapper)).toMatchSnapshot();
+        tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
     });
 
-    it('should render rows for uploaded files with access required', () => {
-        const wrapper = setup({ requireOpenAccessStatus: true });
+    it('renders row for uploaded files with access required', () => {
+        const wrapper = setup({ requireFileAccess: true });
 
         let tree = toJson(wrapper);
 
@@ -95,65 +99,26 @@ describe('Component FileUploader', () => {
         wrapper.instance()._setUploadedFiles(files);
         wrapper.update();
 
-        expect(toJson(wrapper)).toMatchSnapshot();
+        tree = toJson(wrapper);
+
+        expect(tree).toMatchSnapshot();
 
         wrapper.instance()._replaceFile({ name: 'a.txt', size: 100, access_condition_id: 8 }, 0);
         wrapper.update();
 
-        expect(toJson(wrapper)).toMatchSnapshot();
+        tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
 
         wrapper.instance()._replaceFile({ name: 'a.txt', size: 100, access_condition_id: 9 }, 0);
         wrapper.update();
 
-        expect(toJson(wrapper)).toMatchSnapshot();
+        tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
 
         wrapper.instance()._replaceFile({ name: 'a.txt', size: 100, access_condition_id: 9, date: '10/10/2017' }, 0);
         wrapper.update();
 
-        expect(toJson(wrapper)).toMatchSnapshot();
-    });
-
-    it('should render rows for uploaded files with default access condition based on quick template Id', () => {
-        const wrapper = setup({ defaultQuickTemplateId: 3 });
-
-        expect(toJson(wrapper)).toMatchSnapshot();
-
-        const files = [
-            {
-                name: 'a.txt',
-                size: 100
-            },
-            {
-                name: 'b.txt',
-                size: 100
-            }
-        ];
-
-        wrapper.instance()._setUploadedFiles(files);
-        wrapper.update();
-
-        expect(toJson(wrapper)).toMatchSnapshot();
-    });
-
-    it('should render rows for uploaded files with default access condition based on quick template Id', () => {
-        const wrapper = setup({ defaultQuickTemplateId: 3, requireOpenAccessStatus: true });
-
-        expect(toJson(wrapper)).toMatchSnapshot();
-
-        const files = [
-            {
-                name: 'a.txt',
-                size: 100
-            },
-            {
-                name: 'b.txt',
-                size: 100
-            }
-        ];
-
-        wrapper.instance()._setUploadedFiles(files);
-        wrapper.update();
-
-        expect(toJson(wrapper)).toMatchSnapshot();
+        tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
     });
 });

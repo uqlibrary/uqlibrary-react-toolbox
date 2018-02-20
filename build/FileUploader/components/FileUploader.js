@@ -7,7 +7,7 @@ exports.FileUploader = exports.sizeBase = exports.sizeUnitText = exports.sizeExp
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _sizeExponent, _sizeUnitText, _single, _multiple;
+var _sizeExponent, _sizeUnitText;
 
 var _react = require('react');
 
@@ -90,12 +90,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this._setUploadedFiles = function (files) {
-            if (!!_this.props.defaultQuickTemplateId && !_this.props.requireOpenAccessStatus) {
-                files.map(function (file) {
-                    return file.access_condition_id = _this.props.defaultQuickTemplateId;
-                });
-            }
-            _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)), clearErrors: false });
+            _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)), clearErrors: false, focusOnIndex: files.length + _this.state.uploadedFiles.length - files.length });
         };
 
         _this._acceptTermsAndConditions = function (event, value) {
@@ -134,7 +129,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
             var isValid = true;
 
-            if (_this.props.requireOpenAccessStatus) {
+            if (_this.props.requireFileAccess) {
                 if (uploadedFiles.filter(function (file) {
                     return !_this.hasAccess(file);
                 }).length > 0) {
@@ -274,7 +269,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 fileSizeUnit = _props$defaultConfig.fileSizeUnit,
                 fileUploadLimit = _props$defaultConfig.fileUploadLimit;
             var _props = this.props,
-                requireOpenAccessStatus = _props.requireOpenAccessStatus,
+                requireFileAccess = _props.requireFileAccess,
                 overallProgress = _props.overallProgress;
             var _state = this.state,
                 uploadedFiles = _state.uploadedFiles,
@@ -292,9 +287,9 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     fileSizeUnit: fileSizeUnit,
                     onDelete: _this2._deleteFile,
                     onAttributeChanged: _this2._replaceFile,
-                    requireOpenAccessStatus: requireOpenAccessStatus,
-                    defaultAccessConditionIdPresent: !!_this2.props.defaultQuickTemplateId,
-                    disabled: _this2.props.disabled
+                    requireFileAccess: requireFileAccess,
+                    disabled: _this2.props.disabled,
+                    focusOnIndex: _this2.state.focusOnIndex
                 });
             });
 
@@ -307,7 +302,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     instructionsDisplay
                 ),
                 _react2.default.createElement(_FileUploadDropzone2.default, {
-                    locale: this.props.locale,
                     maxSize: this.calculateMaxFileSize(),
                     maxFiles: fileUploadLimit,
                     disabled: this.props.disabled || uploadedFiles.length === fileUploadLimit,
@@ -321,11 +315,10 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     },
                     uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, {
                         onDeleteAll: this._deleteAllFiles,
-                        requireOpenAccessStatus: requireOpenAccessStatus,
-                        defaultAccessConditionIdPresent: !!this.props.defaultQuickTemplateId,
+                        requireFileAccess: requireFileAccess,
                         disabled: this.props.disabled }),
                     uploadedFilesRow,
-                    requireOpenAccessStatus && this.isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(
+                    requireFileAccess && this.isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(
                         'div',
                         { style: { position: 'relative', width: '100%' }, className: !termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox' },
                         _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this._acceptTermsAndConditions, checked: termsAndConditions })
@@ -347,58 +340,14 @@ FileUploader.defaultProps = {
     overallProgress: 0,
     locale: {
         instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
-        accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
-        validation: {
-            single: (_single = {}, _defineProperty(_single, 'folder', 'Invalid file ([filename])'), _defineProperty(_single, 'fileName', 'Invalid file name ([filename])'), _defineProperty(_single, 'fileNameLength', 'Filename ([filename]) is too long'), _defineProperty(_single, 'maxFileSize', 'File ([filename]) is too big'), _defineProperty(_single, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'), _single),
-            multiple: (_multiple = {}, _defineProperty(_multiple, 'folder', 'Invalid files ([filenames])'), _defineProperty(_multiple, 'fileName', '[numberOfFiles] files ([filenames]) have an invalid file name'), _defineProperty(_multiple, 'fileNameLength', '[numberOfFiles] filenames ([filenames]) are too long'), _defineProperty(_multiple, 'maxFileSize', '[numberOfFiles] files ([filenames]) are too big'), _defineProperty(_multiple, 'maxFiles', 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'), _multiple)
-        },
-        errorTitle: 'Upload Errors',
-        fileUploadRestrictionHeading: _react2.default.createElement(
-            'h3',
-            null,
-            'File upload restrictions'
-        ),
-        fileUploadRestrictions: _react2.default.createElement(
-            'div',
-            null,
-            'Please ensure your files:',
-            _react2.default.createElement(
-                'ul',
-                null,
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    'begin with a letter and are less than 45 characters long'
-                ),
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    'contain only upper and lowercase alphanumeric characters, and underscores'
-                ),
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    'have only a single period which precedes the file extension: \u201C.pdf\u201D'
-                ),
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    'are uploaded individually and not inside a folder'
-                )
-            )
-        ),
-        fileUploadInstruction: _react2.default.createElement(
-            'p',
-            null,
-            'Click here to select files, or drag files into this area to upload'
-        )
+        accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.'
     },
     defaultConfig: {
         fileUploadLimit: 10,
         maxFileSize: 5,
         fileSizeUnit: 'G'
     },
-    requireOpenAccessStatus: false
+    requireFileAccess: false
 };
 
 

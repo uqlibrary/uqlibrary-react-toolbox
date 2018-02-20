@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import FontIcon from 'material-ui/FontIcon';
@@ -22,10 +23,10 @@ export class FileUploadRow extends Component {
         onAttributeChanged: PropTypes.func.isRequired,
         locale: PropTypes.object,
         progress: PropTypes.number,
-        requireOpenAccessStatus: PropTypes.bool.isRequired,
+        requireFileAccess: PropTypes.bool.isRequired,
         fileSizeUnit: PropTypes.string,
         disabled: PropTypes.bool,
-        defaultAccessConditionIdPresent: PropTypes.bool
+        focusOnIndex: PropTypes.number
     };
 
     static defaultProps = {
@@ -50,6 +51,16 @@ export class FileUploadRow extends Component {
             access_condition_id: null,
             date: null
         };
+    }
+
+    componentDidMount() {
+        const indexToFocus = this.props.focusOnIndex;
+        if (this.refs.hasOwnProperty(`accessConditionSelector${indexToFocus}`)) {
+            ReactDOM.findDOMNode(this.refs[`accessConditionSelector${indexToFocus}`]).getElementsByTagName('button').item(0).focus();
+        } else if (this.refs.hasOwnProperty(`fileName${indexToFocus}`)) {
+            // if access condition is not required, then scroll into filename
+            this.refs[`fileName${indexToFocus}`].scrollIntoView();
+        }
     }
 
     _showConfirmation = () => {
@@ -94,18 +105,18 @@ export class FileUploadRow extends Component {
                     locale={deleteRecordConfirmation} />
                 <div className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile">
                     <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">attachment</FontIcon>
-                    <div className="file-name">
+                    <div className="file-name" ref={`fileName${this.props.index}`}>
                         <span className="truncated">{this.props.uploadedFile.name} ({this.calculateFilesizeToDisplay(this.props.uploadedFile.size)})</span>
                         <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{filenameColumn}</span>
                     </div>
                 </div>
                 <div className="column datalist-text is-3-desktop is-4-tablet is-12-mobile">
                     {
-                        this.props.requireOpenAccessStatus && !this.props.defaultAccessConditionIdPresent &&
+                        this.props.requireFileAccess &&
                             <div className="file-access-selector">
                                 <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
                                 <div className="select-container">
-                                    <FileUploadAccessSelector onAccessChanged={this._updateFileMetadata} disabled={this.props.disabled} />
+                                    <FileUploadAccessSelector onAccessChanged={this._updateFileMetadata} disabled={this.props.disabled} ref={`accessConditionSelector${this.props.index}`} />
                                     <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{fileAccessColumn}</span>
                                 </div>
                             </div>
@@ -113,19 +124,16 @@ export class FileUploadRow extends Component {
                 </div>
                 <div className="column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
                     <div className="embargo-date-info">
+                        <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
                         {
-                            this.props.requireOpenAccessStatus && !this.props.defaultAccessConditionIdPresent &&
-                            <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
-                        }
-                        {
-                            this.props.requireOpenAccessStatus && !this.isOpenAccess(accessConditionId) && !this.props.defaultAccessConditionIdPresent &&
+                            this.props.requireFileAccess && !this.isOpenAccess(accessConditionId) &&
                             <div className="no-embargo-date">
                                 <span>{embargoDateClosedAccess}</span>
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }
                         {
-                            this.props.requireOpenAccessStatus && this.isOpenAccess(accessConditionId) && !this.props.defaultAccessConditionIdPresent &&
+                            this.props.requireFileAccess && this.isOpenAccess(accessConditionId) &&
                             <div className="embargo-date-selector">
                                 <FileUploadEmbargoDate onDateChanged={this._updateFileMetadata} disabled={this.props.disabled} />
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
@@ -133,36 +141,30 @@ export class FileUploadRow extends Component {
                         }
                     </div>
                 </div>
-                <div className="column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered">
-                    {
-                        this.props.progress === 0 &&
-                        <div className="datalist-buttons">
+                {
+                    this.props.progress === 0 &&
+                        <div className="column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless">
                             <IconButton tooltip={this.props.locale.deleteHint} onTouchTap={this._showConfirmation} disabled={this.props.disabled}>
                                 <FontIcon className="material-icons deleteIcon">delete</FontIcon>
                             </IconButton>
                         </div>
-                    }
-                    {
-                        this.props.progress > 0 && this.props.progress !== 100 &&
-                        <div className="upload-progress-info">
-                            <div className="upload-progress">
-                                <CircularProgress
-                                    mode="determinate"
-                                    value={this.props.progress}
-                                    size={20}
-                                    thickness={4}
-                                />
-                            </div>
-                            <div className="upload-progress-number">{`${this.props.progress}%`}</div>
+                }
+                {
+                    this.props.progress > 0 && this.props.progress !== 100 &&
+                        <div className="upload-progress-wrapper">
+                            <CircularProgress
+                                className="upload-progress"
+                                mode="determinate"
+                                value={this.props.progress}
+                                size={20}
+                                thickness={4}
+                            />
                         </div>
-                    }
-                    {
-                        this.props.progress === 100 &&
-                        <div className="upload-progress">
-                            <FontIcon className="material-icons green-tick">done</FontIcon>
-                        </div>
-                    }
-                </div>
+                }
+                {
+                    this.props.progress === 100 &&
+                        <FontIcon className="material-icons green-tick">done</FontIcon>
+                }
             </div>
         );
     }

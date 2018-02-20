@@ -11,6 +11,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
 var _reactRedux = require('react-redux');
 
 var _propTypes = require('prop-types');
@@ -78,13 +82,9 @@ var _ref4 = _react2.default.createElement(
 );
 
 var _ref5 = _react2.default.createElement(
-    'div',
-    { className: 'upload-progress' },
-    _react2.default.createElement(
-        _FontIcon2.default,
-        { className: 'material-icons green-tick' },
-        'done'
-    )
+    _FontIcon2.default,
+    { className: 'material-icons green-tick' },
+    'done'
 );
 
 var FileUploadRow = exports.FileUploadRow = function (_Component) {
@@ -136,6 +136,17 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
     }
 
     _createClass(FileUploadRow, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var indexToFocus = this.props.focusOnIndex;
+            if (this.refs.hasOwnProperty('accessConditionSelector' + indexToFocus)) {
+                _reactDom2.default.findDOMNode(this.refs['accessConditionSelector' + indexToFocus]).getElementsByTagName('button').item(0).focus();
+            } else if (this.refs.hasOwnProperty('fileName' + indexToFocus)) {
+                // if access condition is not required, then scroll into filename
+                this.refs['fileName' + indexToFocus].scrollIntoView();
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
@@ -163,7 +174,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                     _ref,
                     _react2.default.createElement(
                         'div',
-                        { className: 'file-name' },
+                        { className: 'file-name', ref: 'fileName' + this.props.index },
                         _react2.default.createElement(
                             'span',
                             { className: 'truncated' },
@@ -182,14 +193,14 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'column datalist-text is-3-desktop is-4-tablet is-12-mobile' },
-                    this.props.requireOpenAccessStatus && !this.props.defaultAccessConditionIdPresent && _react2.default.createElement(
+                    this.props.requireFileAccess && _react2.default.createElement(
                         'div',
                         { className: 'file-access-selector' },
                         _ref2,
                         _react2.default.createElement(
                             'div',
                             { className: 'select-container' },
-                            _react2.default.createElement(_FileUploadAccessSelector2.default, { onAccessChanged: this._updateFileMetadata, disabled: this.props.disabled }),
+                            _react2.default.createElement(_FileUploadAccessSelector2.default, { onAccessChanged: this._updateFileMetadata, disabled: this.props.disabled, ref: 'accessConditionSelector' + this.props.index }),
                             _react2.default.createElement(
                                 'span',
                                 { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },
@@ -204,8 +215,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'embargo-date-info' },
-                        this.props.requireOpenAccessStatus && !this.props.defaultAccessConditionIdPresent && _ref3,
-                        this.props.requireOpenAccessStatus && !this.isOpenAccess(accessConditionId) && !this.props.defaultAccessConditionIdPresent && _react2.default.createElement(
+                        _ref3,
+                        this.props.requireFileAccess && !this.isOpenAccess(accessConditionId) && _react2.default.createElement(
                             'div',
                             { className: 'no-embargo-date' },
                             _react2.default.createElement(
@@ -219,7 +230,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                                 embargoDateColumn
                             )
                         ),
-                        this.props.requireOpenAccessStatus && this.isOpenAccess(accessConditionId) && !this.props.defaultAccessConditionIdPresent && _react2.default.createElement(
+                        this.props.requireFileAccess && this.isOpenAccess(accessConditionId) && _react2.default.createElement(
                             'div',
                             { className: 'embargo-date-selector' },
                             _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata, disabled: this.props.disabled }),
@@ -231,39 +242,27 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         )
                     )
                 ),
-                _react2.default.createElement(
+                this.props.progress === 0 && _react2.default.createElement(
                     'div',
-                    { className: 'column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered' },
-                    this.props.progress === 0 && _react2.default.createElement(
-                        'div',
-                        { className: 'datalist-buttons' },
-                        _react2.default.createElement(
-                            _IconButton2.default,
-                            { tooltip: this.props.locale.deleteHint, onTouchTap: this._showConfirmation, disabled: this.props.disabled },
-                            _ref4
-                        )
-                    ),
-                    this.props.progress > 0 && this.props.progress !== 100 && _react2.default.createElement(
-                        'div',
-                        { className: 'upload-progress-info' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'upload-progress' },
-                            _react2.default.createElement(_CircularProgress2.default, {
-                                mode: 'determinate',
-                                value: this.props.progress,
-                                size: 20,
-                                thickness: 4
-                            })
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'upload-progress-number' },
-                            this.props.progress + '%'
-                        )
-                    ),
-                    this.props.progress === 100 && _ref5
-                )
+                    { className: 'column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless' },
+                    _react2.default.createElement(
+                        _IconButton2.default,
+                        { tooltip: this.props.locale.deleteHint, onTouchTap: this._showConfirmation, disabled: this.props.disabled },
+                        _ref4
+                    )
+                ),
+                this.props.progress > 0 && this.props.progress !== 100 && _react2.default.createElement(
+                    'div',
+                    { className: 'upload-progress-wrapper' },
+                    _react2.default.createElement(_CircularProgress2.default, {
+                        className: 'upload-progress',
+                        mode: 'determinate',
+                        value: this.props.progress,
+                        size: 20,
+                        thickness: 4
+                    })
+                ),
+                this.props.progress === 100 && _ref5
             );
         }
     }]);
