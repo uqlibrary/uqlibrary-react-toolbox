@@ -1,16 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AutoSuggestField component should render 1`] = `
-<AutoSuggestField
-  allowFreeText={false}
-  debounceDelay={150}
+<AutoComplete
+  anchorOrigin={
+    Object {
+      "horizontal": "left",
+      "vertical": "bottom",
+    }
+  }
+  animated={true}
+  dataSource={Array []}
+  dataSourceConfig={
+    Object {
+      "text": "text",
+      "value": "value",
+    }
+  }
+  disableFocusRipple={true}
+  filter={[Function]}
   floatingLabelText="Enter text"
+  fullWidth={true}
   hintText="Please type text"
-  itemsList={Array []}
-  itemsListLoading={false}
-  loadSuggestions={[MockFunction]}
-  maxResults={7}
-  onChange={[MockFunction]}
+  id="textField"
+  listStyle={
+    Object {
+      "maxHeight": 200,
+      "overflow": "auto",
+    }
+  }
+  maxSearchResults={7}
+  menuCloseDelay={300}
+  menuProps={
+    Object {
+      "menuItemStyle": Object {
+        "height": "auto",
+        "lineHeight": "18px",
+        "minHeight": "18px",
+        "padding": "8px 0",
+        "whiteSpace": "normal",
+      },
+    }
+  }
+  onNewRequest={[Function]}
+  onUpdateInput={[Function]}
+  open={false}
+  openOnFocus={false}
+  targetOrigin={
+    Object {
+      "horizontal": "left",
+      "vertical": "top",
+    }
+  }
 />
 `;
 
