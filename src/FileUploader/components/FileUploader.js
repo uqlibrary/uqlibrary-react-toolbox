@@ -280,7 +280,6 @@ export class FileUploader extends PureComponent {
                         <FileUploadRowHeader
                             onDeleteAll={this._deleteAllFiles}
                             requireOpenAccessStatus={requireOpenAccessStatus && !this.props.defaultQuickTemplateId}
-                            defaultAccessConditionIdPresent={!!this.props.defaultQuickTemplateId}
                             disabled={this.props.disabled} />
                     }
 

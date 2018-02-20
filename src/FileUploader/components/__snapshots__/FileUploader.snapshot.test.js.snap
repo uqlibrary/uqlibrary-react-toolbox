@@ -198,7 +198,6 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
     }
   >
     <FileUploadRowHeader
-      defaultAccessConditionIdPresent={false}
       locale={
         Object {
           "deleteAllFiles": "Remove all files from the upload queue",
@@ -318,7 +317,6 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
     }
   >
     <FileUploadRowHeader
-      defaultAccessConditionIdPresent={false}
       locale={
         Object {
           "deleteAllFiles": "Remove all files from the upload queue",
@@ -553,7 +551,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     }
   >
     <FileUploadRowHeader
-      defaultAccessConditionIdPresent={false}
       locale={
         Object {
           "deleteAllFiles": "Remove all files from the upload queue",
@@ -678,7 +675,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     }
   >
     <FileUploadRowHeader
-      defaultAccessConditionIdPresent={false}
       locale={
         Object {
           "deleteAllFiles": "Remove all files from the upload queue",
@@ -804,7 +800,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     }
   >
     <FileUploadRowHeader
-      defaultAccessConditionIdPresent={false}
       locale={
         Object {
           "deleteAllFiles": "Remove all files from the upload queue",
@@ -948,7 +943,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     }
   >
     <FileUploadRowHeader
-      defaultAccessConditionIdPresent={false}
       locale={
         Object {
           "deleteAllFiles": "Remove all files from the upload queue",
@@ -1156,7 +1150,6 @@ exports[`Component FileUploader should render rows for uploaded files with defau
     }
   >
     <FileUploadRowHeader
-      defaultAccessConditionIdPresent={true}
       locale={
         Object {
           "deleteAllFiles": "Remove all files from the upload queue",
@@ -1345,7 +1338,6 @@ exports[`Component FileUploader should render rows for uploaded files with defau
     }
   >
     <FileUploadRowHeader
-      defaultAccessConditionIdPresent={true}
       locale={
         Object {
           "deleteAllFiles": "Remove all files from the upload queue",

@@ -324,7 +324,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, {
                         onDeleteAll: this._deleteAllFiles,
                         requireOpenAccessStatus: requireOpenAccessStatus && !this.props.defaultQuickTemplateId,
-                        defaultAccessConditionIdPresent: !!this.props.defaultQuickTemplateId,
                         disabled: this.props.disabled }),
                     uploadedFilesRow,
                     requireOpenAccessStatus && this.isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(
