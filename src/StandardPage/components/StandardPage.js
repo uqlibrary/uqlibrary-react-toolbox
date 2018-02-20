@@ -17,3 +17,7 @@ StandardPage.propTypes = {
     className: PropTypes.string,
     children: PropTypes.any
 };
+
+StandardPage.defaultProps = {
+    className: ''
+};

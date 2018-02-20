@@ -35,3 +35,7 @@ function StandardPage(_ref) {
         )
     );
 }
+
+StandardPage.defaultProps = {
+    className: ''
+};

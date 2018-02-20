@@ -37,7 +37,8 @@ class PartialDateForm extends Component {
         dateFormat: 'YYYY-MM-DD',
         allowPartial: false,
         floatingTitle: 'Enter a date',
-        floatingTitleRequired: false
+        floatingTitleRequired: false,
+        className: ''
     };
 
     constructor(props) {
@@ -115,6 +116,7 @@ class PartialDateForm extends Component {
         const renderMonths = months.map((month, index) =>
             <MenuItem key={index} value={index} primaryText={month}/>
         );
+        console.log(className);
 
         return (
             <div className="columns is-multiline is-gapless-mobile">
@@ -126,7 +128,7 @@ class PartialDateForm extends Component {
                         name="day"
                         type="text"
                         maxLength="2"
-                        className={!this.props.allowPartial ? className + ' mui-long-labels-fix' : ' mui-long-labels-fix'}
+                        className={!this.props.allowPartial && className ? className : null}
                         fullWidth
                         disabled={this.props.disabled}
                         errorText={this.errors.day}
@@ -143,7 +145,7 @@ class PartialDateForm extends Component {
                         fullWidth
                         disabled={this.props.disabled}
                         value={this.state.month}
-                        className={!this.props.allowPartial ? className + ' mui-long-labels-fix' : ' mui-long-labels-fix'}
+                        className={!this.props.allowPartial && className ? className : null}
                         hintText={locale.monthLabel}
                         errorText={this.errors.month}
                         onChange={this._onDateChanged('month')}>

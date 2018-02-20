@@ -133,6 +133,7 @@ var PartialDateForm = function (_Component) {
             var renderMonths = months.map(function (month, index) {
                 return _react2.default.createElement(_MenuItem2.default, { key: index, value: index, primaryText: month });
             });
+            console.log(className);
 
             return _react2.default.createElement(
                 'div',
@@ -149,7 +150,7 @@ var PartialDateForm = function (_Component) {
                         name: 'day',
                         type: 'text',
                         maxLength: '2',
-                        className: !this.props.allowPartial ? className + ' mui-long-labels-fix' : ' mui-long-labels-fix',
+                        className: !this.props.allowPartial && className ? className : null,
                         fullWidth: true,
                         disabled: this.props.disabled,
                         errorText: this.errors.day,
@@ -170,7 +171,7 @@ var PartialDateForm = function (_Component) {
                             fullWidth: true,
                             disabled: this.props.disabled,
                             value: this.state.month,
-                            className: !this.props.allowPartial ? className + ' mui-long-labels-fix' : ' mui-long-labels-fix',
+                            className: !this.props.allowPartial && className ? className : null,
                             hintText: locale.monthLabel,
                             errorText: this.errors.month,
                             onChange: this._onDateChanged('month') },
@@ -219,6 +220,7 @@ PartialDateForm.defaultProps = {
     dateFormat: 'YYYY-MM-DD',
     allowPartial: false,
     floatingTitle: 'Enter a date',
-    floatingTitleRequired: false
+    floatingTitleRequired: false,
+    className: ''
 };
 exports.default = PartialDateForm;

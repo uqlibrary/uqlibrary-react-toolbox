@@ -10,7 +10,7 @@ const TextFieldWrapper = props => {
     delete filteredProps.className;
     return (
         <div style={{position: 'relative', width: '100%'}}>
-            <TextField {...filteredProps} className={`${props.className ? props.className : ''} mui-long-labels-fix`} />
+            <TextField {...filteredProps} className={`${props.className} mui-long-labels-fix`} />
             {props.help && props.help.text && (
                 <HelpIcon {...props.help} />
             )}
@@ -25,6 +25,10 @@ TextFieldWrapper.propTypes = {
         text: PropTypes.any,
         buttonLabel: PropTypes.string
     })
+};
+
+TextFieldWrapper.defaultProps = {
+    className: ''
 };
 
 export default TextFieldWrapper;

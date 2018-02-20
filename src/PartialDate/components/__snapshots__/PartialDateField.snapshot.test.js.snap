@@ -3,6 +3,7 @@
 exports[`Redux-form Field PartialDateField snapshots tests renders PartialDateField component 1`] = `
 <PartialDateForm
   allowPartial={true}
+  className=""
   dateFormat="YYYY-MM-DD"
   floatingTitle="Enter a date"
   floatingTitleRequired={false}

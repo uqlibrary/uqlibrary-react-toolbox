@@ -12,7 +12,7 @@ const SelectFieldWrapper = props => {
     filteredProps.onBlur = () => props.input.onBlur(props.input.value);
     return (
         <div style={{position: 'relative', width: '100%'}}>
-            <SelectField {...filteredProps} className={`${props.className ? props.className : ''} mui-long-labels-fix`} />
+            <SelectField {...filteredProps} className={`${props.className} mui-long-labels-fix`} />
             {props.help && props.help.text && <HelpIcon {...props.help} />}
         </div>
     );
@@ -31,7 +31,8 @@ SelectFieldWrapper.defaultProps = {
     // TODO: investigate why disabling animation throws errors
     // disable animation to keep focus on the input element
     // dropDownMenuProps: {animated: false},
-    maxHeight: 250
+    maxHeight: 250,
+    className: ''
 };
 
 export default SelectFieldWrapper;

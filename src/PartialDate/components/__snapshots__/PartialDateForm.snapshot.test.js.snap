@@ -13,7 +13,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
     className="column"
   >
     <TextField
-      className=" mui-long-labels-fix"
+      className={null}
       disabled={false}
       floatingLabelFixed={false}
       fullWidth={true}
@@ -33,7 +33,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
   >
     <SelectField
       autoWidth={false}
-      className=" mui-long-labels-fix"
+      className={null}
       disabled={false}
       dropDownMenuProps={
         Object {
@@ -339,7 +339,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 1`] =
     className="column"
   >
     <TextField
-      className="undefined mui-long-labels-fix"
+      className=" mui-long-labels-fix"
       disabled={false}
       floatingLabelFixed={false}
       fullWidth={true}
@@ -371,7 +371,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
     className="column"
   >
     <TextField
-      className=" mui-long-labels-fix"
+      className={null}
       disabled={false}
       floatingLabelFixed={false}
       fullWidth={true}
@@ -391,7 +391,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 2 1`]
   >
     <SelectField
       autoWidth={false}
-      className=" mui-long-labels-fix"
+      className={null}
       disabled={false}
       dropDownMenuProps={
         Object {
@@ -729,7 +729,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
     className="column"
   >
     <TextField
-      className="requiredField mui-long-labels-fix"
+      className="requiredField"
       disabled={false}
       floatingLabelFixed={false}
       fullWidth={true}
@@ -750,7 +750,7 @@ exports[`PartialDateForm snapshots tests renders PartialDateForm component 3 1`]
   >
     <SelectField
       autoWidth={false}
-      className="requiredField mui-long-labels-fix"
+      className="requiredField"
       disabled={false}
       dropDownMenuProps={
         Object {

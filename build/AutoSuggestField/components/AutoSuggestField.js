@@ -151,5 +151,6 @@ AutoSuggestField.defaultProps = {
     allowFreeText: false,
     floatingLabelText: 'Enter text',
     hintText: 'Please type text',
-    debounceDelay: 150
+    debounceDelay: 150,
+    className: ''
 };

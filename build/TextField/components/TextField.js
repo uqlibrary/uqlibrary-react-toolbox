@@ -32,9 +32,13 @@ var TextFieldWrapper = function TextFieldWrapper(props) {
     return _react2.default.createElement(
         'div',
         { style: { position: 'relative', width: '100%' } },
-        _react2.default.createElement(_TextField2.default, _extends({}, filteredProps, { className: (props.className ? props.className : '') + ' mui-long-labels-fix' })),
+        _react2.default.createElement(_TextField2.default, _extends({}, filteredProps, { className: props.className + ' mui-long-labels-fix' })),
         props.help && props.help.text && _react2.default.createElement(_HelpDrawer.HelpIcon, props.help)
     );
+};
+
+TextFieldWrapper.defaultProps = {
+    className: ''
 };
 
 exports.default = TextFieldWrapper;

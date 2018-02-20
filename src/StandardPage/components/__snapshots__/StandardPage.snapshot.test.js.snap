@@ -2,7 +2,7 @@
 
 exports[`Snapshot tests for StandardPage component renders StandardPage with title 1`] = `
 <div
-  className="undefined"
+  className=""
 >
   <h1
     className="pageTitle"
