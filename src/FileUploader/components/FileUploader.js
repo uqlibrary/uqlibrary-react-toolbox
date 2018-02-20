@@ -31,7 +31,7 @@ export class FileUploader extends PureComponent {
     static propTypes = {
         onChange: PropTypes.func,
         locale: PropTypes.object,
-        defaultConfig: PropTypes.object,
+        fileRestrictionsConfig: PropTypes.object,
         overallProgress: PropTypes.number,
         requireOpenAccessStatus: PropTypes.bool,
         clearFileUpload: PropTypes.func,
@@ -67,7 +67,7 @@ export class FileUploader extends PureComponent {
                 <p>Click here to select files, or drag files into this area to upload</p>
             )
         },
-        defaultConfig: {
+        fileRestrictionsConfig: {
             fileUploadLimit: 10,
             maxFileSize: 5,
             fileSizeUnit: 'G'
@@ -163,7 +163,7 @@ export class FileUploader extends PureComponent {
      * @returns {number}
      */
     calculateMaxFileSize = () => {
-        const {maxFileSize, fileSizeUnit} = this.props.defaultConfig;
+        const {maxFileSize, fileSizeUnit} = this.props.fileRestrictionsConfig;
         return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
     };
 
@@ -235,7 +235,7 @@ export class FileUploader extends PureComponent {
 
     render() {
         const {instructions, accessTermsAndConditions} = this.props.locale;
-        const {maxFileSize, fileSizeUnit, fileUploadLimit, fileNameRestrictions} = this.props.defaultConfig;
+        const {maxFileSize, fileSizeUnit, fileUploadLimit, fileNameRestrictions} = this.props.fileRestrictionsConfig;
         const {requireOpenAccessStatus, overallProgress} = this.props;
         const {uploadedFiles, clearErrors, termsAndConditions} = this.state;
 
@@ -253,8 +253,7 @@ export class FileUploader extends PureComponent {
                     fileSizeUnit={fileSizeUnit}
                     onDelete={this._deleteFile}
                     onAttributeChanged={this._replaceFile}
-                    requireOpenAccessStatus={requireOpenAccessStatus}
-                    defaultAccessConditionIdPresent={!!this.props.defaultQuickTemplateId}
+                    requireOpenAccessStatus={requireOpenAccessStatus && !this.props.defaultQuickTemplateId}
                     disabled={this.props.disabled}
                     focusOnIndex={this.state.focusOnIndex}
                 />
@@ -273,14 +272,14 @@ export class FileUploader extends PureComponent {
                     onDropped={this._setUploadedFiles}
                     uploadedFiles={uploadedFiles}
                     clearErrors={clearErrors} />
-                <div className="metadata-container"
-                    style={uploadedFilesRow.length === 0 ? ({display: 'none'}) : ({display: 'block'})}
-                >
+                <div
+                    className="metadata-container"
+                    style={uploadedFilesRow.length === 0 ? ({display: 'none'}) : ({display: 'block'})}>
                     {
                         uploadedFiles.length > 0 &&
                         <FileUploadRowHeader
                             onDeleteAll={this._deleteAllFiles}
-                            requireOpenAccessStatus={requireOpenAccessStatus}
+                            requireOpenAccessStatus={requireOpenAccessStatus && !this.props.defaultQuickTemplateId}
                             defaultAccessConditionIdPresent={!!this.props.defaultQuickTemplateId}
                             disabled={this.props.disabled} />
                     }
@@ -289,9 +288,9 @@ export class FileUploader extends PureComponent {
 
                     {
                         requireOpenAccessStatus && this.isAnyOpenAccess(uploadedFiles) &&
-                            <div style={{position: 'relative', width: '100%'}} className={!termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox'}>
-                                <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={termsAndConditions} />
-                            </div>
+                        <div style={{position: 'relative', width: '100%'}} className={!termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox'}>
+                            <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={termsAndConditions} />
+                        </div>
                     }
 
                     {
@@ -299,8 +298,7 @@ export class FileUploader extends PureComponent {
                         <LinearProgress
                             className="upload-overall"
                             mode="determinate"
-                            value={overallProgress}
-                        />
+                            value={overallProgress} />
                     }
                 </div>
             </div>

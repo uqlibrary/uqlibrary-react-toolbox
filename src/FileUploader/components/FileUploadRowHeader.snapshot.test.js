@@ -1,6 +1,3 @@
-jest.dontMock('./FileUploadRowHeader');
-
-import React from 'react';
 import FileUploadRowHeader from './FileUploadRowHeader';
 
 const locale = {
@@ -18,10 +15,11 @@ const locale = {
 
 function setup(testProps, isShallow = true) {
     const props = {
+        onDeleteAll: testProps.onDeleteAll || jest.fn(),
         ...testProps
     };
 
-    return getElement(<FileUploadRowHeader {...props} onDeleteAll={jest.fn()}/>, isShallow);
+    return getElement(FileUploadRowHeader, props, isShallow);
 }
 
 describe('Component FileUploadRowHeader', () => {
@@ -33,7 +31,6 @@ describe('Component FileUploadRowHeader', () => {
     it('should render with access condition and embargo date column', () => {
         const props = {
             requireOpenAccessStatus: true,
-            defaultAccessConditionIdPresent: false,
             onDeleteAll: jest.fn(),
             locale: locale
         };
@@ -45,7 +42,6 @@ describe('Component FileUploadRowHeader', () => {
     it('should render without access condition even if requireAccessCondition true but default access condition is provided', () => {
         const props = {
             requireOpenAccessStatus: true,
-            defaultAccessConditionIdPresent: true,
             onDeleteAll: jest.fn(),
             locale: locale
         };
@@ -57,7 +53,6 @@ describe('Component FileUploadRowHeader', () => {
     it('should render confirmation on delete all', () => {
         const props = {
             requireOpenAccessStatus: true,
-            defaultAccessConditionIdPresent: false,
             onDeleteAll: jest.fn(),
             locale: locale
         };
@@ -65,7 +60,7 @@ describe('Component FileUploadRowHeader', () => {
         const wrapper = setup({...props}, false);
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._showConfirmation();
+        wrapper.find('FileUploadRowHeader').instance()._showConfirmation();
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();

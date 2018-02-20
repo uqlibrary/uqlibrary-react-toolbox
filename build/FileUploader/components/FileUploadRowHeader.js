@@ -83,12 +83,12 @@ var FileUploadRowHeader = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'column datalist-title is-3-desktop is-4-tablet is-12-mobile header' },
-                    this.props.requireOpenAccessStatus && !this.props.defaultAccessConditionIdPresent && fileAccessColumn
+                    this.props.requireOpenAccessStatus && fileAccessColumn
                 ),
                 _react2.default.createElement(
                     'div',
                     { className: 'column datalist-title is-2-desktop is-2-tablet is-12-mobile header' },
-                    this.props.requireOpenAccessStatus && !this.props.defaultAccessConditionIdPresent && embargoDateColumn
+                    this.props.requireOpenAccessStatus && embargoDateColumn
                 ),
                 _react2.default.createElement(
                     'div',

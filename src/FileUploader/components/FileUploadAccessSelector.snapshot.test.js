@@ -1,6 +1,3 @@
-jest.dontMock('./FileUploadAccessSelector');
-
-import React from 'react';
 import FileUploadAccessSelector from './FileUploadAccessSelector';
 
 function setup(testProps, isShallow = true) {
@@ -8,7 +5,7 @@ function setup(testProps, isShallow = true) {
         ...testProps
     };
 
-    return getElement(<FileUploadAccessSelector {...props} />, isShallow);
+    return getElement(FileUploadAccessSelector, props, isShallow);
 }
 
 const locale = {
@@ -33,7 +30,7 @@ describe('Component FileUploadAccessSelector', () => {
     it('should render with default setup', () => {
         const onAccessChangedTestFn = jest.fn();
         const props = {locale, defaultConfig, onAccessChanged: onAccessChangedTestFn};
-        const wrapper = setup({...props}, false);
+        const wrapper = setup({...props});
         expect(toJson(wrapper)).toMatchSnapshot();
 
         wrapper.instance()._onChange({}, 0, 2);

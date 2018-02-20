@@ -103,9 +103,9 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this.calculateMaxFileSize = function () {
-            var _this$props$defaultCo = _this.props.defaultConfig,
-                maxFileSize = _this$props$defaultCo.maxFileSize,
-                fileSizeUnit = _this$props$defaultCo.fileSizeUnit;
+            var _this$props$fileRestr = _this.props.fileRestrictionsConfig,
+                maxFileSize = _this$props$fileRestr.maxFileSize,
+                fileSizeUnit = _this$props$fileRestr.fileSizeUnit;
 
             return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
         };
@@ -269,11 +269,11 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             var _props$locale = this.props.locale,
                 instructions = _props$locale.instructions,
                 accessTermsAndConditions = _props$locale.accessTermsAndConditions;
-            var _props$defaultConfig = this.props.defaultConfig,
-                maxFileSize = _props$defaultConfig.maxFileSize,
-                fileSizeUnit = _props$defaultConfig.fileSizeUnit,
-                fileUploadLimit = _props$defaultConfig.fileUploadLimit,
-                fileNameRestrictions = _props$defaultConfig.fileNameRestrictions;
+            var _props$fileRestrictio = this.props.fileRestrictionsConfig,
+                maxFileSize = _props$fileRestrictio.maxFileSize,
+                fileSizeUnit = _props$fileRestrictio.fileSizeUnit,
+                fileUploadLimit = _props$fileRestrictio.fileUploadLimit,
+                fileNameRestrictions = _props$fileRestrictio.fileNameRestrictions;
             var _props = this.props,
                 requireOpenAccessStatus = _props.requireOpenAccessStatus,
                 overallProgress = _props.overallProgress;
@@ -293,8 +293,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     fileSizeUnit: fileSizeUnit,
                     onDelete: _this2._deleteFile,
                     onAttributeChanged: _this2._replaceFile,
-                    requireOpenAccessStatus: requireOpenAccessStatus,
-                    defaultAccessConditionIdPresent: !!_this2.props.defaultQuickTemplateId,
+                    requireOpenAccessStatus: requireOpenAccessStatus && !_this2.props.defaultQuickTemplateId,
                     disabled: _this2.props.disabled,
                     focusOnIndex: _this2.state.focusOnIndex
                 });
@@ -319,12 +318,12 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     clearErrors: clearErrors }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'metadata-container',
-                        style: uploadedFilesRow.length === 0 ? { display: 'none' } : { display: 'block' }
-                    },
+                    {
+                        className: 'metadata-container',
+                        style: uploadedFilesRow.length === 0 ? { display: 'none' } : { display: 'block' } },
                     uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, {
                         onDeleteAll: this._deleteAllFiles,
-                        requireOpenAccessStatus: requireOpenAccessStatus,
+                        requireOpenAccessStatus: requireOpenAccessStatus && !this.props.defaultQuickTemplateId,
                         defaultAccessConditionIdPresent: !!this.props.defaultQuickTemplateId,
                         disabled: this.props.disabled }),
                     uploadedFilesRow,
@@ -336,8 +335,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     overallProgress > 0 && _react2.default.createElement(_LinearProgress2.default, {
                         className: 'upload-overall',
                         mode: 'determinate',
-                        value: overallProgress
-                    })
+                        value: overallProgress })
                 )
             );
         }
@@ -393,7 +391,7 @@ FileUploader.defaultProps = {
             'Click here to select files, or drag files into this area to upload'
         )
     },
-    defaultConfig: {
+    fileRestrictionsConfig: {
         fileUploadLimit: 10,
         maxFileSize: 5,
         fileSizeUnit: 'G'

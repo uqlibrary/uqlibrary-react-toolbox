@@ -1,6 +1,3 @@
-jest.dontMock('./FileUploadDropzone');
-
-import React from 'react';
 import FileUploadDropzone from './FileUploadDropzone';
 
 const locale = {
@@ -11,29 +8,16 @@ const locale = {
         ['maxFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded',
     },
     errorTitle: 'Upload Errors',
-    fileUploadRestrictionHeading: (<h3>File upload restrictions</h3>),
-    fileUploadRestrictions: (
-        <div>
-            Please ensure your files:
-            <ul>
-                <li>begin with a letter and are less than 45 characters long</li>
-                <li>contain only upper and lowercase alphanumeric characters, and underscores</li>
-                <li>have only a single period which precedes the file extension: “.pdf”</li>
-                <li>are uploaded individually and not inside a folder</li>
-            </ul>
-        </div>
-    ),
-    fileUploadInstruction: (
-        <p>Click here to select files, or drag files into this area to upload</p>
-    )
+    fileUploadRestrictionHeading: 'Test header',
+    fileUploadRestrictions: 'Test text',
+    fileUploadInstruction: "Test instructions"
 };
 
 function setup(testProps, isShallow = true) {
     const props = {
         ...testProps
     };
-
-    return getElement(<FileUploadDropzone {...props} />, isShallow);
+    return getElement(FileUploadDropzone, props, isShallow);
 }
 
 describe('Component FileUploadDropzone', () => {
@@ -148,11 +132,11 @@ describe('Component FileUploadDropzone', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
 
         const testFn = jest.fn();
-        wrapper.instance().dropzoneRef.open = testFn;
 
-        wrapper.instance()._onKeyPress();
+        wrapper.find('FileUploadDropzone').instance().dropzoneRef.open = testFn;
+        wrapper.find('FileUploadDropzone').instance()._onKeyPress();
+
         wrapper.update();
-
         expect(testFn).toHaveBeenCalled();
     });
 });

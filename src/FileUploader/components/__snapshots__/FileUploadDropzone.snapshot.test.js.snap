@@ -1,201 +1,151 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Component FileUploadDropzone should open files selection dialog 1`] = `
-<FileUploadDropzone
-  clearErrors={false}
-  fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
-  locale={
+<Provider
+  store={
     Object {
-      "errorTitle": "Upload Errors",
-      "fileUploadInstruction": <p>
-        Click here to select files, or drag files into this area to upload
-      </p>,
-      "fileUploadRestrictionHeading": <h3>
-        File upload restrictions
-      </h3>,
-      "fileUploadRestrictions": <div>
-        Please ensure your files:
-        <ul>
-          <li>
-            begin with a letter and are less than 45 characters long
-          </li>
-          <li>
-            contain only upper and lowercase alphanumeric characters, and underscores
-          </li>
-          <li>
-            have only a single period which precedes the file extension: “.pdf”
-          </li>
-          <li>
-            are uploaded individually and not inside a folder
-          </li>
-        </ul>
-      </div>,
-      "validation": Object {
-        "fileName": "File(s) ([filenames]) have invalid file name",
-        "folder": "Invalid files ([filenames])",
-        "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-        "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
-      },
+      "dispatch": [MockFunction],
+      "getState": [MockFunction],
+      "subscribe": [MockFunction],
     }
   }
-  maxFiles={5}
-  maxSize={1000}
-  onDropped={[MockFunction]}
-  uploadedFiles={Array []}
 >
-  <div>
-    <div
-      className="columns"
-    >
+  <FileUploadDropzone
+    clearErrors={false}
+    fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    locale={
+      Object {
+        "errorTitle": "Upload Errors",
+        "fileUploadInstruction": "Test instructions",
+        "fileUploadRestrictionHeading": "Test header",
+        "fileUploadRestrictions": "Test text",
+        "validation": Object {
+          "fileName": "File(s) ([filenames]) have invalid file name",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+        },
+      }
+    }
+    maxFiles={5}
+    maxSize={1000}
+    onDropped={[MockFunction]}
+    uploadedFiles={Array []}
+  >
+    <div>
       <div
-        className="column"
-        onKeyPress={[Function]}
-        tabIndex="0"
+        className="columns"
       >
-        <t
-          disableClick={false}
-          disablePreview={true}
-          disabled={false}
-          maxSize={1000}
-          minSize={0}
-          multiple={true}
-          onDrop={[Function]}
-          preventDropOnDocument={true}
-          style={
-            Object {
-              "padding": "0px",
-            }
-          }
+        <div
+          className="column"
+          onKeyPress={[Function]}
+          tabIndex="0"
         >
-          <div
-            aria-disabled={false}
-            className=""
-            onClick={[Function]}
-            onDragEnter={[Function]}
-            onDragLeave={[Function]}
-            onDragOver={[Function]}
-            onDragStart={[Function]}
+          <t
+            disableClick={false}
+            disablePreview={true}
+            disabled={false}
+            maxSize={1000}
+            minSize={0}
+            multiple={true}
             onDrop={[Function]}
+            preventDropOnDocument={true}
             style={
               Object {
                 "padding": "0px",
               }
             }
           >
-            <FileUploadDropzoneStaticContent
-              txt={
+            <div
+              aria-disabled={false}
+              className=""
+              onClick={[Function]}
+              onDragEnter={[Function]}
+              onDragLeave={[Function]}
+              onDragOver={[Function]}
+              onDragStart={[Function]}
+              onDrop={[Function]}
+              style={
                 Object {
-                  "errorTitle": "Upload Errors",
-                  "fileUploadInstruction": <p>
-                    Click here to select files, or drag files into this area to upload
-                  </p>,
-                  "fileUploadRestrictionHeading": <h3>
-                    File upload restrictions
-                  </h3>,
-                  "fileUploadRestrictions": <div>
-                    Please ensure your files:
-                    <ul>
-                      <li>
-                        begin with a letter and are less than 45 characters long
-                      </li>
-                      <li>
-                        contain only upper and lowercase alphanumeric characters, and underscores
-                      </li>
-                      <li>
-                        have only a single period which precedes the file extension: “.pdf”
-                      </li>
-                      <li>
-                        are uploaded individually and not inside a folder
-                      </li>
-                    </ul>
-                  </div>,
-                  "validation": Object {
-                    "fileName": "File(s) ([filenames]) have invalid file name",
-                    "folder": "Invalid files ([filenames])",
-                    "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-                    "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
-                  },
+                  "padding": "0px",
                 }
               }
             >
-              <div
-                className="columns file-instructions"
+              <FileUploadDropzoneStaticContent
+                txt={
+                  Object {
+                    "errorTitle": "Upload Errors",
+                    "fileUploadInstruction": "Test instructions",
+                    "fileUploadRestrictionHeading": "Test header",
+                    "fileUploadRestrictions": "Test text",
+                    "validation": Object {
+                      "fileName": "File(s) ([filenames]) have invalid file name",
+                      "folder": "Invalid files ([filenames])",
+                      "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+                      "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+                    },
+                  }
+                }
               >
                 <div
-                  className="column"
+                  className="columns file-instructions"
                 >
-                  <h3>
-                    File upload restrictions
-                  </h3>
-                  <div>
-                    Please ensure your files:
-                    <ul>
-                      <li>
-                        begin with a letter and are less than 45 characters long
-                      </li>
-                      <li>
-                        contain only upper and lowercase alphanumeric characters, and underscores
-                      </li>
-                      <li>
-                        have only a single period which precedes the file extension: “.pdf”
-                      </li>
-                      <li>
-                        are uploaded individually and not inside a folder
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div
-                  className="column upload-instructions"
-                >
-                  <FontIcon
-                    className="material-icons"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
+                  <div
+                    className="column"
                   >
-                    <span
+                    Test header
+                    Test text
+                  </div>
+                  <div
+                    className="column upload-instructions"
+                  >
+                    <FontIcon
                       className="material-icons"
                       onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
-                      style={
-                        Object {
-                          "color": "rgba(0, 0, 0, 0.87)",
-                          "display": "inline-block",
-                          "fontSize": 24,
-                          "muiPrepared": true,
-                          "position": "relative",
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "userSelect": "none",
-                        }
-                      }
                     >
-                      cloud_upload
-                    </span>
-                  </FontIcon>
-                  <p>
-                    Click here to select files, or drag files into this area to upload
-                  </p>
+                      <span
+                        className="material-icons"
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "display": "inline-block",
+                            "fontSize": 24,
+                            "muiPrepared": true,
+                            "position": "relative",
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                          }
+                        }
+                      >
+                        cloud_upload
+                      </span>
+                    </FontIcon>
+                    Test instructions
+                  </div>
                 </div>
-              </div>
-            </FileUploadDropzoneStaticContent>
-            <input
-              autoComplete="off"
-              disabled={false}
-              multiple={true}
-              onChange={[Function]}
-              style={
-                Object {
-                  "display": "none",
+              </FileUploadDropzoneStaticContent>
+              <input
+                autoComplete="off"
+                disabled={false}
+                multiple={true}
+                onChange={[Function]}
+                style={
+                  Object {
+                    "display": "none",
+                  }
                 }
-              }
-              type="file"
-            />
-          </div>
-        </t>
+                type="file"
+              />
+            </div>
+          </t>
+        </div>
       </div>
     </div>
-  </div>
-</FileUploadDropzone>
+  </FileUploadDropzone>
+</Provider>
 `;
 
 exports[`Component FileUploadDropzone should render correctly without any setup 1`] = `
@@ -227,29 +177,9 @@ exports[`Component FileUploadDropzone should render correctly without any setup 
           txt={
             Object {
               "errorTitle": "Upload Errors",
-              "fileUploadInstruction": <p>
-                Click here to select files, or drag files into this area to upload
-              </p>,
-              "fileUploadRestrictionHeading": <h3>
-                File upload restrictions
-              </h3>,
-              "fileUploadRestrictions": <div>
-                Please ensure your files:
-                <ul>
-                  <li>
-                    begin with a letter and are less than 45 characters long
-                  </li>
-                  <li>
-                    contain only upper and lowercase alphanumeric characters, and underscores
-                  </li>
-                  <li>
-                    have only a single period which precedes the file extension: “.pdf”
-                  </li>
-                  <li>
-                    are uploaded individually and not inside a folder
-                  </li>
-                </ul>
-              </div>,
+              "fileUploadInstruction": "Test instructions",
+              "fileUploadRestrictionHeading": "Test header",
+              "fileUploadRestrictions": "Test text",
               "validation": Object {
                 "fileName": "File(s) ([filenames]) have invalid file name",
                 "folder": "Invalid files ([filenames])",
@@ -294,29 +224,9 @@ exports[`Component FileUploadDropzone should render files discarding folders 1`]
           txt={
             Object {
               "errorTitle": "Upload Errors",
-              "fileUploadInstruction": <p>
-                Click here to select files, or drag files into this area to upload
-              </p>,
-              "fileUploadRestrictionHeading": <h3>
-                File upload restrictions
-              </h3>,
-              "fileUploadRestrictions": <div>
-                Please ensure your files:
-                <ul>
-                  <li>
-                    begin with a letter and are less than 45 characters long
-                  </li>
-                  <li>
-                    contain only upper and lowercase alphanumeric characters, and underscores
-                  </li>
-                  <li>
-                    have only a single period which precedes the file extension: “.pdf”
-                  </li>
-                  <li>
-                    are uploaded individually and not inside a folder
-                  </li>
-                </ul>
-              </div>,
+              "fileUploadInstruction": "Test instructions",
+              "fileUploadRestrictionHeading": "Test header",
+              "fileUploadRestrictions": "Test text",
               "validation": Object {
                 "fileName": "File(s) ([filenames]) have invalid file name",
                 "folder": "Invalid files ([filenames])",
@@ -361,29 +271,9 @@ exports[`Component FileUploadDropzone should render files discarding folders 2`]
           txt={
             Object {
               "errorTitle": "Upload Errors",
-              "fileUploadInstruction": <p>
-                Click here to select files, or drag files into this area to upload
-              </p>,
-              "fileUploadRestrictionHeading": <h3>
-                File upload restrictions
-              </h3>,
-              "fileUploadRestrictions": <div>
-                Please ensure your files:
-                <ul>
-                  <li>
-                    begin with a letter and are less than 45 characters long
-                  </li>
-                  <li>
-                    contain only upper and lowercase alphanumeric characters, and underscores
-                  </li>
-                  <li>
-                    have only a single period which precedes the file extension: “.pdf”
-                  </li>
-                  <li>
-                    are uploaded individually and not inside a folder
-                  </li>
-                </ul>
-              </div>,
+              "fileUploadInstruction": "Test instructions",
+              "fileUploadRestrictionHeading": "Test header",
+              "fileUploadRestrictions": "Test text",
               "validation": Object {
                 "fileName": "File(s) ([filenames]) have invalid file name",
                 "folder": "Invalid files ([filenames])",

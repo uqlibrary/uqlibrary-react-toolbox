@@ -1,6 +1,3 @@
-jest.dontMock('./FileUploadDropzoneStaticContent');
-
-import React from 'react';
 import FileUploadDropzoneStaticContent from './FileUploadDropzoneStaticContent';
 
 function setup(testProps, isShallow = true) {
@@ -8,7 +5,7 @@ function setup(testProps, isShallow = true) {
         ...testProps
     };
 
-    return getElement(<FileUploadDropzoneStaticContent {...props} />, isShallow);
+    return getElement(FileUploadDropzoneStaticContent, props, isShallow);
 }
 
 describe('Component FileUploadDropzoneStaticContent', () => {

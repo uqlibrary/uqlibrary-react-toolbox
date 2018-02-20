@@ -125,7 +125,7 @@ var AutoSuggestField = exports.AutoSuggestField = function (_Component) {
                 searchText: this.state.searchText,
                 disabled: this.props.disabled,
                 listStyle: { maxHeight: 200, overflow: 'auto' },
-                filter: !this.props.async ? _AutoComplete2.default.caseInsensitiveFilter : function () {
+                filter: !this.props.async ? this.props.filter || _AutoComplete2.default.caseInsensitiveFilter : function () {
                     return true;
                 },
                 maxSearchResults: this.props.maxResults,

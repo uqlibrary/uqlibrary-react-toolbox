@@ -1,6 +1,3 @@
-jest.dontMock('./FileUploadEmbargoDate');
-
-import React from 'react';
 import FileUploadEmbargoDate from './FileUploadEmbargoDate';
 
 function setup(testProps, isShallow = true) {
@@ -8,7 +5,7 @@ function setup(testProps, isShallow = true) {
         ...testProps
     };
 
-    return getElement(<FileUploadEmbargoDate {...props} />, isShallow);
+    return getElement(FileUploadEmbargoDate, props, isShallow);
 }
 
 describe('Component FileUploadEmbargoDate', () => {
@@ -34,9 +31,9 @@ describe('Component FileUploadEmbargoDate', () => {
 
     it('should render datepicker on key pressed', () => {
         const wrapper = setup({}, false);
-        expect (toJson(wrapper)).toMatchSnapshot();
+        expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._onKeyPress();
+        wrapper.find('FileUploadEmbargoDate').instance()._onKeyPress();
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
     });
@@ -55,7 +52,7 @@ describe('Component FileUploadEmbargoDate', () => {
             onDateChanged: onDateChangedTestFn
         };
 
-        const wrapper = setup({...props}, true);
+        const wrapper = setup({...props});
         expect(toJson(wrapper)).toMatchSnapshot();
 
         wrapper.instance()._onChange({}, 'Sat Feb 10 2018 00:00:00 GMT+1000 (AEST)');

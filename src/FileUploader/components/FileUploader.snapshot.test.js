@@ -1,32 +1,11 @@
-jest.dontMock('./FileUploader');
-
-import {mount} from 'enzyme';
-import {createStore} from 'redux';
-import Immutable from 'immutable';
-import fileUploadReducer from '../reducer';
-import toJson from 'enzyme-to-json';
-import React from 'react';
 import {FileUploader} from './FileUploader';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import PropTypes from 'prop-types';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
-function setup(props) {
-    let defaultProps = {
-        ...props,
+function setup(testProps, isShallow = true) {
+    const props = {
+        ...testProps,
         clearFileUpload: jest.fn()
     };
-
-    return mount(<FileUploader {...defaultProps} />, {
-        context: {
-            muiTheme: getMuiTheme(),
-            store: createStore(fileUploadReducer, Immutable.Map({fileUpload: fileUploadReducer}))
-        },
-        childContextTypes: {
-            muiTheme: PropTypes.object.isRequired,
-            store: PropTypes.object
-        }
-    });
+    return getElement(FileUploader, props, isShallow);
 }
 
 beforeAll(() => {
