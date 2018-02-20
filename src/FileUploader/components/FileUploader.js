@@ -70,8 +70,7 @@ export class FileUploader extends PureComponent {
         defaultConfig: {
             fileUploadLimit: 10,
             maxFileSize: 5,
-            fileSizeUnit: 'G',
-            fileNameRestrictions: ['web_', 'preview_', 'thumbnail_', 'stream_', 'fezacml_', 'presmd_'],
+            fileSizeUnit: 'G'
         },
         requireOpenAccessStatus: false
     };

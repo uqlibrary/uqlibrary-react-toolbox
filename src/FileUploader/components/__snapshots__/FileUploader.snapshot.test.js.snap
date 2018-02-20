@@ -5,14 +5,6 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -66,16 +58,7 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -289,14 +272,6 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -350,16 +325,7 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -573,14 +539,6 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -634,16 +592,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -1897,14 +1846,6 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -1958,16 +1899,7 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
     <FileUploadDropzone
       clearErrors={true}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -2847,14 +2779,6 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -2908,16 +2832,7 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
     <FileUploadDropzone
       clearErrors={true}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -3131,14 +3046,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -3192,16 +3099,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -3415,14 +3313,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -3476,16 +3366,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -7689,14 +7570,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -7750,16 +7623,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     <FileUploadDropzone
       clearErrors={true}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -11966,14 +11830,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -12027,16 +11883,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     <FileUploadDropzone
       clearErrors={true}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -17420,14 +17267,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -17481,16 +17320,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     <FileUploadDropzone
       clearErrors={true}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -22877,14 +22707,6 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -22939,16 +22761,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -23162,14 +22975,6 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -23224,16 +23029,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -24493,14 +24289,6 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -24555,16 +24343,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -24778,14 +24557,6 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   clearFileUpload={[MockFunction]}
   defaultConfig={
     Object {
-      "fileNameRestrictions": Array [
-        "web_",
-        "preview_",
-        "thumbnail_",
-        "stream_",
-        "fezacml_",
-        "presmd_",
-      ],
       "fileSizeUnit": "G",
       "fileUploadLimit": 10,
       "maxFileSize": 5,
@@ -24840,16 +24611,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
     <FileUploadDropzone
       clearErrors={false}
       disabled={false}
-      fileNameRestrictions={
-        Array [
-          "web_",
-          "preview_",
-          "thumbnail_",
-          "stream_",
-          "fezacml_",
-          "presmd_",
-        ]
-      }
+      fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
       locale={
         Object {
           "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",

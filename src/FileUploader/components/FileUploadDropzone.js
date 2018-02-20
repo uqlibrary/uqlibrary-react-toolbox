@@ -17,7 +17,7 @@ class FileUploadDropzone extends PureComponent {
     };
 
     static defaultProps = {
-        fileNameRestrictions: /^(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
+        fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
     };
 
     constructor(props) {
@@ -77,9 +77,9 @@ class FileUploadDropzone extends PureComponent {
      * @private
      */
     validate = (file) => {
-        const restriction = (new RegExp(this.props.fileNameRestrictions, 'gi')).test(file.name);
+        const valid = (new RegExp(this.props.fileNameRestrictions, 'gi')).test(file.name);
 
-        if (restriction) {
+        if (!valid) {
             this.setError('fileName', file);
             return true;
         }
@@ -243,7 +243,7 @@ class FileUploadDropzone extends PureComponent {
                 .map((item) => item.webkitGetAsEntry().name);
             this.handleDroppedFiles([...accepted], [...rejected], [...droppedFolders]);
         } else {
-            this.getDroppedFolders([...accepted]).then(result => {
+            return this.getDroppedFolders([...accepted]).then(result => {
                 droppedFolders = result.filter(folder => !!folder);
                 this.handleDroppedFiles([...accepted], [...rejected], [...droppedFolders]);
             });

@@ -3,7 +3,7 @@
 exports[`Component FileUploadDropzone should open files selection dialog 1`] = `
 <FileUploadDropzone
   clearErrors={false}
-  fileNameRestrictions={/\\^\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+  fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
   locale={
     Object {
       "errorTitle": "Upload Errors",
@@ -398,7 +398,7 @@ exports[`Component FileUploadDropzone should render files discarding folders 2`]
   </div>
   <Alert
     allowDismiss={false}
-    message="Invalid files (test); File(s) (web_a.txt, WEB_b.txt, Web_c.txt) have invalid file name"
+    message="Invalid files (test); File(s) (a.text.txt, web_a.txt, WEB_b.txt, Web_c.txt) have invalid file name"
     title="Upload Errors"
     type="error"
   />

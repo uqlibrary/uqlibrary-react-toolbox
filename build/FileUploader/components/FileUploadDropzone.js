@@ -61,9 +61,9 @@ var FileUploadDropzone = function (_PureComponent) {
         };
 
         _this.validate = function (file) {
-            var restriction = new RegExp(_this.props.fileNameRestrictions, 'gi').test(file.name);
+            var valid = new RegExp(_this.props.fileNameRestrictions, 'gi').test(file.name);
 
-            if (restriction) {
+            if (!valid) {
                 _this.setError('fileName', file);
                 return true;
             }
@@ -227,7 +227,7 @@ var FileUploadDropzone = function (_PureComponent) {
                 });
                 _this.handleDroppedFiles([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(rejected)), [].concat(_toConsumableArray(droppedFolders)));
             } else {
-                _this.getDroppedFolders([].concat(_toConsumableArray(accepted))).then(function (result) {
+                return _this.getDroppedFolders([].concat(_toConsumableArray(accepted))).then(function (result) {
                     droppedFolders = result.filter(function (folder) {
                         return !!folder;
                     });
@@ -390,6 +390,6 @@ var FileUploadDropzone = function (_PureComponent) {
 }(_react.PureComponent);
 
 FileUploadDropzone.defaultProps = {
-    fileNameRestrictions: /^(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
+    fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
 };
 exports.default = FileUploadDropzone;

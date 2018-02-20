@@ -37,6 +37,14 @@ function setup(testProps, isShallow = true) {
 }
 
 describe('Component FileUploadDropzone', () => {
+    beforeEach(() => {
+        const FILE_READER_TO_USE = new FileReader();
+        window.FileReader = jest.fn(() => FILE_READER_TO_USE);
+        window.FileReader.onerror = () => resolve();
+        window.FileReader.onload = () => resolve();
+        window.FileReader.readAsDataURL = () => (window.FileReader.onload);
+    });
+
     it('should render correctly without any setup', () => {
         const onDroppedCallback = jest.fn();
         const props = {
@@ -141,7 +149,6 @@ describe('Component FileUploadDropzone', () => {
             uploadedFiles: [],
             clearErrors: false,
             locale: locale,
-            fileNameRestrictions: ['web_']
         };
         const wrapper = setup({...props});
 
