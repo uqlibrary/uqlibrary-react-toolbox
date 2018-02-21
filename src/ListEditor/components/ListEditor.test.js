@@ -52,6 +52,15 @@ describe('ListEditor tests ', () => {
         expect(wrapper.state().itemList.length).toEqual(1);
     });
 
+    it('should render items not more than maxCount', () => {
+        const wrapper = setup({ maxCount: 1 });
+        expect(wrapper.state().itemList.length).toEqual(0);
+        wrapper.instance().addItem('one');
+        expect(wrapper.state().itemList.length).toEqual(1);
+        wrapper.instance().addItem('two');
+        expect(wrapper.state().itemList.length).toEqual(1);
+    });
+
     it('should delete an item from the list', () => {
         const wrapper = setup({ });
         wrapper.setState({ itemList: [ 'one', 'two', 'three' ]});
