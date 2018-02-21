@@ -50,4 +50,17 @@ describe('AutoSuggestField component', () => {
         wrapper.instance().valueSelected(testValue);
         expect(wrapper.state().selectedValue).toBeTruthy();
     });
+
+    it('should update autosuggest field value to empty if user deletes value from the field', () => {
+        const onChangeTestFn = jest.fn();
+        let wrapper = setup({allowFreeText: true, onChange: onChangeTestFn});
+        wrapper.instance().textUpdated('Institution');
+        wrapper.update();
+
+        expect(onChangeTestFn).toHaveBeenCalledWith('Institution');
+
+        wrapper.instance().textUpdated('');
+        wrapper.update();
+        expect(onChangeTestFn).toHaveBeenCalledWith('');
+    });
 });
