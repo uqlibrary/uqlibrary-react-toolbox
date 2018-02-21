@@ -16,6 +16,11 @@ export const notifyProgress = (name, progress) => {
     };
 };
 
+export const notifyFileUploadProgress = (name, dispatch) => (event) => {
+    const progress = Math.floor((event.loaded * 100) / event.total);
+    dispatch(notifyProgress(name, progress));
+};
+
 /**
  * Notify file upload failed for individual file
  *

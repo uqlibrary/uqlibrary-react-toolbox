@@ -1,54 +1,62 @@
-jest.dontMock('./FileUploadDropzone');
-
-import { mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
-import React from 'react';
 import FileUploadDropzone from './FileUploadDropzone';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import PropTypes from 'prop-types';
 
-function setup(props) {
-    return mount(<FileUploadDropzone {...props} />, {
-        context: {
-            muiTheme: getMuiTheme()
-        },
-        childContextTypes: {
-            muiTheme: PropTypes.object.isRequired
-        }
-    });
+const locale = {
+    validation: {
+        ['folder']: 'Invalid files ([filenames])',
+        ['fileName']: 'File(s) ([filenames]) have invalid file name',
+        ['maxFileSize']: 'File(s) ([filenames]) exceed maximum allowed upload file size',
+        ['maxFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded',
+    },
+    errorTitle: 'Upload Errors',
+    fileUploadRestrictionHeading: 'Test header',
+    fileUploadRestrictions: 'Test text',
+    fileUploadInstruction: "Test instructions"
+};
+
+function setup(testProps, isShallow = true) {
+    const props = {
+        ...testProps
+    };
+    return getElement(FileUploadDropzone, props, isShallow);
 }
 
-describe('FileUploadDropzone', () => {
-    it('renders correctly without any setup', () => {
-        const onDroppedCallback = jest.fn();
-        const props = {
-            onDropped: onDroppedCallback,
-            maxSize: 1000,
-            maxFiles: 3,
-            uploadedFiles: [],
-            clearErrors: false
-        };
-        const wrapper = setup(props);
-
-        const tree = toJson(wrapper);
-
-        expect(tree).toMatchSnapshot();
+describe('Component FileUploadDropzone', () => {
+    beforeEach(() => {
+        const FILE_READER_TO_USE = new FileReader();
+        window.FileReader = jest.fn(() => FILE_READER_TO_USE);
+        window.FileReader.onerror = () => resolve();
+        window.FileReader.onload = () => resolve();
+        window.FileReader.readAsDataURL = () => (window.FileReader.onload);
     });
 
-    it('renders row for uploaded files', () => {
+    it('should render correctly without any setup', () => {
         const onDroppedCallback = jest.fn();
         const props = {
             onDropped: onDroppedCallback,
             maxSize: 1000,
             maxFiles: 3,
             uploadedFiles: [],
-            clearErrors: false
+            clearErrors: false,
+            locale: locale
         };
-        const wrapper = setup(props);
+        const wrapper = setup({...props});
 
-        let tree = toJson(wrapper);
+        expect(toJson(wrapper)).toMatchSnapshot();
+    });
 
-        expect(tree).toMatchSnapshot();
+    it('should render files discarding folders', () => {
+        const onDroppedCallback = jest.fn();
+        const props = {
+            onDropped: onDroppedCallback,
+            maxSize: 1000,
+            maxFiles: 5,
+            uploadedFiles: [],
+            clearErrors: false,
+            locale: locale,
+        };
+        const wrapper = setup({...props});
+
+        expect(toJson(wrapper)).toMatchSnapshot();
 
         const accepted = [
             {
@@ -57,59 +65,78 @@ describe('FileUploadDropzone', () => {
                 size: 500
             },
             {
-                type: '',
-                name: 'folder',
-                size: 500
-            },
-            {
-                type: 'text/text',
-                name: 'jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt',
-                size: 100
-            },
-            {
                 type: 'text/text',
                 name: 'a.text.txt',
                 size: 100
-            }
-        ];
-
-        const rejected = [
+            },
             {
                 type: 'text/text',
-                name: 'b.txt',
-                size: 50000
-            }
-        ];
-
-        wrapper.instance()._onDrop(accepted, rejected);
-        wrapper.update();
-
-        tree = toJson(wrapper);
-        expect(tree).toMatchSnapshot();
-
-        const moreFiles = [
+                name: 'ab.txt',
+                size: 100
+            },
             {
-                type: 'text/text',
-                name: 'b.txt',
+                type: '',
+                name: 'test',
                 size: 100
             },
             {
                 type: 'text/text',
-                name: 'c.txt',
+                name: 'web_a.txt',
                 size: 100
             },
             {
                 type: 'text/text',
-                name: 'd.txt',
+                name: 'WEB_b.txt',
+                size: 100
+            },
+            {
+                type: 'text/text',
+                name: 'Web_c.txt',
                 size: 100
             }
         ];
 
-        wrapper.instance()._onDrop(moreFiles, []);
+        const event = {
+            dataTransfer: {
+                items: [
+                    {
+                        webkitGetAsEntry: () => ({
+                            name: 'test',
+                            isDirectory: true
+                        })
+                    }
+                ]
+            }
+        };
+
+        wrapper.instance()._onDrop(accepted, [], event);
         wrapper.update();
 
-        tree = toJson(wrapper);
-        expect(tree).toMatchSnapshot();
+        expect(toJson(wrapper)).toMatchSnapshot();
         expect(onDroppedCallback).toHaveBeenCalled();
+    });
+
+
+    it('should open files selection dialog', () => {
+        const onDroppedCallback = jest.fn();
+        const props = {
+            onDropped: onDroppedCallback,
+            maxSize: 1000,
+            maxFiles: 5,
+            uploadedFiles: [],
+            clearErrors: false,
+            locale: locale
+        };
+        const wrapper = setup({...props}, false);
+
+        expect(toJson(wrapper)).toMatchSnapshot();
+
+        const testFn = jest.fn();
+
+        wrapper.find('FileUploadDropzone').instance().dropzoneRef.open = testFn;
+        wrapper.find('FileUploadDropzone').instance()._onKeyPress();
+
+        wrapper.update();
+        expect(testFn).toHaveBeenCalled();
     });
 });

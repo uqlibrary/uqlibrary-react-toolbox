@@ -142,6 +142,7 @@ var toHaveAnyOrderDispatchedActions = function toHaveAnyOrderDispatchedActions(a
 var getElement = function getElement(component, props) {
     var isShallow = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
+    console.log(isShallow);
     if (isShallow) return (0, _enzyme.shallow)(_react2.default.createElement(component, props));
     return (0, _enzyme.mount)(_react2.default.createElement(
         _reactRedux.Provider,

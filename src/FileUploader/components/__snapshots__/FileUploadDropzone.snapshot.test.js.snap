@@ -1,752 +1,296 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FileUploadDropzone renders correctly without any setup 1`] = `
-<FileUploadDropzone
-  clearErrors={false}
-  locale={
+exports[`Component FileUploadDropzone should open files selection dialog 1`] = `
+<Provider
+  store={
     Object {
-      "errorTitle": "Upload Errors",
-      "validation": Object {
-        "multiple": Object {
-          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
-          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
-          "folder": "Invalid files ([filenames])",
-          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
-          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
-        },
-        "single": Object {
-          "fileName": "Invalid file name ([filename])",
-          "fileNameLength": "Filename ([filename]) is too long",
-          "folder": "Invalid file ([filename])",
-          "maxFileSize": "File ([filename]) is too big",
-          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
-        },
-      },
+      "dispatch": [MockFunction],
+      "getState": [MockFunction],
+      "subscribe": [MockFunction],
     }
   }
-  maxFiles={3}
-  maxSize={1000}
-  onDropped={[MockFunction]}
-  uploadedFiles={Array []}
 >
-  <div>
-    <div
-      className="columns"
-    >
-      <div
-        className="column"
-        onKeyPress={[Function]}
-        tabIndex="0"
-      >
-        <t
-          disableClick={false}
-          disablePreview={true}
-          disabled={false}
-          maxSize={1000}
-          minSize={0}
-          multiple={true}
-          onDrop={[Function]}
-          preventDropOnDocument={true}
-          style={
-            Object {
-              "padding": "0px",
-            }
-          }
-        >
-          <div
-            aria-disabled={false}
-            className=""
-            onClick={[Function]}
-            onDragEnter={[Function]}
-            onDragLeave={[Function]}
-            onDragOver={[Function]}
-            onDragStart={[Function]}
-            onDrop={[Function]}
-            style={
-              Object {
-                "padding": "0px",
-              }
-            }
-          >
-            <FileUploadDropzoneStaticContent>
-              <div
-                className="columns file-instructions"
-              >
-                <div
-                  className="column"
-                >
-                  <h3>
-                    File upload restrictions
-                  </h3>
-                  <div>
-                    Please ensure your files:
-                    <ul>
-                      <li>
-                        begin with a letter and are less than 45 characters long
-                      </li>
-                      <li>
-                        contain only upper and lowercase alphanumeric characters, and underscores
-                      </li>
-                      <li>
-                        have only a single period which precedes the file extension: “.pdf”
-                      </li>
-                      <li>
-                        are uploaded individually and not inside a folder
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div
-                  className="column upload-instructions"
-                >
-                  <FontIcon
-                    className="material-icons"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
-                  >
-                    <span
-                      className="material-icons"
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      style={
-                        Object {
-                          "color": "rgba(0, 0, 0, 0.87)",
-                          "display": "inline-block",
-                          "fontSize": 24,
-                          "muiPrepared": true,
-                          "position": "relative",
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "userSelect": "none",
-                        }
-                      }
-                    >
-                      cloud_upload
-                    </span>
-                  </FontIcon>
-                  <p>
-                    Click here to select files, or drag files into this area to upload
-                  </p>
-                </div>
-              </div>
-            </FileUploadDropzoneStaticContent>
-            <input
-              autoComplete="off"
-              disabled={false}
-              multiple={true}
-              onChange={[Function]}
-              style={
-                Object {
-                  "display": "none",
-                }
-              }
-              type="file"
-            />
-          </div>
-        </t>
-      </div>
-    </div>
-  </div>
-</FileUploadDropzone>
-`;
-
-exports[`FileUploadDropzone renders row for uploaded files 1`] = `
-<FileUploadDropzone
-  clearErrors={false}
-  locale={
-    Object {
-      "errorTitle": "Upload Errors",
-      "validation": Object {
-        "multiple": Object {
-          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
-          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
+  <FileUploadDropzone
+    clearErrors={false}
+    fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    locale={
+      Object {
+        "errorTitle": "Upload Errors",
+        "fileUploadInstruction": "Test instructions",
+        "fileUploadRestrictionHeading": "Test header",
+        "fileUploadRestrictions": "Test text",
+        "validation": Object {
+          "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
-          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
-          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
+          "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
         },
-        "single": Object {
-          "fileName": "Invalid file name ([filename])",
-          "fileNameLength": "Filename ([filename]) is too long",
-          "folder": "Invalid file ([filename])",
-          "maxFileSize": "File ([filename]) is too big",
-          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
-        },
-      },
+      }
     }
-  }
-  maxFiles={3}
-  maxSize={1000}
-  onDropped={[MockFunction]}
-  uploadedFiles={Array []}
->
-  <div>
-    <div
-      className="columns"
-    >
+    maxFiles={5}
+    maxSize={1000}
+    onDropped={[MockFunction]}
+    uploadedFiles={Array []}
+  >
+    <div>
       <div
-        className="column"
-        onKeyPress={[Function]}
-        tabIndex="0"
-      >
-        <t
-          disableClick={false}
-          disablePreview={true}
-          disabled={false}
-          maxSize={1000}
-          minSize={0}
-          multiple={true}
-          onDrop={[Function]}
-          preventDropOnDocument={true}
-          style={
-            Object {
-              "padding": "0px",
-            }
-          }
-        >
-          <div
-            aria-disabled={false}
-            className=""
-            onClick={[Function]}
-            onDragEnter={[Function]}
-            onDragLeave={[Function]}
-            onDragOver={[Function]}
-            onDragStart={[Function]}
-            onDrop={[Function]}
-            style={
-              Object {
-                "padding": "0px",
-              }
-            }
-          >
-            <FileUploadDropzoneStaticContent>
-              <div
-                className="columns file-instructions"
-              >
-                <div
-                  className="column"
-                >
-                  <h3>
-                    File upload restrictions
-                  </h3>
-                  <div>
-                    Please ensure your files:
-                    <ul>
-                      <li>
-                        begin with a letter and are less than 45 characters long
-                      </li>
-                      <li>
-                        contain only upper and lowercase alphanumeric characters, and underscores
-                      </li>
-                      <li>
-                        have only a single period which precedes the file extension: “.pdf”
-                      </li>
-                      <li>
-                        are uploaded individually and not inside a folder
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div
-                  className="column upload-instructions"
-                >
-                  <FontIcon
-                    className="material-icons"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
-                  >
-                    <span
-                      className="material-icons"
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      style={
-                        Object {
-                          "color": "rgba(0, 0, 0, 0.87)",
-                          "display": "inline-block",
-                          "fontSize": 24,
-                          "muiPrepared": true,
-                          "position": "relative",
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "userSelect": "none",
-                        }
-                      }
-                    >
-                      cloud_upload
-                    </span>
-                  </FontIcon>
-                  <p>
-                    Click here to select files, or drag files into this area to upload
-                  </p>
-                </div>
-              </div>
-            </FileUploadDropzoneStaticContent>
-            <input
-              autoComplete="off"
-              disabled={false}
-              multiple={true}
-              onChange={[Function]}
-              style={
-                Object {
-                  "display": "none",
-                }
-              }
-              type="file"
-            />
-          </div>
-        </t>
-      </div>
-    </div>
-  </div>
-</FileUploadDropzone>
-`;
-
-exports[`FileUploadDropzone renders row for uploaded files 2`] = `
-<FileUploadDropzone
-  clearErrors={false}
-  locale={
-    Object {
-      "errorTitle": "Upload Errors",
-      "validation": Object {
-        "multiple": Object {
-          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
-          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
-          "folder": "Invalid files ([filenames])",
-          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
-          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
-        },
-        "single": Object {
-          "fileName": "Invalid file name ([filename])",
-          "fileNameLength": "Filename ([filename]) is too long",
-          "folder": "Invalid file ([filename])",
-          "maxFileSize": "File ([filename]) is too big",
-          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
-        },
-      },
-    }
-  }
-  maxFiles={3}
-  maxSize={1000}
-  onDropped={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          Array [
-            Object {
-              "name": "a.txt",
-              "size": 500,
-              "type": "text/text",
-            },
-          ],
-        ],
-      ],
-    }
-  }
-  uploadedFiles={Array []}
->
-  <div>
-    <div
-      className="columns"
-    >
-      <div
-        className="column"
-        onKeyPress={[Function]}
-        tabIndex="0"
-      >
-        <t
-          disableClick={false}
-          disablePreview={true}
-          disabled={false}
-          maxSize={1000}
-          minSize={0}
-          multiple={true}
-          onDrop={[Function]}
-          preventDropOnDocument={true}
-          style={
-            Object {
-              "padding": "0px",
-            }
-          }
-        >
-          <div
-            aria-disabled={false}
-            className=""
-            onClick={[Function]}
-            onDragEnter={[Function]}
-            onDragLeave={[Function]}
-            onDragOver={[Function]}
-            onDragStart={[Function]}
-            onDrop={[Function]}
-            style={
-              Object {
-                "padding": "0px",
-              }
-            }
-          >
-            <FileUploadDropzoneStaticContent>
-              <div
-                className="columns file-instructions"
-              >
-                <div
-                  className="column"
-                >
-                  <h3>
-                    File upload restrictions
-                  </h3>
-                  <div>
-                    Please ensure your files:
-                    <ul>
-                      <li>
-                        begin with a letter and are less than 45 characters long
-                      </li>
-                      <li>
-                        contain only upper and lowercase alphanumeric characters, and underscores
-                      </li>
-                      <li>
-                        have only a single period which precedes the file extension: “.pdf”
-                      </li>
-                      <li>
-                        are uploaded individually and not inside a folder
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div
-                  className="column upload-instructions"
-                >
-                  <FontIcon
-                    className="material-icons"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
-                  >
-                    <span
-                      className="material-icons"
-                      onMouseEnter={[Function]}
-                      onMouseLeave={[Function]}
-                      style={
-                        Object {
-                          "color": "rgba(0, 0, 0, 0.87)",
-                          "display": "inline-block",
-                          "fontSize": 24,
-                          "muiPrepared": true,
-                          "position": "relative",
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "userSelect": "none",
-                        }
-                      }
-                    >
-                      cloud_upload
-                    </span>
-                  </FontIcon>
-                  <p>
-                    Click here to select files, or drag files into this area to upload
-                  </p>
-                </div>
-              </div>
-            </FileUploadDropzoneStaticContent>
-            <input
-              autoComplete="off"
-              disabled={false}
-              multiple={true}
-              onChange={[Function]}
-              style={
-                Object {
-                  "display": "none",
-                }
-              }
-              type="file"
-            />
-          </div>
-        </t>
-      </div>
-    </div>
-    <Alert
-      allowDismiss={false}
-      message="File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; Invalid file name (a.text.txt)"
-      title="Upload Errors"
-      type="error"
-    >
-      <div
-        className="error alertWrapper "
+        className="columns"
       >
         <div
-          className="columns is-multiline is-mobile"
+          className="column"
+          onKeyPress={[Function]}
+          tabIndex="0"
         >
-          <div
-            className="column is-narrow alertIcon"
+          <t
+            disableClick={false}
+            disablePreview={true}
+            disabled={false}
+            maxSize={1000}
+            minSize={0}
+            multiple={true}
+            onDrop={[Function]}
+            preventDropOnDocument={true}
+            style={
+              Object {
+                "padding": "0px",
+              }
+            }
           >
-            <FontIcon
-              className="material-icons"
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
+            <div
+              aria-disabled={false}
+              className=""
+              onClick={[Function]}
+              onDragEnter={[Function]}
+              onDragLeave={[Function]}
+              onDragOver={[Function]}
+              onDragStart={[Function]}
+              onDrop={[Function]}
+              style={
+                Object {
+                  "padding": "0px",
+                }
+              }
             >
-              <span
-                className="material-icons"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                style={
+              <FileUploadDropzoneStaticContent
+                txt={
                   Object {
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "display": "inline-block",
-                    "fontSize": 24,
-                    "muiPrepared": true,
-                    "position": "relative",
-                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "userSelect": "none",
+                    "errorTitle": "Upload Errors",
+                    "fileUploadInstruction": "Test instructions",
+                    "fileUploadRestrictionHeading": "Test header",
+                    "fileUploadRestrictions": "Test text",
+                    "validation": Object {
+                      "fileName": "File(s) ([filenames]) have invalid file name",
+                      "folder": "Invalid files ([filenames])",
+                      "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+                      "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+                    },
                   }
                 }
               >
-                error
-              </span>
-            </FontIcon>
-          </div>
-          <div
-            className="column alertText"
-          >
-            <div>
-              <b>
-                Upload Errors
-              </b>
-               - 
-              File (b.txt) is too big; Invalid file (folder); Filename (jalksjflkajsdlkfjasdlkfjalsdfjlkasdjflkajsdfkljasdlfjasljfsajlkdsjflkasdjflkjasdflkj.txt) is too long; Invalid file name (a.text.txt)
-            </div>
-          </div>
-        </div>
-      </div>
-    </Alert>
-  </div>
-</FileUploadDropzone>
-`;
-
-exports[`FileUploadDropzone renders row for uploaded files 3`] = `
-<FileUploadDropzone
-  clearErrors={false}
-  locale={
-    Object {
-      "errorTitle": "Upload Errors",
-      "validation": Object {
-        "multiple": Object {
-          "fileName": "[numberOfFiles] files ([filenames]) have an invalid file name",
-          "fileNameLength": "[numberOfFiles] filenames ([filenames]) are too long",
-          "folder": "Invalid files ([filenames])",
-          "maxFileSize": "[numberOfFiles] files ([filenames]) are too big",
-          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored",
-        },
-        "single": Object {
-          "fileName": "Invalid file name ([filename])",
-          "fileNameLength": "Filename ([filename]) is too long",
-          "folder": "Invalid file ([filename])",
-          "maxFileSize": "File ([filename]) is too big",
-          "maxFiles": "Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored",
-        },
-      },
-    }
-  }
-  maxFiles={3}
-  maxSize={1000}
-  onDropped={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          Array [
-            Object {
-              "name": "a.txt",
-              "size": 500,
-              "type": "text/text",
-            },
-          ],
-        ],
-        Array [
-          Array [
-            Object {
-              "name": "a.txt",
-              "size": 500,
-              "type": "text/text",
-            },
-            Object {
-              "name": "b.txt",
-              "size": 100,
-              "type": "text/text",
-            },
-            Object {
-              "name": "c.txt",
-              "size": 100,
-              "type": "text/text",
-            },
-          ],
-        ],
-      ],
-    }
-  }
-  uploadedFiles={Array []}
->
-  <div>
-    <div
-      className="columns"
-    >
-      <div
-        className="column"
-        onKeyPress={[Function]}
-        tabIndex="0"
-      >
-        <t
-          disableClick={false}
-          disablePreview={true}
-          disabled={false}
-          maxSize={1000}
-          minSize={0}
-          multiple={true}
-          onDrop={[Function]}
-          preventDropOnDocument={true}
-          style={
-            Object {
-              "padding": "0px",
-            }
-          }
-        >
-          <div
-            aria-disabled={false}
-            className=""
-            onClick={[Function]}
-            onDragEnter={[Function]}
-            onDragLeave={[Function]}
-            onDragOver={[Function]}
-            onDragStart={[Function]}
-            onDrop={[Function]}
-            style={
-              Object {
-                "padding": "0px",
-              }
-            }
-          >
-            <FileUploadDropzoneStaticContent>
-              <div
-                className="columns file-instructions"
-              >
                 <div
-                  className="column"
+                  className="columns file-instructions"
                 >
-                  <h3>
-                    File upload restrictions
-                  </h3>
-                  <div>
-                    Please ensure your files:
-                    <ul>
-                      <li>
-                        begin with a letter and are less than 45 characters long
-                      </li>
-                      <li>
-                        contain only upper and lowercase alphanumeric characters, and underscores
-                      </li>
-                      <li>
-                        have only a single period which precedes the file extension: “.pdf”
-                      </li>
-                      <li>
-                        are uploaded individually and not inside a folder
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div
-                  className="column upload-instructions"
-                >
-                  <FontIcon
-                    className="material-icons"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
+                  <div
+                    className="column"
                   >
-                    <span
+                    Test header
+                    Test text
+                  </div>
+                  <div
+                    className="column upload-instructions"
+                  >
+                    <FontIcon
                       className="material-icons"
                       onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
-                      style={
-                        Object {
-                          "color": "rgba(0, 0, 0, 0.87)",
-                          "display": "inline-block",
-                          "fontSize": 24,
-                          "muiPrepared": true,
-                          "position": "relative",
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "userSelect": "none",
-                        }
-                      }
                     >
-                      cloud_upload
-                    </span>
-                  </FontIcon>
-                  <p>
-                    Click here to select files, or drag files into this area to upload
-                  </p>
+                      <span
+                        className="material-icons"
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "display": "inline-block",
+                            "fontSize": 24,
+                            "muiPrepared": true,
+                            "position": "relative",
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                          }
+                        }
+                      >
+                        cloud_upload
+                      </span>
+                    </FontIcon>
+                    Test instructions
+                  </div>
                 </div>
-              </div>
-            </FileUploadDropzoneStaticContent>
-            <input
-              autoComplete="off"
-              disabled={false}
-              multiple={true}
-              onChange={[Function]}
-              style={
-                Object {
-                  "display": "none",
-                }
-              }
-              type="file"
-            />
-          </div>
-        </t>
-      </div>
-    </div>
-    <Alert
-      allowDismiss={false}
-      message="Only 3 files are allowed to be uploaded. File (d.txt) ignored"
-      title="Upload Errors"
-      type="error"
-    >
-      <div
-        className="error alertWrapper "
-      >
-        <div
-          className="columns is-multiline is-mobile"
-        >
-          <div
-            className="column is-narrow alertIcon"
-          >
-            <FontIcon
-              className="material-icons"
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            >
-              <span
-                className="material-icons"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
+              </FileUploadDropzoneStaticContent>
+              <input
+                autoComplete="off"
+                disabled={false}
+                multiple={true}
+                onChange={[Function]}
                 style={
                   Object {
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "display": "inline-block",
-                    "fontSize": 24,
-                    "muiPrepared": true,
-                    "position": "relative",
-                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "userSelect": "none",
+                    "display": "none",
                   }
                 }
-              >
-                error
-              </span>
-            </FontIcon>
-          </div>
-          <div
-            className="column alertText"
-          >
-            <div>
-              <b>
-                Upload Errors
-              </b>
-               - 
-              Only 3 files are allowed to be uploaded. File (d.txt) ignored
+                type="file"
+              />
             </div>
-          </div>
+          </t>
         </div>
       </div>
-    </Alert>
+    </div>
+  </FileUploadDropzone>
+</Provider>
+`;
+
+exports[`Component FileUploadDropzone should render correctly without any setup 1`] = `
+<div>
+  <div
+    className="columns"
+  >
+    <div
+      className="column"
+      onKeyPress={[Function]}
+      tabIndex="0"
+    >
+      <t
+        disableClick={false}
+        disablePreview={true}
+        disabled={false}
+        maxSize={1000}
+        minSize={0}
+        multiple={true}
+        onDrop={[Function]}
+        preventDropOnDocument={true}
+        style={
+          Object {
+            "padding": "0px",
+          }
+        }
+      >
+        <FileUploadDropzoneStaticContent
+          txt={
+            Object {
+              "errorTitle": "Upload Errors",
+              "fileUploadInstruction": "Test instructions",
+              "fileUploadRestrictionHeading": "Test header",
+              "fileUploadRestrictions": "Test text",
+              "validation": Object {
+                "fileName": "File(s) ([filenames]) have invalid file name",
+                "folder": "Invalid files ([filenames])",
+                "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+              },
+            }
+          }
+        />
+      </t>
+    </div>
   </div>
-</FileUploadDropzone>
+</div>
+`;
+
+exports[`Component FileUploadDropzone should render files discarding folders 1`] = `
+<div>
+  <div
+    className="columns"
+  >
+    <div
+      className="column"
+      onKeyPress={[Function]}
+      tabIndex="0"
+    >
+      <t
+        disableClick={false}
+        disablePreview={true}
+        disabled={false}
+        maxSize={1000}
+        minSize={0}
+        multiple={true}
+        onDrop={[Function]}
+        preventDropOnDocument={true}
+        style={
+          Object {
+            "padding": "0px",
+          }
+        }
+      >
+        <FileUploadDropzoneStaticContent
+          txt={
+            Object {
+              "errorTitle": "Upload Errors",
+              "fileUploadInstruction": "Test instructions",
+              "fileUploadRestrictionHeading": "Test header",
+              "fileUploadRestrictions": "Test text",
+              "validation": Object {
+                "fileName": "File(s) ([filenames]) have invalid file name",
+                "folder": "Invalid files ([filenames])",
+                "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+              },
+            }
+          }
+        />
+      </t>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Component FileUploadDropzone should render files discarding folders 2`] = `
+<div>
+  <div
+    className="columns"
+  >
+    <div
+      className="column"
+      onKeyPress={[Function]}
+      tabIndex="0"
+    >
+      <t
+        disableClick={false}
+        disablePreview={true}
+        disabled={false}
+        maxSize={1000}
+        minSize={0}
+        multiple={true}
+        onDrop={[Function]}
+        preventDropOnDocument={true}
+        style={
+          Object {
+            "padding": "0px",
+          }
+        }
+      >
+        <FileUploadDropzoneStaticContent
+          txt={
+            Object {
+              "errorTitle": "Upload Errors",
+              "fileUploadInstruction": "Test instructions",
+              "fileUploadRestrictionHeading": "Test header",
+              "fileUploadRestrictions": "Test text",
+              "validation": Object {
+                "fileName": "File(s) ([filenames]) have invalid file name",
+                "folder": "Invalid files ([filenames])",
+                "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+              },
+            }
+          }
+        />
+      </t>
+    </div>
+  </div>
+  <Alert
+    allowDismiss={false}
+    message="Invalid files (test); File(s) (a.text.txt, web_a.txt, WEB_b.txt, Web_c.txt) have invalid file name"
+    title="Upload Errors"
+    type="error"
+  />
+</div>
 `;

@@ -82,9 +82,13 @@ var _ref4 = _react2.default.createElement(
 );
 
 var _ref5 = _react2.default.createElement(
-    _FontIcon2.default,
-    { className: 'material-icons green-tick' },
-    'done'
+    'div',
+    { className: 'upload-progress' },
+    _react2.default.createElement(
+        _FontIcon2.default,
+        { className: 'material-icons green-tick' },
+        'done'
+    )
 );
 
 var FileUploadRow = exports.FileUploadRow = function (_Component) {
@@ -193,7 +197,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'column datalist-text is-3-desktop is-4-tablet is-12-mobile' },
-                    this.props.requireFileAccess && _react2.default.createElement(
+                    this.props.requireOpenAccessStatus && _react2.default.createElement(
                         'div',
                         { className: 'file-access-selector' },
                         _ref2,
@@ -215,8 +219,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'embargo-date-info' },
-                        _ref3,
-                        this.props.requireFileAccess && !this.isOpenAccess(accessConditionId) && _react2.default.createElement(
+                        this.props.requireOpenAccessStatus && _ref3,
+                        this.props.requireOpenAccessStatus && !this.isOpenAccess(accessConditionId) && _react2.default.createElement(
                             'div',
                             { className: 'no-embargo-date' },
                             _react2.default.createElement(
@@ -230,7 +234,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                                 embargoDateColumn
                             )
                         ),
-                        this.props.requireFileAccess && this.isOpenAccess(accessConditionId) && _react2.default.createElement(
+                        this.props.requireOpenAccessStatus && this.isOpenAccess(accessConditionId) && _react2.default.createElement(
                             'div',
                             { className: 'embargo-date-selector' },
                             _react2.default.createElement(_FileUploadEmbargoDate2.default, { onDateChanged: this._updateFileMetadata, disabled: this.props.disabled }),
@@ -242,27 +246,39 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         )
                     )
                 ),
-                this.props.progress === 0 && _react2.default.createElement(
+                _react2.default.createElement(
                     'div',
-                    { className: 'column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless' },
-                    _react2.default.createElement(
-                        _IconButton2.default,
-                        { tooltip: this.props.locale.deleteHint, onTouchTap: this._showConfirmation, disabled: this.props.disabled },
-                        _ref4
-                    )
-                ),
-                this.props.progress > 0 && this.props.progress !== 100 && _react2.default.createElement(
-                    'div',
-                    { className: 'upload-progress-wrapper' },
-                    _react2.default.createElement(_CircularProgress2.default, {
-                        className: 'upload-progress',
-                        mode: 'determinate',
-                        value: this.props.progress,
-                        size: 20,
-                        thickness: 4
-                    })
-                ),
-                this.props.progress === 100 && _ref5
+                    { className: 'column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered' },
+                    this.props.progress === 0 && _react2.default.createElement(
+                        'div',
+                        { className: 'datalist-buttons' },
+                        _react2.default.createElement(
+                            _IconButton2.default,
+                            { tooltip: this.props.locale.deleteHint, onTouchTap: this._showConfirmation, disabled: this.props.disabled },
+                            _ref4
+                        )
+                    ),
+                    this.props.progress > 0 && this.props.progress !== 100 && _react2.default.createElement(
+                        'div',
+                        { className: 'upload-progress-info' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'upload-progress' },
+                            _react2.default.createElement(_CircularProgress2.default, {
+                                mode: 'determinate',
+                                value: this.props.progress,
+                                size: 20,
+                                thickness: 4
+                            })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'upload-progress-number' },
+                            this.props.progress + '%'
+                        )
+                    ),
+                    this.props.progress === 100 && _ref5
+                )
             );
         }
     }]);

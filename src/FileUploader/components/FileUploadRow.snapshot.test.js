@@ -11,11 +11,11 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import PropTypes from 'prop-types';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-function setup({index, uploadedFile, requireFileAccess, onDelete, onAttributeChanged, progress}) {
+function setup({index, uploadedFile, requireOpenAccessStatus, onDelete, onAttributeChanged, progress}) {
     let defaultProps = {
         index: index || 0,
         uploadedFile: uploadedFile || {name: 'a.txt', size: 100},
-        requireFileAccess: requireFileAccess || false,
+        requireOpenAccessStatus: requireOpenAccessStatus || false,
         onDelete: onDelete || jest.fn(),
         onAttributeChanged: onAttributeChanged || jest.fn(),
         progress: progress || 0
@@ -79,7 +79,7 @@ describe('FileUploadRow', () => {
             size: 100,
             date: '2017-01-01'
         };
-        const wrapper = setup({requireFileAccess: true, onAttributeChanged: testFunction, uploadedFile: file});
+        const wrapper = setup({requireOpenAccessStatus: true, onAttributeChanged: testFunction, uploadedFile: file});
 
         wrapper.instance()._updateFileMetadata({key: 'access_condition_id', value: 8});
         wrapper.update();
@@ -92,7 +92,7 @@ describe('FileUploadRow', () => {
 
     it('updates file metadata correctly with open access', () => {
         const testFunction = jest.fn();
-        const wrapper = setup({requireFileAccess: true, onAttributeChanged: testFunction});
+        const wrapper = setup({requireOpenAccessStatus: true, onAttributeChanged: testFunction});
 
         wrapper.instance()._updateFileMetadata({key: 'access_condition_id', value: 9});
         wrapper.update();

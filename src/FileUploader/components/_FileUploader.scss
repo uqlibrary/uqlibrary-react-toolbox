@@ -131,6 +131,15 @@
   }
 }
 
+.upload-progress {
+  padding: 12px 0px 0px 0px !important;
+}
+
+.upload-progress-number {
+  color: rgba(51, 51, 51, 0.66);
+  font-size: 10px;
+}
+
 //Mobile
 @include mobile {
   .fileUploadErrorMessage {
@@ -228,10 +237,6 @@
         }
       }
     }
-  }
-
-  .uploadedFileDelete {
-    float: right;
   }
 
   .open-access-checkbox {

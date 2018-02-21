@@ -10,31 +10,14 @@ class FileUploadDropzone extends PureComponent {
         maxSize: PropTypes.number.isRequired,
         maxFiles: PropTypes.number.isRequired,
         uploadedFiles: PropTypes.array,
-        locale: PropTypes.object,
+        locale: PropTypes.object.isRequired,
         clearErrors: PropTypes.bool,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
+        fileNameRestrictions: PropTypes.string.isRequired,
     };
 
     static defaultProps = {
-        locale: {
-            validation: {
-                single: {
-                    ['folder']: 'Invalid file ([filename])',
-                    ['fileName']: 'Invalid file name ([filename])',
-                    ['fileNameLength']: 'Filename ([filename]) is too long',
-                    ['maxFileSize']: 'File ([filename]) is too big',
-                    ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded. File ([filename]) ignored'
-                },
-                multiple: {
-                    ['folder']: 'Invalid files ([filenames])',
-                    ['fileName']: '[numberOfFiles] files ([filenames]) have an invalid file name',
-                    ['fileNameLength']: '[numberOfFiles] filenames ([filenames]) are too long',
-                    ['maxFileSize']: '[numberOfFiles] files ([filenames]) are too big',
-                    ['maxFiles']: 'Only [maxNumberOfFiles] files are allowed to be uploaded.  Files ([filenames]) ignored'
-                }
-            },
-            errorTitle: 'Upload Errors'
-        }
+        fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
     };
 
     constructor(props) {
@@ -53,7 +36,6 @@ class FileUploadDropzone extends PureComponent {
     componentWillReceiveProps(nextProps) {
         this.clearAccepted();
         this.add(nextProps.uploadedFiles);
-        this.resetErrors();
 
         if (nextProps.clearErrors) this.processErrors(this.errors);
     }
@@ -95,22 +77,14 @@ class FileUploadDropzone extends PureComponent {
      * @private
      */
     validate = (file) => {
-        const type = file.type === '';
-        if (type) {
-            this.setError('folder', file);
-        }
+        const valid = (new RegExp(this.props.fileNameRestrictions, 'gi')).test(file.name);
 
-        const length = file.name.length > 45;
-        if (length) {
-            this.setError('fileNameLength', file);
-        }
-
-        const period = file.name.split('.').length > 2;
-        if (period) {
+        if (!valid) {
             this.setError('fileName', file);
+            return true;
         }
 
-        return type || length || period;
+        return false;
     };
 
     /**
@@ -136,7 +110,7 @@ class FileUploadDropzone extends PureComponent {
      * @private
      */
     processErrors = (errors) => {
-        const {single, multiple} = this.props.locale.validation;
+        const {validation} = this.props.locale;
         const errorMessages = [];
         let message;
 
@@ -146,12 +120,10 @@ class FileUploadDropzone extends PureComponent {
                 fileNames.push(file.name);
             });
 
-            if (files.length > 1) {
-                message = multiple[errorCode]
+            if (files.length > 0) {
+                message = validation[errorCode]
                     .replace('[numberOfFiles]', files.length)
                     .replace('[filenames]', fileNames.join(', '));
-            } else if (files.length === 1) {
-                message = single[errorCode].replace('[filename]', fileNames.join(', '));
             }
 
             if (errorCode === 'maxFiles') {
@@ -177,14 +149,29 @@ class FileUploadDropzone extends PureComponent {
         this.errors = new Map();
     };
 
-    /**
-     * Handle accepted and rejected files on dropped in Dropzone
-     *
-     * @param accepted
-     * @param rejected
-     * @private
-     */
-    _onDrop = (accepted, rejected) => {
+    getDroppedFolders(accepted) {
+        const acceptedFilesAndFolders = [...accepted];
+        return Promise.all(
+            acceptedFilesAndFolders.map(file => {
+                return new Promise(resolve => {
+                    const fileReader = new FileReader();
+                    fileReader.onerror = () => resolve(file.name);
+                    fileReader.onload = () => resolve();
+                    const slice = file.slice(0, 10);
+                    fileReader.readAsDataURL(slice);
+                });
+            })
+        );
+    }
+
+    handleDroppedFiles = (accepted, rejected, droppedFolders) => {
+        /*
+         * Set error for folder
+         */
+        if (droppedFolders.length > 0) {
+            this.setError('folder', accepted.filter(file => droppedFolders.indexOf(file.name) >= 0));
+        }
+
         /*
          * Set error for rejected files (maxFileSize rule)
          */
@@ -193,16 +180,21 @@ class FileUploadDropzone extends PureComponent {
         }
 
         /*
+         * Folders are accepted by dropzone so remove folders from accepted list
+         */
+        const acceptedFiles = droppedFolders.length > 0 ? accepted.filter(file => droppedFolders.indexOf(file.name) === -1) : accepted;
+
+        /*
          * Validate accepted files and get list of invalid files (check fileName, fileNameLength, folder)
          */
-        const invalid = accepted.filter((file) => {
+        const invalid = acceptedFiles.filter((file) => {
             return this.validate(file);
         });
 
         /*
          * Remove invalid files
          */
-        const filtered = this.difference(new Set(accepted), new Set(invalid));
+        const filtered = this.difference(new Set(acceptedFiles), new Set(invalid));
 
         /*
          * Duplicates will be removed by setting up file.name as key
@@ -214,8 +206,8 @@ class FileUploadDropzone extends PureComponent {
          */
         const {maxFiles} = this.props;
         if (this.accepted.size > maxFiles) {
-            this.props.onDropped([...this.accepted.values()].slice(0, maxFiles));
             this.setError('maxFiles', [...this.accepted.values()].slice(maxFiles));
+            this.props.onDropped([...this.accepted.values()].slice(0, maxFiles));
         } else {
             this.props.onDropped([...this.accepted.values()]);
         }
@@ -224,6 +216,38 @@ class FileUploadDropzone extends PureComponent {
          * Process any errors
          */
         this.processErrors(this.errors);
+    };
+
+    /**
+     * Handle accepted and rejected files on dropped in Dropzone
+     *
+     * @param accepted
+     * @param rejected
+     * @private
+     */
+    _onDrop = (accepted, rejected, event) => {
+        /*
+         * From droppedEvent dataTransfer items, determine which items are folders
+         * Safari and IE doesn't support event.dataTransfer.items
+         * https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items
+         *
+         * Workaround: check if file doesn't have type set and size is multiple of 4096 bytes
+         *  - This may leave some files without type and size multiple of 4096 to be recognised as folders
+         *  - Or some folders with allowed extensions to be recognized as files
+         *
+         * https://stackoverflow.com/questions/25016442/how-to-distinguish-if-a-file-or-folder-is-being-dragged-prior-to-it-being-droppe
+         */
+        let droppedFolders = [];
+        if (!!event && !!event.dataTransfer && !!event.dataTransfer.items) {
+            droppedFolders =  Array.prototype.filter.call(event.dataTransfer.items, (item) => (item.webkitGetAsEntry().isDirectory))
+                .map((item) => item.webkitGetAsEntry().name);
+            this.handleDroppedFiles([...accepted], [...rejected], [...droppedFolders]);
+        } else {
+            this.getDroppedFolders([...accepted]).then(result => {
+                droppedFolders = result.filter(folder => !!folder);
+                this.handleDroppedFiles([...accepted], [...rejected], [...droppedFolders]);
+            });
+        }
     };
 
     /**
@@ -249,7 +273,7 @@ class FileUploadDropzone extends PureComponent {
                             disabled={this.props.disabled}
                             disableClick={this.props.disabled}
                             disablePreview>
-                            <FileUploadDropzoneStaticContent />
+                            <FileUploadDropzoneStaticContent txt={this.props.locale}/>
                         </Dropzone>
                     </div>
                 </div>

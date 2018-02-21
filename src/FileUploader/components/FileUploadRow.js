@@ -23,7 +23,7 @@ export class FileUploadRow extends Component {
         onAttributeChanged: PropTypes.func.isRequired,
         locale: PropTypes.object,
         progress: PropTypes.number,
-        requireFileAccess: PropTypes.bool.isRequired,
+        requireOpenAccessStatus: PropTypes.bool.isRequired,
         fileSizeUnit: PropTypes.string,
         disabled: PropTypes.bool,
         focusOnIndex: PropTypes.number
@@ -112,7 +112,7 @@ export class FileUploadRow extends Component {
                 </div>
                 <div className="column datalist-text is-3-desktop is-4-tablet is-12-mobile">
                     {
-                        this.props.requireFileAccess &&
+                        this.props.requireOpenAccessStatus &&
                             <div className="file-access-selector">
                                 <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
                                 <div className="select-container">
@@ -124,16 +124,19 @@ export class FileUploadRow extends Component {
                 </div>
                 <div className="column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
                     <div className="embargo-date-info">
-                        <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
                         {
-                            this.props.requireFileAccess && !this.isOpenAccess(accessConditionId) &&
+                            this.props.requireOpenAccessStatus &&
+                            <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
+                        }
+                        {
+                            this.props.requireOpenAccessStatus && !this.isOpenAccess(accessConditionId) &&
                             <div className="no-embargo-date">
                                 <span>{embargoDateClosedAccess}</span>
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }
                         {
-                            this.props.requireFileAccess && this.isOpenAccess(accessConditionId) &&
+                            this.props.requireOpenAccessStatus && this.isOpenAccess(accessConditionId) &&
                             <div className="embargo-date-selector">
                                 <FileUploadEmbargoDate onDateChanged={this._updateFileMetadata} disabled={this.props.disabled} />
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
@@ -141,30 +144,36 @@ export class FileUploadRow extends Component {
                         }
                     </div>
                 </div>
-                {
-                    this.props.progress === 0 &&
-                        <div className="column is-narrow uploadedFileDelete datalist-buttons is-1-desktop is-1-tablet is-marginless">
+                <div className="column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered">
+                    {
+                        this.props.progress === 0 &&
+                        <div className="datalist-buttons">
                             <IconButton tooltip={this.props.locale.deleteHint} onTouchTap={this._showConfirmation} disabled={this.props.disabled}>
                                 <FontIcon className="material-icons deleteIcon">delete</FontIcon>
                             </IconButton>
                         </div>
-                }
-                {
-                    this.props.progress > 0 && this.props.progress !== 100 &&
-                        <div className="upload-progress-wrapper">
-                            <CircularProgress
-                                className="upload-progress"
-                                mode="determinate"
-                                value={this.props.progress}
-                                size={20}
-                                thickness={4}
-                            />
+                    }
+                    {
+                        this.props.progress > 0 && this.props.progress !== 100 &&
+                        <div className="upload-progress-info">
+                            <div className="upload-progress">
+                                <CircularProgress
+                                    mode="determinate"
+                                    value={this.props.progress}
+                                    size={20}
+                                    thickness={4}
+                                />
+                            </div>
+                            <div className="upload-progress-number">{`${this.props.progress}%`}</div>
                         </div>
-                }
-                {
-                    this.props.progress === 100 &&
-                        <FontIcon className="material-icons green-tick">done</FontIcon>
-                }
+                    }
+                    {
+                        this.props.progress === 100 &&
+                        <div className="upload-progress">
+                            <FontIcon className="material-icons green-tick">done</FontIcon>
+                        </div>
+                    }
+                </div>
             </div>
         );
     }

@@ -7,7 +7,7 @@ exports.FileUploader = exports.sizeBase = exports.sizeUnitText = exports.sizeExp
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _sizeExponent, _sizeUnitText;
+var _sizeExponent, _sizeUnitText, _validation;
 
 var _react = require('react');
 
@@ -90,6 +90,11 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this._setUploadedFiles = function (files) {
+            if (!!_this.props.defaultQuickTemplateId && !_this.props.requireOpenAccessStatus) {
+                files.map(function (file) {
+                    return file.access_condition_id = _this.props.defaultQuickTemplateId;
+                });
+            }
             _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)), clearErrors: false, focusOnIndex: files.length + _this.state.uploadedFiles.length - files.length });
         };
 
@@ -98,9 +103,9 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this.calculateMaxFileSize = function () {
-            var _this$props$defaultCo = _this.props.defaultConfig,
-                maxFileSize = _this$props$defaultCo.maxFileSize,
-                fileSizeUnit = _this$props$defaultCo.fileSizeUnit;
+            var _this$props$fileRestr = _this.props.fileRestrictionsConfig,
+                maxFileSize = _this$props$fileRestr.maxFileSize,
+                fileSizeUnit = _this$props$fileRestr.fileSizeUnit;
 
             return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
         };
@@ -129,7 +134,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
             var isValid = true;
 
-            if (_this.props.requireFileAccess) {
+            if (_this.props.requireOpenAccessStatus) {
                 if (uploadedFiles.filter(function (file) {
                     return !_this.hasAccess(file);
                 }).length > 0) {
@@ -264,12 +269,13 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             var _props$locale = this.props.locale,
                 instructions = _props$locale.instructions,
                 accessTermsAndConditions = _props$locale.accessTermsAndConditions;
-            var _props$defaultConfig = this.props.defaultConfig,
-                maxFileSize = _props$defaultConfig.maxFileSize,
-                fileSizeUnit = _props$defaultConfig.fileSizeUnit,
-                fileUploadLimit = _props$defaultConfig.fileUploadLimit;
+            var _props$fileRestrictio = this.props.fileRestrictionsConfig,
+                maxFileSize = _props$fileRestrictio.maxFileSize,
+                fileSizeUnit = _props$fileRestrictio.fileSizeUnit,
+                fileUploadLimit = _props$fileRestrictio.fileUploadLimit,
+                fileNameRestrictions = _props$fileRestrictio.fileNameRestrictions;
             var _props = this.props,
-                requireFileAccess = _props.requireFileAccess,
+                requireOpenAccessStatus = _props.requireOpenAccessStatus,
                 overallProgress = _props.overallProgress;
             var _state = this.state,
                 uploadedFiles = _state.uploadedFiles,
@@ -287,7 +293,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     fileSizeUnit: fileSizeUnit,
                     onDelete: _this2._deleteFile,
                     onAttributeChanged: _this2._replaceFile,
-                    requireFileAccess: requireFileAccess,
+                    requireOpenAccessStatus: requireOpenAccessStatus && !_this2.props.defaultQuickTemplateId,
                     disabled: _this2.props.disabled,
                     focusOnIndex: _this2.state.focusOnIndex
                 });
@@ -302,23 +308,25 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     instructionsDisplay
                 ),
                 _react2.default.createElement(_FileUploadDropzone2.default, {
+                    locale: this.props.locale,
                     maxSize: this.calculateMaxFileSize(),
                     maxFiles: fileUploadLimit,
+                    fileNameRestrictions: fileNameRestrictions,
                     disabled: this.props.disabled || uploadedFiles.length === fileUploadLimit,
                     onDropped: this._setUploadedFiles,
                     uploadedFiles: uploadedFiles,
                     clearErrors: clearErrors }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'metadata-container',
-                        style: uploadedFilesRow.length === 0 ? { display: 'none' } : { display: 'block' }
-                    },
+                    {
+                        className: 'metadata-container',
+                        style: uploadedFilesRow.length === 0 ? { display: 'none' } : { display: 'block' } },
                     uploadedFiles.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, {
                         onDeleteAll: this._deleteAllFiles,
-                        requireFileAccess: requireFileAccess,
+                        requireOpenAccessStatus: requireOpenAccessStatus && !this.props.defaultQuickTemplateId,
                         disabled: this.props.disabled }),
                     uploadedFilesRow,
-                    requireFileAccess && this.isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(
+                    requireOpenAccessStatus && this.isAnyOpenAccess(uploadedFiles) && _react2.default.createElement(
                         'div',
                         { style: { position: 'relative', width: '100%' }, className: !termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox' },
                         _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this._acceptTermsAndConditions, checked: termsAndConditions })
@@ -326,8 +334,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     overallProgress > 0 && _react2.default.createElement(_LinearProgress2.default, {
                         className: 'upload-overall',
                         mode: 'determinate',
-                        value: overallProgress
-                    })
+                        value: overallProgress })
                 )
             );
         }
@@ -340,14 +347,55 @@ FileUploader.defaultProps = {
     overallProgress: 0,
     locale: {
         instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
-        accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.'
+        accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
+        validation: (_validation = {}, _defineProperty(_validation, 'folder', 'Invalid files ([filenames])'), _defineProperty(_validation, 'fileName', 'File(s) ([filenames]) have invalid file name'), _defineProperty(_validation, 'maxFileSize', 'File(s) ([filenames]) exceed maximum allowed upload file size'), _defineProperty(_validation, 'maxFiles', 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded'), _validation),
+        errorTitle: 'Upload Errors',
+        fileUploadRestrictionHeading: _react2.default.createElement(
+            'h3',
+            null,
+            'File upload restrictions'
+        ),
+        fileUploadRestrictions: _react2.default.createElement(
+            'div',
+            null,
+            'Please ensure your files:',
+            _react2.default.createElement(
+                'ul',
+                null,
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    'begin with a letter and are less than 45 characters long'
+                ),
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    'contain only upper and lowercase alphanumeric characters, and underscores'
+                ),
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    'have only a single period which precedes the file extension: \u201C.pdf\u201D'
+                ),
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    'are uploaded individually and not inside a folder'
+                )
+            )
+        ),
+        fileUploadInstruction: _react2.default.createElement(
+            'p',
+            null,
+            'Click here to select files, or drag files into this area to upload'
+        )
     },
-    defaultConfig: {
+    fileRestrictionsConfig: {
         fileUploadLimit: 10,
         maxFileSize: 5,
         fileSizeUnit: 'G'
     },
-    requireFileAccess: false
+    requireOpenAccessStatus: false
 };
 
 

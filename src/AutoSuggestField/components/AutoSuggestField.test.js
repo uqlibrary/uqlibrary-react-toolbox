@@ -11,26 +11,6 @@ function setup(testProps, isShallow = true) {
     return getElement(AutoSuggestField, props, isShallow);
 }
 
-// function setup(AutoSuggestField, isShallow = true){
-//
-//
-//     if (!isShallow) {
-//         return mount(
-//             <Provider store={create().store}>
-//                 <AutoSuggestField {...props} />
-//             </Provider>, {
-//                 context: {
-//                     muiTheme: getMuiTheme()
-//                 },
-//                 childContextTypes: {
-//                     muiTheme: PropTypes.object.isRequired
-//                 }
-//             });
-//     }
-//
-//     return shallow(<Provider store={create().store}><AutoSuggestField {...props} /></Provider>);
-// }
-
 beforeAll(() => {
     injectTapEventPlugin();
 });

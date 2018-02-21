@@ -8,7 +8,7 @@ export default class FileUploadRowHeader extends Component {
     static propTypes = {
         onDeleteAll: PropTypes.func.isRequired,
         locale: PropTypes.object,
-        requireFileAccess: PropTypes.bool,
+        requireOpenAccessStatus: PropTypes.bool,
         disabled: PropTypes.bool
     };
 
@@ -49,15 +49,15 @@ export default class FileUploadRowHeader extends Component {
                 </div>
                 <div className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header">
                     {
-                        this.props.requireFileAccess && fileAccessColumn
+                        this.props.requireOpenAccessStatus && fileAccessColumn
                     }
                 </div>
                 <div className="column datalist-title is-2-desktop is-2-tablet is-12-mobile header">
                     {
-                        this.props.requireFileAccess && embargoDateColumn
+                        this.props.requireOpenAccessStatus && embargoDateColumn
                     }
                 </div>
-                <div className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header">
+                <div className="column is-narrow buttons datalist-buttons is-1-desktop is-1-tablet is-12-mobile header is-centered is-vcentered">
                     <IconButton tooltip={deleteAllFiles} onTouchTap={this._showConfirmation} disabled={this.props.disabled}>
                         <FontIcon className="material-icons">delete_forever</FontIcon>
                     </IconButton>
