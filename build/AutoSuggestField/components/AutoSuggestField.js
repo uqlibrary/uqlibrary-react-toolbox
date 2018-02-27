@@ -50,11 +50,11 @@ var AutoSuggestField = exports.AutoSuggestField = function (_Component) {
 
         _this.textUpdated = function (searchText) {
             _this.setState({
-                searchText: searchText
+                searchText: searchText.trim()
             });
 
             if (_this.props.allowFreeText) {
-                _this.updateSelectedValue(searchText);
+                _this.updateSelectedValue(searchText.trim());
             }
         };
 
@@ -112,7 +112,7 @@ var AutoSuggestField = exports.AutoSuggestField = function (_Component) {
     }, {
         key: 'componentWillUpdate',
         value: function componentWillUpdate(nextProps, nextState) {
-            if (this.props.onChange && !!nextState.selectedValue && nextState.selectedValue !== this.state.selectedValue) {
+            if (this.props.onChange && nextState.selectedValue !== this.state.selectedValue) {
                 this.props.onChange(nextState.selectedValue);
             }
         }

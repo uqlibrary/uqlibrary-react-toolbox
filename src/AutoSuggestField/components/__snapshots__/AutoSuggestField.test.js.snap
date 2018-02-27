@@ -83,7 +83,15 @@ exports[`AutoSuggestField component should render autosuggest field and call act
       }
     }
     maxResults={7}
-    onChange={[MockFunction]}
+    onChange={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            undefined,
+          ],
+        ],
+      }
+    }
   >
     <AutoComplete
       anchorOrigin={
@@ -1654,7 +1662,15 @@ exports[`AutoSuggestField component should render with className set 1`] = `
       }
     }
     maxResults={7}
-    onChange={[MockFunction]}
+    onChange={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            undefined,
+          ],
+        ],
+      }
+    }
   >
     <AutoComplete
       anchorOrigin={
@@ -3226,7 +3242,15 @@ exports[`AutoSuggestField component should render with disabled flag set to true
       }
     }
     maxResults={7}
-    onChange={[MockFunction]}
+    onChange={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            undefined,
+          ],
+        ],
+      }
+    }
   >
     <AutoComplete
       anchorOrigin={
