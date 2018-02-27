@@ -133,8 +133,6 @@ var PartialDateForm = function (_Component) {
             var renderMonths = months.map(function (month, index) {
                 return _react2.default.createElement(_MenuItem2.default, { key: index, value: index, primaryText: month });
             });
-            console.log(className);
-
             return _react2.default.createElement(
                 'div',
                 { className: 'columns is-multiline is-gapless-mobile' },

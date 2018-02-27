@@ -61,6 +61,15 @@ describe('ListEditor tests ', () => {
         expect(wrapper.state().itemList.length).toEqual(1);
     });
 
+    it('should not add null item to the list', () => {
+        const wrapper = setup({ });
+        expect(wrapper.state().itemList.length).toEqual(0);
+        wrapper.instance().addItem(undefined);
+        wrapper.instance().addItem(null);
+        wrapper.instance().addItem('');
+        expect(wrapper.state().itemList.length).toEqual(0);
+    });
+
     it('should delete an item from the list', () => {
         const wrapper = setup({ });
         wrapper.setState({ itemList: [ 'one', 'two', 'three' ]});

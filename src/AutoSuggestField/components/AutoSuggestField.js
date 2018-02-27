@@ -60,7 +60,7 @@ export class AutoSuggestField extends Component {
     }
 
     componentWillUpdate(nextProps, nextState) {
-        if (this.props.onChange && !!nextState.selectedValue && nextState.selectedValue !== this.state.selectedValue) {
+        if (this.props.onChange && nextState.selectedValue !== this.state.selectedValue) {
             this.props.onChange(nextState.selectedValue);
         }
     }
@@ -82,11 +82,11 @@ export class AutoSuggestField extends Component {
 
     textUpdated = (searchText) => {
         this.setState({
-            searchText: searchText
+            searchText: searchText.trim()
         });
 
         if (this.props.allowFreeText) {
-            this.updateSelectedValue(searchText);
+            this.updateSelectedValue(searchText.trim());
         }
     };
 

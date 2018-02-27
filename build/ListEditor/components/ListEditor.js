@@ -53,7 +53,7 @@ var ListsEditor = function (_Component) {
         };
 
         _this.addItem = function (item) {
-            if ((_this.props.maxCount === 0 || _this.state.itemList.length < _this.props.maxCount) && (!_this.props.distinctOnly || _this.state.itemList.indexOf(item) === -1)) {
+            if (!!item && (_this.props.maxCount === 0 || _this.state.itemList.length < _this.props.maxCount) && (!_this.props.distinctOnly || _this.state.itemList.indexOf(item) === -1)) {
                 _this.setState({
                     itemList: [].concat(_toConsumableArray(_this.state.itemList), [item])
                 });

@@ -54,7 +54,8 @@ export default class ListsEditor extends Component {
     }
 
     addItem = (item) => {
-        if ((this.props.maxCount === 0 || this.state.itemList.length < this.props.maxCount)
+        if (!!item
+            && (this.props.maxCount === 0 || this.state.itemList.length < this.props.maxCount)
             && (!this.props.distinctOnly || this.state.itemList.indexOf(item) === -1)) {
             this.setState({
                 itemList: [...this.state.itemList, item]
