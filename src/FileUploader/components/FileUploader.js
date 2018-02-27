@@ -268,7 +268,7 @@ export class FileUploader extends PureComponent {
                     maxSize={this.calculateMaxFileSize()}
                     maxFiles={fileUploadLimit}
                     fileNameRestrictions={fileNameRestrictions}
-                    disabled={this.props.disabled || uploadedFiles.length === fileUploadLimit}
+                    disabled={this.props.disabled}
                     onDropped={this._setUploadedFiles}
                     uploadedFiles={uploadedFiles}
                     clearErrors={clearErrors} />
