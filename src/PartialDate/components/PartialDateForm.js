@@ -116,8 +116,6 @@ class PartialDateForm extends Component {
         const renderMonths = months.map((month, index) =>
             <MenuItem key={index} value={index} primaryText={month}/>
         );
-        console.log(className);
-
         return (
             <div className="columns is-multiline is-gapless-mobile">
                 <div className={this.props.floatingTitleRequired ? ('column is-12 dateTitle required') : ('column is-12 dateTitle')}>
