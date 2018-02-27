@@ -9,7 +9,6 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
   </h4>
   <FileUploadDropzone
     clearErrors={false}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -72,7 +71,6 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
   </h4>
   <FileUploadDropzone
     clearErrors={false}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -135,7 +133,6 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
   </h4>
   <FileUploadDropzone
     clearErrors={false}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -258,7 +255,6 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
   </h4>
   <FileUploadDropzone
     clearErrors={true}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -362,7 +358,6 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
   </h4>
   <FileUploadDropzone
     clearErrors={true}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -425,7 +420,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   </h4>
   <FileUploadDropzone
     clearErrors={false}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -488,7 +482,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   </h4>
   <FileUploadDropzone
     clearErrors={false}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -611,7 +604,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   </h4>
   <FileUploadDropzone
     clearErrors={true}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -736,7 +728,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   </h4>
   <FileUploadDropzone
     clearErrors={true}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -878,7 +869,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   </h4>
   <FileUploadDropzone
     clearErrors={true}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -1022,7 +1012,6 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   </h4>
   <FileUploadDropzone
     clearErrors={false}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -1085,7 +1074,6 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   </h4>
   <FileUploadDropzone
     clearErrors={false}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -1212,7 +1200,6 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   </h4>
   <FileUploadDropzone
     clearErrors={false}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -1275,7 +1262,6 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   </h4>
   <FileUploadDropzone
     clearErrors={false}
-    disabled={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
