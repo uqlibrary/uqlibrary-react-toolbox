@@ -15,9 +15,10 @@
   }
   .alertIcon {
     padding: 16px !important;
-    svg.material-icons {
-      width: 40px !important;
-      height: 40px !important;
+    width: 40px;
+    height: 40px;
+    .material-icons {
+      font-size: 40px !important;
     }
     .alertSpinner {
       padding: 2px;
@@ -46,7 +47,7 @@
     .alertText, .alertTitle {
       color: $text-color-reverse !important;
     }
-    .alertIcon svg.material-icons {
+    .alertIcon .material-icons {
       color: $text-color-reverse !important;
     }
     .alertSpinner svg circle {
@@ -65,7 +66,7 @@
     .alertText, .alertTitle {
       color: $text-color !important;
     }
-    .alertIcon svg.material-icons {
+    .alertIcon .material-icons {
       color: $text-color !important;
     }
     .alertSpinner svg circle {
@@ -84,7 +85,7 @@
     .alertText, .alertTitle {
       color: $text-color-reverse !important;
     }
-    .alertIcon svg.material-icons  {
+    .alertIcon .material-icons  {
       color: $text-color-reverse !important;
     }
     .alertSpinner svg circle {
@@ -103,7 +104,7 @@
     .alertText, .alertTitle {
       color: $text-color-reverse !important;
     }
-    .alertIcon svg.material-icons  {
+    .alertIcon .material-icons  {
       color: $text-color-reverse !important;
     }
     .alertSpinner svg circle {
@@ -122,7 +123,7 @@
     .alertText, .alertTitle {
       color: $text-color-reverse;
     }
-    .alertIcon svg.material-icons  {
+    .alertIcon .material-icons  {
       color: rgba($text-color-reverse, 0.9) !important;
     }
     .alertSpinner svg circle {
@@ -141,7 +142,7 @@
     .alertText, .alertTitle {
       color: $text-color-reverse;
     }
-    .alertIcon svg.material-icons  {
+    .alertIcon .material-icons  {
       color: rgba($text-color-reverse, 0.9) !important;
     }
     .alertSpinner svg circle {

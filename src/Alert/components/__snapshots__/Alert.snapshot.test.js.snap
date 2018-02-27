@@ -10,9 +10,13 @@ exports[`Alert snapshots test renders Alert of error type 1`] = `
     <div
       className="column is-narrow alertIcon"
     >
-      <AlertError
+      <FontIcon
         className="material-icons"
-      />
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        error
+      </FontIcon>
     </div>
     <div
       className="column alertText"
@@ -40,9 +44,13 @@ exports[`Alert snapshots test renders Alert of error type should render action b
       onClick={[MockFunction]}
       onKeyDown={[MockFunction]}
     >
-      <AlertError
+      <FontIcon
         className="material-icons"
-      />
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        error
+      </FontIcon>
     </div>
     <div
       className="column alertText linked"
@@ -87,9 +95,13 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
     <div
       className="column is-narrow alertIcon"
     >
-      <AlertError
+      <FontIcon
         className="material-icons"
-      />
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        error
+      </FontIcon>
     </div>
     <div
       className="column alertText"
@@ -132,9 +144,13 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       onClick={[MockFunction]}
       onKeyDown={[MockFunction]}
     >
-      <AlertError
+      <FontIcon
         className="material-icons"
-      />
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        error
+      </FontIcon>
     </div>
     <div
       className="column alertText linked"

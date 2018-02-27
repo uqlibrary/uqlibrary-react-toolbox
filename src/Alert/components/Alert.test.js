@@ -81,25 +81,4 @@ describe('Alert component functionality test ', () => {
         expect(dismissFunc).toHaveBeenCalled();
     });
 
-    it('_getIcon returns the correct resulting icon for the props', () => {
-        const testCases = [
-            {
-                props: {title: 'test', message: 'test', type: 'help', showLoader: true},
-                result: <CircularProgress className="alertSpinner" max={100} min={0} mode="indeterminate" size={32} thickness={4} value={0}/>
-            },
-            {
-                props: {title: 'test', message: 'test', type: 'help', showLoader: false},
-                result: <ActionHelp className="material-icons" />
-            }
-        ];
-
-        testCases.forEach(testCase => {
-            const wrapper = setup({...testCase.props});
-            const icon = wrapper.instance()._getIcon(testCase.props.type, testCase.props.showLoader);
-            const result = testCase.result;
-            expect(icon).toEqual(result);
-        });
-
-    });
-
 });
