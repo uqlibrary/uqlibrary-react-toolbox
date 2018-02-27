@@ -68,19 +68,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// Icons
-// close
-// 'error'
-// 'error_outline'
-// 'warning'
-// 'info'
-// 'info_outline'
-// 'help'
-// 'help'
-
-
-// 'done'
-
 var _ref = _react2.default.createElement(_help2.default, { className: 'material-icons' });
 
 var _ref2 = _react2.default.createElement(_helpOutline2.default, { className: 'material-icons' });
@@ -118,7 +105,6 @@ var Alert = function (_PureComponent) {
     }, {
         key: '_getIcon',
         value: function _getIcon(type, showLoader) {
-            console.log(type + showLoader);
             var thisIcon = null;
             if (!showLoader) {
                 switch (type) {
@@ -178,9 +164,8 @@ var Alert = function (_PureComponent) {
                             _react2.default.createElement(
                                 'b',
                                 null,
-                                this.props.title
+                                this.props.title && this.props.title + ' - '
                             ),
-                            '\xA0-\xA0',
                             this.props.message
                         )
                     ),
@@ -213,7 +198,6 @@ var Alert = function (_PureComponent) {
 
 Alert.defaultProps = {
     message: 'Unexpected error',
-    title: 'Error',
     type: 'error',
     allowDismiss: false,
     showLoader: false

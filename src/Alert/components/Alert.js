@@ -3,22 +3,20 @@ import {PropTypes} from 'prop-types';
 import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
 import CircularProgress from 'material-ui/CircularProgress';
-
-// Icons
-import NavigationClose from 'material-ui/svg-icons/navigation/close'; // close
-import AlertError from 'material-ui/svg-icons/alert/error'; // 'error'
-import AlertErrorOutline from 'material-ui/svg-icons/alert/error-outline'; // 'error_outline'
-import AlertWarning from 'material-ui/svg-icons/alert/warning'; // 'warning'
-import ActionInfo from 'material-ui/svg-icons/action/info'; // 'info'
-import ActionInfoOutline from 'material-ui/svg-icons/action/info-outline'; // 'info_outline'
-import ActionHelp from 'material-ui/svg-icons/action/help'; // 'help'
-import ActionHelpOutline from 'material-ui/svg-icons/action/help-outline'; // 'help'
-import ActionDone from 'material-ui/svg-icons/action/done'; // 'done'
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import AlertError from 'material-ui/svg-icons/alert/error';
+import AlertErrorOutline from 'material-ui/svg-icons/alert/error-outline';
+import AlertWarning from 'material-ui/svg-icons/alert/warning';
+import ActionInfo from 'material-ui/svg-icons/action/info';
+import ActionInfoOutline from 'material-ui/svg-icons/action/info-outline';
+import ActionHelp from 'material-ui/svg-icons/action/help';
+import ActionHelpOutline from 'material-ui/svg-icons/action/help-outline';
+import ActionDone from 'material-ui/svg-icons/action/done';
 
 export default class Alert extends PureComponent {
     static propTypes = {
         message: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
+        title: PropTypes.string,
         type: PropTypes.oneOf(['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline', 'done']),
         action: PropTypes.func,
         actionButtonLabel: PropTypes.string,
@@ -29,7 +27,6 @@ export default class Alert extends PureComponent {
 
     static defaultProps = {
         message: 'Unexpected error',
-        title: 'Error',
         type: 'error',
         allowDismiss: false,
         showLoader: false
@@ -50,7 +47,6 @@ export default class Alert extends PureComponent {
     }
 
     _getIcon(type, showLoader) {
-        console.log(type + showLoader);
         let thisIcon = null;
         if(!showLoader) {
             switch(type) {
@@ -96,7 +92,7 @@ export default class Alert extends PureComponent {
                         {this._getIcon(this.props.type, this.props.showLoader)}
                     </div>
                     <div className={`column alertText${this.props.action ? ' linked' : ''}`} onClick={this.props.action} onKeyDown={this.props.action}>
-                        <div><b>{this.props.title}</b>&nbsp;-&nbsp;{this.props.message}</div>
+                        <div><b>{this.props.title && `${this.props.title} - `}</b>{this.props.message}</div>
                     </div>
                     {
                         this.props.action && this.props.actionButtonLabel &&

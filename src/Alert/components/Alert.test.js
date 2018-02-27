@@ -6,8 +6,10 @@ import Alert from './Alert';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import PropTypes from 'prop-types';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import CircularProgress from 'material-ui/CircularProgress';
+import ActionHelp from 'material-ui/svg-icons/action/help'; // 'help'
 
-function setup({title, message, type, allowDismiss, dismissAction, action, actionButtonLabel}){
+function setup({title, message, type, allowDismiss, dismissAction, action, actionButtonLabel, showLoader}){
     const props = {
         title: title || 'Title',
         message: message || 'Message',
@@ -15,7 +17,8 @@ function setup({title, message, type, allowDismiss, dismissAction, action, actio
         allowDismiss: allowDismiss || true,
         dismissAction: dismissAction || jest.fn(),
         action: action || jest.fn(),
-        actionButtonLabel: actionButtonLabel || 'button'
+        actionButtonLabel: actionButtonLabel || 'button',
+        showLoader: showLoader || false
     };
     return mount(<Alert {...props} />, {
         context: {
@@ -77,4 +80,26 @@ describe('Alert component functionality test ', () => {
         wrapper.find('button.alertDismissButton').simulate('touchTap');
         expect(dismissFunc).toHaveBeenCalled();
     });
+
+    it('_getIcon returns the correct resulting icon for the props', () => {
+        const testCases = [
+            {
+                props: {title: 'test', message: 'test', type: 'help', showLoader: true},
+                result: <CircularProgress className="alertSpinner" max={100} min={0} mode="indeterminate" size={32} thickness={4} value={0}/>
+            },
+            {
+                props: {title: 'test', message: 'test', type: 'help', showLoader: false},
+                result: <ActionHelp className="material-icons" />
+            }
+        ];
+
+        testCases.forEach(testCase => {
+            const wrapper = setup({...testCase.props});
+            const icon = wrapper.instance()._getIcon(testCase.props.type, testCase.props.showLoader);
+            const result = testCase.result;
+            expect(icon).toEqual(result);
+        });
+
+    });
+
 });
