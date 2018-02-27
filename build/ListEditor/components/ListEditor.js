@@ -152,6 +152,7 @@ ListsEditor.defaultProps = {
     searchKey: {
         value: 'rek_value',
         order: 'rek_order'
-    }
+    },
+    maxCount: 0
 };
 exports.default = ListsEditor;

@@ -25,7 +25,8 @@ export default class ListsEditor extends Component {
         searchKey: {
             value: 'rek_value',
             order: 'rek_order'
-        }
+        },
+        maxCount: 0
     };
 
     constructor(props) {

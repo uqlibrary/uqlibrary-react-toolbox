@@ -1,16 +1,8 @@
 jest.dontMock('./ListEditor');
 
-import { shallow, mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
-import React from 'react';
 import ListEditor from './ListEditor';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
-beforeAll(() => {
-    injectTapEventPlugin();
-});
-
-function setup(testProps, isShallow = true) {
+function setup(testProps) {
     // props
     // formComponent: PropTypes.func.isRequired,
     // inputField: PropTypes.func, // eg connected auto complete fields
@@ -29,7 +21,6 @@ function setup(testProps, isShallow = true) {
         ...testProps,
         className: testProps.className || 'testClass', // : PropTypes.string,
         searchKey: testProps.searchKey || {value: 'value', order: 'order'}, // : PropTypes.object.isRequired,
-        maxCount: testProps.maxCount || 0, // PropTypes.number,
         isValid: testProps.isValid || jest.fn(), // PropTypes.func,
         disabled: testProps.disabled || false, // PropTypes.bool,
         onChange: testProps.onChange || jest.fn(), // PropTypes.func,
@@ -40,10 +31,7 @@ function setup(testProps, isShallow = true) {
         errorText: testProps.errorText || ''
     };
 
-    if (isShallow)
-        return shallow(<ListEditor {...props} />);
-
-    return mount(<ListEditor {...props} />);
+    return getElement(ListEditor, props);
 }
 
 describe('ListEditor tests ', () => {
@@ -61,6 +49,15 @@ describe('ListEditor tests ', () => {
         const wrapper = setup({ });
         expect(wrapper.state().itemList.length).toEqual(0);
         wrapper.instance().addItem('one');
+        expect(wrapper.state().itemList.length).toEqual(1);
+    });
+
+    it('should render items not more than maxCount', () => {
+        const wrapper = setup({ maxCount: 1 });
+        expect(wrapper.state().itemList.length).toEqual(0);
+        wrapper.instance().addItem('one');
+        expect(wrapper.state().itemList.length).toEqual(1);
+        wrapper.instance().addItem('two');
         expect(wrapper.state().itemList.length).toEqual(1);
     });
 
