@@ -17,8 +17,11 @@
     padding: 16px !important;
     width: 40px;
     height: 40px;
-    span {
+    .material-icons {
       font-size: 40px !important;
+    }
+    .alertSpinner {
+      padding: 2px;
     }
   }
   .alertText {
@@ -44,8 +47,11 @@
     .alertText, .alertTitle {
       color: $text-color-reverse !important;
     }
-    .alertIcon span {
+    .alertIcon .material-icons {
       color: $text-color-reverse !important;
+    }
+    .alertSpinner svg circle {
+      stroke: $text-color-reverse !important;
     }
     svg.alertDismiss {
       fill: $text-color-reverse !important;
@@ -60,8 +66,11 @@
     .alertText, .alertTitle {
       color: $text-color !important;
     }
-    .alertIcon span {
+    .alertIcon .material-icons {
       color: $text-color !important;
+    }
+    .alertSpinner svg circle {
+      stroke: $text-color !important;
     }
     svg.alertDismiss {
       fill: $text-color !important;
@@ -76,8 +85,11 @@
     .alertText, .alertTitle {
       color: $text-color-reverse !important;
     }
-    .alertIcon span {
+    .alertIcon .material-icons  {
       color: $text-color-reverse !important;
+    }
+    .alertSpinner svg circle {
+      stroke: $text-color-reverse !important;
     }
     svg.alertDismiss {
       fill: $text-color-reverse !important;
@@ -92,8 +104,11 @@
     .alertText, .alertTitle {
       color: $text-color-reverse !important;
     }
-    .alertIcon span {
+    .alertIcon .material-icons  {
       color: $text-color-reverse !important;
+    }
+    .alertSpinner svg circle {
+      stroke: $text-color-reverse !important;
     }
     svg.alertDismiss {
       fill: $text-color-reverse !important;
@@ -108,8 +123,11 @@
     .alertText, .alertTitle {
       color: $text-color-reverse;
     }
-    .alertIcon span {
+    .alertIcon .material-icons  {
       color: rgba($text-color-reverse, 0.9) !important;
+    }
+    .alertSpinner svg circle {
+      stroke: rgba($text-color-reverse, 0.75) !important;
     }
     svg.alertDismiss {
       fill: $text-color-reverse !important;
@@ -124,8 +142,11 @@
     .alertText, .alertTitle {
       color: $text-color-reverse;
     }
-    .alertIcon span {
+    .alertIcon .material-icons  {
       color: rgba($text-color-reverse, 0.9) !important;
+    }
+    .alertSpinner svg circle {
+      stroke: rgba($text-color-reverse, 0.75) !important;
     }
     svg.alertDismiss {
       fill: $text-color-reverse !important;

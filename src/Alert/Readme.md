@@ -7,6 +7,7 @@ Prorotype component to display alerts/warnings/errors
 - `title: PropTypes.string`
 - `type PropTypes.string - valid values ['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline']`
 - `outsideLayout PropTypes.bool` - prop is to render the module to fit outside of .card-layout
+- `showLoader PropTypes.bool` - prop is to render a spinner instead of icon
 
 
 ## Usage
@@ -24,6 +25,7 @@ const App = () => (
         message="Some body text."
         type="error_outline"
         outsidelayout
+        showLoader
     />
     
   </div>
