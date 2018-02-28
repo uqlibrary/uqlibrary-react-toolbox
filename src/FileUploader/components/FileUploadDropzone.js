@@ -88,12 +88,11 @@ class FileUploadDropzone extends PureComponent {
         let filesQueuedCount = null;
         const {maxFiles, locale} = this.props;
         const {uploadedFiles} = this.state;
+        const allowedFilesCount = maxFiles - uploadedFiles.size;
 
-        if (uploadedFiles.size < maxFiles) {
-            if (uploadedFiles.size > 0) {
-                filesQueuedCount = maxFiles - uploadedFiles.size;
-            } else if (files.size > maxFiles) {
-                filesQueuedCount = maxFiles;
+        if (allowedFilesCount > 0) {
+            if (files.size > allowedFilesCount) {
+                filesQueuedCount = allowedFilesCount;
             } else {
                 filesQueuedCount = files.size;
             }
