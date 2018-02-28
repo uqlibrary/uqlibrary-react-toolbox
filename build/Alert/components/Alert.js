@@ -12,10 +12,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
-var _FontIcon = require('material-ui/FontIcon');
-
-var _FontIcon2 = _interopRequireDefault(_FontIcon);
-
 var _FlatButton = require('material-ui/FlatButton');
 
 var _FlatButton2 = _interopRequireDefault(_FlatButton);
@@ -24,9 +20,17 @@ var _IconButton = require('material-ui/IconButton');
 
 var _IconButton2 = _interopRequireDefault(_IconButton);
 
+var _CircularProgress = require('material-ui/CircularProgress');
+
+var _CircularProgress2 = _interopRequireDefault(_CircularProgress);
+
 var _close = require('material-ui/svg-icons/navigation/close');
 
 var _close2 = _interopRequireDefault(_close);
+
+var _FontIcon = require('material-ui/FontIcon');
+
+var _FontIcon2 = _interopRequireDefault(_FontIcon);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36,7 +40,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _ref = _react2.default.createElement(_close2.default, { className: 'alertDismiss' });
+var _ref = _react2.default.createElement(_CircularProgress2.default, { className: 'alertSpinner', size: 32, thickness: 4 });
+
+var _ref2 = _react2.default.createElement(_close2.default, { className: 'alertDismiss' });
 
 var Alert = function (_PureComponent) {
     _inherits(Alert, _PureComponent);
@@ -65,11 +71,11 @@ var Alert = function (_PureComponent) {
                         'div',
                         { className: 'column is-narrow alertIcon' + (this.props.action ? ' linked' : ''), onClick: this.props.action,
                             onKeyDown: this.props.action },
-                        _react2.default.createElement(
+                        !this.props.showLoader ? _react2.default.createElement(
                             _FontIcon2.default,
                             { className: 'material-icons' },
                             this.props.type
-                        )
+                        ) : _ref
                     ),
                     _react2.default.createElement(
                         'div',
@@ -80,9 +86,8 @@ var Alert = function (_PureComponent) {
                             _react2.default.createElement(
                                 'b',
                                 null,
-                                this.props.title
+                                this.props.title && this.props.title + ' - '
                             ),
-                            '\xA0-\xA0',
                             this.props.message
                         )
                     ),
@@ -102,7 +107,7 @@ var Alert = function (_PureComponent) {
                         _react2.default.createElement(
                             _IconButton2.default,
                             { onTouchTap: this.props.dismissAction, className: 'alertDismissButton' },
-                            _ref
+                            _ref2
                         )
                     )
                 )
@@ -115,8 +120,8 @@ var Alert = function (_PureComponent) {
 
 Alert.defaultProps = {
     message: 'Unexpected error',
-    title: 'Error',
     type: 'error',
-    allowDismiss: false
+    allowDismiss: false,
+    showLoader: false
 };
 exports.default = Alert;

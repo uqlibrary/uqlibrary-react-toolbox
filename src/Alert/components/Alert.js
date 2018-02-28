@@ -1,26 +1,28 @@
 import React, {PureComponent} from 'react';
 import {PropTypes} from 'prop-types';
-import FontIcon from 'material-ui/FontIcon';
 import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
+import CircularProgress from 'material-ui/CircularProgress';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import FontIcon from 'material-ui/FontIcon';
 
 export default class Alert extends PureComponent {
     static propTypes = {
         message: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
+        title: PropTypes.string,
         type: PropTypes.oneOf(['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline', 'done']),
         action: PropTypes.func,
         actionButtonLabel: PropTypes.string,
         allowDismiss: PropTypes.bool,
-        dismissAction: PropTypes.func
+        dismissAction: PropTypes.func,
+        showLoader: PropTypes.bool
     };
 
     static defaultProps = {
         message: 'Unexpected error',
-        title: 'Error',
         type: 'error',
-        allowDismiss: false
+        allowDismiss: false,
+        showLoader: false
     };
 
     constructor(props) {
@@ -43,10 +45,10 @@ export default class Alert extends PureComponent {
                 <div className="columns is-multiline is-mobile">
                     <div className={`column is-narrow alertIcon${this.props.action ? ' linked' : ''}`} onClick={this.props.action}
                         onKeyDown={this.props.action}>
-                        <FontIcon className="material-icons">{this.props.type}</FontIcon>
+                        {this.props.showLoader ? <CircularProgress className="alertSpinner" size={32} thickness={4} /> : <FontIcon className="material-icons">{this.props.type}</FontIcon>}
                     </div>
                     <div className={`column alertText${this.props.action ? ' linked' : ''}`} onClick={this.props.action} onKeyDown={this.props.action}>
-                        <div><b>{this.props.title}</b>&nbsp;-&nbsp;{this.props.message}</div>
+                        <div><b>{this.props.title && `${this.props.title} - `}</b>{this.props.message}</div>
                     </div>
                     {
                         this.props.action && this.props.actionButtonLabel &&
