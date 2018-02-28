@@ -23,7 +23,9 @@ class FileUploadDropzone extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            errorMessage: []
+            errorMessage: [],
+            successMessage: '',
+            uploadedFiles: new Map()
         };
         this.dropzoneRef = null;
         this.accepted = new Map();
@@ -35,9 +37,12 @@ class FileUploadDropzone extends PureComponent {
 
     componentWillReceiveProps(nextProps) {
         this.clearAccepted();
-        this.add(nextProps.uploadedFiles);
+        this.setUploaded(nextProps.uploadedFiles);
 
-        if (nextProps.clearErrors) this.processErrors(this.errors);
+        if (nextProps.clearErrors) {
+            this.processErrors(this.errors);
+            this.setState({successMessage: ''});
+        }
     }
 
     /**
@@ -67,6 +72,44 @@ class FileUploadDropzone extends PureComponent {
      */
     add = (files) => {
         [...files].map(file => this.accepted.set(file.name, file));
+
+        if (files.size > 0) {
+            this.setSuccessMessage(files);
+        }
+    };
+
+    /**
+     * Set success message for dropzone
+     *  -   If uploaded files count is less than max files count, calculate how many files will be added to the queue
+     *  -   If uploaded files count is greater or equal to max files count, clear success message
+     * @param files
+     */
+    setSuccessMessage = (files) => {
+        let filesQueuedCount = null;
+        const {maxFiles, locale} = this.props;
+        const {uploadedFiles} = this.state;
+
+        if (uploadedFiles.size < maxFiles) {
+            if (uploadedFiles.size > 0) {
+                filesQueuedCount = maxFiles - uploadedFiles.size;
+            } else if (files.size > maxFiles) {
+                filesQueuedCount = maxFiles;
+            } else {
+                filesQueuedCount = files.size;
+            }
+            this.setState({successMessage: locale.successMessage.replace('[numberOfFiles]', filesQueuedCount)});
+        } else {
+            this.setState({successMessage: ''});
+        }
+    };
+
+    /**
+     * Set uploaded files in dropzone's state
+     *
+     * @param files
+     */
+    setUploaded = (files) => {
+        this.setState({uploadedFiles: [...files].reduce((uploaded, file) => uploaded.set(file.name, file), new Map([]))});
     };
 
     /**
@@ -149,6 +192,12 @@ class FileUploadDropzone extends PureComponent {
         this.errors = new Map();
     };
 
+    /**
+     * Get the list of folders using FileReader API
+     *
+     * @param accepted files and/or folders
+     * @returns {Promise.<*>}
+     */
     getDroppedFolders(accepted) {
         const acceptedFilesAndFolders = [...accepted];
         return Promise.all(
@@ -164,6 +213,13 @@ class FileUploadDropzone extends PureComponent {
         );
     }
 
+    /**
+     * Handle accepted, rejected and dropped folders and display proper alerts
+     *
+     * @param accepted
+     * @param rejected
+     * @param droppedFolders
+     */
     handleDroppedFiles = (accepted, rejected, droppedFolders) => {
         /*
          * Set error for folder
@@ -205,11 +261,14 @@ class FileUploadDropzone extends PureComponent {
          * If max files uploaded, send max files and set error for ignored files
          */
         const {maxFiles} = this.props;
-        if (this.accepted.size > maxFiles) {
-            this.setError('maxFiles', [...this.accepted.values()].slice(maxFiles));
-            this.props.onDropped([...this.accepted.values()].slice(0, maxFiles));
+
+        const totalFiles = [...this.state.uploadedFiles.values(), ...this.accepted.values()];
+
+        if (totalFiles.length > maxFiles) {
+            this.setError('maxFiles', totalFiles.slice(maxFiles));
+            this.props.onDropped(totalFiles.slice(0, maxFiles));
         } else {
-            this.props.onDropped([...this.accepted.values()]);
+            this.props.onDropped(totalFiles);
         }
 
         /*
@@ -258,8 +317,8 @@ class FileUploadDropzone extends PureComponent {
     };
 
     render() {
-        const {errorTitle} = this.props.locale;
-        const {errorMessage} = this.state;
+        const {errorTitle, successTitle} = this.props.locale;
+        const {errorMessage, successMessage} = this.state;
 
         return (
             <div>
@@ -277,6 +336,11 @@ class FileUploadDropzone extends PureComponent {
                         </Dropzone>
                     </div>
                 </div>
+                {
+                    successMessage.length > 0 && (
+                        <Alert title={successTitle} message={successMessage} type="done" />
+                    )
+                }
                 {
                     errorMessage.length > 0 && (
                         <Alert title={errorTitle} message={errorMessage} type="error" />

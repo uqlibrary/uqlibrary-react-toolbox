@@ -58,6 +58,38 @@ var FileUploadDropzone = function (_PureComponent) {
             [].concat(_toConsumableArray(files)).map(function (file) {
                 return _this.accepted.set(file.name, file);
             });
+
+            if (files.size > 0) {
+                _this.setSuccessMessage(files);
+            }
+        };
+
+        _this.setSuccessMessage = function (files) {
+            var filesQueuedCount = null;
+            var _this$props = _this.props,
+                maxFiles = _this$props.maxFiles,
+                locale = _this$props.locale;
+            var uploadedFiles = _this.state.uploadedFiles;
+
+
+            if (uploadedFiles.size < maxFiles) {
+                if (uploadedFiles.size > 0) {
+                    filesQueuedCount = maxFiles - uploadedFiles.size;
+                } else if (files.size > maxFiles) {
+                    filesQueuedCount = maxFiles;
+                } else {
+                    filesQueuedCount = files.size;
+                }
+                _this.setState({ successMessage: locale.successMessage.replace('[numberOfFiles]', filesQueuedCount) });
+            } else {
+                _this.setState({ successMessage: '' });
+            }
+        };
+
+        _this.setUploaded = function (files) {
+            _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)).reduce(function (uploaded, file) {
+                    return uploaded.set(file.name, file);
+                }, new Map([])) });
         };
 
         _this.validate = function (file) {
@@ -193,11 +225,14 @@ var FileUploadDropzone = function (_PureComponent) {
              */
             var maxFiles = _this.props.maxFiles;
 
-            if (_this.accepted.size > maxFiles) {
-                _this.setError('maxFiles', [].concat(_toConsumableArray(_this.accepted.values())).slice(maxFiles));
-                _this.props.onDropped([].concat(_toConsumableArray(_this.accepted.values())).slice(0, maxFiles));
+
+            var totalFiles = [].concat(_toConsumableArray(_this.state.uploadedFiles.values()), _toConsumableArray(_this.accepted.values()));
+
+            if (totalFiles.length > maxFiles) {
+                _this.setError('maxFiles', totalFiles.slice(maxFiles));
+                _this.props.onDropped(totalFiles.slice(0, maxFiles));
             } else {
-                _this.props.onDropped([].concat(_toConsumableArray(_this.accepted.values())));
+                _this.props.onDropped(totalFiles);
             }
 
             /*
@@ -241,7 +276,9 @@ var FileUploadDropzone = function (_PureComponent) {
         };
 
         _this.state = {
-            errorMessage: []
+            errorMessage: [],
+            successMessage: '',
+            uploadedFiles: new Map()
         };
         _this.dropzoneRef = null;
         _this.accepted = new Map();
@@ -256,9 +293,12 @@ var FileUploadDropzone = function (_PureComponent) {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
             this.clearAccepted();
-            this.add(nextProps.uploadedFiles);
+            this.setUploaded(nextProps.uploadedFiles);
 
-            if (nextProps.clearErrors) this.processErrors(this.errors);
+            if (nextProps.clearErrors) {
+                this.processErrors(this.errors);
+                this.setState({ successMessage: '' });
+            }
         }
 
         /**
@@ -281,6 +321,21 @@ var FileUploadDropzone = function (_PureComponent) {
          *
          * @param files
          * @private
+         */
+
+
+        /**
+         * Set success message for dropzone
+         *  -   If uploaded files count is less than max files count, calculate how many files will be added to the queue
+         *  -   If uploaded files count is greater or equal to max files count, clear success message
+         * @param files
+         */
+
+
+        /**
+         * Set uploaded files in dropzone's state
+         *
+         * @param files
          */
 
 
@@ -317,6 +372,14 @@ var FileUploadDropzone = function (_PureComponent) {
 
     }, {
         key: 'getDroppedFolders',
+
+
+        /**
+         * Get the list of folders using FileReader API
+         *
+         * @param accepted files and/or folders
+         * @returns {Promise.<*>}
+         */
         value: function getDroppedFolders(accepted) {
             var acceptedFilesAndFolders = [].concat(_toConsumableArray(accepted));
             return Promise.all(acceptedFilesAndFolders.map(function (file) {
@@ -333,6 +396,15 @@ var FileUploadDropzone = function (_PureComponent) {
                 });
             }));
         }
+
+        /**
+         * Handle accepted, rejected and dropped folders and display proper alerts
+         *
+         * @param accepted
+         * @param rejected
+         * @param droppedFolders
+         */
+
 
         /**
          * Handle accepted and rejected files on dropped in Dropzone
@@ -352,8 +424,12 @@ var FileUploadDropzone = function (_PureComponent) {
         value: function render() {
             var _this2 = this;
 
-            var errorTitle = this.props.locale.errorTitle;
-            var errorMessage = this.state.errorMessage;
+            var _props$locale = this.props.locale,
+                errorTitle = _props$locale.errorTitle,
+                successTitle = _props$locale.successTitle;
+            var _state = this.state,
+                errorMessage = _state.errorMessage,
+                successMessage = _state.successMessage;
 
 
             return _react2.default.createElement(
@@ -381,6 +457,7 @@ var FileUploadDropzone = function (_PureComponent) {
                         )
                     )
                 ),
+                successMessage.length > 0 && _react2.default.createElement(_Alert.Alert, { title: successTitle, message: successMessage, type: 'done' }),
                 errorMessage.length > 0 && _react2.default.createElement(_Alert.Alert, { title: errorTitle, message: errorMessage, type: 'error' })
             );
         }

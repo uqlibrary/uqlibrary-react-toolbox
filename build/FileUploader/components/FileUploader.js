@@ -348,8 +348,10 @@ FileUploader.defaultProps = {
     locale: {
         instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
         accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
-        validation: (_validation = {}, _defineProperty(_validation, 'folder', 'Invalid files ([filenames])'), _defineProperty(_validation, 'fileName', 'File(s) ([filenames]) have invalid file name'), _defineProperty(_validation, 'maxFileSize', 'File(s) ([filenames]) exceed maximum allowed upload file size'), _defineProperty(_validation, 'maxFiles', 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded'), _validation),
+        validation: (_validation = {}, _defineProperty(_validation, 'folder', 'Invalid files ([filenames])'), _defineProperty(_validation, 'fileName', 'File(s) ([filenames]) have invalid file name'), _defineProperty(_validation, 'maxFileSize', 'File(s) ([filenames]) exceed maximum allowed upload file size'), _defineProperty(_validation, 'maxFiles', 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded'), _validation),
         errorTitle: 'Upload Errors',
+        successTitle: 'Success',
+        successMessage: 'Successfully added [numberOfFiles] file(s) to upload queue.',
         fileUploadRestrictionHeading: _react2.default.createElement(
             'h3',
             null,
