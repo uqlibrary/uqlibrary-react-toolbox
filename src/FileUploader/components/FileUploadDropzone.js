@@ -265,7 +265,9 @@ class FileUploadDropzone extends PureComponent {
         const totalFiles = [...this.state.uploadedFiles.values(), ...this.accepted.values()];
 
         if (totalFiles.length > maxFiles) {
+            // Set error for files which won't be uploaded
             this.setError('maxFiles', totalFiles.slice(maxFiles));
+
             this.props.onDropped(totalFiles.slice(0, maxFiles));
         } else {
             this.props.onDropped(totalFiles);
@@ -287,14 +289,11 @@ class FileUploadDropzone extends PureComponent {
     _onDrop = (accepted, rejected, event) => {
         /*
          * From droppedEvent dataTransfer items, determine which items are folders
+         *
          * Safari and IE doesn't support event.dataTransfer.items
          * https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items
          *
-         * Workaround: check if file doesn't have type set and size is multiple of 4096 bytes
-         *  - This may leave some files without type and size multiple of 4096 to be recognised as folders
-         *  - Or some folders with allowed extensions to be recognized as files
-         *
-         * https://stackoverflow.com/questions/25016442/how-to-distinguish-if-a-file-or-folder-is-being-dragged-prior-to-it-being-droppe
+         * Using FileReader API async to read slice of file will throw an error if it's a folder
          */
         let droppedFolders = [];
         if (!!event && !!event.dataTransfer && !!event.dataTransfer.items) {
