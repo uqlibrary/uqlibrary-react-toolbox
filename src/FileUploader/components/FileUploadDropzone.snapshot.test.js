@@ -53,37 +53,30 @@ describe('Component FileUploadDropzone', () => {
 
         const accepted = [
             {
-                type: 'text/text',
                 name: 'a.txt',
                 size: 500
             },
             {
-                type: 'text/text',
                 name: 'a.text.txt',
                 size: 100
             },
             {
-                type: 'text/text',
                 name: 'ab.txt',
                 size: 100
             },
             {
-                type: '',
                 name: 'test',
                 size: 100
             },
             {
-                type: 'text/text',
                 name: 'web_a.txt',
                 size: 100
             },
             {
-                type: 'text/text',
                 name: 'WEB_b.txt',
                 size: 100
             },
             {
-                type: 'text/text',
                 name: 'Web_c.txt',
                 size: 100
             }
@@ -107,6 +100,19 @@ describe('Component FileUploadDropzone', () => {
 
         expect(toJson(wrapper)).toMatchSnapshot();
         expect(onDroppedCallback).toHaveBeenCalled();
+        wrapper.instance().componentWillReceiveProps({uploadedFiles: [
+
+            {
+                name: 'a.txt',
+                size: 500
+            },
+            {
+                name: 'ab.txt',
+                size: 100
+            }
+        ]});
+        wrapper.update();
+        expect(toJson(wrapper)).toMatchSnapshot();
     });
 
     it('should set max file size error message for rejected files', () => {
@@ -195,118 +201,5 @@ describe('Component FileUploadDropzone', () => {
 
         wrapper.update();
         expect(testFn).toHaveBeenCalled();
-    });
-
-    it('should set success alert for number of uploaded files', () => {
-        const props = {
-            maxFiles: 5,
-            uploadedFiles: [],
-            locale: locale
-        };
-
-        const files = new Set([
-            {
-                name: 'c.txt',
-                size: 100
-            },
-            {
-                name: 'd.txt',
-                size: 100
-            },
-            {
-                name: 'd.txt',
-                size: 100
-            }
-        ]);
-
-        const wrapper = setup({...props});
-        wrapper.state({successMessage: 'Successfully added 2 file(s) to upload queue.'});
-        wrapper.instance().componentWillReceiveProps({
-            uploadedFiles: [
-                {
-                    name: 'a.txt',
-                    size: 100
-                },
-                {
-                    name: 'b.txt',
-                    size: 100
-                }
-            ],
-            clearErrors: true
-        });
-
-        wrapper.instance().setSuccessMessage(files);
-        wrapper.update();
-        expect(wrapper.state().successMessage).toEqual('Successfully added 3 file(s) to upload queue.');
-    });
-
-    it('should clear success alert if max number of files already added', () => {
-        const props = {
-            maxFiles: 3,
-            uploadedFiles: [],
-            locale: locale
-        };
-
-        const files = new Set([
-            {
-                name: 'd.txt',
-                size: 100
-            }
-        ]);
-
-        const wrapper = setup({...props});
-
-        wrapper.state({successMessage: 'Successfully added 3 file(s) to upload queue.'});
-        wrapper.instance().componentWillReceiveProps({
-            uploadedFiles: [
-                {
-                    name: 'a.txt',
-                    size: 100
-                },
-                {
-                    name: 'b.txt',
-                    size: 100
-                },
-                {
-                    name: 'c.txt',
-                    size: 100
-                }
-            ]
-        });
-        wrapper.instance().setSuccessMessage(files);
-        wrapper.update();
-        expect(wrapper.state().successMessage).toEqual('');
-    });
-
-    it('should set success message for max number of files if files count is greater than max files', () => {
-
-        const props = {
-            maxFiles: 3,
-            uploadedFiles: [],
-            locale: locale
-        };
-
-        const files = new Set([
-            {
-                name: 'a.txt',
-                size: 100
-            },
-            {
-                name: 'b.txt',
-                size: 100
-            },
-            {
-                name: 'c.txt',
-                size: 100
-            },
-            {
-                name: 'd.txt',
-                size: 100
-            }
-        ]);
-
-        const wrapper = setup({...props});
-        wrapper.instance().setSuccessMessage(files);
-        expect(wrapper.state().successMessage).toEqual('Successfully added 3 file(s) to upload queue.');
     });
 });

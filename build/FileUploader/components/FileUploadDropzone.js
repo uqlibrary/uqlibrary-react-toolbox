@@ -58,31 +58,6 @@ var FileUploadDropzone = function (_PureComponent) {
             [].concat(_toConsumableArray(files)).map(function (file) {
                 return _this.accepted.set(file.name, file);
             });
-
-            if (files.size > 0) {
-                _this.setSuccessMessage(files);
-            }
-        };
-
-        _this.setSuccessMessage = function (files) {
-            var filesQueuedCount = null;
-            var _this$props = _this.props,
-                maxFiles = _this$props.maxFiles,
-                locale = _this$props.locale;
-            var uploadedFiles = _this.state.uploadedFiles;
-
-            var allowedFilesCount = maxFiles - uploadedFiles.size;
-
-            if (allowedFilesCount > 0) {
-                if (files.size > allowedFilesCount) {
-                    filesQueuedCount = allowedFilesCount;
-                } else {
-                    filesQueuedCount = files.size;
-                }
-                _this.setState({ successMessage: locale.successMessage.replace('[numberOfFiles]', filesQueuedCount) });
-            } else {
-                _this.setState({ successMessage: '' });
-            }
         };
 
         _this.setUploaded = function (files) {
@@ -323,14 +298,6 @@ var FileUploadDropzone = function (_PureComponent) {
 
 
         /**
-         * Set success message for dropzone
-         *  -   If uploaded files count is less than max files count, calculate how many files will be added to the queue
-         *  -   If uploaded files count is greater or equal to max files count, clear success message
-         * @param files
-         */
-
-
-        /**
          * Set uploaded files in dropzone's state
          *
          * @param files
@@ -424,10 +391,11 @@ var FileUploadDropzone = function (_PureComponent) {
 
             var _props$locale = this.props.locale,
                 errorTitle = _props$locale.errorTitle,
-                successTitle = _props$locale.successTitle;
+                successTitle = _props$locale.successTitle,
+                successMessage = _props$locale.successMessage;
             var _state = this.state,
                 errorMessage = _state.errorMessage,
-                successMessage = _state.successMessage;
+                uploadedFiles = _state.uploadedFiles;
 
 
             return _react2.default.createElement(
@@ -455,7 +423,7 @@ var FileUploadDropzone = function (_PureComponent) {
                         )
                     )
                 ),
-                successMessage.length > 0 && _react2.default.createElement(_Alert.Alert, { title: successTitle, message: successMessage, type: 'done' }),
+                uploadedFiles.size > 0 && _react2.default.createElement(_Alert.Alert, { title: successTitle, message: successMessage.replace('[numberOfFiles]', uploadedFiles.size), type: 'done' }),
                 errorMessage.length > 0 && _react2.default.createElement(_Alert.Alert, { title: errorTitle, message: errorMessage, type: 'error' })
             );
         }

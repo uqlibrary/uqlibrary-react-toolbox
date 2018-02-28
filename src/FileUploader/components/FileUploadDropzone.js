@@ -72,34 +72,6 @@ class FileUploadDropzone extends PureComponent {
      */
     add = (files) => {
         [...files].map(file => this.accepted.set(file.name, file));
-
-        if (files.size > 0) {
-            this.setSuccessMessage(files);
-        }
-    };
-
-    /**
-     * Set success message for dropzone
-     *  -   If uploaded files count is less than max files count, calculate how many files will be added to the queue
-     *  -   If uploaded files count is greater or equal to max files count, clear success message
-     * @param files
-     */
-    setSuccessMessage = (files) => {
-        let filesQueuedCount = null;
-        const {maxFiles, locale} = this.props;
-        const {uploadedFiles} = this.state;
-        const allowedFilesCount = maxFiles - uploadedFiles.size;
-
-        if (allowedFilesCount > 0) {
-            if (files.size > allowedFilesCount) {
-                filesQueuedCount = allowedFilesCount;
-            } else {
-                filesQueuedCount = files.size;
-            }
-            this.setState({successMessage: locale.successMessage.replace('[numberOfFiles]', filesQueuedCount)});
-        } else {
-            this.setState({successMessage: ''});
-        }
     };
 
     /**
@@ -315,8 +287,8 @@ class FileUploadDropzone extends PureComponent {
     };
 
     render() {
-        const {errorTitle, successTitle} = this.props.locale;
-        const {errorMessage, successMessage} = this.state;
+        const {errorTitle, successTitle, successMessage} = this.props.locale;
+        const {errorMessage, uploadedFiles} = this.state;
 
         return (
             <div>
@@ -335,8 +307,8 @@ class FileUploadDropzone extends PureComponent {
                     </div>
                 </div>
                 {
-                    successMessage.length > 0 && (
-                        <Alert title={successTitle} message={successMessage} type="done" />
+                    uploadedFiles.size > 0 && (
+                        <Alert title={successTitle} message={successMessage.replace('[numberOfFiles]', uploadedFiles.size)} type="done" />
                     )
                 }
                 {
