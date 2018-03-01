@@ -48,9 +48,11 @@ export class FileUploader extends PureComponent {
                 ['folder']: 'Invalid files ([filenames])',
                 ['fileName']: 'File(s) ([filenames]) have invalid file name',
                 ['maxFileSize']: 'File(s) ([filenames]) exceed maximum allowed upload file size',
-                ['maxFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded',
+                ['maxFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded',
             },
             errorTitle: 'Upload Errors',
+            successTitle: 'Success',
+            successMessage: 'Successfully added [numberOfFiles] file(s) to upload queue.',
             fileUploadRestrictionHeading: (<h3>File upload restrictions</h3>),
             fileUploadRestrictions: (
                 <div>

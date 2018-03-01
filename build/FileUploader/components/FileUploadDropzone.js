@@ -60,6 +60,12 @@ var FileUploadDropzone = function (_PureComponent) {
             });
         };
 
+        _this.setUploaded = function (files) {
+            _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)).reduce(function (uploaded, file) {
+                    return uploaded.set(file.name, file);
+                }, new Map([])) });
+        };
+
         _this.validate = function (file) {
             var valid = new RegExp(_this.props.fileNameRestrictions, 'gi').test(file.name);
 
@@ -193,11 +199,16 @@ var FileUploadDropzone = function (_PureComponent) {
              */
             var maxFiles = _this.props.maxFiles;
 
-            if (_this.accepted.size > maxFiles) {
-                _this.setError('maxFiles', [].concat(_toConsumableArray(_this.accepted.values())).slice(maxFiles));
-                _this.props.onDropped([].concat(_toConsumableArray(_this.accepted.values())).slice(0, maxFiles));
+
+            var totalFiles = [].concat(_toConsumableArray(_this.state.uploadedFiles.values()), _toConsumableArray(_this.accepted.values()));
+
+            if (totalFiles.length > maxFiles) {
+                // Set error for files which won't be uploaded
+                _this.setError('maxFiles', totalFiles.slice(maxFiles));
+
+                _this.props.onDropped(totalFiles.slice(0, maxFiles));
             } else {
-                _this.props.onDropped([].concat(_toConsumableArray(_this.accepted.values())));
+                _this.props.onDropped(totalFiles);
             }
 
             /*
@@ -209,14 +220,11 @@ var FileUploadDropzone = function (_PureComponent) {
         _this._onDrop = function (accepted, rejected, event) {
             /*
              * From droppedEvent dataTransfer items, determine which items are folders
+             *
              * Safari and IE doesn't support event.dataTransfer.items
              * https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items
              *
-             * Workaround: check if file doesn't have type set and size is multiple of 4096 bytes
-             *  - This may leave some files without type and size multiple of 4096 to be recognised as folders
-             *  - Or some folders with allowed extensions to be recognized as files
-             *
-             * https://stackoverflow.com/questions/25016442/how-to-distinguish-if-a-file-or-folder-is-being-dragged-prior-to-it-being-droppe
+             * Using FileReader API async to read slice of file will throw an error if it's a folder
              */
             var droppedFolders = [];
             if (!!event && !!event.dataTransfer && !!event.dataTransfer.items) {
@@ -241,7 +249,9 @@ var FileUploadDropzone = function (_PureComponent) {
         };
 
         _this.state = {
-            errorMessage: []
+            errorMessage: [],
+            successMessage: '',
+            uploadedFiles: new Map()
         };
         _this.dropzoneRef = null;
         _this.accepted = new Map();
@@ -256,9 +266,12 @@ var FileUploadDropzone = function (_PureComponent) {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
             this.clearAccepted();
-            this.add(nextProps.uploadedFiles);
+            this.setUploaded(nextProps.uploadedFiles);
 
-            if (nextProps.clearErrors) this.processErrors(this.errors);
+            if (nextProps.clearErrors) {
+                this.processErrors(this.errors);
+                this.setState({ successMessage: '' });
+            }
         }
 
         /**
@@ -281,6 +294,13 @@ var FileUploadDropzone = function (_PureComponent) {
          *
          * @param files
          * @private
+         */
+
+
+        /**
+         * Set uploaded files in dropzone's state
+         *
+         * @param files
          */
 
 
@@ -317,6 +337,14 @@ var FileUploadDropzone = function (_PureComponent) {
 
     }, {
         key: 'getDroppedFolders',
+
+
+        /**
+         * Get the list of folders using FileReader API
+         *
+         * @param accepted files and/or folders
+         * @returns {Promise.<*>}
+         */
         value: function getDroppedFolders(accepted) {
             var acceptedFilesAndFolders = [].concat(_toConsumableArray(accepted));
             return Promise.all(acceptedFilesAndFolders.map(function (file) {
@@ -333,6 +361,15 @@ var FileUploadDropzone = function (_PureComponent) {
                 });
             }));
         }
+
+        /**
+         * Handle accepted, rejected and dropped folders and display proper alerts
+         *
+         * @param accepted
+         * @param rejected
+         * @param droppedFolders
+         */
+
 
         /**
          * Handle accepted and rejected files on dropped in Dropzone
@@ -352,8 +389,13 @@ var FileUploadDropzone = function (_PureComponent) {
         value: function render() {
             var _this2 = this;
 
-            var errorTitle = this.props.locale.errorTitle;
-            var errorMessage = this.state.errorMessage;
+            var _props$locale = this.props.locale,
+                errorTitle = _props$locale.errorTitle,
+                successTitle = _props$locale.successTitle,
+                successMessage = _props$locale.successMessage;
+            var _state = this.state,
+                errorMessage = _state.errorMessage,
+                uploadedFiles = _state.uploadedFiles;
 
 
             return _react2.default.createElement(
@@ -381,6 +423,7 @@ var FileUploadDropzone = function (_PureComponent) {
                         )
                     )
                 ),
+                uploadedFiles.size > 0 && _react2.default.createElement(_Alert.Alert, { title: successTitle, message: successMessage.replace('[numberOfFiles]', uploadedFiles.size), type: 'done' }),
                 errorMessage.length > 0 && _react2.default.createElement(_Alert.Alert, { title: errorTitle, message: errorMessage, type: 'error' })
             );
         }

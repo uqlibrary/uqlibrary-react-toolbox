@@ -71,11 +71,11 @@ var Alert = function (_PureComponent) {
                         'div',
                         { className: 'column is-narrow alertIcon' + (this.props.action ? ' linked' : ''), onClick: this.props.action,
                             onKeyDown: this.props.action },
-                        !this.props.showLoader ? _react2.default.createElement(
+                        this.props.showLoader ? _ref : _react2.default.createElement(
                             _FontIcon2.default,
                             { className: 'material-icons' },
                             this.props.type
-                        ) : _ref
+                        )
                     ),
                     _react2.default.createElement(
                         'div',

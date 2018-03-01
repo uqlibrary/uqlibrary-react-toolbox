@@ -19,11 +19,13 @@ exports[`Component FileUploadDropzone should open files selection dialog 1`] = `
         "fileUploadInstruction": "Test instructions",
         "fileUploadRestrictionHeading": "Test header",
         "fileUploadRestrictions": "Test text",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -78,11 +80,13 @@ exports[`Component FileUploadDropzone should open files selection dialog 1`] = `
                     "fileUploadInstruction": "Test instructions",
                     "fileUploadRestrictionHeading": "Test header",
                     "fileUploadRestrictions": "Test text",
+                    "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+                    "successTitle": "Success",
                     "validation": Object {
                       "fileName": "File(s) ([filenames]) have invalid file name",
                       "folder": "Invalid files ([filenames])",
                       "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-                      "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+                      "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
                     },
                   }
                 }
@@ -180,11 +184,13 @@ exports[`Component FileUploadDropzone should render correctly without any setup 
               "fileUploadInstruction": "Test instructions",
               "fileUploadRestrictionHeading": "Test header",
               "fileUploadRestrictions": "Test text",
+              "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+              "successTitle": "Success",
               "validation": Object {
                 "fileName": "File(s) ([filenames]) have invalid file name",
                 "folder": "Invalid files ([filenames])",
                 "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
               },
             }
           }
@@ -227,11 +233,13 @@ exports[`Component FileUploadDropzone should render files discarding folders 1`]
               "fileUploadInstruction": "Test instructions",
               "fileUploadRestrictionHeading": "Test header",
               "fileUploadRestrictions": "Test text",
+              "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+              "successTitle": "Success",
               "validation": Object {
                 "fileName": "File(s) ([filenames]) have invalid file name",
                 "folder": "Invalid files ([filenames])",
                 "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
               },
             }
           }
@@ -274,11 +282,13 @@ exports[`Component FileUploadDropzone should render files discarding folders 2`]
               "fileUploadInstruction": "Test instructions",
               "fileUploadRestrictionHeading": "Test header",
               "fileUploadRestrictions": "Test text",
+              "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+              "successTitle": "Success",
               "validation": Object {
                 "fileName": "File(s) ([filenames]) have invalid file name",
                 "folder": "Invalid files ([filenames])",
                 "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
               },
             }
           }
@@ -286,6 +296,69 @@ exports[`Component FileUploadDropzone should render files discarding folders 2`]
       </t>
     </div>
   </div>
+  <Alert
+    allowDismiss={false}
+    message="Invalid files (test); File(s) (a.text.txt, web_a.txt, WEB_b.txt, Web_c.txt) have invalid file name"
+    showLoader={false}
+    title="Upload Errors"
+    type="error"
+  />
+</div>
+`;
+
+exports[`Component FileUploadDropzone should render files discarding folders 3`] = `
+<div>
+  <div
+    className="columns"
+  >
+    <div
+      className="column"
+      onKeyPress={[Function]}
+      tabIndex="0"
+    >
+      <t
+        disableClick={false}
+        disablePreview={true}
+        disabled={false}
+        maxSize={1000}
+        minSize={0}
+        multiple={true}
+        onDrop={[Function]}
+        preventDropOnDocument={true}
+        style={
+          Object {
+            "padding": "0px",
+          }
+        }
+      >
+        <FileUploadDropzoneStaticContent
+          txt={
+            Object {
+              "errorTitle": "Upload Errors",
+              "fileUploadInstruction": "Test instructions",
+              "fileUploadRestrictionHeading": "Test header",
+              "fileUploadRestrictions": "Test text",
+              "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+              "successTitle": "Success",
+              "validation": Object {
+                "fileName": "File(s) ([filenames]) have invalid file name",
+                "folder": "Invalid files ([filenames])",
+                "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+                "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
+              },
+            }
+          }
+        />
+      </t>
+    </div>
+  </div>
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 2 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
+  />
   <Alert
     allowDismiss={false}
     message="Invalid files (test); File(s) (a.text.txt, web_a.txt, WEB_b.txt, Web_c.txt) have invalid file name"

@@ -23,7 +23,9 @@ class FileUploadDropzone extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            errorMessage: []
+            errorMessage: [],
+            successMessage: '',
+            uploadedFiles: new Map()
         };
         this.dropzoneRef = null;
         this.accepted = new Map();
@@ -35,9 +37,12 @@ class FileUploadDropzone extends PureComponent {
 
     componentWillReceiveProps(nextProps) {
         this.clearAccepted();
-        this.add(nextProps.uploadedFiles);
+        this.setUploaded(nextProps.uploadedFiles);
 
-        if (nextProps.clearErrors) this.processErrors(this.errors);
+        if (nextProps.clearErrors) {
+            this.processErrors(this.errors);
+            this.setState({successMessage: ''});
+        }
     }
 
     /**
@@ -67,6 +72,15 @@ class FileUploadDropzone extends PureComponent {
      */
     add = (files) => {
         [...files].map(file => this.accepted.set(file.name, file));
+    };
+
+    /**
+     * Set uploaded files in dropzone's state
+     *
+     * @param files
+     */
+    setUploaded = (files) => {
+        this.setState({uploadedFiles: [...files].reduce((uploaded, file) => uploaded.set(file.name, file), new Map([]))});
     };
 
     /**
@@ -149,6 +163,12 @@ class FileUploadDropzone extends PureComponent {
         this.errors = new Map();
     };
 
+    /**
+     * Get the list of folders using FileReader API
+     *
+     * @param accepted files and/or folders
+     * @returns {Promise.<*>}
+     */
     getDroppedFolders(accepted) {
         const acceptedFilesAndFolders = [...accepted];
         return Promise.all(
@@ -164,6 +184,13 @@ class FileUploadDropzone extends PureComponent {
         );
     }
 
+    /**
+     * Handle accepted, rejected and dropped folders and display proper alerts
+     *
+     * @param accepted
+     * @param rejected
+     * @param droppedFolders
+     */
     handleDroppedFiles = (accepted, rejected, droppedFolders) => {
         /*
          * Set error for folder
@@ -205,11 +232,16 @@ class FileUploadDropzone extends PureComponent {
          * If max files uploaded, send max files and set error for ignored files
          */
         const {maxFiles} = this.props;
-        if (this.accepted.size > maxFiles) {
-            this.setError('maxFiles', [...this.accepted.values()].slice(maxFiles));
-            this.props.onDropped([...this.accepted.values()].slice(0, maxFiles));
+
+        const totalFiles = [...this.state.uploadedFiles.values(), ...this.accepted.values()];
+
+        if (totalFiles.length > maxFiles) {
+            // Set error for files which won't be uploaded
+            this.setError('maxFiles', totalFiles.slice(maxFiles));
+
+            this.props.onDropped(totalFiles.slice(0, maxFiles));
         } else {
-            this.props.onDropped([...this.accepted.values()]);
+            this.props.onDropped(totalFiles);
         }
 
         /*
@@ -228,14 +260,11 @@ class FileUploadDropzone extends PureComponent {
     _onDrop = (accepted, rejected, event) => {
         /*
          * From droppedEvent dataTransfer items, determine which items are folders
+         *
          * Safari and IE doesn't support event.dataTransfer.items
          * https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items
          *
-         * Workaround: check if file doesn't have type set and size is multiple of 4096 bytes
-         *  - This may leave some files without type and size multiple of 4096 to be recognised as folders
-         *  - Or some folders with allowed extensions to be recognized as files
-         *
-         * https://stackoverflow.com/questions/25016442/how-to-distinguish-if-a-file-or-folder-is-being-dragged-prior-to-it-being-droppe
+         * Using FileReader API async to read slice of file will throw an error if it's a folder
          */
         let droppedFolders = [];
         if (!!event && !!event.dataTransfer && !!event.dataTransfer.items) {
@@ -258,8 +287,8 @@ class FileUploadDropzone extends PureComponent {
     };
 
     render() {
-        const {errorTitle} = this.props.locale;
-        const {errorMessage} = this.state;
+        const {errorTitle, successTitle, successMessage} = this.props.locale;
+        const {errorMessage, uploadedFiles} = this.state;
 
         return (
             <div>
@@ -277,6 +306,11 @@ class FileUploadDropzone extends PureComponent {
                         </Dropzone>
                     </div>
                 </div>
+                {
+                    uploadedFiles.size > 0 && (
+                        <Alert title={successTitle} message={successMessage.replace('[numberOfFiles]', uploadedFiles.size)} type="done" />
+                    )
+                }
                 {
                     errorMessage.length > 0 && (
                         <Alert title={errorTitle} message={errorMessage} type="error" />

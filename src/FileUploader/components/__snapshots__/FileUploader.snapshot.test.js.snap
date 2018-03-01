@@ -38,11 +38,13 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -100,11 +102,13 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -162,11 +166,13 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -284,11 +290,13 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -387,11 +395,13 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -449,11 +459,13 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -511,11 +523,13 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -633,11 +647,13 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -757,11 +773,13 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -898,11 +916,13 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -1041,11 +1061,13 @@ exports[`Component FileUploader should render rows for uploaded files with defau
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -1103,11 +1125,13 @@ exports[`Component FileUploader should render rows for uploaded files with defau
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -1229,11 +1253,13 @@ exports[`Component FileUploader should render rows for uploaded files with defau
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
@@ -1291,11 +1317,13 @@ exports[`Component FileUploader should render rows for uploaded files with defau
           </ul>
         </div>,
         "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
         "validation": Object {
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) Files ([filenames]) will not be uploaded",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
         },
       }
     }
