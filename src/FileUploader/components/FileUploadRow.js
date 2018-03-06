@@ -98,8 +98,7 @@ export class FileUploadRow extends Component {
     render() {
         const {deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateClosedAccess} = this.props.locale;
         const accessConditionId = this.state.access_condition_id;
-        console.log(this.props.uploadInProgress, this.props.progress);
-        console.log(this.props.uploadInProgress && this.props.progress !== 100);
+
         return (
             <div className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix">
                 <ConfirmDialogBox

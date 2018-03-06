@@ -1,5 +1,5 @@
 import {default as fileUploadReducer} from './reducer';
-import { FILE_UPLOAD_PROGRESS, FILE_UPLOADED_FAILED, FILE_UPLOAD_CLEARED } from './actions';
+import { FILE_UPLOAD_PROGRESS, FILE_UPLOADED_FAILED, FILE_UPLOAD_CLEARED, FILE_UPLOAD_STARTED } from './actions';
 
 describe('fileUploadReducer', () => {
     it('sets state correctly for file in progress', () => {
@@ -42,6 +42,15 @@ describe('fileUploadReducer', () => {
         const expected = {
             overall: 0,
             uploadInProgress: false
+        };
+
+        expect(state).toEqual(expected);
+    });
+
+    it('sets state correctly for file upload started', () => {
+        const state = fileUploadReducer({overall: 0, uploadInProgress: false}, {type: FILE_UPLOAD_STARTED});
+        const expected = {
+            uploadInProgress: true
         };
 
         expect(state).toEqual(expected);

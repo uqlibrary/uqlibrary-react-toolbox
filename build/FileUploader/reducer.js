@@ -59,7 +59,7 @@ var fileUploadReducer = function fileUploadReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { overall: 0, uploadInProgress: false };
     var action = arguments[1];
 
-    var handler = action.type === _actions.FILE_UPLOAD_CLEARED ? handlers[action.type] : handlers[action.type.substring(0, action.type.indexOf('@') + 1)];
+    var handler = [_actions.FILE_UPLOAD_STARTED, _actions.FILE_UPLOAD_CLEARED].indexOf(action.type) > -1 ? handlers[action.type] : handlers[action.type.substring(0, action.type.indexOf('@') + 1)];
 
     if (!handler) {
         return state;
