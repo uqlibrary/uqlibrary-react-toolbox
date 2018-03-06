@@ -18,7 +18,7 @@ var getValues = function getValues(obj) {
     });
 };
 
-var handlers = (_handlers = {}, _defineProperty(_handlers, '' + _actions.FILE_UPLOADED_STARTED, function undefined(state) {
+var handlers = (_handlers = {}, _defineProperty(_handlers, '' + _actions.FILE_UPLOAD_STARTED, function undefined(state) {
     return _extends({}, state, {
         uploadInProgress: true
     });

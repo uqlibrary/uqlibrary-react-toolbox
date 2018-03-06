@@ -1,9 +1,9 @@
-import { FILE_UPLOAD_PROGRESS, FILE_UPLOADED_FAILED, FILE_UPLOAD_CLEARED, FILE_UPLOADED_STARTED } from './actions';
+import { FILE_UPLOAD_PROGRESS, FILE_UPLOADED_FAILED, FILE_UPLOAD_CLEARED, FILE_UPLOAD_STARTED } from './actions';
 
 const getValues = (obj) => Object.keys(obj).map(key => obj[key]);
 
 const handlers = {
-    [`${FILE_UPLOADED_STARTED}`]: (state) => {
+    [`${FILE_UPLOAD_STARTED}`]: (state) => {
         return {
             ...state,
             uploadInProgress: true
