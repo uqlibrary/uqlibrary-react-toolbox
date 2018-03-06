@@ -12,12 +12,6 @@ var _actions = require('./actions');
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var getValues = function getValues(obj) {
-    return Object.keys(obj).map(function (key) {
-        return obj[key];
-    });
-};
-
 var handlers = (_handlers = {}, _defineProperty(_handlers, '' + _actions.FILE_UPLOAD_STARTED, function undefined(state) {
     return _extends({}, state, {
         uploadInProgress: true
@@ -27,36 +21,25 @@ var handlers = (_handlers = {}, _defineProperty(_handlers, '' + _actions.FILE_UP
 
     var uploadProgress = _extends({}, state, _defineProperty({}, '' + file, action.complete));
 
-    delete uploadProgress.overall;
-
     return _extends({}, uploadProgress, {
-        overall: getValues(uploadProgress).reduce(function (sum, current) {
-            return sum + current;
-        }, 0) / getValues(uploadProgress).length,
         uploadInProgress: true
     });
 }), _defineProperty(_handlers, _actions.FILE_UPLOADED_FAILED + '@', function undefined(state, action) {
-    var _extends3;
-
     var file = action.type.substring(action.type.indexOf('@') + 1, action.type.length);
 
     var uploadProgress = _extends({}, state);
 
-    delete uploadProgress.overall;
     delete uploadProgress.file;
 
-    return _extends({}, uploadProgress, (_extends3 = {}, _defineProperty(_extends3, '' + file, 0), _defineProperty(_extends3, 'overall', getValues(uploadProgress).reduce(function (sum, current) {
-        return sum + current;
-    }, 0) / getValues(uploadProgress).length), _extends3));
+    return _extends({}, uploadProgress, _defineProperty({}, '' + file, 0));
 }), _defineProperty(_handlers, _actions.FILE_UPLOAD_CLEARED, function () {
     return {
-        overall: 0,
         uploadInProgress: false
     };
 }), _handlers);
 
 var fileUploadReducer = function fileUploadReducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { overall: 0, uploadInProgress: false };
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { uploadInProgress: false };
     var action = arguments[1];
 
     var handler = action.type === _actions.FILE_UPLOAD_CLEARED ? handlers[action.type] : handlers[action.type.substring(0, action.type.indexOf('@') + 1)];
