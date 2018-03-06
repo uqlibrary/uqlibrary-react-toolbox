@@ -18,10 +18,10 @@ var getValues = function getValues(obj) {
     });
 };
 
-var handlers = (_handlers = {}, _defineProperty(_handlers, '' + _actions.FILE_UPLOAD_STARTED, function undefined(state) {
-    return _extends({}, state, {
+var handlers = (_handlers = {}, _defineProperty(_handlers, '' + _actions.FILE_UPLOAD_STARTED, function undefined() {
+    return {
         uploadInProgress: true
-    });
+    };
 }), _defineProperty(_handlers, _actions.FILE_UPLOAD_PROGRESS + '@', function undefined(state, action) {
     var file = action.type.substring(action.type.indexOf('@') + 1, action.type.length);
 

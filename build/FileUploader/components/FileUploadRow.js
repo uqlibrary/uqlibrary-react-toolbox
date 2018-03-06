@@ -172,6 +172,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 embargoDateClosedAccess = _props$locale.embargoDateClosedAccess;
 
             var accessConditionId = this.state.access_condition_id;
+            console.log(this.props.uploadInProgress, this.props.progress);
+            console.log(this.props.uploadInProgress && this.props.progress !== 100);
             return _react2.default.createElement(
                 'div',
                 { className: 'columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix' },
