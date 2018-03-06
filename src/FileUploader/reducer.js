@@ -15,7 +15,8 @@ const handlers = {
 
         return {
             ...uploadProgress,
-            overall: getValues(uploadProgress).reduce((sum, current) => (sum + current), 0) / getValues(uploadProgress).length
+            overall: getValues(uploadProgress).reduce((sum, current) => (sum + current), 0) / getValues(uploadProgress).length,
+            uploadInProgress: true
         };
     },
     [`${FILE_UPLOADED_FAILED}@`]: (state, action) => {
@@ -36,12 +37,13 @@ const handlers = {
     },
     [FILE_UPLOAD_CLEARED]: () => {
         return {
-            overall: 0
+            overall: 0,
+            uploadInProgress: false
         };
     }
 };
 
-const fileUploadReducer = (state = { overall: 0 }, action) => {
+const fileUploadReducer = (state = { overall: 0, uploadInProgress: false }, action) => {
     const handler = action.type === FILE_UPLOAD_CLEARED ? handlers[action.type] : handlers[action.type.substring(0, action.type.indexOf('@') + 1)];
 
     if (!handler) {

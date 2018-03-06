@@ -84,6 +84,15 @@ var _ref4 = _react2.default.createElement(
 var _ref5 = _react2.default.createElement(
     'div',
     { className: 'upload-progress' },
+    _react2.default.createElement(_CircularProgress2.default, {
+        size: 20,
+        thickness: 4
+    })
+);
+
+var _ref6 = _react2.default.createElement(
+    'div',
+    { className: 'upload-progress' },
     _react2.default.createElement(
         _FontIcon2.default,
         { className: 'material-icons green-tick' },
@@ -249,7 +258,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered' },
-                    this.props.progress === 0 && _react2.default.createElement(
+                    !this.props.uploadInProgress && _react2.default.createElement(
                         'div',
                         { className: 'datalist-buttons' },
                         _react2.default.createElement(
@@ -258,26 +267,17 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                             _ref4
                         )
                     ),
-                    this.props.progress > 0 && this.props.progress !== 100 && _react2.default.createElement(
+                    this.props.uploadInProgress && this.props.progress !== 100 && _react2.default.createElement(
                         'div',
                         { className: 'upload-progress-info' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'upload-progress' },
-                            _react2.default.createElement(_CircularProgress2.default, {
-                                mode: 'determinate',
-                                value: this.props.progress,
-                                size: 20,
-                                thickness: 4
-                            })
-                        ),
-                        _react2.default.createElement(
+                        _ref5,
+                        this.props.progress > 0 && _react2.default.createElement(
                             'div',
                             { className: 'upload-progress-number' },
                             this.props.progress + '%'
                         )
                     ),
-                    this.props.progress === 100 && _ref5
+                    this.props.progress === 100 && _ref6
                 )
             );
         }
@@ -305,7 +305,8 @@ FileUploadRow.defaultProps = {
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
     return {
-        progress: state.get('fileUpload')[ownProps.uploadedFile.name] || 0
+        progress: state.get('fileUpload')[ownProps.uploadedFile.name] || 0,
+        uploadInProgress: state.get('fileUpload').uploadInProgress
     };
 };
 

@@ -22,6 +22,7 @@ exports[`FileUploadRow renders correctly with file upload success 1`] = `
   onDelete={[MockFunction]}
   progress={100}
   requireOpenAccessStatus={false}
+  uploadInProgress={true}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -216,6 +217,7 @@ exports[`FileUploadRow renders correctly with uploaded file 1`] = `
   onDelete={[MockFunction]}
   progress={0}
   requireOpenAccessStatus={false}
+  uploadInProgress={false}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -570,6 +572,7 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
   onDelete={[MockFunction]}
   progress={50}
   requireOpenAccessStatus={false}
+  uploadInProgress={true}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -718,15 +721,15 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
           <CircularProgress
             max={100}
             min={0}
-            mode="determinate"
+            mode="indeterminate"
             size={20}
             thickness={4}
-            value={50}
+            value={0}
           >
             <div
               max={100}
               min={0}
-              mode="determinate"
+              mode="indeterminate"
               style={
                 Object {
                   "display": "inline-block",
@@ -736,7 +739,7 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
                   "width": 20,
                 }
               }
-              value={50}
+              value={0}
             >
               <div
                 style={
@@ -772,9 +775,8 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
                       Object {
                         "muiPrepared": true,
                         "stroke": "#00bcd4",
-                        "strokeDasharray": "25.132741228718345, 50.26548245743669",
                         "strokeLinecap": "round",
-                        "transition": "0.3s all linear 0ms",
+                        "transition": "1.5s all ease-in-out 0ms",
                       }
                     }
                   />
@@ -816,6 +818,7 @@ exports[`FileUploadRow shows confirmation on delete file 1`] = `
   onDelete={[MockFunction]}
   progress={0}
   requireOpenAccessStatus={false}
+  uploadInProgress={false}
   uploadedFile={
     Object {
       "name": "a.txt",

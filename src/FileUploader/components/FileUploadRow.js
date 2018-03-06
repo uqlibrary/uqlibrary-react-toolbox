@@ -23,6 +23,7 @@ export class FileUploadRow extends Component {
         onAttributeChanged: PropTypes.func.isRequired,
         locale: PropTypes.object,
         progress: PropTypes.number,
+        uploadInProgress: PropTypes.bool,
         requireOpenAccessStatus: PropTypes.bool.isRequired,
         fileSizeUnit: PropTypes.string,
         disabled: PropTypes.bool,
@@ -146,7 +147,7 @@ export class FileUploadRow extends Component {
                 </div>
                 <div className="column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered">
                     {
-                        this.props.progress === 0 &&
+                        !this.props.uploadInProgress &&
                         <div className="datalist-buttons">
                             <IconButton tooltip={this.props.locale.deleteHint} onTouchTap={this._showConfirmation} disabled={this.props.disabled}>
                                 <FontIcon className="material-icons deleteIcon">delete</FontIcon>
@@ -154,17 +155,18 @@ export class FileUploadRow extends Component {
                         </div>
                     }
                     {
-                        this.props.progress > 0 && this.props.progress !== 100 &&
+                        this.props.uploadInProgress && this.props.progress !== 100 &&
                         <div className="upload-progress-info">
                             <div className="upload-progress">
                                 <CircularProgress
-                                    mode="determinate"
-                                    value={this.props.progress}
                                     size={20}
                                     thickness={4}
                                 />
                             </div>
-                            <div className="upload-progress-number">{`${this.props.progress}%`}</div>
+                            {
+                                this.props.progress > 0 &&
+                                <div className="upload-progress-number">{`${this.props.progress}%`}</div>
+                            }
                         </div>
                     }
                     {
@@ -181,7 +183,8 @@ export class FileUploadRow extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        progress: state.get('fileUpload')[ownProps.uploadedFile.name] || 0
+        progress: state.get('fileUpload')[ownProps.uploadedFile.name] || 0,
+        uploadInProgress: state.get('fileUpload').uploadInProgress
     };
 };
 
