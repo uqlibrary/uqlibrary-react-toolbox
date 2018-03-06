@@ -18,7 +18,11 @@ var getValues = function getValues(obj) {
     });
 };
 
-var handlers = (_handlers = {}, _defineProperty(_handlers, _actions.FILE_UPLOAD_PROGRESS + '@', function undefined(state, action) {
+var handlers = (_handlers = {}, _defineProperty(_handlers, '' + _actions.FILE_UPLOADED_STARTED, function undefined(state) {
+    return _extends({}, state, {
+        uploadInProgress: true
+    });
+}), _defineProperty(_handlers, _actions.FILE_UPLOAD_PROGRESS + '@', function undefined(state, action) {
     var file = action.type.substring(action.type.indexOf('@') + 1, action.type.length);
 
     var uploadProgress = _extends({}, state, _defineProperty({}, '' + file, action.complete));
