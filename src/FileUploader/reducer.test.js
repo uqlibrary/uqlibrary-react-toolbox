@@ -6,7 +6,7 @@ describe('fileUploadReducer', () => {
         const state = fileUploadReducer({}, {type: `${FILE_UPLOAD_PROGRESS}@a.txt`, complete: 20});
         const expected = {
             'a.txt': 20,
-            uploadInProgress: true
+            isUploadInProgress: true
         };
 
         expect(state).toEqual(expected);
@@ -17,7 +17,7 @@ describe('fileUploadReducer', () => {
         const expected = {
             'a.txt': 40,
             'b.txt': 60,
-            uploadInProgress: true
+            isUploadInProgress: true
         };
 
         expect(state).toEqual(expected);
@@ -28,7 +28,8 @@ describe('fileUploadReducer', () => {
         const expected = {
             'a.txt': 100,
             'b.txt': 0,
-            'c.txt': 100
+            'c.txt': 100,
+            isUploadInProgress: false
         };
 
         expect(state).toEqual(expected);
@@ -37,16 +38,16 @@ describe('fileUploadReducer', () => {
     it('sets state correctly for file upload failed', () => {
         const state = fileUploadReducer({'a.txt': 100, 'c.txt': 100}, {type: FILE_UPLOAD_CLEARED});
         const expected = {
-            uploadInProgress: false
+            isUploadInProgress: false
         };
 
         expect(state).toEqual(expected);
     });
 
     it('sets state correctly for file upload started', () => {
-        const state = fileUploadReducer({uploadInProgress: false}, {type: FILE_UPLOAD_STARTED});
+        const state = fileUploadReducer({isUploadInProgress: false}, {type: FILE_UPLOAD_STARTED});
         const expected = {
-            uploadInProgress: true
+            isUploadInProgress: true
         };
 
         expect(state).toEqual(expected);

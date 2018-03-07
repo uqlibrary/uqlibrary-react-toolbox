@@ -176,7 +176,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 index = _props.index,
                 requireOpenAccessStatus = _props.requireOpenAccessStatus,
                 disabled = _props.disabled,
-                uploadInProgress = _props.uploadInProgress;
+                isUploadInProgress = _props.isUploadInProgress;
 
 
             return _react2.default.createElement(
@@ -265,7 +265,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered' },
-                    !uploadInProgress && _react2.default.createElement(
+                    !isUploadInProgress && _react2.default.createElement(
                         'div',
                         { className: 'datalist-buttons' },
                         _react2.default.createElement(
@@ -274,7 +274,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                             _ref4
                         )
                     ),
-                    uploadInProgress && progress !== 100 && _react2.default.createElement(
+                    isUploadInProgress && progress !== 100 && _react2.default.createElement(
                         'div',
                         { className: 'upload-progress-info' },
                         _react2.default.createElement(
@@ -328,7 +328,7 @@ FileUploadRow.defaultProps = {
 var mapStateToProps = function mapStateToProps(state, ownProps) {
     return {
         progress: state.get('fileUpload')[ownProps.uploadedFile.name] || 0,
-        uploadInProgress: state.get('fileUpload').uploadInProgress
+        isUploadInProgress: state.get('fileUpload').isUploadInProgress
     };
 };
 

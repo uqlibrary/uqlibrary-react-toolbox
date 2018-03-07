@@ -3,6 +3,7 @@
 exports[`FileUploadRow renders correctly for edge browser if file is being uploaded but no progress data 1`] = `
 <FileUploadRow
   index={0}
+  isUploadInProgress={true}
   locale={
     Object {
       "deleteHint": "Remove this file",
@@ -23,7 +24,6 @@ exports[`FileUploadRow renders correctly for edge browser if file is being uploa
   onDelete={[MockFunction]}
   progress={0}
   requireOpenAccessStatus={false}
-  uploadInProgress={true}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -254,6 +254,7 @@ exports[`FileUploadRow renders correctly for edge browser if file is being uploa
 exports[`FileUploadRow renders correctly with file upload success 1`] = `
 <FileUploadRow
   index={0}
+  isUploadInProgress={true}
   locale={
     Object {
       "deleteHint": "Remove this file",
@@ -274,7 +275,6 @@ exports[`FileUploadRow renders correctly with file upload success 1`] = `
   onDelete={[MockFunction]}
   progress={100}
   requireOpenAccessStatus={false}
-  uploadInProgress={true}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -450,6 +450,7 @@ exports[`FileUploadRow renders correctly with file upload success 1`] = `
 exports[`FileUploadRow renders correctly with uploaded file 1`] = `
 <FileUploadRow
   index={0}
+  isUploadInProgress={false}
   locale={
     Object {
       "deleteHint": "Remove this file",
@@ -470,7 +471,6 @@ exports[`FileUploadRow renders correctly with uploaded file 1`] = `
   onDelete={[MockFunction]}
   progress={0}
   requireOpenAccessStatus={false}
-  uploadInProgress={false}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -806,6 +806,7 @@ exports[`FileUploadRow renders correctly with uploaded file 1`] = `
 exports[`FileUploadRow renders correctly with uploaded file with some progress 1`] = `
 <FileUploadRow
   index={0}
+  isUploadInProgress={true}
   locale={
     Object {
       "deleteHint": "Remove this file",
@@ -826,7 +827,6 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
   onDelete={[MockFunction]}
   progress={50}
   requireOpenAccessStatus={false}
-  uploadInProgress={true}
   uploadedFile={
     Object {
       "name": "a.txt",
@@ -1058,6 +1058,7 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
 exports[`FileUploadRow shows confirmation on delete file 1`] = `
 <FileUploadRow
   index={0}
+  isUploadInProgress={false}
   locale={
     Object {
       "deleteHint": "Remove this file",
@@ -1078,7 +1079,6 @@ exports[`FileUploadRow shows confirmation on delete file 1`] = `
   onDelete={[MockFunction]}
   progress={0}
   requireOpenAccessStatus={false}
-  uploadInProgress={false}
   uploadedFile={
     Object {
       "name": "a.txt",
