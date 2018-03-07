@@ -16,11 +16,8 @@ const handlers = {
             [`${file}`]: action.complete
         };
 
-        delete uploadProgress.overall;
-
         return {
             ...uploadProgress,
-            overall: getValues(uploadProgress).reduce((sum, current) => (sum + current), 0) / getValues(uploadProgress).length,
             uploadInProgress: true
         };
     },
@@ -31,24 +28,21 @@ const handlers = {
             ...state
         };
 
-        delete uploadProgress.overall;
         delete uploadProgress.file;
 
         return {
             ...uploadProgress,
-            [`${file}`]: 0,
-            overall: getValues(uploadProgress).reduce((sum, current) => (sum + current), 0) / getValues(uploadProgress).length
+            [`${file}`]: 0
         };
     },
     [FILE_UPLOAD_CLEARED]: () => {
         return {
-            overall: 0,
             uploadInProgress: false
         };
     }
 };
 
-const fileUploadReducer = (state = { overall: 0, uploadInProgress: false }, action) => {
+const fileUploadReducer = (state = { uploadInProgress: false }, action) => {
     const handler = [FILE_UPLOAD_STARTED, FILE_UPLOAD_CLEARED].indexOf(action.type) > -1 ? handlers[action.type] : handlers[action.type.substring(0, action.type.indexOf('@') + 1)];
 
     if (!handler) {
