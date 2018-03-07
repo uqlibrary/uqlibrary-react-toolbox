@@ -334,7 +334,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 }(_react.PureComponent);
 
 FileUploader.defaultProps = {
-    overallProgress: 0,
     locale: {
         instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
         accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',

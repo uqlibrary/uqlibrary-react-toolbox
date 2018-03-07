@@ -44,7 +44,7 @@ describe('fileUploadReducer', () => {
     });
 
     it('sets state correctly for file upload started', () => {
-        const state = fileUploadReducer({overall: 0, uploadInProgress: false}, {type: FILE_UPLOAD_STARTED});
+        const state = fileUploadReducer({uploadInProgress: false}, {type: FILE_UPLOAD_STARTED});
         const expected = {
             uploadInProgress: true
         };
