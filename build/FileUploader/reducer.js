@@ -18,7 +18,11 @@ var getValues = function getValues(obj) {
     });
 };
 
-var handlers = (_handlers = {}, _defineProperty(_handlers, _actions.FILE_UPLOAD_PROGRESS + '@', function undefined(state, action) {
+var handlers = (_handlers = {}, _defineProperty(_handlers, '' + _actions.FILE_UPLOAD_STARTED, function undefined() {
+    return {
+        uploadInProgress: true
+    };
+}), _defineProperty(_handlers, _actions.FILE_UPLOAD_PROGRESS + '@', function undefined(state, action) {
     var file = action.type.substring(action.type.indexOf('@') + 1, action.type.length);
 
     var uploadProgress = _extends({}, state, _defineProperty({}, '' + file, action.complete));
@@ -28,7 +32,8 @@ var handlers = (_handlers = {}, _defineProperty(_handlers, _actions.FILE_UPLOAD_
     return _extends({}, uploadProgress, {
         overall: getValues(uploadProgress).reduce(function (sum, current) {
             return sum + current;
-        }, 0) / getValues(uploadProgress).length
+        }, 0) / getValues(uploadProgress).length,
+        uploadInProgress: true
     });
 }), _defineProperty(_handlers, _actions.FILE_UPLOADED_FAILED + '@', function undefined(state, action) {
     var _extends3;
@@ -45,15 +50,16 @@ var handlers = (_handlers = {}, _defineProperty(_handlers, _actions.FILE_UPLOAD_
     }, 0) / getValues(uploadProgress).length), _extends3));
 }), _defineProperty(_handlers, _actions.FILE_UPLOAD_CLEARED, function () {
     return {
-        overall: 0
+        overall: 0,
+        uploadInProgress: false
     };
 }), _handlers);
 
 var fileUploadReducer = function fileUploadReducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { overall: 0 };
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { overall: 0, uploadInProgress: false };
     var action = arguments[1];
 
-    var handler = action.type === _actions.FILE_UPLOAD_CLEARED ? handlers[action.type] : handlers[action.type.substring(0, action.type.indexOf('@') + 1)];
+    var handler = [_actions.FILE_UPLOAD_STARTED, _actions.FILE_UPLOAD_CLEARED].indexOf(action.type) > -1 ? handlers[action.type] : handlers[action.type.substring(0, action.type.indexOf('@') + 1)];
 
     if (!handler) {
         return state;

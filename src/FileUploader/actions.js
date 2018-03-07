@@ -1,6 +1,7 @@
 export const FILE_UPLOAD_PROGRESS = 'FILE_UPLOAD_PROGRESS';
 export const FILE_UPLOADED_FAILED = 'FILE_UPLOADED_FAILED';
 export const FILE_UPLOAD_CLEARED = 'FILE_UPLOAD_CLEARED';
+export const FILE_UPLOAD_STARTED = 'FILE_UPLOAD_STARTED';
 
 /**
  * Notify progress for individual file
@@ -43,3 +44,15 @@ export const clearFileUpload = () => {
         type: FILE_UPLOAD_CLEARED
     };
 };
+
+/**
+ * Start file upload
+ *
+ * @returns {{type: *}}
+ */
+export const startFileUpload = () => {
+    return {
+        type: FILE_UPLOAD_STARTED
+    };
+};
+

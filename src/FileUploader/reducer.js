@@ -1,8 +1,13 @@
-import { FILE_UPLOAD_PROGRESS, FILE_UPLOADED_FAILED, FILE_UPLOAD_CLEARED } from './actions';
+import { FILE_UPLOAD_PROGRESS, FILE_UPLOADED_FAILED, FILE_UPLOAD_CLEARED, FILE_UPLOAD_STARTED } from './actions';
 
 const getValues = (obj) => Object.keys(obj).map(key => obj[key]);
 
 const handlers = {
+    [`${FILE_UPLOAD_STARTED}`]: () => {
+        return {
+            uploadInProgress: true
+        };
+    },
     [`${FILE_UPLOAD_PROGRESS}@`]: (state, action) => {
         const file = action.type.substring(action.type.indexOf('@') + 1, action.type.length);
 
@@ -15,7 +20,8 @@ const handlers = {
 
         return {
             ...uploadProgress,
-            overall: getValues(uploadProgress).reduce((sum, current) => (sum + current), 0) / getValues(uploadProgress).length
+            overall: getValues(uploadProgress).reduce((sum, current) => (sum + current), 0) / getValues(uploadProgress).length,
+            uploadInProgress: true
         };
     },
     [`${FILE_UPLOADED_FAILED}@`]: (state, action) => {
@@ -36,13 +42,14 @@ const handlers = {
     },
     [FILE_UPLOAD_CLEARED]: () => {
         return {
-            overall: 0
+            overall: 0,
+            uploadInProgress: false
         };
     }
 };
 
-const fileUploadReducer = (state = { overall: 0 }, action) => {
-    const handler = action.type === FILE_UPLOAD_CLEARED ? handlers[action.type] : handlers[action.type.substring(0, action.type.indexOf('@') + 1)];
+const fileUploadReducer = (state = { overall: 0, uploadInProgress: false }, action) => {
+    const handler = [FILE_UPLOAD_STARTED, FILE_UPLOAD_CLEARED].indexOf(action.type) > -1 ? handlers[action.type] : handlers[action.type.substring(0, action.type.indexOf('@') + 1)];
 
     if (!handler) {
         return state;
