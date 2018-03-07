@@ -12,12 +12,6 @@ var _actions = require('./actions');
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var getValues = function getValues(obj) {
-    return Object.keys(obj).map(function (key) {
-        return obj[key];
-    });
-};
-
 var handlers = (_handlers = {}, _defineProperty(_handlers, '' + _actions.FILE_UPLOAD_STARTED, function undefined() {
     return {
         uploadInProgress: true
