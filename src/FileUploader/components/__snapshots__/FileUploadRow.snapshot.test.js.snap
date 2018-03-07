@@ -16,7 +16,7 @@ exports[`FileUploadRow renders correctly for edge browser if file is being uploa
       "embargoDateColumn": "Embargo date",
       "fileAccessColumn": "File access",
       "filenameColumn": "File name",
-      "uploadingInProgress": "Uploading...",
+      "uploadInProgressTxt": "Uploading...",
     }
   }
   onAttributeChanged={[MockFunction]}
@@ -267,7 +267,7 @@ exports[`FileUploadRow renders correctly with file upload success 1`] = `
       "embargoDateColumn": "Embargo date",
       "fileAccessColumn": "File access",
       "filenameColumn": "File name",
-      "uploadingInProgress": "Uploading...",
+      "uploadInProgressTxt": "Uploading...",
     }
   }
   onAttributeChanged={[MockFunction]}
@@ -463,7 +463,7 @@ exports[`FileUploadRow renders correctly with uploaded file 1`] = `
       "embargoDateColumn": "Embargo date",
       "fileAccessColumn": "File access",
       "filenameColumn": "File name",
-      "uploadingInProgress": "Uploading...",
+      "uploadInProgressTxt": "Uploading...",
     }
   }
   onAttributeChanged={[MockFunction]}
@@ -819,7 +819,7 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
       "embargoDateColumn": "Embargo date",
       "fileAccessColumn": "File access",
       "filenameColumn": "File name",
-      "uploadingInProgress": "Uploading...",
+      "uploadInProgressTxt": "Uploading...",
     }
   }
   onAttributeChanged={[MockFunction]}
@@ -1071,7 +1071,7 @@ exports[`FileUploadRow shows confirmation on delete file 1`] = `
       "embargoDateColumn": "Embargo date",
       "fileAccessColumn": "File access",
       "filenameColumn": "File name",
-      "uploadingInProgress": "Uploading...",
+      "uploadInProgressTxt": "Uploading...",
     }
   }
   onAttributeChanged={[MockFunction]}
