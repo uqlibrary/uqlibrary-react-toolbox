@@ -97,9 +97,9 @@ export class FileUploadRow extends Component {
     };
 
     render() {
-        const {deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateClosedAccess} = this.props.locale;
+        const {deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateClosedAccess, uploadingInProgress, deleteHint} = this.props.locale;
         const accessConditionId = this.state.access_condition_id;
-        const {progress} = this.props;
+        const {progress, uploadedFile, index, requireOpenAccessStatus, disabled, uploadInProgress} = this.props;
 
         return (
             <div className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix">
@@ -109,18 +109,18 @@ export class FileUploadRow extends Component {
                     locale={deleteRecordConfirmation} />
                 <div className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile">
                     <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">attachment</FontIcon>
-                    <div className="file-name" ref={`fileName${this.props.index}`}>
-                        <span className="truncated">{this.props.uploadedFile.name} ({this.calculateFilesizeToDisplay(this.props.uploadedFile.size)})</span>
+                    <div className="file-name" ref={`fileName${index}`}>
+                        <span className="truncated">{uploadedFile.name} ({this.calculateFilesizeToDisplay(uploadedFile.size)})</span>
                         <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{filenameColumn}</span>
                     </div>
                 </div>
                 <div className="column datalist-text is-3-desktop is-4-tablet is-12-mobile">
                     {
-                        this.props.requireOpenAccessStatus &&
+                        requireOpenAccessStatus &&
                             <div className="file-access-selector">
                                 <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
                                 <div className="select-container">
-                                    <FileUploadAccessSelector onAccessChanged={this._updateFileMetadata} disabled={this.props.disabled} ref={`accessConditionSelector${this.props.index}`} />
+                                    <FileUploadAccessSelector onAccessChanged={this._updateFileMetadata} disabled={disabled} ref={`accessConditionSelector${index}`} />
                                     <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{fileAccessColumn}</span>
                                 </div>
                             </div>
@@ -129,20 +129,20 @@ export class FileUploadRow extends Component {
                 <div className="column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
                     <div className="embargo-date-info">
                         {
-                            this.props.requireOpenAccessStatus &&
+                            requireOpenAccessStatus &&
                             <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
                         }
                         {
-                            this.props.requireOpenAccessStatus && !this.isOpenAccess(accessConditionId) &&
+                            requireOpenAccessStatus && !this.isOpenAccess(accessConditionId) &&
                             <div className="no-embargo-date">
                                 <span>{embargoDateClosedAccess}</span>
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }
                         {
-                            this.props.requireOpenAccessStatus && this.isOpenAccess(accessConditionId) &&
+                            requireOpenAccessStatus && this.isOpenAccess(accessConditionId) &&
                             <div className="embargo-date-selector">
-                                <FileUploadEmbargoDate onDateChanged={this._updateFileMetadata} disabled={this.props.disabled} />
+                                <FileUploadEmbargoDate onDateChanged={this._updateFileMetadata} disabled={disabled} />
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }
@@ -150,15 +150,15 @@ export class FileUploadRow extends Component {
                 </div>
                 <div className="column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered">
                     {
-                        !this.props.uploadInProgress &&
+                        !uploadInProgress &&
                         <div className="datalist-buttons">
-                            <IconButton tooltip={this.props.locale.deleteHint} onTouchTap={this._showConfirmation} disabled={this.props.disabled}>
+                            <IconButton tooltip={deleteHint} onTouchTap={this._showConfirmation} disabled={disabled}>
                                 <FontIcon className="material-icons deleteIcon">delete</FontIcon>
                             </IconButton>
                         </div>
                     }
                     {
-                        this.props.uploadInProgress && progress !== 100 &&
+                        uploadInProgress && progress !== 100 &&
                         <div className="upload-progress-info">
                             <div className="upload-progress">
                                 {
@@ -180,8 +180,8 @@ export class FileUploadRow extends Component {
                             </div>
                             <div className="upload-progress-number">
                                 {
-                                    <span aria-label={progress > 0 ? `${progress}%` : this.props.locale.uploadingInProgress}>
-                                        {progress > 0 ? `${progress}%` : this.props.locale.uploadingInProgress}
+                                    <span aria-label={progress > 0 ? `${progress}%` : uploadingInProgress}>
+                                        {progress > 0 ? `${progress}%` : uploadingInProgress}
                                     </span>
                                 }
                             </div>
