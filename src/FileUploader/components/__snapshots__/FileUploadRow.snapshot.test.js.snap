@@ -1,5 +1,256 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`FileUploadRow renders correctly for edge browser if file is being uploaded but no progress data 1`] = `
+<FileUploadRow
+  index={0}
+  locale={
+    Object {
+      "deleteHint": "Remove this file",
+      "deleteRecordConfirmation": Object {
+        "cancelButtonLabel": "No",
+        "confirmButtonLabel": "Yes",
+        "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
+        "confirmationTitle": "Delete file",
+      },
+      "embargoDateClosedAccess": "No date required",
+      "embargoDateColumn": "Embargo date",
+      "fileAccessColumn": "File access",
+      "filenameColumn": "File name",
+      "uploadingInProgress": "Uploading...",
+    }
+  }
+  onAttributeChanged={[MockFunction]}
+  onDelete={[MockFunction]}
+  progress={0}
+  requireOpenAccessStatus={false}
+  uploadInProgress={true}
+  uploadedFile={
+    Object {
+      "name": "a.txt",
+      "size": 100,
+    }
+  }
+>
+  <div
+    className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix"
+  >
+    <ConfirmDialogBox
+      hideCancelButton={false}
+      locale={
+        Object {
+          "cancelButtonLabel": "No",
+          "confirmButtonLabel": "Yes",
+          "confirmationMessage": "Are you sure you want to remove this file from the uploaded queue?",
+          "confirmationTitle": "Delete file",
+        }
+      }
+      onAction={[Function]}
+      onRef={[Function]}
+    >
+      <Dialog
+        actions={
+          Array [
+            <div
+              className="columns dialog-actions ConfirmDialogBox-actions"
+            >
+              <div
+                className="column is-hidden-mobile"
+              />
+              <div
+                className="column is-narrow"
+              >
+                <RaisedButton
+                  className="ConfirmDialogBox-actions-cancel"
+                  disabled={false}
+                  fullWidth={true}
+                  label="No"
+                  labelPosition="after"
+                  onTouchTap={[Function]}
+                  primary={false}
+                  secondary={false}
+                />
+              </div>
+              <div
+                className="column is-narrow"
+              >
+                <RaisedButton
+                  className="ConfirmDialogBox-actions-confirm"
+                  disabled={false}
+                  fullWidth={true}
+                  keyboardFocused={true}
+                  label="Yes"
+                  labelPosition="after"
+                  onTouchTap={[Function]}
+                  primary={false}
+                  secondary={true}
+                />
+              </div>
+              <div
+                className="is-clearfix"
+              />
+            </div>,
+          ]
+        }
+        autoDetectWindowHeight={true}
+        autoScrollBodyContent={false}
+        modal={true}
+        open={false}
+        repositionOnUpdate={true}
+        title="Delete file"
+      >
+        <RenderToLayer
+          open={true}
+          render={[Function]}
+          useLayerForClickAway={false}
+        />
+      </Dialog>
+    </ConfirmDialogBox>
+    <div
+      className="column datalist-text file-info is-6-desktop is-5-tablet is-12-mobile"
+    >
+      <FontIcon
+        className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <span
+          className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "display": "inline-block",
+              "fontSize": 24,
+              "muiPrepared": true,
+              "position": "relative",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+            }
+          }
+        >
+          attachment
+        </span>
+      </FontIcon>
+      <div
+        className="file-name"
+      >
+        <span
+          className="truncated"
+        >
+          a.txt
+           (
+          100.0B
+          )
+        </span>
+        <span
+          className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle"
+        >
+          File name
+        </span>
+      </div>
+    </div>
+    <div
+      className="column datalist-text is-3-desktop is-4-tablet is-12-mobile"
+    />
+    <div
+      className="column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile"
+    >
+      <div
+        className="embargo-date-info"
+      />
+    </div>
+    <div
+      className="column is-1-desktop is-1-tablet is-one-quarter-mobile is-inline-block-mobile is-centered is-vcentered"
+    >
+      <div
+        className="upload-progress-info"
+      >
+        <div
+          className="upload-progress"
+        >
+          <CircularProgress
+            max={100}
+            min={0}
+            mode="indeterminate"
+            size={20}
+            thickness={4}
+            value={0}
+          >
+            <div
+              max={100}
+              min={0}
+              mode="indeterminate"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "height": 20,
+                  "muiPrepared": true,
+                  "position": "relative",
+                  "width": 20,
+                }
+              }
+              value={0}
+            >
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "height": 20,
+                    "muiPrepared": true,
+                    "transition": "20s transform linear 0ms",
+                    "transitionTimingFunction": "linear",
+                    "width": 20,
+                  }
+                }
+              >
+                <svg
+                  style={
+                    Object {
+                      "height": 20,
+                      "muiPrepared": true,
+                      "position": "relative",
+                      "width": 20,
+                    }
+                  }
+                  viewBox="0 0 20 20"
+                >
+                  <circle
+                    cx={10}
+                    cy={10}
+                    fill="none"
+                    r={8}
+                    strokeMiterlimit="20"
+                    strokeWidth={4}
+                    style={
+                      Object {
+                        "muiPrepared": true,
+                        "stroke": "#00bcd4",
+                        "strokeLinecap": "round",
+                        "transition": "1.5s all ease-in-out 0ms",
+                      }
+                    }
+                  />
+                </svg>
+              </div>
+            </div>
+          </CircularProgress>
+        </div>
+        <div
+          className="upload-progress-number"
+        >
+          <span
+            aria-label="Uploading..."
+          >
+            Uploading...
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</FileUploadRow>
+`;
+
 exports[`FileUploadRow renders correctly with file upload success 1`] = `
 <FileUploadRow
   index={0}
@@ -16,6 +267,7 @@ exports[`FileUploadRow renders correctly with file upload success 1`] = `
       "embargoDateColumn": "Embargo date",
       "fileAccessColumn": "File access",
       "filenameColumn": "File name",
+      "uploadingInProgress": "Uploading...",
     }
   }
   onAttributeChanged={[MockFunction]}
@@ -211,6 +463,7 @@ exports[`FileUploadRow renders correctly with uploaded file 1`] = `
       "embargoDateColumn": "Embargo date",
       "fileAccessColumn": "File access",
       "filenameColumn": "File name",
+      "uploadingInProgress": "Uploading...",
     }
   }
   onAttributeChanged={[MockFunction]}
@@ -566,6 +819,7 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
       "embargoDateColumn": "Embargo date",
       "fileAccessColumn": "File access",
       "filenameColumn": "File name",
+      "uploadingInProgress": "Uploading...",
     }
   }
   onAttributeChanged={[MockFunction]}
@@ -721,15 +975,15 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
           <CircularProgress
             max={100}
             min={0}
-            mode="indeterminate"
+            mode="determinate"
             size={20}
             thickness={4}
-            value={0}
+            value={50}
           >
             <div
               max={100}
               min={0}
-              mode="indeterminate"
+              mode="determinate"
               style={
                 Object {
                   "display": "inline-block",
@@ -739,7 +993,7 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
                   "width": 20,
                 }
               }
-              value={0}
+              value={50}
             >
               <div
                 style={
@@ -775,8 +1029,9 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
                       Object {
                         "muiPrepared": true,
                         "stroke": "#00bcd4",
+                        "strokeDasharray": "25.132741228718345, 50.26548245743669",
                         "strokeLinecap": "round",
-                        "transition": "1.5s all ease-in-out 0ms",
+                        "transition": "0.3s all linear 0ms",
                       }
                     }
                   />
@@ -788,7 +1043,11 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
         <div
           className="upload-progress-number"
         >
-          50%
+          <span
+            aria-label="50%"
+          >
+            50%
+          </span>
         </div>
       </div>
     </div>
@@ -812,6 +1071,7 @@ exports[`FileUploadRow shows confirmation on delete file 1`] = `
       "embargoDateColumn": "Embargo date",
       "fileAccessColumn": "File access",
       "filenameColumn": "File name",
+      "uploadingInProgress": "Uploading...",
     }
   }
   onAttributeChanged={[MockFunction]}

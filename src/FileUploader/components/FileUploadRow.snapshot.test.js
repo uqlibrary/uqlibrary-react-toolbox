@@ -51,6 +51,12 @@ describe('FileUploadRow', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    it('renders correctly for edge browser if file is being uploaded but no progress data', () => {
+        const wrapper = setup({progress: 0, uploadInProgress: true});
+        const tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
+
     it('renders correctly with file upload success', () => {
         const wrapper = setup({progress: 100, uploadInProgress: true});
         const tree = toJson(wrapper);

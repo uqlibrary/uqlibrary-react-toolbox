@@ -81,14 +81,10 @@ var _ref4 = _react2.default.createElement(
     'delete'
 );
 
-var _ref5 = _react2.default.createElement(
-    'div',
-    { className: 'upload-progress' },
-    _react2.default.createElement(_CircularProgress2.default, {
-        size: 20,
-        thickness: 4
-    })
-);
+var _ref5 = _react2.default.createElement(_CircularProgress2.default, {
+    size: 20,
+    thickness: 4
+});
 
 var _ref6 = _react2.default.createElement(
     'div',
@@ -172,6 +168,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 embargoDateClosedAccess = _props$locale.embargoDateClosedAccess;
 
             var accessConditionId = this.state.access_condition_id;
+            var progress = this.props.progress;
+
 
             return _react2.default.createElement(
                 'div',
@@ -268,17 +266,31 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                             _ref4
                         )
                     ),
-                    this.props.uploadInProgress && this.props.progress !== 100 && _react2.default.createElement(
+                    this.props.uploadInProgress && progress !== 100 && _react2.default.createElement(
                         'div',
                         { className: 'upload-progress-info' },
-                        _ref5,
-                        this.props.progress > 0 && _react2.default.createElement(
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'upload-progress' },
+                            progress > 0 && _react2.default.createElement(_CircularProgress2.default, {
+                                mode: 'determinate',
+                                value: progress,
+                                size: 20,
+                                thickness: 4
+                            }),
+                            progress === 0 && _ref5
+                        ),
+                        _react2.default.createElement(
                             'div',
                             { className: 'upload-progress-number' },
-                            this.props.progress + '%'
+                            _react2.default.createElement(
+                                'span',
+                                { 'aria-label': progress > 0 ? progress + '%' : this.props.locale.uploadingInProgress },
+                                progress > 0 ? progress + '%' : this.props.locale.uploadingInProgress
+                            )
                         )
                     ),
-                    this.props.progress === 100 && _ref6
+                    progress === 100 && _ref6
                 )
             );
         }
@@ -299,7 +311,8 @@ FileUploadRow.defaultProps = {
         filenameColumn: 'File name',
         fileAccessColumn: 'File access',
         embargoDateColumn: 'Embargo date',
-        embargoDateClosedAccess: 'No date required'
+        embargoDateClosedAccess: 'No date required',
+        uploadingInProgress: 'Uploading...'
     }
 };
 

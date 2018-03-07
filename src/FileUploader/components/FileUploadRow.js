@@ -42,7 +42,8 @@ export class FileUploadRow extends Component {
             filenameColumn: 'File name',
             fileAccessColumn: 'File access',
             embargoDateColumn: 'Embargo date',
-            embargoDateClosedAccess: 'No date required'
+            embargoDateClosedAccess: 'No date required',
+            uploadingInProgress: 'Uploading...'
         }
     };
 
@@ -98,6 +99,7 @@ export class FileUploadRow extends Component {
     render() {
         const {deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateClosedAccess} = this.props.locale;
         const accessConditionId = this.state.access_condition_id;
+        const {progress} = this.props;
 
         return (
             <div className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix">
@@ -156,22 +158,37 @@ export class FileUploadRow extends Component {
                         </div>
                     }
                     {
-                        this.props.uploadInProgress && this.props.progress !== 100 &&
+                        this.props.uploadInProgress && progress !== 100 &&
                         <div className="upload-progress-info">
                             <div className="upload-progress">
-                                <CircularProgress
-                                    size={20}
-                                    thickness={4}
-                                />
+                                {
+                                    progress > 0 &&
+                                    <CircularProgress
+                                        mode="determinate"
+                                        value={progress}
+                                        size={20}
+                                        thickness={4}
+                                    />
+                                }
+                                {
+                                    progress === 0 &&
+                                    <CircularProgress
+                                        size={20}
+                                        thickness={4}
+                                    />
+                                }
                             </div>
-                            {
-                                this.props.progress > 0 &&
-                                <div className="upload-progress-number">{`${this.props.progress}%`}</div>
-                            }
+                            <div className="upload-progress-number">
+                                {
+                                    <span aria-label={progress > 0 ? `${progress}%` : this.props.locale.uploadingInProgress}>
+                                        {progress > 0 ? `${progress}%` : this.props.locale.uploadingInProgress}
+                                    </span>
+                                }
+                            </div>
                         </div>
                     }
                     {
-                        this.props.progress === 100 &&
+                        progress === 100 &&
                         <div className="upload-progress">
                             <FontIcon className="material-icons green-tick">done</FontIcon>
                         </div>
