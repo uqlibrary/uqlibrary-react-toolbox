@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {clearFileUpload} from '../actions';
 
-import LinearProgress from 'material-ui/LinearProgress';
 import Checkbox from 'material-ui/Checkbox';
 import FileUploadDropzone from './FileUploadDropzone';
 import FileUploadRowHeader from './FileUploadRowHeader';
@@ -32,7 +31,6 @@ export class FileUploader extends PureComponent {
         onChange: PropTypes.func,
         locale: PropTypes.object,
         fileRestrictionsConfig: PropTypes.object,
-        overallProgress: PropTypes.number,
         requireOpenAccessStatus: PropTypes.bool,
         clearFileUpload: PropTypes.func,
         disabled: PropTypes.bool,
@@ -40,7 +38,6 @@ export class FileUploader extends PureComponent {
     };
 
     static defaultProps = {
-        overallProgress: 0,
         locale: {
             instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
             accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
@@ -238,7 +235,7 @@ export class FileUploader extends PureComponent {
     render() {
         const {instructions, accessTermsAndConditions} = this.props.locale;
         const {maxFileSize, fileSizeUnit, fileUploadLimit, fileNameRestrictions} = this.props.fileRestrictionsConfig;
-        const {requireOpenAccessStatus, overallProgress} = this.props;
+        const {requireOpenAccessStatus} = this.props;
         const {uploadedFiles, clearErrors, termsAndConditions} = this.state;
 
         const instructionsDisplay = instructions
@@ -293,24 +290,14 @@ export class FileUploader extends PureComponent {
                             <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={termsAndConditions} />
                         </div>
                     }
-
-                    {
-                        overallProgress > 0 &&
-                        <LinearProgress
-                            className="upload-overall"
-                            mode="determinate"
-                            value={overallProgress} />
-                    }
                 </div>
             </div>
         );
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        overallProgress: state && state.get('fileUpload') ? state.get('fileUpload').overall : 0
-    };
+const mapStateToProps = () => {
+    return {};
 };
 
 const mapDispatchToProps = (dispatch) => {

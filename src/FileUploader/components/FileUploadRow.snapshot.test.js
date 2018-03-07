@@ -11,14 +11,15 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import PropTypes from 'prop-types';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-function setup({index, uploadedFile, requireOpenAccessStatus, onDelete, onAttributeChanged, progress}) {
+function setup({index, uploadedFile, requireOpenAccessStatus, onDelete, onAttributeChanged, progress, isUploadInProgress}) {
     let defaultProps = {
         index: index || 0,
         uploadedFile: uploadedFile || {name: 'a.txt', size: 100},
         requireOpenAccessStatus: requireOpenAccessStatus || false,
         onDelete: onDelete || jest.fn(),
         onAttributeChanged: onAttributeChanged || jest.fn(),
-        progress: progress || 0
+        progress: progress || 0,
+        isUploadInProgress: isUploadInProgress || false
     };
 
     return mount(<FileUploadRow {...defaultProps} />, {
@@ -45,13 +46,19 @@ describe('FileUploadRow', () => {
     });
 
     it('renders correctly with uploaded file with some progress', () => {
-        const wrapper = setup({progress: 50});
+        const wrapper = setup({progress: 50, isUploadInProgress: true});
+        const tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
+
+    it('renders correctly for edge browser if file is being uploaded but no progress data', () => {
+        const wrapper = setup({progress: 0, isUploadInProgress: true});
         const tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });
 
     it('renders correctly with file upload success', () => {
-        const wrapper = setup({progress: 100});
+        const wrapper = setup({progress: 100, isUploadInProgress: true});
         const tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
     });

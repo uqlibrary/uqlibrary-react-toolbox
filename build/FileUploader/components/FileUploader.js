@@ -21,10 +21,6 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _actions = require('../actions');
 
-var _LinearProgress = require('material-ui/LinearProgress');
-
-var _LinearProgress2 = _interopRequireDefault(_LinearProgress);
-
 var _Checkbox = require('material-ui/Checkbox');
 
 var _Checkbox2 = _interopRequireDefault(_Checkbox);
@@ -274,9 +270,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 fileSizeUnit = _props$fileRestrictio.fileSizeUnit,
                 fileUploadLimit = _props$fileRestrictio.fileUploadLimit,
                 fileNameRestrictions = _props$fileRestrictio.fileNameRestrictions;
-            var _props = this.props,
-                requireOpenAccessStatus = _props.requireOpenAccessStatus,
-                overallProgress = _props.overallProgress;
+            var requireOpenAccessStatus = this.props.requireOpenAccessStatus;
             var _state = this.state,
                 uploadedFiles = _state.uploadedFiles,
                 clearErrors = _state.clearErrors,
@@ -330,11 +324,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                         'div',
                         { style: { position: 'relative', width: '100%' }, className: !termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox' },
                         _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this._acceptTermsAndConditions, checked: termsAndConditions })
-                    ),
-                    overallProgress > 0 && _react2.default.createElement(_LinearProgress2.default, {
-                        className: 'upload-overall',
-                        mode: 'determinate',
-                        value: overallProgress })
+                    )
                 )
             );
         }
@@ -344,7 +334,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 }(_react.PureComponent);
 
 FileUploader.defaultProps = {
-    overallProgress: 0,
     locale: {
         instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
         accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
@@ -401,10 +390,8 @@ FileUploader.defaultProps = {
 };
 
 
-var mapStateToProps = function mapStateToProps(state) {
-    return {
-        overallProgress: state && state.get('fileUpload') ? state.get('fileUpload').overall : 0
-    };
+var mapStateToProps = function mapStateToProps() {
+    return {};
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {

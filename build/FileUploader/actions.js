@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 var FILE_UPLOAD_PROGRESS = exports.FILE_UPLOAD_PROGRESS = 'FILE_UPLOAD_PROGRESS';
 var FILE_UPLOADED_FAILED = exports.FILE_UPLOADED_FAILED = 'FILE_UPLOADED_FAILED';
 var FILE_UPLOAD_CLEARED = exports.FILE_UPLOAD_CLEARED = 'FILE_UPLOAD_CLEARED';
+var FILE_UPLOAD_STARTED = exports.FILE_UPLOAD_STARTED = 'FILE_UPLOAD_STARTED';
 
 /**
  * Notify progress for individual file
@@ -48,5 +49,16 @@ var notifyUploadFailed = exports.notifyUploadFailed = function notifyUploadFaile
 var clearFileUpload = exports.clearFileUpload = function clearFileUpload() {
     return {
         type: FILE_UPLOAD_CLEARED
+    };
+};
+
+/**
+ * Start file upload
+ *
+ * @returns {{type: *}}
+ */
+var startFileUpload = exports.startFileUpload = function startFileUpload() {
+    return {
+        type: FILE_UPLOAD_STARTED
     };
 };
