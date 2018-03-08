@@ -602,34 +602,6 @@ exports[`FileUploadRow renders correctly if file uploaded successfully but later
           </EnhancedButton>
         </IconButton>
       </div>
-      <div
-        className="upload-progress"
-      >
-        <FontIcon
-          className="material-icons green-tick"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <span
-            className="material-icons green-tick"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            style={
-              Object {
-                "color": "rgba(0, 0, 0, 0.87)",
-                "display": "inline-block",
-                "fontSize": 24,
-                "muiPrepared": true,
-                "position": "relative",
-                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                "userSelect": "none",
-              }
-            }
-          >
-            done
-          </span>
-        </FontIcon>
-      </div>
     </div>
   </div>
 </FileUploadRow>
