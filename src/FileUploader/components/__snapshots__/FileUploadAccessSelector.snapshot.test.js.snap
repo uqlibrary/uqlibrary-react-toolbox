@@ -18,7 +18,6 @@ exports[`Component FileUploadAccessSelector should render access condition disab
           2,
         ],
         "fieldName": "accessCondition",
-        "fileMetaKey": "access_condition_id",
       }
     }
     disabled={true}
@@ -1418,7 +1417,6 @@ exports[`Component FileUploadAccessSelector should render access condition disab
           2,
         ],
         "fieldName": "accessCondition",
-        "fileMetaKey": "access_condition_id",
       }
     }
     disabled={true}

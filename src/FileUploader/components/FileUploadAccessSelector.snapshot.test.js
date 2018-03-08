@@ -18,7 +18,6 @@ const locale = {
 };
 
 const defaultConfig = {
-    fileMetaKey: 'access_condition_id',
     fieldName: 'accessCondition',
     accessIds: [
         1,
