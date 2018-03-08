@@ -4,8 +4,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -19,8 +17,6 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 var _reactDropzone = require('react-dropzone');
 
 var _reactDropzone2 = _interopRequireDefault(_reactDropzone);
-
-var _Alert = require('../../Alert');
 
 var _FileUploadDropzoneStaticContent = require('./FileUploadDropzoneStaticContent');
 
@@ -44,179 +40,6 @@ var FileUploadDropzone = function (_PureComponent) {
 
         var _this = _possibleConstructorReturn(this, (FileUploadDropzone.__proto__ || Object.getPrototypeOf(FileUploadDropzone)).call(this, props));
 
-        _this.clearAccepted = function () {
-            _this.accepted = new Map();
-        };
-
-        _this.difference = function (accepted, rejected) {
-            return new Set([].concat(_toConsumableArray(accepted)).filter(function (file) {
-                return !rejected.has(file);
-            }));
-        };
-
-        _this.add = function (files) {
-            [].concat(_toConsumableArray(files)).map(function (file) {
-                return _this.accepted.set(file.name, file);
-            });
-        };
-
-        _this.setUploaded = function (files) {
-            _this.setState({ uploadedFiles: [].concat(_toConsumableArray(files)).reduce(function (uploaded, file) {
-                    return uploaded.set(file.name, file);
-                }, new Map([])) });
-        };
-
-        _this.validate = function (file) {
-            var valid = new RegExp(_this.props.fileNameRestrictions, 'gi').test(file.name);
-
-            if (!valid) {
-                _this.setError('fileName', file);
-                return true;
-            }
-
-            return false;
-        };
-
-        _this.setError = function (errorType, file) {
-            var files = void 0;
-            if (!(file instanceof Array)) {
-                files = [file];
-            } else {
-                files = file;
-            }
-            files.map(function (file) {
-                return _this.errors.set(errorType, _this.errors.get(errorType) ? [].concat(_toConsumableArray(_this.errors.get(errorType)), [file]) : [file]);
-            });
-        };
-
-        _this.processErrors = function (errors) {
-            var validation = _this.props.locale.validation;
-
-            var errorMessages = [];
-            var message = void 0;
-
-            var _loop = function _loop(errorCode, files) {
-                var fileNames = [];
-                files.map(function (file) {
-                    fileNames.push(file.name);
-                });
-
-                if (files.length > 0) {
-                    message = validation[errorCode].replace('[numberOfFiles]', files.length).replace('[filenames]', fileNames.join(', '));
-                }
-
-                if (errorCode === 'maxFiles') {
-                    errorMessages.push(message.replace('[maxNumberOfFiles]', _this.props.maxFiles));
-                } else {
-                    errorMessages.push(message);
-                }
-            };
-
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-                for (var _iterator = errors.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var _ref = _step.value;
-
-                    var _ref2 = _slicedToArray(_ref, 2);
-
-                    var errorCode = _ref2[0];
-                    var files = _ref2[1];
-
-                    _loop(errorCode, files);
-                }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator.return) {
-                        _iterator.return();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
-                }
-            }
-
-            _this.setState({
-                errorMessage: errorMessages.join('; ')
-            });
-
-            _this.resetErrors();
-        };
-
-        _this.resetErrors = function () {
-            _this.errors = new Map();
-        };
-
-        _this.handleDroppedFiles = function (accepted, rejected, droppedFolders) {
-            /*
-             * Set error for folder
-             */
-            if (droppedFolders.length > 0) {
-                _this.setError('folder', accepted.filter(function (file) {
-                    return droppedFolders.indexOf(file.name) >= 0;
-                }));
-            }
-
-            /*
-             * Set error for rejected files (maxFileSize rule)
-             */
-            if (rejected.length > 0) {
-                _this.setError('maxFileSize', rejected);
-            }
-
-            /*
-             * Folders are accepted by dropzone so remove folders from accepted list
-             */
-            var acceptedFiles = droppedFolders.length > 0 ? accepted.filter(function (file) {
-                return droppedFolders.indexOf(file.name) === -1;
-            }) : accepted;
-
-            /*
-             * Validate accepted files and get list of invalid files (check fileName, fileNameLength, folder)
-             */
-            var invalid = acceptedFiles.filter(function (file) {
-                return _this.validate(file);
-            });
-
-            /*
-             * Remove invalid files
-             */
-            var filtered = _this.difference(new Set(acceptedFiles), new Set(invalid));
-
-            /*
-             * Duplicates will be removed by setting up file.name as key
-             */
-            _this.add(filtered);
-
-            /*
-             * If max files uploaded, send max files and set error for ignored files
-             */
-            var maxFiles = _this.props.maxFiles;
-
-
-            var totalFiles = [].concat(_toConsumableArray(_this.state.uploadedFiles.values()), _toConsumableArray(_this.accepted.values()));
-
-            if (totalFiles.length > maxFiles) {
-                // Set error for files which won't be uploaded
-                _this.setError('maxFiles', totalFiles.slice(maxFiles));
-
-                _this.props.onDropped(totalFiles.slice(0, maxFiles));
-            } else {
-                _this.props.onDropped(totalFiles);
-            }
-
-            /*
-             * Process any errors
-             */
-            _this.processErrors(_this.errors);
-        };
-
         _this._onDrop = function (accepted, rejected, event) {
             /*
              * From droppedEvent dataTransfer items, determine which items are folders
@@ -233,13 +56,13 @@ var FileUploadDropzone = function (_PureComponent) {
                 }).map(function (item) {
                     return item.webkitGetAsEntry().name;
                 });
-                _this.handleDroppedFiles([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(rejected)), [].concat(_toConsumableArray(droppedFolders)));
+                _this.props.onDropped([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(rejected)), [].concat(_toConsumableArray(droppedFolders)));
             } else {
                 _this.getDroppedFolders([].concat(_toConsumableArray(accepted))).then(function (result) {
                     droppedFolders = result.filter(function (folder) {
                         return !!folder;
                     });
-                    _this.handleDroppedFiles([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(rejected)), [].concat(_toConsumableArray(droppedFolders)));
+                    _this.props.onDropped([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(rejected)), [].concat(_toConsumableArray(droppedFolders)));
                 });
             }
         };
@@ -248,103 +71,20 @@ var FileUploadDropzone = function (_PureComponent) {
             _this.dropzoneRef.open();
         };
 
-        _this.state = {
-            errorMessage: [],
-            successMessage: '',
-            uploadedFiles: new Map()
-        };
         _this.dropzoneRef = null;
-        _this.accepted = new Map();
-        _this.errors = new Map();
-
-        _this._onDrop.bind(_this);
-        _this._onKeyPress.bind(_this);
         return _this;
     }
 
+    /**
+     * Get the list of folders using FileReader API
+     *
+     * @param accepted files and/or folders
+     * @returns {Promise.<*>}
+     */
+
+
     _createClass(FileUploadDropzone, [{
-        key: 'componentWillReceiveProps',
-        value: function componentWillReceiveProps(nextProps) {
-            this.clearAccepted();
-            this.setUploaded(nextProps.uploadedFiles);
-
-            if (nextProps.clearErrors) {
-                this.processErrors(this.errors);
-                this.setState({ successMessage: '' });
-            }
-        }
-
-        /**
-         * Clear accepted files
-         */
-
-
-        /**
-         * Diff of two sets
-         *
-         * @param accepted
-         * @param rejected
-         * @returns {Set}
-         * @private
-         */
-
-
-        /**
-         * Add given files
-         *
-         * @param files
-         * @private
-         */
-
-
-        /**
-         * Set uploaded files in dropzone's state
-         *
-         * @param files
-         */
-
-
-        /**
-         * Validate file
-         *
-         * @param file
-         * @returns {boolean}
-         * @private
-         */
-
-
-        /**
-         * Set file/s error for given errorType
-         *
-         * @param errorType
-         * @param file
-         * @private
-         */
-
-
-        /**
-         * Process errors
-         *
-         * @private
-         */
-
-
-        /**
-         * Reset errors
-         *
-         * @private
-         */
-
-    }, {
         key: 'getDroppedFolders',
-
-
-        /**
-         * Get the list of folders using FileReader API
-         *
-         * @param accepted files and/or folders
-         * @returns {Promise.<*>}
-         */
         value: function getDroppedFolders(accepted) {
             var acceptedFilesAndFolders = [].concat(_toConsumableArray(accepted));
             return Promise.all(acceptedFilesAndFolders.map(function (file) {
@@ -361,15 +101,6 @@ var FileUploadDropzone = function (_PureComponent) {
                 });
             }));
         }
-
-        /**
-         * Handle accepted, rejected and dropped folders and display proper alerts
-         *
-         * @param accepted
-         * @param rejected
-         * @param droppedFolders
-         */
-
 
         /**
          * Handle accepted and rejected files on dropped in Dropzone
@@ -389,14 +120,10 @@ var FileUploadDropzone = function (_PureComponent) {
         value: function render() {
             var _this2 = this;
 
-            var _props$locale = this.props.locale,
-                errorTitle = _props$locale.errorTitle,
-                successTitle = _props$locale.successTitle,
-                successMessage = _props$locale.successMessage;
-            var _state = this.state,
-                errorMessage = _state.errorMessage,
-                uploadedFiles = _state.uploadedFiles;
-
+            var _props = this.props,
+                maxSize = _props.maxSize,
+                disabled = _props.disabled,
+                locale = _props.locale;
 
             return _react2.default.createElement(
                 'div',
@@ -413,18 +140,16 @@ var FileUploadDropzone = function (_PureComponent) {
                                 ref: function ref(node) {
                                     _this2.dropzoneRef = node;
                                 },
-                                maxSize: this.props.maxSize,
+                                maxSize: maxSize,
                                 onDrop: this._onDrop,
                                 style: { padding: '0px' },
-                                disabled: this.props.disabled,
-                                disableClick: this.props.disabled,
+                                disabled: disabled,
+                                disableClick: disabled,
                                 disablePreview: true },
-                            _react2.default.createElement(_FileUploadDropzoneStaticContent2.default, { txt: this.props.locale })
+                            _react2.default.createElement(_FileUploadDropzoneStaticContent2.default, { txt: locale })
                         )
                     )
-                ),
-                uploadedFiles.size > 0 && _react2.default.createElement(_Alert.Alert, { title: successTitle, message: successMessage.replace('[numberOfFiles]', uploadedFiles.size), type: 'done' }),
-                errorMessage.length > 0 && _react2.default.createElement(_Alert.Alert, { title: errorTitle, message: errorMessage, type: 'error' })
+                )
             );
         }
     }]);
@@ -432,7 +157,4 @@ var FileUploadDropzone = function (_PureComponent) {
     return FileUploadDropzone;
 }(_react.PureComponent);
 
-FileUploadDropzone.defaultProps = {
-    fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
-};
 exports.default = FileUploadDropzone;

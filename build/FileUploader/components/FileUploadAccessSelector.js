@@ -48,7 +48,7 @@ var FileUploadAccessSelector = function (_Component) {
 
         _this._onChange = function (event, index, value) {
             _this.setState({ value: value });
-            _this.props.onAccessChanged({ key: _this.props.defaultConfig.fileMetaKey, value: value });
+            if (_this.props.onChange) _this.props.onChange(value);
         };
 
         _this.state = {
@@ -102,7 +102,6 @@ FileUploadAccessSelector.defaultProps = {
         errorMessage: 'This field is required'
     },
     defaultConfig: {
-        fileMetaKey: 'access_condition_id',
         fieldName: 'accessCondition',
         accessIds: [CLOSED_ACCESS_ID, OPEN_ACCESS_ID]
     }

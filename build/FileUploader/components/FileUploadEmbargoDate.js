@@ -39,7 +39,7 @@ var FileUploadEmbargoDate = function (_Component) {
         _this._onChange = function (event, value) {
             var date = moment(value);
             _this.setState({ value: date.toDate() });
-            _this.props.onDateChanged({ key: _this.props.defaultConfig.fileMetaKey, value: date.format() });
+            if (_this.props.onChange) _this.props.onChange(date.format());
         };
 
         _this._onKeyPress = function () {
@@ -95,7 +95,6 @@ FileUploadEmbargoDate.defaultProps = {
         datePickerLocale: 'en-AU'
     },
     defaultConfig: {
-        fileMetaKey: 'date',
         dateTimeFormat: global.Intl.DateTimeFormat,
         fieldName: 'accessDate'
     }

@@ -8,7 +8,7 @@ export const CLOSED_ACCESS_ID = 8;
 
 export default class FileUploadAccessSelector extends Component {
     static propTypes = {
-        onAccessChanged: PropTypes.func,
+        onChange: PropTypes.func,
         locale: PropTypes.object,
         defaultConfig: PropTypes.object,
         disabled: PropTypes.bool
@@ -24,7 +24,6 @@ export default class FileUploadAccessSelector extends Component {
             errorMessage: 'This field is required'
         },
         defaultConfig: {
-            fileMetaKey: 'access_condition_id',
             fieldName: 'accessCondition',
             accessIds: [
                 CLOSED_ACCESS_ID,
@@ -42,7 +41,7 @@ export default class FileUploadAccessSelector extends Component {
 
     _onChange = (event, index, value) => {
         this.setState({value: value});
-        this.props.onAccessChanged({key: this.props.defaultConfig.fileMetaKey, value: value});
+        if (this.props.onChange) this.props.onChange(value);
     };
 
     render() {

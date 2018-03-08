@@ -19,9 +19,6 @@ function setup(testProps, isShallow = true) {
     const props = {
         onDropped: jest.fn(),
         maxSize: 1000,
-        maxFiles: 5,
-        uploadedFiles: [],
-        clearErrors: false,
         locale: locale,
         ...testProps,
     };
@@ -99,24 +96,15 @@ describe('Component FileUploadDropzone', () => {
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
-        expect(onDroppedCallback).toHaveBeenCalled();
-        wrapper.instance().componentWillReceiveProps({uploadedFiles: [
-
-            {
-                name: 'a.txt',
-                size: 500
-            },
-            {
-                name: 'ab.txt',
-                size: 100
-            }
-        ]});
-        wrapper.update();
-        expect(toJson(wrapper)).toMatchSnapshot();
+        expect(onDroppedCallback).toHaveBeenCalledWith(accepted, [], ['test']);
     });
 
     it('should set max file size error message for rejected files', () => {
-        const wrapper = setup({});
+        const onDroppedCallback = jest.fn();
+        const props = {
+            onDropped: onDroppedCallback
+        };
+        const wrapper = setup({...props});
 
         const accepted = [
             {
@@ -140,44 +128,7 @@ describe('Component FileUploadDropzone', () => {
 
         wrapper.instance()._onDrop(accepted, rejected, event);
         wrapper.update();
-        expect(wrapper.state().errorMessage).toEqual('File(s) (b.txt) exceed maximum allowed upload file size');
-    });
-
-    it('should set max files error message', () => {
-        const wrapper = setup({maxFiles: 3});
-        wrapper.instance().componentWillReceiveProps({
-            uploadedFiles: [
-                {
-                    name: 'a.txt',
-                    size: 100
-                },
-                {
-                    name: 'b.txt',
-                    size: 100
-                }
-            ]
-        });
-
-        const accepted = [
-            {
-                name: 'c.txt',
-                size: 500
-            },
-            {
-                name: 'd.txt',
-                size: 10000
-            }
-        ];
-
-        const event = {
-            dataTransfer: {
-                items: []
-            }
-        };
-
-        wrapper.instance()._onDrop(accepted, [], event);
-        wrapper.update();
-        expect(wrapper.state().errorMessage).toEqual('Maximum number of files (3) has been exceeded. File(s) (d.txt) will not be uploaded');
+        expect(onDroppedCallback).toHaveBeenCalledWith(accepted, rejected, []);
     });
 
     it('should open files selection dialog', () => {

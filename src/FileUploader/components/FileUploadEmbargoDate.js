@@ -6,9 +6,9 @@ const moment = require('moment');
 
 export default class FileUploadEmbargoDate extends Component {
     static propTypes = {
+        onChange: PropTypes.func,
         locale: PropTypes.object,
         defaultConfig: PropTypes.object,
-        onDateChanged: PropTypes.func,
         disabled: PropTypes.bool
     };
 
@@ -17,7 +17,6 @@ export default class FileUploadEmbargoDate extends Component {
             datePickerLocale: 'en-AU'
         },
         defaultConfig: {
-            fileMetaKey: 'date',
             dateTimeFormat: global.Intl.DateTimeFormat,
             fieldName: 'accessDate'
         }
@@ -35,7 +34,7 @@ export default class FileUploadEmbargoDate extends Component {
     _onChange = (event, value) => {
         const date = moment(value);
         this.setState({value: date.toDate()});
-        this.props.onDateChanged({key: this.props.defaultConfig.fileMetaKey, value: date.format()});
+        if (this.props.onChange) this.props.onChange(date.format());
     };
 
     _onKeyPress = () => {

@@ -3,6 +3,8 @@ import {FileUploader} from './FileUploader';
 function setup(testProps, isShallow = true) {
     const props = {
         ...testProps,
+        maxFiles: 5,
+        filesInQueue: [],
         clearFileUpload: jest.fn()
     };
     return getElement(FileUploader, props, isShallow);
@@ -13,6 +15,14 @@ beforeAll(() => {
 });
 
 describe('Component FileUploader', () => {
+    beforeEach(() => {
+        const FILE_READER_TO_USE = new FileReader();
+        window.FileReader = jest.fn(() => FILE_READER_TO_USE);
+        window.FileReader.onerror = () => resolve();
+        window.FileReader.onload = () => resolve();
+        window.FileReader.readAsDataURL = () => (window.FileReader.onload);
+    });
+
     it('should render correctly without any setup', () => {
         const wrapper = setup({});
         const tree = toJson(wrapper);
@@ -134,5 +144,43 @@ describe('Component FileUploader', () => {
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
+
+    it('should set max files error message', () => {
+        const wrapper = setup({maxFiles: 3});
+        wrapper.instance().componentWillReceiveProps({
+            uploadedFiles: [
+                {
+                    name: 'a.txt',
+                    size: 100
+                },
+                {
+                    name: 'b.txt',
+                    size: 100
+                }
+            ]
+        });
+
+        const accepted = [
+            {
+                name: 'c.txt',
+                size: 500
+            },
+            {
+                name: 'd.txt',
+                size: 10000
+            }
+        ];
+
+        const event = {
+            dataTransfer: {
+                items: []
+            }
+        };
+
+        wrapper.instance()._onDrop(accepted, [], event);
+        wrapper.update();
+        expect(wrapper.state().errorMessage).toEqual('Maximum number of files (3) has been exceeded. File(s) (d.txt) will not be uploaded');
     });
 });

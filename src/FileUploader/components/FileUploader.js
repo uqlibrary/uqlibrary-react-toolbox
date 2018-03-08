@@ -7,8 +7,12 @@ import Checkbox from 'material-ui/Checkbox';
 import FileUploadDropzone from './FileUploadDropzone';
 import FileUploadRowHeader from './FileUploadRowHeader';
 import FileUploadRow from './FileUploadRow';
+import {Alert} from '../../Alert';
 
 import {OPEN_ACCESS_ID} from './FileUploadAccessSelector';
+import {FILE_META_KEY_EMBARGO_DATE, FILE_META_KEY_ACCESS_CONDITION} from './FileUploadRow';
+
+const moment = require('moment');
 
 export const sizeExponent = {
     ['B']: 0,
@@ -34,7 +38,10 @@ export class FileUploader extends PureComponent {
         requireOpenAccessStatus: PropTypes.bool,
         clearFileUpload: PropTypes.func,
         disabled: PropTypes.bool,
-        defaultQuickTemplateId: PropTypes.number
+        defaultQuickTemplateId: PropTypes.number,
+        maxFiles: PropTypes.number.isRequired,
+        fileNameRestrictions: PropTypes.string.isRequired,
+        clearErrors: PropTypes.bool
     };
 
     static defaultProps = {
@@ -71,20 +78,25 @@ export class FileUploader extends PureComponent {
             maxFileSize: 5,
             fileSizeUnit: 'G'
         },
-        requireOpenAccessStatus: false
+        requireOpenAccessStatus: false,
+        fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
     };
 
     constructor(props) {
         super(props);
         this.state = {
-            uploadedFiles: [],
+            filesInQueue: [],
             clearErrors: false,
-            termsAndConditions: false
+            termsAndConditions: false,
+            errorMessage: '',
+            successMessage: ''
         };
+
+        this.errors = new Map();
     }
 
     componentWillUpdate(nextProps, nextState) {
-        if (this.props.onChange) this.props.onChange({queue: nextState.uploadedFiles, isValid: this.isFileUploadValid(nextState)});
+        if (this.props.onChange) this.props.onChange({queue: nextState.filesInQueue, isValid: this.isFileUploadValid(nextState)});
     }
 
     componentWillUnmount() {
@@ -100,9 +112,31 @@ export class FileUploader extends PureComponent {
      */
     _deleteFile = (file, index) => {
         this.setState({
-            uploadedFiles: this.state.uploadedFiles.filter((_, i) => i !== index),
-            clearErrors: true
+            filesInQueue: [
+                ...this.state.filesInQueue.slice(0, index),
+                ...this.state.filesInQueue.slice(index + 1)
+            ],
+            errorMessage: ''
         });
+    };
+
+    _updateFileAccessCondition = (file, index, newValue) => {
+        file[FILE_META_KEY_ACCESS_CONDITION] = newValue;
+
+        if (!this.isOpenAccess(newValue) && file.hasOwnProperty('date')) {
+            delete file[FILE_META_KEY_EMBARGO_DATE];
+        }
+
+        if (this.isOpenAccess(newValue) && !file.hasOwnProperty('date')) {
+            file[FILE_META_KEY_EMBARGO_DATE] = moment().format();
+        }
+
+        this.replaceFile(file, index);
+    };
+
+    _updateFileEmbargoDate = (file, index, newValue) => {
+        file[FILE_META_KEY_EMBARGO_DATE] = newValue;
+        this.replaceFile(file, index);
     };
 
     /**
@@ -112,14 +146,14 @@ export class FileUploader extends PureComponent {
      * @param index
      * @private
      */
-    _replaceFile = (file, index) => {
+    replaceFile = (file, index) => {
         this.setState({
-            uploadedFiles: [
-                ...this.state.uploadedFiles.slice(0, index),
+            filesInQueue: [
+                ...this.state.filesInQueue.slice(0, index),
                 file,
-                ...this.state.uploadedFiles.slice(index + 1)
+                ...this.state.filesInQueue.slice(index + 1)
             ],
-            clearErrors: true
+            errorMessage: ''
         });
     };
 
@@ -129,7 +163,7 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _deleteAllFiles = () => {
-        this.setState({uploadedFiles: [], clearErrors: true});
+        this.setState({filesInQueue: [], errorMessage: ''});
     };
 
     /**
@@ -138,11 +172,11 @@ export class FileUploader extends PureComponent {
      * @param files
      * @private
      */
-    _setUploadedFiles = (files) => {
-        if (!!this.props.defaultQuickTemplateId && !this.props.requireOpenAccessStatus) {
-            files.map((file) => (file.access_condition_id = this.props.defaultQuickTemplateId));
-        }
-        this.setState({uploadedFiles: [...files], clearErrors: false, focusOnIndex: (files.length + this.state.uploadedFiles.length) - files.length});
+    queueFiles = (files) => {
+        // if (!!this.props.defaultQuickTemplateId && !this.props.requireOpenAccessStatus) {
+        //     files.map((file) => (file.access_condition_id = this.props.defaultQuickTemplateId));
+        // }
+        this.setState({filesInQueue: [...files], focusOnIndex: this.state.filesInQueue.length, errorMessage: ''});
     };
 
     /**
@@ -169,11 +203,11 @@ export class FileUploader extends PureComponent {
     /**
      * Check if file is open access
      *
-     * @param file
+     * @param value
      * @returns {boolean}
      */
-    isOpenAccess = (file) => {
-        return this.hasAccess(file) && file.access_condition_id === OPEN_ACCESS_ID;
+    isOpenAccess = (value) => {
+        return value === OPEN_ACCESS_ID;
     };
 
     /**
@@ -183,7 +217,7 @@ export class FileUploader extends PureComponent {
      * @returns {boolean}
      */
     isAnyOpenAccess = (files) => {
-        return files.filter((file) => (this.isOpenAccess(file))).length > 0;
+        return files.filter((file) => (this.hasAccess(file) && this.isOpenAccess(file.access_condition_id))).length > 0;
     };
 
     /**
@@ -209,19 +243,19 @@ export class FileUploader extends PureComponent {
     /**
      * Check if entire file uploader is valid including access conditions, embargo date and t&c
      *
-     * @param uploadedFiles
+     * @param filesInQueue
      * @param termsAndConditions
      * @returns {boolean}
      */
-    isFileUploadValid = ({uploadedFiles, termsAndConditions}) => {
+    isFileUploadValid = ({filesInQueue, termsAndConditions}) => {
         let isValid = true;
 
         if (this.props.requireOpenAccessStatus) {
-            if (uploadedFiles.filter((file) => (!this.hasAccess(file))).length > 0) {
+            if (filesInQueue.filter((file) => (!this.hasAccess(file))).length > 0) {
                 isValid = false;
             }
 
-            if (uploadedFiles
+            if (filesInQueue
                 .filter((file) => (this.isOpenAccess(file)))
                 .filter((file) => (!(this.hasEmbargoDate(file) && termsAndConditions)))
                 .length > 0) {
@@ -232,18 +266,182 @@ export class FileUploader extends PureComponent {
         return isValid;
     };
 
+    /**
+     * Handle accepted, rejected and dropped folders and display proper alerts
+     *
+     * @param accepted
+     * @param rejected
+     * @param droppedFolders
+     */
+    _handleDroppedFiles = (accepted, rejected, droppedFolders) => {
+        /*
+         * Set error for folder
+         */
+        if (droppedFolders.length > 0) {
+            this.setError('folder', accepted.filter(file => droppedFolders.indexOf(file.name) >= 0));
+        }
+
+        /*
+         * Set error for rejected files (maxFileSize rule)
+         */
+        if (rejected.length > 0) {
+            this.setError('maxFileSize', rejected);
+        }
+
+        /*
+         * Folders are accepted by dropzone so remove folders from accepted list
+         */
+        const acceptedFiles = droppedFolders.length > 0 ? accepted.filter(file => droppedFolders.indexOf(file.name) === -1) : accepted;
+
+        /*
+         * Validate accepted files and get list of invalid files (check fileName, fileNameLength, folder)
+         */
+        const invalid = acceptedFiles.filter((file) => {
+            return this.validate(file);
+        });
+
+        /*
+         * Remove invalid files
+         */
+        const filtered = this.difference(new Set(acceptedFiles), new Set(invalid));
+
+        /*
+         * Duplicates will be removed by setting up file.name as key
+         */
+        const noDuplicated = this.removeDuplicate(filtered);
+
+        /*
+         * If max files uploaded, send max files and set error for ignored files
+         */
+        const {fileUploadLimit} = this.props.fileRestrictionsConfig;
+
+        if (noDuplicated.size > fileUploadLimit) {
+            // Set error for files which won't be uploaded
+            this.setError('maxFiles', [...noDuplicated].slice(fileUploadLimit));
+
+            this.queueFiles([...noDuplicated].slice(0, fileUploadLimit));
+        } else {
+            this.queueFiles([...noDuplicated]);
+        }
+
+        /*
+         * Process any errors
+         */
+        this.processErrors(this.errors);
+    };
+
+    /**
+     * Process errors
+     *
+     * @private
+     */
+    processErrors = (errors) => {
+        const {validation} = this.props.locale;
+        const errorMessages = [];
+        let message;
+
+        for (const [errorCode, files] of errors.entries()) {
+            const fileNames = [];
+            files.map((file) => {
+                fileNames.push(file.name);
+            });
+
+            if (files.length > 0) {
+                message = validation[errorCode]
+                    .replace('[numberOfFiles]', files.length)
+                    .replace('[filenames]', fileNames.join(', '));
+            }
+
+            if (errorCode === 'maxFiles') {
+                errorMessages.push(message.replace('[maxNumberOfFiles]', this.props.fileRestrictionsConfig.fileUploadLimit));
+            } else {
+                errorMessages.push(message);
+            }
+        }
+
+        this.setState({
+            errorMessage: errorMessages.join('; ')
+        });
+
+        this.errors = new Map();
+    };
+
+    /**
+     * Validate file
+     *
+     * @param file
+     * @returns {boolean}
+     * @private
+     */
+    validate = (file) => {
+        const valid = (new RegExp(this.props.fileNameRestrictions, 'gi')).test(file.name);
+
+        if (!valid) {
+            this.setError('fileName', file);
+            return true;
+        }
+
+        return false;
+    };
+
+    /**
+     * Set file/s error for given errorType
+     *
+     * @param errorType
+     * @param file
+     * @private
+     */
+    setError = (errorType, file) => {
+        let files;
+        if (!(file instanceof Array)) {
+            files = [file];
+        } else {
+            files = file;
+        }
+        files.map(file => this.errors.set(errorType, this.errors.get(errorType) ? [...this.errors.get(errorType), file] : [file]));
+    };
+
+    /**
+     * Diff of two sets
+     *
+     * @param accepted
+     * @param rejected
+     * @returns {Set}
+     * @private
+     */
+    difference = (accepted, rejected) => {
+        return new Set([...accepted].filter(file => !rejected.has(file)));
+    };
+
+    /**
+     * Remove duplicate files from filtered files
+     * @param accepted
+     * @returns {Set}
+     */
+    removeDuplicate = (accepted) => {
+        // Get the file names already in queue
+        const filesInQueue = new Set(this.state.filesInQueue.map(file => file.name));
+
+        // Ignore files from accepted files which are already in files queue
+        const filteredDuplicates = new Set([...accepted].filter(file => !filesInQueue.has(file.name)));
+
+        // Return new set of unique files
+        return new Set([...this.state.filesInQueue, ...filteredDuplicates]);
+    };
+
     render() {
         const {instructions, accessTermsAndConditions} = this.props.locale;
-        const {maxFileSize, fileSizeUnit, fileUploadLimit, fileNameRestrictions} = this.props.fileRestrictionsConfig;
+        const {maxFileSize, fileSizeUnit, fileUploadLimit} = this.props.fileRestrictionsConfig;
         const {requireOpenAccessStatus} = this.props;
-        const {uploadedFiles, clearErrors, termsAndConditions} = this.state;
+        const {filesInQueue, termsAndConditions, errorMessage} = this.state;
+        const {errorTitle, successTitle, successMessage} = this.props.locale;
 
         const instructionsDisplay = instructions
             .replace('[fileUploadLimit]', fileUploadLimit)
             .replace('[maxFileSize]', `${maxFileSize}`)
             .replace('[fileSizeUnit]', sizeUnitText[fileSizeUnit] || 'B');
 
-        const uploadedFilesRow = this.state.uploadedFiles.map((file, index) => {
+        const filesInQueueRow = this.state.filesInQueue.map((file, index) => {
             return (
                 <FileUploadRow
                     key={file.name}
@@ -251,10 +449,14 @@ export class FileUploader extends PureComponent {
                     uploadedFile={file}
                     fileSizeUnit={fileSizeUnit}
                     onDelete={this._deleteFile}
-                    onAttributeChanged={this._replaceFile}
+                    onAccessConditionChange={this._updateFileAccessCondition}
+                    onEmbargoDateChange={this._updateFileEmbargoDate}
+                    defaultAccessCondition={this.props.defaultQuickTemplateId}
                     requireOpenAccessStatus={requireOpenAccessStatus && !this.props.defaultQuickTemplateId}
                     disabled={this.props.disabled}
                     focusOnIndex={this.state.focusOnIndex}
+                    accessCondition={file[FILE_META_KEY_ACCESS_CONDITION]}
+                    embargoDate={file[FILE_META_KEY_EMBARGO_DATE]}
                 />
             );
         });
@@ -265,27 +467,33 @@ export class FileUploader extends PureComponent {
                 <FileUploadDropzone
                     locale={this.props.locale}
                     maxSize={this.calculateMaxFileSize()}
-                    maxFiles={fileUploadLimit}
-                    fileNameRestrictions={fileNameRestrictions}
                     disabled={this.props.disabled}
-                    onDropped={this._setUploadedFiles}
-                    uploadedFiles={uploadedFiles}
-                    clearErrors={clearErrors} />
+                    onDropped={this._handleDroppedFiles} />
+                {
+                    filesInQueue.length > 0 && (
+                        <Alert title={successTitle} message={successMessage.replace('[numberOfFiles]', filesInQueue.length)} type="done" />
+                    )
+                }
+                {
+                    errorMessage.length > 0 && (
+                        <Alert title={errorTitle} message={errorMessage} type="error" />
+                    )
+                }
                 <div
                     className="metadata-container"
-                    style={uploadedFilesRow.length === 0 ? ({display: 'none'}) : ({display: 'block'})}>
+                    style={filesInQueueRow.length === 0 ? ({display: 'none'}) : ({display: 'block'})}>
                     {
-                        uploadedFiles.length > 0 &&
+                        filesInQueue.length > 0 &&
                         <FileUploadRowHeader
                             onDeleteAll={this._deleteAllFiles}
                             requireOpenAccessStatus={requireOpenAccessStatus && !this.props.defaultQuickTemplateId}
                             disabled={this.props.disabled} />
                     }
 
-                    {uploadedFilesRow}
+                    {filesInQueueRow}
 
                     {
-                        requireOpenAccessStatus && this.isAnyOpenAccess(uploadedFiles) &&
+                        requireOpenAccessStatus && this.isAnyOpenAccess(filesInQueue) &&
                         <div style={{position: 'relative', width: '100%'}} className={!termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox'}>
                             <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={termsAndConditions} />
                         </div>
