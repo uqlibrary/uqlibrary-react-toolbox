@@ -130,7 +130,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
             _this.props.onEmbargoDateChange(_this.props.uploadedFile, _this.props.index, newValue);
         };
 
-        _this.state = (_this$state = {}, _defineProperty(_this$state, FILE_META_KEY_ACCESS_CONDITION, null), _defineProperty(_this$state, FILE_META_KEY_EMBARGO_DATE, null), _this$state);
+        _this.state = (_this$state = {}, _defineProperty(_this$state, FILE_META_KEY_ACCESS_CONDITION, props.defaultAccessCondition || null), _defineProperty(_this$state, FILE_META_KEY_EMBARGO_DATE, null), _this$state);
         return _this;
     }
 
@@ -150,7 +150,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
         value: function componentWillReceiveProps(nextProps) {
             var _setState;
 
-            this.setState((_setState = {}, _defineProperty(_setState, FILE_META_KEY_ACCESS_CONDITION, nextProps.accessCondition), _defineProperty(_setState, FILE_META_KEY_EMBARGO_DATE, nextProps.embargoDate), _setState));
+            this.setState((_setState = {}, _defineProperty(_setState, FILE_META_KEY_ACCESS_CONDITION, nextProps.accessConditionValue), _defineProperty(_setState, FILE_META_KEY_EMBARGO_DATE, nextProps.embargoDateValue), _setState));
         }
     }, {
         key: 'render',

@@ -56,13 +56,13 @@ var FileUploadDropzone = function (_PureComponent) {
                 }).map(function (item) {
                     return item.webkitGetAsEntry().name;
                 });
-                _this.props.onDropped([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(rejected)), [].concat(_toConsumableArray(droppedFolders)));
+                _this.props.onDrop([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(rejected)), [].concat(_toConsumableArray(droppedFolders)));
             } else {
                 _this.getDroppedFolders([].concat(_toConsumableArray(accepted))).then(function (result) {
                     droppedFolders = result.filter(function (folder) {
                         return !!folder;
                     });
-                    _this.props.onDropped([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(rejected)), [].concat(_toConsumableArray(droppedFolders)));
+                    _this.props.onDrop([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(rejected)), [].concat(_toConsumableArray(droppedFolders)));
                 });
             }
         };

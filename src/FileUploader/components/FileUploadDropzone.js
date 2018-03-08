@@ -5,7 +5,7 @@ import FileUploadDropzoneStaticContent from './FileUploadDropzoneStaticContent';
 
 class FileUploadDropzone extends PureComponent {
     static propTypes = {
-        onDropped: PropTypes.func.isRequired,
+        onDrop: PropTypes.func.isRequired,
         maxSize: PropTypes.number.isRequired,
         locale: PropTypes.object.isRequired,
         disabled: PropTypes.bool,
@@ -57,11 +57,11 @@ class FileUploadDropzone extends PureComponent {
         if (!!event && !!event.dataTransfer && !!event.dataTransfer.items) {
             droppedFolders =  Array.prototype.filter.call(event.dataTransfer.items, (item) => (item.webkitGetAsEntry().isDirectory))
                 .map((item) => item.webkitGetAsEntry().name);
-            this.props.onDropped([...accepted], [...rejected], [...droppedFolders]);
+            this.props.onDrop([...accepted], [...rejected], [...droppedFolders]);
         } else {
             this.getDroppedFolders([...accepted]).then(result => {
                 droppedFolders = result.filter(folder => !!folder);
-                this.props.onDropped([...accepted], [...rejected], [...droppedFolders]);
+                this.props.onDrop([...accepted], [...rejected], [...droppedFolders]);
             });
         }
     };

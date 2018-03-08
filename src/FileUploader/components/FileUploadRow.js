@@ -25,14 +25,13 @@ export class FileUploadRow extends Component {
         progress: PropTypes.number,
         isUploadInProgress: PropTypes.bool,
         requireOpenAccessStatus: PropTypes.bool.isRequired,
-        fileSizeUnit: PropTypes.string,
         disabled: PropTypes.bool,
         focusOnIndex: PropTypes.number,
         onAccessConditionChange: PropTypes.func,
         onEmbargoDateChange: PropTypes.func,
         defaultAccessCondition: PropTypes.number,
-        accessCondition: PropTypes.number,
-        embargoDate: PropTypes.string
+        accessConditionValue: PropTypes.number,
+        embargoDateValue: PropTypes.string
     };
 
     static defaultProps = {
@@ -55,7 +54,7 @@ export class FileUploadRow extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            [FILE_META_KEY_ACCESS_CONDITION]: null,
+            [FILE_META_KEY_ACCESS_CONDITION]: props.defaultAccessCondition || null,
             [FILE_META_KEY_EMBARGO_DATE]: null
         };
     }
@@ -72,8 +71,8 @@ export class FileUploadRow extends Component {
 
     componentWillReceiveProps(nextProps) {
         this.setState({
-            [FILE_META_KEY_ACCESS_CONDITION]: nextProps.accessCondition,
-            [FILE_META_KEY_EMBARGO_DATE]: nextProps.embargoDate
+            [FILE_META_KEY_ACCESS_CONDITION]: nextProps.accessConditionValue,
+            [FILE_META_KEY_EMBARGO_DATE]: nextProps.embargoDateValue
         });
     }
 

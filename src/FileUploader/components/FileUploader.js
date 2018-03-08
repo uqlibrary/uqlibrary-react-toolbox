@@ -40,8 +40,7 @@ export class FileUploader extends PureComponent {
         disabled: PropTypes.bool,
         defaultQuickTemplateId: PropTypes.number,
         maxFiles: PropTypes.number.isRequired,
-        fileNameRestrictions: PropTypes.string.isRequired,
-        clearErrors: PropTypes.bool
+        fileNameRestrictions: PropTypes.string.isRequired
     };
 
     static defaultProps = {
@@ -86,12 +85,14 @@ export class FileUploader extends PureComponent {
         super(props);
         this.state = {
             filesInQueue: [],
-            clearErrors: false,
             termsAndConditions: false,
             errorMessage: '',
             successMessage: ''
         };
 
+        /*
+         * Hold all errors temporarily in map
+         */
         this.errors = new Map();
     }
 
@@ -102,6 +103,10 @@ export class FileUploader extends PureComponent {
     componentWillUnmount() {
         this.props.clearFileUpload();
     }
+
+    /*
+     * File uploader's callback functions
+     */
 
     /**
      * Delete file on a given index
@@ -120,43 +125,6 @@ export class FileUploader extends PureComponent {
         });
     };
 
-    _updateFileAccessCondition = (file, index, newValue) => {
-        file[FILE_META_KEY_ACCESS_CONDITION] = newValue;
-
-        if (!this.isOpenAccess(newValue) && file.hasOwnProperty('date')) {
-            delete file[FILE_META_KEY_EMBARGO_DATE];
-        }
-
-        if (this.isOpenAccess(newValue) && !file.hasOwnProperty('date')) {
-            file[FILE_META_KEY_EMBARGO_DATE] = moment().format();
-        }
-
-        this.replaceFile(file, index);
-    };
-
-    _updateFileEmbargoDate = (file, index, newValue) => {
-        file[FILE_META_KEY_EMBARGO_DATE] = newValue;
-        this.replaceFile(file, index);
-    };
-
-    /**
-     * Replace file on a given index
-     *
-     * @param file
-     * @param index
-     * @private
-     */
-    replaceFile = (file, index) => {
-        this.setState({
-            filesInQueue: [
-                ...this.state.filesInQueue.slice(0, index),
-                file,
-                ...this.state.filesInQueue.slice(index + 1)
-            ],
-            errorMessage: ''
-        });
-    };
-
     /**
      * Delete all files
      *
@@ -167,16 +135,38 @@ export class FileUploader extends PureComponent {
     };
 
     /**
-     * Set uploaded files
+     * Update file's access condition and/or embargo date based on selected value
      *
-     * @param files
+     * @param file
+     * @param index
+     * @param newValue
      * @private
      */
-    queueFiles = (files) => {
-        // if (!!this.props.defaultQuickTemplateId && !this.props.requireOpenAccessStatus) {
-        //     files.map((file) => (file.access_condition_id = this.props.defaultQuickTemplateId));
-        // }
-        this.setState({filesInQueue: [...files], focusOnIndex: this.state.filesInQueue.length, errorMessage: ''});
+    _updateFileAccessCondition = (file, index, newValue) => {
+        file[FILE_META_KEY_ACCESS_CONDITION] = newValue;
+
+        if (!this.isOpenAccess(newValue) && file.hasOwnProperty(FILE_META_KEY_EMBARGO_DATE)) {
+            delete file[FILE_META_KEY_EMBARGO_DATE];
+        }
+
+        if (this.isOpenAccess(newValue) && !file.hasOwnProperty(FILE_META_KEY_EMBARGO_DATE)) {
+            file[FILE_META_KEY_EMBARGO_DATE] = moment().format();
+        }
+
+        this.replaceFile(file, index);
+    };
+
+    /**
+     * Update file's embargo date
+     *
+     * @param file
+     * @param index
+     * @param newValue
+     * @private
+     */
+    _updateFileEmbargoDate = (file, index, newValue) => {
+        file[FILE_META_KEY_EMBARGO_DATE] = newValue;
+        this.replaceFile(file, index);
     };
 
     /**
@@ -188,82 +178,6 @@ export class FileUploader extends PureComponent {
      */
     _acceptTermsAndConditions = (event, value) => {
         this.setState({termsAndConditions: value});
-    };
-
-    /**
-     * Calculate max file size allowed by dropzone
-     *
-     * @returns {number}
-     */
-    calculateMaxFileSize = () => {
-        const {maxFileSize, fileSizeUnit} = this.props.fileRestrictionsConfig;
-        return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
-    };
-
-    /**
-     * Check if file is open access
-     *
-     * @param value
-     * @returns {boolean}
-     */
-    isOpenAccess = (value) => {
-        return value === OPEN_ACCESS_ID;
-    };
-
-    /**
-     * Check if any file is open access
-     *
-     * @param files
-     * @returns {boolean}
-     */
-    isAnyOpenAccess = (files) => {
-        return files.filter((file) => (this.hasAccess(file) && this.isOpenAccess(file.access_condition_id))).length > 0;
-    };
-
-    /**
-     * Check if file as access conditions field
-     *
-     * @param file
-     * @returns {boolean}
-     */
-    hasAccess = (file) => {
-        return file.hasOwnProperty('access_condition_id');
-    };
-
-    /**
-     * Check if file has embargo date field
-     *
-     * @param file
-     * @returns {boolean}
-     */
-    hasEmbargoDate = (file) => {
-        return file.hasOwnProperty('date') && (file.date !== null || file.date !== undefined);
-    };
-
-    /**
-     * Check if entire file uploader is valid including access conditions, embargo date and t&c
-     *
-     * @param filesInQueue
-     * @param termsAndConditions
-     * @returns {boolean}
-     */
-    isFileUploadValid = ({filesInQueue, termsAndConditions}) => {
-        let isValid = true;
-
-        if (this.props.requireOpenAccessStatus) {
-            if (filesInQueue.filter((file) => (!this.hasAccess(file))).length > 0) {
-                isValid = false;
-            }
-
-            if (filesInQueue
-                .filter((file) => (this.isOpenAccess(file)))
-                .filter((file) => (!(this.hasEmbargoDate(file) && termsAndConditions)))
-                .length > 0) {
-                isValid = false;
-            }
-        }
-
-        return isValid;
     };
 
     /**
@@ -328,6 +242,114 @@ export class FileUploader extends PureComponent {
          * Process any errors
          */
         this.processErrors(this.errors);
+    };
+
+    /*
+     * File uploader's internal functions
+     */
+
+    /**
+     * Replace file on a given index
+     *
+     * @param file
+     * @param index
+     * @private
+     */
+    replaceFile = (file, index) => {
+        this.setState({
+            filesInQueue: [
+                ...this.state.filesInQueue.slice(0, index),
+                file,
+                ...this.state.filesInQueue.slice(index + 1)
+            ],
+            errorMessage: ''
+        });
+    };
+
+    /**
+     * Set uploaded files
+     *
+     * @param files
+     * @private
+     */
+    queueFiles = (files) => {
+        this.setState({filesInQueue: [...files], focusOnIndex: this.state.filesInQueue.length, errorMessage: ''});
+    };
+
+
+    /**
+     * Calculate max file size allowed by dropzone
+     *
+     * @returns {number}
+     */
+    calculateMaxFileSize = () => {
+        const {maxFileSize, fileSizeUnit} = this.props.fileRestrictionsConfig;
+        return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
+    };
+
+    /**
+     * Check if file is open access
+     *
+     * @param value
+     * @returns {boolean}
+     */
+    isOpenAccess = (value) => {
+        return value === OPEN_ACCESS_ID;
+    };
+
+    /**
+     * Check if any file is open access
+     *
+     * @param files
+     * @returns {boolean}
+     */
+    isAnyOpenAccess = (files) => {
+        return files.filter((file) => (this.hasAccess(file) && this.isOpenAccess(file[FILE_META_KEY_ACCESS_CONDITION]))).length > 0;
+    };
+
+    /**
+     * Check if file as access conditions field
+     *
+     * @param file
+     * @returns {boolean}
+     */
+    hasAccess = (file) => {
+        return file.hasOwnProperty(FILE_META_KEY_ACCESS_CONDITION);
+    };
+
+    /**
+     * Check if file has embargo date field
+     *
+     * @param file
+     * @returns {boolean}
+     */
+    hasEmbargoDate = (file) => {
+        return file.hasOwnProperty(FILE_META_KEY_EMBARGO_DATE) && !!file[FILE_META_KEY_EMBARGO_DATE];
+    };
+
+    /**
+     * Check if entire file uploader is valid including access conditions, embargo date and t&c
+     *
+     * @param filesInQueue
+     * @param termsAndConditions
+     * @returns {boolean}
+     */
+    isFileUploadValid = ({filesInQueue, termsAndConditions}) => {
+        let isValid = true;
+
+        if (this.props.requireOpenAccessStatus) {
+            if (filesInQueue.filter((file) => (!this.hasAccess(file))).length > 0) {
+                isValid = false;
+            }
+            if (filesInQueue
+                .filter((file) => (this.isOpenAccess(file[FILE_META_KEY_ACCESS_CONDITION])))
+                .filter((file) => (!(this.hasEmbargoDate(file) && termsAndConditions)))
+                .length > 0) {
+                isValid = false;
+            }
+        }
+
+        return isValid;
     };
 
     /**
@@ -455,8 +477,8 @@ export class FileUploader extends PureComponent {
                     requireOpenAccessStatus={requireOpenAccessStatus && !this.props.defaultQuickTemplateId}
                     disabled={this.props.disabled}
                     focusOnIndex={this.state.focusOnIndex}
-                    accessCondition={file[FILE_META_KEY_ACCESS_CONDITION]}
-                    embargoDate={file[FILE_META_KEY_EMBARGO_DATE]}
+                    accessConditionValue={file[FILE_META_KEY_ACCESS_CONDITION]}
+                    embargoDateValue={file[FILE_META_KEY_EMBARGO_DATE]}
                 />
             );
         });
@@ -468,7 +490,7 @@ export class FileUploader extends PureComponent {
                     locale={this.props.locale}
                     maxSize={this.calculateMaxFileSize()}
                     disabled={this.props.disabled}
-                    onDropped={this._handleDroppedFiles} />
+                    onDrop={this._handleDroppedFiles} />
                 {
                     filesInQueue.length > 0 && (
                         <Alert title={successTitle} message={successMessage.replace('[numberOfFiles]', filesInQueue.length)} type="done" />

@@ -78,14 +78,18 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             });
         };
 
+        _this._deleteAllFiles = function () {
+            _this.setState({ filesInQueue: [], errorMessage: '' });
+        };
+
         _this._updateFileAccessCondition = function (file, index, newValue) {
             file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
-            if (!_this.isOpenAccess(newValue) && file.hasOwnProperty('date')) {
+            if (!_this.isOpenAccess(newValue) && file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE)) {
                 delete file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE];
             }
 
-            if (_this.isOpenAccess(newValue) && !file.hasOwnProperty('date')) {
+            if (_this.isOpenAccess(newValue) && !file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE)) {
                 file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE] = moment().format();
             }
 
@@ -97,77 +101,8 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             _this.replaceFile(file, index);
         };
 
-        _this.replaceFile = function (file, index) {
-            _this.setState({
-                filesInQueue: [].concat(_toConsumableArray(_this.state.filesInQueue.slice(0, index)), [file], _toConsumableArray(_this.state.filesInQueue.slice(index + 1))),
-                errorMessage: ''
-            });
-        };
-
-        _this._deleteAllFiles = function () {
-            _this.setState({ filesInQueue: [], errorMessage: '' });
-        };
-
-        _this.queueFiles = function (files) {
-            // if (!!this.props.defaultQuickTemplateId && !this.props.requireOpenAccessStatus) {
-            //     files.map((file) => (file.access_condition_id = this.props.defaultQuickTemplateId));
-            // }
-            _this.setState({ filesInQueue: [].concat(_toConsumableArray(files)), focusOnIndex: _this.state.filesInQueue.length, errorMessage: '' });
-        };
-
         _this._acceptTermsAndConditions = function (event, value) {
             _this.setState({ termsAndConditions: value });
-        };
-
-        _this.calculateMaxFileSize = function () {
-            var _this$props$fileRestr = _this.props.fileRestrictionsConfig,
-                maxFileSize = _this$props$fileRestr.maxFileSize,
-                fileSizeUnit = _this$props$fileRestr.fileSizeUnit;
-
-            return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
-        };
-
-        _this.isOpenAccess = function (value) {
-            return value === _FileUploadAccessSelector.OPEN_ACCESS_ID;
-        };
-
-        _this.isAnyOpenAccess = function (files) {
-            return files.filter(function (file) {
-                return _this.hasAccess(file) && _this.isOpenAccess(file.access_condition_id);
-            }).length > 0;
-        };
-
-        _this.hasAccess = function (file) {
-            return file.hasOwnProperty('access_condition_id');
-        };
-
-        _this.hasEmbargoDate = function (file) {
-            return file.hasOwnProperty('date') && (file.date !== null || file.date !== undefined);
-        };
-
-        _this.isFileUploadValid = function (_ref) {
-            var filesInQueue = _ref.filesInQueue,
-                termsAndConditions = _ref.termsAndConditions;
-
-            var isValid = true;
-
-            if (_this.props.requireOpenAccessStatus) {
-                if (filesInQueue.filter(function (file) {
-                    return !_this.hasAccess(file);
-                }).length > 0) {
-                    isValid = false;
-                }
-
-                if (filesInQueue.filter(function (file) {
-                    return _this.isOpenAccess(file);
-                }).filter(function (file) {
-                    return !(_this.hasEmbargoDate(file) && termsAndConditions);
-                }).length > 0) {
-                    isValid = false;
-                }
-            }
-
-            return isValid;
         };
 
         _this._handleDroppedFiles = function (accepted, rejected, droppedFolders) {
@@ -230,6 +165,67 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
              * Process any errors
              */
             _this.processErrors(_this.errors);
+        };
+
+        _this.replaceFile = function (file, index) {
+            _this.setState({
+                filesInQueue: [].concat(_toConsumableArray(_this.state.filesInQueue.slice(0, index)), [file], _toConsumableArray(_this.state.filesInQueue.slice(index + 1))),
+                errorMessage: ''
+            });
+        };
+
+        _this.queueFiles = function (files) {
+            _this.setState({ filesInQueue: [].concat(_toConsumableArray(files)), focusOnIndex: _this.state.filesInQueue.length, errorMessage: '' });
+        };
+
+        _this.calculateMaxFileSize = function () {
+            var _this$props$fileRestr = _this.props.fileRestrictionsConfig,
+                maxFileSize = _this$props$fileRestr.maxFileSize,
+                fileSizeUnit = _this$props$fileRestr.fileSizeUnit;
+
+            return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
+        };
+
+        _this.isOpenAccess = function (value) {
+            return value === _FileUploadAccessSelector.OPEN_ACCESS_ID;
+        };
+
+        _this.isAnyOpenAccess = function (files) {
+            return files.filter(function (file) {
+                return _this.hasAccess(file) && _this.isOpenAccess(file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION]);
+            }).length > 0;
+        };
+
+        _this.hasAccess = function (file) {
+            return file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION);
+        };
+
+        _this.hasEmbargoDate = function (file) {
+            return file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE) && !!file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE];
+        };
+
+        _this.isFileUploadValid = function (_ref) {
+            var filesInQueue = _ref.filesInQueue,
+                termsAndConditions = _ref.termsAndConditions;
+
+            var isValid = true;
+
+            if (_this.props.requireOpenAccessStatus) {
+                if (filesInQueue.filter(function (file) {
+                    return !_this.hasAccess(file);
+                }).length > 0) {
+                    isValid = false;
+                }
+                if (filesInQueue.filter(function (file) {
+                    return _this.isOpenAccess(file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION]);
+                }).filter(function (file) {
+                    return !(_this.hasEmbargoDate(file) && termsAndConditions);
+                }).length > 0) {
+                    isValid = false;
+                }
+            }
+
+            return isValid;
         };
 
         _this.processErrors = function (errors) {
@@ -338,12 +334,14 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
         _this.state = {
             filesInQueue: [],
-            clearErrors: false,
             termsAndConditions: false,
             errorMessage: '',
             successMessage: ''
         };
 
+        /*
+         * Hold all errors temporarily in map
+         */
         _this.errors = new Map();
         return _this;
     }
@@ -359,17 +357,12 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             this.props.clearFileUpload();
         }
 
-        /**
-         * Delete file on a given index
-         *
-         * @param file
-         * @param index
-         * @private
+        /*
+         * File uploader's callback functions
          */
 
-
         /**
-         * Replace file on a given index
+         * Delete file on a given index
          *
          * @param file
          * @param index
@@ -385,9 +378,21 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
 
         /**
-         * Set uploaded files
+         * Update file's access condition and/or embargo date based on selected value
          *
-         * @param files
+         * @param file
+         * @param index
+         * @param newValue
+         * @private
+         */
+
+
+        /**
+         * Update file's embargo date
+         *
+         * @param file
+         * @param index
+         * @param newValue
          * @private
          */
 
@@ -397,6 +402,36 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
          *
          * @param event
          * @param value
+         * @private
+         */
+
+
+        /**
+         * Handle accepted, rejected and dropped folders and display proper alerts
+         *
+         * @param accepted
+         * @param rejected
+         * @param droppedFolders
+         */
+
+
+        /*
+         * File uploader's internal functions
+         */
+
+        /**
+         * Replace file on a given index
+         *
+         * @param file
+         * @param index
+         * @private
+         */
+
+
+        /**
+         * Set uploaded files
+         *
+         * @param files
          * @private
          */
 
@@ -446,15 +481,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
          * @param filesInQueue
          * @param termsAndConditions
          * @returns {boolean}
-         */
-
-
-        /**
-         * Handle accepted, rejected and dropped folders and display proper alerts
-         *
-         * @param accepted
-         * @param rejected
-         * @param droppedFolders
          */
 
 
@@ -537,8 +563,8 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     requireOpenAccessStatus: requireOpenAccessStatus && !_this2.props.defaultQuickTemplateId,
                     disabled: _this2.props.disabled,
                     focusOnIndex: _this2.state.focusOnIndex,
-                    accessCondition: file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION],
-                    embargoDate: file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE]
+                    accessConditionValue: file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION],
+                    embargoDateValue: file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE]
                 });
             });
 
@@ -554,7 +580,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     locale: this.props.locale,
                     maxSize: this.calculateMaxFileSize(),
                     disabled: this.props.disabled,
-                    onDropped: this._handleDroppedFiles }),
+                    onDrop: this._handleDroppedFiles }),
                 filesInQueue.length > 0 && _react2.default.createElement(_Alert.Alert, { title: successTitle, message: successMessage.replace('[numberOfFiles]', filesInQueue.length), type: 'done' }),
                 errorMessage.length > 0 && _react2.default.createElement(_Alert.Alert, { title: errorTitle, message: errorMessage, type: 'error' }),
                 _react2.default.createElement(
