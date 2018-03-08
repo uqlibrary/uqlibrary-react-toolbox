@@ -9,7 +9,9 @@ export default class FileUploadEmbargoDate extends Component {
         onChange: PropTypes.func,
         locale: PropTypes.object,
         defaultConfig: PropTypes.object,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
+        value: PropTypes.instanceOf(Date),
+        minDate: PropTypes.instanceOf(Date)
     };
 
     static defaultProps = {
@@ -19,22 +21,18 @@ export default class FileUploadEmbargoDate extends Component {
         defaultConfig: {
             dateTimeFormat: global.Intl.DateTimeFormat,
             fieldName: 'accessDate'
-        }
+        },
+        value: new Date(),
+        minDate: new Date()
     };
 
     constructor(props) {
         super(props);
-        this.state = {
-            value: new Date()
-        };
-        this.minDate = new Date();
         this.datePickerRef = null;
     }
 
     _onChange = (event, value) => {
-        const date = moment(value);
-        this.setState({value: date.toDate()});
-        if (this.props.onChange) this.props.onChange(date.format());
+        if (this.props.onChange) this.props.onChange(moment(value).format());
     };
 
     _onKeyPress = () => {
@@ -52,8 +50,8 @@ export default class FileUploadEmbargoDate extends Component {
                     firstDayOfWeek={0}
                     locale={datePickerLocale}
                     autoOk
-                    minDate={this.minDate}
-                    value={this.state.value}
+                    minDate={this.props.minDate}
+                    value={this.props.value}
                     id={fieldName}
                     name={fieldName}
                     onChange={this._onChange}

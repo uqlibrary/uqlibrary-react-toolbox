@@ -37,19 +37,13 @@ var FileUploadEmbargoDate = function (_Component) {
         var _this = _possibleConstructorReturn(this, (FileUploadEmbargoDate.__proto__ || Object.getPrototypeOf(FileUploadEmbargoDate)).call(this, props));
 
         _this._onChange = function (event, value) {
-            var date = moment(value);
-            _this.setState({ value: date.toDate() });
-            if (_this.props.onChange) _this.props.onChange(date.format());
+            if (_this.props.onChange) _this.props.onChange(moment(value).format());
         };
 
         _this._onKeyPress = function () {
             _this.datePickerRef.openDialog();
         };
 
-        _this.state = {
-            value: new Date()
-        };
-        _this.minDate = new Date();
         _this.datePickerRef = null;
         return _this;
     }
@@ -73,8 +67,8 @@ var FileUploadEmbargoDate = function (_Component) {
                     firstDayOfWeek: 0,
                     locale: datePickerLocale,
                     autoOk: true,
-                    minDate: this.minDate,
-                    value: this.state.value,
+                    minDate: this.props.minDate,
+                    value: this.props.value,
                     id: fieldName,
                     name: fieldName,
                     onChange: this._onChange,
@@ -97,6 +91,8 @@ FileUploadEmbargoDate.defaultProps = {
     defaultConfig: {
         dateTimeFormat: global.Intl.DateTimeFormat,
         fieldName: 'accessDate'
-    }
+    },
+    value: new Date(),
+    minDate: new Date()
 };
 exports.default = FileUploadEmbargoDate;

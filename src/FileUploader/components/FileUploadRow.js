@@ -144,7 +144,7 @@ export class FileUploadRow extends Component {
                         {
                             requireOpenAccessStatus && (this.state.access_condition_id === OPEN_ACCESS_ID) &&
                             <div className="embargo-date-selector">
-                                <FileUploadEmbargoDate onChange={this._notifyEmbargoDateChanged} disabled={disabled} />
+                                <FileUploadEmbargoDate value={new Date(this.props.embargoDateValue)} onChange={this._notifyEmbargoDateChanged} disabled={disabled} />
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }

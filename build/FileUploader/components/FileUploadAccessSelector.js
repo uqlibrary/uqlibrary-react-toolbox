@@ -100,6 +100,7 @@ FileUploadAccessSelector.defaultProps = {
     defaultConfig: {
         fieldName: 'accessCondition',
         accessIds: [CLOSED_ACCESS_ID, OPEN_ACCESS_ID]
-    }
+    },
+    value: null
 };
 exports.default = FileUploadAccessSelector;

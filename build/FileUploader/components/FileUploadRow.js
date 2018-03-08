@@ -248,7 +248,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         requireOpenAccessStatus && this.state.access_condition_id === _FileUploadAccessSelector.OPEN_ACCESS_ID && _react2.default.createElement(
                             'div',
                             { className: 'embargo-date-selector' },
-                            _react2.default.createElement(_FileUploadEmbargoDate2.default, { onChange: this._notifyEmbargoDateChanged, disabled: disabled }),
+                            _react2.default.createElement(_FileUploadEmbargoDate2.default, { value: new Date(this.props.embargoDateValue), onChange: this._notifyEmbargoDateChanged, disabled: disabled }),
                             _react2.default.createElement(
                                 'span',
                                 { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },
