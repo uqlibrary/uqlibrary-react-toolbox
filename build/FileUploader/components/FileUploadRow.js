@@ -298,7 +298,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                             )
                         )
                     ),
-                    progress === 100 && _ref6
+                    isUploadInProgress && progress === 100 && _ref6
                 )
             );
         }

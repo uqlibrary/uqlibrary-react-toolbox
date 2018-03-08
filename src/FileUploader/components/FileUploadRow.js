@@ -188,7 +188,7 @@ export class FileUploadRow extends Component {
                         </div>
                     }
                     {
-                        progress === 100 &&
+                        isUploadInProgress && progress === 100 &&
                         <div className="upload-progress">
                             <FontIcon className="material-icons green-tick">done</FontIcon>
                         </div>
