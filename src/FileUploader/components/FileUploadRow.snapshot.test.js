@@ -63,6 +63,12 @@ describe('FileUploadRow', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    it('renders correctly if file uploaded successfully but later other file failed', () => {
+        const wrapper = setup({progress: 100, isUploadInProgress: false});
+        const tree = toJson(wrapper);
+        expect(tree).toMatchSnapshot();
+    });
+
     it('shows confirmation on delete file', () => {
         const testFunction = jest.fn();
         const wrapper = setup({onDelete: testFunction});
