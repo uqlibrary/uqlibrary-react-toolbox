@@ -47,13 +47,9 @@ var FileUploadAccessSelector = function (_Component) {
         var _this = _possibleConstructorReturn(this, (FileUploadAccessSelector.__proto__ || Object.getPrototypeOf(FileUploadAccessSelector)).call(this, props));
 
         _this._onChange = function (event, index, value) {
-            _this.setState({ value: value });
             if (_this.props.onChange) _this.props.onChange(value);
         };
 
-        _this.state = {
-            value: null
-        };
         return _this;
     }
 
@@ -83,10 +79,10 @@ var FileUploadAccessSelector = function (_Component) {
                     dropDownMenuProps: { animated: false },
                     maxHeight: 250,
                     onChange: this._onChange,
-                    errorText: this.state.value === null ? errorMessage : '',
+                    errorText: this.props.value === null ? errorMessage : '',
                     floatingLabelFixed: true,
                     disabled: this.props.disabled,
-                    value: this.state.value },
+                    value: this.props.value },
                 accessOptions
             );
         }

@@ -215,7 +215,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'select-container' },
-                            _react2.default.createElement(_FileUploadAccessSelector2.default, { onChange: this._notifyAccessConditionChanged, disabled: disabled, ref: 'accessConditionSelector' + index }),
+                            _react2.default.createElement(_FileUploadAccessSelector2.default, { value: this.props.accessConditionValue, onChange: this._notifyAccessConditionChanged, disabled: disabled, ref: 'accessConditionSelector' + index }),
                             _react2.default.createElement(
                                 'span',
                                 { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },
@@ -316,7 +316,9 @@ FileUploadRow.defaultProps = {
         embargoDateColumn: 'Embargo date',
         embargoDateClosedAccess: 'No date required',
         uploadInProgressTxt: 'Uploading...'
-    }
+    },
+    accessConditionValue: null,
+    embargoDateValue: null
 };
 
 

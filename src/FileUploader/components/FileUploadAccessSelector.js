@@ -11,7 +11,8 @@ export default class FileUploadAccessSelector extends Component {
         onChange: PropTypes.func,
         locale: PropTypes.object,
         defaultConfig: PropTypes.object,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
+        value: PropTypes.number
     };
 
     static defaultProps = {
@@ -29,18 +30,15 @@ export default class FileUploadAccessSelector extends Component {
                 CLOSED_ACCESS_ID,
                 OPEN_ACCESS_ID
             ]
-        }
+        },
+        value: null
     };
 
     constructor(props) {
         super(props);
-        this.state = {
-            value: null
-        };
     }
 
     _onChange = (event, index, value) => {
-        this.setState({value: value});
         if (this.props.onChange) this.props.onChange(value);
     };
 
@@ -59,10 +57,10 @@ export default class FileUploadAccessSelector extends Component {
                 dropDownMenuProps={{animated: false}}
                 maxHeight={250}
                 onChange={this._onChange}
-                errorText={this.state.value === null ? errorMessage : ''}
+                errorText={this.props.value === null ? errorMessage : ''}
                 floatingLabelFixed
                 disabled={this.props.disabled}
-                value={this.state.value}>
+                value={this.props.value}>
                 {accessOptions}
             </SelectField>
         );

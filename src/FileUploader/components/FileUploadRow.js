@@ -48,7 +48,9 @@ export class FileUploadRow extends Component {
             embargoDateColumn: 'Embargo date',
             embargoDateClosedAccess: 'No date required',
             uploadInProgressTxt: 'Uploading...'
-        }
+        },
+        accessConditionValue: null,
+        embargoDateValue: null
     };
 
     constructor(props) {
@@ -120,7 +122,7 @@ export class FileUploadRow extends Component {
                             <div className="file-access-selector">
                                 <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
                                 <div className="select-container">
-                                    <FileUploadAccessSelector onChange={this._notifyAccessConditionChanged} disabled={disabled} ref={`accessConditionSelector${index}`} />
+                                    <FileUploadAccessSelector value={this.props.accessConditionValue} onChange={this._notifyAccessConditionChanged} disabled={disabled} ref={`accessConditionSelector${index}`} />
                                     <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{fileAccessColumn}</span>
                                 </div>
                             </div>
