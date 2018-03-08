@@ -30,7 +30,7 @@ exports[`Component FileUploadDropzone should open files selection dialog 1`] = `
     }
     maxFiles={5}
     maxSize={1000}
-    onDropped={[MockFunction]}
+    onDrop={[MockFunction]}
     uploadedFiles={Array []}
   >
     <div>

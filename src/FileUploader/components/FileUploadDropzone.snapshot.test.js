@@ -17,7 +17,7 @@ const locale = {
 
 function setup(testProps, isShallow = true) {
     const props = {
-        onDropped: jest.fn(),
+        onDrop: jest.fn(),
         maxSize: 1000,
         locale: locale,
         ...testProps,
@@ -40,9 +40,9 @@ describe('Component FileUploadDropzone', () => {
     });
 
     it('should render files discarding folders', () => {
-        const onDroppedCallback = jest.fn();
+        const onDropCallback = jest.fn();
         const props = {
-            onDropped: onDroppedCallback
+            onDrop: onDropCallback
         };
         const wrapper = setup({...props});
 
@@ -96,13 +96,13 @@ describe('Component FileUploadDropzone', () => {
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
-        expect(onDroppedCallback).toHaveBeenCalledWith(accepted, [], ['test']);
+        expect(onDropCallback).toHaveBeenCalledWith(accepted, [], ['test']);
     });
 
     it('should set max file size error message for rejected files', () => {
-        const onDroppedCallback = jest.fn();
+        const onDropCallback = jest.fn();
         const props = {
-            onDropped: onDroppedCallback
+            onDrop: onDropCallback
         };
         const wrapper = setup({...props});
 
@@ -128,13 +128,13 @@ describe('Component FileUploadDropzone', () => {
 
         wrapper.instance()._onDrop(accepted, rejected, event);
         wrapper.update();
-        expect(onDroppedCallback).toHaveBeenCalledWith(accepted, rejected, []);
+        expect(onDropCallback).toHaveBeenCalledWith(accepted, rejected, []);
     });
 
     it('should open files selection dialog', () => {
-        const onDroppedCallback = jest.fn();
+        const onDropCallback = jest.fn();
         const props = {
-            onDropped: onDroppedCallback,
+            onDrop: onDropCallback,
             maxSize: 1000,
             maxFiles: 5,
             uploadedFiles: [],
