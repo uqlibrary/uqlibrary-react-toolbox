@@ -2,6 +2,8 @@ import FileUploadEmbargoDate from './FileUploadEmbargoDate';
 
 function setup(testProps, isShallow = true) {
     const props = {
+        minDate: new Date('2016'),
+        value: new Date('2016'),
         ...testProps
     };
 
@@ -30,12 +32,15 @@ describe('Component FileUploadEmbargoDate', () => {
     });
 
     it('should render datepicker on key pressed', () => {
+        const openDialogTestFn = jest.fn();
+
         const wrapper = setup({}, false);
+
         expect(toJson(wrapper)).toMatchSnapshot();
 
+        wrapper.find('FileUploadEmbargoDate').instance().datePickerRef.openDialog = openDialogTestFn;
         wrapper.find('FileUploadEmbargoDate').instance()._onKeyPress();
-        wrapper.update();
-        expect(toJson(wrapper)).toMatchSnapshot();
+        expect(openDialogTestFn).toHaveBeenCalled();
     });
 
     it('should set correct date on date changed', () => {
@@ -49,7 +54,7 @@ describe('Component FileUploadEmbargoDate', () => {
                 dateTimeFormat: global.Intl.DateTimeFormat,
                 fieldName: 'accessDate'
             },
-            onDateChanged: onDateChangedTestFn
+            onChange: onDateChangedTestFn
         };
 
         const wrapper = setup({...props});
