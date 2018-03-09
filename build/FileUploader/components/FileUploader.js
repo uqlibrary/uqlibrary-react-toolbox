@@ -105,46 +105,12 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             _this.setState({ termsAndConditions: value });
         };
 
-        _this._handleDroppedFiles = function (accepted, rejected, droppedFolders) {
+        _this._handleDroppedFiles = function (accepted, errorsFromDropzone) {
+            var errors = new Map(Array.from(errorsFromDropzone));
             /*
-             * Set error for folder
+             * Remove duplicate files from accepted which are already in queue
              */
-            if (droppedFolders.length > 0) {
-                _this.setError('folder', accepted.filter(function (file) {
-                    return droppedFolders.indexOf(file.name) >= 0;
-                }));
-            }
-
-            /*
-             * Set error for rejected files (maxFileSize rule)
-             */
-            if (rejected.length > 0) {
-                _this.setError('maxFileSize', rejected);
-            }
-
-            /*
-             * Folders are accepted by dropzone so remove folders from accepted list
-             */
-            var acceptedFiles = droppedFolders.length > 0 ? accepted.filter(function (file) {
-                return droppedFolders.indexOf(file.name) === -1;
-            }) : accepted;
-
-            /*
-             * Validate accepted files and get list of invalid files (check fileName, fileNameLength, folder)
-             */
-            var invalid = acceptedFiles.filter(function (file) {
-                return _this.validate(file);
-            });
-
-            /*
-             * Remove invalid files
-             */
-            var filtered = _this.difference(new Set(acceptedFiles), new Set(invalid));
-
-            /*
-             * Duplicates will be removed by setting up file.name as key
-             */
-            var noDuplicated = _this.removeDuplicate(filtered);
+            var uniqueFilesToQueue = _this.removeDuplicate(accepted);
 
             /*
              * If max files uploaded, send max files and set error for ignored files
@@ -152,25 +118,31 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             var fileUploadLimit = _this.props.fileRestrictionsConfig.fileUploadLimit;
 
 
-            if (noDuplicated.size > fileUploadLimit) {
+            if (uniqueFilesToQueue.size > fileUploadLimit) {
                 // Set error for files which won't be uploaded
-                _this.setError('maxFiles', [].concat(_toConsumableArray(noDuplicated)).slice(fileUploadLimit));
+                errors.set('maxFiles', [].concat(_toConsumableArray(uniqueFilesToQueue)).slice(fileUploadLimit).map(function (file) {
+                    return file.name;
+                }));
 
-                _this.queueFiles([].concat(_toConsumableArray(noDuplicated)).slice(0, fileUploadLimit));
+                _this.queueFiles([].concat(_toConsumableArray(uniqueFilesToQueue)).slice(0, fileUploadLimit));
             } else {
-                _this.queueFiles([].concat(_toConsumableArray(noDuplicated)));
+                _this.queueFiles([].concat(_toConsumableArray(uniqueFilesToQueue)));
             }
 
+            console.log(Array.from(errors));
             /*
              * Process any errors
              */
-            _this.processErrors(_this.errors);
+            _this.processErrors(errors);
         };
 
         _this.replaceFile = function (file, index) {
+            var filesInQueue = [].concat(_toConsumableArray(_this.state.filesInQueue.slice(0, index)), [file], _toConsumableArray(_this.state.filesInQueue.slice(index + 1)));
+
             _this.setState({
-                filesInQueue: [].concat(_toConsumableArray(_this.state.filesInQueue.slice(0, index)), [file], _toConsumableArray(_this.state.filesInQueue.slice(index + 1))),
-                errorMessage: ''
+                filesInQueue: filesInQueue,
+                errorMessage: '',
+                termsAndConditions: _this.state.termsAndConditions && !_this.areAllClosedAccess(filesInQueue)
             });
         };
 
@@ -194,6 +166,12 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             return files.filter(function (file) {
                 return _this.hasAccess(file) && _this.isOpenAccess(file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION]);
             }).length > 0;
+        };
+
+        _this.areAllClosedAccess = function (files) {
+            return files.filter(function (file) {
+                return _this.hasAccess(file) && !_this.isOpenAccess(file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION]);
+            }).length === files.length;
         };
 
         _this.hasAccess = function (file) {
@@ -232,24 +210,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             var validation = _this.props.locale.validation;
 
             var errorMessages = [];
-            var message = void 0;
-
-            var _loop = function _loop(errorCode, files) {
-                var fileNames = [];
-                files.map(function (file) {
-                    fileNames.push(file.name);
-                });
-
-                if (files.length > 0) {
-                    message = validation[errorCode].replace('[numberOfFiles]', files.length).replace('[filenames]', fileNames.join(', '));
-                }
-
-                if (errorCode === 'maxFiles') {
-                    errorMessages.push(message.replace('[maxNumberOfFiles]', _this.props.fileRestrictionsConfig.fileUploadLimit));
-                } else {
-                    errorMessages.push(message);
-                }
-            };
+            var message = '';
 
             var _iteratorNormalCompletion = true;
             var _didIteratorError = false;
@@ -262,9 +223,17 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     var _ref3 = _slicedToArray(_ref2, 2);
 
                     var errorCode = _ref3[0];
-                    var files = _ref3[1];
+                    var fileNames = _ref3[1];
 
-                    _loop(errorCode, files);
+                    if (fileNames.length > 0) {
+                        message = validation[errorCode].replace('[numberOfFiles]', fileNames.length).replace('[filenames]', fileNames.join(', '));
+
+                        if (errorCode === 'maxFiles') {
+                            errorMessages.push(message.replace('[maxNumberOfFiles]', '' + _this.props.fileRestrictionsConfig.fileUploadLimit));
+                        } else {
+                            errorMessages.push(message);
+                        }
+                    }
                 }
             } catch (err) {
                 _didIteratorError = true;
@@ -284,37 +253,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             _this.setState({
                 errorMessage: errorMessages.join('; ')
             });
-
-            _this.errors = new Map();
-        };
-
-        _this.validate = function (file) {
-            var valid = new RegExp(_this.props.fileNameRestrictions, 'gi').test(file.name);
-
-            if (!valid) {
-                _this.setError('fileName', file);
-                return true;
-            }
-
-            return false;
-        };
-
-        _this.setError = function (errorType, file) {
-            var files = void 0;
-            if (!(file instanceof Array)) {
-                files = [file];
-            } else {
-                files = file;
-            }
-            files.map(function (file) {
-                return _this.errors.set(errorType, _this.errors.get(errorType) ? [].concat(_toConsumableArray(_this.errors.get(errorType)), [file]) : [file]);
-            });
-        };
-
-        _this.difference = function (accepted, rejected) {
-            return new Set([].concat(_toConsumableArray(accepted)).filter(function (file) {
-                return !rejected.has(file);
-            }));
         };
 
         _this.removeDuplicate = function (accepted) {
@@ -410,8 +348,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
          * Handle accepted, rejected and dropped folders and display proper alerts
          *
          * @param accepted
-         * @param rejected
-         * @param droppedFolders
+         * @param errorsFromDropzone
          */
 
 
@@ -460,6 +397,14 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
 
         /**
+         * Check if all files are closed accessed
+         *
+         * @param files
+         * @returns {boolean}
+         */
+
+
+        /**
          * Check if file as access conditions field
          *
          * @param file
@@ -487,34 +432,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         /**
          * Process errors
          *
-         * @private
-         */
-
-
-        /**
-         * Validate file
-         *
-         * @param file
-         * @returns {boolean}
-         * @private
-         */
-
-
-        /**
-         * Set file/s error for given errorType
-         *
-         * @param errorType
-         * @param file
-         * @private
-         */
-
-
-        /**
-         * Diff of two sets
-         *
-         * @param accepted
-         * @param rejected
-         * @returns {Set}
          * @private
          */
 
@@ -580,6 +497,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     locale: this.props.locale,
                     maxSize: this.calculateMaxFileSize(),
                     disabled: this.props.disabled,
+                    fileNameRestrictions: this.props.fileNameRestrictions,
                     onDrop: this._handleDroppedFiles }),
                 filesInQueue.length > 0 && _react2.default.createElement(_Alert.Alert, { title: successTitle, message: successMessage.replace('[numberOfFiles]', filesInQueue.length), type: 'done' }),
                 errorMessage.length > 0 && _react2.default.createElement(_Alert.Alert, { title: errorTitle, message: errorMessage, type: 'error' }),

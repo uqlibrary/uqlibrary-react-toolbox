@@ -184,64 +184,33 @@ export class FileUploader extends PureComponent {
      * Handle accepted, rejected and dropped folders and display proper alerts
      *
      * @param accepted
-     * @param rejected
-     * @param droppedFolders
+     * @param errorsFromDropzone
      */
-    _handleDroppedFiles = (accepted, rejected, droppedFolders) => {
+    _handleDroppedFiles = (accepted, errorsFromDropzone) => {
+        const errors = new Map(Array.from(errorsFromDropzone));
         /*
-         * Set error for folder
+         * Remove duplicate files from accepted which are already in queue
          */
-        if (droppedFolders.length > 0) {
-            this.setError('folder', accepted.filter(file => droppedFolders.indexOf(file.name) >= 0));
-        }
-
-        /*
-         * Set error for rejected files (maxFileSize rule)
-         */
-        if (rejected.length > 0) {
-            this.setError('maxFileSize', rejected);
-        }
-
-        /*
-         * Folders are accepted by dropzone so remove folders from accepted list
-         */
-        const acceptedFiles = droppedFolders.length > 0 ? accepted.filter(file => droppedFolders.indexOf(file.name) === -1) : accepted;
-
-        /*
-         * Validate accepted files and get list of invalid files (check fileName, fileNameLength, folder)
-         */
-        const invalid = acceptedFiles.filter((file) => {
-            return this.validate(file);
-        });
-
-        /*
-         * Remove invalid files
-         */
-        const filtered = this.difference(new Set(acceptedFiles), new Set(invalid));
-
-        /*
-         * Duplicates will be removed by setting up file.name as key
-         */
-        const noDuplicated = this.removeDuplicate(filtered);
+        const uniqueFilesToQueue = this.removeDuplicate(accepted);
 
         /*
          * If max files uploaded, send max files and set error for ignored files
          */
         const {fileUploadLimit} = this.props.fileRestrictionsConfig;
 
-        if (noDuplicated.size > fileUploadLimit) {
+        if (uniqueFilesToQueue.size > fileUploadLimit) {
             // Set error for files which won't be uploaded
-            this.setError('maxFiles', [...noDuplicated].slice(fileUploadLimit));
+            errors.set('maxFiles', [...uniqueFilesToQueue].slice(fileUploadLimit).map(file => file.name));
 
-            this.queueFiles([...noDuplicated].slice(0, fileUploadLimit));
+            this.queueFiles([...uniqueFilesToQueue].slice(0, fileUploadLimit));
         } else {
-            this.queueFiles([...noDuplicated]);
+            this.queueFiles([...uniqueFilesToQueue]);
         }
 
         /*
          * Process any errors
          */
-        this.processErrors(this.errors);
+        this.processErrors(errors);
     };
 
     /*
@@ -256,13 +225,16 @@ export class FileUploader extends PureComponent {
      * @private
      */
     replaceFile = (file, index) => {
+        const filesInQueue = [
+            ...this.state.filesInQueue.slice(0, index),
+            file,
+            ...this.state.filesInQueue.slice(index + 1)
+        ];
+
         this.setState({
-            filesInQueue: [
-                ...this.state.filesInQueue.slice(0, index),
-                file,
-                ...this.state.filesInQueue.slice(index + 1)
-            ],
-            errorMessage: ''
+            filesInQueue: filesInQueue,
+            errorMessage: '',
+            termsAndConditions: this.state.termsAndConditions && !this.areAllClosedAccess(filesInQueue)
         });
     };
 
@@ -305,6 +277,16 @@ export class FileUploader extends PureComponent {
      */
     isAnyOpenAccess = (files) => {
         return files.filter((file) => (this.hasAccess(file) && this.isOpenAccess(file[FILE_META_KEY_ACCESS_CONDITION]))).length > 0;
+    };
+
+    /**
+     * Check if all files are closed accessed
+     *
+     * @param files
+     * @returns {boolean}
+     */
+    areAllClosedAccess = (files) => {
+        return files.filter((file) => (this.hasAccess(file) && !this.isOpenAccess(file[FILE_META_KEY_ACCESS_CONDITION]))).length === files.length;
     };
 
     /**
@@ -360,79 +342,25 @@ export class FileUploader extends PureComponent {
     processErrors = (errors) => {
         const {validation} = this.props.locale;
         const errorMessages = [];
-        let message;
+        let message = '';
 
-        for (const [errorCode, files] of errors.entries()) {
-            const fileNames = [];
-            files.map((file) => {
-                fileNames.push(file.name);
-            });
-
-            if (files.length > 0) {
+        for (const [errorCode, fileNames] of errors.entries()) {
+            if (fileNames.length > 0) {
                 message = validation[errorCode]
-                    .replace('[numberOfFiles]', files.length)
+                    .replace('[numberOfFiles]', fileNames.length)
                     .replace('[filenames]', fileNames.join(', '));
-            }
 
-            if (errorCode === 'maxFiles') {
-                errorMessages.push(message.replace('[maxNumberOfFiles]', this.props.fileRestrictionsConfig.fileUploadLimit));
-            } else {
-                errorMessages.push(message);
+                if (errorCode === 'maxFiles') {
+                    errorMessages.push(message.replace('[maxNumberOfFiles]', `${this.props.fileRestrictionsConfig.fileUploadLimit}`));
+                } else {
+                    errorMessages.push(message);
+                }
             }
         }
 
         this.setState({
             errorMessage: errorMessages.join('; ')
         });
-
-        this.errors = new Map();
-    };
-
-    /**
-     * Validate file
-     *
-     * @param file
-     * @returns {boolean}
-     * @private
-     */
-    validate = (file) => {
-        const valid = (new RegExp(this.props.fileNameRestrictions, 'gi')).test(file.name);
-
-        if (!valid) {
-            this.setError('fileName', file);
-            return true;
-        }
-
-        return false;
-    };
-
-    /**
-     * Set file/s error for given errorType
-     *
-     * @param errorType
-     * @param file
-     * @private
-     */
-    setError = (errorType, file) => {
-        let files;
-        if (!(file instanceof Array)) {
-            files = [file];
-        } else {
-            files = file;
-        }
-        files.map(file => this.errors.set(errorType, this.errors.get(errorType) ? [...this.errors.get(errorType), file] : [file]));
-    };
-
-    /**
-     * Diff of two sets
-     *
-     * @param accepted
-     * @param rejected
-     * @returns {Set}
-     * @private
-     */
-    difference = (accepted, rejected) => {
-        return new Set([...accepted].filter(file => !rejected.has(file)));
     };
 
     /**
@@ -490,6 +418,7 @@ export class FileUploader extends PureComponent {
                     locale={this.props.locale}
                     maxSize={this.calculateMaxFileSize()}
                     disabled={this.props.disabled}
+                    fileNameRestrictions={this.props.fileNameRestrictions}
                     onDrop={this._handleDroppedFiles} />
                 {
                     filesInQueue.length > 0 && (
