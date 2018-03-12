@@ -2807,21 +2807,47 @@ exports[`Component FileUploadAccessSelector should render with default setup 1`]
   value={null}
 >
   <MenuItem
+    anchorOrigin={
+      Object {
+        "horizontal": "right",
+        "vertical": "top",
+      }
+    }
     checked={false}
     desktop={false}
     disabled={false}
+    focusState="none"
     insetChildren={false}
     key="0"
     primaryText="Open Access"
+    targetOrigin={
+      Object {
+        "horizontal": "left",
+        "vertical": "top",
+      }
+    }
     value={1}
   />
   <MenuItem
+    anchorOrigin={
+      Object {
+        "horizontal": "right",
+        "vertical": "top",
+      }
+    }
     checked={false}
     desktop={false}
     disabled={false}
+    focusState="none"
     insetChildren={false}
     key="1"
     primaryText="Closed Access"
+    targetOrigin={
+      Object {
+        "horizontal": "left",
+        "vertical": "top",
+      }
+    }
     value={2}
   />
 </SelectField>
@@ -2849,21 +2875,47 @@ exports[`Component FileUploadAccessSelector should render with value 1`] = `
   value={1}
 >
   <MenuItem
+    anchorOrigin={
+      Object {
+        "horizontal": "right",
+        "vertical": "top",
+      }
+    }
     checked={false}
     desktop={false}
     disabled={false}
+    focusState="none"
     insetChildren={false}
     key="0"
     primaryText="Open Access"
+    targetOrigin={
+      Object {
+        "horizontal": "left",
+        "vertical": "top",
+      }
+    }
     value={1}
   />
   <MenuItem
+    anchorOrigin={
+      Object {
+        "horizontal": "right",
+        "vertical": "top",
+      }
+    }
     checked={false}
     desktop={false}
     disabled={false}
+    focusState="none"
     insetChildren={false}
     key="1"
     primaryText="Closed Access"
+    targetOrigin={
+      Object {
+        "horizontal": "left",
+        "vertical": "top",
+      }
+    }
     value={2}
   />
 </SelectField>

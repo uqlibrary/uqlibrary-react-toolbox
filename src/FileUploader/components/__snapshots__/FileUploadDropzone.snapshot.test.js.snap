@@ -168,7 +168,9 @@ exports[`Component FileUploadDropzone should render correctly without any setup 
         disabled={false}
         maxSize={1000}
         minSize={0}
+        multiple={true}
         onDrop={[Function]}
+        preventDropOnDocument={true}
         style={
           Object {
             "padding": "0px",
@@ -215,7 +217,9 @@ exports[`Component FileUploadDropzone should render files discarding folders 1`]
         disabled={false}
         maxSize={1000}
         minSize={0}
+        multiple={true}
         onDrop={[Function]}
+        preventDropOnDocument={true}
         style={
           Object {
             "padding": "0px",
@@ -262,7 +266,9 @@ exports[`Component FileUploadDropzone should render files discarding folders 2`]
         disabled={false}
         maxSize={1000}
         minSize={0}
+        multiple={true}
         onDrop={[Function]}
+        preventDropOnDocument={true}
         style={
           Object {
             "padding": "0px",
