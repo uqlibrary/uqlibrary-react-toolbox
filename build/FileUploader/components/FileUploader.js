@@ -148,7 +148,18 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this.queueFiles = function (files) {
-            _this.setState({ filesInQueue: [].concat(_toConsumableArray(files)), focusOnIndex: _this.state.filesInQueue.length, errorMessage: '' });
+            _this.setState({
+                filesInQueue: _this.props.defaultQuickTemplateId ? _this.setDefaultAccessConditionId(files) : [].concat(_toConsumableArray(files)),
+                focusOnIndex: _this.state.filesInQueue.length,
+                errorMessage: ''
+            });
+        };
+
+        _this.setDefaultAccessConditionId = function (files) {
+            return files.map(function (file) {
+                file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] = _this.props.defaultQuickTemplateId;
+                return new File([file], file.name);
+            });
         };
 
         _this.calculateMaxFileSize = function () {
@@ -371,6 +382,13 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
          *
          * @param files
          * @private
+         */
+
+
+        /**
+         * Set default access condition if defaultQuickTemplateId is provided
+         *
+         * @param files
          */
 
 

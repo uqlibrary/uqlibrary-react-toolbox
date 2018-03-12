@@ -247,9 +247,24 @@ export class FileUploader extends PureComponent {
      * @private
      */
     queueFiles = (files) => {
-        this.setState({filesInQueue: [...files], focusOnIndex: this.state.filesInQueue.length, errorMessage: ''});
+        this.setState({
+            filesInQueue: this.props.defaultQuickTemplateId ? this.setDefaultAccessConditionId(files) : [...files],
+            focusOnIndex: this.state.filesInQueue.length,
+            errorMessage: ''
+        });
     };
 
+    /**
+     * Set default access condition if defaultQuickTemplateId is provided
+     *
+     * @param files
+     */
+    setDefaultAccessConditionId = (files) => {
+        return files.map(file => {
+            file[FILE_META_KEY_ACCESS_CONDITION] = this.props.defaultQuickTemplateId;
+            return new File([file], file.name);
+        });
+    };
 
     /**
      * Calculate max file size allowed by dropzone
