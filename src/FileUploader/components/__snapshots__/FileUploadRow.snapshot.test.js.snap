@@ -20,8 +20,9 @@ exports[`FileUploadRow renders correctly for edge browser if file is being uploa
       "uploadInProgressTxt": "Uploading...",
     }
   }
-  onAttributeChanged={[MockFunction]}
+  onAccessConditionChange={[MockFunction]}
   onDelete={[MockFunction]}
+  onEmbargoDateChange={[MockFunction]}
   progress={0}
   requireOpenAccessStatus={false}
   uploadedFile={
@@ -271,8 +272,9 @@ exports[`FileUploadRow renders correctly if file uploaded successfully but later
       "uploadInProgressTxt": "Uploading...",
     }
   }
-  onAttributeChanged={[MockFunction]}
+  onAccessConditionChange={[MockFunction]}
   onDelete={[MockFunction]}
+  onEmbargoDateChange={[MockFunction]}
   progress={100}
   requireOpenAccessStatus={false}
   uploadedFile={
@@ -627,8 +629,9 @@ exports[`FileUploadRow renders correctly with file upload success 1`] = `
       "uploadInProgressTxt": "Uploading...",
     }
   }
-  onAttributeChanged={[MockFunction]}
+  onAccessConditionChange={[MockFunction]}
   onDelete={[MockFunction]}
+  onEmbargoDateChange={[MockFunction]}
   progress={100}
   requireOpenAccessStatus={false}
   uploadedFile={
@@ -823,8 +826,9 @@ exports[`FileUploadRow renders correctly with uploaded file 1`] = `
       "uploadInProgressTxt": "Uploading...",
     }
   }
-  onAttributeChanged={[MockFunction]}
+  onAccessConditionChange={[MockFunction]}
   onDelete={[MockFunction]}
+  onEmbargoDateChange={[MockFunction]}
   progress={0}
   requireOpenAccessStatus={false}
   uploadedFile={
@@ -1179,8 +1183,9 @@ exports[`FileUploadRow renders correctly with uploaded file with some progress 1
       "uploadInProgressTxt": "Uploading...",
     }
   }
-  onAttributeChanged={[MockFunction]}
+  onAccessConditionChange={[MockFunction]}
   onDelete={[MockFunction]}
+  onEmbargoDateChange={[MockFunction]}
   progress={50}
   requireOpenAccessStatus={false}
   uploadedFile={
@@ -1431,8 +1436,9 @@ exports[`FileUploadRow shows confirmation on delete file 1`] = `
       "uploadInProgressTxt": "Uploading...",
     }
   }
-  onAttributeChanged={[MockFunction]}
+  onAccessConditionChange={[MockFunction]}
   onDelete={[MockFunction]}
+  onEmbargoDateChange={[MockFunction]}
   progress={0}
   requireOpenAccessStatus={false}
   uploadedFile={

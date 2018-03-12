@@ -5,10 +5,9 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
   <h4
     className="sub-title"
   >
-    You may add up to 10 files (max 5GB each)
+    You may add up to 5 files (max 1KB each)
   </h4>
   <FileUploadDropzone
-    clearErrors={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -48,10 +47,8 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
         },
       }
     }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={Array []}
+    maxSize={1000}
+    onDrop={[Function]}
   />
   <div
     className="metadata-container"
@@ -69,10 +66,9 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
   <h4
     className="sub-title"
   >
-    You may add up to 10 files (max 5GB each)
+    You may add up to 5 files (max 1KB each)
   </h4>
   <FileUploadDropzone
-    clearErrors={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -112,10 +108,8 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
         },
       }
     }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={Array []}
+    maxSize={1000}
+    onDrop={[Function]}
   />
   <div
     className="metadata-container"
@@ -133,10 +127,9 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
   <h4
     className="sub-title"
   >
-    You may add up to 10 files (max 5GB each)
+    You may add up to 5 files (max 1KB each)
   </h4>
   <FileUploadDropzone
-    clearErrors={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -176,21 +169,15 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
         },
       }
     }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={
-      Array [
-        Object {
-          "name": "a.txt",
-          "size": 100,
-        },
-        Object {
-          "name": "b.txt",
-          "size": 100,
-        },
-      ]
-    }
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 2 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
   />
   <div
     className="metadata-container"
@@ -201,50 +188,54 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
     }
   >
     <FileUploadRowHeader
-      locale={
-        Object {
-          "deleteAllFiles": "Remove all files from the upload queue",
-          "deleteAllFilesConfirmation": Object {
-            "cancelButtonLabel": "No",
-            "confirmButtonLabel": "Yes",
-            "confirmationMessage": "Are you sure you want to delete all files?",
-            "confirmationTitle": "Delete all",
-          },
-          "embargoDateColumn": "Embargo release date",
-          "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
-        }
-      }
       onDeleteAll={[Function]}
       requireOpenAccessStatus={false}
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={0}
       key="a.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={false}
       uploadedFile={
-        Object {
-          "name": "a.txt",
-          "size": 100,
+        File {
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "a.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
         }
       }
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={1}
       key="b.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={false}
       uploadedFile={
-        Object {
-          "name": "b.txt",
-          "size": 100,
+        File {
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "b.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
         }
       }
     />
@@ -257,10 +248,9 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
   <h4
     className="sub-title"
   >
-    You may add up to 10 files (max 5GB each)
+    You may add up to 5 files (max 1KB each)
   </h4>
   <FileUploadDropzone
-    clearErrors={true}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -300,17 +290,15 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
         },
       }
     }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={
-      Array [
-        Object {
-          "name": "b.txt",
-          "size": 100,
-        },
-      ]
-    }
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 1 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
   />
   <div
     className="metadata-container"
@@ -321,35 +309,30 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
     }
   >
     <FileUploadRowHeader
-      locale={
-        Object {
-          "deleteAllFiles": "Remove all files from the upload queue",
-          "deleteAllFilesConfirmation": Object {
-            "cancelButtonLabel": "No",
-            "confirmButtonLabel": "Yes",
-            "confirmationMessage": "Are you sure you want to delete all files?",
-            "confirmationTitle": "Delete all",
-          },
-          "embargoDateColumn": "Embargo release date",
-          "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
-        }
-      }
       onDeleteAll={[Function]}
       requireOpenAccessStatus={false}
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={0}
       key="b.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={false}
       uploadedFile={
-        Object {
-          "name": "b.txt",
-          "size": 100,
+        File {
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "b.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
         }
       }
     />
@@ -362,10 +345,9 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
   <h4
     className="sub-title"
   >
-    You may add up to 10 files (max 5GB each)
+    You may add up to 5 files (max 1KB each)
   </h4>
   <FileUploadDropzone
-    clearErrors={true}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -405,10 +387,8 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
         },
       }
     }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={Array []}
+    maxSize={1000}
+    onDrop={[Function]}
   />
   <div
     className="metadata-container"
@@ -421,15 +401,14 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
 </div>
 `;
 
-exports[`Component FileUploader should render rows for uploaded files with access required 1`] = `
+exports[`Component FileUploader should render rows for uploaded files with access condition dropdown based on quick template Id and require open access 1`] = `
 <div>
   <h4
     className="sub-title"
   >
-    You may add up to 10 files (max 5GB each)
+    You may add up to 5 files (max 1KB each)
   </h4>
   <FileUploadDropzone
-    clearErrors={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -469,10 +448,192 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         },
       }
     }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={Array []}
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <div
+    className="metadata-container"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Component FileUploader should render rows for uploaded files with access condition dropdown based on quick template Id and require open access 2`] = `
+<div>
+  <h4
+    className="sub-title"
+  >
+    You may add up to 5 files (max 1KB each)
+  </h4>
+  <FileUploadDropzone
+    fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    locale={
+      Object {
+        "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+        "errorTitle": "Upload Errors",
+        "fileUploadInstruction": <p>
+          Click here to select files, or drag files into this area to upload
+        </p>,
+        "fileUploadRestrictionHeading": <h3>
+          File upload restrictions
+        </h3>,
+        "fileUploadRestrictions": <div>
+          Please ensure your files:
+          <ul>
+            <li>
+              begin with a letter and are less than 45 characters long
+            </li>
+            <li>
+              contain only upper and lowercase alphanumeric characters, and underscores
+            </li>
+            <li>
+              have only a single period which precedes the file extension: “.pdf”
+            </li>
+            <li>
+              are uploaded individually and not inside a folder
+            </li>
+          </ul>
+        </div>,
+        "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
+        "validation": Object {
+          "fileName": "File(s) ([filenames]) have invalid file name",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
+        },
+      }
+    }
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 2 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
+  />
+  <div
+    className="metadata-container"
+    style={
+      Object {
+        "display": "block",
+      }
+    }
+  >
+    <FileUploadRowHeader
+      onDeleteAll={[Function]}
+      requireOpenAccessStatus={false}
+    />
+    <Connect(FileUploadRow)
+      defaultAccessCondition={3}
+      fileSizeUnit="K"
+      focusOnIndex={0}
+      index={0}
+      key="a.txt"
+      onAccessConditionChange={[Function]}
+      onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
+      requireOpenAccessStatus={false}
+      uploadedFile={
+        File {
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "a.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
+        }
+      }
+    />
+    <Connect(FileUploadRow)
+      defaultAccessCondition={3}
+      fileSizeUnit="K"
+      focusOnIndex={0}
+      index={1}
+      key="b.txt"
+      onAccessConditionChange={[Function]}
+      onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
+      requireOpenAccessStatus={false}
+      uploadedFile={
+        File {
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "b.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Component FileUploader should render rows for uploaded files with access required 1`] = `
+<div>
+  <h4
+    className="sub-title"
+  >
+    You may add up to 5 files (max 1KB each)
+  </h4>
+  <FileUploadDropzone
+    fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    locale={
+      Object {
+        "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+        "errorTitle": "Upload Errors",
+        "fileUploadInstruction": <p>
+          Click here to select files, or drag files into this area to upload
+        </p>,
+        "fileUploadRestrictionHeading": <h3>
+          File upload restrictions
+        </h3>,
+        "fileUploadRestrictions": <div>
+          Please ensure your files:
+          <ul>
+            <li>
+              begin with a letter and are less than 45 characters long
+            </li>
+            <li>
+              contain only upper and lowercase alphanumeric characters, and underscores
+            </li>
+            <li>
+              have only a single period which precedes the file extension: “.pdf”
+            </li>
+            <li>
+              are uploaded individually and not inside a folder
+            </li>
+          </ul>
+        </div>,
+        "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
+        "validation": Object {
+          "fileName": "File(s) ([filenames]) have invalid file name",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
+        },
+      }
+    }
+    maxSize={1000}
+    onDrop={[Function]}
   />
   <div
     className="metadata-container"
@@ -490,10 +651,9 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   <h4
     className="sub-title"
   >
-    You may add up to 10 files (max 5GB each)
+    You may add up to 5 files (max 1KB each)
   </h4>
   <FileUploadDropzone
-    clearErrors={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -533,21 +693,15 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         },
       }
     }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={
-      Array [
-        Object {
-          "name": "a.txt",
-          "size": 100,
-        },
-        Object {
-          "name": "b.txt",
-          "size": 100,
-        },
-      ]
-    }
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 2 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
   />
   <div
     className="metadata-container"
@@ -558,50 +712,54 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     }
   >
     <FileUploadRowHeader
-      locale={
-        Object {
-          "deleteAllFiles": "Remove all files from the upload queue",
-          "deleteAllFilesConfirmation": Object {
-            "cancelButtonLabel": "No",
-            "confirmButtonLabel": "Yes",
-            "confirmationMessage": "Are you sure you want to delete all files?",
-            "confirmationTitle": "Delete all",
-          },
-          "embargoDateColumn": "Embargo release date",
-          "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
-        }
-      }
       onDeleteAll={[Function]}
       requireOpenAccessStatus={true}
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={0}
       key="a.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={true}
       uploadedFile={
-        Object {
-          "name": "a.txt",
-          "size": 100,
+        File {
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "a.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
         }
       }
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={1}
       key="b.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={true}
       uploadedFile={
-        Object {
-          "name": "b.txt",
-          "size": 100,
+        File {
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "b.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
         }
       }
     />
@@ -614,10 +772,9 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   <h4
     className="sub-title"
   >
-    You may add up to 10 files (max 5GB each)
+    You may add up to 5 files (max 1KB each)
   </h4>
   <FileUploadDropzone
-    clearErrors={true}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -657,22 +814,15 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         },
       }
     }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={
-      Array [
-        Object {
-          "access_condition_id": 8,
-          "name": "a.txt",
-          "size": 100,
-        },
-        Object {
-          "name": "b.txt",
-          "size": 100,
-        },
-      ]
-    }
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 2 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
   />
   <div
     className="metadata-container"
@@ -683,51 +833,55 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     }
   >
     <FileUploadRowHeader
-      locale={
-        Object {
-          "deleteAllFiles": "Remove all files from the upload queue",
-          "deleteAllFilesConfirmation": Object {
-            "cancelButtonLabel": "No",
-            "confirmButtonLabel": "Yes",
-            "confirmationMessage": "Are you sure you want to delete all files?",
-            "confirmationTitle": "Delete all",
-          },
-          "embargoDateColumn": "Embargo release date",
-          "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
-        }
-      }
       onDeleteAll={[Function]}
       requireOpenAccessStatus={true}
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={0}
       key="a.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={true}
       uploadedFile={
-        Object {
+        File {
           "access_condition_id": 8,
-          "name": "a.txt",
-          "size": 100,
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "a.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
         }
       }
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={1}
       key="b.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={true}
       uploadedFile={
-        Object {
-          "name": "b.txt",
-          "size": 100,
+        File {
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "b.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
         }
       }
     />
@@ -740,10 +894,9 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   <h4
     className="sub-title"
   >
-    You may add up to 10 files (max 5GB each)
+    You may add up to 5 files (max 1KB each)
   </h4>
   <FileUploadDropzone
-    clearErrors={true}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -783,22 +936,15 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         },
       }
     }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={
-      Array [
-        Object {
-          "access_condition_id": 9,
-          "name": "a.txt",
-          "size": 100,
-        },
-        Object {
-          "name": "b.txt",
-          "size": 100,
-        },
-      ]
-    }
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 2 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
   />
   <div
     className="metadata-container"
@@ -809,51 +955,56 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     }
   >
     <FileUploadRowHeader
-      locale={
-        Object {
-          "deleteAllFiles": "Remove all files from the upload queue",
-          "deleteAllFilesConfirmation": Object {
-            "cancelButtonLabel": "No",
-            "confirmButtonLabel": "Yes",
-            "confirmationMessage": "Are you sure you want to delete all files?",
-            "confirmationTitle": "Delete all",
-          },
-          "embargoDateColumn": "Embargo release date",
-          "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
-        }
-      }
       onDeleteAll={[Function]}
       requireOpenAccessStatus={true}
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={0}
       key="a.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={true}
       uploadedFile={
-        Object {
+        File {
           "access_condition_id": 9,
-          "name": "a.txt",
-          "size": 100,
+          "date": "2016-01-01T10:00:00+10:00",
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "a.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
         }
       }
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={1}
       key="b.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={true}
       uploadedFile={
-        Object {
-          "name": "b.txt",
-          "size": 100,
+        File {
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "b.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
         }
       }
     />
@@ -870,7 +1021,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         checked={false}
         disabled={false}
         label="I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators."
-        labelPosition="right"
         onCheck={[Function]}
       />
     </div>
@@ -883,10 +1033,9 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   <h4
     className="sub-title"
   >
-    You may add up to 10 files (max 5GB each)
+    You may add up to 5 files (max 1KB each)
   </h4>
   <FileUploadDropzone
-    clearErrors={true}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -926,23 +1075,15 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         },
       }
     }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={
-      Array [
-        Object {
-          "access_condition_id": 9,
-          "date": "10/10/2017",
-          "name": "a.txt",
-          "size": 100,
-        },
-        Object {
-          "name": "b.txt",
-          "size": 100,
-        },
-      ]
-    }
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 2 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
   />
   <div
     className="metadata-container"
@@ -953,52 +1094,56 @@ exports[`Component FileUploader should render rows for uploaded files with acces
     }
   >
     <FileUploadRowHeader
-      locale={
-        Object {
-          "deleteAllFiles": "Remove all files from the upload queue",
-          "deleteAllFilesConfirmation": Object {
-            "cancelButtonLabel": "No",
-            "confirmButtonLabel": "Yes",
-            "confirmationMessage": "Are you sure you want to delete all files?",
-            "confirmationTitle": "Delete all",
-          },
-          "embargoDateColumn": "Embargo release date",
-          "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
-        }
-      }
       onDeleteAll={[Function]}
       requireOpenAccessStatus={true}
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={0}
       key="a.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={true}
       uploadedFile={
-        Object {
+        File {
           "access_condition_id": 9,
           "date": "10/10/2017",
-          "name": "a.txt",
-          "size": 100,
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "a.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
         }
       }
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={1}
       key="b.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={true}
       uploadedFile={
-        Object {
-          "name": "b.txt",
-          "size": 100,
+        File {
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "b.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
         }
       }
     />
@@ -1015,7 +1160,6 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         checked={false}
         disabled={false}
         label="I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators."
-        labelPosition="right"
         onCheck={[Function]}
       />
     </div>
@@ -1028,10 +1172,9 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   <h4
     className="sub-title"
   >
-    You may add up to 10 files (max 5GB each)
+    You may add up to 5 files (max 1KB each)
   </h4>
   <FileUploadDropzone
-    clearErrors={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -1071,10 +1214,8 @@ exports[`Component FileUploader should render rows for uploaded files with defau
         },
       }
     }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={Array []}
+    maxSize={1000}
+    onDrop={[Function]}
   />
   <div
     className="metadata-container"
@@ -1092,10 +1233,9 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   <h4
     className="sub-title"
   >
-    You may add up to 10 files (max 5GB each)
+    You may add up to 5 files (max 1KB each)
   </h4>
   <FileUploadDropzone
-    clearErrors={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
     locale={
       Object {
@@ -1135,23 +1275,15 @@ exports[`Component FileUploader should render rows for uploaded files with defau
         },
       }
     }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={
-      Array [
-        Object {
-          "access_condition_id": 3,
-          "name": "a.txt",
-          "size": 100,
-        },
-        Object {
-          "access_condition_id": 3,
-          "name": "b.txt",
-          "size": 100,
-        },
-      ]
-    }
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 2 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
   />
   <div
     className="metadata-container"
@@ -1162,240 +1294,56 @@ exports[`Component FileUploader should render rows for uploaded files with defau
     }
   >
     <FileUploadRowHeader
-      locale={
-        Object {
-          "deleteAllFiles": "Remove all files from the upload queue",
-          "deleteAllFilesConfirmation": Object {
-            "cancelButtonLabel": "No",
-            "confirmButtonLabel": "Yes",
-            "confirmationMessage": "Are you sure you want to delete all files?",
-            "confirmationTitle": "Delete all",
-          },
-          "embargoDateColumn": "Embargo release date",
-          "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
-        }
-      }
       onDeleteAll={[Function]}
       requireOpenAccessStatus={false}
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      defaultAccessCondition={3}
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={0}
       key="a.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={false}
       uploadedFile={
-        Object {
-          "access_condition_id": 3,
-          "name": "a.txt",
-          "size": 100,
-        }
-      }
-    />
-    <Connect(FileUploadRow)
-      fileSizeUnit="G"
-      focusOnIndex={0}
-      index={1}
-      key="b.txt"
-      onAttributeChanged={[Function]}
-      onDelete={[Function]}
-      requireOpenAccessStatus={false}
-      uploadedFile={
-        Object {
-          "access_condition_id": 3,
-          "name": "b.txt",
-          "size": 100,
-        }
-      }
-    />
-  </div>
-</div>
-`;
-
-exports[`Component FileUploader should render rows for uploaded files with default access condition based on quick template Id 3`] = `
-<div>
-  <h4
-    className="sub-title"
-  >
-    You may add up to 10 files (max 5GB each)
-  </h4>
-  <FileUploadDropzone
-    clearErrors={false}
-    fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
-    locale={
-      Object {
-        "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
-        "errorTitle": "Upload Errors",
-        "fileUploadInstruction": <p>
-          Click here to select files, or drag files into this area to upload
-        </p>,
-        "fileUploadRestrictionHeading": <h3>
-          File upload restrictions
-        </h3>,
-        "fileUploadRestrictions": <div>
-          Please ensure your files:
-          <ul>
-            <li>
-              begin with a letter and are less than 45 characters long
-            </li>
-            <li>
-              contain only upper and lowercase alphanumeric characters, and underscores
-            </li>
-            <li>
-              have only a single period which precedes the file extension: “.pdf”
-            </li>
-            <li>
-              are uploaded individually and not inside a folder
-            </li>
-          </ul>
-        </div>,
-        "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
-        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
-        "successTitle": "Success",
-        "validation": Object {
-          "fileName": "File(s) ([filenames]) have invalid file name",
-          "folder": "Invalid files ([filenames])",
-          "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
-        },
-      }
-    }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={Array []}
-  />
-  <div
-    className="metadata-container"
-    style={
-      Object {
-        "display": "none",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Component FileUploader should render rows for uploaded files with default access condition based on quick template Id 4`] = `
-<div>
-  <h4
-    className="sub-title"
-  >
-    You may add up to 10 files (max 5GB each)
-  </h4>
-  <FileUploadDropzone
-    clearErrors={false}
-    fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
-    locale={
-      Object {
-        "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
-        "errorTitle": "Upload Errors",
-        "fileUploadInstruction": <p>
-          Click here to select files, or drag files into this area to upload
-        </p>,
-        "fileUploadRestrictionHeading": <h3>
-          File upload restrictions
-        </h3>,
-        "fileUploadRestrictions": <div>
-          Please ensure your files:
-          <ul>
-            <li>
-              begin with a letter and are less than 45 characters long
-            </li>
-            <li>
-              contain only upper and lowercase alphanumeric characters, and underscores
-            </li>
-            <li>
-              have only a single period which precedes the file extension: “.pdf”
-            </li>
-            <li>
-              are uploaded individually and not inside a folder
-            </li>
-          </ul>
-        </div>,
-        "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
-        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
-        "successTitle": "Success",
-        "validation": Object {
-          "fileName": "File(s) ([filenames]) have invalid file name",
-          "folder": "Invalid files ([filenames])",
-          "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
-          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
-        },
-      }
-    }
-    maxFiles={10}
-    maxSize={5000000000}
-    onDropped={[Function]}
-    uploadedFiles={
-      Array [
-        Object {
-          "name": "a.txt",
-          "size": 100,
-        },
-        Object {
-          "name": "b.txt",
-          "size": 100,
-        },
-      ]
-    }
-  />
-  <div
-    className="metadata-container"
-    style={
-      Object {
-        "display": "block",
-      }
-    }
-  >
-    <FileUploadRowHeader
-      locale={
-        Object {
-          "deleteAllFiles": "Remove all files from the upload queue",
-          "deleteAllFilesConfirmation": Object {
-            "cancelButtonLabel": "No",
-            "confirmButtonLabel": "Yes",
-            "confirmationMessage": "Are you sure you want to delete all files?",
-            "confirmationTitle": "Delete all",
+        File {
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "a.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
           },
-          "embargoDateColumn": "Embargo release date",
-          "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
-        }
-      }
-      onDeleteAll={[Function]}
-      requireOpenAccessStatus={false}
-    />
-    <Connect(FileUploadRow)
-      fileSizeUnit="G"
-      focusOnIndex={0}
-      index={0}
-      key="a.txt"
-      onAttributeChanged={[Function]}
-      onDelete={[Function]}
-      requireOpenAccessStatus={false}
-      uploadedFile={
-        Object {
-          "name": "a.txt",
-          "size": 100,
         }
       }
     />
     <Connect(FileUploadRow)
-      fileSizeUnit="G"
+      defaultAccessCondition={3}
+      fileSizeUnit="K"
       focusOnIndex={0}
       index={1}
       key="b.txt"
-      onAttributeChanged={[Function]}
+      onAccessConditionChange={[Function]}
       onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
       requireOpenAccessStatus={false}
       uploadedFile={
-        Object {
-          "name": "b.txt",
-          "size": 100,
+        File {
+          Symbol(impl): FileImpl {
+            "_buffer": Object {
+              "data": Array [],
+              "type": "Buffer",
+            },
+            "lastModified": 12345678912,
+            "name": "b.txt",
+            "type": "",
+            Symbol(wrapper): [Circular],
+          },
         }
       }
     />

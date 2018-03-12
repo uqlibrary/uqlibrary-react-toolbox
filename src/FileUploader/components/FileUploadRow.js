@@ -76,11 +76,11 @@ export class FileUploadRow extends Component {
         return `${(size / Math.pow(sizeBase, exponent)).toFixed(1)}${Object.keys(sizeUnitText).map(key => (sizeUnitText[key]))[exponent]}`;
     };
 
-    _notifyAccessConditionChanged = (newValue) => {
+    _updateAccessCondition = (newValue) => {
         this.props.onAccessConditionChange(this.props.uploadedFile, this.props.index, newValue);
     };
 
-    _notifyEmbargoDateChanged = (newValue) => {
+    _updateEmbargoDate = (newValue) => {
         this.props.onEmbargoDateChange(this.props.uploadedFile, this.props.index, newValue);
     };
 
@@ -110,7 +110,7 @@ export class FileUploadRow extends Component {
                             <div className="file-access-selector">
                                 <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
                                 <div className="select-container">
-                                    <FileUploadAccessSelector value={accessConditionId} onChange={this._notifyAccessConditionChanged} disabled={disabled} ref={`accessConditionSelector${index}`} />
+                                    <FileUploadAccessSelector value={accessConditionId} onChange={this._updateAccessCondition} disabled={disabled} ref={`accessConditionSelector${index}`} />
                                     <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{fileAccessColumn}</span>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@ export class FileUploadRow extends Component {
                         {
                             requireOpenAccessStatus && (accessConditionId === OPEN_ACCESS_ID) &&
                             <div className="embargo-date-selector">
-                                <FileUploadEmbargoDate value={new Date(embargoDate)} onChange={this._notifyEmbargoDateChanged} disabled={disabled} />
+                                <FileUploadEmbargoDate value={new Date(embargoDate)} onChange={this._updateEmbargoDate} disabled={disabled} />
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }

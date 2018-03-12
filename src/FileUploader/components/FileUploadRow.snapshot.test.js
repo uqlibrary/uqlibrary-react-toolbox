@@ -11,13 +11,14 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import PropTypes from 'prop-types';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-function setup({index, uploadedFile, requireOpenAccessStatus, onDelete, onAttributeChanged, progress, isUploadInProgress}) {
+function setup({index, uploadedFile, requireOpenAccessStatus, onDelete, onAccessConditionChange, onEmbargoDateChange, progress, isUploadInProgress}) {
     let defaultProps = {
         index: index || 0,
         uploadedFile: uploadedFile || {name: 'a.txt', size: 100},
         requireOpenAccessStatus: requireOpenAccessStatus || false,
         onDelete: onDelete || jest.fn(),
-        onAttributeChanged: onAttributeChanged || jest.fn(),
+        onAccessConditionChange: onAccessConditionChange || jest.fn(),
+        onEmbargoDateChange: onEmbargoDateChange || jest.fn(),
         progress: progress || 0,
         isUploadInProgress: isUploadInProgress || false
     };
@@ -87,31 +88,21 @@ describe('FileUploadRow', () => {
 
     it('updates file metadata correctly with closed access', () => {
         const testFunction = jest.fn();
-        const file = {
-            name: 'a.txt',
-            size: 100,
-            date: '2017-01-01'
-        };
-        const wrapper = setup({requireOpenAccessStatus: true, onAttributeChanged: testFunction, uploadedFile: file});
+        const file = new File([""], 'a.txt');
+        file.date = '2017-01-01';
+        const wrapper = setup({requireOpenAccessStatus: true, onAccessConditionChange: testFunction, uploadedFile: file, index: 0});
 
-        wrapper.instance()._updateFileMetadata({key: 'access_condition_id', value: 8});
-        wrapper.update();
-
-        expect(testFunction).toBeCalled();
-        expect(wrapper.state().access_condition_id).toEqual(8);
-        expect(wrapper.props().uploadedFile.date).toBeUndefined();
+        wrapper.instance()._updateAccessCondition(8);
+        expect(testFunction).toHaveBeenCalledWith(file, 0, 8);
     });
-
 
     it('updates file metadata correctly with open access', () => {
         const testFunction = jest.fn();
-        const wrapper = setup({requireOpenAccessStatus: true, onAttributeChanged: testFunction});
+        const file = new File([""], 'a.txt');
+        file.date = '2017-01-01';
+        const wrapper = setup({requireOpenAccessStatus: true, onAccessConditionChange: testFunction, uploadedFile: file, index: 0});
 
-        wrapper.instance()._updateFileMetadata({key: 'access_condition_id', value: 9});
-        wrapper.update();
-
-        expect(testFunction).toBeCalled();
-        expect(wrapper.state().access_condition_id).toEqual(9);
-        expect(wrapper.props().uploadedFile.date).toBeDefined();
+        wrapper.instance()._updateAccessCondition(9);
+        expect(testFunction).toHaveBeenCalledWith(file, 0, 9);
     });
 });

@@ -1,11 +1,46 @@
+import React from 'react';
 import {FileUploader} from './FileUploader';
+
+const locale = {
+    instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
+    accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
+    validation: {
+        ['folder']: 'Invalid files ([filenames])',
+        ['fileName']: 'File(s) ([filenames]) have invalid file name',
+        ['maxFileSize']: 'File(s) ([filenames]) exceed maximum allowed upload file size',
+        ['maxFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded',
+    },
+    errorTitle: 'Upload Errors',
+    successTitle: 'Success',
+    successMessage: 'Successfully added [numberOfFiles] file(s) to upload queue.',
+    fileUploadRestrictionHeading: (<h3>File upload restrictions</h3>),
+    fileUploadRestrictions: (
+        <div>
+            Please ensure your files:
+            <ul>
+                <li>begin with a letter and are less than 45 characters long</li>
+                <li>contain only upper and lowercase alphanumeric characters, and underscores</li>
+                <li>have only a single period which precedes the file extension: “.pdf”</li>
+                <li>are uploaded individually and not inside a folder</li>
+            </ul>
+        </div>
+    ),
+    fileUploadInstruction: (
+        <p>Click here to select files, or drag files into this area to upload</p>
+    )
+};
 
 function setup(testProps, isShallow = true) {
     const props = {
-        ...testProps,
-        maxFiles: 5,
+        fileRestrictionsConfig: {
+            fileUploadLimit: 5,
+            maxFileSize: 1,
+            fileSizeUnit: 'K'
+        },
         filesInQueue: [],
-        clearFileUpload: jest.fn()
+        clearFileUpload: jest.fn(),
+        locale: locale,
+        ...testProps
     };
     return getElement(FileUploader, props, isShallow);
 }
@@ -15,12 +50,20 @@ beforeAll(() => {
 });
 
 describe('Component FileUploader', () => {
+    let FILE_TO_USE;
     beforeEach(() => {
-        const FILE_READER_TO_USE = new FileReader();
-        window.FileReader = jest.fn(() => FILE_READER_TO_USE);
-        window.FileReader.onerror = () => resolve();
-        window.FileReader.onload = () => resolve();
-        window.FileReader.readAsDataURL = () => (window.FileReader.onload);
+        // Set a mock date for account API
+        const DATE_TO_USE = new Date('2016');
+        const _Date = Date;
+        global.Date = jest.fn(() => DATE_TO_USE);
+        global.Date.UTC = _Date.UTC;
+        global.Date.parse = _Date.parse;
+        global.Date.now = _Date.now;
+
+        const _File = window.File;
+        const FILE = (data = [''], name) => new _File(data, name, {lastModified: 12345678912});
+        window.File = jest.fn((data, name) => FILE(data, name));
+        FILE_TO_USE = (name) => new File([''], name);
     });
 
     it('should render correctly without any setup', () => {
@@ -36,18 +79,9 @@ describe('Component FileUploader', () => {
 
         expect(tree).toMatchSnapshot();
 
-        const files = [
-            {
-                name: 'a.txt',
-                size: 100
-            },
-            {
-                name: 'b.txt',
-                size: 100
-            }
-        ];
+        const files = [FILE_TO_USE('a.txt'), FILE_TO_USE('b.txt')];
 
-        wrapper.instance()._setUploadedFiles(files);
+        wrapper.instance()._handleDroppedFiles(files, new Map([]));
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
@@ -70,33 +104,27 @@ describe('Component FileUploader', () => {
 
         expect(tree).toMatchSnapshot();
 
-        const files = [
-            {
-                name: 'a.txt',
-                size: 100
-            },
-            {
-                name: 'b.txt',
-                size: 100
-            }
-        ];
+        const file_a = FILE_TO_USE('a.txt');
+        const file_b = FILE_TO_USE('b.txt');
+        const files = [file_a, file_b];
 
-        wrapper.instance()._setUploadedFiles(files);
+        wrapper.instance()._handleDroppedFiles(files, new Map([]));
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._replaceFile({ name: 'a.txt', size: 100, access_condition_id: 8 }, 0);
+        wrapper.instance()._updateFileAccessCondition(file_a, 0, 8);
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._replaceFile({ name: 'a.txt', size: 100, access_condition_id: 9 }, 0);
+        wrapper.instance()._updateFileAccessCondition(file_a, 0, 9);
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._replaceFile({ name: 'a.txt', size: 100, access_condition_id: 9, date: '10/10/2017' }, 0);
+        file_a.access_condition_id = 9;
+        wrapper.instance()._updateFileEmbargoDate(file_a, 0, '10/10/2017');
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
@@ -107,80 +135,57 @@ describe('Component FileUploader', () => {
 
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        const files = [
-            {
-                name: 'a.txt',
-                size: 100
-            },
-            {
-                name: 'b.txt',
-                size: 100
-            }
-        ];
+        const file_a = FILE_TO_USE('a.txt');
+        const file_b = FILE_TO_USE('b.txt');
+        const files = [file_a, file_b];
 
-        wrapper.instance()._setUploadedFiles(files);
+        wrapper.instance()._handleDroppedFiles(files, new Map([]));
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 
-    it('should render rows for uploaded files with default access condition based on quick template Id', () => {
+    it('should render rows for uploaded files with access condition dropdown based on quick template Id and require open access', () => {
         const wrapper = setup({ defaultQuickTemplateId: 3, requireOpenAccessStatus: true });
 
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        const files = [
-            {
-                name: 'a.txt',
-                size: 100
-            },
-            {
-                name: 'b.txt',
-                size: 100
-            }
-        ];
+        const file_a = FILE_TO_USE('a.txt');
+        const file_b = FILE_TO_USE('b.txt');
+        const files = [file_a, file_b];
 
-        wrapper.instance()._setUploadedFiles(files);
+        wrapper.instance()._handleDroppedFiles(files, new Map([]));
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 
-
     it('should set max files error message', () => {
-        const wrapper = setup({maxFiles: 3});
-        wrapper.instance().componentWillReceiveProps({
-            uploadedFiles: [
-                {
-                    name: 'a.txt',
-                    size: 100
-                },
-                {
-                    name: 'b.txt',
-                    size: 100
-                }
-            ]
-        });
+        const wrapper = setup({fileRestrictionsConfig: {fileUploadLimit: 3}});
 
-        const accepted = [
-            {
-                name: 'c.txt',
-                size: 500
-            },
-            {
-                name: 'd.txt',
-                size: 10000
-            }
-        ];
+        const file_a = FILE_TO_USE('a.txt');
+        const file_b = FILE_TO_USE('b.txt');
+        const file_c = FILE_TO_USE('c.txt');
+        const file_d = FILE_TO_USE('d.txt');
 
-        const event = {
-            dataTransfer: {
-                items: []
-            }
-        };
+        wrapper.state().filesInQueue = [file_a, file_b];
+        const accepted = [file_c, file_d];
 
-        wrapper.instance()._onDrop(accepted, [], event);
+        wrapper.instance()._handleDroppedFiles(accepted, new Map([]));
         wrapper.update();
         expect(wrapper.state().errorMessage).toEqual('Maximum number of files (3) has been exceeded. File(s) (d.txt) will not be uploaded');
+    });
+
+    it('should remove duplicate files', () => {
+        const wrapper = setup({});
+        const file_a = FILE_TO_USE('a.txt');
+        const file_b = FILE_TO_USE('b.txt');
+        const file_c = FILE_TO_USE('c.txt');
+        const file_d = FILE_TO_USE('d.txt');
+
+        wrapper.state().filesInQueue = [file_a, file_b, file_c];
+        const accepted = [file_c, file_d];
+        const filtered = wrapper.instance().removeDuplicate(accepted);
+        expect(filtered).toEqual(new Set([file_a, file_b, file_c, file_d]));
     });
 });

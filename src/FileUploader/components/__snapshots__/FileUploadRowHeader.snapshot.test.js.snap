@@ -658,16 +658,12 @@ exports[`Component FileUploadRowHeader should render with access condition and e
     <IconButton
       disableTouchRipple={false}
       disabled={false}
-      iconStyle={Object {}}
       onTouchTap={[Function]}
       tooltip="Remove all files from the upload queue"
-      tooltipPosition="bottom-center"
       touch={false}
     >
       <FontIcon
         className="material-icons"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
       >
         delete_forever
       </FontIcon>
@@ -710,16 +706,12 @@ exports[`Component FileUploadRowHeader should render with default setup 1`] = `
     <IconButton
       disableTouchRipple={false}
       disabled={false}
-      iconStyle={Object {}}
       onTouchTap={[Function]}
       tooltip="Remove all files from the upload queue"
-      tooltipPosition="bottom-center"
       touch={false}
     >
       <FontIcon
         className="material-icons"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
       >
         delete_forever
       </FontIcon>
@@ -766,16 +758,12 @@ exports[`Component FileUploadRowHeader should render without access condition ev
     <IconButton
       disableTouchRipple={false}
       disabled={false}
-      iconStyle={Object {}}
       onTouchTap={[Function]}
       tooltip="Remove all files from the upload queue"
-      tooltipPosition="bottom-center"
       touch={false}
     >
       <FontIcon
         className="material-icons"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
       >
         delete_forever
       </FontIcon>

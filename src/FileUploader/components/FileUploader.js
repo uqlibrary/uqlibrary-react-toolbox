@@ -39,8 +39,7 @@ export class FileUploader extends PureComponent {
         clearFileUpload: PropTypes.func,
         disabled: PropTypes.bool,
         defaultQuickTemplateId: PropTypes.number,
-        maxFiles: PropTypes.number.isRequired,
-        fileNameRestrictions: PropTypes.string.isRequired
+        fileNameRestrictions: PropTypes.instanceOf(RegExp).isRequired
     };
 
     static defaultProps = {
@@ -89,11 +88,6 @@ export class FileUploader extends PureComponent {
             errorMessage: '',
             successMessage: ''
         };
-
-        /*
-         * Hold all errors temporarily in map
-         */
-        this.errors = new Map();
     }
 
     componentWillUpdate(nextProps, nextState) {
@@ -264,7 +258,7 @@ export class FileUploader extends PureComponent {
      * @param files
      */
     setDefaultAccessConditionId = (files) => {
-        return files.map(file => {
+        return [...files].map(file => {
             file[FILE_META_KEY_ACCESS_CONDITION] = this.props.defaultQuickTemplateId;
             return new File([file], file.name);
         });

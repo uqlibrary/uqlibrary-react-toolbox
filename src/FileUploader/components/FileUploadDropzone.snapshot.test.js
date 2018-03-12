@@ -20,6 +20,7 @@ function setup(testProps, isShallow = true) {
         onDrop: jest.fn(),
         maxSize: 1000,
         locale: locale,
+        fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/,
         ...testProps,
     };
     return getElement(FileUploadDropzone, props, isShallow);
@@ -92,11 +93,27 @@ describe('Component FileUploadDropzone', () => {
             }
         };
 
+        const filtered = [
+            {
+                name: 'a.txt',
+                size: 500
+            },
+            {
+                name: 'ab.txt',
+                size: 100
+            }
+        ];
+
+        const expectedErrors = new Map([]);
+        expectedErrors.set('maxFileSize', []);
+        expectedErrors.set('folder', ['test']);
+        expectedErrors.set('fileName', ['a.text.txt', 'web_a.txt', 'WEB_b.txt', 'Web_c.txt']);
+
         wrapper.instance()._onDrop(accepted, [], event);
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
-        expect(onDropCallback).toHaveBeenCalledWith(accepted, [], ['test']);
+        expect(onDropCallback).toHaveBeenCalledWith(filtered, expectedErrors);
     });
 
     it('should set max file size error message for rejected files', () => {
@@ -126,9 +143,14 @@ describe('Component FileUploadDropzone', () => {
             }
         };
 
+        const expectedErrors = new Map([]);
+        expectedErrors.set('maxFileSize', ['b.txt']);
+        expectedErrors.set('folder', []);
+        expectedErrors.set('fileName', []);
+
         wrapper.instance()._onDrop(accepted, rejected, event);
         wrapper.update();
-        expect(onDropCallback).toHaveBeenCalledWith(accepted, rejected, []);
+        expect(onDropCallback).toHaveBeenCalledWith(accepted, expectedErrors);
     });
 
     it('should open files selection dialog', () => {

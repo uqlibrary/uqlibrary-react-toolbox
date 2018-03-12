@@ -9,7 +9,7 @@ class FileUploadDropzone extends PureComponent {
         maxSize: PropTypes.number.isRequired,
         locale: PropTypes.object.isRequired,
         disabled: PropTypes.bool,
-        fileNameRestrictions: PropTypes.string
+        fileNameRestrictions: PropTypes.instanceOf(RegExp)
     };
 
     constructor(props) {
