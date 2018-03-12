@@ -82,7 +82,9 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             _this.setState({ filesInQueue: [], errorMessage: '' });
         };
 
-        _this._updateFileAccessCondition = function (file, index, newValue) {
+        _this._updateFileAccessCondition = function (fileToUpdate, index, newValue) {
+            var file = new File([fileToUpdate], fileToUpdate.name);
+
             file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
             if (!_this.isOpenAccess(newValue) && file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE)) {
@@ -129,7 +131,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 _this.queueFiles([].concat(_toConsumableArray(uniqueFilesToQueue)));
             }
 
-            console.log(Array.from(errors));
             /*
              * Process any errors
              */
@@ -318,7 +319,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         /**
          * Update file's access condition and/or embargo date based on selected value
          *
-         * @param file
+         * @param fileToUpdate
          * @param index
          * @param newValue
          * @private
@@ -479,9 +480,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     defaultAccessCondition: _this2.props.defaultQuickTemplateId,
                     requireOpenAccessStatus: requireOpenAccessStatus && !_this2.props.defaultQuickTemplateId,
                     disabled: _this2.props.disabled,
-                    focusOnIndex: _this2.state.focusOnIndex,
-                    accessConditionValue: file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION],
-                    embargoDateValue: file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE]
+                    focusOnIndex: _this2.state.focusOnIndex
                 });
             });
 

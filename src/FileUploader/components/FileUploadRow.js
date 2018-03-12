@@ -29,9 +29,7 @@ export class FileUploadRow extends Component {
         focusOnIndex: PropTypes.number,
         onAccessConditionChange: PropTypes.func,
         onEmbargoDateChange: PropTypes.func,
-        defaultAccessCondition: PropTypes.number,
-        accessConditionValue: PropTypes.number,
-        embargoDateValue: PropTypes.string
+        defaultAccessCondition: PropTypes.number
     };
 
     static defaultProps = {
@@ -48,17 +46,11 @@ export class FileUploadRow extends Component {
             embargoDateColumn: 'Embargo date',
             embargoDateClosedAccess: 'No date required',
             uploadInProgressTxt: 'Uploading...'
-        },
-        accessConditionValue: null,
-        embargoDateValue: null
+        }
     };
 
     constructor(props) {
         super(props);
-        this.state = {
-            [FILE_META_KEY_ACCESS_CONDITION]: props.defaultAccessCondition || null,
-            [FILE_META_KEY_EMBARGO_DATE]: null
-        };
     }
 
     componentDidMount() {
@@ -69,13 +61,6 @@ export class FileUploadRow extends Component {
             // if access condition is not required, then scroll into filename
             this.refs[`fileName${indexToFocus}`].scrollIntoView();
         }
-    }
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            [FILE_META_KEY_ACCESS_CONDITION]: nextProps.accessConditionValue,
-            [FILE_META_KEY_EMBARGO_DATE]: nextProps.embargoDateValue
-        });
     }
 
     _showConfirmation = () => {
@@ -103,6 +88,9 @@ export class FileUploadRow extends Component {
         const {deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateClosedAccess, uploadInProgressTxt, deleteHint} = this.props.locale;
         const {progress, uploadedFile, index, requireOpenAccessStatus, disabled, isUploadInProgress} = this.props;
 
+        const accessConditionId = uploadedFile[FILE_META_KEY_ACCESS_CONDITION];
+        const embargoDate = uploadedFile[FILE_META_KEY_EMBARGO_DATE];
+
         return (
             <div className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix">
                 <ConfirmDialogBox
@@ -122,7 +110,7 @@ export class FileUploadRow extends Component {
                             <div className="file-access-selector">
                                 <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
                                 <div className="select-container">
-                                    <FileUploadAccessSelector value={this.props.accessConditionValue} onChange={this._notifyAccessConditionChanged} disabled={disabled} ref={`accessConditionSelector${index}`} />
+                                    <FileUploadAccessSelector value={accessConditionId} onChange={this._notifyAccessConditionChanged} disabled={disabled} ref={`accessConditionSelector${index}`} />
                                     <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{fileAccessColumn}</span>
                                 </div>
                             </div>
@@ -135,16 +123,16 @@ export class FileUploadRow extends Component {
                             <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
                         }
                         {
-                            requireOpenAccessStatus && !(this.state.access_condition_id === OPEN_ACCESS_ID) &&
+                            requireOpenAccessStatus && !(accessConditionId === OPEN_ACCESS_ID) &&
                             <div className="no-embargo-date">
                                 <span>{embargoDateClosedAccess}</span>
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }
                         {
-                            requireOpenAccessStatus && (this.state.access_condition_id === OPEN_ACCESS_ID) &&
+                            requireOpenAccessStatus && (accessConditionId === OPEN_ACCESS_ID) &&
                             <div className="embargo-date-selector">
-                                <FileUploadEmbargoDate value={new Date(this.props.embargoDateValue)} onChange={this._notifyEmbargoDateChanged} disabled={disabled} />
+                                <FileUploadEmbargoDate value={new Date(embargoDate)} onChange={this._notifyEmbargoDateChanged} disabled={disabled} />
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }

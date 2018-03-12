@@ -137,12 +137,14 @@ export class FileUploader extends PureComponent {
     /**
      * Update file's access condition and/or embargo date based on selected value
      *
-     * @param file
+     * @param fileToUpdate
      * @param index
      * @param newValue
      * @private
      */
-    _updateFileAccessCondition = (file, index, newValue) => {
+    _updateFileAccessCondition = (fileToUpdate, index, newValue) => {
+        const file = new File([fileToUpdate], fileToUpdate.name);
+
         file[FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
         if (!this.isOpenAccess(newValue) && file.hasOwnProperty(FILE_META_KEY_EMBARGO_DATE)) {
@@ -405,8 +407,6 @@ export class FileUploader extends PureComponent {
                     requireOpenAccessStatus={requireOpenAccessStatus && !this.props.defaultQuickTemplateId}
                     disabled={this.props.disabled}
                     focusOnIndex={this.state.focusOnIndex}
-                    accessConditionValue={file[FILE_META_KEY_ACCESS_CONDITION]}
-                    embargoDateValue={file[FILE_META_KEY_EMBARGO_DATE]}
                 />
             );
         });

@@ -47,8 +47,6 @@ var _FileUploader = require('./FileUploader');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -101,8 +99,6 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
     _inherits(FileUploadRow, _Component);
 
     function FileUploadRow(props) {
-        var _this$state;
-
         _classCallCheck(this, FileUploadRow);
 
         var _this = _possibleConstructorReturn(this, (FileUploadRow.__proto__ || Object.getPrototypeOf(FileUploadRow)).call(this, props));
@@ -130,7 +126,6 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
             _this.props.onEmbargoDateChange(_this.props.uploadedFile, _this.props.index, newValue);
         };
 
-        _this.state = (_this$state = {}, _defineProperty(_this$state, FILE_META_KEY_ACCESS_CONDITION, props.defaultAccessCondition || null), _defineProperty(_this$state, FILE_META_KEY_EMBARGO_DATE, null), _this$state);
         return _this;
     }
 
@@ -144,13 +139,6 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 // if access condition is not required, then scroll into filename
                 this.refs['fileName' + indexToFocus].scrollIntoView();
             }
-        }
-    }, {
-        key: 'componentWillReceiveProps',
-        value: function componentWillReceiveProps(nextProps) {
-            var _setState;
-
-            this.setState((_setState = {}, _defineProperty(_setState, FILE_META_KEY_ACCESS_CONDITION, nextProps.accessConditionValue), _defineProperty(_setState, FILE_META_KEY_EMBARGO_DATE, nextProps.embargoDateValue), _setState));
         }
     }, {
         key: 'render',
@@ -173,6 +161,9 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 disabled = _props.disabled,
                 isUploadInProgress = _props.isUploadInProgress;
 
+
+            var accessConditionId = uploadedFile[FILE_META_KEY_ACCESS_CONDITION];
+            var embargoDate = uploadedFile[FILE_META_KEY_EMBARGO_DATE];
 
             return _react2.default.createElement(
                 'div',
@@ -215,7 +206,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'select-container' },
-                            _react2.default.createElement(_FileUploadAccessSelector2.default, { value: this.props.accessConditionValue, onChange: this._notifyAccessConditionChanged, disabled: disabled, ref: 'accessConditionSelector' + index }),
+                            _react2.default.createElement(_FileUploadAccessSelector2.default, { value: accessConditionId, onChange: this._notifyAccessConditionChanged, disabled: disabled, ref: 'accessConditionSelector' + index }),
                             _react2.default.createElement(
                                 'span',
                                 { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },
@@ -231,7 +222,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         'div',
                         { className: 'embargo-date-info' },
                         requireOpenAccessStatus && _ref3,
-                        requireOpenAccessStatus && !(this.state.access_condition_id === _FileUploadAccessSelector.OPEN_ACCESS_ID) && _react2.default.createElement(
+                        requireOpenAccessStatus && !(accessConditionId === _FileUploadAccessSelector.OPEN_ACCESS_ID) && _react2.default.createElement(
                             'div',
                             { className: 'no-embargo-date' },
                             _react2.default.createElement(
@@ -245,10 +236,10 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                                 embargoDateColumn
                             )
                         ),
-                        requireOpenAccessStatus && this.state.access_condition_id === _FileUploadAccessSelector.OPEN_ACCESS_ID && _react2.default.createElement(
+                        requireOpenAccessStatus && accessConditionId === _FileUploadAccessSelector.OPEN_ACCESS_ID && _react2.default.createElement(
                             'div',
                             { className: 'embargo-date-selector' },
-                            _react2.default.createElement(_FileUploadEmbargoDate2.default, { value: new Date(this.props.embargoDateValue), onChange: this._notifyEmbargoDateChanged, disabled: disabled }),
+                            _react2.default.createElement(_FileUploadEmbargoDate2.default, { value: new Date(embargoDate), onChange: this._notifyEmbargoDateChanged, disabled: disabled }),
                             _react2.default.createElement(
                                 'span',
                                 { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },
@@ -316,9 +307,7 @@ FileUploadRow.defaultProps = {
         embargoDateColumn: 'Embargo date',
         embargoDateClosedAccess: 'No date required',
         uploadInProgressTxt: 'Uploading...'
-    },
-    accessConditionValue: null,
-    embargoDateValue: null
+    }
 };
 
 
