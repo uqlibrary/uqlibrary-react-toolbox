@@ -161,13 +161,17 @@ export class FileUploader extends PureComponent {
     /**
      * Update file's embargo date
      *
-     * @param file
+     * @param fileToUpdate
      * @param index
      * @param newValue
      * @private
      */
-    _updateFileEmbargoDate = (file, index, newValue) => {
+    _updateFileEmbargoDate = (fileToUpdate, index, newValue) => {
+        const file = new File([fileToUpdate], fileToUpdate.name);
+
+        file[FILE_META_KEY_ACCESS_CONDITION] = fileToUpdate[FILE_META_KEY_ACCESS_CONDITION];
         file[FILE_META_KEY_EMBARGO_DATE] = newValue;
+
         this.replaceFile(file, index);
     };
 

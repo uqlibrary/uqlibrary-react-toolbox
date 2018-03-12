@@ -98,8 +98,12 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             _this.replaceFile(file, index);
         };
 
-        _this._updateFileEmbargoDate = function (file, index, newValue) {
+        _this._updateFileEmbargoDate = function (fileToUpdate, index, newValue) {
+            var file = new File([fileToUpdate], fileToUpdate.name);
+
+            file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] = fileToUpdate[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION];
             file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE] = newValue;
+
             _this.replaceFile(file, index);
         };
 
@@ -340,7 +344,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         /**
          * Update file's embargo date
          *
-         * @param file
+         * @param fileToUpdate
          * @param index
          * @param newValue
          * @private
