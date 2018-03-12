@@ -176,6 +176,32 @@ describe('Component FileUploader', () => {
         expect(wrapper.state().errorMessage).toEqual('Maximum number of files (3) has been exceeded. File(s) (d.txt) will not be uploaded');
     });
 
+    it('should accept terms and condition and reset back to not accepted state if access condition changed back to closed access', () => {
+        const wrapper = setup({requireOpenAccessStatus: true});
+
+        const file_a = FILE_TO_USE('a.txt');
+
+        wrapper.instance()._handleDroppedFiles([file_a], new Map([]));
+        wrapper.update();
+        expect(toJson(wrapper)).toMatchSnapshot();
+
+        wrapper.instance()._updateFileAccessCondition(file_a, 0, 9);
+        wrapper.update();
+        expect(toJson(wrapper)).toMatchSnapshot();
+
+        wrapper.instance()._acceptTermsAndConditions({}, true);
+        wrapper.update();
+        expect(toJson(wrapper)).toMatchSnapshot();
+
+        expect(wrapper.state().termsAndConditions).toBeTruthy();
+
+        wrapper.instance()._updateFileAccessCondition(file_a, 0, 8);
+        wrapper.update();
+        expect(toJson(wrapper)).toMatchSnapshot();
+
+        expect(wrapper.state().termsAndConditions).toBeFalsy();
+    });
+
     it('should remove duplicate files', () => {
         const wrapper = setup({});
         const file_a = FILE_TO_USE('a.txt');
@@ -187,5 +213,70 @@ describe('Component FileUploader', () => {
         const accepted = [file_c, file_d];
         const filtered = wrapper.instance().removeDuplicate(accepted);
         expect(filtered).toEqual(new Set([file_a, file_b, file_c, file_d]));
+    });
+
+    it('should return false if any file has open access with date selected but terms and conditions not accepted', () => {
+        const wrapper = setup({requireOpenAccessStatus: true});
+
+        const file_a = FILE_TO_USE('a.txt');
+        file_a.access_condition_id = 8;
+        const file_b = FILE_TO_USE('b.txt');
+        file_b.access_condition_id = 9;
+        file_b.date = '2017-01-01';
+        const file_c = FILE_TO_USE('c.txt');
+        file_c.access_condition_id = 8;
+        const file_d = FILE_TO_USE('d.txt');
+        file_d.access_condition_id = 8;
+
+        wrapper.state().filesInQueue = [file_a, file_b, file_c, file_d];
+        wrapper.state().termsAndConditions = false;
+        expect(wrapper.instance().isFileUploadValid(wrapper.state())).toBeFalsy();
+    });
+
+    it('should return true on if all files are closed access', () => {
+        const wrapper = setup({requireOpenAccessStatus: true});
+
+        const file_a = FILE_TO_USE('a.txt');
+        file_a.access_condition_id = 8;
+        const file_b = FILE_TO_USE('b.txt');
+        file_b.access_condition_id = 8;
+        const file_c = FILE_TO_USE('c.txt');
+        file_c.access_condition_id = 8;
+        const file_d = FILE_TO_USE('d.txt');
+        file_d.access_condition_id = 8;
+
+        wrapper.state().filesInQueue = [file_a, file_b, file_c, file_d];
+        wrapper.state().termsAndConditions = false;
+        expect(wrapper.instance().isFileUploadValid(wrapper.state())).toBeTruthy();
+    });
+
+    it('should return true on if any file is open access with date selected and terms and conditions accepted', () => {
+        const wrapper = setup({requireOpenAccessStatus: true});
+
+        const file_a = FILE_TO_USE('a.txt');
+        file_a.access_condition_id = 8;
+        const file_b = FILE_TO_USE('b.txt');
+        file_b.access_condition_id = 9;
+        file_b.date = '2017-01-01';
+        const file_c = FILE_TO_USE('c.txt');
+        file_c.access_condition_id = 8;
+        const file_d = FILE_TO_USE('d.txt');
+        file_d.access_condition_id = 8;
+
+        wrapper.state().filesInQueue = [file_a, file_b, file_c, file_d];
+        wrapper.state().termsAndConditions = true;
+        expect(wrapper.instance().isFileUploadValid(wrapper.state())).toBeTruthy();
+    });
+
+    it('should return false on if access condition is not selected for any files', () => {
+        const wrapper = setup({requireOpenAccessStatus: true});
+
+        const file_a = FILE_TO_USE('a.txt');
+        const file_b = FILE_TO_USE('b.txt');
+        const file_c = FILE_TO_USE('c.txt');
+        const file_d = FILE_TO_USE('d.txt');
+
+        wrapper.state().filesInQueue = [file_a, file_b, file_c, file_d];
+        expect(wrapper.instance().isFileUploadValid(wrapper.state())).toBeFalsy();
     });
 });
