@@ -146,7 +146,7 @@ export class FileUploader extends PureComponent {
         }
 
         if (this.isOpenAccess(newValue) && !file.hasOwnProperty(FILE_META_KEY_EMBARGO_DATE)) {
-            file[FILE_META_KEY_EMBARGO_DATE] = moment().format();
+            file[FILE_META_KEY_EMBARGO_DATE] = moment(new Date()).format();
         }
 
         this.replaceFile(file, index);

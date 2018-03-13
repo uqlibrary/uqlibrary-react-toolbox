@@ -118,11 +118,11 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
             })[exponent];
         };
 
-        _this._notifyAccessConditionChanged = function (newValue) {
+        _this._updateAccessCondition = function (newValue) {
             _this.props.onAccessConditionChange(_this.props.uploadedFile, _this.props.index, newValue);
         };
 
-        _this._notifyEmbargoDateChanged = function (newValue) {
+        _this._updateEmbargoDate = function (newValue) {
             _this.props.onEmbargoDateChange(_this.props.uploadedFile, _this.props.index, newValue);
         };
 
@@ -206,7 +206,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'select-container' },
-                            _react2.default.createElement(_FileUploadAccessSelector2.default, { value: accessConditionId, onChange: this._notifyAccessConditionChanged, disabled: disabled, ref: 'accessConditionSelector' + index }),
+                            _react2.default.createElement(_FileUploadAccessSelector2.default, { value: accessConditionId, onChange: this._updateAccessCondition, disabled: disabled, ref: 'accessConditionSelector' + index }),
                             _react2.default.createElement(
                                 'span',
                                 { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },
@@ -239,7 +239,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         requireOpenAccessStatus && accessConditionId === _FileUploadAccessSelector.OPEN_ACCESS_ID && _react2.default.createElement(
                             'div',
                             { className: 'embargo-date-selector' },
-                            _react2.default.createElement(_FileUploadEmbargoDate2.default, { value: new Date(embargoDate), onChange: this._notifyEmbargoDateChanged, disabled: disabled }),
+                            _react2.default.createElement(_FileUploadEmbargoDate2.default, { value: new Date(embargoDate), onChange: this._updateEmbargoDate, disabled: disabled }),
                             _react2.default.createElement(
                                 'span',
                                 { className: 'is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle' },

@@ -92,7 +92,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             }
 
             if (_this.isOpenAccess(newValue) && !file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE)) {
-                file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE] = moment().format();
+                file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE] = moment(new Date()).format();
             }
 
             _this.replaceFile(file, index);
@@ -160,7 +160,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this.setDefaultAccessConditionId = function (files) {
-            return files.map(function (file) {
+            return [].concat(_toConsumableArray(files)).map(function (file) {
                 file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] = _this.props.defaultQuickTemplateId;
                 return new File([file], file.name);
             });
@@ -292,11 +292,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             errorMessage: '',
             successMessage: ''
         };
-
-        /*
-         * Hold all errors temporarily in map
-         */
-        _this.errors = new Map();
         return _this;
     }
 
