@@ -28,8 +28,7 @@ export class FileUploadRow extends Component {
         disabled: PropTypes.bool,
         focusOnIndex: PropTypes.number,
         onAccessConditionChange: PropTypes.func,
-        onEmbargoDateChange: PropTypes.func,
-        defaultAccessCondition: PropTypes.number
+        onEmbargoDateChange: PropTypes.func
     };
 
     static defaultProps = {
