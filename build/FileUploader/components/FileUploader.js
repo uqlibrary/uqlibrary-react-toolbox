@@ -102,7 +102,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             var file = new File([fileToUpdate], fileToUpdate.name);
 
             file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] = fileToUpdate[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION];
-            file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE] = newValue;
+            file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE] = moment(newValue).format();
 
             _this.replaceFile(file, index);
         };

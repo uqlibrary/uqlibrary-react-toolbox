@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'material-ui/DatePicker';
 
-const moment = require('moment');
-
 export default class FileUploadEmbargoDate extends Component {
     static propTypes = {
         onChange: PropTypes.func,
@@ -32,7 +30,7 @@ export default class FileUploadEmbargoDate extends Component {
     }
 
     _onChange = (event, value) => {
-        if (this.props.onChange) this.props.onChange(moment(value).format());
+        if (this.props.onChange) this.props.onChange(value);
     };
 
     _onKeyPress = () => {

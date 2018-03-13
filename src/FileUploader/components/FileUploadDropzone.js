@@ -58,7 +58,7 @@ class FileUploadDropzone extends PureComponent {
 
     filterFilesWithInvalidNames = (files) => {
         const filesToFilter = [...files];
-        // const regex = new RegExp(this.props.fileNameRestrictions, 'gi');
+
         /*
          * Validate accepted files and get list of invalid files (check fileName, fileNameLength)
          */

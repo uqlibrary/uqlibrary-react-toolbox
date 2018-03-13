@@ -53,7 +53,7 @@ var FileUploadDropzone = function (_PureComponent) {
 
         _this.filterFilesWithInvalidNames = function (files) {
             var filesToFilter = [].concat(_toConsumableArray(files));
-            // const regex = new RegExp(this.props.fileNameRestrictions, 'gi');
+
             /*
              * Validate accepted files and get list of invalid files (check fileName, fileNameLength)
              */
