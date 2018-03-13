@@ -110,12 +110,15 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _deleteFile = (file, index) => {
+        const filesInQueue = [
+            ...this.state.filesInQueue.slice(0, index),
+            ...this.state.filesInQueue.slice(index + 1)
+        ];
+
         this.setState({
-            filesInQueue: [
-                ...this.state.filesInQueue.slice(0, index),
-                ...this.state.filesInQueue.slice(index + 1)
-            ],
-            errorMessage: ''
+            filesInQueue: filesInQueue,
+            errorMessage: '',
+            termsAndConditions: this.state.termsAndConditions && !this.areAllClosedAccess(filesInQueue)
         });
     };
 
@@ -125,7 +128,7 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _deleteAllFiles = () => {
-        this.setState({filesInQueue: [], errorMessage: ''});
+        this.setState({filesInQueue: [], errorMessage: '', termsAndConditions: false});
     };
 
     /**

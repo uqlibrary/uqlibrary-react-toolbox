@@ -72,14 +72,17 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         var _this = _possibleConstructorReturn(this, (FileUploader.__proto__ || Object.getPrototypeOf(FileUploader)).call(this, props));
 
         _this._deleteFile = function (file, index) {
+            var filesInQueue = [].concat(_toConsumableArray(_this.state.filesInQueue.slice(0, index)), _toConsumableArray(_this.state.filesInQueue.slice(index + 1)));
+
             _this.setState({
-                filesInQueue: [].concat(_toConsumableArray(_this.state.filesInQueue.slice(0, index)), _toConsumableArray(_this.state.filesInQueue.slice(index + 1))),
-                errorMessage: ''
+                filesInQueue: filesInQueue,
+                errorMessage: '',
+                termsAndConditions: _this.state.termsAndConditions && !_this.areAllClosedAccess(filesInQueue)
             });
         };
 
         _this._deleteAllFiles = function () {
-            _this.setState({ filesInQueue: [], errorMessage: '' });
+            _this.setState({ filesInQueue: [], errorMessage: '', termsAndConditions: false });
         };
 
         _this._updateFileAccessCondition = function (fileToUpdate, index, newValue) {

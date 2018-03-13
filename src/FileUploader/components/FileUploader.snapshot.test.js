@@ -90,6 +90,7 @@ describe('Component FileUploader', () => {
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
+        expect(wrapper.instance().state.termsAndConditions).toBeFalsy();
 
         wrapper.instance()._deleteAllFiles();
         wrapper.update();
