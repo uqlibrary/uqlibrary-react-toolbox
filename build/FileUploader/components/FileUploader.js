@@ -92,7 +92,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             }
 
             if (_this.isOpenAccess(newValue) && !file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE)) {
-                file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE] = moment(new Date()).format();
+                file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE] = moment().format();
             }
 
             _this.replaceFile(file, index);
