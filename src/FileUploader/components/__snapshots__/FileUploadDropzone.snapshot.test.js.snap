@@ -74,7 +74,7 @@ exports[`Component FileUploadDropzone should open files selection dialog 1`] = `
               }
             >
               <FileUploadDropzoneStaticContent
-                txt={
+                locale={
                   Object {
                     "errorTitle": "Upload Errors",
                     "fileUploadInstruction": "Test instructions",
@@ -178,7 +178,7 @@ exports[`Component FileUploadDropzone should render correctly without any setup 
         }
       >
         <FileUploadDropzoneStaticContent
-          txt={
+          locale={
             Object {
               "errorTitle": "Upload Errors",
               "fileUploadInstruction": "Test instructions",
@@ -227,7 +227,7 @@ exports[`Component FileUploadDropzone should render files discarding folders 1`]
         }
       >
         <FileUploadDropzoneStaticContent
-          txt={
+          locale={
             Object {
               "errorTitle": "Upload Errors",
               "fileUploadInstruction": "Test instructions",
@@ -276,7 +276,7 @@ exports[`Component FileUploadDropzone should render files discarding folders 2`]
         }
       >
         <FileUploadDropzoneStaticContent
-          txt={
+          locale={
             Object {
               "errorTitle": "Upload Errors",
               "fileUploadInstruction": "Test instructions",

@@ -146,7 +146,7 @@ class FileUploadDropzone extends PureComponent {
                             disabled={disabled}
                             disableClick={disabled}
                             disablePreview>
-                            <FileUploadDropzoneStaticContent txt={locale}/>
+                            <FileUploadDropzoneStaticContent locale={locale}/>
                         </Dropzone>
                     </div>
                 </div>

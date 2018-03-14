@@ -11,7 +11,7 @@ function setup(testProps, isShallow = true) {
 describe('Component FileUploadDropzoneStaticContent', () => {
     it('should render with default setup', () => {
         const props = {
-            txt: {
+            locale: {
                 fileUploadRestrictionHeading: 'Restrictions for file upload',
                 fileUploadRestrictions: 'No restrictions applies to Tests!!!',
                 fileUploadInstruction: 'Upload whatever you like :)'
