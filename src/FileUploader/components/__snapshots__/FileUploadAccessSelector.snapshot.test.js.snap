@@ -11,16 +11,8 @@ exports[`Component FileUploadAccessSelector should render access condition disab
   }
 >
   <FileUploadAccessSelector
-    defaultConfig={
-      Object {
-        "accessIds": Array [
-          1,
-          2,
-        ],
-        "fieldName": "accessCondition",
-      }
-    }
     disabled={true}
+    fieldName="accessCondition"
     locale={
       Object {
         "accessSelectOptionsText": Object {
@@ -1410,16 +1402,8 @@ exports[`Component FileUploadAccessSelector should render access condition disab
   }
 >
   <FileUploadAccessSelector
-    defaultConfig={
-      Object {
-        "accessIds": Array [
-          1,
-          2,
-        ],
-        "fieldName": "accessCondition",
-      }
-    }
     disabled={true}
+    fieldName="accessCondition"
     locale={
       Object {
         "accessSelectOptionsText": Object {
