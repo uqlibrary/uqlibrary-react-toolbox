@@ -462,7 +462,7 @@ export class FileUploader extends PureComponent {
                     {
                         requireOpenAccessStatus && this.isAnyOpenAccess(filesInQueue) &&
                         <div style={{position: 'relative', width: '100%'}} className={!termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox'}>
-                            <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={termsAndConditions} />
+                            <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={termsAndConditions} disabled={this.props.disabled} />
                         </div>
                     }
                 </div>
