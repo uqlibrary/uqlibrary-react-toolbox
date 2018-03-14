@@ -118,7 +118,7 @@ export class FileUploader extends PureComponent {
         this.setState({
             filesInQueue: filesInQueue,
             errorMessage: '',
-            isTermsAndConditionsAccepted: this.state.isTermsAndConditionsAccepted && !this.areAllClosedAccess(filesInQueue)
+            isTermsAndConditionsAccepted: this.state.isTermsAndConditionsAccepted && this.isAnyOpenAccess(filesInQueue)
         });
     };
 
@@ -236,7 +236,7 @@ export class FileUploader extends PureComponent {
         this.setState({
             filesInQueue: filesInQueue,
             errorMessage: '',
-            isTermsAndConditionsAccepted: this.state.isTermsAndConditionsAccepted && !this.areAllClosedAccess(filesInQueue)
+            isTermsAndConditionsAccepted: this.state.isTermsAndConditionsAccepted && this.isAnyOpenAccess(filesInQueue)
         });
     };
 
@@ -300,16 +300,6 @@ export class FileUploader extends PureComponent {
      */
     isAnyOpenAccess = (files) => {
         return files.filter((file) => (this.hasAccess(file) && this.isOpenAccess(file[FILE_META_KEY_ACCESS_CONDITION]))).length > 0;
-    };
-
-    /**
-     * Check if all files are closed accessed
-     *
-     * @param files
-     * @returns {boolean}
-     */
-    areAllClosedAccess = (files) => {
-        return files.filter((file) => (this.hasAccess(file) && !this.isOpenAccess(file[FILE_META_KEY_ACCESS_CONDITION]))).length === files.length;
     };
 
     /**
@@ -463,7 +453,7 @@ export class FileUploader extends PureComponent {
 
                         {
                             requireOpenAccessStatus && this.isAnyOpenAccess(filesInQueue) &&
-                            <div className={`open-access-checkbox ${!isTermsAndConditionsAccepted ? 'error-checkbox' : ''}`}>
+                            <div className={`open-access-checkbox${!isTermsAndConditionsAccepted ? ' error-checkbox' : ''}`}>
                                 <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={isTermsAndConditionsAccepted} disabled={this.props.disabled} />
                             </div>
                         }
