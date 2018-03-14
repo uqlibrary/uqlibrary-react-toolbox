@@ -79,7 +79,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             _this.setState({
                 filesInQueue: filesInQueue,
                 errorMessage: '',
-                isTermsAndConditionsAccepted: _this.state.isTermsAndConditionsAccepted && !_this.areAllClosedAccess(filesInQueue)
+                isTermsAndConditionsAccepted: _this.state.isTermsAndConditionsAccepted && _this.isAnyOpenAccess(filesInQueue)
             });
         };
 
@@ -151,7 +151,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             _this.setState({
                 filesInQueue: filesInQueue,
                 errorMessage: '',
-                isTermsAndConditionsAccepted: _this.state.isTermsAndConditionsAccepted && !_this.areAllClosedAccess(filesInQueue)
+                isTermsAndConditionsAccepted: _this.state.isTermsAndConditionsAccepted && _this.isAnyOpenAccess(filesInQueue)
             });
         };
 
@@ -191,12 +191,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             return files.filter(function (file) {
                 return _this.hasAccess(file) && _this.isOpenAccess(file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION]);
             }).length > 0;
-        };
-
-        _this.areAllClosedAccess = function (files) {
-            return files.filter(function (file) {
-                return _this.hasAccess(file) && !_this.isOpenAccess(file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION]);
-            }).length === files.length;
         };
 
         _this.hasAccess = function (file) {
@@ -430,14 +424,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
 
         /**
-         * Check if all files are closed accessed
-         *
-         * @param files
-         * @returns {boolean}
-         */
-
-
-        /**
          * Check if file as access conditions field
          *
          * @param file
@@ -542,7 +528,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     filesInQueueRow,
                     requireOpenAccessStatus && this.isAnyOpenAccess(filesInQueue) && _react2.default.createElement(
                         'div',
-                        { className: 'open-access-checkbox ' + (!isTermsAndConditionsAccepted ? 'error-checkbox' : '') },
+                        { className: 'open-access-checkbox' + (!isTermsAndConditionsAccepted ? ' error-checkbox' : '') },
                         _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this._acceptTermsAndConditions, checked: isTermsAndConditionsAccepted, disabled: this.props.disabled })
                     )
                 )

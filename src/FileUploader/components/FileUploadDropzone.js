@@ -111,7 +111,7 @@ class FileUploadDropzone extends PureComponent {
          * Using FileReader API async to read slice of file will throw an error if it's a folder
          */
         if (!!event && !!event.dataTransfer && !!event.dataTransfer.items) {
-            const folders =  Array.prototype.filter.call(event.dataTransfer.items, (item) => (item.webkitGetAsEntry().isDirectory))
+            const folders =  [...event.dataTransfer.items].filter((item) => (item.webkitGetAsEntry().isDirectory))
                 .map((item) => item.webkitGetAsEntry().name);
 
             this.filterOnDrop([...accepted], [...folders]);
