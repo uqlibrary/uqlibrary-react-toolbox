@@ -95,7 +95,7 @@ var FileUploadDropzone = function (_PureComponent) {
              * Using FileReader API async to read slice of file will throw an error if it's a folder
              */
             if (!!event && !!event.dataTransfer && !!event.dataTransfer.items) {
-                var folders = event.dataTransfer.items.filter(function (item) {
+                var folders = Array.prototype.filter.call(event.dataTransfer.items, function (item) {
                     return item.webkitGetAsEntry().isDirectory;
                 }).map(function (item) {
                     return item.webkitGetAsEntry().name;
