@@ -84,7 +84,7 @@ export class FileUploader extends PureComponent {
         super(props);
         this.state = {
             filesInQueue: [],
-            termsAndConditions: false,
+            isTermsAndConditionsAccepted: false,
             errorMessage: '',
             successMessage: ''
         };
@@ -118,7 +118,7 @@ export class FileUploader extends PureComponent {
         this.setState({
             filesInQueue: filesInQueue,
             errorMessage: '',
-            termsAndConditions: this.state.termsAndConditions && !this.areAllClosedAccess(filesInQueue)
+            isTermsAndConditionsAccepted: this.state.isTermsAndConditionsAccepted && !this.areAllClosedAccess(filesInQueue)
         });
     };
 
@@ -128,7 +128,7 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _deleteAllFiles = () => {
-        this.setState({filesInQueue: [], errorMessage: '', termsAndConditions: false});
+        this.setState({filesInQueue: [], errorMessage: '', isTermsAndConditionsAccepted: false});
     };
 
     /**
@@ -140,7 +140,7 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _updateFileAccessCondition = (fileToUpdate, index, newValue) => {
-        const file = new File([fileToUpdate], fileToUpdate.name);
+        const file = {...fileToUpdate};
 
         file[FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
@@ -164,9 +164,8 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _updateFileEmbargoDate = (fileToUpdate, index, newValue) => {
-        const file = new File([fileToUpdate], fileToUpdate.name);
+        const file = {...fileToUpdate};
 
-        file[FILE_META_KEY_ACCESS_CONDITION] = fileToUpdate[FILE_META_KEY_ACCESS_CONDITION];
         file[FILE_META_KEY_EMBARGO_DATE] = moment(newValue).format();
 
         this.replaceFile(file, index);
@@ -180,7 +179,7 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _acceptTermsAndConditions = (event, value) => {
-        this.setState({termsAndConditions: value});
+        this.setState({isTermsAndConditionsAccepted: value});
     };
 
     /**
@@ -237,7 +236,7 @@ export class FileUploader extends PureComponent {
         this.setState({
             filesInQueue: filesInQueue,
             errorMessage: '',
-            termsAndConditions: this.state.termsAndConditions && !this.areAllClosedAccess(filesInQueue)
+            isTermsAndConditionsAccepted: this.state.isTermsAndConditionsAccepted && !this.areAllClosedAccess(filesInQueue)
         });
     };
 
@@ -249,11 +248,17 @@ export class FileUploader extends PureComponent {
      */
     queueFiles = (files) => {
         this.setState({
-            filesInQueue: this.props.defaultQuickTemplateId ? this.setDefaultAccessConditionId(files) : [...files],
+            filesInQueue: this.props.defaultQuickTemplateId ? this.setDefaultAccessConditionId(files) : [...files].map(file => this.composeCustomFileObjectToUpload(file)),
             focusOnIndex: this.state.filesInQueue.length,
             errorMessage: ''
         });
     };
+
+    /**
+     * Tran
+     * @param file
+     */
+    composeCustomFileObjectToUpload = (file) => ({fileData: file, name: file.name, size: file.size});
 
     /**
      * Set default access condition if defaultQuickTemplateId is provided
@@ -261,10 +266,10 @@ export class FileUploader extends PureComponent {
      * @param files
      */
     setDefaultAccessConditionId = (files) => {
-        return [...files].map(file => {
-            file[FILE_META_KEY_ACCESS_CONDITION] = this.props.defaultQuickTemplateId;
-            return new File([file], file.name);
-        });
+        return [...files].map(file => ({
+            ...this.composeCustomFileObjectToUpload(file),
+            [FILE_META_KEY_ACCESS_CONDITION]: this.props.defaultQuickTemplateId
+        }));
     };
 
     /**
@@ -331,10 +336,10 @@ export class FileUploader extends PureComponent {
      * Check if entire file uploader is valid including access conditions, embargo date and t&c
      *
      * @param filesInQueue
-     * @param termsAndConditions
+     * @param isTermsAndConditionsAccepted
      * @returns {boolean}
      */
-    isFileUploadValid = ({filesInQueue, termsAndConditions}) => {
+    isFileUploadValid = ({filesInQueue, isTermsAndConditionsAccepted}) => {
         let isValid = true;
 
         if (this.props.requireOpenAccessStatus) {
@@ -343,7 +348,7 @@ export class FileUploader extends PureComponent {
             }
             if (filesInQueue
                 .filter((file) => (this.isOpenAccess(file[FILE_META_KEY_ACCESS_CONDITION])))
-                .filter((file) => (!(this.hasEmbargoDate(file) && termsAndConditions)))
+                .filter((file) => (!(this.hasEmbargoDate(file) && isTermsAndConditionsAccepted)))
                 .length > 0) {
                 isValid = false;
             }
@@ -401,7 +406,7 @@ export class FileUploader extends PureComponent {
         const {instructions, accessTermsAndConditions} = this.props.locale;
         const {maxFileSize, fileSizeUnit, fileUploadLimit} = this.props.fileRestrictionsConfig;
         const {requireOpenAccessStatus} = this.props;
-        const {filesInQueue, termsAndConditions, errorMessage} = this.state;
+        const {filesInQueue, isTermsAndConditionsAccepted, errorMessage} = this.state;
         const {errorTitle, successTitle, successMessage} = this.props.locale;
 
         const instructionsDisplay = instructions
@@ -461,8 +466,8 @@ export class FileUploader extends PureComponent {
 
                     {
                         requireOpenAccessStatus && this.isAnyOpenAccess(filesInQueue) &&
-                        <div style={{position: 'relative', width: '100%'}} className={!termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox'}>
-                            <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={termsAndConditions} disabled={this.props.disabled} />
+                        <div style={{position: 'relative', width: '100%'}} className={!isTermsAndConditionsAccepted ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox'}>
+                            <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={isTermsAndConditionsAccepted} disabled={this.props.disabled} />
                         </div>
                     }
                 </div>

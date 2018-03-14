@@ -7,6 +7,8 @@ exports.FileUploader = exports.sizeBase = exports.sizeUnitText = exports.sizeExp
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _sizeExponent, _sizeUnitText, _validation;
@@ -86,7 +88,8 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this._updateFileAccessCondition = function (fileToUpdate, index, newValue) {
-            var file = new File([fileToUpdate], fileToUpdate.name);
+            var file = _extends({}, fileToUpdate);
+            // const file = new File([fileToUpdate], fileToUpdate.name);
 
             file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
@@ -102,9 +105,10 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this._updateFileEmbargoDate = function (fileToUpdate, index, newValue) {
-            var file = new File([fileToUpdate], fileToUpdate.name);
+            var file = _extends({}, fileToUpdate);
+            // const file = new File([fileToUpdate], fileToUpdate.name);
 
-            file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] = fileToUpdate[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION];
+            // file[FILE_META_KEY_ACCESS_CONDITION] = fileToUpdate[FILE_META_KEY_ACCESS_CONDITION];
             file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE] = moment(newValue).format();
 
             _this.replaceFile(file, index);
@@ -156,16 +160,21 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
         _this.queueFiles = function (files) {
             _this.setState({
-                filesInQueue: _this.props.defaultQuickTemplateId ? _this.setDefaultAccessConditionId(files) : [].concat(_toConsumableArray(files)),
+                filesInQueue: _this.props.defaultQuickTemplateId ? _this.setDefaultAccessConditionId(files) : [].concat(_toConsumableArray(files)).map(function (file) {
+                    return _this.transformFileToUpload(file);
+                }),
                 focusOnIndex: _this.state.filesInQueue.length,
                 errorMessage: ''
             });
         };
 
+        _this.transformFileToUpload = function (file) {
+            return { fileData: file, name: file.name };
+        };
+
         _this.setDefaultAccessConditionId = function (files) {
             return [].concat(_toConsumableArray(files)).map(function (file) {
-                file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] = _this.props.defaultQuickTemplateId;
-                return new File([file], file.name);
+                return _extends({}, _this.transformFileToUpload(file), _defineProperty({}, _FileUploadRow.FILE_META_KEY_ACCESS_CONDITION, _this.props.defaultQuickTemplateId));
             });
         };
 

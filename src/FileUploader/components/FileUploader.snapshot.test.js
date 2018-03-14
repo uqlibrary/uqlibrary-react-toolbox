@@ -90,7 +90,7 @@ describe('Component FileUploader', () => {
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
-        expect(wrapper.instance().state.termsAndConditions).toBeFalsy();
+        expect(wrapper.instance().state.isTermsAndConditionsAccepted).toBeFalsy();
 
         wrapper.instance()._deleteAllFiles();
         wrapper.update();
@@ -114,18 +114,17 @@ describe('Component FileUploader', () => {
 
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._updateFileAccessCondition(file_a, 0, 8);
+        wrapper.instance()._updateFileAccessCondition({fileData: file_a, name: 'a.txt', size: 0}, 0, 8);
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._updateFileAccessCondition(file_a, 0, 9);
+        wrapper.instance()._updateFileAccessCondition({fileData: file_a, name: 'a.txt', size: 0}, 0, 9);
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        file_a.access_condition_id = 9;
-        wrapper.instance()._updateFileEmbargoDate(file_a, 0, '10/10/2017');
+        wrapper.instance()._updateFileEmbargoDate({fileData: file_a, name: 'a.txt', size: 0, access_condition_id: 9}, 0, '10/10/2017');
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
@@ -186,7 +185,7 @@ describe('Component FileUploader', () => {
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._updateFileAccessCondition(file_a, 0, 9);
+        wrapper.instance()._updateFileAccessCondition({fileData: file_a, name: 'a.txt', size: 0}, 0, 9);
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 
@@ -194,13 +193,13 @@ describe('Component FileUploader', () => {
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        expect(wrapper.state().termsAndConditions).toBeTruthy();
+        expect(wrapper.state().isTermsAndConditionsAccepted).toBeTruthy();
 
-        wrapper.instance()._updateFileAccessCondition(file_a, 0, 8);
+        wrapper.instance()._updateFileAccessCondition({fileData: file_a, name: 'a.txt', size: 0}, 0, 8);
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        expect(wrapper.state().termsAndConditions).toBeFalsy();
+        expect(wrapper.state().isTermsAndConditionsAccepted).toBeFalsy();
     });
 
     it('should remove duplicate files', () => {
@@ -230,7 +229,7 @@ describe('Component FileUploader', () => {
         file_d.access_condition_id = 8;
 
         wrapper.state().filesInQueue = [file_a, file_b, file_c, file_d];
-        wrapper.state().termsAndConditions = false;
+        wrapper.state().isTermsAndConditionsAccepted = false;
         expect(wrapper.instance().isFileUploadValid(wrapper.state())).toBeFalsy();
     });
 
@@ -247,7 +246,7 @@ describe('Component FileUploader', () => {
         file_d.access_condition_id = 8;
 
         wrapper.state().filesInQueue = [file_a, file_b, file_c, file_d];
-        wrapper.state().termsAndConditions = false;
+        wrapper.state().isTermsAndConditionsAccepted = false;
         expect(wrapper.instance().isFileUploadValid(wrapper.state())).toBeTruthy();
     });
 
@@ -265,7 +264,7 @@ describe('Component FileUploader', () => {
         file_d.access_condition_id = 8;
 
         wrapper.state().filesInQueue = [file_a, file_b, file_c, file_d];
-        wrapper.state().termsAndConditions = true;
+        wrapper.state().isTermsAndConditionsAccepted = true;
         expect(wrapper.instance().isFileUploadValid(wrapper.state())).toBeTruthy();
     });
 
