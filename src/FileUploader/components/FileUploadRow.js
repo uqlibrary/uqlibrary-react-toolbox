@@ -122,7 +122,7 @@ export class FileUploadRow extends Component {
                             <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
                         }
                         {
-                            requireOpenAccessStatus && !(accessConditionId === OPEN_ACCESS_ID) &&
+                            requireOpenAccessStatus && (accessConditionId !== OPEN_ACCESS_ID) &&
                             <div className="no-embargo-date">
                                 <span>{embargoDateClosedAccess}</span>
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
