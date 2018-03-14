@@ -10,9 +10,9 @@ export default class FileUploadAccessSelector extends Component {
     static propTypes = {
         onChange: PropTypes.func,
         locale: PropTypes.object,
-        defaultConfig: PropTypes.object,
         disabled: PropTypes.bool,
-        value: PropTypes.number
+        value: PropTypes.number,
+        fieldName: PropTypes.string
     };
 
     static defaultProps = {
@@ -24,13 +24,7 @@ export default class FileUploadAccessSelector extends Component {
             },
             errorMessage: 'This field is required'
         },
-        defaultConfig: {
-            fieldName: 'accessCondition',
-            accessIds: [
-                CLOSED_ACCESS_ID,
-                OPEN_ACCESS_ID
-            ]
-        },
+        fieldName: 'accessCondition',
         value: null
     };
 
@@ -44,9 +38,9 @@ export default class FileUploadAccessSelector extends Component {
 
     render() {
         const {initialValue, accessSelectOptionsText, errorMessage} = this.props.locale;
-        const {fieldName, accessIds} = this.props.defaultConfig;
+        const {fieldName, value, disabled} = this.props;
 
-        const accessOptions = accessIds.map((access, index) => (<MenuItem value={access} primaryText={accessSelectOptionsText[access]} key={index} />));
+        const accessOptions = Object.keys(accessSelectOptionsText).map((access, index) => (<MenuItem value={parseInt(access, 10)} primaryText={accessSelectOptionsText[access]} key={index} />));
 
         return (
             <SelectField
@@ -57,10 +51,10 @@ export default class FileUploadAccessSelector extends Component {
                 dropDownMenuProps={{animated: false}}
                 maxHeight={250}
                 onChange={this._onChange}
-                errorText={this.props.value === null ? errorMessage : ''}
+                errorText={value === null ? errorMessage : ''}
                 floatingLabelFixed
-                disabled={this.props.disabled}
-                value={this.props.value}>
+                disabled={disabled}
+                value={value}>
                 {accessOptions}
             </SelectField>
         );

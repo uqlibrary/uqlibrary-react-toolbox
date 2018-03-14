@@ -17,18 +17,10 @@ const locale = {
     errorMessage: 'This field is required'
 };
 
-const defaultConfig = {
-    fieldName: 'accessCondition',
-    accessIds: [
-        1,
-        2
-    ]
-};
-
 describe('Component FileUploadAccessSelector', () => {
     it('should render with default setup', () => {
         const onChangeTestFn = jest.fn();
-        const props = {locale, defaultConfig, onChange: onChangeTestFn};
+        const props = {locale, onChange: onChangeTestFn};
         const wrapper = setup({...props});
         expect(toJson(wrapper)).toMatchSnapshot();
 
@@ -40,7 +32,7 @@ describe('Component FileUploadAccessSelector', () => {
 
     it('should render with value', () => {
         const onChangeTestFn = jest.fn();
-        const props = {locale, defaultConfig, onChange: onChangeTestFn, value: 1};
+        const props = {locale, onChange: onChangeTestFn, value: 1};
         const wrapper = setup({...props});
         expect(toJson(wrapper)).toMatchSnapshot();
 
@@ -51,13 +43,13 @@ describe('Component FileUploadAccessSelector', () => {
     });
 
     it('should render access condition disabled if disabled flag is set', () => {
-        const props = {locale, defaultConfig, disabled: true};
+        const props = {locale, disabled: true};
         const wrapper = setup({...props}, false);
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 
     it('should render access condition disabled if disabled flag is set and with value', () => {
-        const props = {locale, defaultConfig, disabled: true, value: 2};
+        const props = {locale, disabled: true, value: 2};
         const wrapper = setup({...props}, false);
         expect(toJson(wrapper)).toMatchSnapshot();
     });

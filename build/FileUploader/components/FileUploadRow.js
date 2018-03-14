@@ -222,7 +222,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         'div',
                         { className: 'embargo-date-info' },
                         requireOpenAccessStatus && _ref3,
-                        requireOpenAccessStatus && !(accessConditionId === _FileUploadAccessSelector.OPEN_ACCESS_ID) && _react2.default.createElement(
+                        requireOpenAccessStatus && accessConditionId !== _FileUploadAccessSelector.OPEN_ACCESS_ID && _react2.default.createElement(
                             'div',
                             { className: 'no-embargo-date' },
                             _react2.default.createElement(

@@ -60,13 +60,14 @@ var FileUploadAccessSelector = function (_Component) {
                 initialValue = _props$locale.initialValue,
                 accessSelectOptionsText = _props$locale.accessSelectOptionsText,
                 errorMessage = _props$locale.errorMessage;
-            var _props$defaultConfig = this.props.defaultConfig,
-                fieldName = _props$defaultConfig.fieldName,
-                accessIds = _props$defaultConfig.accessIds;
+            var _props = this.props,
+                fieldName = _props.fieldName,
+                value = _props.value,
+                disabled = _props.disabled;
 
 
-            var accessOptions = accessIds.map(function (access, index) {
-                return _react2.default.createElement(_MenuItem2.default, { value: access, primaryText: accessSelectOptionsText[access], key: index });
+            var accessOptions = Object.keys(accessSelectOptionsText).map(function (access, index) {
+                return _react2.default.createElement(_MenuItem2.default, { value: parseInt(access, 10), primaryText: accessSelectOptionsText[access], key: index });
             });
 
             return _react2.default.createElement(
@@ -79,10 +80,10 @@ var FileUploadAccessSelector = function (_Component) {
                     dropDownMenuProps: { animated: false },
                     maxHeight: 250,
                     onChange: this._onChange,
-                    errorText: this.props.value === null ? errorMessage : '',
+                    errorText: value === null ? errorMessage : '',
                     floatingLabelFixed: true,
-                    disabled: this.props.disabled,
-                    value: this.props.value },
+                    disabled: disabled,
+                    value: value },
                 accessOptions
             );
         }
@@ -97,10 +98,7 @@ FileUploadAccessSelector.defaultProps = {
         accessSelectOptionsText: (_accessSelectOptionsT = {}, _defineProperty(_accessSelectOptionsT, OPEN_ACCESS_ID, 'Open Access'), _defineProperty(_accessSelectOptionsT, CLOSED_ACCESS_ID, 'Closed Access'), _accessSelectOptionsT),
         errorMessage: 'This field is required'
     },
-    defaultConfig: {
-        fieldName: 'accessCondition',
-        accessIds: [CLOSED_ACCESS_ID, OPEN_ACCESS_ID]
-    },
+    fieldName: 'accessCondition',
     value: null
 };
 exports.default = FileUploadAccessSelector;
