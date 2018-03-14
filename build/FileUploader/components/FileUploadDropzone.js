@@ -215,7 +215,7 @@ var FileUploadDropzone = function (_PureComponent) {
                                 disabled: disabled,
                                 disableClick: disabled,
                                 disablePreview: true },
-                            _react2.default.createElement(_FileUploadDropzoneStaticContent2.default, { txt: locale })
+                            _react2.default.createElement(_FileUploadDropzoneStaticContent2.default, { locale: locale })
                         )
                     )
                 )

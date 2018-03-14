@@ -44,7 +44,7 @@ export class FileUploadRow extends Component {
             fileAccessColumn: 'File access',
             embargoDateColumn: 'Embargo date',
             embargoDateClosedAccess: 'No date required',
-            uploadInProgressTxt: 'Uploading...'
+            uploadInProgressText: 'Uploading...'
         }
     };
 
@@ -84,7 +84,7 @@ export class FileUploadRow extends Component {
     };
 
     render() {
-        const {deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateClosedAccess, uploadInProgressTxt, deleteHint} = this.props.locale;
+        const {deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateClosedAccess, uploadInProgressText, deleteHint} = this.props.locale;
         const {progress, uploadedFile, index, requireOpenAccessStatus, disabled, isUploadInProgress} = this.props;
 
         const accessConditionId = uploadedFile[FILE_META_KEY_ACCESS_CONDITION];
@@ -169,8 +169,8 @@ export class FileUploadRow extends Component {
                             </div>
                             <div className="upload-progress-number">
                                 {
-                                    <span aria-label={progress > 0 ? `${progress}%` : uploadInProgressTxt}>
-                                        {progress > 0 ? `${progress}%` : uploadInProgressTxt}
+                                    <span aria-label={progress > 0 ? `${progress}%` : uploadInProgressText}>
+                                        {progress > 0 ? `${progress}%` : uploadInProgressText}
                                     </span>
                                 }
                             </div>

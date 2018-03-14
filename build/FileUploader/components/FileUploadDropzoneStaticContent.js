@@ -25,21 +25,21 @@ var _ref2 = _react2.default.createElement(
 );
 
 var FileUploadDropzoneStaticContent = function FileUploadDropzoneStaticContent(_ref) {
-    var txt = _ref.txt;
+    var locale = _ref.locale;
     return _react2.default.createElement(
         'div',
         { className: 'columns file-instructions' },
         _react2.default.createElement(
             'div',
             { className: 'column' },
-            txt.fileUploadRestrictionHeading,
-            txt.fileUploadRestrictions
+            locale.fileUploadRestrictionHeading,
+            locale.fileUploadRestrictions
         ),
         _react2.default.createElement(
             'div',
             { className: 'column upload-instructions' },
             _ref2,
-            txt.fileUploadInstruction
+            locale.fileUploadInstruction
         )
     );
 };

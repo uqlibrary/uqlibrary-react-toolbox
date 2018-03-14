@@ -151,7 +151,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 fileAccessColumn = _props$locale.fileAccessColumn,
                 embargoDateColumn = _props$locale.embargoDateColumn,
                 embargoDateClosedAccess = _props$locale.embargoDateClosedAccess,
-                uploadInProgressTxt = _props$locale.uploadInProgressTxt,
+                uploadInProgressText = _props$locale.uploadInProgressText,
                 deleteHint = _props$locale.deleteHint;
             var _props = this.props,
                 progress = _props.progress,
@@ -279,8 +279,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                             { className: 'upload-progress-number' },
                             _react2.default.createElement(
                                 'span',
-                                { 'aria-label': progress > 0 ? progress + '%' : uploadInProgressTxt },
-                                progress > 0 ? progress + '%' : uploadInProgressTxt
+                                { 'aria-label': progress > 0 ? progress + '%' : uploadInProgressText },
+                                progress > 0 ? progress + '%' : uploadInProgressText
                             )
                         )
                     ),
@@ -306,7 +306,7 @@ FileUploadRow.defaultProps = {
         fileAccessColumn: 'File access',
         embargoDateColumn: 'Embargo date',
         embargoDateClosedAccess: 'No date required',
-        uploadInProgressTxt: 'Uploading...'
+        uploadInProgressText: 'Uploading...'
     }
 };
 
