@@ -14,7 +14,7 @@ export default class FileUploadRowHeader extends Component {
 
     static defaultProps = {
         locale: {
-            filenameColumn: 'Filename',
+            filenameColumn: 'File Name',
             fileAccessColumn: 'Access conditions',
             embargoDateColumn: 'Embargo release date',
             deleteAllFiles: 'Remove all files from the upload queue',

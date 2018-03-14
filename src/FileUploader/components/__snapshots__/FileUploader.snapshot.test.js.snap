@@ -77,7 +77,7 @@ exports[`Component FileUploader should accept terms and condition and reset back
           },
           "embargoDateColumn": "Embargo release date",
           "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
+          "filenameColumn": "File Name",
         }
       }
       onDeleteAll={[Function]}
@@ -192,7 +192,7 @@ exports[`Component FileUploader should accept terms and condition and reset back
           },
           "embargoDateColumn": "Embargo release date",
           "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
+          "filenameColumn": "File Name",
         }
       }
       onDeleteAll={[Function]}
@@ -326,7 +326,7 @@ exports[`Component FileUploader should accept terms and condition and reset back
           },
           "embargoDateColumn": "Embargo release date",
           "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
+          "filenameColumn": "File Name",
         }
       }
       onDeleteAll={[Function]}
@@ -460,7 +460,7 @@ exports[`Component FileUploader should accept terms and condition and reset back
           },
           "embargoDateColumn": "Embargo release date",
           "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
+          "filenameColumn": "File Name",
         }
       }
       onDeleteAll={[Function]}
@@ -698,7 +698,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
           },
           "embargoDateColumn": "Embargo release date",
           "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
+          "filenameColumn": "File Name",
         }
       }
       onDeleteAll={[Function]}
@@ -841,7 +841,7 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
           },
           "embargoDateColumn": "Embargo release date",
           "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
+          "filenameColumn": "File Name",
         }
       }
       onDeleteAll={[Function]}
@@ -1078,7 +1078,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           },
           "embargoDateColumn": "Embargo release date",
           "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
+          "filenameColumn": "File Name",
         }
       }
       onDeleteAll={[Function]}
@@ -1286,7 +1286,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           },
           "embargoDateColumn": "Embargo release date",
           "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
+          "filenameColumn": "File Name",
         }
       }
       onDeleteAll={[Function]}
@@ -1429,7 +1429,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           },
           "embargoDateColumn": "Embargo release date",
           "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
+          "filenameColumn": "File Name",
         }
       }
       onDeleteAll={[Function]}
@@ -1573,7 +1573,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           },
           "embargoDateColumn": "Embargo release date",
           "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
+          "filenameColumn": "File Name",
         }
       }
       onDeleteAll={[Function]}
@@ -1735,7 +1735,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
           },
           "embargoDateColumn": "Embargo release date",
           "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
+          "filenameColumn": "File Name",
         }
       }
       onDeleteAll={[Function]}
@@ -1958,7 +1958,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
           },
           "embargoDateColumn": "Embargo release date",
           "fileAccessColumn": "Access conditions",
-          "filenameColumn": "Filename",
+          "filenameColumn": "File Name",
         }
       }
       onDeleteAll={[Function]}
