@@ -240,6 +240,8 @@
   }
 
   .open-access-checkbox {
+    position: relative;
+    width: 100%;
     label {
       width: calc(100% - 45px);
       text-align: justify;

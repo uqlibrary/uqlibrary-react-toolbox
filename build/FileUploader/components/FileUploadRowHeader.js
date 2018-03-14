@@ -108,7 +108,7 @@ var FileUploadRowHeader = function (_Component) {
 
 FileUploadRowHeader.defaultProps = {
     locale: {
-        filenameColumn: 'Filename',
+        filenameColumn: 'File Name',
         fileAccessColumn: 'Access conditions',
         embargoDateColumn: 'Embargo release date',
         deleteAllFiles: 'Remove all files from the upload queue',

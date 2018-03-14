@@ -79,17 +79,16 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             _this.setState({
                 filesInQueue: filesInQueue,
                 errorMessage: '',
-                termsAndConditions: _this.state.termsAndConditions && !_this.areAllClosedAccess(filesInQueue)
+                isTermsAndConditionsAccepted: _this.state.isTermsAndConditionsAccepted && !_this.areAllClosedAccess(filesInQueue)
             });
         };
 
         _this._deleteAllFiles = function () {
-            _this.setState({ filesInQueue: [], errorMessage: '', termsAndConditions: false });
+            _this.setState({ filesInQueue: [], errorMessage: '', isTermsAndConditionsAccepted: false });
         };
 
         _this._updateFileAccessCondition = function (fileToUpdate, index, newValue) {
             var file = _extends({}, fileToUpdate);
-            // const file = new File([fileToUpdate], fileToUpdate.name);
 
             file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
@@ -106,16 +105,14 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
         _this._updateFileEmbargoDate = function (fileToUpdate, index, newValue) {
             var file = _extends({}, fileToUpdate);
-            // const file = new File([fileToUpdate], fileToUpdate.name);
 
-            // file[FILE_META_KEY_ACCESS_CONDITION] = fileToUpdate[FILE_META_KEY_ACCESS_CONDITION];
             file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE] = moment(newValue).format();
 
             _this.replaceFile(file, index);
         };
 
         _this._acceptTermsAndConditions = function (event, value) {
-            _this.setState({ termsAndConditions: value });
+            _this.setState({ isTermsAndConditionsAccepted: value });
         };
 
         _this._handleDroppedFiles = function (accepted, errorsFromDropzone) {
@@ -154,27 +151,27 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             _this.setState({
                 filesInQueue: filesInQueue,
                 errorMessage: '',
-                termsAndConditions: _this.state.termsAndConditions && !_this.areAllClosedAccess(filesInQueue)
+                isTermsAndConditionsAccepted: _this.state.isTermsAndConditionsAccepted && !_this.areAllClosedAccess(filesInQueue)
             });
         };
 
         _this.queueFiles = function (files) {
             _this.setState({
                 filesInQueue: _this.props.defaultQuickTemplateId ? _this.setDefaultAccessConditionId(files) : [].concat(_toConsumableArray(files)).map(function (file) {
-                    return _this.transformFileToUpload(file);
+                    return _this.composeCustomFileObjectToUpload(file);
                 }),
                 focusOnIndex: _this.state.filesInQueue.length,
                 errorMessage: ''
             });
         };
 
-        _this.transformFileToUpload = function (file) {
-            return { fileData: file, name: file.name };
+        _this.composeCustomFileObjectToUpload = function (file) {
+            return { fileData: file, name: file.name, size: file.size };
         };
 
         _this.setDefaultAccessConditionId = function (files) {
             return [].concat(_toConsumableArray(files)).map(function (file) {
-                return _extends({}, _this.transformFileToUpload(file), _defineProperty({}, _FileUploadRow.FILE_META_KEY_ACCESS_CONDITION, _this.props.defaultQuickTemplateId));
+                return _extends({}, _this.composeCustomFileObjectToUpload(file), _defineProperty({}, _FileUploadRow.FILE_META_KEY_ACCESS_CONDITION, _this.props.defaultQuickTemplateId));
             });
         };
 
@@ -212,7 +209,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
         _this.isFileUploadValid = function (_ref) {
             var filesInQueue = _ref.filesInQueue,
-                termsAndConditions = _ref.termsAndConditions;
+                isTermsAndConditionsAccepted = _ref.isTermsAndConditionsAccepted;
 
             var isValid = true;
 
@@ -225,7 +222,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 if (filesInQueue.filter(function (file) {
                     return _this.isOpenAccess(file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION]);
                 }).filter(function (file) {
-                    return !(_this.hasEmbargoDate(file) && termsAndConditions);
+                    return !(_this.hasEmbargoDate(file) && isTermsAndConditionsAccepted);
                 }).length > 0) {
                     isValid = false;
                 }
@@ -300,7 +297,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
         _this.state = {
             filesInQueue: [],
-            termsAndConditions: false,
+            isTermsAndConditionsAccepted: false,
             errorMessage: '',
             successMessage: ''
         };
@@ -397,6 +394,12 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
 
         /**
+         * Tran
+         * @param file
+         */
+
+
+        /**
          * Set default access condition if defaultQuickTemplateId is provided
          *
          * @param files
@@ -454,7 +457,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
          * Check if entire file uploader is valid including access conditions, embargo date and t&c
          *
          * @param filesInQueue
-         * @param termsAndConditions
+         * @param isTermsAndConditionsAccepted
          * @returns {boolean}
          */
 
@@ -487,7 +490,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             var requireOpenAccessStatus = this.props.requireOpenAccessStatus;
             var _state = this.state,
                 filesInQueue = _state.filesInQueue,
-                termsAndConditions = _state.termsAndConditions,
+                isTermsAndConditionsAccepted = _state.isTermsAndConditionsAccepted,
                 errorMessage = _state.errorMessage;
             var _props$locale2 = this.props.locale,
                 errorTitle = _props$locale2.errorTitle,
@@ -497,7 +500,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
             var instructionsDisplay = instructions.replace('[fileUploadLimit]', fileUploadLimit).replace('[maxFileSize]', '' + maxFileSize).replace('[fileSizeUnit]', sizeUnitText[fileSizeUnit] || 'B');
 
-            var filesInQueueRow = this.state.filesInQueue.map(function (file, index) {
+            var filesInQueueRow = filesInQueue.map(function (file, index) {
                 return _react2.default.createElement(_FileUploadRow2.default, {
                     key: file.name,
                     index: index,
@@ -529,20 +532,18 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     onDrop: this._handleDroppedFiles }),
                 filesInQueue.length > 0 && _react2.default.createElement(_Alert.Alert, { title: successTitle, message: successMessage.replace('[numberOfFiles]', filesInQueue.length), type: 'done' }),
                 errorMessage.length > 0 && _react2.default.createElement(_Alert.Alert, { title: errorTitle, message: errorMessage, type: 'error' }),
-                _react2.default.createElement(
+                filesInQueue.length > 0 && _react2.default.createElement(
                     'div',
-                    {
-                        className: 'metadata-container',
-                        style: filesInQueueRow.length === 0 ? { display: 'none' } : { display: 'block' } },
-                    filesInQueue.length > 0 && _react2.default.createElement(_FileUploadRowHeader2.default, {
+                    { className: 'metadata-container' },
+                    _react2.default.createElement(_FileUploadRowHeader2.default, {
                         onDeleteAll: this._deleteAllFiles,
                         requireOpenAccessStatus: requireOpenAccessStatus && !this.props.defaultQuickTemplateId,
                         disabled: this.props.disabled }),
                     filesInQueueRow,
                     requireOpenAccessStatus && this.isAnyOpenAccess(filesInQueue) && _react2.default.createElement(
                         'div',
-                        { style: { position: 'relative', width: '100%' }, className: !termsAndConditions ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox' },
-                        _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this._acceptTermsAndConditions, checked: termsAndConditions, disabled: this.props.disabled })
+                        { className: 'open-access-checkbox ' + (!isTermsAndConditionsAccepted ? 'error-checkbox' : '') },
+                        _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this._acceptTermsAndConditions, checked: isTermsAndConditionsAccepted, disabled: this.props.disabled })
                     )
                 )
             );

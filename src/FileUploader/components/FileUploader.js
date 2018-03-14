@@ -414,7 +414,7 @@ export class FileUploader extends PureComponent {
             .replace('[maxFileSize]', `${maxFileSize}`)
             .replace('[fileSizeUnit]', sizeUnitText[fileSizeUnit] || 'B');
 
-        const filesInQueueRow = this.state.filesInQueue.map((file, index) => {
+        const filesInQueueRow = filesInQueue.map((file, index) => {
             return (
                 <FileUploadRow
                     key={file.name}
@@ -451,26 +451,24 @@ export class FileUploader extends PureComponent {
                         <Alert title={errorTitle} message={errorMessage} type="error" />
                     )
                 }
-                <div
-                    className="metadata-container"
-                    style={filesInQueueRow.length === 0 ? ({display: 'none'}) : ({display: 'block'})}>
-                    {
-                        filesInQueue.length > 0 &&
+                {
+                    filesInQueue.length > 0 &&
+                    <div className="metadata-container">
                         <FileUploadRowHeader
                             onDeleteAll={this._deleteAllFiles}
                             requireOpenAccessStatus={requireOpenAccessStatus && !this.props.defaultQuickTemplateId}
                             disabled={this.props.disabled} />
-                    }
 
-                    {filesInQueueRow}
+                        {filesInQueueRow}
 
-                    {
-                        requireOpenAccessStatus && this.isAnyOpenAccess(filesInQueue) &&
-                        <div style={{position: 'relative', width: '100%'}} className={!isTermsAndConditionsAccepted ? 'open-access-checkbox error-checkbox' : 'open-access-checkbox'}>
-                            <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={isTermsAndConditionsAccepted} disabled={this.props.disabled} />
-                        </div>
-                    }
-                </div>
+                        {
+                            requireOpenAccessStatus && this.isAnyOpenAccess(filesInQueue) &&
+                            <div className={`open-access-checkbox ${!isTermsAndConditionsAccepted ? 'error-checkbox' : ''}`}>
+                                <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={isTermsAndConditionsAccepted} disabled={this.props.disabled} />
+                            </div>
+                        }
+                    </div>
+                }
             </div>
         );
     }
