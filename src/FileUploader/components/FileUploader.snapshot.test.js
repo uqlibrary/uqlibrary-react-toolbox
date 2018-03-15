@@ -140,7 +140,7 @@ describe('Component FileUploader', () => {
         const file_b = FILE_TO_USE('b.txt');
         const files = [file_a, file_b];
 
-        wrapper.instance()._handleDroppedFiles(files, new Map([]));
+        wrapper.instance()._handleDroppedFiles(files, {});
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
@@ -155,7 +155,7 @@ describe('Component FileUploader', () => {
         const file_b = FILE_TO_USE('b.txt');
         const files = [file_a, file_b];
 
-        wrapper.instance()._handleDroppedFiles(files, new Map([]));
+        wrapper.instance()._handleDroppedFiles(files, {});
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
@@ -172,9 +172,35 @@ describe('Component FileUploader', () => {
         wrapper.state().filesInQueue = [file_a, file_b];
         const accepted = [file_c, file_d];
 
-        wrapper.instance()._handleDroppedFiles(accepted, new Map([]));
+        wrapper.instance()._handleDroppedFiles(accepted, {});
         wrapper.update();
         expect(wrapper.state().errorMessage).toEqual('Maximum number of files (3) has been exceeded. File(s) (d.txt) will not be uploaded');
+    });
+
+    it('should not reset file access or embargo date info when second lot of files dropped', () => {
+        const wrapper = setup({});
+
+        const file_a = FILE_TO_USE('a.txt');
+        const file_b = FILE_TO_USE('b.txt');
+        const file_c = FILE_TO_USE('c.txt');
+        const file_d = FILE_TO_USE('d.txt');
+
+
+        wrapper.instance()._handleDroppedFiles([file_a, file_b], {});
+        wrapper.update();
+        expect(toJson(wrapper)).toMatchSnapshot();
+
+        wrapper.instance()._updateFileAccessCondition({fileData: file_b, name: 'a.txt', size: 0}, 0, 8);
+        wrapper.update();
+        expect(toJson(wrapper)).toMatchSnapshot();
+
+        wrapper.instance()._updateFileAccessCondition({fileData: file_a, name: 'a.txt', size: 0}, 0, 9);
+        wrapper.update();
+        expect(toJson(wrapper)).toMatchSnapshot();
+
+        wrapper.instance()._handleDroppedFiles([file_c, file_d], {});
+        wrapper.update();
+        expect(toJson(wrapper)).toMatchSnapshot();
     });
 
     it('should accept terms and condition and reset back to not accepted state if access condition changed back to closed access', () => {
@@ -182,7 +208,7 @@ describe('Component FileUploader', () => {
 
         const file_a = FILE_TO_USE('a.txt');
 
-        wrapper.instance()._handleDroppedFiles([file_a], new Map([]));
+        wrapper.instance()._handleDroppedFiles([file_a], {});
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 

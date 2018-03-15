@@ -467,6 +467,627 @@ exports[`Component FileUploader should accept terms and condition and reset back
 </div>
 `;
 
+exports[`Component FileUploader should not reset file access or embargo date info when second lot of files dropped 1`] = `
+<div>
+  <h4
+    className="sub-title"
+  >
+    You may add up to 5 files (max 1KB each)
+  </h4>
+  <FileUploadDropzone
+    fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    locale={
+      Object {
+        "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+        "errorTitle": "Upload Errors",
+        "fileUploadInstruction": <p>
+          Click here to select files, or drag files into this area to upload
+        </p>,
+        "fileUploadRestrictionHeading": <h3>
+          File upload restrictions
+        </h3>,
+        "fileUploadRestrictions": <div>
+          Please ensure your files:
+          <ul>
+            <li>
+              begin with a letter and are less than 45 characters long
+            </li>
+            <li>
+              contain only upper and lowercase alphanumeric characters, and underscores
+            </li>
+            <li>
+              have only a single period which precedes the file extension: “.pdf”
+            </li>
+            <li>
+              are uploaded individually and not inside a folder
+            </li>
+          </ul>
+        </div>,
+        "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
+        "validation": Object {
+          "fileName": "File(s) ([filenames]) have invalid file name",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
+        },
+      }
+    }
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 2 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
+  />
+  <div
+    className="metadata-container"
+  >
+    <FileUploadRowHeader
+      locale={
+        Object {
+          "deleteAllFiles": "Remove all files from the upload queue",
+          "deleteAllFilesConfirmation": Object {
+            "cancelButtonLabel": "No",
+            "confirmButtonLabel": "Yes",
+            "confirmationMessage": "Are you sure you want to delete all files?",
+            "confirmationTitle": "Delete all",
+          },
+          "embargoDateColumn": "Embargo release date",
+          "fileAccessColumn": "Access conditions",
+          "filenameColumn": "File Name",
+        }
+      }
+      onDeleteAll={[Function]}
+      requireOpenAccessStatus={false}
+    />
+    <Connect(FileUploadRow)
+      fileSizeUnit="K"
+      focusOnIndex={0}
+      index={0}
+      key="a.txt"
+      onAccessConditionChange={[Function]}
+      onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
+      requireOpenAccessStatus={false}
+      uploadedFile={
+        Object {
+          "fileData": File {
+            Symbol(impl): FileImpl {
+              "_buffer": Object {
+                "data": Array [],
+                "type": "Buffer",
+              },
+              "lastModified": 12345678912,
+              "name": "a.txt",
+              "type": "",
+              Symbol(wrapper): [Circular],
+            },
+          },
+          "name": "a.txt",
+          "size": 0,
+        }
+      }
+    />
+    <Connect(FileUploadRow)
+      fileSizeUnit="K"
+      focusOnIndex={0}
+      index={1}
+      key="b.txt"
+      onAccessConditionChange={[Function]}
+      onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
+      requireOpenAccessStatus={false}
+      uploadedFile={
+        Object {
+          "fileData": File {
+            Symbol(impl): FileImpl {
+              "_buffer": Object {
+                "data": Array [],
+                "type": "Buffer",
+              },
+              "lastModified": 12345678912,
+              "name": "b.txt",
+              "type": "",
+              Symbol(wrapper): [Circular],
+            },
+          },
+          "name": "b.txt",
+          "size": 0,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Component FileUploader should not reset file access or embargo date info when second lot of files dropped 2`] = `
+<div>
+  <h4
+    className="sub-title"
+  >
+    You may add up to 5 files (max 1KB each)
+  </h4>
+  <FileUploadDropzone
+    fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    locale={
+      Object {
+        "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+        "errorTitle": "Upload Errors",
+        "fileUploadInstruction": <p>
+          Click here to select files, or drag files into this area to upload
+        </p>,
+        "fileUploadRestrictionHeading": <h3>
+          File upload restrictions
+        </h3>,
+        "fileUploadRestrictions": <div>
+          Please ensure your files:
+          <ul>
+            <li>
+              begin with a letter and are less than 45 characters long
+            </li>
+            <li>
+              contain only upper and lowercase alphanumeric characters, and underscores
+            </li>
+            <li>
+              have only a single period which precedes the file extension: “.pdf”
+            </li>
+            <li>
+              are uploaded individually and not inside a folder
+            </li>
+          </ul>
+        </div>,
+        "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
+        "validation": Object {
+          "fileName": "File(s) ([filenames]) have invalid file name",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
+        },
+      }
+    }
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 2 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
+  />
+  <div
+    className="metadata-container"
+  >
+    <FileUploadRowHeader
+      locale={
+        Object {
+          "deleteAllFiles": "Remove all files from the upload queue",
+          "deleteAllFilesConfirmation": Object {
+            "cancelButtonLabel": "No",
+            "confirmButtonLabel": "Yes",
+            "confirmationMessage": "Are you sure you want to delete all files?",
+            "confirmationTitle": "Delete all",
+          },
+          "embargoDateColumn": "Embargo release date",
+          "fileAccessColumn": "Access conditions",
+          "filenameColumn": "File Name",
+        }
+      }
+      onDeleteAll={[Function]}
+      requireOpenAccessStatus={false}
+    />
+    <Connect(FileUploadRow)
+      fileSizeUnit="K"
+      focusOnIndex={0}
+      index={0}
+      key="a.txt"
+      onAccessConditionChange={[Function]}
+      onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
+      requireOpenAccessStatus={false}
+      uploadedFile={
+        Object {
+          "access_condition_id": 8,
+          "fileData": File {
+            Symbol(impl): FileImpl {
+              "_buffer": Object {
+                "data": Array [],
+                "type": "Buffer",
+              },
+              "lastModified": 12345678912,
+              "name": "b.txt",
+              "type": "",
+              Symbol(wrapper): [Circular],
+            },
+          },
+          "name": "a.txt",
+          "size": 0,
+        }
+      }
+    />
+    <Connect(FileUploadRow)
+      fileSizeUnit="K"
+      focusOnIndex={0}
+      index={1}
+      key="b.txt"
+      onAccessConditionChange={[Function]}
+      onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
+      requireOpenAccessStatus={false}
+      uploadedFile={
+        Object {
+          "fileData": File {
+            Symbol(impl): FileImpl {
+              "_buffer": Object {
+                "data": Array [],
+                "type": "Buffer",
+              },
+              "lastModified": 12345678912,
+              "name": "b.txt",
+              "type": "",
+              Symbol(wrapper): [Circular],
+            },
+          },
+          "name": "b.txt",
+          "size": 0,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Component FileUploader should not reset file access or embargo date info when second lot of files dropped 3`] = `
+<div>
+  <h4
+    className="sub-title"
+  >
+    You may add up to 5 files (max 1KB each)
+  </h4>
+  <FileUploadDropzone
+    fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    locale={
+      Object {
+        "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+        "errorTitle": "Upload Errors",
+        "fileUploadInstruction": <p>
+          Click here to select files, or drag files into this area to upload
+        </p>,
+        "fileUploadRestrictionHeading": <h3>
+          File upload restrictions
+        </h3>,
+        "fileUploadRestrictions": <div>
+          Please ensure your files:
+          <ul>
+            <li>
+              begin with a letter and are less than 45 characters long
+            </li>
+            <li>
+              contain only upper and lowercase alphanumeric characters, and underscores
+            </li>
+            <li>
+              have only a single period which precedes the file extension: “.pdf”
+            </li>
+            <li>
+              are uploaded individually and not inside a folder
+            </li>
+          </ul>
+        </div>,
+        "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
+        "validation": Object {
+          "fileName": "File(s) ([filenames]) have invalid file name",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
+        },
+      }
+    }
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 2 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
+  />
+  <div
+    className="metadata-container"
+  >
+    <FileUploadRowHeader
+      locale={
+        Object {
+          "deleteAllFiles": "Remove all files from the upload queue",
+          "deleteAllFilesConfirmation": Object {
+            "cancelButtonLabel": "No",
+            "confirmButtonLabel": "Yes",
+            "confirmationMessage": "Are you sure you want to delete all files?",
+            "confirmationTitle": "Delete all",
+          },
+          "embargoDateColumn": "Embargo release date",
+          "fileAccessColumn": "Access conditions",
+          "filenameColumn": "File Name",
+        }
+      }
+      onDeleteAll={[Function]}
+      requireOpenAccessStatus={false}
+    />
+    <Connect(FileUploadRow)
+      fileSizeUnit="K"
+      focusOnIndex={0}
+      index={0}
+      key="a.txt"
+      onAccessConditionChange={[Function]}
+      onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
+      requireOpenAccessStatus={false}
+      uploadedFile={
+        Object {
+          "access_condition_id": 9,
+          "date": "2016-01-01T10:00:00+10:00",
+          "fileData": File {
+            Symbol(impl): FileImpl {
+              "_buffer": Object {
+                "data": Array [],
+                "type": "Buffer",
+              },
+              "lastModified": 12345678912,
+              "name": "a.txt",
+              "type": "",
+              Symbol(wrapper): [Circular],
+            },
+          },
+          "name": "a.txt",
+          "size": 0,
+        }
+      }
+    />
+    <Connect(FileUploadRow)
+      fileSizeUnit="K"
+      focusOnIndex={0}
+      index={1}
+      key="b.txt"
+      onAccessConditionChange={[Function]}
+      onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
+      requireOpenAccessStatus={false}
+      uploadedFile={
+        Object {
+          "fileData": File {
+            Symbol(impl): FileImpl {
+              "_buffer": Object {
+                "data": Array [],
+                "type": "Buffer",
+              },
+              "lastModified": 12345678912,
+              "name": "b.txt",
+              "type": "",
+              Symbol(wrapper): [Circular],
+            },
+          },
+          "name": "b.txt",
+          "size": 0,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Component FileUploader should not reset file access or embargo date info when second lot of files dropped 4`] = `
+<div>
+  <h4
+    className="sub-title"
+  >
+    You may add up to 5 files (max 1KB each)
+  </h4>
+  <FileUploadDropzone
+    fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    locale={
+      Object {
+        "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
+        "errorTitle": "Upload Errors",
+        "fileUploadInstruction": <p>
+          Click here to select files, or drag files into this area to upload
+        </p>,
+        "fileUploadRestrictionHeading": <h3>
+          File upload restrictions
+        </h3>,
+        "fileUploadRestrictions": <div>
+          Please ensure your files:
+          <ul>
+            <li>
+              begin with a letter and are less than 45 characters long
+            </li>
+            <li>
+              contain only upper and lowercase alphanumeric characters, and underscores
+            </li>
+            <li>
+              have only a single period which precedes the file extension: “.pdf”
+            </li>
+            <li>
+              are uploaded individually and not inside a folder
+            </li>
+          </ul>
+        </div>,
+        "instructions": "You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)",
+        "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
+        "successTitle": "Success",
+        "validation": Object {
+          "fileName": "File(s) ([filenames]) have invalid file name",
+          "folder": "Invalid files ([filenames])",
+          "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
+          "maxFiles": "Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded",
+        },
+      }
+    }
+    maxSize={1000}
+    onDrop={[Function]}
+  />
+  <Alert
+    allowDismiss={false}
+    message="Successfully added 4 file(s) to upload queue."
+    showLoader={false}
+    title="Success"
+    type="done"
+  />
+  <div
+    className="metadata-container"
+  >
+    <FileUploadRowHeader
+      locale={
+        Object {
+          "deleteAllFiles": "Remove all files from the upload queue",
+          "deleteAllFilesConfirmation": Object {
+            "cancelButtonLabel": "No",
+            "confirmButtonLabel": "Yes",
+            "confirmationMessage": "Are you sure you want to delete all files?",
+            "confirmationTitle": "Delete all",
+          },
+          "embargoDateColumn": "Embargo release date",
+          "fileAccessColumn": "Access conditions",
+          "filenameColumn": "File Name",
+        }
+      }
+      onDeleteAll={[Function]}
+      requireOpenAccessStatus={false}
+    />
+    <Connect(FileUploadRow)
+      fileSizeUnit="K"
+      focusOnIndex={2}
+      index={0}
+      key="a.txt"
+      onAccessConditionChange={[Function]}
+      onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
+      requireOpenAccessStatus={false}
+      uploadedFile={
+        Object {
+          "fileData": Object {
+            "access_condition_id": 9,
+            "date": "2016-01-01T10:00:00+10:00",
+            "fileData": File {
+              Symbol(impl): FileImpl {
+                "_buffer": Object {
+                  "data": Array [],
+                  "type": "Buffer",
+                },
+                "lastModified": 12345678912,
+                "name": "a.txt",
+                "type": "",
+                Symbol(wrapper): [Circular],
+              },
+            },
+            "name": "a.txt",
+            "size": 0,
+          },
+          "name": "a.txt",
+          "size": 0,
+        }
+      }
+    />
+    <Connect(FileUploadRow)
+      fileSizeUnit="K"
+      focusOnIndex={2}
+      index={1}
+      key="b.txt"
+      onAccessConditionChange={[Function]}
+      onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
+      requireOpenAccessStatus={false}
+      uploadedFile={
+        Object {
+          "fileData": Object {
+            "fileData": File {
+              Symbol(impl): FileImpl {
+                "_buffer": Object {
+                  "data": Array [],
+                  "type": "Buffer",
+                },
+                "lastModified": 12345678912,
+                "name": "b.txt",
+                "type": "",
+                Symbol(wrapper): [Circular],
+              },
+            },
+            "name": "b.txt",
+            "size": 0,
+          },
+          "name": "b.txt",
+          "size": 0,
+        }
+      }
+    />
+    <Connect(FileUploadRow)
+      fileSizeUnit="K"
+      focusOnIndex={2}
+      index={2}
+      key="c.txt"
+      onAccessConditionChange={[Function]}
+      onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
+      requireOpenAccessStatus={false}
+      uploadedFile={
+        Object {
+          "fileData": File {
+            Symbol(impl): FileImpl {
+              "_buffer": Object {
+                "data": Array [],
+                "type": "Buffer",
+              },
+              "lastModified": 12345678912,
+              "name": "c.txt",
+              "type": "",
+              Symbol(wrapper): [Circular],
+            },
+          },
+          "name": "c.txt",
+          "size": 0,
+        }
+      }
+    />
+    <Connect(FileUploadRow)
+      fileSizeUnit="K"
+      focusOnIndex={2}
+      index={3}
+      key="d.txt"
+      onAccessConditionChange={[Function]}
+      onDelete={[Function]}
+      onEmbargoDateChange={[Function]}
+      requireOpenAccessStatus={false}
+      uploadedFile={
+        Object {
+          "fileData": File {
+            Symbol(impl): FileImpl {
+              "_buffer": Object {
+                "data": Array [],
+                "type": "Buffer",
+              },
+              "lastModified": 12345678912,
+              "name": "d.txt",
+              "type": "",
+              Symbol(wrapper): [Circular],
+            },
+          },
+          "name": "d.txt",
+          "size": 0,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
 exports[`Component FileUploader should render correctly without any setup 1`] = `
 <div>
   <h4
