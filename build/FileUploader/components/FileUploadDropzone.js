@@ -40,77 +40,40 @@ var FileUploadDropzone = function (_PureComponent) {
 
         var _this = _possibleConstructorReturn(this, (FileUploadDropzone.__proto__ || Object.getPrototypeOf(FileUploadDropzone)).call(this, props));
 
-        _this.difference = function (files1, files2) {
-            var set1 = new Set(files1);
-            var set2 = new Set(files2);
-
-            var difference = new Set([].concat(_toConsumableArray(set1)).filter(function (file) {
-                return !set2.has(file);
-            }));
-
-            return [].concat(_toConsumableArray(difference));
+        _this.readFile = function (file, errors, resolve) {
+            var fileReader = new FileReader();
+            fileReader.onerror = function () {
+                errors.folder.push(file.name);
+                return resolve(false);
+            };
+            fileReader.onload = function () {
+                return resolve(file);
+            };
+            var slice = file.slice(0, 10);
+            return fileReader.readAsDataURL(slice);
         };
 
-        _this.filterFilesWithInvalidNames = function (files) {
-            var filesToFilter = [].concat(_toConsumableArray(files));
+        _this._onDrop = function (accepted, rejected) {
+            var errors = {
+                maxFileSize: rejected.map(function (file) {
+                    return file.name;
+                }),
+                folder: [],
+                fileName: []
+            };
 
             /*
-             * Validate accepted files and get list of invalid files (check fileName, fileNameLength)
+             * Remove folders from accepted files (async)
              */
-            return filesToFilter.filter(function (file) {
-                return new RegExp(_this.props.fileNameRestrictions, 'gi').test(file.name);
+            _this.removeDroppedFolders([].concat(_toConsumableArray(accepted)), errors).then(function (result) {
+                var filtered = [].concat(_toConsumableArray(result)).filter(function (file) {
+                    var valid = file && new RegExp(_this.props.fileNameRestrictions, 'gi').test(file.name);
+                    file && !valid && errors.fileName.push(file.name);
+                    return file && valid;
+                });
+
+                _this.props.onDrop([].concat(_toConsumableArray(filtered)), errors);
             });
-        };
-
-        _this.filterOnDrop = function (accepted, folders) {
-            var filesWithoutFolders = folders.length > 0 ? accepted.filter(function (file) {
-                return folders.indexOf(file.name) === -1;
-            }) : accepted;
-
-            var filesWithValidNames = _this.filterFilesWithInvalidNames([].concat(_toConsumableArray(filesWithoutFolders)));
-
-            var invalidFiles = _this.difference(filesWithoutFolders, filesWithValidNames);
-
-            _this.errors.set('folder', folders);
-            _this.errors.set('fileName', invalidFiles.map(function (file) {
-                return file.name;
-            }));
-
-            _this.props.onDrop([].concat(_toConsumableArray(filesWithValidNames)), _this.errors);
-
-            _this.errors = new Map([]);
-        };
-
-        _this._onDrop = function (accepted, rejected, event) {
-            _this.errors.set('maxFileSize', rejected.map(function (file) {
-                return file.name;
-            }));
-
-            /*
-             * From droppedEvent dataTransfer items, determine which items are folders
-             *
-             * Safari and IE doesn't support event.dataTransfer.items
-             * https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items
-             *
-             * Using FileReader API async to read slice of file will throw an error if it's a folder
-             */
-            if (!!event && !!event.dataTransfer && !!event.dataTransfer.items) {
-                var folders = [].concat(_toConsumableArray(event.dataTransfer.items)).filter(function (item) {
-                    return item.webkitGetAsEntry().isDirectory;
-                }).map(function (item) {
-                    return item.webkitGetAsEntry().name;
-                });
-
-                _this.filterOnDrop([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(folders)));
-            } else {
-                _this.getDroppedFolders([].concat(_toConsumableArray(accepted))).then(function (result) {
-                    var folders = result.filter(function (folder) {
-                        return !!folder;
-                    });
-
-                    _this.filterOnDrop([].concat(_toConsumableArray(accepted)), [].concat(_toConsumableArray(folders)));
-                });
-            }
         };
 
         _this._onKeyPress = function () {
@@ -118,55 +81,37 @@ var FileUploadDropzone = function (_PureComponent) {
         };
 
         _this.dropzoneRef = null;
-        _this.errors = new Map([]);
         return _this;
     }
 
     /**
-     * Get the list of folders using FileReader API
+     * Remove folders from the list
      *
      * @param accepted files and/or folders
+     * @param errors
      * @returns {Promise.<*>}
      */
 
 
     _createClass(FileUploadDropzone, [{
-        key: 'getDroppedFolders',
-        value: function getDroppedFolders(accepted) {
+        key: 'removeDroppedFolders',
+        value: function removeDroppedFolders(accepted, errors) {
+            var _this2 = this;
+
             var acceptedFilesAndFolders = [].concat(_toConsumableArray(accepted));
             return Promise.all(acceptedFilesAndFolders.map(function (file) {
                 return new Promise(function (resolve) {
-                    var fileReader = new FileReader();
-                    fileReader.onerror = function () {
-                        return resolve(file.name);
-                    };
-                    fileReader.onload = function () {
-                        return resolve();
-                    };
-                    var slice = file.slice(0, 10);
-                    fileReader.readAsDataURL(slice);
+                    _this2.readFile(file, errors, resolve);
                 });
             }));
         }
 
         /**
-         * Diff of two array
+         * Try to read file and set error for a folder
          *
-         * @param files1
-         * @param files2
-         * @returns Array
-         * @private
-         */
-
-
-        /**
-         * Filter accepted files from dropzone
-         *  - Remove folders and set error for folders
-         *  - Remove files with invalid names and set error
-         *  - Hand over valid files only to file uploader
-         *
-         * @param accepted
-         * @param folders
+         * @param file
+         * @param errors
+         * @param resolve
          */
 
 
@@ -175,7 +120,6 @@ var FileUploadDropzone = function (_PureComponent) {
          *
          * @param accepted
          * @param rejected
-         * @param event
          * @private
          */
 
@@ -187,7 +131,7 @@ var FileUploadDropzone = function (_PureComponent) {
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             var _props = this.props,
                 maxSize = _props.maxSize,
@@ -207,7 +151,7 @@ var FileUploadDropzone = function (_PureComponent) {
                             _reactDropzone2.default,
                             {
                                 ref: function ref(node) {
-                                    _this2.dropzoneRef = node;
+                                    _this3.dropzoneRef = node;
                                 },
                                 maxSize: maxSize,
                                 onDrop: this._onDrop,

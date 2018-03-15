@@ -15,80 +15,42 @@ class FileUploadDropzone extends PureComponent {
     constructor(props) {
         super(props);
         this.dropzoneRef = null;
-        this.errors = new Map([]);
     }
 
     /**
-     * Get the list of folders using FileReader API
+     * Remove folders from the list
      *
      * @param accepted files and/or folders
+     * @param errors
      * @returns {Promise.<*>}
      */
-    getDroppedFolders(accepted) {
+    removeDroppedFolders(accepted, errors) {
         const acceptedFilesAndFolders = [...accepted];
         return Promise.all(
             acceptedFilesAndFolders.map(file => {
                 return new Promise(resolve => {
-                    const fileReader = new FileReader();
-                    fileReader.onerror = () => resolve(file.name);
-                    fileReader.onload = () => resolve();
-                    const slice = file.slice(0, 10);
-                    fileReader.readAsDataURL(slice);
+                    this.readFile(file, errors, resolve);
                 });
             })
         );
     }
 
     /**
-     * Diff of two array
+     * Try to read file and set error for a folder
      *
-     * @param files1
-     * @param files2
-     * @returns Array
-     * @private
+     * @param file
+     * @param errors
+     * @param resolve
      */
-    difference = (files1, files2) => {
-        const set1 = new Set(files1);
-        const set2 = new Set(files2);
-
-        const difference = new Set([...set1].filter(file => !set2.has(file)));
-
-        return [...difference];
-    };
-
-    filterFilesWithInvalidNames = (files) => {
-        const filesToFilter = [...files];
-
-        /*
-         * Validate accepted files and get list of invalid files (check fileName, fileNameLength)
-         */
-        return filesToFilter.filter(file => {
-            return new RegExp(this.props.fileNameRestrictions, 'gi').test(file.name);
-        });
-    };
-
-    /**
-     * Filter accepted files from dropzone
-     *  - Remove folders and set error for folders
-     *  - Remove files with invalid names and set error
-     *  - Hand over valid files only to file uploader
-     *
-     * @param accepted
-     * @param folders
-     */
-    filterOnDrop = (accepted, folders) => {
-        const filesWithoutFolders = folders.length > 0 ? accepted.filter(file => folders.indexOf(file.name) === -1) : accepted;
-
-        const filesWithValidNames = this.filterFilesWithInvalidNames([...filesWithoutFolders]);
-
-        const invalidFiles = this.difference(filesWithoutFolders, filesWithValidNames);
-
-        this.errors.set('folder', folders);
-        this.errors.set('fileName', invalidFiles.map(file => file.name));
-
-        this.props.onDrop([...filesWithValidNames], this.errors);
-
-        this.errors = new Map([]);
+    readFile = (file, errors, resolve) => {
+        const fileReader = new FileReader();
+        fileReader.onerror = () => {
+            errors.folder.push(file.name);
+            return resolve(false);
+        };
+        fileReader.onload = () => resolve(file);
+        const slice = file.slice(0, 10);
+        return fileReader.readAsDataURL(slice);
     };
 
     /**
@@ -96,32 +58,28 @@ class FileUploadDropzone extends PureComponent {
      *
      * @param accepted
      * @param rejected
-     * @param event
      * @private
      */
-    _onDrop = (accepted, rejected, event) => {
-        this.errors.set('maxFileSize', rejected.map(file => file.name));
+    _onDrop = (accepted, rejected) => {
+        const errors = {
+            maxFileSize: rejected.map(file => file.name),
+            folder: [],
+            fileName: []
+        };
 
         /*
-         * From droppedEvent dataTransfer items, determine which items are folders
-         *
-         * Safari and IE doesn't support event.dataTransfer.items
-         * https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items
-         *
-         * Using FileReader API async to read slice of file will throw an error if it's a folder
+         * Remove folders from accepted files (async)
          */
-        if (!!event && !!event.dataTransfer && !!event.dataTransfer.items) {
-            const folders =  [...event.dataTransfer.items].filter((item) => (item.webkitGetAsEntry().isDirectory))
-                .map((item) => item.webkitGetAsEntry().name);
+        this.removeDroppedFolders([...accepted], errors).then(result => {
+            const filtered = [...result]
+                .filter(file => {
+                    const valid = file && new RegExp(this.props.fileNameRestrictions, 'gi').test(file.name);
+                    file && !valid && errors.fileName.push(file.name);
+                    return file && valid;
+                });
 
-            this.filterOnDrop([...accepted], [...folders]);
-        } else {
-            this.getDroppedFolders([...accepted]).then(result => {
-                const folders = result.filter(folder => !!folder);
-
-                this.filterOnDrop([...accepted], [...folders]);
-            });
-        }
+            this.props.onDrop([...filtered], errors);
+        });
     };
 
     /**

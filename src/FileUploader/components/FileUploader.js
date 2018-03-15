@@ -189,7 +189,7 @@ export class FileUploader extends PureComponent {
      * @param errorsFromDropzone
      */
     _handleDroppedFiles = (accepted, errorsFromDropzone) => {
-        const errors = new Map(Array.from(errorsFromDropzone));
+        const errors = {...errorsFromDropzone};
         /*
          * Remove duplicate files from accepted which are already in queue
          */
@@ -202,7 +202,7 @@ export class FileUploader extends PureComponent {
 
         if (uniqueFilesToQueue.size > fileUploadLimit) {
             // Set error for files which won't be uploaded
-            errors.set('maxFiles', [...uniqueFilesToQueue].slice(fileUploadLimit).map(file => file.name));
+            errors.maxFiles = [...uniqueFilesToQueue].slice(fileUploadLimit).map(file => file.name);
 
             this.queueFiles([...uniqueFilesToQueue].slice(0, fileUploadLimit));
         } else {
@@ -357,7 +357,8 @@ export class FileUploader extends PureComponent {
         const errorMessages = [];
         let message = '';
 
-        for (const [errorCode, fileNames] of errors.entries()) {
+        Object.keys(errors).map(errorCode => {
+            const fileNames = errors[errorCode];
             if (fileNames.length > 0) {
                 message = validation[errorCode]
                     .replace('[numberOfFiles]', fileNames.length)
@@ -369,7 +370,7 @@ export class FileUploader extends PureComponent {
                     errorMessages.push(message);
                 }
             }
-        }
+        });
 
         this.setState({
             errorMessage: errorMessages.join('; ')
