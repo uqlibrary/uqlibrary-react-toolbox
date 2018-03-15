@@ -50,6 +50,7 @@ export class FileUploader extends PureComponent {
                 ['fileName']: 'File(s) ([filenames]) have invalid file name',
                 ['maxFileSize']: 'File(s) ([filenames]) exceed maximum allowed upload file size',
                 ['maxFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded',
+                ['duplicateFiles']: 'File(s) ([filenames]) are duplicate and have been ignored'
             },
             errorTitle: 'Upload Errors',
             successTitle: 'Success',
@@ -192,14 +193,14 @@ export class FileUploader extends PureComponent {
         /*
          * Remove duplicate files from accepted which are already in queue
          */
-        const uniqueFilesToQueue = this.removeDuplicate(accepted);
+        const uniqueFilesToQueue = this.removeDuplicate(accepted, errors);
 
         /*
          * If max files uploaded, send max files and set error for ignored files
          */
         const {fileUploadLimit} = this.props.fileRestrictionsConfig;
 
-        if (uniqueFilesToQueue.size > fileUploadLimit) {
+        if (uniqueFilesToQueue.length > fileUploadLimit) {
             // Set error for files which won't be uploaded
             errors.maxFiles = [...uniqueFilesToQueue].slice(fileUploadLimit).map(file => file.name);
 
@@ -338,17 +339,22 @@ export class FileUploader extends PureComponent {
     /**
      * Remove duplicate files from filtered files
      * @param accepted
-     * @returns {Set}
+     * @param errors
+     * @returns Array
      */
-    removeDuplicate = (accepted) => {
+    removeDuplicate = (accepted, errors) => {
+        errors.duplicateFiles = [];
         // Get the file names already in queue
-        const filesInQueue = new Set(this.state.filesInQueue.map(file => file.name));
+        const filesInQueue = this.state.filesInQueue.map(file => file.name);
 
         // Ignore files from accepted files which are already in files queue
-        const filteredDuplicates = new Set([...accepted].filter(file => !filesInQueue.has(file.name)));
+        const filteredDuplicates = [...accepted].filter(file => {
+            filesInQueue.indexOf(file.name) >= 0 && errors.duplicateFiles.push(file.name);
+            return filesInQueue.indexOf(file.name) === -1;
+        });
 
         // Return new set of unique files
-        return new Set([...this.state.filesInQueue, ...filteredDuplicates]);
+        return [...this.state.filesInQueue, ...filteredDuplicates];
     };
 
     render() {

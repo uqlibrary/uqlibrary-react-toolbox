@@ -212,8 +212,10 @@ describe('Component FileUploader', () => {
 
         wrapper.state().filesInQueue = [file_a, file_b, file_c];
         const accepted = [file_c, file_d];
-        const filtered = wrapper.instance().removeDuplicate(accepted);
-        expect(filtered).toEqual(new Set([file_a, file_b, file_c, file_d]));
+        const errors = {};
+        const filtered = wrapper.instance().removeDuplicate(accepted, errors);
+        expect(filtered).toEqual([file_a, file_b, file_c, file_d]);
+        expect(errors).toEqual({duplicateFiles: ['c.txt']});
     });
 
     it('should return false if any file has open access with date selected but terms and conditions not accepted', () => {

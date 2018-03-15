@@ -118,7 +118,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             /*
              * Remove duplicate files from accepted which are already in queue
              */
-            var uniqueFilesToQueue = _this.removeDuplicate(accepted);
+            var uniqueFilesToQueue = _this.removeDuplicate(accepted, errors);
 
             /*
              * If max files uploaded, send max files and set error for ignored files
@@ -126,7 +126,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             var fileUploadLimit = _this.props.fileRestrictionsConfig.fileUploadLimit;
 
 
-            if (uniqueFilesToQueue.size > fileUploadLimit) {
+            if (uniqueFilesToQueue.length > fileUploadLimit) {
                 // Set error for files which won't be uploaded
                 errors.maxFiles = [].concat(_toConsumableArray(uniqueFilesToQueue)).slice(fileUploadLimit).map(function (file) {
                     return file.name;
@@ -220,19 +220,21 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             });
         };
 
-        _this.removeDuplicate = function (accepted) {
+        _this.removeDuplicate = function (accepted, errors) {
+            errors.duplicateFiles = [];
             // Get the file names already in queue
-            var filesInQueue = new Set(_this.state.filesInQueue.map(function (file) {
+            var filesInQueue = _this.state.filesInQueue.map(function (file) {
                 return file.name;
-            }));
+            });
 
             // Ignore files from accepted files which are already in files queue
-            var filteredDuplicates = new Set([].concat(_toConsumableArray(accepted)).filter(function (file) {
-                return !filesInQueue.has(file.name);
-            }));
+            var filteredDuplicates = [].concat(_toConsumableArray(accepted)).filter(function (file) {
+                filesInQueue.indexOf(file.name) >= 0 && errors.duplicateFiles.push(file.name);
+                return filesInQueue.indexOf(file.name) === -1;
+            });
 
             // Return new set of unique files
-            return new Set([].concat(_toConsumableArray(_this.state.filesInQueue), _toConsumableArray(filteredDuplicates)));
+            return [].concat(_toConsumableArray(_this.state.filesInQueue), _toConsumableArray(filteredDuplicates));
         };
 
         _this.state = {
@@ -380,7 +382,8 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         /**
          * Remove duplicate files from filtered files
          * @param accepted
-         * @returns {Set}
+         * @param errors
+         * @returns Array
          */
 
     }, {
@@ -466,7 +469,7 @@ FileUploader.defaultProps = {
     locale: {
         instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
         accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
-        validation: (_validation = {}, _defineProperty(_validation, 'folder', 'Invalid files ([filenames])'), _defineProperty(_validation, 'fileName', 'File(s) ([filenames]) have invalid file name'), _defineProperty(_validation, 'maxFileSize', 'File(s) ([filenames]) exceed maximum allowed upload file size'), _defineProperty(_validation, 'maxFiles', 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded'), _validation),
+        validation: (_validation = {}, _defineProperty(_validation, 'folder', 'Invalid files ([filenames])'), _defineProperty(_validation, 'fileName', 'File(s) ([filenames]) have invalid file name'), _defineProperty(_validation, 'maxFileSize', 'File(s) ([filenames]) exceed maximum allowed upload file size'), _defineProperty(_validation, 'maxFiles', 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded'), _defineProperty(_validation, 'duplicateFiles', 'File(s) ([filenames]) are duplicate and have been ignored'), _validation),
         errorTitle: 'Upload Errors',
         successTitle: 'Success',
         successMessage: 'Successfully added [numberOfFiles] file(s) to upload queue.',
