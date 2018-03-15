@@ -187,12 +187,8 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
         _this.isAnyOpenAccess = function (files) {
             return files.filter(function (file) {
-                return _this.hasAccess(file) && _this.isOpenAccess(file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION]);
+                return file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION) && _this.isOpenAccess(file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION]);
             }).length > 0;
-        };
-
-        _this.hasAccess = function (file) {
-            return file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION);
         };
 
         _this.isFileUploadValid = function (_ref) {
@@ -200,7 +196,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 isTermsAndConditionsAccepted = _ref.isTermsAndConditionsAccepted;
 
             return _this.props.requireOpenAccessStatus ? filesInQueue.filter(function (file) {
-                return _this.hasAccess(file);
+                return file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION);
             }).length === filesInQueue.length && (_this.isAnyOpenAccess(filesInQueue) && isTermsAndConditionsAccepted || !_this.isAnyOpenAccess(filesInQueue)) : true;
         };
 
@@ -373,14 +369,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
          * Check if any file is open access
          *
          * @param files
-         * @returns {boolean}
-         */
-
-
-        /**
-         * Check if file as access conditions field
-         *
-         * @param file
          * @returns {boolean}
          */
 

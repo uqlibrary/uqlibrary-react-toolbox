@@ -298,17 +298,7 @@ export class FileUploader extends PureComponent {
      * @returns {boolean}
      */
     isAnyOpenAccess = (files) => {
-        return files.filter((file) => (this.hasAccess(file) && this.isOpenAccess(file[FILE_META_KEY_ACCESS_CONDITION]))).length > 0;
-    };
-
-    /**
-     * Check if file as access conditions field
-     *
-     * @param file
-     * @returns {boolean}
-     */
-    hasAccess = (file) => {
-        return file.hasOwnProperty(FILE_META_KEY_ACCESS_CONDITION);
+        return files.filter((file) => (file.hasOwnProperty(FILE_META_KEY_ACCESS_CONDITION) && this.isOpenAccess(file[FILE_META_KEY_ACCESS_CONDITION]))).length > 0;
     };
 
     /**
@@ -320,7 +310,7 @@ export class FileUploader extends PureComponent {
      */
     isFileUploadValid = ({filesInQueue, isTermsAndConditionsAccepted}) => {
         return this.props.requireOpenAccessStatus ?
-            filesInQueue.filter(file => this.hasAccess(file)).length === filesInQueue.length &&
+            filesInQueue.filter(file => file.hasOwnProperty(FILE_META_KEY_ACCESS_CONDITION)).length === filesInQueue.length &&
             (this.isAnyOpenAccess(filesInQueue) && isTermsAndConditionsAccepted || !this.isAnyOpenAccess(filesInQueue)) :
             true;
     };
