@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.FileUploadRow = exports.FILE_META_KEY_EMBARGO_DATE = exports.FILE_META_KEY_ACCESS_CONDITION = undefined;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -80,12 +82,7 @@ var _ref4 = _react2.default.createElement(
     'delete'
 );
 
-var _ref5 = _react2.default.createElement(_CircularProgress2.default, {
-    size: 20,
-    thickness: 4
-});
-
-var _ref6 = _react2.default.createElement(
+var _ref5 = _react2.default.createElement(
     'div',
     { className: 'upload-progress' },
     _react2.default.createElement(
@@ -164,6 +161,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
 
             var accessConditionId = uploadedFile[FILE_META_KEY_ACCESS_CONDITION];
             var embargoDate = uploadedFile[FILE_META_KEY_EMBARGO_DATE];
+
+            var progressProps = progress > 0 ? { mode: 'determinate', value: progress } : {};
 
             return _react2.default.createElement(
                 'div',
@@ -266,13 +265,10 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'upload-progress' },
-                            progress > 0 && _react2.default.createElement(_CircularProgress2.default, {
-                                mode: 'determinate',
-                                value: progress,
+                            _react2.default.createElement(_CircularProgress2.default, _extends({}, progressProps, {
                                 size: 20,
                                 thickness: 4
-                            }),
-                            progress === 0 && _ref5
+                            }))
                         ),
                         _react2.default.createElement(
                             'div',
@@ -284,7 +280,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                             )
                         )
                     ),
-                    isUploadInProgress && progress === 100 && _ref6
+                    isUploadInProgress && progress === 100 && _ref5
                 )
             );
         }

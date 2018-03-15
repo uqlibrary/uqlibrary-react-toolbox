@@ -90,6 +90,8 @@ export class FileUploadRow extends Component {
         const accessConditionId = uploadedFile[FILE_META_KEY_ACCESS_CONDITION];
         const embargoDate = uploadedFile[FILE_META_KEY_EMBARGO_DATE];
 
+        const progressProps = progress > 0 ? {mode: 'determinate', value: progress} : {};
+
         return (
             <div className="columns is-gapless is-multiline uploadedFileRow datalist datalist-row is-clearfix">
                 <ConfirmDialogBox
@@ -150,22 +152,11 @@ export class FileUploadRow extends Component {
                         isUploadInProgress && progress !== 100 &&
                         <div className="upload-progress-info">
                             <div className="upload-progress">
-                                {
-                                    progress > 0 &&
-                                    <CircularProgress
-                                        mode="determinate"
-                                        value={progress}
-                                        size={20}
-                                        thickness={4}
-                                    />
-                                }
-                                {
-                                    progress === 0 &&
-                                    <CircularProgress
-                                        size={20}
-                                        thickness={4}
-                                    />
-                                }
+                                <CircularProgress
+                                    {...progressProps}
+                                    size={20}
+                                    thickness={4}
+                                />
                             </div>
                             <div className="upload-progress-number">
                                 {
