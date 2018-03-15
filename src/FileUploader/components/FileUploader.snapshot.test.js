@@ -270,7 +270,7 @@ describe('Component FileUploader', () => {
     });
 
     it('should return false on if access condition is not selected for any files', () => {
-        const wrapper = setup({requireOpenAccessStatus: true});
+        const wrapper = setup({requireOpenAccessStatus: true, isTermsAndConditionsAccepted: false});
 
         const file_a = FILE_TO_USE('a.txt');
         const file_b = FILE_TO_USE('b.txt');

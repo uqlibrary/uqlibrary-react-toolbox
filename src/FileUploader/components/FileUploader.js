@@ -312,38 +312,17 @@ export class FileUploader extends PureComponent {
     };
 
     /**
-     * Check if file has embargo date field
-     *
-     * @param file
-     * @returns {boolean}
-     */
-    hasEmbargoDate = (file) => {
-        return file.hasOwnProperty(FILE_META_KEY_EMBARGO_DATE) && !!file[FILE_META_KEY_EMBARGO_DATE];
-    };
-
-    /**
-     * Check if entire file uploader is valid including access conditions, embargo date and t&c
+     * Check if entire file uploader is valid including access conditions and t&c
      *
      * @param filesInQueue
      * @param isTermsAndConditionsAccepted
      * @returns {boolean}
      */
     isFileUploadValid = ({filesInQueue, isTermsAndConditionsAccepted}) => {
-        let isValid = true;
-
-        if (this.props.requireOpenAccessStatus) {
-            if (filesInQueue.filter((file) => (!this.hasAccess(file))).length > 0) {
-                isValid = false;
-            }
-            if (filesInQueue
-                .filter((file) => (this.isOpenAccess(file[FILE_META_KEY_ACCESS_CONDITION])))
-                .filter((file) => (!(this.hasEmbargoDate(file) && isTermsAndConditionsAccepted)))
-                .length > 0) {
-                isValid = false;
-            }
-        }
-
-        return isValid;
+        return this.props.requireOpenAccessStatus ?
+            filesInQueue.filter(file => this.hasAccess(file)).length === filesInQueue.length &&
+            (this.isAnyOpenAccess(filesInQueue) && isTermsAndConditionsAccepted || !this.isAnyOpenAccess(filesInQueue)) :
+            true;
     };
 
     /**

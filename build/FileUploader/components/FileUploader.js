@@ -195,32 +195,13 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             return file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION);
         };
 
-        _this.hasEmbargoDate = function (file) {
-            return file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE) && !!file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE];
-        };
-
         _this.isFileUploadValid = function (_ref) {
             var filesInQueue = _ref.filesInQueue,
                 isTermsAndConditionsAccepted = _ref.isTermsAndConditionsAccepted;
 
-            var isValid = true;
-
-            if (_this.props.requireOpenAccessStatus) {
-                if (filesInQueue.filter(function (file) {
-                    return !_this.hasAccess(file);
-                }).length > 0) {
-                    isValid = false;
-                }
-                if (filesInQueue.filter(function (file) {
-                    return _this.isOpenAccess(file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION]);
-                }).filter(function (file) {
-                    return !(_this.hasEmbargoDate(file) && isTermsAndConditionsAccepted);
-                }).length > 0) {
-                    isValid = false;
-                }
-            }
-
-            return isValid;
+            return _this.props.requireOpenAccessStatus ? filesInQueue.filter(function (file) {
+                return _this.hasAccess(file);
+            }).length === filesInQueue.length && (_this.isAnyOpenAccess(filesInQueue) && isTermsAndConditionsAccepted || !_this.isAnyOpenAccess(filesInQueue)) : true;
         };
 
         _this.processErrors = function (errors) {
@@ -405,15 +386,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
 
         /**
-         * Check if file has embargo date field
-         *
-         * @param file
-         * @returns {boolean}
-         */
-
-
-        /**
-         * Check if entire file uploader is valid including access conditions, embargo date and t&c
+         * Check if entire file uploader is valid including access conditions and t&c
          *
          * @param filesInQueue
          * @param isTermsAndConditionsAccepted
