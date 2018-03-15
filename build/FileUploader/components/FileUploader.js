@@ -445,7 +445,8 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             var _props$fileRestrictio = this.props.fileRestrictionsConfig,
                 maxFileSize = _props$fileRestrictio.maxFileSize,
                 fileSizeUnit = _props$fileRestrictio.fileSizeUnit,
-                fileUploadLimit = _props$fileRestrictio.fileUploadLimit;
+                fileUploadLimit = _props$fileRestrictio.fileUploadLimit,
+                fileNameRestrictions = _props$fileRestrictio.fileNameRestrictions;
             var requireOpenAccessStatus = this.props.requireOpenAccessStatus;
             var _state = this.state,
                 filesInQueue = _state.filesInQueue,
@@ -487,7 +488,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     locale: this.props.locale,
                     maxSize: this.calculateMaxFileSize(),
                     disabled: this.props.disabled,
-                    fileNameRestrictions: this.props.fileNameRestrictions,
+                    fileNameRestrictions: fileNameRestrictions,
                     onDrop: this._handleDroppedFiles }),
                 filesInQueue.length > 0 && _react2.default.createElement(_Alert.Alert, { title: successTitle, message: successMessage.replace('[numberOfFiles]', filesInQueue.length), type: 'done' }),
                 errorMessage.length > 0 && _react2.default.createElement(_Alert.Alert, { title: errorTitle, message: errorMessage, type: 'error' }),
@@ -563,10 +564,10 @@ FileUploader.defaultProps = {
     fileRestrictionsConfig: {
         fileUploadLimit: 10,
         maxFileSize: 5,
-        fileSizeUnit: 'G'
+        fileSizeUnit: 'G',
+        fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
     },
-    requireOpenAccessStatus: false,
-    fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
+    requireOpenAccessStatus: false
 };
 
 

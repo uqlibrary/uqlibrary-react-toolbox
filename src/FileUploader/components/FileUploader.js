@@ -38,8 +38,7 @@ export class FileUploader extends PureComponent {
         requireOpenAccessStatus: PropTypes.bool,
         clearFileUpload: PropTypes.func,
         disabled: PropTypes.bool,
-        defaultQuickTemplateId: PropTypes.number,
-        fileNameRestrictions: PropTypes.instanceOf(RegExp).isRequired
+        defaultQuickTemplateId: PropTypes.number
     };
 
     static defaultProps = {
@@ -74,10 +73,10 @@ export class FileUploader extends PureComponent {
         fileRestrictionsConfig: {
             fileUploadLimit: 10,
             maxFileSize: 5,
-            fileSizeUnit: 'G'
+            fileSizeUnit: 'G',
+            fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
         },
-        requireOpenAccessStatus: false,
-        fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
+        requireOpenAccessStatus: false
     };
 
     constructor(props) {
@@ -395,7 +394,7 @@ export class FileUploader extends PureComponent {
 
     render() {
         const {instructions, accessTermsAndConditions} = this.props.locale;
-        const {maxFileSize, fileSizeUnit, fileUploadLimit} = this.props.fileRestrictionsConfig;
+        const {maxFileSize, fileSizeUnit, fileUploadLimit, fileNameRestrictions} = this.props.fileRestrictionsConfig;
         const {requireOpenAccessStatus} = this.props;
         const {filesInQueue, isTermsAndConditionsAccepted, errorMessage} = this.state;
         const {errorTitle, successTitle, successMessage} = this.props.locale;
@@ -430,7 +429,7 @@ export class FileUploader extends PureComponent {
                     locale={this.props.locale}
                     maxSize={this.calculateMaxFileSize()}
                     disabled={this.props.disabled}
-                    fileNameRestrictions={this.props.fileNameRestrictions}
+                    fileNameRestrictions={fileNameRestrictions}
                     onDrop={this._handleDroppedFiles} />
                 {
                     filesInQueue.length > 0 && (

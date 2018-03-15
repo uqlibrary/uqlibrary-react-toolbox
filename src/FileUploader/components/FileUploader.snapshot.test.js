@@ -35,7 +35,8 @@ function setup(testProps, isShallow = true) {
         fileRestrictionsConfig: {
             fileUploadLimit: 5,
             maxFileSize: 1,
-            fileSizeUnit: 'K'
+            fileSizeUnit: 'K',
+            fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
         },
         filesInQueue: [],
         clearFileUpload: jest.fn(),
