@@ -90,11 +90,11 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
             file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
-            if (!_this.isOpenAccess(newValue) && file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE)) {
+            if (newValue !== _FileUploadAccessSelector.OPEN_ACCESS_ID && file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE)) {
                 delete file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE];
             }
 
-            if (_this.isOpenAccess(newValue) && !file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE)) {
+            if (newValue === _FileUploadAccessSelector.OPEN_ACCESS_ID && !file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE)) {
                 file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE] = moment().format();
             }
 
@@ -181,13 +181,9 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             return maxFileSize * Math.pow(sizeBase, sizeExponent[fileSizeUnit] || 0);
         };
 
-        _this.isOpenAccess = function (value) {
-            return value === _FileUploadAccessSelector.OPEN_ACCESS_ID;
-        };
-
         _this.isAnyOpenAccess = function (files) {
             return files.filter(function (file) {
-                return file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION) && _this.isOpenAccess(file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION]);
+                return file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION) && file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] === _FileUploadAccessSelector.OPEN_ACCESS_ID;
             }).length > 0;
         };
 
@@ -354,14 +350,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
          * Calculate max file size allowed by dropzone
          *
          * @returns {number}
-         */
-
-
-        /**
-         * Check if file is open access
-         *
-         * @param value
-         * @returns {boolean}
          */
 
 

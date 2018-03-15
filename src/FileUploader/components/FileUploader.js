@@ -143,11 +143,11 @@ export class FileUploader extends PureComponent {
 
         file[FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
-        if (!this.isOpenAccess(newValue) && file.hasOwnProperty(FILE_META_KEY_EMBARGO_DATE)) {
+        if ((newValue !== OPEN_ACCESS_ID) && file.hasOwnProperty(FILE_META_KEY_EMBARGO_DATE)) {
             delete file[FILE_META_KEY_EMBARGO_DATE];
         }
 
-        if (this.isOpenAccess(newValue) && !file.hasOwnProperty(FILE_META_KEY_EMBARGO_DATE)) {
+        if ((newValue === OPEN_ACCESS_ID) && !file.hasOwnProperty(FILE_META_KEY_EMBARGO_DATE)) {
             file[FILE_META_KEY_EMBARGO_DATE] = moment().format();
         }
 
@@ -282,23 +282,13 @@ export class FileUploader extends PureComponent {
     };
 
     /**
-     * Check if file is open access
-     *
-     * @param value
-     * @returns {boolean}
-     */
-    isOpenAccess = (value) => {
-        return value === OPEN_ACCESS_ID;
-    };
-
-    /**
      * Check if any file is open access
      *
      * @param files
      * @returns {boolean}
      */
     isAnyOpenAccess = (files) => {
-        return files.filter((file) => (file.hasOwnProperty(FILE_META_KEY_ACCESS_CONDITION) && this.isOpenAccess(file[FILE_META_KEY_ACCESS_CONDITION]))).length > 0;
+        return files.filter((file) => (file.hasOwnProperty(FILE_META_KEY_ACCESS_CONDITION) && (file[FILE_META_KEY_ACCESS_CONDITION] === OPEN_ACCESS_ID))).length > 0;
     };
 
     /**
