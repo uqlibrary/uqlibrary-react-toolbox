@@ -190,11 +190,11 @@ describe('Component FileUploader', () => {
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._updateFileAccessCondition({fileData: file_b, name: 'a.txt', size: 0}, 0, 8);
+        wrapper.instance()._updateFileAccessCondition({fileData: file_a, name: 'a.txt', size: 0}, 0, 9);
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._updateFileAccessCondition({fileData: file_a, name: 'a.txt', size: 0}, 0, 9);
+        wrapper.instance()._updateFileAccessCondition({fileData: file_b, name: 'b.txt', size: 0}, 1, 8);
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 

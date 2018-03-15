@@ -164,7 +164,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this.composeCustomFileObjectToUpload = function (file) {
-            return { fileData: file, name: file.name, size: file.size };
+            return _extends({}, file, { fileData: file, name: file.name, size: file.size });
         };
 
         _this.setDefaultAccessConditionId = function (files) {

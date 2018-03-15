@@ -694,7 +694,8 @@ exports[`Component FileUploader should not reset file access or embargo date inf
       requireOpenAccessStatus={false}
       uploadedFile={
         Object {
-          "access_condition_id": 8,
+          "access_condition_id": 9,
+          "date": "2016-01-01T10:00:00+10:00",
           "fileData": File {
             Symbol(impl): FileImpl {
               "_buffer": Object {
@@ -702,7 +703,7 @@ exports[`Component FileUploader should not reset file access or embargo date inf
                 "type": "Buffer",
               },
               "lastModified": 12345678912,
-              "name": "b.txt",
+              "name": "a.txt",
               "type": "",
               Symbol(wrapper): [Circular],
             },
@@ -863,6 +864,7 @@ exports[`Component FileUploader should not reset file access or embargo date inf
       requireOpenAccessStatus={false}
       uploadedFile={
         Object {
+          "access_condition_id": 8,
           "fileData": File {
             Symbol(impl): FileImpl {
               "_buffer": Object {
@@ -973,6 +975,8 @@ exports[`Component FileUploader should not reset file access or embargo date inf
       requireOpenAccessStatus={false}
       uploadedFile={
         Object {
+          "access_condition_id": 9,
+          "date": "2016-01-01T10:00:00+10:00",
           "fileData": Object {
             "access_condition_id": 9,
             "date": "2016-01-01T10:00:00+10:00",
@@ -1007,7 +1011,9 @@ exports[`Component FileUploader should not reset file access or embargo date inf
       requireOpenAccessStatus={false}
       uploadedFile={
         Object {
+          "access_condition_id": 8,
           "fileData": Object {
+            "access_condition_id": 8,
             "fileData": File {
               Symbol(impl): FileImpl {
                 "_buffer": Object {
