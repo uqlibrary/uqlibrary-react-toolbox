@@ -258,7 +258,7 @@ export class FileUploader extends PureComponent {
      * Tran
      * @param file
      */
-    composeCustomFileObjectToUpload = (file) => ({...file, fileData: file, name: file.name, size: file.size});
+    composeCustomFileObjectToUpload = (file) => ({...file, fileData: file.hasOwnProperty('fileData') ? file.fileData : file, name: file.name, size: file.size});
 
     /**
      * Set default access condition if defaultQuickTemplateId is provided
