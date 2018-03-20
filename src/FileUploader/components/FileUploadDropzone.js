@@ -78,7 +78,7 @@ class FileUploadDropzone extends PureComponent {
                     return file && valid;
                 });
 
-            this.props.onDrop([...filtered], errors);
+            this.props.onDrop([...filtered].map(file => ({fileData: file, name: file.name, size: file.size})), errors);
         });
     };
 

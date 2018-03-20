@@ -85,8 +85,7 @@ export class FileUploader extends PureComponent {
         this.state = {
             filesInQueue: [],
             isTermsAndConditionsAccepted: false,
-            errorMessage: '',
-            successMessage: ''
+            errorMessage: ''
         };
     }
 
@@ -145,7 +144,7 @@ export class FileUploader extends PureComponent {
         file[FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
         if ((newValue !== OPEN_ACCESS_ID) && file.hasOwnProperty(FILE_META_KEY_EMBARGO_DATE)) {
-            delete file[FILE_META_KEY_EMBARGO_DATE];
+            file[FILE_META_KEY_EMBARGO_DATE] = null;
         }
 
         if ((newValue === OPEN_ACCESS_ID) && !file.hasOwnProperty(FILE_META_KEY_EMBARGO_DATE)) {
@@ -189,30 +188,33 @@ export class FileUploader extends PureComponent {
      * @param errorsFromDropzone
      */
     _handleDroppedFiles = (accepted, errorsFromDropzone) => {
-        const errors = {...errorsFromDropzone};
-        /*
-         * Remove duplicate files from accepted which are already in queue
-         */
-        const uniqueFilesToQueue = this.removeDuplicate(accepted, errors);
-
-        /*
-         * If max files uploaded, send max files and set error for ignored files
-         */
         const {fileUploadLimit} = this.props.fileRestrictionsConfig;
+        const {defaultQuickTemplateId} = this.props;
+        const {filesInQueue} = this.state;
 
-        if (uniqueFilesToQueue.length > fileUploadLimit) {
-            // Set error for files which won't be uploaded
-            errors.maxFiles = [...uniqueFilesToQueue].slice(fileUploadLimit).map(file => file.name);
+        // Remove duplicate files from accepted files
+        const {uniqueFiles, duplicateFiles} = this.removeDuplicate([...accepted], filesInQueue.map(file => file.name));
 
-            this.queueFiles([...uniqueFilesToQueue].slice(0, fileUploadLimit));
-        } else {
-            this.queueFiles([...uniqueFilesToQueue]);
-        }
+        // Combine unique files and files queued already
+        const totalFiles = [...filesInQueue, ...uniqueFiles];
 
-        /*
-         * Process any errors
-         */
-        this.processErrors(errors);
+        // Get file names to display in error message for file upload limit
+        const filesExceedingMaxFileUploadLimit = [...totalFiles].slice(fileUploadLimit).map(file => file.name);
+
+        // If max files uploaded, get files allowed to upload
+        const uniqueFilesToQueue = [...totalFiles].slice(0, fileUploadLimit);
+
+        // Set files to queue
+        this.setState({
+            filesInQueue: defaultQuickTemplateId ?
+                [...uniqueFilesToQueue].map(file => ({...file, [FILE_META_KEY_ACCESS_CONDITION]: defaultQuickTemplateId})) :
+                [...uniqueFilesToQueue],
+            focusOnIndex: filesInQueue.length,
+            errorMessage: ''
+        });
+
+        // Process any errors
+        this.processErrors({...errorsFromDropzone, duplicateFiles: duplicateFiles, maxFiles: filesExceedingMaxFileUploadLimit});
     };
 
     /*
@@ -241,38 +243,6 @@ export class FileUploader extends PureComponent {
     };
 
     /**
-     * Set uploaded files
-     *
-     * @param files
-     * @private
-     */
-    queueFiles = (files) => {
-        this.setState({
-            filesInQueue: this.props.defaultQuickTemplateId ? this.setDefaultAccessConditionId(files) : [...files].map(file => this.composeCustomFileObjectToUpload(file)),
-            focusOnIndex: this.state.filesInQueue.length,
-            errorMessage: ''
-        });
-    };
-
-    /**
-     * Tran
-     * @param file
-     */
-    composeCustomFileObjectToUpload = (file) => ({...file, fileData: file.hasOwnProperty('fileData') ? file.fileData : file, name: file.name, size: file.size});
-
-    /**
-     * Set default access condition if defaultQuickTemplateId is provided
-     *
-     * @param files
-     */
-    setDefaultAccessConditionId = (files) => {
-        return [...files].map(file => ({
-            ...this.composeCustomFileObjectToUpload(file),
-            [FILE_META_KEY_ACCESS_CONDITION]: this.props.defaultQuickTemplateId
-        }));
-    };
-
-    /**
      * Calculate max file size allowed by dropzone
      *
      * @returns {number}
@@ -289,7 +259,9 @@ export class FileUploader extends PureComponent {
      * @returns {boolean}
      */
     isAnyOpenAccess = (files) => {
-        return files.filter((file) => (file.hasOwnProperty(FILE_META_KEY_ACCESS_CONDITION) && (file[FILE_META_KEY_ACCESS_CONDITION] === OPEN_ACCESS_ID))).length > 0;
+        return files.filter(file =>
+            file.hasOwnProperty(FILE_META_KEY_ACCESS_CONDITION) && (file[FILE_META_KEY_ACCESS_CONDITION] === OPEN_ACCESS_ID)
+        ).length > 0;
     };
 
     /**
@@ -300,10 +272,11 @@ export class FileUploader extends PureComponent {
      * @returns {boolean}
      */
     isFileUploadValid = ({filesInQueue, isTermsAndConditionsAccepted}) => {
-        return this.props.requireOpenAccessStatus ?
-            filesInQueue.filter(file => file.hasOwnProperty(FILE_META_KEY_ACCESS_CONDITION)).length === filesInQueue.length &&
-            (this.isAnyOpenAccess(filesInQueue) && isTermsAndConditionsAccepted || !this.isAnyOpenAccess(filesInQueue)) :
-            true;
+        return !this.props.requireOpenAccessStatus ||
+            (
+                filesInQueue.filter(file => file.hasOwnProperty(FILE_META_KEY_ACCESS_CONDITION)).length === filesInQueue.length &&
+                (this.isAnyOpenAccess(filesInQueue) && isTermsAndConditionsAccepted || !this.isAnyOpenAccess(filesInQueue))
+            );
     };
 
     /**
@@ -337,15 +310,16 @@ export class FileUploader extends PureComponent {
     };
 
     /**
-     * Remove duplicate files from filtered files
+     * Remove duplicate files from given accepted files
+     *
      * @param accepted
-     * @param errors
-     * @returns Array
+     * @param filesInQueue - list of names of files in queue
+     * @returns Object
      */
-    removeDuplicate = (accepted, errors) => {
-        errors.duplicateFiles = [];
-        // Get the file names already in queue
-        const filesInQueue = this.state.filesInQueue.map(file => file.name);
+    removeDuplicate = (accepted, filesInQueue) => {
+        const errors = {
+            duplicateFiles: []
+        };
 
         // Ignore files from accepted files which are already in files queue
         const filteredDuplicates = [...accepted].filter(file => {
@@ -353,14 +327,14 @@ export class FileUploader extends PureComponent {
             return filesInQueue.indexOf(file.name) === -1;
         });
 
-        // Return new set of unique files
-        return [...this.state.filesInQueue, ...filteredDuplicates];
+        // Return unique files and errors with duplicate file names
+        return {uniqueFiles: [...filteredDuplicates], ...errors};
     };
 
     render() {
         const {instructions, accessTermsAndConditions} = this.props.locale;
         const {maxFileSize, fileSizeUnit, fileUploadLimit, fileNameRestrictions} = this.props.fileRestrictionsConfig;
-        const {requireOpenAccessStatus} = this.props;
+        const {requireOpenAccessStatus, defaultQuickTemplateId, disabled} = this.props;
         const {filesInQueue, isTermsAndConditionsAccepted, errorMessage} = this.state;
         const {errorTitle, successTitle, successMessage} = this.props.locale;
 
@@ -379,9 +353,9 @@ export class FileUploader extends PureComponent {
                     onDelete={this._deleteFile}
                     onAccessConditionChange={this._updateFileAccessCondition}
                     onEmbargoDateChange={this._updateFileEmbargoDate}
-                    defaultAccessCondition={this.props.defaultQuickTemplateId}
-                    requireOpenAccessStatus={requireOpenAccessStatus && !this.props.defaultQuickTemplateId}
-                    disabled={this.props.disabled}
+                    defaultAccessCondition={defaultQuickTemplateId}
+                    requireOpenAccessStatus={requireOpenAccessStatus && !defaultQuickTemplateId}
+                    disabled={disabled}
                     focusOnIndex={this.state.focusOnIndex}
                 />
             );
@@ -393,7 +367,7 @@ export class FileUploader extends PureComponent {
                 <FileUploadDropzone
                     locale={this.props.locale}
                     maxSize={this.calculateMaxFileSize()}
-                    disabled={this.props.disabled}
+                    disabled={disabled}
                     fileNameRestrictions={fileNameRestrictions}
                     onDrop={this._handleDroppedFiles} />
                 {
@@ -411,15 +385,19 @@ export class FileUploader extends PureComponent {
                     <div className="metadata-container">
                         <FileUploadRowHeader
                             onDeleteAll={this._deleteAllFiles}
-                            requireOpenAccessStatus={requireOpenAccessStatus && !this.props.defaultQuickTemplateId}
-                            disabled={this.props.disabled} />
+                            requireOpenAccessStatus={requireOpenAccessStatus && !defaultQuickTemplateId}
+                            disabled={disabled} />
 
                         {filesInQueueRow}
 
                         {
                             requireOpenAccessStatus && this.isAnyOpenAccess(filesInQueue) &&
                             <div className={`open-access-checkbox${!isTermsAndConditionsAccepted ? ' error-checkbox' : ''}`}>
-                                <Checkbox label={accessTermsAndConditions} onCheck={this._acceptTermsAndConditions} checked={isTermsAndConditionsAccepted} disabled={this.props.disabled} />
+                                <Checkbox
+                                    label={accessTermsAndConditions}
+                                    onCheck={this._acceptTermsAndConditions}
+                                    checked={isTermsAndConditionsAccepted}
+                                    disabled={disabled} />
                             </div>
                         }
                     </div>

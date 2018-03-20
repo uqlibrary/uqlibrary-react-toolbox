@@ -72,7 +72,9 @@ var FileUploadDropzone = function (_PureComponent) {
                     return file && valid;
                 });
 
-                _this.props.onDrop([].concat(_toConsumableArray(filtered)), errors);
+                _this.props.onDrop([].concat(_toConsumableArray(filtered)).map(function (file) {
+                    return { fileData: file, name: file.name, size: file.size };
+                }), errors);
             });
         };
 

@@ -134,7 +134,7 @@
     "timezones.json": "^1.2.1"
   },
   "peerDependencies": {
-    "@material/animation": "^0.3.1",
+    "@material/animation": "^0.25.0",
     "bulma": "^0.6.0",
     "highcharts": "^6.0.2",
     "immutable": "^3.8.1",

@@ -91,7 +91,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             file[_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
             if (newValue !== _FileUploadAccessSelector.OPEN_ACCESS_ID && file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE)) {
-                delete file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE];
+                file[_FileUploadRow.FILE_META_KEY_EMBARGO_DATE] = null;
             }
 
             if (newValue === _FileUploadAccessSelector.OPEN_ACCESS_ID && !file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_EMBARGO_DATE)) {
@@ -114,33 +114,42 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         };
 
         _this._handleDroppedFiles = function (accepted, errorsFromDropzone) {
-            var errors = _extends({}, errorsFromDropzone);
-            /*
-             * Remove duplicate files from accepted which are already in queue
-             */
-            var uniqueFilesToQueue = _this.removeDuplicate(accepted, errors);
-
-            /*
-             * If max files uploaded, send max files and set error for ignored files
-             */
             var fileUploadLimit = _this.props.fileRestrictionsConfig.fileUploadLimit;
+            var defaultQuickTemplateId = _this.props.defaultQuickTemplateId;
+            var filesInQueue = _this.state.filesInQueue;
+
+            // Remove duplicate files from accepted files
+
+            var _this$removeDuplicate = _this.removeDuplicate([].concat(_toConsumableArray(accepted)), filesInQueue.map(function (file) {
+                return file.name;
+            })),
+                uniqueFiles = _this$removeDuplicate.uniqueFiles,
+                duplicateFiles = _this$removeDuplicate.duplicateFiles;
+
+            // Combine unique files and files queued already
 
 
-            if (uniqueFilesToQueue.length > fileUploadLimit) {
-                // Set error for files which won't be uploaded
-                errors.maxFiles = [].concat(_toConsumableArray(uniqueFilesToQueue)).slice(fileUploadLimit).map(function (file) {
-                    return file.name;
-                });
+            var totalFiles = [].concat(_toConsumableArray(filesInQueue), _toConsumableArray(uniqueFiles));
 
-                _this.queueFiles([].concat(_toConsumableArray(uniqueFilesToQueue)).slice(0, fileUploadLimit));
-            } else {
-                _this.queueFiles([].concat(_toConsumableArray(uniqueFilesToQueue)));
-            }
+            // Get file names to display in error message for file upload limit
+            var filesExceedingMaxFileUploadLimit = [].concat(_toConsumableArray(totalFiles)).slice(fileUploadLimit).map(function (file) {
+                return file.name;
+            });
 
-            /*
-             * Process any errors
-             */
-            _this.processErrors(errors);
+            // If max files uploaded, get files allowed to upload
+            var uniqueFilesToQueue = [].concat(_toConsumableArray(totalFiles)).slice(0, fileUploadLimit);
+
+            // Set files to queue
+            _this.setState({
+                filesInQueue: defaultQuickTemplateId ? [].concat(_toConsumableArray(uniqueFilesToQueue)).map(function (file) {
+                    return _extends({}, file, _defineProperty({}, _FileUploadRow.FILE_META_KEY_ACCESS_CONDITION, defaultQuickTemplateId));
+                }) : [].concat(_toConsumableArray(uniqueFilesToQueue)),
+                focusOnIndex: filesInQueue.length,
+                errorMessage: ''
+            });
+
+            // Process any errors
+            _this.processErrors(_extends({}, errorsFromDropzone, { duplicateFiles: duplicateFiles, maxFiles: filesExceedingMaxFileUploadLimit }));
         };
 
         _this.replaceFile = function (file, index) {
@@ -150,26 +159,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 filesInQueue: filesInQueue,
                 errorMessage: '',
                 isTermsAndConditionsAccepted: _this.state.isTermsAndConditionsAccepted && _this.isAnyOpenAccess(filesInQueue)
-            });
-        };
-
-        _this.queueFiles = function (files) {
-            _this.setState({
-                filesInQueue: _this.props.defaultQuickTemplateId ? _this.setDefaultAccessConditionId(files) : [].concat(_toConsumableArray(files)).map(function (file) {
-                    return _this.composeCustomFileObjectToUpload(file);
-                }),
-                focusOnIndex: _this.state.filesInQueue.length,
-                errorMessage: ''
-            });
-        };
-
-        _this.composeCustomFileObjectToUpload = function (file) {
-            return _extends({}, file, { fileData: file.hasOwnProperty('fileData') ? file.fileData : file, name: file.name, size: file.size });
-        };
-
-        _this.setDefaultAccessConditionId = function (files) {
-            return [].concat(_toConsumableArray(files)).map(function (file) {
-                return _extends({}, _this.composeCustomFileObjectToUpload(file), _defineProperty({}, _FileUploadRow.FILE_META_KEY_ACCESS_CONDITION, _this.props.defaultQuickTemplateId));
             });
         };
 
@@ -191,9 +180,9 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             var filesInQueue = _ref.filesInQueue,
                 isTermsAndConditionsAccepted = _ref.isTermsAndConditionsAccepted;
 
-            return _this.props.requireOpenAccessStatus ? filesInQueue.filter(function (file) {
+            return !_this.props.requireOpenAccessStatus || filesInQueue.filter(function (file) {
                 return file.hasOwnProperty(_FileUploadRow.FILE_META_KEY_ACCESS_CONDITION);
-            }).length === filesInQueue.length && (_this.isAnyOpenAccess(filesInQueue) && isTermsAndConditionsAccepted || !_this.isAnyOpenAccess(filesInQueue)) : true;
+            }).length === filesInQueue.length && (_this.isAnyOpenAccess(filesInQueue) && isTermsAndConditionsAccepted || !_this.isAnyOpenAccess(filesInQueue));
         };
 
         _this.processErrors = function (errors) {
@@ -220,12 +209,10 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             });
         };
 
-        _this.removeDuplicate = function (accepted, errors) {
-            errors.duplicateFiles = [];
-            // Get the file names already in queue
-            var filesInQueue = _this.state.filesInQueue.map(function (file) {
-                return file.name;
-            });
+        _this.removeDuplicate = function (accepted, filesInQueue) {
+            var errors = {
+                duplicateFiles: []
+            };
 
             // Ignore files from accepted files which are already in files queue
             var filteredDuplicates = [].concat(_toConsumableArray(accepted)).filter(function (file) {
@@ -233,15 +220,14 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 return filesInQueue.indexOf(file.name) === -1;
             });
 
-            // Return new set of unique files
-            return [].concat(_toConsumableArray(_this.state.filesInQueue), _toConsumableArray(filteredDuplicates));
+            // Return unique files and errors with duplicate file names
+            return _extends({ uniqueFiles: [].concat(_toConsumableArray(filteredDuplicates)) }, errors);
         };
 
         _this.state = {
             filesInQueue: [],
             isTermsAndConditionsAccepted: false,
-            errorMessage: '',
-            successMessage: ''
+            errorMessage: ''
         };
         return _this;
     }
@@ -328,27 +314,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
 
         /**
-         * Set uploaded files
-         *
-         * @param files
-         * @private
-         */
-
-
-        /**
-         * Tran
-         * @param file
-         */
-
-
-        /**
-         * Set default access condition if defaultQuickTemplateId is provided
-         *
-         * @param files
-         */
-
-
-        /**
          * Calculate max file size allowed by dropzone
          *
          * @returns {number}
@@ -380,10 +345,11 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
 
 
         /**
-         * Remove duplicate files from filtered files
+         * Remove duplicate files from given accepted files
+         *
          * @param accepted
-         * @param errors
-         * @returns Array
+         * @param filesInQueue - list of names of files in queue
+         * @returns Object
          */
 
     }, {
@@ -399,7 +365,10 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 fileSizeUnit = _props$fileRestrictio.fileSizeUnit,
                 fileUploadLimit = _props$fileRestrictio.fileUploadLimit,
                 fileNameRestrictions = _props$fileRestrictio.fileNameRestrictions;
-            var requireOpenAccessStatus = this.props.requireOpenAccessStatus;
+            var _props = this.props,
+                requireOpenAccessStatus = _props.requireOpenAccessStatus,
+                defaultQuickTemplateId = _props.defaultQuickTemplateId,
+                disabled = _props.disabled;
             var _state = this.state,
                 filesInQueue = _state.filesInQueue,
                 isTermsAndConditionsAccepted = _state.isTermsAndConditionsAccepted,
@@ -421,9 +390,9 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     onDelete: _this2._deleteFile,
                     onAccessConditionChange: _this2._updateFileAccessCondition,
                     onEmbargoDateChange: _this2._updateFileEmbargoDate,
-                    defaultAccessCondition: _this2.props.defaultQuickTemplateId,
-                    requireOpenAccessStatus: requireOpenAccessStatus && !_this2.props.defaultQuickTemplateId,
-                    disabled: _this2.props.disabled,
+                    defaultAccessCondition: defaultQuickTemplateId,
+                    requireOpenAccessStatus: requireOpenAccessStatus && !defaultQuickTemplateId,
+                    disabled: disabled,
                     focusOnIndex: _this2.state.focusOnIndex
                 });
             });
@@ -439,7 +408,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 _react2.default.createElement(_FileUploadDropzone2.default, {
                     locale: this.props.locale,
                     maxSize: this.calculateMaxFileSize(),
-                    disabled: this.props.disabled,
+                    disabled: disabled,
                     fileNameRestrictions: fileNameRestrictions,
                     onDrop: this._handleDroppedFiles }),
                 filesInQueue.length > 0 && _react2.default.createElement(_Alert.Alert, { title: successTitle, message: successMessage.replace('[numberOfFiles]', filesInQueue.length), type: 'done' }),
@@ -449,13 +418,17 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     { className: 'metadata-container' },
                     _react2.default.createElement(_FileUploadRowHeader2.default, {
                         onDeleteAll: this._deleteAllFiles,
-                        requireOpenAccessStatus: requireOpenAccessStatus && !this.props.defaultQuickTemplateId,
-                        disabled: this.props.disabled }),
+                        requireOpenAccessStatus: requireOpenAccessStatus && !defaultQuickTemplateId,
+                        disabled: disabled }),
                     filesInQueueRow,
                     requireOpenAccessStatus && this.isAnyOpenAccess(filesInQueue) && _react2.default.createElement(
                         'div',
                         { className: 'open-access-checkbox' + (!isTermsAndConditionsAccepted ? ' error-checkbox' : '') },
-                        _react2.default.createElement(_Checkbox2.default, { label: accessTermsAndConditions, onCheck: this._acceptTermsAndConditions, checked: isTermsAndConditionsAccepted, disabled: this.props.disabled })
+                        _react2.default.createElement(_Checkbox2.default, {
+                            label: accessTermsAndConditions,
+                            onCheck: this._acceptTermsAndConditions,
+                            checked: isTermsAndConditionsAccepted,
+                            disabled: disabled })
                     )
                 )
             );

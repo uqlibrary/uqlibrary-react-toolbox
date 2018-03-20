@@ -77,11 +77,13 @@ describe('Component FileUploadDropzone', () => {
         const file_a = FILE_TO_USE('a.txt');
         const accepted = [file_a];
 
+        const expectedAccepted = accepted.map(file => ({fileData: file, name: file.name, size: file.size}));
+
         const file_b = FILE_TO_USE('b.txt');
         const rejected = [file_b];
 
         await wrapper.instance()._onDrop(accepted, rejected);
-        expect(onDropCallback).toHaveBeenCalledWith(accepted, {maxFileSize: ['b.txt'], folder: [], fileName: []});
+        expect(onDropCallback).toHaveBeenCalledWith(expectedAccepted, {maxFileSize: ['b.txt'], folder: [], fileName: []});
     });
 
     it('should open files selection dialog', () => {

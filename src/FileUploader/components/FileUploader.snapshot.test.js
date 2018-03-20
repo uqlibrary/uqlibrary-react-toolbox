@@ -64,7 +64,7 @@ describe('Component FileUploader', () => {
         const _File = window.File;
         const FILE = (data = [''], name) => new _File(data, name, {lastModified: 12345678912});
         window.File = jest.fn((data, name) => FILE(data, name));
-        FILE_TO_USE = (name) => new File([''], name);
+        FILE_TO_USE = (name) => ({fileData: new File([''], name), name: name, size: 0});
     });
 
     it('should render correctly without any setup', () => {
@@ -115,17 +115,18 @@ describe('Component FileUploader', () => {
 
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._updateFileAccessCondition({fileData: file_a, name: 'a.txt', size: 0}, 0, 8);
+        wrapper.instance()._updateFileAccessCondition(file_a, 0, 8);
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._updateFileAccessCondition({fileData: file_a, name: 'a.txt', size: 0}, 0, 9);
+        wrapper.instance()._updateFileAccessCondition(file_a, 0, 9);
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._updateFileEmbargoDate({fileData: file_a, name: 'a.txt', size: 0, access_condition_id: 9}, 0, '10/10/2017');
+        file_a.access_condition_id = 9;
+        wrapper.instance()._updateFileEmbargoDate(file_a, 0, '10/10/2017');
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
@@ -190,11 +191,11 @@ describe('Component FileUploader', () => {
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._updateFileAccessCondition({fileData: file_a, name: 'a.txt', size: 0}, 0, 9);
+        wrapper.instance()._updateFileAccessCondition(file_a, 0, 9);
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._updateFileAccessCondition({fileData: file_b, name: 'b.txt', size: 0}, 1, 8);
+        wrapper.instance()._updateFileAccessCondition(file_b, 1, 8);
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 
@@ -212,7 +213,7 @@ describe('Component FileUploader', () => {
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 
-        wrapper.instance()._updateFileAccessCondition({fileData: file_a, name: 'a.txt', size: 0}, 0, 9);
+        wrapper.instance()._updateFileAccessCondition(file_a, 0, 9);
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 
@@ -222,7 +223,7 @@ describe('Component FileUploader', () => {
 
         expect(wrapper.state().isTermsAndConditionsAccepted).toBeTruthy();
 
-        wrapper.instance()._updateFileAccessCondition({fileData: file_a, name: 'a.txt', size: 0}, 0, 8);
+        wrapper.instance()._updateFileAccessCondition(file_a, 0, 8);
         wrapper.update();
         expect(toJson(wrapper)).toMatchSnapshot();
 
@@ -238,10 +239,9 @@ describe('Component FileUploader', () => {
 
         wrapper.state().filesInQueue = [file_a, file_b, file_c];
         const accepted = [file_c, file_d];
-        const errors = {};
-        const filtered = wrapper.instance().removeDuplicate(accepted, errors);
-        expect(filtered).toEqual([file_a, file_b, file_c, file_d]);
-        expect(errors).toEqual({duplicateFiles: ['c.txt']});
+        const {uniqueFiles, duplicateFiles} = wrapper.instance().removeDuplicate(accepted, ['a.txt', 'b.txt', 'c.txt']);
+        expect(uniqueFiles).toEqual([file_d]);
+        expect(duplicateFiles).toEqual(['c.txt']);
     });
 
     it('should return false if any file has open access with date selected but terms and conditions not accepted', () => {
