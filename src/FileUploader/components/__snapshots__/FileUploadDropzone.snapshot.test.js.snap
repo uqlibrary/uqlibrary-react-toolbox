@@ -11,8 +11,9 @@ exports[`Component FileUploadDropzone should open files selection dialog 1`] = `
   }
 >
   <FileUploadDropzone
-    clearErrors={false}
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={Array []}
     locale={
       Object {
         "errorTitle": "Upload Errors",
@@ -29,10 +30,8 @@ exports[`Component FileUploadDropzone should open files selection dialog 1`] = `
         },
       }
     }
-    maxFiles={5}
     maxSize={1000}
     onDrop={[MockFunction]}
-    uploadedFiles={Array []}
   >
     <div>
       <div

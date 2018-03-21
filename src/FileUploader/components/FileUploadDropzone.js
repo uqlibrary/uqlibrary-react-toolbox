@@ -8,6 +8,8 @@ class FileUploadDropzone extends PureComponent {
         onDrop: PropTypes.func.isRequired,
         maxSize: PropTypes.number.isRequired,
         locale: PropTypes.object.isRequired,
+        filesInQueue: PropTypes.array,
+        fileUploadLimit: PropTypes.number,
         disabled: PropTypes.bool,
         fileNameRestrictions: PropTypes.instanceOf(RegExp).isRequired
     };
@@ -54,6 +56,26 @@ class FileUploadDropzone extends PureComponent {
     };
 
     /**
+     * Remove duplicate files from given accepted files
+     *
+     * @param accepted
+     * @param filesInQueue - list of names of files in queue
+     * @returns Object
+     */
+    removeDuplicate = (accepted, filesInQueue) => {
+        const duplicateFiles = [];
+
+        // Ignore files from accepted files which are already in files queue
+        const filteredDuplicates = [...accepted].filter(file => {
+            filesInQueue.indexOf(file.name) >= 0 && duplicateFiles.push(file.name);
+            return filesInQueue.indexOf(file.name) === -1;
+        });
+
+        // Return unique files and errors with duplicate file names
+        return {uniqueFiles: [...filteredDuplicates], duplicateFiles: duplicateFiles};
+    };
+
+    /**
      * Handle accepted and rejected files on dropped in Dropzone
      *
      * @param accepted
@@ -64,22 +86,40 @@ class FileUploadDropzone extends PureComponent {
         const errors = {
             maxFileSize: rejected.map(file => file.name),
             folder: [],
-            fileName: []
+            fileName: [],
+            duplicateFiles: [],
+            maxFiles: []
         };
 
+        const {fileNameRestrictions, filesInQueue, fileUploadLimit} = this.props;
         /*
          * Remove folders from accepted files (async)
          */
-        this.removeDroppedFolders([...accepted], errors).then(result => {
-            const filtered = [...result]
-                .filter(file => {
-                    const valid = file && new RegExp(this.props.fileNameRestrictions, 'gi').test(file.name);
-                    file && !valid && errors.fileName.push(file.name);
-                    return file && valid;
-                });
+        this.removeDroppedFolders([...accepted], errors)
+            .then(result => {
+                const filtered = [...result]
+                    .filter(file => {
+                        const valid = file && new RegExp(fileNameRestrictions, 'gi').test(file.name);
+                        file && !valid && errors.fileName.push(file.name);
+                        return file && valid;
+                    });
 
-            this.props.onDrop([...filtered].map(file => ({fileData: file, name: file.name, size: file.size})), errors);
-        });
+                // Remove duplicate files from accepted files
+                const {uniqueFiles, duplicateFiles} = this.removeDuplicate([...filtered], filesInQueue);
+
+                // Get file names to display in error message for file upload limit
+                const filesExceedingMaxFileUploadLimit = uniqueFiles.slice(fileUploadLimit - filesInQueue.length).map(file => file.name);
+
+                // If max files uploaded, get files allowed to upload
+                const uniqueFilesToQueue = [...uniqueFiles]
+                    .slice(0, fileUploadLimit - filesInQueue.length)
+                    .map(file => ({fileData: file, name: file.name, size: file.size}));
+
+                this.props.onDrop(
+                    [...uniqueFilesToQueue],
+                    {...errors, duplicateFiles: duplicateFiles, maxFiles: filesExceedingMaxFileUploadLimit}
+                );
+            });
     };
 
     /**

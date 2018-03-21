@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -53,28 +55,64 @@ var FileUploadDropzone = function (_PureComponent) {
             return fileReader.readAsDataURL(slice);
         };
 
+        _this.removeDuplicate = function (accepted, filesInQueue) {
+            var duplicateFiles = [];
+
+            // Ignore files from accepted files which are already in files queue
+            var filteredDuplicates = [].concat(_toConsumableArray(accepted)).filter(function (file) {
+                filesInQueue.indexOf(file.name) >= 0 && duplicateFiles.push(file.name);
+                return filesInQueue.indexOf(file.name) === -1;
+            });
+
+            // Return unique files and errors with duplicate file names
+            return { uniqueFiles: [].concat(_toConsumableArray(filteredDuplicates)), duplicateFiles: duplicateFiles };
+        };
+
         _this._onDrop = function (accepted, rejected) {
             var errors = {
                 maxFileSize: rejected.map(function (file) {
                     return file.name;
                 }),
                 folder: [],
-                fileName: []
+                fileName: [],
+                duplicateFiles: [],
+                maxFiles: []
             };
 
+            var _this$props = _this.props,
+                fileNameRestrictions = _this$props.fileNameRestrictions,
+                filesInQueue = _this$props.filesInQueue,
+                fileUploadLimit = _this$props.fileUploadLimit;
             /*
              * Remove folders from accepted files (async)
              */
+
             _this.removeDroppedFolders([].concat(_toConsumableArray(accepted)), errors).then(function (result) {
                 var filtered = [].concat(_toConsumableArray(result)).filter(function (file) {
-                    var valid = file && new RegExp(_this.props.fileNameRestrictions, 'gi').test(file.name);
+                    var valid = file && new RegExp(fileNameRestrictions, 'gi').test(file.name);
                     file && !valid && errors.fileName.push(file.name);
                     return file && valid;
                 });
 
-                _this.props.onDrop([].concat(_toConsumableArray(filtered)).map(function (file) {
+                // Remove duplicate files from accepted files
+
+                var _this$removeDuplicate = _this.removeDuplicate([].concat(_toConsumableArray(filtered)), filesInQueue),
+                    uniqueFiles = _this$removeDuplicate.uniqueFiles,
+                    duplicateFiles = _this$removeDuplicate.duplicateFiles;
+
+                // Get file names to display in error message for file upload limit
+
+
+                var filesExceedingMaxFileUploadLimit = uniqueFiles.slice(fileUploadLimit - filesInQueue.length).map(function (file) {
+                    return file.name;
+                });
+
+                // If max files uploaded, get files allowed to upload
+                var uniqueFilesToQueue = [].concat(_toConsumableArray(uniqueFiles)).slice(0, fileUploadLimit - filesInQueue.length).map(function (file) {
                     return { fileData: file, name: file.name, size: file.size };
-                }), errors);
+                });
+
+                _this.props.onDrop([].concat(_toConsumableArray(uniqueFilesToQueue)), _extends({}, errors, { duplicateFiles: duplicateFiles, maxFiles: filesExceedingMaxFileUploadLimit }));
             });
         };
 
@@ -114,6 +152,15 @@ var FileUploadDropzone = function (_PureComponent) {
          * @param file
          * @param errors
          * @param resolve
+         */
+
+
+        /**
+         * Remove duplicate files from given accepted files
+         *
+         * @param accepted
+         * @param filesInQueue - list of names of files in queue
+         * @returns Object
          */
 
 

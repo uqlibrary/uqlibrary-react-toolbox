@@ -113,43 +113,22 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             _this.setState({ isTermsAndConditionsAccepted: value });
         };
 
-        _this._handleDroppedFiles = function (accepted, errorsFromDropzone) {
-            var fileUploadLimit = _this.props.fileRestrictionsConfig.fileUploadLimit;
+        _this._handleDroppedFiles = function (uniqueFilesToQueue, errorsFromDropzone) {
             var defaultQuickTemplateId = _this.props.defaultQuickTemplateId;
             var filesInQueue = _this.state.filesInQueue;
 
-            // Remove duplicate files from accepted files
-
-            var _this$removeDuplicate = _this.removeDuplicate([].concat(_toConsumableArray(accepted)), filesInQueue.map(function (file) {
-                return file.name;
-            })),
-                uniqueFiles = _this$removeDuplicate.uniqueFiles,
-                duplicateFiles = _this$removeDuplicate.duplicateFiles;
-
             // Combine unique files and files queued already
 
-
-            var totalFiles = [].concat(_toConsumableArray(filesInQueue), _toConsumableArray(uniqueFiles));
-
-            // Get file names to display in error message for file upload limit
-            var filesExceedingMaxFileUploadLimit = [].concat(_toConsumableArray(totalFiles)).slice(fileUploadLimit).map(function (file) {
-                return file.name;
-            });
-
-            // If max files uploaded, get files allowed to upload
-            var uniqueFilesToQueue = [].concat(_toConsumableArray(totalFiles)).slice(0, fileUploadLimit);
+            var totalFiles = [].concat(_toConsumableArray(filesInQueue), _toConsumableArray(uniqueFilesToQueue));
 
             // Set files to queue
             _this.setState({
-                filesInQueue: defaultQuickTemplateId ? [].concat(_toConsumableArray(uniqueFilesToQueue)).map(function (file) {
+                filesInQueue: defaultQuickTemplateId ? [].concat(_toConsumableArray(totalFiles)).map(function (file) {
                     return _extends({}, file, _defineProperty({}, _FileUploadRow.FILE_META_KEY_ACCESS_CONDITION, defaultQuickTemplateId));
-                }) : [].concat(_toConsumableArray(uniqueFilesToQueue)),
+                }) : [].concat(_toConsumableArray(totalFiles)),
                 focusOnIndex: filesInQueue.length,
-                errorMessage: ''
+                errorMessage: _this.getErrorMessage(errorsFromDropzone)
             });
-
-            // Process any errors
-            _this.processErrors(_extends({}, errorsFromDropzone, { duplicateFiles: duplicateFiles, maxFiles: filesExceedingMaxFileUploadLimit }));
         };
 
         _this.replaceFile = function (file, index) {
@@ -185,7 +164,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             }).length === filesInQueue.length && (_this.isAnyOpenAccess(filesInQueue) && isTermsAndConditionsAccepted || !_this.isAnyOpenAccess(filesInQueue));
         };
 
-        _this.processErrors = function (errors) {
+        _this.getErrorMessage = function (errors) {
             var validation = _this.props.locale.validation;
 
             var errorMessages = [];
@@ -204,24 +183,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 }
             });
 
-            _this.setState({
-                errorMessage: errorMessages.join('; ')
-            });
-        };
-
-        _this.removeDuplicate = function (accepted, filesInQueue) {
-            var errors = {
-                duplicateFiles: []
-            };
-
-            // Ignore files from accepted files which are already in files queue
-            var filteredDuplicates = [].concat(_toConsumableArray(accepted)).filter(function (file) {
-                filesInQueue.indexOf(file.name) >= 0 && errors.duplicateFiles.push(file.name);
-                return filesInQueue.indexOf(file.name) === -1;
-            });
-
-            // Return unique files and errors with duplicate file names
-            return _extends({ uniqueFiles: [].concat(_toConsumableArray(filteredDuplicates)) }, errors);
+            return errorMessages.length > 0 ? errorMessages.join('; ') : '';
         };
 
         _this.state = {
@@ -295,7 +257,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         /**
          * Handle accepted, rejected and dropped folders and display proper alerts
          *
-         * @param accepted
+         * @param uniqueFilesToQueue
          * @param errorsFromDropzone
          */
 
@@ -341,15 +303,6 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
          * Process errors
          *
          * @private
-         */
-
-
-        /**
-         * Remove duplicate files from given accepted files
-         *
-         * @param accepted
-         * @param filesInQueue - list of names of files in queue
-         * @returns Object
          */
 
     }, {
@@ -409,7 +362,11 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                     locale: this.props.locale,
                     maxSize: this.calculateMaxFileSize(),
                     disabled: disabled,
+                    filesInQueue: [].concat(_toConsumableArray(this.state.filesInQueue)).map(function (file) {
+                        return file.name;
+                    }),
                     fileNameRestrictions: fileNameRestrictions,
+                    fileUploadLimit: fileUploadLimit,
                     onDrop: this._handleDroppedFiles }),
                 filesInQueue.length > 0 && _react2.default.createElement(_Alert.Alert, { title: successTitle, message: successMessage.replace('[numberOfFiles]', filesInQueue.length), type: 'done' }),
                 errorMessage.length > 0 && _react2.default.createElement(_Alert.Alert, { title: errorTitle, message: errorMessage, type: 'error' }),

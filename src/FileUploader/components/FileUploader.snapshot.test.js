@@ -9,6 +9,7 @@ const locale = {
         ['fileName']: 'File(s) ([filenames]) have invalid file name',
         ['maxFileSize']: 'File(s) ([filenames]) exceed maximum allowed upload file size',
         ['maxFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded',
+        ['duplicateFiles']: 'File(s) ([filenames]) are duplicate and have been ignored'
     },
     errorTitle: 'Upload Errors',
     successTitle: 'Success',
@@ -82,7 +83,7 @@ describe('Component FileUploader', () => {
 
         const files = [FILE_TO_USE('a.txt'), FILE_TO_USE('b.txt')];
 
-        wrapper.instance()._handleDroppedFiles(files, new Map([]));
+        wrapper.instance()._handleDroppedFiles(files, {});
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
@@ -110,7 +111,7 @@ describe('Component FileUploader', () => {
         const file_b = FILE_TO_USE('b.txt');
         const files = [file_a, file_b];
 
-        wrapper.instance()._handleDroppedFiles(files, new Map([]));
+        wrapper.instance()._handleDroppedFiles(files, {});
         wrapper.update();
 
         expect(toJson(wrapper)).toMatchSnapshot();
@@ -168,12 +169,10 @@ describe('Component FileUploader', () => {
         const file_a = FILE_TO_USE('a.txt');
         const file_b = FILE_TO_USE('b.txt');
         const file_c = FILE_TO_USE('c.txt');
-        const file_d = FILE_TO_USE('d.txt');
 
-        wrapper.state().filesInQueue = [file_a, file_b];
-        const accepted = [file_c, file_d];
+        const accepted = [file_a, file_b, file_c];
 
-        wrapper.instance()._handleDroppedFiles(accepted, {});
+        wrapper.instance()._handleDroppedFiles(accepted, {maxFiles: ['d.txt']});
         wrapper.update();
         expect(wrapper.state().errorMessage).toEqual('Maximum number of files (3) has been exceeded. File(s) (d.txt) will not be uploaded');
     });
@@ -228,20 +227,6 @@ describe('Component FileUploader', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
 
         expect(wrapper.state().isTermsAndConditionsAccepted).toBeFalsy();
-    });
-
-    it('should remove duplicate files', () => {
-        const wrapper = setup({});
-        const file_a = FILE_TO_USE('a.txt');
-        const file_b = FILE_TO_USE('b.txt');
-        const file_c = FILE_TO_USE('c.txt');
-        const file_d = FILE_TO_USE('d.txt');
-
-        wrapper.state().filesInQueue = [file_a, file_b, file_c];
-        const accepted = [file_c, file_d];
-        const {uniqueFiles, duplicateFiles} = wrapper.instance().removeDuplicate(accepted, ['a.txt', 'b.txt', 'c.txt']);
-        expect(uniqueFiles).toEqual([file_d]);
-        expect(duplicateFiles).toEqual(['c.txt']);
     });
 
     it('should return false if any file has open access with date selected but terms and conditions not accepted', () => {
@@ -308,4 +293,16 @@ describe('Component FileUploader', () => {
         wrapper.state().filesInQueue = [file_a, file_b, file_c, file_d];
         expect(wrapper.instance().isFileUploadValid(wrapper.state())).toBeFalsy();
     });
+
+    it('should get correct error message based on errors object', () => {
+        const wrapper = setup({});
+
+        expect(wrapper.instance().getErrorMessage({
+            maxFiles: ['a.txt', 'b.txt'],
+            duplicateFiles: ['c.txt', 'd.txt'],
+            fileName: ['web_a.txt'],
+            folder: ['someFolder'],
+            maxFileSize: ['big_file.txt']
+        })).toEqual('Maximum number of files (5) has been exceeded. File(s) (a.txt, b.txt) will not be uploaded; File(s) (c.txt, d.txt) are duplicate and have been ignored; File(s) (web_a.txt) have invalid file name; Invalid files (someFolder); File(s) (big_file.txt) exceed maximum allowed upload file size');
+    })
 });

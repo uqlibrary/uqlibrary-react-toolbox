@@ -184,37 +184,24 @@ export class FileUploader extends PureComponent {
     /**
      * Handle accepted, rejected and dropped folders and display proper alerts
      *
-     * @param accepted
+     * @param uniqueFilesToQueue
      * @param errorsFromDropzone
      */
-    _handleDroppedFiles = (accepted, errorsFromDropzone) => {
-        const {fileUploadLimit} = this.props.fileRestrictionsConfig;
+    _handleDroppedFiles = (uniqueFilesToQueue, errorsFromDropzone) => {
         const {defaultQuickTemplateId} = this.props;
         const {filesInQueue} = this.state;
 
-        // Remove duplicate files from accepted files
-        const {uniqueFiles, duplicateFiles} = this.removeDuplicate([...accepted], filesInQueue.map(file => file.name));
-
         // Combine unique files and files queued already
-        const totalFiles = [...filesInQueue, ...uniqueFiles];
-
-        // Get file names to display in error message for file upload limit
-        const filesExceedingMaxFileUploadLimit = [...totalFiles].slice(fileUploadLimit).map(file => file.name);
-
-        // If max files uploaded, get files allowed to upload
-        const uniqueFilesToQueue = [...totalFiles].slice(0, fileUploadLimit);
+        const totalFiles = [...filesInQueue, ...uniqueFilesToQueue];
 
         // Set files to queue
         this.setState({
             filesInQueue: defaultQuickTemplateId ?
-                [...uniqueFilesToQueue].map(file => ({...file, [FILE_META_KEY_ACCESS_CONDITION]: defaultQuickTemplateId})) :
-                [...uniqueFilesToQueue],
+                [...totalFiles].map(file => ({...file, [FILE_META_KEY_ACCESS_CONDITION]: defaultQuickTemplateId})) :
+                [...totalFiles],
             focusOnIndex: filesInQueue.length,
-            errorMessage: ''
+            errorMessage: this.getErrorMessage(errorsFromDropzone)
         });
-
-        // Process any errors
-        this.processErrors({...errorsFromDropzone, duplicateFiles: duplicateFiles, maxFiles: filesExceedingMaxFileUploadLimit});
     };
 
     /*
@@ -284,7 +271,7 @@ export class FileUploader extends PureComponent {
      *
      * @private
      */
-    processErrors = (errors) => {
+    getErrorMessage = (errors) => {
         const {validation} = this.props.locale;
         const errorMessages = [];
         let message = '';
@@ -304,31 +291,7 @@ export class FileUploader extends PureComponent {
             }
         });
 
-        this.setState({
-            errorMessage: errorMessages.join('; ')
-        });
-    };
-
-    /**
-     * Remove duplicate files from given accepted files
-     *
-     * @param accepted
-     * @param filesInQueue - list of names of files in queue
-     * @returns Object
-     */
-    removeDuplicate = (accepted, filesInQueue) => {
-        const errors = {
-            duplicateFiles: []
-        };
-
-        // Ignore files from accepted files which are already in files queue
-        const filteredDuplicates = [...accepted].filter(file => {
-            filesInQueue.indexOf(file.name) >= 0 && errors.duplicateFiles.push(file.name);
-            return filesInQueue.indexOf(file.name) === -1;
-        });
-
-        // Return unique files and errors with duplicate file names
-        return {uniqueFiles: [...filteredDuplicates], ...errors};
+        return errorMessages.length > 0 ? errorMessages.join('; ') : '';
     };
 
     render() {
@@ -368,7 +331,9 @@ export class FileUploader extends PureComponent {
                     locale={this.props.locale}
                     maxSize={this.calculateMaxFileSize()}
                     disabled={disabled}
+                    filesInQueue={[...this.state.filesInQueue].map(file => file.name)}
                     fileNameRestrictions={fileNameRestrictions}
+                    fileUploadLimit={fileUploadLimit}
                     onDrop={this._handleDroppedFiles} />
                 {
                     filesInQueue.length > 0 && (

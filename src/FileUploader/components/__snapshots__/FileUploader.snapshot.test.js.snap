@@ -9,6 +9,12 @@ exports[`Component FileUploader should accept terms and condition and reset back
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -40,6 +46,7 @@ exports[`Component FileUploader should accept terms and condition and reset back
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -119,6 +126,12 @@ exports[`Component FileUploader should accept terms and condition and reset back
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -150,6 +163,7 @@ exports[`Component FileUploader should accept terms and condition and reset back
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -242,6 +256,12 @@ exports[`Component FileUploader should accept terms and condition and reset back
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -273,6 +293,7 @@ exports[`Component FileUploader should accept terms and condition and reset back
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -365,6 +386,12 @@ exports[`Component FileUploader should accept terms and condition and reset back
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -396,6 +423,7 @@ exports[`Component FileUploader should accept terms and condition and reset back
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -476,6 +504,13 @@ exports[`Component FileUploader should not reset file access or embargo date inf
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+        "b.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -507,6 +542,7 @@ exports[`Component FileUploader should not reset file access or embargo date inf
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -614,6 +650,13 @@ exports[`Component FileUploader should not reset file access or embargo date inf
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+        "b.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -645,6 +688,7 @@ exports[`Component FileUploader should not reset file access or embargo date inf
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -754,6 +798,13 @@ exports[`Component FileUploader should not reset file access or embargo date inf
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+        "b.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -785,6 +836,7 @@ exports[`Component FileUploader should not reset file access or embargo date inf
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -895,6 +947,15 @@ exports[`Component FileUploader should not reset file access or embargo date inf
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+        "b.txt",
+        "c.txt",
+        "d.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -926,6 +987,7 @@ exports[`Component FileUploader should not reset file access or embargo date inf
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -1092,6 +1154,8 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={Array []}
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -1123,6 +1187,7 @@ exports[`Component FileUploader should render correctly without any setup 1`] = 
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -1145,6 +1210,8 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={Array []}
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -1176,6 +1243,7 @@ exports[`Component FileUploader should render rows for uploaded files 1`] = `
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -1198,6 +1266,13 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+        "b.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -1229,6 +1304,7 @@ exports[`Component FileUploader should render rows for uploaded files 2`] = `
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -1336,6 +1412,12 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "b.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -1367,6 +1449,7 @@ exports[`Component FileUploader should render rows for uploaded files 3`] = `
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -1446,6 +1529,8 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={Array []}
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -1477,6 +1562,7 @@ exports[`Component FileUploader should render rows for uploaded files 4`] = `
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -1499,6 +1585,8 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={Array []}
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -1530,6 +1618,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -1552,6 +1641,13 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+        "b.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -1583,6 +1679,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -1694,6 +1791,8 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={Array []}
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -1725,6 +1824,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -1747,6 +1847,13 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+        "b.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -1778,6 +1885,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -1885,6 +1993,13 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+        "b.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -1916,6 +2031,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -2024,6 +2140,13 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+        "b.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -2055,6 +2178,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -2175,6 +2299,13 @@ exports[`Component FileUploader should render rows for uploaded files with acces
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+        "b.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -2206,6 +2337,7 @@ exports[`Component FileUploader should render rows for uploaded files with acces
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -2326,6 +2458,8 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={Array []}
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -2357,6 +2491,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",
@@ -2379,6 +2514,13 @@ exports[`Component FileUploader should render rows for uploaded files with defau
   </h4>
   <FileUploadDropzone
     fileNameRestrictions={/\\^\\(\\?=\\^\\\\S\\*\\$\\)\\(\\?=\\^\\[\\^\\\\\\.\\]\\+\\\\\\.\\[\\^\\\\\\.\\]\\+\\$\\)\\(\\?=\\.\\{1,45\\}\\$\\)\\(\\?!\\(web_\\|preview_\\|thumbnail_\\|stream_\\|fezacml_\\|presmd_\\)\\)\\[a-z\\]\\[a-z\\\\d\\\\-_\\\\\\.\\]\\+/}
+    fileUploadLimit={5}
+    filesInQueue={
+      Array [
+        "a.txt",
+        "b.txt",
+      ]
+    }
     locale={
       Object {
         "accessTermsAndConditions": "I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.",
@@ -2410,6 +2552,7 @@ exports[`Component FileUploader should render rows for uploaded files with defau
         "successMessage": "Successfully added [numberOfFiles] file(s) to upload queue.",
         "successTitle": "Success",
         "validation": Object {
+          "duplicateFiles": "File(s) ([filenames]) are duplicate and have been ignored",
           "fileName": "File(s) ([filenames]) have invalid file name",
           "folder": "Invalid files ([filenames])",
           "maxFileSize": "File(s) ([filenames]) exceed maximum allowed upload file size",

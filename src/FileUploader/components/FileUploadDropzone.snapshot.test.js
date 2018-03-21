@@ -66,11 +66,13 @@ describe('Component FileUploadDropzone', () => {
     it('should set max file size error message for rejected files', async () => {
         const onDropCallback = jest.fn();
         const props = {
-            onDrop: onDropCallback
+            onDrop: onDropCallback,
+            filesInQueue: [],
+            fileUploadLimit: 5
         };
 
         const wrapper = setup({...props});
-        wrapper.instance().removeDroppedFolders = jest.fn((accepted, errors) => {
+        wrapper.instance().removeDroppedFolders = jest.fn((accepted, {}) => {
             return Promise.resolve(accepted);
         });
 
@@ -83,7 +85,7 @@ describe('Component FileUploadDropzone', () => {
         const rejected = [file_b];
 
         await wrapper.instance()._onDrop(accepted, rejected);
-        expect(onDropCallback).toHaveBeenCalledWith(expectedAccepted, {maxFileSize: ['b.txt'], folder: [], fileName: []});
+        expect(onDropCallback).toHaveBeenCalledWith(expectedAccepted, {maxFileSize: ['b.txt'], folder: [], fileName: [], duplicateFiles: [], maxFiles: []});
     });
 
     it('should open files selection dialog', () => {
@@ -91,9 +93,8 @@ describe('Component FileUploadDropzone', () => {
         const props = {
             onDrop: onDropCallback,
             maxSize: 1000,
-            maxFiles: 5,
-            uploadedFiles: [],
-            clearErrors: false,
+            fileUploadLimit: 5,
+            filesInQueue: [],
             locale: locale
         };
         const wrapper = setup({...props}, false);
@@ -107,5 +108,65 @@ describe('Component FileUploadDropzone', () => {
 
         wrapper.update();
         expect(testFn).toHaveBeenCalled();
+    });
+
+    it('should remove duplicate files', () => {
+        const wrapper = setup({});
+
+        const file_c = FILE_TO_USE('c.txt');
+        const file_d = FILE_TO_USE('d.txt');
+
+        const accepted = [file_c, file_d];
+        const {uniqueFiles, duplicateFiles} = wrapper.instance().removeDuplicate(accepted, ['a.txt', 'b.txt', 'c.txt']);
+        expect(uniqueFiles).toEqual([file_d]);
+        expect(duplicateFiles).toEqual(['c.txt']);
+    });
+
+    it('should set max files error message', async () => {
+        const file_a = FILE_TO_USE('a.txt');
+        const file_b = FILE_TO_USE('b.txt');
+        const file_c = FILE_TO_USE('c.txt');
+        const file_d = FILE_TO_USE('d.txt');
+        const onDropTestFn = jest.fn();
+
+        const wrapper = setup({
+            fileUploadLimit: 3,
+            filesInQueue: [file_a.name, file_b.name],
+            onDrop: onDropTestFn
+        });
+
+        const accepted = [file_c, file_d];
+        wrapper.instance().removeDroppedFolders = jest.fn((accepted, {}) => new Promise(resolve => resolve(accepted)));
+        const expectedAccepted = [{fileData: file_c, name: file_c.name, size: file_c.size}];
+
+        await wrapper.instance()._onDrop(accepted, []);
+        wrapper.update();
+        expect(onDropTestFn).toHaveBeenCalledWith(expectedAccepted, {maxFiles: ['d.txt'], maxFileSize: [], duplicateFiles: [], folder: [], fileName: []});
+    });
+
+    it('should set all error messages', async () => {
+        const file_a = FILE_TO_USE('a.txt');
+        const file_b = FILE_TO_USE('b.txt');
+        const file_b_dup = FILE_TO_USE('b.txt');
+        const file_c = FILE_TO_USE('c.txt');
+        const file_d = FILE_TO_USE('web_d.txt');
+        const file_e = FILE_TO_USE('e.txt');
+        const file_f = FILE_TO_USE('f.txt');
+        const file_g = FILE_TO_USE('g.txt');
+        const onDropTestFn = jest.fn();
+
+        const wrapper = setup({
+            fileUploadLimit: 4,
+            filesInQueue: [file_a.name, file_b.name],
+            onDrop: onDropTestFn
+        });
+
+        const accepted = [file_b_dup, file_c, file_d, file_f, file_g];
+        wrapper.instance().removeDroppedFolders = jest.fn((accepted, {}) => new Promise(resolve => resolve([file_b_dup, file_c, file_d, file_f, file_g])));
+        const expectedAccepted = [file_c, file_f].map(file => ({fileData: file, name: file.name, size: file.size}));
+
+        await wrapper.instance()._onDrop(accepted, [file_e]);
+        wrapper.update();
+        expect(onDropTestFn).toHaveBeenCalledWith(expectedAccepted, {maxFiles: ['g.txt'], maxFileSize: ['e.txt'], duplicateFiles: ['b.txt'], folder: [], fileName: ['web_d.txt']});
     });
 });
