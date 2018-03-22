@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.FileUploadRow = exports.FILE_META_KEY_EMBARGO_DATE = exports.FILE_META_KEY_ACCESS_CONDITION = undefined;
+exports.FileUploadRow = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -45,7 +45,11 @@ var _FileUploadEmbargoDate = require('./FileUploadEmbargoDate');
 
 var _FileUploadEmbargoDate2 = _interopRequireDefault(_FileUploadEmbargoDate);
 
-var _FileUploader = require('./FileUploader');
+var _constants = require('../constants');
+
+var constants = _interopRequireWildcard(_constants);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -54,9 +58,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var FILE_META_KEY_ACCESS_CONDITION = exports.FILE_META_KEY_ACCESS_CONDITION = 'access_condition_id';
-var FILE_META_KEY_EMBARGO_DATE = exports.FILE_META_KEY_EMBARGO_DATE = 'date';
 
 var _ref = _react2.default.createElement(
     _FontIcon2.default,
@@ -109,10 +110,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
         };
 
         _this.calculateFilesizeToDisplay = function (size) {
-            var exponent = Math.floor(Math.log(size) / Math.log(_FileUploader.sizeBase));
-            return '' + (size / Math.pow(_FileUploader.sizeBase, exponent)).toFixed(1) + Object.keys(_FileUploader.sizeUnitText).map(function (key) {
-                return _FileUploader.sizeUnitText[key];
-            })[exponent];
+            var exponent = Math.floor(Math.log(size) / Math.log(constants.SIZE_BASE));
+            return '' + (size / Math.pow(constants.SIZE_BASE, exponent)).toFixed(1) + constants.SIZE_UNITS[exponent];
         };
 
         _this._updateAccessCondition = function (newValue) {
@@ -159,8 +158,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 isUploadInProgress = _props.isUploadInProgress;
 
 
-            var accessConditionId = uploadedFile[FILE_META_KEY_ACCESS_CONDITION];
-            var embargoDate = uploadedFile[FILE_META_KEY_EMBARGO_DATE];
+            var accessConditionId = uploadedFile[constants.FILE_META_KEY_ACCESS_CONDITION];
+            var embargoDate = uploadedFile[constants.FILE_META_KEY_EMBARGO_DATE];
 
             var progressProps = progress > 0 ? { mode: 'determinate', value: progress } : {};
 
@@ -221,7 +220,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         'div',
                         { className: 'embargo-date-info' },
                         requireOpenAccessStatus && _ref3,
-                        requireOpenAccessStatus && accessConditionId !== _FileUploadAccessSelector.OPEN_ACCESS_ID && _react2.default.createElement(
+                        requireOpenAccessStatus && accessConditionId !== constants.OPEN_ACCESS_ID && _react2.default.createElement(
                             'div',
                             { className: 'no-embargo-date' },
                             _react2.default.createElement(
@@ -235,7 +234,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                                 embargoDateColumn
                             )
                         ),
-                        requireOpenAccessStatus && accessConditionId === _FileUploadAccessSelector.OPEN_ACCESS_ID && _react2.default.createElement(
+                        requireOpenAccessStatus && accessConditionId === constants.OPEN_ACCESS_ID && _react2.default.createElement(
                             'div',
                             { className: 'embargo-date-selector' },
                             _react2.default.createElement(_FileUploadEmbargoDate2.default, { value: new Date(embargoDate), onChange: this._updateEmbargoDate, disabled: disabled }),

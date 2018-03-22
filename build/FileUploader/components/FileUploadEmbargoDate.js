@@ -18,6 +18,8 @@ var _DatePicker = require('material-ui/DatePicker');
 
 var _DatePicker2 = _interopRequireDefault(_DatePicker);
 
+var _config = require('../config');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -86,10 +88,7 @@ FileUploadEmbargoDate.defaultProps = {
     locale: {
         datePickerLocale: 'en-AU'
     },
-    defaultConfig: {
-        dateTimeFormat: global.Intl.DateTimeFormat,
-        fieldName: 'accessDate'
-    },
+    defaultConfig: _config.embargoDate,
     value: new Date(),
     minDate: new Date()
 };

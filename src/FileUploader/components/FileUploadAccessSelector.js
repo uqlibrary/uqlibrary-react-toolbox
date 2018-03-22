@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import MenuItem from 'material-ui/MenuItem';
 import SelectField from 'material-ui/SelectField';
 
-export const OPEN_ACCESS_ID = 9;
-export const CLOSED_ACCESS_ID = 8;
+import {OPEN_ACCESS_ID, CLOSED_ACCESS_ID} from '../constants';
+import {accessSelector} from '../config';
 
 export default class FileUploadAccessSelector extends Component {
     static propTypes = {
@@ -24,7 +24,7 @@ export default class FileUploadAccessSelector extends Component {
             },
             errorMessage: 'This field is required'
         },
-        fieldName: 'accessCondition',
+        fieldName: accessSelector.fieldName,
         value: null
     };
 
@@ -40,7 +40,7 @@ export default class FileUploadAccessSelector extends Component {
         const {initialValue, accessSelectOptionsText, errorMessage} = this.props.locale;
         const {fieldName, value, disabled} = this.props;
 
-        const accessOptions = Object.keys(accessSelectOptionsText).map((access, index) => (<MenuItem value={parseInt(access, 10)} primaryText={accessSelectOptionsText[access]} key={index} />));
+        const accessOptions = accessSelector.accessIds.map((access, index) => (<MenuItem value={parseInt(access, 10)} primaryText={accessSelectOptionsText[access]} key={index} />));
 
         return (
             <SelectField

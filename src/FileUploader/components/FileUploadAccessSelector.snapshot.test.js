@@ -1,5 +1,14 @@
 import FileUploadAccessSelector from './FileUploadAccessSelector';
 
+jest.mock('../config', () => {
+    return {
+        accessSelector: {
+            fieldName: 'accessCondition',
+            accessIds: [1,2]
+        }
+    };
+});
+
 function setup(testProps, isShallow = true) {
     const props = {
         ...testProps

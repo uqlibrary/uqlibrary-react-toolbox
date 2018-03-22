@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.CLOSED_ACCESS_ID = exports.OPEN_ACCESS_ID = undefined;
 
 var _accessSelectOptionsT;
 
@@ -25,6 +24,10 @@ var _SelectField = require('material-ui/SelectField');
 
 var _SelectField2 = _interopRequireDefault(_SelectField);
 
+var _constants = require('../constants');
+
+var _config = require('../config');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -34,9 +37,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var OPEN_ACCESS_ID = exports.OPEN_ACCESS_ID = 9;
-var CLOSED_ACCESS_ID = exports.CLOSED_ACCESS_ID = 8;
 
 var FileUploadAccessSelector = function (_Component) {
     _inherits(FileUploadAccessSelector, _Component);
@@ -66,7 +66,7 @@ var FileUploadAccessSelector = function (_Component) {
                 disabled = _props.disabled;
 
 
-            var accessOptions = Object.keys(accessSelectOptionsText).map(function (access, index) {
+            var accessOptions = _config.accessSelector.accessIds.map(function (access, index) {
                 return _react2.default.createElement(_MenuItem2.default, { value: parseInt(access, 10), primaryText: accessSelectOptionsText[access], key: index });
             });
 
@@ -95,10 +95,10 @@ var FileUploadAccessSelector = function (_Component) {
 FileUploadAccessSelector.defaultProps = {
     locale: {
         initialValue: 'Select access conditions',
-        accessSelectOptionsText: (_accessSelectOptionsT = {}, _defineProperty(_accessSelectOptionsT, OPEN_ACCESS_ID, 'Open Access'), _defineProperty(_accessSelectOptionsT, CLOSED_ACCESS_ID, 'Closed Access'), _accessSelectOptionsT),
+        accessSelectOptionsText: (_accessSelectOptionsT = {}, _defineProperty(_accessSelectOptionsT, _constants.OPEN_ACCESS_ID, 'Open Access'), _defineProperty(_accessSelectOptionsT, _constants.CLOSED_ACCESS_ID, 'Closed Access'), _accessSelectOptionsT),
         errorMessage: 'This field is required'
     },
-    fieldName: 'accessCondition',
+    fieldName: _config.accessSelector.fieldName,
     value: null
 };
 exports.default = FileUploadAccessSelector;

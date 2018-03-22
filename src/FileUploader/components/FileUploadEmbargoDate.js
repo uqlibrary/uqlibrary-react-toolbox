@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'material-ui/DatePicker';
+import {embargoDate} from '../config';
 
 export default class FileUploadEmbargoDate extends Component {
     static propTypes = {
@@ -16,10 +17,7 @@ export default class FileUploadEmbargoDate extends Component {
         locale: {
             datePickerLocale: 'en-AU'
         },
-        defaultConfig: {
-            dateTimeFormat: global.Intl.DateTimeFormat,
-            fieldName: 'accessDate'
-        },
+        defaultConfig: embargoDate,
         value: new Date(),
         minDate: new Date()
     };
