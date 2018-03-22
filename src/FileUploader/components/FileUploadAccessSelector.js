@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import MenuItem from 'material-ui/MenuItem';
 import SelectField from 'material-ui/SelectField';
 
-import {OPEN_ACCESS_ID, CLOSED_ACCESS_ID} from '../constants';
-import {accessSelector} from '../config';
+import {accessSelector, OPEN_ACCESS_ID, CLOSED_ACCESS_ID} from '../config';
 
 export default class FileUploadAccessSelector extends Component {
     static propTypes = {

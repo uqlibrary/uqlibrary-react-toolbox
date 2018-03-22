@@ -41,11 +41,9 @@ var _FileUploadRow2 = _interopRequireDefault(_FileUploadRow);
 
 var _Alert = require('../../Alert');
 
-var _constants = require('../constants');
-
-var constants = _interopRequireWildcard(_constants);
-
 var _config = require('../config');
+
+var config = _interopRequireWildcard(_config);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -88,14 +86,14 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         _this._updateFileAccessCondition = function (fileToUpdate, index, newValue) {
             var file = _extends({}, fileToUpdate);
 
-            file[constants.FILE_META_KEY_ACCESS_CONDITION] = newValue;
+            file[config.FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
-            if (newValue !== constants.OPEN_ACCESS_ID && file.hasOwnProperty(constants.FILE_META_KEY_EMBARGO_DATE)) {
-                file[constants.FILE_META_KEY_EMBARGO_DATE] = null;
+            if (newValue !== config.OPEN_ACCESS_ID && file.hasOwnProperty(config.FILE_META_KEY_EMBARGO_DATE)) {
+                file[config.FILE_META_KEY_EMBARGO_DATE] = null;
             }
 
-            if (newValue === constants.OPEN_ACCESS_ID && !file.hasOwnProperty(constants.FILE_META_KEY_EMBARGO_DATE)) {
-                file[constants.FILE_META_KEY_EMBARGO_DATE] = moment().format();
+            if (newValue === config.OPEN_ACCESS_ID && !file.hasOwnProperty(config.FILE_META_KEY_EMBARGO_DATE)) {
+                file[config.FILE_META_KEY_EMBARGO_DATE] = moment().format();
             }
 
             _this.replaceFile(file, index);
@@ -104,7 +102,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
         _this._updateFileEmbargoDate = function (fileToUpdate, index, newValue) {
             var file = _extends({}, fileToUpdate);
 
-            file[constants.FILE_META_KEY_EMBARGO_DATE] = moment(newValue).format();
+            file[config.FILE_META_KEY_EMBARGO_DATE] = moment(newValue).format();
 
             _this.replaceFile(file, index);
         };
@@ -124,7 +122,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
             // Set files to queue
             _this.setState({
                 filesInQueue: defaultQuickTemplateId ? [].concat(_toConsumableArray(totalFiles)).map(function (file) {
-                    return _extends({}, file, _defineProperty({}, constants.FILE_META_KEY_ACCESS_CONDITION, defaultQuickTemplateId));
+                    return _extends({}, file, _defineProperty({}, config.FILE_META_KEY_ACCESS_CONDITION, defaultQuickTemplateId));
                 }) : [].concat(_toConsumableArray(totalFiles)),
                 focusOnIndex: filesInQueue.length,
                 errorMessage: _this.getErrorMessage(errorsFromDropzone)
@@ -146,13 +144,13 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 maxFileSize = _this$props$fileRestr.maxFileSize,
                 fileSizeUnit = _this$props$fileRestr.fileSizeUnit;
 
-            var exponent = constants.SIZE_UNITS.indexOf(fileSizeUnit);
-            return maxFileSize * Math.pow(constants.SIZE_BASE, exponent >= 0 ? exponent : 0);
+            var exponent = config.SIZE_UNITS.indexOf(fileSizeUnit);
+            return maxFileSize * Math.pow(config.SIZE_BASE, exponent >= 0 ? exponent : 0);
         };
 
         _this.isAnyOpenAccess = function (files) {
             return files.filter(function (file) {
-                return file.hasOwnProperty(constants.FILE_META_KEY_ACCESS_CONDITION) && file[constants.FILE_META_KEY_ACCESS_CONDITION] === constants.OPEN_ACCESS_ID;
+                return file.hasOwnProperty(config.FILE_META_KEY_ACCESS_CONDITION) && file[config.FILE_META_KEY_ACCESS_CONDITION] === config.OPEN_ACCESS_ID;
             }).length > 0;
         };
 
@@ -161,7 +159,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 isTermsAndConditionsAccepted = _ref.isTermsAndConditionsAccepted;
 
             return !_this.props.requireOpenAccessStatus || filesInQueue.filter(function (file) {
-                return file.hasOwnProperty(constants.FILE_META_KEY_ACCESS_CONDITION);
+                return file.hasOwnProperty(config.FILE_META_KEY_ACCESS_CONDITION);
             }).length === filesInQueue.length && (_this.isAnyOpenAccess(filesInQueue) && isTermsAndConditionsAccepted || !_this.isAnyOpenAccess(filesInQueue));
         };
 
@@ -333,7 +331,7 @@ var FileUploader = exports.FileUploader = function (_PureComponent) {
                 successMessage = _props$locale2.successMessage;
 
 
-            var instructionsDisplay = instructions.replace('[fileUploadLimit]', fileUploadLimit).replace('[maxFileSize]', '' + maxFileSize).replace('[fileSizeUnit]', fileSizeUnit === constants.SIZE_UNIT_B ? constants.SIZE_UNIT_B : fileSizeUnit + 'B');
+            var instructionsDisplay = instructions.replace('[fileUploadLimit]', fileUploadLimit).replace('[maxFileSize]', '' + maxFileSize).replace('[fileSizeUnit]', fileSizeUnit === config.SIZE_UNIT_B ? config.SIZE_UNIT_B : fileSizeUnit + 'B');
 
             var filesInQueueRow = filesInQueue.map(function (file, index) {
                 return _react2.default.createElement(_FileUploadRow2.default, {
@@ -444,7 +442,7 @@ FileUploader.defaultProps = {
             'Click here to select files, or drag files into this area to upload'
         )
     },
-    fileRestrictionsConfig: _config.fileRestrictionsConfig,
+    fileRestrictionsConfig: config.fileRestrictionsConfig,
     requireOpenAccessStatus: false
 };
 

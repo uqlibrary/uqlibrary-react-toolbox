@@ -45,9 +45,9 @@ var _FileUploadEmbargoDate = require('./FileUploadEmbargoDate');
 
 var _FileUploadEmbargoDate2 = _interopRequireDefault(_FileUploadEmbargoDate);
 
-var _constants = require('../constants');
+var _config = require('../config');
 
-var constants = _interopRequireWildcard(_constants);
+var config = _interopRequireWildcard(_config);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -110,8 +110,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
         };
 
         _this.calculateFilesizeToDisplay = function (size) {
-            var exponent = Math.floor(Math.log(size) / Math.log(constants.SIZE_BASE));
-            return '' + (size / Math.pow(constants.SIZE_BASE, exponent)).toFixed(1) + constants.SIZE_UNITS[exponent];
+            var exponent = Math.floor(Math.log(size) / Math.log(config.SIZE_BASE));
+            return '' + (size / Math.pow(config.SIZE_BASE, exponent)).toFixed(1) + config.SIZE_UNITS[exponent];
         };
 
         _this._updateAccessCondition = function (newValue) {
@@ -158,8 +158,8 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                 isUploadInProgress = _props.isUploadInProgress;
 
 
-            var accessConditionId = uploadedFile[constants.FILE_META_KEY_ACCESS_CONDITION];
-            var embargoDate = uploadedFile[constants.FILE_META_KEY_EMBARGO_DATE];
+            var accessConditionId = uploadedFile[config.FILE_META_KEY_ACCESS_CONDITION];
+            var embargoDate = uploadedFile[config.FILE_META_KEY_EMBARGO_DATE];
 
             var progressProps = progress > 0 ? { mode: 'determinate', value: progress } : {};
 
@@ -220,7 +220,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                         'div',
                         { className: 'embargo-date-info' },
                         requireOpenAccessStatus && _ref3,
-                        requireOpenAccessStatus && accessConditionId !== constants.OPEN_ACCESS_ID && _react2.default.createElement(
+                        requireOpenAccessStatus && accessConditionId !== config.OPEN_ACCESS_ID && _react2.default.createElement(
                             'div',
                             { className: 'no-embargo-date' },
                             _react2.default.createElement(
@@ -234,7 +234,7 @@ var FileUploadRow = exports.FileUploadRow = function (_Component) {
                                 embargoDateColumn
                             )
                         ),
-                        requireOpenAccessStatus && accessConditionId === constants.OPEN_ACCESS_ID && _react2.default.createElement(
+                        requireOpenAccessStatus && accessConditionId === config.OPEN_ACCESS_ID && _react2.default.createElement(
                             'div',
                             { className: 'embargo-date-selector' },
                             _react2.default.createElement(_FileUploadEmbargoDate2.default, { value: new Date(embargoDate), onChange: this._updateEmbargoDate, disabled: disabled }),

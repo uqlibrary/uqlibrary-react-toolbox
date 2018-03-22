@@ -24,8 +24,6 @@ var _SelectField = require('material-ui/SelectField');
 
 var _SelectField2 = _interopRequireDefault(_SelectField);
 
-var _constants = require('../constants');
-
 var _config = require('../config');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -95,7 +93,7 @@ var FileUploadAccessSelector = function (_Component) {
 FileUploadAccessSelector.defaultProps = {
     locale: {
         initialValue: 'Select access conditions',
-        accessSelectOptionsText: (_accessSelectOptionsT = {}, _defineProperty(_accessSelectOptionsT, _constants.OPEN_ACCESS_ID, 'Open Access'), _defineProperty(_accessSelectOptionsT, _constants.CLOSED_ACCESS_ID, 'Closed Access'), _accessSelectOptionsT),
+        accessSelectOptionsText: (_accessSelectOptionsT = {}, _defineProperty(_accessSelectOptionsT, _config.OPEN_ACCESS_ID, 'Open Access'), _defineProperty(_accessSelectOptionsT, _config.CLOSED_ACCESS_ID, 'Closed Access'), _accessSelectOptionsT),
         errorMessage: 'This field is required'
     },
     fieldName: _config.accessSelector.fieldName,

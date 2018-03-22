@@ -34,14 +34,14 @@ Object.keys(_actions).forEach(function (key) {
   });
 });
 
-var _constants = require('./constants');
+var _config = require('./config');
 
-Object.keys(_constants).forEach(function (key) {
+Object.keys(_config).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
-      return _constants[key];
+      return _config[key];
     }
   });
 });

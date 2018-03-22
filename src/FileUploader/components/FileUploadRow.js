@@ -10,7 +10,7 @@ import {ConfirmDialogBox} from '../../ConfirmDialogBox';
 import FileUploadAccessSelector from './FileUploadAccessSelector';
 import FileUploadEmbargoDate from './FileUploadEmbargoDate';
 
-import * as constants from '../constants';
+import * as config from '../config';
 
 export class FileUploadRow extends Component {
     static propTypes = {
@@ -67,8 +67,8 @@ export class FileUploadRow extends Component {
     };
 
     calculateFilesizeToDisplay = (size) => {
-        const exponent = Math.floor(Math.log(size) / Math.log(constants.SIZE_BASE));
-        return `${(size / Math.pow(constants.SIZE_BASE, exponent)).toFixed(1)}${constants.SIZE_UNITS[exponent]}`;
+        const exponent = Math.floor(Math.log(size) / Math.log(config.SIZE_BASE));
+        return `${(size / Math.pow(config.SIZE_BASE, exponent)).toFixed(1)}${config.SIZE_UNITS[exponent]}`;
     };
 
     _updateAccessCondition = (newValue) => {
@@ -83,8 +83,8 @@ export class FileUploadRow extends Component {
         const {deleteRecordConfirmation, filenameColumn, fileAccessColumn, embargoDateColumn, embargoDateClosedAccess, uploadInProgressText, deleteHint} = this.props.locale;
         const {progress, uploadedFile, index, requireOpenAccessStatus, disabled, isUploadInProgress} = this.props;
 
-        const accessConditionId = uploadedFile[constants.FILE_META_KEY_ACCESS_CONDITION];
-        const embargoDate = uploadedFile[constants.FILE_META_KEY_EMBARGO_DATE];
+        const accessConditionId = uploadedFile[config.FILE_META_KEY_ACCESS_CONDITION];
+        const embargoDate = uploadedFile[config.FILE_META_KEY_EMBARGO_DATE];
 
         const progressProps = progress > 0 ? {mode: 'determinate', value: progress} : {};
 
@@ -120,14 +120,14 @@ export class FileUploadRow extends Component {
                             <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
                         }
                         {
-                            requireOpenAccessStatus && (accessConditionId !== constants.OPEN_ACCESS_ID) &&
+                            requireOpenAccessStatus && (accessConditionId !== config.OPEN_ACCESS_ID) &&
                             <div className="no-embargo-date">
                                 <span>{embargoDateClosedAccess}</span>
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }
                         {
-                            requireOpenAccessStatus && (accessConditionId === constants.OPEN_ACCESS_ID) &&
+                            requireOpenAccessStatus && (accessConditionId === config.OPEN_ACCESS_ID) &&
                             <div className="embargo-date-selector">
                                 <FileUploadEmbargoDate value={new Date(embargoDate)} onChange={this._updateEmbargoDate} disabled={disabled} />
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>

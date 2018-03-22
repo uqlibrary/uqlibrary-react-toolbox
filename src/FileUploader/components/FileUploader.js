@@ -9,8 +9,7 @@ import FileUploadRowHeader from './FileUploadRowHeader';
 import FileUploadRow from './FileUploadRow';
 import {Alert} from '../../Alert';
 
-import * as constants from '../constants';
-import {fileRestrictionsConfig} from '../config';
+import * as config from '../config';
 
 const moment = require('moment');
 
@@ -55,7 +54,7 @@ export class FileUploader extends PureComponent {
                 <p>Click here to select files, or drag files into this area to upload</p>
             )
         },
-        fileRestrictionsConfig: fileRestrictionsConfig,
+        fileRestrictionsConfig: config.fileRestrictionsConfig,
         requireOpenAccessStatus: false
     };
 
@@ -120,14 +119,14 @@ export class FileUploader extends PureComponent {
     _updateFileAccessCondition = (fileToUpdate, index, newValue) => {
         const file = {...fileToUpdate};
 
-        file[constants.FILE_META_KEY_ACCESS_CONDITION] = newValue;
+        file[config.FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
-        if ((newValue !== constants.OPEN_ACCESS_ID) && file.hasOwnProperty(constants.FILE_META_KEY_EMBARGO_DATE)) {
-            file[constants.FILE_META_KEY_EMBARGO_DATE] = null;
+        if ((newValue !== config.OPEN_ACCESS_ID) && file.hasOwnProperty(config.FILE_META_KEY_EMBARGO_DATE)) {
+            file[config.FILE_META_KEY_EMBARGO_DATE] = null;
         }
 
-        if ((newValue === constants.OPEN_ACCESS_ID) && !file.hasOwnProperty(constants.FILE_META_KEY_EMBARGO_DATE)) {
-            file[constants.FILE_META_KEY_EMBARGO_DATE] = moment().format();
+        if ((newValue === config.OPEN_ACCESS_ID) && !file.hasOwnProperty(config.FILE_META_KEY_EMBARGO_DATE)) {
+            file[config.FILE_META_KEY_EMBARGO_DATE] = moment().format();
         }
 
         this.replaceFile(file, index);
@@ -144,7 +143,7 @@ export class FileUploader extends PureComponent {
     _updateFileEmbargoDate = (fileToUpdate, index, newValue) => {
         const file = {...fileToUpdate};
 
-        file[constants.FILE_META_KEY_EMBARGO_DATE] = moment(newValue).format();
+        file[config.FILE_META_KEY_EMBARGO_DATE] = moment(newValue).format();
 
         this.replaceFile(file, index);
     };
@@ -176,7 +175,7 @@ export class FileUploader extends PureComponent {
         // Set files to queue
         this.setState({
             filesInQueue: defaultQuickTemplateId ?
-                [...totalFiles].map(file => ({...file, [constants.FILE_META_KEY_ACCESS_CONDITION]: defaultQuickTemplateId})) :
+                [...totalFiles].map(file => ({...file, [config.FILE_META_KEY_ACCESS_CONDITION]: defaultQuickTemplateId})) :
                 [...totalFiles],
             focusOnIndex: filesInQueue.length,
             errorMessage: this.getErrorMessage(errorsFromDropzone)
@@ -215,8 +214,8 @@ export class FileUploader extends PureComponent {
      */
     calculateMaxFileSize = () => {
         const {maxFileSize, fileSizeUnit} = this.props.fileRestrictionsConfig;
-        const exponent = constants.SIZE_UNITS.indexOf(fileSizeUnit);
-        return maxFileSize * Math.pow(constants.SIZE_BASE, exponent >= 0 ? exponent : 0);
+        const exponent = config.SIZE_UNITS.indexOf(fileSizeUnit);
+        return maxFileSize * Math.pow(config.SIZE_BASE, exponent >= 0 ? exponent : 0);
     };
 
     /**
@@ -227,7 +226,7 @@ export class FileUploader extends PureComponent {
      */
     isAnyOpenAccess = (files) => {
         return files.filter(file =>
-            file.hasOwnProperty(constants.FILE_META_KEY_ACCESS_CONDITION) && (file[constants.FILE_META_KEY_ACCESS_CONDITION] === constants.OPEN_ACCESS_ID)
+            file.hasOwnProperty(config.FILE_META_KEY_ACCESS_CONDITION) && (file[config.FILE_META_KEY_ACCESS_CONDITION] === config.OPEN_ACCESS_ID)
         ).length > 0;
     };
 
@@ -241,7 +240,7 @@ export class FileUploader extends PureComponent {
     isFileUploadValid = ({filesInQueue, isTermsAndConditionsAccepted}) => {
         return !this.props.requireOpenAccessStatus ||
             (
-                filesInQueue.filter(file => file.hasOwnProperty(constants.FILE_META_KEY_ACCESS_CONDITION)).length === filesInQueue.length &&
+                filesInQueue.filter(file => file.hasOwnProperty(config.FILE_META_KEY_ACCESS_CONDITION)).length === filesInQueue.length &&
                 (this.isAnyOpenAccess(filesInQueue) && isTermsAndConditionsAccepted || !this.isAnyOpenAccess(filesInQueue))
             );
     };
@@ -284,7 +283,7 @@ export class FileUploader extends PureComponent {
         const instructionsDisplay = instructions
             .replace('[fileUploadLimit]', fileUploadLimit)
             .replace('[maxFileSize]', `${maxFileSize}`)
-            .replace('[fileSizeUnit]', fileSizeUnit === constants.SIZE_UNIT_B ? constants.SIZE_UNIT_B : `${fileSizeUnit}B`);
+            .replace('[fileSizeUnit]', fileSizeUnit === config.SIZE_UNIT_B ? config.SIZE_UNIT_B : `${fileSizeUnit}B`);
 
         const filesInQueueRow = filesInQueue.map((file, index) => {
             return (
