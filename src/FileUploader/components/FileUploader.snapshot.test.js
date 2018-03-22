@@ -5,11 +5,11 @@ const locale = {
     instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
     accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
     validation: {
-        ['folder']: 'Invalid files ([filenames])',
-        ['fileName']: 'File(s) ([filenames]) have invalid file name',
-        ['maxFileSize']: 'File(s) ([filenames]) exceed maximum allowed upload file size',
-        ['maxFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded',
-        ['duplicateFiles']: 'File(s) ([filenames]) are duplicate and have been ignored'
+        ['folder']: 'Invalid files ([fileNames])',
+        ['fileName']: 'File(s) ([fileNames]) have invalid file name',
+        ['maxFileSize']: 'File(s) ([fileNames]) exceed maximum allowed upload file size',
+        ['tooManyFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([fileNames]) will not be uploaded',
+        ['duplicateFiles']: 'File(s) ([fileNames]) are duplicate and have been ignored'
     },
     errorTitle: 'Upload Errors',
     successTitle: 'Success',
@@ -172,7 +172,7 @@ describe('Component FileUploader', () => {
 
         const accepted = [file_a, file_b, file_c];
 
-        wrapper.instance()._handleDroppedFiles(accepted, {maxFiles: ['d.txt']});
+        wrapper.instance()._handleDroppedFiles(accepted, {tooManyFiles: ['d.txt']});
         wrapper.update();
         expect(wrapper.state().errorMessage).toEqual('Maximum number of files (3) has been exceeded. File(s) (d.txt) will not be uploaded');
     });
@@ -298,7 +298,7 @@ describe('Component FileUploader', () => {
         const wrapper = setup({});
 
         expect(wrapper.instance().getErrorMessage({
-            maxFiles: ['a.txt', 'b.txt'],
+            tooManyFiles: ['a.txt', 'b.txt'],
             duplicateFiles: ['c.txt', 'd.txt'],
             fileName: ['web_a.txt'],
             folder: ['someFolder'],

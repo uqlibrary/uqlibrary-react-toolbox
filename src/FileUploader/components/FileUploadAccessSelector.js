@@ -1,17 +1,16 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import MenuItem from 'material-ui/MenuItem';
 import SelectField from 'material-ui/SelectField';
 
-import {accessSelector, OPEN_ACCESS_ID, CLOSED_ACCESS_ID} from '../config';
+import {OPEN_ACCESS_ID, CLOSED_ACCESS_ID} from '../config';
 
-export default class FileUploadAccessSelector extends Component {
+export default class FileUploadAccessSelector extends PureComponent {
     static propTypes = {
         onChange: PropTypes.func,
         locale: PropTypes.object,
         disabled: PropTypes.bool,
-        value: PropTypes.number,
-        fieldName: PropTypes.string
+        value: PropTypes.number
     };
 
     static defaultProps = {
@@ -23,13 +22,8 @@ export default class FileUploadAccessSelector extends Component {
             },
             errorMessage: 'This field is required'
         },
-        fieldName: accessSelector.fieldName,
         value: null
     };
-
-    constructor(props) {
-        super(props);
-    }
 
     _onChange = (event, index, value) => {
         if (this.props.onChange) this.props.onChange(value);
@@ -37,20 +31,20 @@ export default class FileUploadAccessSelector extends Component {
 
     render() {
         const {initialValue, accessSelectOptionsText, errorMessage} = this.props.locale;
-        const {fieldName, value, disabled} = this.props;
-
-        const accessOptions = accessSelector.accessIds.map((access, index) => (<MenuItem value={parseInt(access, 10)} primaryText={accessSelectOptionsText[access]} key={index} />));
+        const {value, disabled} = this.props;
+        const accessOptions = [OPEN_ACCESS_ID, CLOSED_ACCESS_ID].map((access, index) => (
+            <MenuItem value={parseInt(access, 10)} primaryText={accessSelectOptionsText[access]} key={`access_option_key_${index}`} />
+        ));
 
         return (
             <SelectField
-                id={fieldName}
-                name={fieldName}
+                id={'accessCondition'}
                 className="selectField requiredField"
                 hintText={initialValue}
                 dropDownMenuProps={{animated: false}}
                 maxHeight={250}
                 onChange={this._onChange}
-                errorText={value === null ? errorMessage : ''}
+                errorText={!value ? errorMessage : ''}
                 floatingLabelFixed
                 disabled={disabled}
                 value={value}>

@@ -12,12 +12,11 @@ exports[`Component FileUploadAccessSelector should render access condition disab
 >
   <FileUploadAccessSelector
     disabled={true}
-    fieldName="accessCondition"
     locale={
       Object {
         "accessSelectOptionsText": Object {
-          "1": "Open Access",
-          "2": "Closed Access",
+          "8": "Closed Access",
+          "9": "Open Access",
         },
         "errorMessage": "This field is required",
         "initialValue": "Select access conditions",
@@ -41,7 +40,6 @@ exports[`Component FileUploadAccessSelector should render access condition disab
       id="accessCondition"
       maxHeight={250}
       multiple={false}
-      name="accessCondition"
       onChange={[Function]}
       value={null}
     >
@@ -54,14 +52,12 @@ exports[`Component FileUploadAccessSelector should render access condition disab
         hintText="Select access conditions"
         id="accessCondition"
         multiLine={false}
-        name="accessCondition"
         rows={1}
         type="text"
         underlineShow={true}
       >
         <div
           className="selectField requiredField"
-          name="accessCondition"
           style={
             Object {
               "backgroundColor": "transparent",
@@ -1403,12 +1399,11 @@ exports[`Component FileUploadAccessSelector should render access condition disab
 >
   <FileUploadAccessSelector
     disabled={true}
-    fieldName="accessCondition"
     locale={
       Object {
         "accessSelectOptionsText": Object {
-          "1": "Open Access",
-          "2": "Closed Access",
+          "8": "Closed Access",
+          "9": "Open Access",
         },
         "errorMessage": "This field is required",
         "initialValue": "Select access conditions",
@@ -1432,7 +1427,6 @@ exports[`Component FileUploadAccessSelector should render access condition disab
       id="accessCondition"
       maxHeight={250}
       multiple={false}
-      name="accessCondition"
       onChange={[Function]}
       value={2}
     >
@@ -1445,14 +1439,12 @@ exports[`Component FileUploadAccessSelector should render access condition disab
         hintText="Select access conditions"
         id="accessCondition"
         multiLine={false}
-        name="accessCondition"
         rows={1}
         type="text"
         underlineShow={true}
       >
         <div
           className="selectField requiredField"
-          name="accessCondition"
           style={
             Object {
               "backgroundColor": "transparent",
@@ -2065,9 +2057,7 @@ exports[`Component FileUploadAccessSelector should render access condition disab
                           "whiteSpace": "nowrap",
                         }
                       }
-                    >
-                      Closed Access
-                    </div>
+                    />
                     <IconButton
                       disableTouchRipple={false}
                       disabled={true}
@@ -2786,7 +2776,6 @@ exports[`Component FileUploadAccessSelector should render with default setup 1`]
   id="accessCondition"
   maxHeight={250}
   multiple={false}
-  name="accessCondition"
   onChange={[Function]}
   value={null}
 >
@@ -2802,7 +2791,7 @@ exports[`Component FileUploadAccessSelector should render with default setup 1`]
     disabled={false}
     focusState="none"
     insetChildren={false}
-    key="0"
+    key="access_option_key_0"
     primaryText="Open Access"
     targetOrigin={
       Object {
@@ -2810,7 +2799,7 @@ exports[`Component FileUploadAccessSelector should render with default setup 1`]
         "vertical": "top",
       }
     }
-    value={1}
+    value={9}
   />
   <MenuItem
     anchorOrigin={
@@ -2824,7 +2813,7 @@ exports[`Component FileUploadAccessSelector should render with default setup 1`]
     disabled={false}
     focusState="none"
     insetChildren={false}
-    key="1"
+    key="access_option_key_1"
     primaryText="Closed Access"
     targetOrigin={
       Object {
@@ -2832,7 +2821,7 @@ exports[`Component FileUploadAccessSelector should render with default setup 1`]
         "vertical": "top",
       }
     }
-    value={2}
+    value={8}
   />
 </SelectField>
 `;
@@ -2854,7 +2843,6 @@ exports[`Component FileUploadAccessSelector should render with value 1`] = `
   id="accessCondition"
   maxHeight={250}
   multiple={false}
-  name="accessCondition"
   onChange={[Function]}
   value={1}
 >
@@ -2870,7 +2858,7 @@ exports[`Component FileUploadAccessSelector should render with value 1`] = `
     disabled={false}
     focusState="none"
     insetChildren={false}
-    key="0"
+    key="access_option_key_0"
     primaryText="Open Access"
     targetOrigin={
       Object {
@@ -2878,7 +2866,7 @@ exports[`Component FileUploadAccessSelector should render with value 1`] = `
         "vertical": "top",
       }
     }
-    value={1}
+    value={9}
   />
   <MenuItem
     anchorOrigin={
@@ -2892,7 +2880,7 @@ exports[`Component FileUploadAccessSelector should render with value 1`] = `
     disabled={false}
     focusState="none"
     insetChildren={false}
-    key="1"
+    key="access_option_key_1"
     primaryText="Closed Access"
     targetOrigin={
       Object {
@@ -2900,7 +2888,7 @@ exports[`Component FileUploadAccessSelector should render with value 1`] = `
         "vertical": "top",
       }
     }
-    value={2}
+    value={8}
   />
 </SelectField>
 `;

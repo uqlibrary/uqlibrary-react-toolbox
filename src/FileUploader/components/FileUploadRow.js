@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
@@ -12,7 +12,7 @@ import FileUploadEmbargoDate from './FileUploadEmbargoDate';
 
 import * as config from '../config';
 
-export class FileUploadRow extends Component {
+export class FileUploadRow extends PureComponent {
     static propTypes = {
         index: PropTypes.number.isRequired,
         uploadedFile: PropTypes.object.isRequired,
@@ -43,10 +43,6 @@ export class FileUploadRow extends Component {
             uploadInProgressText: 'Uploading...'
         }
     };
-
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         const indexToFocus = this.props.focusOnIndex;
@@ -104,13 +100,13 @@ export class FileUploadRow extends Component {
                 <div className="column datalist-text is-3-desktop is-4-tablet is-12-mobile">
                     {
                         requireOpenAccessStatus &&
-                            <div className="file-access-selector">
-                                <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
-                                <div className="select-container">
-                                    <FileUploadAccessSelector value={accessConditionId} onChange={this._updateAccessCondition} disabled={disabled} ref={`accessConditionSelector${index}`} />
-                                    <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{fileAccessColumn}</span>
-                                </div>
+                        <div className="file-access-selector">
+                            <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">lock_outline</FontIcon>
+                            <div className="select-container">
+                                <FileUploadAccessSelector value={accessConditionId} onChange={this._updateAccessCondition} disabled={disabled} ref={`accessConditionSelector${index}`} />
+                                <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{fileAccessColumn}</span>
                             </div>
+                        </div>
                     }
                 </div>
                 <div className="column datalist-text is-2-desktop is-2-tablet is-three-quarters-mobile is-inline-block-mobile">
@@ -120,14 +116,14 @@ export class FileUploadRow extends Component {
                             <FontIcon className="material-icons mobile-icon is-hidden-desktop is-hidden-tablet">date_range</FontIcon>
                         }
                         {
-                            requireOpenAccessStatus && (accessConditionId !== config.OPEN_ACCESS_ID) &&
+                            requireOpenAccessStatus && accessConditionId !== config.OPEN_ACCESS_ID &&
                             <div className="no-embargo-date">
                                 <span>{embargoDateClosedAccess}</span>
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
                             </div>
                         }
                         {
-                            requireOpenAccessStatus && (accessConditionId === config.OPEN_ACCESS_ID) &&
+                            requireOpenAccessStatus && accessConditionId === config.OPEN_ACCESS_ID &&
                             <div className="embargo-date-selector">
                                 <FileUploadEmbargoDate value={new Date(embargoDate)} onChange={this._updateEmbargoDate} disabled={disabled} />
                                 <span className="is-mobile label is-hidden-desktop is-hidden-tablet datalist-text-subtitle">{embargoDateColumn}</span>
@@ -151,15 +147,12 @@ export class FileUploadRow extends Component {
                                 <CircularProgress
                                     {...progressProps}
                                     size={20}
-                                    thickness={4}
-                                />
+                                    thickness={4} />
                             </div>
                             <div className="upload-progress-number">
-                                {
-                                    <span aria-label={progress > 0 ? `${progress}%` : uploadInProgressText}>
-                                        {progress > 0 ? `${progress}%` : uploadInProgressText}
-                                    </span>
-                                }
+                                <span aria-label={progress > 0 ? `${progress}%` : uploadInProgressText}>
+                                    {progress > 0 ? `${progress}%` : uploadInProgressText}
+                                </span>
                             </div>
                         </div>
                     }

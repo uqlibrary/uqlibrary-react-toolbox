@@ -20,13 +20,6 @@ export const SIZE_UNITS = [
     SIZE_UNIT_G
 ];
 
-export const fileRestrictionsConfig = {
-    fileUploadLimit: DEFAULT_FILE_UPLOAD_LIMIT,
-    maxFileSize: DEFAULT_MAX_FILE_SIZE,
-    fileSizeUnit: SIZE_UNIT_G,
-    fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
-};
-
 export const accessSelector = {
     fieldName: 'accessCondition',
     accessIds: [

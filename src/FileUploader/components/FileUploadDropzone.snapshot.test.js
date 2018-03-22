@@ -2,10 +2,10 @@ import FileUploadDropzone from './FileUploadDropzone';
 
 const locale = {
     validation: {
-        ['folder']: 'Invalid files ([filenames])',
-        ['fileName']: 'File(s) ([filenames]) have invalid file name',
-        ['maxFileSize']: 'File(s) ([filenames]) exceed maximum allowed upload file size',
-        ['maxFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded',
+        ['folder']: 'Invalid files ([fileNames])',
+        ['fileName']: 'File(s) ([fileNames]) have invalid file name',
+        ['maxFileSize']: 'File(s) ([fileNames]) exceed maximum allowed upload file size',
+        ['tooManyFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([fileNames]) will not be uploaded',
     },
     successTitle: 'Success',
     successMessage: 'Successfully added [numberOfFiles] file(s) to upload queue.',
@@ -85,7 +85,7 @@ describe('Component FileUploadDropzone', () => {
         const rejected = [file_b];
 
         await wrapper.instance()._onDrop(accepted, rejected);
-        expect(onDropCallback).toHaveBeenCalledWith(expectedAccepted, {maxFileSize: ['b.txt'], folder: [], fileName: [], duplicateFiles: [], maxFiles: []});
+        expect(onDropCallback).toHaveBeenCalledWith(expectedAccepted, {maxFileSize: ['b.txt'], folder: [], fileName: [], duplicateFiles: [], tooManyFiles: []});
     });
 
     it('should open files selection dialog', () => {
@@ -141,7 +141,7 @@ describe('Component FileUploadDropzone', () => {
 
         await wrapper.instance()._onDrop(accepted, []);
         wrapper.update();
-        expect(onDropTestFn).toHaveBeenCalledWith(expectedAccepted, {maxFiles: ['d.txt'], maxFileSize: [], duplicateFiles: [], folder: [], fileName: []});
+        expect(onDropTestFn).toHaveBeenCalledWith(expectedAccepted, {tooManyFiles: ['d.txt'], maxFileSize: [], duplicateFiles: [], folder: [], fileName: []});
     });
 
     it('should set all error messages', async () => {
@@ -167,6 +167,6 @@ describe('Component FileUploadDropzone', () => {
 
         await wrapper.instance()._onDrop(accepted, [file_e]);
         wrapper.update();
-        expect(onDropTestFn).toHaveBeenCalledWith(expectedAccepted, {maxFiles: ['g.txt'], maxFileSize: ['e.txt'], duplicateFiles: ['b.txt'], folder: [], fileName: ['web_d.txt']});
+        expect(onDropTestFn).toHaveBeenCalledWith(expectedAccepted, {tooManyFiles: ['g.txt'], maxFileSize: ['e.txt'], duplicateFiles: ['b.txt'], folder: [], fileName: ['web_d.txt']});
     });
 });

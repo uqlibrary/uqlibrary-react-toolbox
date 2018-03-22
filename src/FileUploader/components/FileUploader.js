@@ -29,11 +29,11 @@ export class FileUploader extends PureComponent {
             instructions: 'You may add up to [fileUploadLimit] files (max [maxFileSize][fileSizeUnit] each)',
             accessTermsAndConditions: 'I understand that the files indicated above as open access will be submitted as open access and will be made publicly available immediately or will be made available on the indicated embargo date.  All other files submitted will be accessible by UQ eSpace administrators.',
             validation: {
-                ['folder']: 'Invalid files ([filenames])',
-                ['fileName']: 'File(s) ([filenames]) have invalid file name',
-                ['maxFileSize']: 'File(s) ([filenames]) exceed maximum allowed upload file size',
-                ['maxFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([filenames]) will not be uploaded',
-                ['duplicateFiles']: 'File(s) ([filenames]) are duplicate and have been ignored'
+                ['notFiles']: 'Invalid files ([fileNames])',
+                ['invalidFileNames']: 'File(s) ([fileNames]) have invalid file name',
+                ['tooBigFiles']: 'File(s) ([fileNames]) exceed maximum allowed upload file size',
+                ['tooManyFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([fileNames]) will not be uploaded',
+                ['duplicateFiles']: 'File(s) ([fileNames]) are duplicate and have been ignored'
             },
             errorTitle: 'Upload Errors',
             successTitle: 'Success',
@@ -54,7 +54,12 @@ export class FileUploader extends PureComponent {
                 <p>Click here to select files, or drag files into this area to upload</p>
             )
         },
-        fileRestrictionsConfig: config.fileRestrictionsConfig,
+        fileRestrictionsConfig: {
+            fileUploadLimit: config.DEFAULT_FILE_UPLOAD_LIMIT,
+            maxFileSize: config.DEFAULT_MAX_FILE_SIZE,
+            fileSizeUnit: config.SIZE_UNIT_G,
+            fileNameRestrictions: /^(?=^\S*$)(?=^[^\.]+\.[^\.]+$)(?=.{1,45}$)(?!(web_|preview_|thumbnail_|stream_|fezacml_|presmd_))[a-z][a-z\d\-_\.]+/
+        },
         requireOpenAccessStatus: false
     };
 
@@ -246,27 +251,23 @@ export class FileUploader extends PureComponent {
     };
 
     /**
-     * Process errors
+     * Process errors into a message
      *
      * @private
      */
     getErrorMessage = (errors) => {
         const {validation} = this.props.locale;
         const errorMessages = [];
-        let message = '';
 
         Object.keys(errors).map(errorCode => {
             const fileNames = errors[errorCode];
             if (fileNames.length > 0) {
-                message = validation[errorCode]
-                    .replace('[numberOfFiles]', fileNames.length)
-                    .replace('[filenames]', fileNames.join(', '));
-
-                if (errorCode === 'maxFiles') {
-                    errorMessages.push(message.replace('[maxNumberOfFiles]', `${this.props.fileRestrictionsConfig.fileUploadLimit}`));
-                } else {
-                    errorMessages.push(message);
-                }
+                errorMessages.push(
+                    validation[errorCode]
+                        .replace('[numberOfFiles]', fileNames.length)
+                        .replace('[fileNames]', fileNames.join(', '))
+                        .replace('[maxNumberOfFiles]', `${this.props.fileRestrictionsConfig.fileUploadLimit}`)
+                );
             }
         });
 
@@ -315,14 +316,13 @@ export class FileUploader extends PureComponent {
                     fileUploadLimit={fileUploadLimit}
                     onDrop={this._handleDroppedFiles} />
                 {
-                    filesInQueue.length > 0 && (
-                        <Alert title={successTitle} message={successMessage.replace('[numberOfFiles]', filesInQueue.length)} type="done" />
-                    )
+                    filesInQueue.length > 0 &&
+                    <Alert title={successTitle} message={successMessage.replace('[numberOfFiles]', filesInQueue.length)} type="done" />
+
                 }
                 {
-                    errorMessage.length > 0 && (
-                        <Alert title={errorTitle} message={errorMessage} type="error" />
-                    )
+                    errorMessage.length > 0 &&
+                    <Alert title={errorTitle} message={errorMessage} type="error" />
                 }
                 {
                     filesInQueue.length > 0 &&

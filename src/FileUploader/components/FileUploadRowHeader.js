@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 import {ConfirmDialogBox} from '../../ConfirmDialogBox';
 
-export default class FileUploadRowHeader extends Component {
+export default class FileUploadRowHeader extends PureComponent {
     static propTypes = {
         onDeleteAll: PropTypes.func.isRequired,
         locale: PropTypes.object,
@@ -14,7 +14,7 @@ export default class FileUploadRowHeader extends Component {
 
     static defaultProps = {
         locale: {
-            filenameColumn: 'File Name',
+            filenameColumn: 'File name',
             fileAccessColumn: 'Access conditions',
             embargoDateColumn: 'Embargo release date',
             deleteAllFiles: 'Remove all files from the upload queue',
@@ -26,10 +26,6 @@ export default class FileUploadRowHeader extends Component {
             }
         }
     };
-
-    constructor(props) {
-        super(props);
-    }
 
     _showConfirmation = () => {
         this.confirmationBox.showConfirmation();

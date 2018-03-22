@@ -696,7 +696,7 @@ exports[`Component FileUploadRowHeader should render with default setup 1`] = `
   <div
     className="column datalist-title is-6-desktop is-5-tablet is-12-mobile header"
   >
-    File Name
+    File name
   </div>
   <div
     className="column datalist-title is-3-desktop is-4-tablet is-12-mobile header"
