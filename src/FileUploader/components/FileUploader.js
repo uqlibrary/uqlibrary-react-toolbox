@@ -33,7 +33,7 @@ export class FileUploader extends PureComponent {
                 ['invalidFileNames']: 'File(s) ([fileNames]) have invalid file name',
                 ['tooBigFiles']: 'File(s) ([fileNames]) exceed maximum allowed upload file size',
                 ['tooManyFiles']: 'Maximum number of files ([maxNumberOfFiles]) has been exceeded. File(s) ([fileNames]) will not be uploaded',
-                ['duplicateFiles']: 'File(s) ([fileNames]) are duplicate and have been ignored'
+                ['duplicateFiles']: 'File(s) ([fileNames]) are duplicates and have been ignored'
             },
             errorTitle: 'Upload Errors',
             successTitle: 'Success',
@@ -80,10 +80,6 @@ export class FileUploader extends PureComponent {
         this.props.clearFileUpload();
     }
 
-    /*
-     * File uploader's callback functions
-     */
-
     /**
      * Delete file on a given index
      *
@@ -110,7 +106,10 @@ export class FileUploader extends PureComponent {
      * @private
      */
     _deleteAllFiles = () => {
-        this.setState({filesInQueue: [], errorMessage: '', isTermsAndConditionsAccepted: false});
+        this.setState({
+            filesInQueue: [],
+            errorMessage: '',
+            isTermsAndConditionsAccepted: false});
     };
 
     /**
@@ -126,11 +125,9 @@ export class FileUploader extends PureComponent {
 
         file[config.FILE_META_KEY_ACCESS_CONDITION] = newValue;
 
-        if ((newValue !== config.OPEN_ACCESS_ID) && file.hasOwnProperty(config.FILE_META_KEY_EMBARGO_DATE)) {
+        if (newValue !== config.OPEN_ACCESS_ID && file.hasOwnProperty(config.FILE_META_KEY_EMBARGO_DATE)) {
             file[config.FILE_META_KEY_EMBARGO_DATE] = null;
-        }
-
-        if ((newValue === config.OPEN_ACCESS_ID) && !file.hasOwnProperty(config.FILE_META_KEY_EMBARGO_DATE)) {
+        } else if (newValue === config.OPEN_ACCESS_ID && !file.hasOwnProperty(config.FILE_META_KEY_EMBARGO_DATE)) {
             file[config.FILE_META_KEY_EMBARGO_DATE] = moment().format();
         }
 
@@ -179,9 +176,9 @@ export class FileUploader extends PureComponent {
 
         // Set files to queue
         this.setState({
-            filesInQueue: defaultQuickTemplateId ?
-                [...totalFiles].map(file => ({...file, [config.FILE_META_KEY_ACCESS_CONDITION]: defaultQuickTemplateId})) :
-                [...totalFiles],
+            filesInQueue: defaultQuickTemplateId
+                ? totalFiles.map(file => ({...file, [config.FILE_META_KEY_ACCESS_CONDITION]: defaultQuickTemplateId}))
+                : totalFiles,
             focusOnIndex: filesInQueue.length,
             errorMessage: this.getErrorMessage(errorsFromDropzone)
         });
@@ -230,9 +227,10 @@ export class FileUploader extends PureComponent {
      * @returns {boolean}
      */
     isAnyOpenAccess = (files) => {
-        return files.filter(file =>
-            file.hasOwnProperty(config.FILE_META_KEY_ACCESS_CONDITION) && (file[config.FILE_META_KEY_ACCESS_CONDITION] === config.OPEN_ACCESS_ID)
-        ).length > 0;
+        return files
+            .filter(file => file.hasOwnProperty(config.FILE_META_KEY_ACCESS_CONDITION)
+                && (file[config.FILE_META_KEY_ACCESS_CONDITION] === config.OPEN_ACCESS_ID))
+            .length > 0;
     };
 
     /**
@@ -261,7 +259,7 @@ export class FileUploader extends PureComponent {
 
         Object.keys(errors).map(errorCode => {
             const fileNames = errors[errorCode];
-            if (fileNames.length > 0) {
+            if (fileNames && fileNames.length > 0 && validation[errorCode]) {
                 errorMessages.push(
                     validation[errorCode]
                         .replace('[numberOfFiles]', fileNames.length)
@@ -311,7 +309,7 @@ export class FileUploader extends PureComponent {
                     locale={this.props.locale}
                     maxSize={this.calculateMaxFileSize()}
                     disabled={disabled}
-                    filesInQueue={[...this.state.filesInQueue].map(file => file.name)}
+                    filesInQueue={this.state.filesInQueue.map(file => file.name)}
                     fileNameRestrictions={fileNameRestrictions}
                     fileUploadLimit={fileUploadLimit}
                     onDrop={this._handleDroppedFiles} />

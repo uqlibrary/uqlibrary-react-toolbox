@@ -90,7 +90,7 @@
     "jest-cli": "^22.1.4",
     "jsdom": "^11.1.0",
     "jsdom-global": "^3.0.2",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.8.3",
     "np": "^2.16.0",
     "null-loader": "^0.1.1",
     "postcss-loader": "^2.0.6",

@@ -3,15 +3,20 @@ import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
 import FileUploadDropzoneStaticContent from './FileUploadDropzoneStaticContent';
 
-class FileUploadDropzone extends PureComponent {
+export default class FileUploadDropzone extends PureComponent {
     static propTypes = {
         onDrop: PropTypes.func.isRequired,
         maxSize: PropTypes.number.isRequired,
         locale: PropTypes.object.isRequired,
+        fileNameRestrictions: PropTypes.instanceOf(RegExp).isRequired,
         filesInQueue: PropTypes.array,
         fileUploadLimit: PropTypes.number,
-        disabled: PropTypes.bool,
-        fileNameRestrictions: PropTypes.instanceOf(RegExp).isRequired
+        disabled: PropTypes.bool
+    };
+
+    static defaultProps = {
+        fileUploadLimit: 10,
+        filesInQueue: []
     };
 
     constructor(props) {
@@ -20,37 +25,20 @@ class FileUploadDropzone extends PureComponent {
     }
 
     /**
-     * Remove folders from the list
+     * Try to read file and set error for a folder
      *
-     * @param filesAndFolders files and/or folders
-     * @param errors
-     * @returns {Promise.<*>}
-     */
-    removeDroppedFolders(filesAndFolders, errors) {
-        return Promise.all(
-            filesAndFolders.map(file => {
-                return new Promise(resolve => {
-                    this.readFile(file, errors, resolve);
-                });
-            })
-        );
-    }
-
-    /**
-     * Try to read fileOrFolder and set error for a folder
-     *
-     * @param fileOrFolder
+     * @param file
      * @param errors
      * @param resolve
      */
-    readFile = (fileOrFolder, errors, resolve) => {
+    readFile = (file, errors, resolve) => {
         const fileReader = new FileReader();
         fileReader.onerror = () => {
-            errors.push(fileOrFolder.name);
+            errors.push(file.name);
             return resolve(false);
         };
-        fileReader.onload = () => resolve(fileOrFolder);
-        const slice = fileOrFolder.slice(0, 10);
+        fileReader.onload = () => resolve(file);
+        const slice = file.slice(0, 10);
         return fileReader.readAsDataURL(slice);
     };
 
@@ -71,6 +59,23 @@ class FileUploadDropzone extends PureComponent {
     };
 
     /**
+     * Remove folders from the list
+     *
+     * @param filesAndFolders files and/or folders
+     * @param errors
+     * @returns {Promise.<*>}
+     */
+    removeDroppedFolders = (filesAndFolders, errors) => {
+        return Promise.all(
+            filesAndFolders.map(file => {
+                return new Promise(resolve => {
+                    this.readFile(file, errors, resolve);
+                });
+            })
+        );
+    };
+
+    /**
      * Remove invalid file names
      *
      * @param incomingFiles - array of files
@@ -79,12 +84,26 @@ class FileUploadDropzone extends PureComponent {
      */
     removeInvalidFileNames = (incomingFiles, fileNameRestrictions) => {
         const validFiles = incomingFiles
-            .filter(file => (!file && new RegExp(fileNameRestrictions, 'gi').test(file.name)));
+            .filter(file => (file && new RegExp(fileNameRestrictions, 'gi').test(file.name)));
         const invalidFileNames = incomingFiles
-            .filter(file => (!file && new RegExp(fileNameRestrictions, 'gi').test(file.name)))
+            .filter(file => (file && !(new RegExp(fileNameRestrictions, 'gi').test(file.name))))
             .map(file => file.name);
 
         return {validFiles: validFiles, invalidFileNames: invalidFileNames};
+    };
+
+    /**
+     * Remove files if there are too many files
+     *
+     * @param incomingFiles - array of files
+     * @param maxAllowed files to return
+     * @returns Object
+     */
+    removeTooManyFiles = (incomingFiles, maxAllowed) => {
+        const tooManyFiles = incomingFiles.slice(maxAllowed).map(file => file.name);
+        const limitedFiles = incomingFiles.slice(0, maxAllowed);
+
+        return {limitedFiles: limitedFiles, tooManyFiles: tooManyFiles};
     };
 
     /**
@@ -107,16 +126,11 @@ class FileUploadDropzone extends PureComponent {
                 // Remove duplicate files from accepted files
                 const {uniqueFiles, duplicateFiles} = this.removeDuplicate(validFiles, filesInQueue);
 
-                // Get file names to display in error message for file upload limit
-                const tooManyFiles = uniqueFiles.slice(fileUploadLimit - filesInQueue.length).map(file => file.name);
-
-                // If max files uploaded, get files allowed to upload
-                const cleanFiles = uniqueFiles
-                    .slice(0, fileUploadLimit - filesInQueue.length)
-                    .map(file => ({fileData: file, name: file.name, size: file.size}));
+                // Remove files exceeding the max number of files allowed
+                const {limitedFiles, tooManyFiles} = this.removeTooManyFiles(uniqueFiles, fileUploadLimit - filesInQueue.length);
 
                 this.props.onDrop(
-                    cleanFiles,
+                    limitedFiles.map(file => ({fileData: file, name: file.name, size: file.size})),
                     {
                         tooBigFiles: rejectedFiles.map(file => file.name),
                         notFiles: notFiles,
@@ -157,6 +171,3 @@ class FileUploadDropzone extends PureComponent {
         );
     }
 }
-
-export default FileUploadDropzone;
-

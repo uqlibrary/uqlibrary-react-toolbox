@@ -55,7 +55,7 @@ export class FileUploadRow extends PureComponent {
     }
 
     _showConfirmation = () => {
-        this.confirmationBox.showConfirmation();
+        if (this.confirmationBox) this.confirmationBox.showConfirmation();
     };
 
     _deleteFile = () => {

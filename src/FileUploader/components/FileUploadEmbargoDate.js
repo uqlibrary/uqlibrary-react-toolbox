@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'material-ui/DatePicker';
-import {embargoDate} from '../config';
 
-export default class FileUploadEmbargoDate extends Component {
+export default class FileUploadEmbargoDate extends PureComponent {
     static propTypes = {
         onChange: PropTypes.func,
         locale: PropTypes.object,
-        defaultConfig: PropTypes.object,
+        dateTimeFormat: PropTypes.string,
         disabled: PropTypes.bool,
         value: PropTypes.instanceOf(Date),
         minDate: PropTypes.instanceOf(Date)
@@ -17,7 +16,7 @@ export default class FileUploadEmbargoDate extends Component {
         locale: {
             datePickerLocale: 'en-AU'
         },
-        defaultConfig: embargoDate,
+        dateTimeFormat: global.Intl.DateTimeFormat,
         value: new Date(),
         minDate: new Date()
     };
@@ -37,7 +36,7 @@ export default class FileUploadEmbargoDate extends Component {
 
     render() {
         const {datePickerLocale} = this.props.locale;
-        const {dateTimeFormat, fieldName} = this.props.defaultConfig;
+        const dateTimeFormat = this.props.dateTimeFormat;
         return (
             <div tabIndex={0} onKeyPress={this._onKeyPress}>
                 <DatePicker
@@ -48,8 +47,7 @@ export default class FileUploadEmbargoDate extends Component {
                     autoOk
                     minDate={this.props.minDate}
                     value={this.props.value}
-                    id={fieldName}
-                    name={fieldName}
+                    id={'accessDatePicker'}
                     onChange={this._onChange}
                     disabled={this.props.disabled}
                     ref={(datePicker) => (this.datePickerRef = datePicker)}

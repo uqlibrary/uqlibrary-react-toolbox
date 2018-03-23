@@ -19,16 +19,3 @@ export const SIZE_UNITS = [
     SIZE_UNIT_M,
     SIZE_UNIT_G
 ];
-
-export const accessSelector = {
-    fieldName: 'accessCondition',
-    accessIds: [
-        OPEN_ACCESS_ID,
-        CLOSED_ACCESS_ID
-    ]
-};
-
-export const embargoDate = {
-    fieldName: 'accessDate',
-    dateTimeFormat: global.Intl.DateTimeFormat
-};
