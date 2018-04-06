@@ -28,13 +28,6 @@
     font-weight: $text-weight-normal !important;
     font-size: $text-body-normal !important;
     margin: 12px 12px 12px 0 !important;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
     .alertTitle {
       font-weight: bold !important;
       font-size: $text-weight-normal !important
@@ -184,7 +177,7 @@
     margin: 6px 0 12px 0 !important;
 
     .alertText {
-      margin: 18px 16px 12px 0 !important;
+      margin: 18px 0 12px 0 !important;
       padding-bottom: 0 !important;
     }
 
