@@ -103,7 +103,7 @@ var Alert = function (_PureComponent) {
                     ),
                     this.props.allowDismiss && this.props.dismissAction && _react2.default.createElement(
                         'div',
-                        { className: 'column is-narrow-tablet is-hidden-mobile' },
+                        { className: 'column is-narrow' },
                         _react2.default.createElement(
                             _IconButton2.default,
                             { onTouchTap: this.props.dismissAction, className: 'alertDismissButton', title: this.props.dismissTitle },

@@ -65,7 +65,7 @@ export default class Alert extends PureComponent {
                     }
                     {
                         this.props.allowDismiss && this.props.dismissAction &&
-                        <div className="column is-narrow-tablet is-hidden-mobile">
+                        <div className="column is-narrow">
                             <IconButton onTouchTap={this.props.dismissAction} className="alertDismissButton" title={this.props.dismissTitle}>
                                 <NavigationClose className="alertDismiss"/>
                             </IconButton>

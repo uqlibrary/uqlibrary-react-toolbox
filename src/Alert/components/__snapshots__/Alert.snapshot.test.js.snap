@@ -112,7 +112,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       </div>
     </div>
     <div
-      className="column is-narrow-tablet is-hidden-mobile"
+      className="column is-narrow"
     >
       <IconButton
         className="alertDismissButton"
@@ -183,7 +183,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       />
     </div>
     <div
-      className="column is-narrow-tablet is-hidden-mobile"
+      className="column is-narrow"
     >
       <IconButton
         className="alertDismissButton"
@@ -256,7 +256,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       />
     </div>
     <div
-      className="column is-narrow-tablet is-hidden-mobile"
+      className="column is-narrow"
     >
       <IconButton
         className="alertDismissButton"
