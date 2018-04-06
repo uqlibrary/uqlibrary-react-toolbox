@@ -112,7 +112,26 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       </div>
     </div>
     <div
-      className="column is-narrow"
+      className="column is-narrow is-hidden-tablet"
+    >
+      <IconButton
+        aria-label="Click to dismiss this alert"
+        className="alertDismissButton"
+        disableTouchRipple={false}
+        disabled={false}
+        iconStyle={Object {}}
+        onTouchTap={[MockFunction]}
+        title="Click to dismiss this alert"
+        tooltipPosition="bottom-center"
+        touch={false}
+      >
+        <NavigationClose
+          className="alertDismiss"
+        />
+      </IconButton>
+    </div>
+    <div
+      className="column is-narrow is-hidden-mobile"
     >
       <IconButton
         aria-label="Click to dismiss this alert"
@@ -165,6 +184,25 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       </div>
     </div>
     <div
+      className="column is-narrow is-hidden-tablet"
+    >
+      <IconButton
+        aria-label="Click to dismiss this alert"
+        className="alertDismissButton"
+        disableTouchRipple={false}
+        disabled={false}
+        iconStyle={Object {}}
+        onTouchTap={[MockFunction]}
+        title="Click to dismiss this alert"
+        tooltipPosition="bottom-center"
+        touch={false}
+      >
+        <NavigationClose
+          className="alertDismiss"
+        />
+      </IconButton>
+    </div>
+    <div
       className="column is-narrow-tablet is-12-mobile"
     >
       <FlatButton
@@ -184,7 +222,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       />
     </div>
     <div
-      className="column is-narrow"
+      className="column is-narrow is-hidden-mobile"
     >
       <IconButton
         aria-label="Click to dismiss this alert"
@@ -239,6 +277,25 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       </div>
     </div>
     <div
+      className="column is-narrow is-hidden-tablet"
+    >
+      <IconButton
+        aria-label="Click to dismiss this alert"
+        className="alertDismissButton"
+        disableTouchRipple={false}
+        disabled={false}
+        iconStyle={Object {}}
+        onTouchTap={[MockFunction]}
+        title="Click to dismiss this alert"
+        tooltipPosition="bottom-center"
+        touch={false}
+      >
+        <NavigationClose
+          className="alertDismiss"
+        />
+      </IconButton>
+    </div>
+    <div
       className="column is-narrow-tablet is-12-mobile"
     >
       <FlatButton
@@ -258,7 +315,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       />
     </div>
     <div
-      className="column is-narrow"
+      className="column is-narrow is-hidden-mobile"
     >
       <IconButton
         aria-label="Click to dismiss this alert"

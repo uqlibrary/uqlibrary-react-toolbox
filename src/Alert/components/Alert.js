@@ -53,6 +53,14 @@ export default class Alert extends PureComponent {
                         <div><b>{this.props.title && `${this.props.title} - `}</b>{this.props.message}</div>
                     </div>
                     {
+                        this.props.allowDismiss && this.props.dismissAction &&
+                        <div className="column is-narrow is-hidden-tablet">
+                            <IconButton onTouchTap={this.props.dismissAction} className="alertDismissButton" title={this.props.dismissTitle} aria-label={this.props.dismissTitle}>
+                                <NavigationClose className="alertDismiss"/>
+                            </IconButton>
+                        </div>
+                    }
+                    {
                         this.props.action && this.props.actionButtonLabel &&
                         <div
                             className={`column is-narrow-tablet is-12-mobile${(!this.props.allowDismiss && !this.props.dismissAction) ? ' noDismiss' : ''}`}>
@@ -65,7 +73,7 @@ export default class Alert extends PureComponent {
                     }
                     {
                         this.props.allowDismiss && this.props.dismissAction &&
-                        <div className="column is-narrow">
+                        <div className="column is-narrow is-hidden-mobile">
                             <IconButton onTouchTap={this.props.dismissAction} className="alertDismissButton" title={this.props.dismissTitle} aria-label={this.props.dismissTitle}>
                                 <NavigationClose className="alertDismiss"/>
                             </IconButton>

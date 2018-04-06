@@ -76,8 +76,8 @@ describe('Alert component functionality test ', () => {
         const dismissFunc = jest.fn();
         const wrapper = setup({dismissAction: dismissFunc, allowDismiss: true});
         expect(wrapper.find('button.alertDismissButton').exists()).toBeTruthy();
-        expect(wrapper.find('button.alertDismissButton')).toHaveLength(1);
-        wrapper.find('button.alertDismissButton').simulate('touchTap');
+        expect(wrapper.find('button.alertDismissButton')).toHaveLength(2);
+        wrapper.find('button.alertDismissButton').at(0).simulate('touchTap');
         expect(dismissFunc).toHaveBeenCalled();
     });
 

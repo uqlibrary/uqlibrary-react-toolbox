@@ -44,6 +44,8 @@ var _ref = _react2.default.createElement(_CircularProgress2.default, { className
 
 var _ref2 = _react2.default.createElement(_close2.default, { className: 'alertDismiss' });
 
+var _ref3 = _react2.default.createElement(_close2.default, { className: 'alertDismiss' });
+
 var Alert = function (_PureComponent) {
     _inherits(Alert, _PureComponent);
 
@@ -91,6 +93,15 @@ var Alert = function (_PureComponent) {
                             this.props.message
                         )
                     ),
+                    this.props.allowDismiss && this.props.dismissAction && _react2.default.createElement(
+                        'div',
+                        { className: 'column is-narrow is-hidden-tablet' },
+                        _react2.default.createElement(
+                            _IconButton2.default,
+                            { onTouchTap: this.props.dismissAction, className: 'alertDismissButton', title: this.props.dismissTitle, 'aria-label': this.props.dismissTitle },
+                            _ref2
+                        )
+                    ),
                     this.props.action && this.props.actionButtonLabel && _react2.default.createElement(
                         'div',
                         {
@@ -103,11 +114,11 @@ var Alert = function (_PureComponent) {
                     ),
                     this.props.allowDismiss && this.props.dismissAction && _react2.default.createElement(
                         'div',
-                        { className: 'column is-narrow' },
+                        { className: 'column is-narrow is-hidden-mobile' },
                         _react2.default.createElement(
                             _IconButton2.default,
                             { onTouchTap: this.props.dismissAction, className: 'alertDismissButton', title: this.props.dismissTitle, 'aria-label': this.props.dismissTitle },
-                            _ref2
+                            _ref3
                         )
                     )
                 )
