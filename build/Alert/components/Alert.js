@@ -106,7 +106,7 @@ var Alert = function (_PureComponent) {
                         { className: 'column is-narrow' },
                         _react2.default.createElement(
                             _IconButton2.default,
-                            { onTouchTap: this.props.dismissAction, className: 'alertDismissButton', title: this.props.dismissTitle },
+                            { onTouchTap: this.props.dismissAction, className: 'alertDismissButton', title: this.props.dismissTitle, 'aria-label': this.props.dismissTitle },
                             _ref2
                         )
                     )

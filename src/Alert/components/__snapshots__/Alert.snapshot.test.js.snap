@@ -115,6 +115,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       className="column is-narrow"
     >
       <IconButton
+        aria-label="Click to dismiss this alert"
         className="alertDismissButton"
         disableTouchRipple={false}
         disabled={false}
@@ -186,6 +187,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       className="column is-narrow"
     >
       <IconButton
+        aria-label="Click to dismiss this alert"
         className="alertDismissButton"
         disableTouchRipple={false}
         disabled={false}
@@ -259,6 +261,7 @@ exports[`Alert snapshots test renders Alert of error type should render dismiss 
       className="column is-narrow"
     >
       <IconButton
+        aria-label="Click to dismiss this alert"
         className="alertDismissButton"
         disableTouchRipple={false}
         disabled={false}
