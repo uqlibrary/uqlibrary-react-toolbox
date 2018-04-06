@@ -6,8 +6,10 @@ Prorotype component to display alerts/warnings/errors
 - `message: PropTypes.string`
 - `title: PropTypes.string`
 - `type PropTypes.string - valid values ['error', 'error_outline', 'warning', 'info', 'info_outline', 'help', 'help_outline']`
-- `outsideLayout PropTypes.bool` - prop is to render the module to fit outside of .card-layout
 - `showLoader PropTypes.bool` - prop is to render a spinner instead of icon
+- `allowDismiss PropTypes.bool` - prop is to render a dismiss button
+- `dismissAction PropTypes.func` - prop is function to call when dismiss button pressed
+- `dismissTitle PropTypes.string` - prop is title for dismiss button for accessibility
 
 
 ## Usage

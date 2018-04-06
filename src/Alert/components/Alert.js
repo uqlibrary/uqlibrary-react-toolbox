@@ -15,6 +15,7 @@ export default class Alert extends PureComponent {
         actionButtonLabel: PropTypes.string,
         allowDismiss: PropTypes.bool,
         dismissAction: PropTypes.func,
+        dismissTitle: PropTypes.string,
         showLoader: PropTypes.bool
     };
 
@@ -22,6 +23,7 @@ export default class Alert extends PureComponent {
         message: 'Unexpected error',
         type: 'error',
         allowDismiss: false,
+        dismissTitle: 'Click to dismiss this alert',
         showLoader: false
     };
 
@@ -64,7 +66,7 @@ export default class Alert extends PureComponent {
                     {
                         this.props.allowDismiss && this.props.dismissAction &&
                         <div className="column is-narrow-tablet is-hidden-mobile">
-                            <IconButton onTouchTap={this.props.dismissAction} className="alertDismissButton">
+                            <IconButton onTouchTap={this.props.dismissAction} className="alertDismissButton" title={this.props.dismissTitle}>
                                 <NavigationClose className="alertDismiss"/>
                             </IconButton>
                         </div>

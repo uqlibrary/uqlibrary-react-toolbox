@@ -106,7 +106,7 @@ var Alert = function (_PureComponent) {
                         { className: 'column is-narrow-tablet is-hidden-mobile' },
                         _react2.default.createElement(
                             _IconButton2.default,
-                            { onTouchTap: this.props.dismissAction, className: 'alertDismissButton' },
+                            { onTouchTap: this.props.dismissAction, className: 'alertDismissButton', title: this.props.dismissTitle },
                             _ref2
                         )
                     )
@@ -122,6 +122,7 @@ Alert.defaultProps = {
     message: 'Unexpected error',
     type: 'error',
     allowDismiss: false,
+    dismissTitle: 'Click to dismiss this alert',
     showLoader: false
 };
 exports.default = Alert;
