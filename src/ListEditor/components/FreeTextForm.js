@@ -9,17 +9,19 @@ export default class FreeTextForm extends Component {
         isValid: PropTypes.func,
         locale: PropTypes.object,
         disabled: PropTypes.bool,
-        errorText: PropTypes.string
+        errorText: PropTypes.string,
+        remindToAdd: PropTypes.bool
     };
 
     static defaultProps = {
         isValid: () => '',
+        remindToAdd: false,
         locale: {
             inputFieldLabel: 'Item name',
             inputFieldHint: 'Please type the item name',
             addButtonLabel: 'Add'
         }
-    }
+    };
 
     constructor(props) {
         super(props);
@@ -46,13 +48,13 @@ export default class FreeTextForm extends Component {
 
         // move focus to name as published text field after item was added
         if (this.refs.itemName) this.refs.itemName.focus();
-    }
+    };
 
     onNameChanged = (event, newValue) => {
         this.setState({
             itemName: newValue
         });
-    }
+    };
 
     render() {
         return (
@@ -72,6 +74,15 @@ export default class FreeTextForm extends Component {
                         disabled={this.props.disabled}
                         className="mui-long-labels-fix"
                     />
+                    {
+                        this.props.remindToAdd &&
+                        this.props.locale.remindToAdd &&
+                        this.state.itemName.length !== 0 &&
+                        !this.props.isValid(this.state.itemName) &&
+                        <div className="validationWarningMessage">
+                            {this.props.locale.remindToAdd}
+                        </div>
+                    }
                 </div>
                 <div className="column is-narrow">
                     <RaisedButton

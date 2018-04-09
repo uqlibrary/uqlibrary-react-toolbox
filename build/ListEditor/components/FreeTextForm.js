@@ -88,7 +88,12 @@ var FreeTextForm = function (_Component) {
                         errorText: this.props.isValid(this.state.itemName) || this.props.errorText ? (this.props.errorText || '') + ' ' + this.props.isValid(this.state.itemName) : null,
                         disabled: this.props.disabled,
                         className: 'mui-long-labels-fix'
-                    })
+                    }),
+                    this.props.remindToAdd && this.props.locale.remindToAdd && this.state.itemName.length !== 0 && !this.props.isValid(this.state.itemName) && _react2.default.createElement(
+                        'div',
+                        { className: 'validationWarningMessage' },
+                        this.props.locale.remindToAdd
+                    )
                 ),
                 _react2.default.createElement(
                     'div',
@@ -112,6 +117,7 @@ FreeTextForm.defaultProps = {
     isValid: function isValid() {
         return '';
     },
+    remindToAdd: false,
     locale: {
         inputFieldLabel: 'Item name',
         inputFieldHint: 'Please type the item name',

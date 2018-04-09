@@ -5,5 +5,6 @@ export default function ListEditorField(fieldProps) {
     return(<FreeTextListEditor
         errorText={fieldProps.meta ? fieldProps.meta.error : null}
         onChange={fieldProps.input.onChange}
+        remindToAdd={fieldProps.remindToAdd}
         {...fieldProps} />);
 }

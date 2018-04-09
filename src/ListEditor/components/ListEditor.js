@@ -16,7 +16,8 @@ export default class ListsEditor extends Component {
         locale: PropTypes.object,
         hideReorder: PropTypes.bool,
         distinctOnly: PropTypes.bool,
-        errorText: PropTypes.string
+        errorText: PropTypes.string,
+        remindToAdd: PropTypes.bool
     };
 
     static defaultProps = {
@@ -118,6 +119,7 @@ export default class ListsEditor extends Component {
                 <this.props.formComponent
                     inputField={this.props.inputField}
                     onAdd={this.addItem}
+                    remindToAdd={this.props.remindToAdd}
                     {...(this.props.locale && this.props.locale.form ? this.props.locale.form : {})}
                     isValid={this.props.isValid}
                     disabled={this.props.disabled || (this.props.maxCount > 0 && this.state.itemList.length >= this.props.maxCount)}

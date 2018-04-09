@@ -21,6 +21,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function ListEditorField(fieldProps) {
     return _react2.default.createElement(_FreeTextListEditor2.default, _extends({
         errorText: fieldProps.meta ? fieldProps.meta.error : null,
-        onChange: fieldProps.input.onChange
+        onChange: fieldProps.input.onChange,
+        remindToAdd: fieldProps.remindToAdd
     }, fieldProps));
 }

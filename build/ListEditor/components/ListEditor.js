@@ -129,7 +129,8 @@ var ListsEditor = function (_Component) {
                 { className: this.props.className },
                 _react2.default.createElement(this.props.formComponent, _extends({
                     inputField: this.props.inputField,
-                    onAdd: this.addItem
+                    onAdd: this.addItem,
+                    remindToAdd: this.props.remindToAdd
                 }, this.props.locale && this.props.locale.form ? this.props.locale.form : {}, {
                     isValid: this.props.isValid,
                     disabled: this.props.disabled || this.props.maxCount > 0 && this.state.itemList.length >= this.props.maxCount,

@@ -30,6 +30,7 @@ describe('FreeTextForm tests ', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
     });
 
+
     it('adding item method is called', () => {
         const testMethod = jest.fn();
         const wrapper = setup({ onAdd: testMethod });
@@ -52,4 +53,14 @@ describe('FreeTextForm tests ', () => {
         wrapper.instance().onNameChanged({}, 'one');
         expect(wrapper.state().itemName).toEqual('one');
     });
+
+    it('rendering reminder to add input', () => {
+        const isValid = jest.fn(() => false);
+        const wrapper = setup({});
+        wrapper.setProps({isValid: isValid, locale: {remindToAdd: 'reminder text'}, remindToAdd: true});
+        wrapper.setState({itemName: 'one'});
+        wrapper.update();
+        expect(toJson(wrapper)).toMatchSnapshot();
+    });
+
 });
