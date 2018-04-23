@@ -57,16 +57,21 @@ class AuthorsPublicationTypesCountChart extends React.Component {
                 },
                 plotOptions: {
                     pie: {
+                        // animation: false,
                         showInLegend: true,
                         startAngle: 45,
                         dataLabels: {
+                            style: {
+                                color: '#FFFFFF',
+                                textOutline: 'none'
+                            },
                             allowOverlap: false,
                             distance: 10,
                             padding: 2,
                             softConnector: true,
                             className: 'pieLabels ',
                             format: '{y}',
-                            useHTML: true,
+                            useHTML: false,
                             enabled: true
                         },
                         shadow: false,
