@@ -1,5 +1,7 @@
-# uqlibrary-react-toolbox
+# uqlibrary-react-toolbox *** discontinued ***
 a set of reusable components for UQ Library applications
+
+NOTE TO DEVS: THIS REPO IS NO LONGER USED
 
 
 [ ![Codeship Status for uqlibrary/uqlibrary-react-toolbox](https://codeship.com/projects/73393d70-ed04-0134-e2b6-0a42fa094665/status?branch=master)](https://codeship.com/projects/208476)
