@@ -131,7 +131,7 @@
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
     "redux": "^3.7.1",
-    "timezones.json": "^1.2.1"
+    "timezones.json": "^1.4.7"
   },
   "peerDependencies": {
     "@material/animation": "^0.25.0",
@@ -149,7 +149,7 @@
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
     "redux": "^3.7.1",
-    "timezones.json": "^1.2.1"
+    "timezones.json": "^1.4.7"
   },
   "scripts": {
     "test": "NODE_ENV=test jest",
